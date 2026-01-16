@@ -1,0 +1,1 @@
+python3 $CULTURE_ROOT/src/culture/data_processing/wiktionary_idioms.py -o $CULTURE_ROOT/culture/data/wiktionary_outputs/english_idioms_full.jsonl

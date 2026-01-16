@@ -1,0 +1,1 @@
+python3 $CULTURE_ROOT/src/culture/data_processing/en_idioms/reformat_idiom_kb.py --input $CULTURE_ROOT/culture/data/IdiomKB/data/en_idiom_meaning.json --output $CULTURE_ROOT/culture/data/IdiomKB/data/reformatted_en_idiom_meaning.jsonl

@@ -1,0 +1,1 @@
+python3 $CULTURE_ROOT/src/culture/data_processing/en_idioms/reformat_english_idioms_phrases.py --input $CULTURE_ROOT/culture/data/englishidioms/englishidioms/phrases.json --output $CULTURE_ROOT/culture/data/englishidioms/englishidioms/phrases_reformatted.jsonl

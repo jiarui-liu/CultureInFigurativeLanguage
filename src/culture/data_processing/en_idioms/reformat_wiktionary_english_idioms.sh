@@ -1,0 +1,1 @@
+python3 $CULTURE_ROOT/src/culture/data_processing/en_idioms/reformat_wiktionary_english_idioms.py --input $CULTURE_ROOT/culture/data/wiktionary_outputs/english_idioms_full.jsonl --output $CULTURE_ROOT/culture/data/wiktionary_outputs/english_idioms_reformatted.jsonl
