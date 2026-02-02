@@ -14,6 +14,7 @@ import json
 import os
 import re
 import asyncio
+import random
 from collections import Counter, defaultdict
 from typing import List, Dict, Any, Tuple, Optional, Set
 from dataclasses import dataclass, asdict
@@ -53,6 +54,7 @@ class CrossLingualEntityPair:
     translation_direction: str  # "en_to_zh" or "zh_to_en"
     idioms_en: List[IdiomMatch]
     idioms_zh: List[IdiomMatch]
+    matched_translations: List[str] = None  # All translations that matched idioms
     cultural_analysis: Optional[str] = None
 
 
@@ -113,14 +115,16 @@ async def translate_entities_with_llm(
     source_name = lang_names[source_lang]
     target_name = lang_names[target_lang]
 
-    prompt_template = """You are a linguistic expert specializing in translating ENTITIES (nouns, concrete objects, animals, natural phenomena, body parts, etc.) that appear in idioms.
+    prompt_template = f"""You are a linguistic expert specializing in translating ENTITIES (nouns or noun phrases) that appear in idioms.
 
-Given the {source_name} entity "{entity}", provide ALL possible {target_name} entity translations.
+Given the {source_name} entity "{entity}", provide ALL possible {target_name} entity translations that could appear in {target_name} idioms.
 Focus on high recall - include:
 1. Direct entity translations
 2. Synonymous entities
 3. Related entities that could substitute in different contexts
 4. Different forms (e.g., singular/plural, different characters for same concept)
+
+Avoid translations that are too distant from the original entity.
 
 IMPORTANT CONSTRAINTS:
 - All translations must be ENTITIES (nouns/concrete concepts), not verbs or adjectives
@@ -186,11 +190,17 @@ def find_idioms_with_entity(
     lang: str,
     max_idioms: int = 20
 ) -> List[IdiomMatch]:
-    """Find idioms containing the given entity."""
+    """Find idioms containing the given entity. Uses random sampling if more than max_idioms available."""
     matches = []
     idioms = entity_to_idioms.get(entity, [])
 
-    for item in idioms[:max_idioms]:
+    # Random sample if we have more idioms than max_idioms
+    if len(idioms) > max_idioms:
+        sampled_idioms = random.sample(idioms, max_idioms)
+    else:
+        sampled_idioms = idioms
+
+    for item in sampled_idioms:
         output = item.get("output", {})
         match = IdiomMatch(
             idiom=output.get("idiom", item.get("idiom", "")),
@@ -210,14 +220,14 @@ def find_idioms_containing_translations(
     idioms_data: List[Dict[str, Any]],
     lang: str,
     max_idioms: int = 20
-) -> Tuple[List[IdiomMatch], str]:
+) -> Tuple[List[IdiomMatch], List[str]]:
     """
     Find idioms containing any of the translated entities.
     Also does substring matching for better recall.
-    Returns matches and the matched entity.
+    Returns matches and ALL matched translations (not just the first one).
     """
     all_matches = []
-    matched_entity = None
+    matched_translations = set()  # Track all translations that matched
 
     # First try exact entity match
     for trans in translations:
@@ -225,8 +235,7 @@ def find_idioms_containing_translations(
             matches = find_idioms_with_entity(trans, entity_to_idioms, lang, max_idioms)
             if matches:
                 all_matches.extend(matches)
-                if matched_entity is None:
-                    matched_entity = trans
+                matched_translations.add(trans)
 
     # If no exact matches, try substring matching in idiom text
     if not all_matches:
@@ -243,8 +252,7 @@ def find_idioms_containing_translations(
                         lang=lang
                     )
                     all_matches.append(match)
-                    if matched_entity is None:
-                        matched_entity = trans
+                    matched_translations.add(trans)
                     if len(all_matches) >= max_idioms:
                         break
             if len(all_matches) >= max_idioms:
@@ -258,7 +266,34 @@ def find_idioms_containing_translations(
             seen.add(m.idiom)
             unique_matches.append(m)
 
-    return unique_matches[:max_idioms], matched_entity
+    # Random sample if we have more matches than max_idioms
+    if len(unique_matches) > max_idioms:
+        sampled_matches = random.sample(unique_matches, max_idioms)
+    else:
+        sampled_matches = unique_matches
+
+    return sampled_matches, list(matched_translations)
+
+
+def flatten_meanings(meanings) -> str:
+    """Safely flatten and join meanings, handling nested lists and non-strings."""
+    if not meanings:
+        return ""
+
+    def _flatten(item):
+        """Recursively flatten nested structures."""
+        if isinstance(item, str):
+            return [item]
+        elif isinstance(item, list):
+            result = []
+            for sub_item in item:
+                result.extend(_flatten(sub_item))
+            return result
+        else:
+            return [str(item)]
+
+    flat_items = _flatten(meanings)
+    return '; '.join(flat_items)
 
 
 async def analyze_cultural_differences(
@@ -269,21 +304,30 @@ async def analyze_cultural_differences(
     Use LLM to analyze cultural/meaning differences between idioms
     in two languages that share the same entity.
     """
-    # Format idioms for analysis
+    # Format idioms for analysis, including which entity matched
     en_idioms_text = "\n".join([
-        f"- {m.idiom}: {'; '.join(m.figurative_meanings)}"
+        f"- {m.idiom} (entity: {m.entity}): {flatten_meanings(m.figurative_meanings)}"
         for m in entity_pair.idioms_en[:10]
     ])
 
     zh_idioms_text = "\n".join([
-        f"- {m.idiom}: {'; '.join(m.figurative_meanings)}"
+        f"- {m.idiom} (entity: {m.entity}): {flatten_meanings(m.figurative_meanings)}"
         for m in entity_pair.idioms_zh[:10]
     ])
+
+    # Format matched translations info
+    matched_trans_info = ""
+    if entity_pair.matched_translations:
+        # Ensure all items are strings
+        trans_strs = [str(t) for t in entity_pair.matched_translations if t is not None]
+        if trans_strs:
+            matched_trans_info = f"\nMatched translations used: {', '.join(trans_strs)}"
 
     prompt = f"""You are a cultural linguistics expert analyzing how the same entity/concept conveys different meanings across English and Chinese idioms.
 
 Entity in English: "{entity_pair.entity_en}"
 Entity in Chinese: "{entity_pair.entity_zh}"
+Translation direction: {entity_pair.translation_direction}{matched_trans_info}
 
 English idioms containing this entity:
 {en_idioms_text}
@@ -301,6 +345,7 @@ Analyze the cultural and semantic differences:
 Provide a structured analysis in JSON format:
 {{
     "entity": "{entity_pair.entity_en} / {entity_pair.entity_zh}",
+    "matched_translations": {json.dumps(entity_pair.matched_translations or [], ensure_ascii=False)},
     "english_primary_meanings": ["meaning1", "meaning2"],
     "chinese_primary_meanings": ["meaning1", "meaning2"],
     "shared_meanings": ["shared1", "shared2"],
@@ -328,7 +373,8 @@ async def run_analysis(
     model: str = "gpt-5.2-chat",
     provider: str = "openai",
     max_idioms_per_entity: int = 20,
-    batch_size: int = 10
+    batch_size: int = 10,
+    skip_translation: bool = False
 ):
     """Run the full cross-lingual entity analysis."""
 
@@ -365,22 +411,38 @@ async def run_analysis(
     print(f"\nInitializing {model} for translation and analysis...")
     chat_model = ChatModel(model=model, provider=provider)
 
-    # Translate entities
-    print("\nTranslating English entities to Chinese...")
-    en_to_zh_translations = await translate_entities_with_llm(
-        top_en_entities, "en", "zh", chat_model, batch_size
-    )
+    # Translate entities (or load existing translations)
+    if skip_translation:
+        print("\nLoading existing translations...")
+        en_to_zh_path = os.path.join(output_dir, "translations_en_to_zh.json")
+        zh_to_en_path = os.path.join(output_dir, "translations_zh_to_en.json")
 
-    print("\nTranslating Chinese entities to English...")
-    zh_to_en_translations = await translate_entities_with_llm(
-        top_zh_entities, "zh", "en", chat_model, batch_size
-    )
+        if os.path.exists(en_to_zh_path) and os.path.exists(zh_to_en_path):
+            with open(en_to_zh_path, "r", encoding="utf8") as f:
+                en_to_zh_translations = json.load(f)
+            with open(zh_to_en_path, "r", encoding="utf8") as f:
+                zh_to_en_translations = json.load(f)
+            print(f"Loaded {len(en_to_zh_translations)} EN->ZH and {len(zh_to_en_translations)} ZH->EN translations")
+        else:
+            print("Translation files not found, running translation...")
+            skip_translation = False
 
-    # Save translations
-    with open(os.path.join(output_dir, "translations_en_to_zh.json"), "w", encoding="utf8") as f:
-        json.dump(en_to_zh_translations, f, ensure_ascii=False, indent=2)
-    with open(os.path.join(output_dir, "translations_zh_to_en.json"), "w", encoding="utf8") as f:
-        json.dump(zh_to_en_translations, f, ensure_ascii=False, indent=2)
+    if not skip_translation:
+        print("\nTranslating English entities to Chinese...")
+        en_to_zh_translations = await translate_entities_with_llm(
+            top_en_entities, "en", "zh", chat_model, batch_size
+        )
+
+        print("\nTranslating Chinese entities to English...")
+        zh_to_en_translations = await translate_entities_with_llm(
+            top_zh_entities, "zh", "en", chat_model, batch_size
+        )
+
+        # Save translations
+        with open(os.path.join(output_dir, "translations_en_to_zh.json"), "w", encoding="utf8") as f:
+            json.dump(en_to_zh_translations, f, ensure_ascii=False, indent=2)
+        with open(os.path.join(output_dir, "translations_zh_to_en.json"), "w", encoding="utf8") as f:
+            json.dump(zh_to_en_translations, f, ensure_ascii=False, indent=2)
 
     # Find cross-lingual entity pairs
     print("\nFinding cross-lingual entity pairs...")
@@ -396,17 +458,18 @@ async def run_analysis(
         )
 
         # Find idioms in Chinese using translations
-        zh_idiom_matches, matched_zh = find_idioms_containing_translations(
+        zh_idiom_matches, matched_zh_list = find_idioms_containing_translations(
             translations, zh_entity_to_idioms, zh_idioms, "zh", max_idioms_per_entity
         )
 
         if en_idiom_matches and zh_idiom_matches:
             pair = CrossLingualEntityPair(
                 entity_en=en_entity,
-                entity_zh=matched_zh or translations[0] if translations else en_entity,
+                entity_zh=matched_zh_list[0] if matched_zh_list else (translations[0] if translations else en_entity),
                 translation_direction="en_to_zh",
                 idioms_en=en_idiom_matches,
-                idioms_zh=zh_idiom_matches
+                idioms_zh=zh_idiom_matches,
+                matched_translations=matched_zh_list  # Store all matched translations
             )
             entity_pairs.append(pair)
 
@@ -420,7 +483,7 @@ async def run_analysis(
         )
 
         # Find idioms in English using translations
-        en_idiom_matches, matched_en = find_idioms_containing_translations(
+        en_idiom_matches, matched_en_list = find_idioms_containing_translations(
             translations, en_entity_to_idioms, en_idioms, "en", max_idioms_per_entity
         )
 
@@ -428,16 +491,17 @@ async def run_analysis(
             # Check if this pair already exists from EN->ZH
             existing = any(
                 p.entity_zh == zh_entity or
-                (p.entity_en == matched_en and p.entity_zh == zh_entity)
+                (p.entity_en in matched_en_list and p.entity_zh == zh_entity)
                 for p in entity_pairs
             )
             if not existing:
                 pair = CrossLingualEntityPair(
-                    entity_en=matched_en or translations[0] if translations else zh_entity,
+                    entity_en=matched_en_list[0] if matched_en_list else (translations[0] if translations else zh_entity),
                     entity_zh=zh_entity,
                     translation_direction="zh_to_en",
                     idioms_en=en_idiom_matches,
-                    idioms_zh=zh_idiom_matches
+                    idioms_zh=zh_idiom_matches,
+                    matched_translations=matched_en_list  # Store all matched translations
                 )
                 entity_pairs.append(pair)
 
@@ -450,6 +514,7 @@ async def run_analysis(
             "entity_en": pair.entity_en,
             "entity_zh": pair.entity_zh,
             "translation_direction": pair.translation_direction,
+            "matched_translations": pair.matched_translations,
             "idioms_en": [asdict(m) for m in pair.idioms_en],
             "idioms_zh": [asdict(m) for m in pair.idioms_zh],
             "num_en_idioms": len(pair.idioms_en),
@@ -492,6 +557,7 @@ def save_analyzed_pairs(pairs: List[CrossLingualEntityPair], output_dir: str):
             "entity_en": pair.entity_en,
             "entity_zh": pair.entity_zh,
             "translation_direction": pair.translation_direction,
+            "matched_translations": pair.matched_translations,
             "idioms_en": [asdict(m) for m in pair.idioms_en],
             "idioms_zh": [asdict(m) for m in pair.idioms_zh],
             "cultural_analysis": pair.cultural_analysis
@@ -558,6 +624,11 @@ def main():
         default=10,
         help="Batch size for LLM API calls"
     )
+    parser.add_argument(
+        "--skip_translation",
+        action="store_true",
+        help="Skip translation step and load existing translations from output_dir"
+    )
 
     args = parser.parse_args()
 
@@ -570,7 +641,8 @@ def main():
         model=args.model,
         provider=args.provider,
         max_idioms_per_entity=args.max_idioms,
-        batch_size=args.batch_size
+        batch_size=args.batch_size,
+        skip_translation=args.skip_translation
     ))
 
 

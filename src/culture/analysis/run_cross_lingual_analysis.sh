@@ -18,6 +18,7 @@ MODEL="gpt-5.2-chat-latest"
 PROVIDER="openai"
 MAX_IDIOMS=20
 BATCH_SIZE=10
+SKIP_TRANSLATION=""
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -46,6 +47,10 @@ while [[ $# -gt 0 ]]; do
             OUTPUT_DIR="$2"
             shift 2
             ;;
+        --skip_translation)
+            SKIP_TRANSLATION="--skip_translation"
+            shift
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
@@ -64,13 +69,14 @@ echo "Model: $MODEL"
 echo "Provider: $PROVIDER"
 echo "Max idioms per entity: $MAX_IDIOMS"
 echo "Batch size: $BATCH_SIZE"
+echo "Skip translation: $([[ -n "$SKIP_TRANSLATION" ]] && echo "yes" || echo "no")"
 echo "============================================"
 
 # Create output directory
 mkdir -p "$OUTPUT_DIR"
 
 # Run the analysis
-python3 "$SCRIPT_DIR/cross_lingual_entity_analysis.py" \
+python3 "$SCRIPT_DIR/cross_lingual_same_entity_diff_meaning.py" \
     --en_idioms "$EN_IDIOMS" \
     --zh_idioms "$ZH_IDIOMS" \
     --output_dir "$OUTPUT_DIR" \
@@ -78,7 +84,8 @@ python3 "$SCRIPT_DIR/cross_lingual_entity_analysis.py" \
     --model "$MODEL" \
     --provider "$PROVIDER" \
     --max_idioms "$MAX_IDIOMS" \
-    --batch_size "$BATCH_SIZE"
+    --batch_size "$BATCH_SIZE" \
+    $SKIP_TRANSLATION
 
 echo "============================================"
 echo "Analysis complete!"

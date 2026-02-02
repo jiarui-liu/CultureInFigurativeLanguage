@@ -183,7 +183,7 @@ def find_cross_lingual_pairs(
     en_metadata: List[Dict],
     en_embeddings: np.ndarray,
     similarity_threshold: float = 0.7,
-    top_k: int = 5
+    top_k: int = None
 ) -> List[Dict]:
     """
     Find pairs of Chinese and English idioms with similar figurative meanings.
@@ -195,7 +195,7 @@ def find_cross_lingual_pairs(
         en_metadata: List of English idiom metadata dicts
         en_embeddings: Embeddings for all English figurative meanings
         similarity_threshold: Minimum cosine similarity to consider as a match
-        top_k: Number of top matches to return per idiom
+        top_k: Optional limit on matches per idiom. If None, keeps all above threshold.
 
     Returns:
         List of paired idioms with similarity scores
@@ -238,10 +238,13 @@ def find_cross_lingual_pairs(
                 "best_en_meaning_idx": int(best_en_meaning_idx)
             })
 
-        # Sort by similarity and take top-k
+        # Sort by similarity and optionally take top-k
         en_idiom_max_sims.sort(key=lambda x: x["max_sim"], reverse=True)
 
-        for match in en_idiom_max_sims[:top_k]:
+        # If top_k is None, consider all; otherwise limit to top_k
+        candidates = en_idiom_max_sims if top_k is None else en_idiom_max_sims[:top_k]
+
+        for match in candidates:
             if match["max_sim"] < similarity_threshold:
                 continue
 
@@ -318,13 +321,14 @@ def analyze_entity_differences(pairs: List[Dict]) -> Dict:
         for e in en_entities:
             analysis["en_entity_categories"][e] += 1
 
-    # Get top examples where both languages have entities
+    # Get ALL examples where both languages have entities
     examples_with_entities = [
         p for p in pairs
         if p["zh_entities"] and p["en_entities"]
-    ][:20]
+    ]
 
     analysis["examples"] = examples_with_entities
+    analysis["num_examples_with_both_entities"] = len(examples_with_entities)
     analysis["zh_entity_categories"] = dict(analysis["zh_entity_categories"])
     analysis["en_entity_categories"] = dict(analysis["en_entity_categories"])
 
@@ -428,7 +432,8 @@ def main_find_pairs(args):
     en_metadata, en_embeddings = load_embeddings_efficient(args.en_embeddings)
     print(f"Loaded {len(en_metadata)} English idioms ({len(en_embeddings)} embeddings)")
 
-    print(f"Finding cross-lingual pairs (threshold: {args.threshold}, top_k: {args.top_k})...")
+    top_k_str = str(args.top_k) if args.top_k else "unlimited"
+    print(f"Finding cross-lingual pairs (threshold: {args.threshold}, top_k: {top_k_str})...")
     pairs = find_cross_lingual_pairs(
         zh_metadata, zh_embeddings,
         en_metadata, en_embeddings,
@@ -502,8 +507,8 @@ if __name__ == "__main__":
         help="Minimum cosine similarity threshold"
     )
     pairs_parser.add_argument(
-        "--top_k", type=int, default=5,
-        help="Number of top matches per idiom"
+        "--top_k", type=int, default=None,
+        help="Optional: limit matches per idiom. If not set, keeps all above threshold."
     )
 
     args = parser.parse_args()
