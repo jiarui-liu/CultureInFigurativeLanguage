@@ -1,0 +1,3 @@
+python3 /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/analysis/cluster_entities_with_embeddings.py --input /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/idioms/en/idioms_merged_llm_formatted.jsonl --embedding_output /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/idioms/en/idiom_embeddings.jsonl --plot
+
+python3 /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/analysis/cluster_entities_with_embeddings.py --input /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/idioms/zh/idioms_merged_llm_formatted.jsonl --embedding_output /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/idioms/zh/idiom_embeddings.jsonl --plot

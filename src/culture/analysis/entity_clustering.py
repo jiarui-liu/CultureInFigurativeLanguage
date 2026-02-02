@@ -205,15 +205,15 @@ def translate_entities(entities, src='zh', dest='en'):
 def load_entities_from_file(file_path):
     """
     Load entities from a JSONL file and return a Counter of entity frequencies.
-    
+
     Args:
         file_path: Path to the JSONL file
-        
+
     Returns:
         Counter: A Counter object with entity frequencies
     """
     entity_counter = Counter()
-    
+
     with open(file_path, "r", encoding="utf8") as f:
         for line in f:
             if not line.strip():
@@ -225,20 +225,40 @@ def load_entities_from_file(file_path):
                 print(obj)
             for e in entities:
                 entity_counter[e] += 1
-    
+
     return entity_counter
 
 
-def plot_entity_distribution(entity_counter, top_k=30, src_lang='zh'):
+def count_idioms_from_file(file_path):
+    """
+    Count the total number of idioms in a JSONL file.
+
+    Args:
+        file_path: Path to the JSONL file
+
+    Returns:
+        int: Total number of idioms
+    """
+    count = 0
+    with open(file_path, "r", encoding="utf8") as f:
+        for line in f:
+            if line.strip():
+                count += 1
+    return count
+
+
+def plot_entity_distribution(entity_counter, top_k=30, src_lang='zh', density=False, total_idioms=None):
     """
     Plot the frequency distribution of entities using matplotlib pyplot.
     For Chinese entities, displays labels in format "Chinese + English translation".
     For English entities, displays labels without translation.
-    
+
     Args:
         entity_counter: Counter object with entity frequencies
         top_k: Number of top entities to plot
         src_lang: Source language code (default: 'zh' for Chinese, 'en' for English)
+        density: If True, plot density (count / total_idioms) instead of raw frequency
+        total_idioms: Total number of idioms (required if density=True)
     """
     most_common = entity_counter.most_common(top_k)
     if not most_common:
@@ -246,6 +266,12 @@ def plot_entity_distribution(entity_counter, top_k=30, src_lang='zh'):
         return
 
     entities, counts = zip(*most_common)
+
+    # Convert to density if requested
+    if density:
+        if total_idioms is None:
+            raise ValueError("total_idioms must be provided when density=True")
+        counts = [c / total_idioms for c in counts]
     
     # Only translate if source language is not English
     if src_lang == 'en':
@@ -292,8 +318,10 @@ def plot_entity_distribution(entity_counter, top_k=30, src_lang='zh'):
     plt.xticks(range(len(entities)), entity_labels, rotation=45, ha="right", fontsize=14)
     plt.yticks(fontsize=14)
     plt.xlabel("Entity", fontsize=14)
-    plt.ylabel("Frequency", fontsize=14)
-    plt.title(f"Top {top_k} Entity Frequency Distribution", fontsize=14)
+    ylabel = "Density" if density else "Frequency"
+    plt.ylabel(ylabel, fontsize=14)
+    title_type = "Density" if density else "Frequency"
+    plt.title(f"Top {top_k} Entity {title_type} Distribution", fontsize=14)
     plt.tight_layout()
     plt.show()
 

@@ -1,0 +1,1 @@
+python3 /home/jiaruil5/math_rl/mix_teachers/mix_teachers/models/download_model.py  --model_name Qwen/Qwen3-Embedding-0.6B --local_dir /home/jiaruil5/math_rl/mix_teachers/r3lit_rl/models
