@@ -1,0 +1,1 @@
+python3 /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/utils/dataset_upload.py /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/idioms --repo_name=multilingual-idioms-for-culture --username=Jerry999 --sync
