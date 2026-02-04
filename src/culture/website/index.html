@@ -388,6 +388,28 @@ function renderTab1() {
         <div class="section-label">Summary</div>
         <div class="summary-box">${esc(r.summary)}</div>
       </div>
+
+      <div class="section">
+        <div class="section-label">Source Idioms</div>
+        <div class="expandable" id="t1-en-idioms">
+          <div class="expandable-header" onclick="toggleExpand('t1-en-idioms')">
+            <span>English Idioms (${(r.idioms_en || []).length})</span>
+            <span class="expandable-arrow">&#9654;</span>
+          </div>
+          <div class="expandable-body">
+            ${renderIdiomList(r.idioms_en || [], 'en')}
+          </div>
+        </div>
+        <div class="expandable" id="t1-zh-idioms">
+          <div class="expandable-header" onclick="toggleExpand('t1-zh-idioms')">
+            <span>Chinese Idioms (${(r.idioms_zh || []).length})</span>
+            <span class="expandable-arrow">&#9654;</span>
+          </div>
+          <div class="expandable-body">
+            ${renderIdiomList(r.idioms_zh || [], 'zh')}
+          </div>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -413,13 +435,18 @@ let t2Idx = 0;
 function renderIdiomList(idioms, lang) {
   if (!idioms || idioms.length === 0) return '<p style="color:#999;font-size:.85rem">No idioms</p>';
   return idioms.map(id => {
-    const entities = id.entities && id.entities.length
-      ? `<div class="idiom-detail"><strong>Entities:</strong> ${id.entities.map(e => esc(e)).join(', ')}</div>` : '';
+    // Support both "entity" (string, tab1) and "entities" (array, tab2)
+    let entitiesHtml = '';
+    if (id.entities && id.entities.length) {
+      entitiesHtml = `<div class="idiom-detail"><strong>Entities:</strong> ${id.entities.map(e => esc(e)).join(', ')}</div>`;
+    } else if (id.entity) {
+      entitiesHtml = `<div class="idiom-detail"><strong>Entity:</strong> ${esc(id.entity)}</div>`;
+    }
     const fig = id.figurative_meanings && id.figurative_meanings.length
       ? `<div class="idiom-detail"><strong>Figurative:</strong> ${id.figurative_meanings.map(m => esc(m)).join('; ')}</div>` : '';
     const lit = id.literal_meanings && id.literal_meanings.length
       ? `<div class="idiom-detail"><strong>Literal:</strong> ${id.literal_meanings.map(m => esc(m)).join('; ')}</div>` : '';
-    return `<div class="idiom-item"><div class="idiom-name">${esc(id.idiom)}</div>${entities}${fig}${lit}</div>`;
+    return `<div class="idiom-item"><div class="idiom-name">${esc(id.idiom)}</div>${entitiesHtml}${fig}${lit}</div>`;
   }).join('');
 }
 

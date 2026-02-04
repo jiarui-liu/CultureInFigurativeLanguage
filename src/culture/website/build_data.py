@@ -73,6 +73,26 @@ def build_tab1():
             elif direction == "zh_to_en" and en_cluster:
                 matched_trans = en_cluster.get("cluster_entities", [])
 
+        # Extract idioms used to generate the analysis
+        idioms_en = [
+            {
+                "idiom": idi.get("idiom", ""),
+                "entity": idi.get("entity", ""),
+                "figurative_meanings": idi.get("figurative_meanings", []),
+                "literal_meanings": idi.get("literal_meanings", []),
+            }
+            for idi in result.get("idioms_en", [])
+        ]
+        idioms_zh = [
+            {
+                "idiom": idi.get("idiom", ""),
+                "entity": idi.get("entity", ""),
+                "figurative_meanings": idi.get("figurative_meanings", []),
+                "literal_meanings": idi.get("literal_meanings", []),
+            }
+            for idi in result.get("idioms_zh", [])
+        ]
+
         rows.append({
             "entity_en": entity_en,
             "entity_zh": entity_zh,
@@ -85,6 +105,8 @@ def build_tab1():
             "zh_unique_aspects": analysis.get("chinese_unique_aspects", []),
             "cultural_explanation": analysis.get("cultural_explanation", ""),
             "summary": analysis.get("summary", ""),
+            "idioms_en": idioms_en,
+            "idioms_zh": idioms_zh,
         })
 
     # Sort: en_to_zh first, then zh_to_en (same order as summary_df)
