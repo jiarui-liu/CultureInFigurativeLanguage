@@ -1,0 +1,1 @@
+python3 /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/utils/dataset_download.py /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/benchmarks --username kellycyy --repo_name CulturalBench

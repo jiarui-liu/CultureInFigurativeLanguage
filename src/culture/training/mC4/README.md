@@ -1,0 +1,1 @@
+python3 download_and_filter_mc4.py --lang zh --build-index --index-dir /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/culture/data/mC4/index_zh --index-cpus 1 --index-mem 16 --max-docs 20 --use-infinigram-local --batch-size 5

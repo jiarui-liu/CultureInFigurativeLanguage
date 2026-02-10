@@ -496,11 +496,12 @@ document.getElementById('t2-prev').addEventListener('click', () => { if (t2Idx >
 document.getElementById('t2-next').addEventListener('click', () => { if (t2Idx < tab2Data.length - 1) { t2Idx++; renderTab2(); window.scrollTo({top: 0, behavior: 'smooth'}); } });
 
 // ======================== Load data ========================
+const _v = 'v2';  // bump to bust browser cache after data changes
 async function loadData() {
   try {
     const [r1, r2] = await Promise.all([
-      fetch('data/tab1_entity_meanings.json'),
-      fetch('data/tab2_semantic_clusters.json'),
+      fetch(`data/tab1_entity_meanings.json?${_v}`),
+      fetch(`data/tab2_semantic_clusters.json?${_v}`),
     ]);
     tab1Data = await r1.json();
     tab2Data = await r2.json();
