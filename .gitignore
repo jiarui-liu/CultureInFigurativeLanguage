@@ -29,3 +29,7 @@ htmlcov/
 *.log
 .DS_Store
 
+# Job output files
+*.err
+*.out
+
