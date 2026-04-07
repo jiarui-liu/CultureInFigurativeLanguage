@@ -35,6 +35,8 @@ import json
 import re
 import gc
 import gzip
+import shutil
+import sys
 import time
 import subprocess
 from pathlib import Path
@@ -158,9 +160,9 @@ def parse_args():
     )
     parser.add_argument(
         "--tokenizer",
-        default="llama",
-        choices=["llama", "gpt2", "olmo"],
-        help="Tokenizer for local infini-gram index",
+        default="qwen",
+        choices=["llama", "gpt2", "olmo", "qwen", "qwen3"],
+        help="Tokenizer for local infini-gram index. Use 'qwen' or 'qwen3' for Chinese/multilingual support.",
     )
     parser.add_argument(
         "--index-cpus",
@@ -223,6 +225,18 @@ def parse_args():
         action="store_true",
         help="Resume from existing output file instead of overwriting",
     )
+    parser.add_argument(
+        "--indices-only",
+        action="store_true",
+        help="Only save doc indices and idiom match counts (no full text chunks). "
+             "Outputs: doc_indices_<lang>.json and idiom_doc_counts_<lang>.json",
+    )
+    parser.add_argument(
+        "--skip-docs",
+        type=int,
+        default=0,
+        help="Skip the first N documents in the stream (for resuming across SLURM jobs)",
+    )
     args = parser.parse_args()
 
     # Set derived defaults
@@ -252,7 +266,10 @@ def get_idiom_file(args, lang: str) -> Optional[Path]:
     """Get the idiom file path for a language."""
     if args.idiom_file:
         return args.idiom_file
-    idiom_file = args.idiom_dir / lang / "idioms_merged_llm_formatted.jsonl"
+    if lang == "en":
+        idiom_file = args.idiom_dir / lang / "idioms_merged_llm_formatted_figurative_only.jsonl"
+    else:
+        idiom_file = args.idiom_dir / lang / "idioms_merged_llm_formatted.jsonl"
     if idiom_file.exists():
         return idiom_file
     logger.warning(f"Idiom file not found: {idiom_file}")
@@ -335,6 +352,7 @@ def build_local_infinigram_index(
     Build a local infini-gram index from JSONL data.
 
     The data_dir should contain JSONL files with "text" field.
+    Note: Only works well for English text due to tokenizer limitations.
     """
     logger.info(f"Building local infini-gram index...")
     logger.info(f"  Data dir: {data_dir}")
@@ -354,7 +372,7 @@ def build_local_infinigram_index(
         ulimit_value = 1024  # Safe default
 
     cmd = [
-        "python", "-m", "infini_gram.indexing",
+        sys.executable, "-m", "infini_gram.indexing",
         "--data_dir", str(data_dir),
         "--save_dir", str(index_dir),
         "--tokenizer", tokenizer,
@@ -380,27 +398,79 @@ def build_local_infinigram_index(
         return False
 
 
+def prepare_index_data_from_chunks(
+    chunks_dir: Path,
+    output_dir: Path,
+    lang: str,
+) -> Path:
+    """
+    Prepare index data by extracting text from .json.gz chunks.
+
+    Reads all chunk files and creates a single JSONL file for indexing.
+    Returns the path to the created JSONL file.
+    """
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / f"mc4_{lang}.jsonl"
+
+    # Find all chunk files
+    chunk_files = sorted(chunks_dir.glob(f"mc4_{lang}_filtered_*.json.gz"))
+    if not chunk_files:
+        # Try uncompressed
+        chunk_files = sorted(chunks_dir.glob(f"mc4_{lang}_filtered_*.jsonl"))
+
+    logger.info(f"Preparing index data from {len(chunk_files)} chunk files...")
+
+    total_docs = 0
+    with open(output_file, 'w', encoding='utf-8') as out_f:
+        for chunk_file in chunk_files:
+            if chunk_file.suffix == '.gz':
+                f = gzip.open(chunk_file, 'rt', encoding='utf-8')
+            else:
+                f = open(chunk_file, 'r', encoding='utf-8')
+
+            try:
+                for line in f:
+                    if line.strip():
+                        doc = json.loads(line)
+                        # Extract just the text field for indexing
+                        out_f.write(json.dumps({"text": doc["text"]}, ensure_ascii=False) + '\n')
+                        total_docs += 1
+            finally:
+                f.close()
+
+    logger.info(f"Prepared {total_docs} documents for indexing in {output_file}")
+    return output_file
+
+
+# Map tokenizer name to HuggingFace model
+TOKENIZER_MAP = {
+    "llama": "meta-llama/Llama-2-7b-hf",
+    "gpt2": "gpt2",
+    "olmo": "allenai/OLMo-7B",
+    "qwen": "Qwen/Qwen2-0.5B",
+    "qwen3": "Qwen/Qwen3-0.6B",
+}
+
+# Tokenizers that support multilingual text well (including Chinese)
+MULTILINGUAL_TOKENIZERS = {"qwen", "qwen3"}
+
+
 def load_local_infinigram_engine(index_dir: Path, tokenizer_name: str = "llama"):
     """Load a local infini-gram engine."""
     try:
         from infini_gram.engine import InfiniGramEngine
         from transformers import AutoTokenizer
 
-        # Map tokenizer name to HuggingFace model
-        # Note: meta-llama models are gated; use alternatives if not logged in
-        tokenizer_map = {
-            "llama": "meta-llama/Llama-2-7b-hf",
-            "gpt2": "gpt2",
-            "olmo": "allenai/OLMo-7B",
-        }
-
-        hf_tokenizer = tokenizer_map.get(tokenizer_name, tokenizer_name)
+        hf_tokenizer = TOKENIZER_MAP.get(tokenizer_name, tokenizer_name)
 
         logger.info(f"Loading tokenizer: {hf_tokenizer}")
+        # Qwen models require trust_remote_code=True
+        trust_remote = tokenizer_name in MULTILINGUAL_TOKENIZERS
         tokenizer = AutoTokenizer.from_pretrained(
             hf_tokenizer,
             add_bos_token=False,
             add_eos_token=False,
+            trust_remote_code=trust_remote,
         )
 
         logger.info(f"Loading infini-gram engine from: {index_dir}")
@@ -528,95 +598,34 @@ def extract_documents_with_local_infinigram(
 
 
 # =============================================================================
-# Local Matching Functions
+# Local Matching Functions (Aho-Corasick for fast multi-pattern matching)
 # =============================================================================
 
-def create_english_matcher(idioms: Set[str]):
-    """Create a loose matcher for English idioms that handles morphological variants."""
-    patterns = []
-
+def create_ahocorasick_matcher(idioms: Set[str], case_insensitive: bool = False):
+    """Create an Aho-Corasick automaton for fast multi-pattern matching."""
+    import ahocorasick
+    A = ahocorasick.Automaton()
     for idiom in idioms:
-        # Remove content in parentheses for the base pattern
-        base_idiom = re.sub(r'\([^)]*\)', '', idiom).strip()
-        if not base_idiom:
-            base_idiom = idiom
-
-        # Escape special regex characters
-        escaped = re.escape(base_idiom)
-
-        # Replace escaped spaces with flexible whitespace
-        pattern = escaped.replace(r'\ ', r'\s+')
-
-        # Handle common verb endings
-        words = pattern.split(r'\s+')
-        flexible_words = []
-        for word in words:
-            # Add optional common suffixes
-            flexible_word = word + r"(?:'?s|ed|ing|er|est|n't|'d|'ll|'ve|'re|ies|ied)?"
-            flexible_words.append(flexible_word)
-
-        flexible_pattern = r'\s+'.join(flexible_words)
-        patterns.append(flexible_pattern)
-
-    # Combine patterns with word boundaries
-    combined_pattern = r'\b(?:' + '|'.join(patterns) + r')\b'
-
-    try:
-        compiled = re.compile(combined_pattern, re.IGNORECASE)
-        logger.info(f"Created English matcher with {len(patterns)} patterns")
-        return compiled
-    except re.error as e:
-        logger.error(f"Regex compilation error: {e}")
-        return create_batched_english_matcher(patterns)
-
-
-def create_batched_english_matcher(patterns: List[str], batch_size: int = 500):
-    """Create multiple regex matchers in batches."""
-    matchers = []
-    for i in range(0, len(patterns), batch_size):
-        batch = patterns[i:i + batch_size]
-        combined = r'\b(?:' + '|'.join(batch) + r')\b'
-        try:
-            matchers.append(re.compile(combined, re.IGNORECASE))
-        except re.error as e:
-            logger.warning(f"Batch {i//batch_size} failed: {e}")
-    logger.info(f"Created {len(matchers)} batched English matchers")
-    return matchers
-
-
-def contains_english_idiom(text: str, matcher) -> bool:
-    """Check if text contains any English idiom."""
-    if isinstance(matcher, list):
-        for m in matcher:
-            if m.search(text):
-                return True
-        return False
-    else:
-        return matcher.search(text) is not None
-
-
-def contains_chinese_idiom(text: str, idioms: Set[str]) -> bool:
-    """Check if text contains any Chinese idiom (exact substring match)."""
-    for idiom in idioms:
-        if idiom in text:
-            return True
-    return False
+        # Remove content in parentheses for English
+        base_idiom = re.sub(r'\([^)]*\)', '', idiom).strip() or idiom
+        key = base_idiom.lower() if case_insensitive else base_idiom
+        A.add_word(key, base_idiom)
+    A.make_automaton()
+    logger.info(f"Created Aho-Corasick matcher with {len(A)} patterns (case_insensitive={case_insensitive})")
+    return A
 
 
 def create_matcher(lang: str, idioms: Set[str]):
     """Create appropriate matcher for language."""
-    if lang == "en":
-        return create_english_matcher(idioms)
-    else:
-        return idioms
+    return create_ahocorasick_matcher(idioms, case_insensitive=(lang == "en"))
 
 
 def check_contains_idiom(text: str, lang: str, matcher) -> bool:
-    """Check if text contains idiom based on language."""
-    if lang == "en":
-        return contains_english_idiom(text, matcher)
-    else:
-        return contains_chinese_idiom(text, matcher)
+    """Check if text contains idiom using Aho-Corasick automaton."""
+    search_text = text.lower() if lang == "en" else text
+    for _ in matcher.iter(search_text):
+        return True
+    return False
 
 
 # =============================================================================
@@ -696,44 +705,43 @@ def download_and_filter_chunked(
     lang: str,
     idioms: Set[str],
     output_dir: Path,
-    index_data_dir: Optional[Path] = None,
 ) -> tuple:
     """
     Download and filter mC4 data in chunks.
 
-    Processes documents in streaming fashion:
-    - Downloads and filters documents one at a time
-    - Saves only matching documents to chunked, compressed files
-    - Creates files like: mc4_zh_filtered_00000.json.gz, mc4_zh_filtered_00001.json.gz, etc.
-    - Optionally saves filtered docs for index building
-    - Does NOT keep unfiltered raw data
+    Processes documents in streaming fashion.
+
+    In indices-only mode (--indices-only):
+    - Saves only doc indices and per-idiom doc counts
+    - Outputs: doc_indices_<lang>.json, idiom_doc_counts_<lang>.json
+    - No full text is stored
+
+    In default mode:
+    - Saves matching documents to chunked, compressed files
+    - Creates files like: mc4_zh_filtered_00000.json.gz, etc.
 
     Returns (total_processed, total_matched)
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Create chunked writer for filtered output
-    writer = ChunkedGzipWriter(
-        output_dir=output_dir,
-        base_name=f"mc4_{lang}_filtered",
-        chunk_size=args.chunk_size,
-        compress=not args.no_compress,
-    )
+    indices_only = getattr(args, 'indices_only', False)
 
-    # If building index, we'll save filtered docs for indexing
-    if index_data_dir:
-        index_data_dir.mkdir(parents=True, exist_ok=True)
-        index_file = index_data_dir / f"mc4_{lang}.jsonl"
-        index_f = open(index_file, 'w', encoding='utf-8')
-    else:
-        index_f = None
+    if not indices_only:
+        writer = ChunkedGzipWriter(
+            output_dir=output_dir,
+            base_name=f"mc4_{lang}_filtered",
+            chunk_size=args.chunk_size,
+            compress=not args.no_compress,
+        )
 
     matcher = create_matcher(lang, idioms)
 
+    skip_docs = getattr(args, 'skip_docs', 0)
+
     logger.info(f"Starting chunked processing of {args.dataset} {lang}...")
+    logger.info(f"  Mode: {'indices-only' if indices_only else 'full text'}")
     logger.info(f"  Batch size (logging): {args.batch_size}")
-    logger.info(f"  Chunk size (output): {args.chunk_size} docs per file")
-    logger.info(f"  Compression: {'gzip' if not args.no_compress else 'none'}")
+    logger.info(f"  Skip docs: {skip_docs}")
     logger.info(f"  Max docs: {args.max_docs or 'unlimited'}")
 
     dataset = load_dataset(
@@ -743,33 +751,54 @@ def download_and_filter_chunked(
         streaming=args.streaming,
     )
 
+    if skip_docs > 0:
+        logger.info(f"Skipping first {skip_docs:,} documents...")
+        dataset = dataset.skip(skip_docs)
+        logger.info(f"Skip complete, starting filtering.")
+
     total_processed = 0
     total_matched = 0
+    matched_indices = []
+    # Track per-idiom doc counts
+    idiom_doc_counts: Dict[str, int] = {}
 
-    with writer:
+    class _noop_ctx:
+        def __enter__(self): return self
+        def __exit__(self, *a): pass
+
+    ctx = writer if not indices_only else _noop_ctx()
+
+    with ctx:
         for doc in dataset:
             total_processed += 1
             text = doc.get("text", "")
 
             if check_contains_idiom(text, lang, matcher):
                 total_matched += 1
-                timestamp = doc.get("timestamp", "")
-                if hasattr(timestamp, 'isoformat'):
-                    timestamp = timestamp.isoformat()
+                doc_idx = skip_docs + total_processed - 1
+                matched_indices.append(doc_idx)
 
-                output_doc = {
-                    "text": text,
-                    "url": doc.get("url", ""),
-                    "timestamp": timestamp,
-                    "source": f"mc4-{lang}",
-                }
-                writer.write(json.dumps(output_doc, ensure_ascii=False))
+                # Count which idioms matched in this doc using Aho-Corasick
+                search_text = text.lower() if lang == "en" else text
+                seen_in_doc = set()
+                for _, matched_idiom in matcher.iter(search_text):
+                    if matched_idiom not in seen_in_doc:
+                        seen_in_doc.add(matched_idiom)
+                        idiom_doc_counts[matched_idiom] = idiom_doc_counts.get(matched_idiom, 0) + 1
 
-                # Also write to index file if building index
-                if index_f:
-                    index_f.write(json.dumps({"text": text}, ensure_ascii=False) + '\n')
+                if not indices_only:
+                    timestamp = doc.get("timestamp", "")
+                    if hasattr(timestamp, 'isoformat'):
+                        timestamp = timestamp.isoformat()
+                    output_doc = {
+                        "text": text,
+                        "url": doc.get("url", ""),
+                        "timestamp": timestamp,
+                        "source": f"mc4-{lang}",
+                        "doc_index": doc_idx,
+                    }
+                    writer.write(json.dumps(output_doc, ensure_ascii=False))
 
-            # Log progress at batch_size intervals
             if total_processed % args.batch_size == 0:
                 logger.info(
                     f"[{lang}] Processed: {total_processed:,}, "
@@ -782,15 +811,40 @@ def download_and_filter_chunked(
                 logger.info(f"Reached max_docs limit: {args.max_docs}")
                 break
 
-    if index_f:
-        index_f.close()
-        logger.info(f"Saved {total_matched} filtered docs for indexing to {index_data_dir}")
-
     logger.info(
         f"[{lang}] Completed! Total: {total_processed:,}, "
         f"Matched: {total_matched:,} ({100*total_matched/max(1,total_processed):.4f}%)"
     )
-    logger.info(f"Output files: {len(writer.chunk_files)} chunks in {output_dir}")
+
+    # Save doc indices
+    suffix = f"_{skip_docs}" if skip_docs > 0 else ""
+    indices_file = output_dir / f"doc_indices_{lang}{suffix}.json"
+    with open(indices_file, 'w') as f:
+        json.dump({
+            "lang": lang,
+            "dataset": args.dataset,
+            "split": args.split,
+            "skip_docs": skip_docs,
+            "total_processed": total_processed,
+            "total_matched": total_matched,
+            "doc_indices": matched_indices,
+        }, f)
+    logger.info(f"Saved {len(matched_indices)} doc indices to {indices_file}")
+
+    # Save per-idiom doc counts (Chinese only for now; English uses infini-gram)
+    if idiom_doc_counts:
+        counts_file = output_dir / f"idiom_doc_counts_{lang}{suffix}.json"
+        with open(counts_file, 'w') as f:
+            json.dump({
+                "lang": lang,
+                "total_docs_searched": total_processed,
+                "total_idioms_found": len(idiom_doc_counts),
+                "idiom_doc_counts": dict(sorted(idiom_doc_counts.items(), key=lambda x: -x[1])),
+            }, f, ensure_ascii=False, indent=2)
+        logger.info(f"Saved idiom doc counts to {counts_file}")
+
+    if not indices_only:
+        logger.info(f"Output files: {len(writer.chunk_files)} chunks in {output_dir}")
 
     return total_processed, total_matched
 
@@ -989,11 +1043,10 @@ def main():
             continue
 
         # Process mC4 with chunked filtering
-        # Output will be chunked files: mc4_{lang}_filtered_00000.json.gz, etc.
-        output_subdir = args.output_dir / lang
+        output_subdir = args.output_dir if args.indices_only else args.output_dir / lang
 
-        # Clean up existing chunk files if not resuming
-        if not args.resume and output_subdir.exists():
+        # Clean up existing chunk files if not resuming (skip in indices-only mode)
+        if not args.indices_only and not args.resume and output_subdir.exists():
             ext = ".jsonl" if args.no_compress else ".json.gz"
             existing_chunks = list(output_subdir.glob(f"mc4_{lang}_filtered_*{ext}"))
             if existing_chunks:
@@ -1001,19 +1054,12 @@ def main():
                 for chunk_file in existing_chunks:
                     chunk_file.unlink()
 
-        # Determine if we need to save data for index building
-        index_data_dir = None
-        if args.build_index:
-            index_data_dir = args.output_dir / f"mc4_{lang}_raw"
-
         try:
-            # Chunked download + filter: only keeps matching documents
             total_processed, total_matched = download_and_filter_chunked(
                 args,
                 lang=lang,
                 idioms=idioms,
                 output_dir=output_subdir,
-                index_data_dir=index_data_dir,
             )
             results[lang] = {
                 "total_processed": total_processed,
@@ -1025,11 +1071,31 @@ def main():
             results[lang] = {"error": str(e)}
             continue
 
-        # Build local index from FILTERED docs only (much smaller!)
-        if args.build_index and index_data_dir:
+        # In indices-only mode, skip index building and infini-gram analysis
+        if args.indices_only:
+            continue
+
+        # Build local index from filtered chunks
+        if args.build_index:
+            if lang != "en" and args.tokenizer not in MULTILINGUAL_TOKENIZERS:
+                logger.warning(
+                    f"Note: tokenizer '{args.tokenizer}' may not handle {lang} text optimally. "
+                    f"Consider --tokenizer qwen or qwen3 for better multilingual support "
+                    f"(requires infini-gram with u32 token_dtype support)."
+                )
+
             index_dir = get_local_index_dir(args, lang)
+            index_data_dir = args.output_dir / f"mc4_{lang}_index_temp"
 
             logger.info(f"Building index from {total_matched} filtered documents...")
+
+            # Prepare index data from .json.gz chunks
+            prepare_index_data_from_chunks(
+                chunks_dir=output_subdir,
+                output_dir=index_data_dir,
+                lang=lang,
+            )
+
             success = build_local_infinigram_index(
                 data_dir=index_data_dir,
                 index_dir=index_dir,
@@ -1039,6 +1105,11 @@ def main():
                 shards=args.index_shards,
             )
             results[f"{lang}_index"] = {"success": success, "index_dir": str(index_dir)}
+
+            # Clean up temp index data
+            if success and index_data_dir.exists():
+                shutil.rmtree(index_data_dir)
+                logger.info(f"Cleaned up temporary index data: {index_data_dir}")
 
             if not success:
                 continue
@@ -1052,7 +1123,7 @@ def main():
                 logger.info(f"Local infini-gram found {infinigram_result['filtered_idioms']} idioms in corpus")
 
     # Save summary
-    summary_file = args.output_dir / "filtering_summary.json"
+    summary_file = args.output_dir / f"filtering_{lang}_summary.json"
     with open(summary_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 

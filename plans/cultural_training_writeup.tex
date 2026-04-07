@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{natbib}
+\geometry{margin=1in}
+
+\title{Cultural Alignment of Language Models through\\Figurative Language: Continue Pretraining and Instruction Tuning}
+
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a two-stage pipeline for improving the cultural understanding of language models through figurative language. Our approach currently targets English and Chinese, with planned extensions to Hindi and Arabic, by leveraging large-scale idiom datasets ($\sim$21K English, $\sim$28K Chinese idioms with figurative and literal meanings) together with cultural context data from CultureBank ($\sim$23K entries). In the first stage, we filter and deduplicate the C4/mC4 corpus to extract high-quality documents containing culturally meaningful idioms, cap per-idiom document frequency to ensure broad coverage, and augment documents with idiom metadata tags exposing literal and figurative meanings. In the second stage, we systematically generate culture-focused instruction tuning QA pairs by combining CultureBank cultural contexts with idiom knowledge, producing training examples that require understanding the cultural aspects behind figurative meanings. We describe the data construction methodology for both stages, discuss our plans for extending the pipeline to Hindi and Arabic, and outline our evaluation plan on cultural benchmarks.
+\end{abstract}
+
+\section{Introduction}
+
+Language models trained on large web corpora acquire broad linguistic competence but often lack deep understanding of culture-specific behaviors, norms, and values. Figurative language---idioms, proverbs, and metaphorical expressions---encodes cultural knowledge in ways that literal text does not. An idiom's figurative meaning frequently reflects historical attitudes, social norms, and philosophical worldviews unique to its culture of origin. For instance, the Chinese chengyu ``pao zhuan yin yu'' (throw a brick to attract jade) encodes a Confucian ethic of humility and collective improvement, while the English idiom ``pull yourself up by your bootstraps'' reflects an Anglo-American emphasis on individual self-reliance. These figurative meanings are cultural artifacts, and a model that understands them gains access to a layer of cultural reasoning that surface-level language competence alone cannot provide.
+
+We propose a two-stage training pipeline that systematically injects such cultural knowledge into language models. The first stage, continue pretraining, exposes the model to a large volume of natural text containing idioms in context, augmented with explicit meaning annotations. The second stage, instruction tuning, trains the model to reason about the cultural aspects behind figurative meanings in realistic cultural scenarios. Our pipeline operates independently per language---English prompts and idioms for English culture, Chinese prompts and chengyu for Chinese culture---to avoid cross-cultural contamination and ensure each language's cultural knowledge is learned on its own terms. While our current implementation covers English and Chinese, the pipeline is designed to be language-agnostic, and we plan to extend it to Hindi and Arabic, two languages with rich figurative traditions (Hindi muhavare and Arabic amthal) and distinct cultural value systems.
+
+\section{Data Resources}
+
+Our pipeline draws on three primary data sources. The first is a pair of comprehensive idiom datasets: approximately 21K English idioms with figurative meanings, sourced from multiple dictionaries and filtered to retain only entries with non-trivial figurative content, and approximately 28K Chinese chengyu with figurative meanings and classical source citations. Each idiom entry contains the idiom text, a list of key conceptual entities, literal meanings (often with classical source quotations for Chinese), and figurative meanings. Trivial English entries---single common words, basic grammatical constructions, and phrases understood literally without cultural context---are removed using a combination of heuristic filtering (requiring non-empty figurative meanings) and LLM-based classification.
+
+The second data source is CultureBank~\citep{shi2024culturebank}, which provides approximately 23K cultural context entries extracted from social media (Reddit and TikTok). Each entry describes a cultural behavior with structured fields including cultural group, setting, topic, observed behavior, goals, and a rich natural-language description. We filter CultureBank by language: for English we retain entries whose cultural group matches ``English'' (88 entries), and for Chinese those matching ``Chinese'' (365 entries), ensuring that the cultural contexts align with the target culture rather than introducing unrelated cultural scenarios.
+
+The third data source is the C4 corpus~\citep{raffel2020exploring} (English: $\sim$365M documents) and its multilingual counterpart mC4 (Chinese subset), which serve as the raw material for continue pretraining.
+
+\section{Stage 1: Continue Pretraining}
+
+The goal of continue pretraining is to expose the model to a large volume of natural text in which idioms appear in authentic contexts, while ensuring the model can associate each idiom with its figurative meaning. This stage involves three components: document filtering, deduplication with frequency capping, and idiom metadata tagging.
+
+\paragraph{Document filtering.} We filter the C4/mC4 corpus to extract documents containing at least one idiom from our dataset. We stream the full corpus and use Aho-Corasick multi-pattern matching to test each document against all $\sim$21K English or $\sim$28K Chinese idiom patterns simultaneously in a single pass, with case-insensitive matching for English. Given the scale of the English C4 corpus ($\sim$365M documents), we partition the workload across multiple SLURM jobs using document offset resumption, achieving a processing rate of approximately 50K documents per minute. During filtering, we also accumulate per-idiom document counts that record how many documents contain each idiom, which feed into the subsequent deduplication and frequency capping stage. Additionally, our pipeline supports an infini-gram~\citep{liu2024infinigram} mode that indexes the filtered corpus and enables efficient per-idiom frequency counting and targeted document extraction without re-scanning the full dataset.
+
+\paragraph{Deduplication and frequency capping.} A naive filtering approach produces a heavily skewed distribution: common idioms containing high-frequency words (e.g., ``hand,'' ``heart,'' ``time'' in English, or ``xin'' (heart), ``ren'' (person), ``tian'' (sky) in Chinese) appear in hundreds of thousands of documents, while rare idioms may appear in only a handful. Training on this skewed distribution would cause the model to over-attend to common idioms while neglecting rare, culturally specific ones. To address this, we perform per-idiom frequency capping at a maximum of 10,000 documents per idiom. When an idiom appears in more than 10,000 documents, we select a high-quality subset by prioritizing documents where the idiom appears in meaningful context (not in lists, dictionary entries, or metadata), the document is of sufficient length to provide contextual richness, and the document is not a near-duplicate of other selected documents. Near-duplicate detection uses hash-based comparison on the first 500 characters. By capping frequent idioms while retaining all documents for rare ones, we ensure broad and balanced coverage across the full idiom vocabulary.
+
+\paragraph{Idiom metadata tagging.} A key component of our continue pretraining approach is augmenting filtered documents with structured idiom metadata. When a document contains one or more idioms from our dataset, we append a knowledge block to the document text that lists each detected idiom along with its figurative and literal meanings from our idiom dataset. For Chinese chengyu, this includes classical source citations. This tagging serves two purposes. First, it creates explicit meaning associations: the model learns to connect each idiom with its figurative meaning through co-occurrence in the training data, rather than relying solely on contextual inference. Second, it injects cultural knowledge: the contrast between literal and figurative meanings exposes the model to the cultural reasoning behind figurative expressions---why a culture chose a particular image or metaphor to express a given concept.
+
+\section{Stage 2: Instruction Tuning}
+
+After continue pretraining, we fine-tune the model on instruction-following data that requires cultural reasoning about figurative language. We implement a systematic generation pipeline that combines CultureBank cultural contexts with idiom knowledge to produce QA pairs, operating independently for each language.
+
+\paragraph{Idiom assignment via shuffled pool.} Rather than attempting keyword-based or embedding-based matching between idioms and cultural contexts---which produces poor results due to the semantic gap between idiom surface forms and cultural topics---we adopt a shuffled pool strategy. All idioms are shuffled into a random pool, and for each CultureBank context we draw $N$ idioms (default $N=10$) from the pool. Each drawn idiom is consumed and never reused, guaranteeing that every idiom appears at most once across the entire dataset and maximizing coverage of the idiom corpus. All $N$ idioms, together with their full figurative and literal meanings, are provided to the generating LLM as a cultural knowledge context block. The LLM then selects those whose figurative meanings are most closely related to the cultural scenario and incorporates the cultural aspects behind those meanings into the generated answer.
+
+\paragraph{Answer types and prompt design.} We generate three types of QA pairs, distributed via round-robin with slight randomization for diversity. The first type, \textit{cultural behavior explanation}, presents a question about why a cultural group behaves a certain way; the answer explains the cultural logic and draws on the cultural aspects behind relevant figurative meanings to illustrate deeper patterns. The second type, \textit{cultural value analysis}, asks about deeper cultural values or worldview; the answer identifies core values and explains how the cultural aspects behind relevant figurative meanings encode those values. The third type, \textit{cultural norm reasoning}, presents a scenario requiring reasoning about unwritten cultural rules; the answer identifies governing norms and uses the cultural aspects behind relevant figurative meanings to explain why they exist.
+
+Each prompt contains the full CultureBank context (cultural group, setting, topic, observed behavior, goals, relationships, and natural-language description), the idiom knowledge block with all $N$ idioms and their meanings, and task-specific generation instructions. Crucially, the prompts instruct the LLM to focus on the cultural aspects \textit{behind} the figurative meanings---what attitudes, history, or worldview they reveal---rather than merely quoting or defining idioms. For English, the system prompt identifies the generator as an expert in English-speaking cultures. For Chinese, the system prompt identifies the generator as a Chinese culture expert (Chinese culture expert) and explicitly requires pure Chinese output with no English mixing, even though some CultureBank input fields are in English; cultural group names are translated accordingly.
+
+\paragraph{Output format.} Each generated example contains three fields for instruction tuning: an \texttt{instruction} field containing a culture-specific system prompt plus the full idiom knowledge block (serving as the context the trained model will see at inference time), an \texttt{input} field containing the generated cultural question, and an \texttt{output} field containing the generated cultural explanation grounded in the figurative meanings' cultural aspects. Generated examples undergo validation including JSON parsing, non-empty and distinct input/output checks, and minimum length thresholds, with failed generations excluded from the final dataset.
+
+\section{Evaluation Plan}
+
+We plan to evaluate the trained model on several cultural benchmarks to assess whether the two-stage pipeline improves culture-related understanding and reasoning. These include the CultureBank evaluation suite, which measures agreement between model responses and established cultural norms using held-out evaluation questions and personas; cultural natural language inference tasks requiring cultural knowledge for correct entailment judgments; the World Value Survey, which tests alignment with cultural value distributions across different populations; and direct evaluation of figurative meaning comprehension in both languages, measuring whether the model can correctly identify and explain the cultural significance of idioms encountered in novel contexts.
+
+\section{Extension to Hindi and Arabic}
+
+While our current implementation focuses on English and Chinese, the pipeline is designed to generalize to additional languages. We plan to extend coverage to Hindi and Arabic, two languages with rich figurative traditions and cultural contexts that are underrepresented in current language model training. Hindi possesses a wealth of muhavare (idioms) and lokoktiyan (proverbs) that encode South Asian cultural values around family hierarchy, dharma, and social obligation, while Arabic amthal (proverbs) and kinayat (figurative expressions) reflect cultural norms rooted in Islamic tradition, tribal honor codes, and the centrality of hospitality.
+
+For both languages, the extension follows the same methodology. First, we will compile idiom datasets with figurative and literal meanings from established dictionaries and linguistic resources. Second, we will filter the corresponding mC4 language subsets using the same Aho-Corasick matching and per-idiom frequency capping strategy. Third, we will construct instruction tuning data using CultureBank entries filtered to Hindi- and Arabic-speaking cultural groups, with prompts written natively in each language. The language-agnostic design of our pipeline---shuffled idiom pools, culture-specific system prompts, and per-language CultureBank filtering---means that adding a new language requires only the idiom dataset, the mC4 subset, and native-language prompt templates, with no changes to the core infrastructure.
+
+\section{Conclusion}
+
+We have presented a two-stage pipeline for cultural alignment of language models through figurative language. The continue pretraining stage provides broad, balanced exposure to idioms in natural context with explicit meaning annotations, while the instruction tuning stage trains the model to reason about the cultural aspects encoded in figurative meanings. By operating independently per language, capping per-idiom document frequency for balanced coverage, tagging documents with structured idiom metadata, and generating culture-grounded instruction data that focuses on the cultural reasoning behind figurative expressions, our approach provides a principled methodology for injecting cultural knowledge into language models. With English and Chinese as our initial targets and planned extensions to Hindi and Arabic, the pipeline aims to improve cultural understanding across a diverse set of linguistic and cultural traditions.
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{9}
+\bibitem[Shi et al.(2024)]{shi2024culturebank}
+Shi, W., Qiu, R., et al.
+\newblock CultureBank: An Online Community-Driven Knowledge Base Towards Culturally Aware Language Technologies.
+\newblock \textit{arXiv preprint arXiv:2404.15238}, 2024.
+
+\bibitem[Liu et al.(2024)]{liu2024infinigram}
+Liu, J., Zhu, Z., et al.
+\newblock Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens.
+\newblock \textit{arXiv preprint arXiv:2401.02067}, 2024.
+
+\bibitem[Raffel et al.(2020)]{raffel2020exploring}
+Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., \& Liu, P.~J.
+\newblock Exploring the limits of transfer learning with a unified text-to-text transformer.
+\newblock \textit{Journal of Machine Learning Research}, 21(140):1--67, 2020.
+\end{thebibliography}
+
+\end{document}
