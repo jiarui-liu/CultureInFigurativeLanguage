@@ -1,0 +1,10 @@
+{
+  "hi_proverbs": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train",
+    "columns": { "prompt": "text" }
+  },
+  "zh_chengyu": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh",
+    "columns": { "prompt": "text" }
+  }
+}
