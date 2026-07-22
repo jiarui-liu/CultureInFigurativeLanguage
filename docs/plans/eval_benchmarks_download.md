@@ -148,9 +148,49 @@ reference-guided (see the eval README).
 | Agrawal et al. 2018 (LREC `L18-1048`) en↔7 Indian-lang idioms | **[INSPECT]** no confirmed download | read PDF `aclanthology.org/L18-1048.pdf` for availability, or contact IIIT-H LTRC |
 | Thakre et al. 2018 (Hi→En idiomatic sentences) | **[INSPECT]** no public dataset found | small journal paper; no repo located |
 
-Practical path: pull idiom-bearing English sentences from **MAGPIE** (or your own
-English idiom KB under `culture/data/idioms/en/`), optionally attach Hindi
-references from **Samanantar**, and write them to `data/eval/hi/idiomce_hi.jsonl`.
+### Construction procedure (what we actually build)
+
+Since IdiomCE's own eval set is unreleased, we build a **functionally-equivalent**
+En→Hi idiomatic-translation eval from the project's own English idiom KB. The task
+is unchanged: *an English sentence containing an idiom → model translates to Hindi
+→ OpenAI judge rates idiomatic adequacy* (reference-less, like the IdiomCE paper).
+
+Implemented by **`src/culture/evaluation/build_idiomce_eval.py`**. Steps:
+
+1. **Load** the English idiom KB
+   (`culture/data/idioms/en/idioms_merged_llm_formatted_figurative_only.jsonl`),
+   fields `idiom`, `figurative_meanings`, `literal_meanings`.
+2. **Filter** to idioms with a non-empty figurative meaning and ≥2 words (drops
+   trivial single-word entries), and de-duplicate by idiom text.
+3. **Deterministically sample** `--num_samples` idioms (fixed `--seed`).
+4. **Generate one English sentence per idiom** with an LLM (`ChatModel`): a natural,
+   realistic sentence that *uses* the idiom figuratively **without explaining it**.
+5. **Validate** that the generated sentence actually contains the idiom (lenient,
+   inflection-tolerant content-word match) and meets a min-length check; failures
+   are dropped (or kept with a flag) and counted.
+6. **(optional) `--add_reference`** — generate an idiomatic Hindi reference with the
+   LLM so the judge can run reference-guided. This reference is *LLM-generated, not
+   gold* — it anchors the judge but is not ground truth; omit it to stay strictly
+   reference-less like the paper.
+7. **Write** `data/eval/hi/idiomce_hi.jsonl` in the schema above (`source`,
+   `idiom_en`, `figurative_meaning`, optional `reference`), plus a run report
+   (requested / generated / validation-failure counts).
+
+```bash
+# ~500 items via GPT-4o, reference-less (paper-faithful):
+python -m culture.evaluation.build_idiomce_eval \
+    --idiom_path culture/data/idioms/en/idioms_merged_llm_formatted_figurative_only.jsonl \
+    --output_path data/eval/hi/idiomce_hi.jsonl \
+    --num_samples 500 --model gpt-4o --provider openai
+
+# add an LLM-generated Hindi reference for reference-guided judging:
+python -m culture.evaluation.build_idiomce_eval --num_samples 500 --add_reference
+```
+
+**Alternative source (no generation):** instead of generating sentences, you can
+pull real idiom-bearing English sentences from **MAGPIE** and write them to the
+same schema; optionally attach Hindi references from **Samanantar**. The generator
+above is the recommended path because it reuses assets already in this repo.
 
 > **Do not use** `github.com/amazon-science/idiom-mt` — it is a German–English
 > idiom set (Fadaee et al. 2018), unrelated to IdiomCE.

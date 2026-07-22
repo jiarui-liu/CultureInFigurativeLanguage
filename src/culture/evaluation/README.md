@@ -73,10 +73,18 @@ prompt	solution0	solution1	label
 ```
 
 ### `idiomce` — JSONL (reference-less judging)
-One English idiom sentence per line; `reference`/`idiom_en`/`idiom_hi` optional
-(a reference makes the judge reference-guided). Source the sentences from the
-IdiomCE resources (Agrawal et al. 2018 / Thakre et al. 2018 idiom sets, or the
-IdiomCE paper's eval sentences, arXiv 2505.21937).
+IdiomCE's own set is unreleased, so **build it from the project's English idiom KB**
+with `build_idiomce_eval.py` (procedure documented in
+[`docs/plans/eval_benchmarks_download.md`](../../../docs/plans/eval_benchmarks_download.md) §4):
+```bash
+python -m culture.evaluation.build_idiomce_eval \
+    --idiom_path culture/data/idioms/en/idioms_merged_llm_formatted_figurative_only.jsonl \
+    --output_path data/eval/hi/idiomce_hi.jsonl \
+    --num_samples 500 --model gpt-4o --provider openai
+# add --add_reference for an (LLM-generated, non-gold) Hindi reference
+```
+Output schema (one English idiom sentence per line; `reference`/`idiom_en` optional
+— a reference makes the judge reference-guided):
 ```json
 {"source": "Don't count your chickens before they hatch.", "idiom_en": "count your chickens before they hatch", "reference": "..."}
 ```
