@@ -33,3 +33,10 @@ htmlcov/
 *.err
 *.out
 
+.eval_deps/
+.nbdeps/
+.jupyterprefix/
+
+# wandb run artifacts
+logs/wandb/
+**/wandb/

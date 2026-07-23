@@ -16,6 +16,7 @@ import json
 import logging
 import os
 import random
+import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
@@ -66,6 +67,9 @@ class GenTask:
 MABL_TEMPLATE = "वाक्य: {startphrase}\nइसका अर्थ है:"          # "Sentence: ...\nIt means:"
 GLOBAL_PIQA_TEMPLATE = "प्रश्न: {goal}\nउत्तर:"                # "Question: ...\nAnswer:"
 MILU_TEMPLATE = "प्रश्न: {question}\n{options_block}\nउत्तर:"    # "Question:\n<A. ..>\nAnswer:"
+# Dimension 2 (general English, forgetting check) — English templates.
+MMLU_TEMPLATE = "Question: {question}\n{options_block}\nAnswer:"
+BOOLQ_TEMPLATE = "{passage}\nQuestion: {question}?\nAnswer:"
 IDIOMCE_FEWSHOT = [
     ("It's raining cats and dogs outside.", "बाहर मूसलाधार बारिश हो रही है।"),
     ("Don't beat around the bush, tell me the truth.", "इधर-उधर की बात मत करो, मुझे सच बताओ।"),
@@ -112,6 +116,11 @@ def _resolve_gold_index(raw: Any, options: List[str]) -> int:
         return i - 1 if i >= len(options) else i
     if len(s) == 1 and s.upper() in LETTERS:
         return LETTERS.index(s.upper())
+    # MILU-style "optionN" / "option_N" (1-based) — the ai4bharat/MILU `target` field.
+    m = re.fullmatch(r"option[_\s]?(\d+)", s, flags=re.I)
+    if m:
+        i = int(m.group(1))
+        return i - 1 if i >= 1 else i
     # Match against option text.
     for i, opt in enumerate(options):
         if opt.strip() == s:
@@ -248,6 +257,87 @@ def load_milu(data_path: str, num_fewshot: int = 5, limit: Optional[int] = None,
 
 
 # --------------------------------------------------------------------------- #
+# Dimension 2 — general English (forgetting check): MMLU + BoolQ.
+# Scored with the same base-model log-likelihood path as the Hindi MC tasks, so
+# they load Qwen3.5 via the project's HFModel (transformers 5.6) rather than an
+# external harness.
+# --------------------------------------------------------------------------- #
+def load_mmlu(data_path: Optional[str] = None, num_fewshot: int = 0,
+              limit: Optional[int] = None, seed: int = 42,
+              hf_config: str = "all") -> MCTask:
+    """MMLU (0-shot by default). MMLU-style: score the answer letter (A/B/C/D)."""
+    rng = random.Random(seed)
+    if data_path:
+        rows = _read_rows(data_path)
+    else:
+        rows = _load_hf("cais/mmlu", split="test", config=hf_config)
+
+    def parse(row, i):
+        question = _first(row, ["question", "Question"])
+        opts = _first(row, ["choices", "options"])
+        if isinstance(opts, str):
+            opts = json.loads(opts)
+        opts = [str(o) for o in opts]
+        gold = _resolve_gold_index(_first(row, ["answer", "target", "label", "gold"]), opts)
+        return question, opts, gold, str(_first(row, ["id", "qid"], i)), \
+            _first(row, ["subject", "domain"], "")
+
+    parsed = [parse(r, i) for i, r in enumerate(rows)]
+
+    def block(q, opts):
+        lines = "\n".join(f"{LETTERS[j]}. {o}" for j, o in enumerate(opts))
+        return MMLU_TEMPLATE.format(question=q, options_block=lines)
+
+    prefix = ""
+    if num_fewshot > 0:
+        shots = rng.sample(parsed, min(num_fewshot, len(parsed)))
+        prefix = "".join(f"{block(q, o)} {LETTERS[g]}\n\n" for q, o, g, _, _ in shots)
+
+    examples = []
+    for q, opts, gold, qid, dom in parsed:
+        ctx = prefix + block(q, opts)
+        examples.append(MCExample(
+            qid=qid, context=ctx,
+            options=[" " + LETTERS[j] for j in range(len(opts))],
+            gold=gold, meta={"subject": dom},
+        ))
+    if limit:
+        examples = examples[:limit]
+    return MCTask(name="mmlu", examples=examples, score_mode="letter")
+
+
+def load_boolq(data_path: Optional[str] = None, num_fewshot: int = 0,
+               limit: Optional[int] = None, seed: int = 42) -> MCTask:
+    """BoolQ (0-shot). Yes/No reading comprehension, scored by continuation."""
+    rng = random.Random(seed)
+    if data_path:
+        rows = _read_rows(data_path)
+    else:
+        rows = _load_hf("google/boolq", split="validation")
+
+    def parse(row, i):
+        passage = _first(row, ["passage", "context"])
+        question = _first(row, ["question"])
+        ans = _first(row, ["answer", "label"])
+        gold = 0 if (ans is True or str(ans).strip().lower() in ("true", "yes", "1")) else 1
+        return passage, question, gold, str(_first(row, ["id", "qid"], i))
+
+    parsed = [parse(r, i) for i, r in enumerate(rows)]
+    templated = [(BOOLQ_TEMPLATE.format(passage=p, question=q), [" Yes", " No"], g)
+                 for p, q, g, _ in parsed]
+    prefix = _mc_fewshot_prefix(templated, num_fewshot, rng)
+
+    examples = []
+    for (p, q, gold, qid) in parsed:
+        ctx = prefix + BOOLQ_TEMPLATE.format(passage=p, question=q)
+        examples.append(MCExample(qid=qid, context=ctx, options=[" Yes", " No"],
+                                  gold=gold, meta={}))
+    if limit:
+        examples = examples[:limit]
+    return MCTask(name="boolq", examples=examples, score_mode="continuation")
+
+
+# --------------------------------------------------------------------------- #
 # IdiomCE (English->Hindi idiomatic translation, generation + judge)
 # --------------------------------------------------------------------------- #
 def load_idiomce(data_path: str, limit: Optional[int] = None,
@@ -314,4 +404,6 @@ LOADERS = {
     "milu": load_milu,
     "global_piqa": load_global_piqa,
     "idiomce": load_idiomce,
+    "mmlu": load_mmlu,
+    "boolq": load_boolq,
 }

@@ -187,10 +187,24 @@ python -m culture.evaluation.build_idiomce_eval \
 python -m culture.evaluation.build_idiomce_eval --num_samples 500 --add_reference
 ```
 
-**Alternative source (no generation):** instead of generating sentences, you can
-pull real idiom-bearing English sentences from **MAGPIE** and write them to the
-same schema; optionally attach Hindi references from **Samanantar**. The generator
-above is the recommended path because it reuses assets already in this repo.
+**Alternative source (no generation):** instead of generating sentences, use
+*real* idiom-bearing English sentences from **MAGPIE**. This is implemented by
+`build_idiomce_from_magpie.py` — purely local, no LLM/network. It keeps
+idiomatic-usage instances (label `i`, high confidence), extracts the PIE sentence
+(`context[2]`, validated via `offsets`), lightly detokenizes it, dedupes to one
+sentence per idiom type, and writes the loader schema **reference-less** (paper-
+faithful). Download MAGPIE first (`git clone https://github.com/hslh/magpie-corpus`).
+
+```bash
+python -m culture.evaluation.build_idiomce_from_magpie \
+    --magpie_path data/eval/hi/_magpie/MAGPIE_filtered_split_random.jsonl \
+    --output_path data/eval/hi/idiomce_hi.jsonl --num_samples 400
+```
+
+The generator (`build_idiomce_eval.py`) is the other path; it reuses the repo's
+English idiom KB but needs that KB mounted + an OpenAI key. **Samanantar** can't
+practically supply references here — MAGPIE's BNC sentences won't appear verbatim
+in it — so the reference-less MAGPIE build above is the recommended offline path.
 
 > **Do not use** `github.com/amazon-science/idiom-mt` — it is a German–English
 > idiom set (Fadaee et al. 2018), unrelated to IdiomCE.

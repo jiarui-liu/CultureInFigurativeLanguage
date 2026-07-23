@@ -32,14 +32,13 @@ from typing import Any, Dict, List
 # Allow `python src/culture/evaluation/run_eval.py` without install.
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from culture.evaluation import judge as judge_mod
 from culture.evaluation.scorer import HFModel
 from culture.evaluation.tasks import LOADERS, GenTask, MCTask
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("culture.eval")
 
-MC_TASKS = {"mabl", "milu", "global_piqa"}
+MC_TASKS = {"mabl", "milu", "global_piqa", "mmlu", "boolq"}
 GEN_TASKS = {"idiomce"}
 
 
@@ -111,6 +110,7 @@ def eval_gen(model: HFModel, task: GenTask, args) -> Dict[str, Any]:
 
     logger.info("Judging %d translations with %s (%s)", len(records),
                 args.judge_model, args.judge_provider)
+    from culture.evaluation import judge as judge_mod  # lazy: only needs openai when judging
     judged = judge_mod.judge_translations(
         records, judge_model=args.judge_model, provider=args.judge_provider,
         batch_size=args.judge_batch_size,
@@ -139,6 +139,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--milu_fewshot_path", default=None, help="MILU validation file for few-shot exemplars.")
     p.add_argument("--global_piqa_path", default=None, help="Local Global PIQA TSV; else HF.")
     p.add_argument("--idiomce_path", default=None)
+    p.add_argument("--mmlu_path", default=None, help="Local MMLU file; else HF cais/mmlu (config all).")
+    p.add_argument("--boolq_path", default=None, help="Local BoolQ file; else HF google/boolq.")
 
     # Prompting / scoring.
     p.add_argument("--num_fewshot", type=int, default=0, help="Few-shot for MABL/Global PIQA.")
@@ -190,6 +192,12 @@ def main():
                                  fewshot_path=args.milu_fewshot_path)
         elif name == "idiomce":
             task = LOADERS[name](args.idiomce_path, limit=args.limit)
+        elif name == "mmlu":
+            task = LOADERS[name](args.mmlu_path, num_fewshot=args.num_fewshot,
+                                 limit=args.limit, seed=args.seed)
+        elif name == "boolq":
+            task = LOADERS[name](args.boolq_path, num_fewshot=args.num_fewshot,
+                                 limit=args.limit, seed=args.seed)
 
         if name in MC_TASKS:
             out = eval_mc(model, task, batch_size=args.batch_size)
