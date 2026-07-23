@@ -128,6 +128,36 @@ base→CPT delta on each task's primary metric — the headline you want is a
 **positive delta on all four** (esp. `mabl` and `idiomce`, the figurative ones),
 which shows the CPT injected Hindi cultural-figurative competence.
 
+## Chinese chengyu CPT (parallel evaluation)
+
+The same module also evaluates the **Chinese chengyu CPT** (`qwen3p5-9b-zh-cpt`
+vs. base Qwen3.5-9B) via four base-model MC / cloze tasks in
+[`tasks_zh.py`](tasks_zh.py) (loaders `chid`, `chengyu_bench`, `cmmlu`, `ccpm`),
+all scored by the same log-likelihood path — **no OpenAI judge**. Plan:
+[`docs/plans/chinese_cpt_evaluation_plan.md`](../../../docs/plans/chinese_cpt_evaluation_plan.md);
+download + schemas: [`eval_benchmarks_download.md`](../../../docs/plans/eval_benchmarks_download.md)
+§§5–8 + [`download_zh.sh`](download_zh.sh).
+
+| Task | Measures | Format | Scoring | Primary |
+|---|---|---|---|---|
+| `chid` | Chengyu cloze | N-way fill-the-blank | log-likelihood | `acc` (raw sum) |
+| `chengyu_bench` | Connotation / appropriateness | 2 binary subtasks | log-likelihood | `acc` |
+| `cmmlu` | China-specific cultural exam QA | 4-choice MMLU-style, 5-shot | log-likelihood (letter) | `acc` |
+| `ccpm` | Classical poetry matching | 4-choice MC | log-likelihood | `acc_norm` |
+
+```bash
+DATA_DIR=data/eval/zh bash src/culture/evaluation/download_zh.sh
+BASE_MODEL=/path/to/Qwen3.5-9B CPT_MODEL=/path/to/qwen3p5-9b-zh-cpt \
+  DATA_DIR=data/eval/zh bash src/culture/evaluation/run_eval_zh.sh
+```
+
+> **Schema caveat.** ChID + CMMLU load from HuggingFace (`thu-coai/chid`,
+> `haonan-li/cmmlu`; neither gated). **Chengyu-Bench (`sofyc/ChengyuBench`) and
+> CCPM (`THUNLP-AIPoet/CCPM`) are GitHub-only** and their exact JSON/JSONL field
+> names were **unverified** (GitHub was unreachable at authoring time) — the
+> loaders are defensive, but **confirm the field/file names after `git clone`** and
+> adjust the aliases in `tasks_zh.py` if needed.
+
 ## Dimensions 1 & 2
 
 ### Dimension 1 — perplexity / bits-per-byte (`perplexity.py`)

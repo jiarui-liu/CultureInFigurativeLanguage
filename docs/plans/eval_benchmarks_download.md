@@ -211,6 +211,160 @@ in it — so the reference-less MAGPIE build above is the recommended offline pa
 
 ---
 
+# Downloading the Chinese evaluation benchmarks
+
+Exact download instructions for the four Chinese idiom/culture benchmarks used by
+`src/culture/evaluation/tasks_zh.py` (loaders `chid`, `chengyu_bench`, `cmmlu`,
+`ccpm`) — the Chinese chengyu CPT analogue of the Hindi Dim-3 tasks. Same
+legend: **[VERIFIED]** confirmed against the live source; **[INSPECT]** confirm
+after download (schema unverified — GitHub was network-blocked at authoring time).
+
+Default local layout (matches `run_eval_zh.sh`, `DATA_DIR=data/eval/zh`), created
+by `src/culture/evaluation/download_zh.sh`:
+
+```
+data/eval/zh/
+├── chid_valid.jsonl     # ChID (optional local copy; else loads from HF)
+├── cmmlu/               # CMMLU repo (optional; else loads from HF)
+├── ChengyuBench/        # git clone sofyc/ChengyuBench   -> --chengyu_bench_dir
+└── CCPM/                # git clone THUNLP-AIPoet/CCPM    -> --ccpm_path <the .jsonl>
+```
+
+All four tasks are base-model MULTIPLE-CHOICE / CLOZE, scored by log-likelihood
+(no OpenAI judge). Neither HF source is gated; **no `HF_TOKEN` required** (export
+one only if you hit HF rate limits). CMMLU is a *script* dataset, so the loader
+passes `trust_remote_code=True` and falls back to the parquet mirror
+`lmlmcat/cmmlu` on newer `datasets`.
+
+One-shot download:
+```bash
+DATA_DIR=data/eval/zh bash src/culture/evaluation/download_zh.sh
+```
+
+---
+
+## 5. ChID (chengyu cloze) — `chid`
+
+**Source:** HF `thu-coai/chid` (Zheng et al., ACL 2019, arXiv 1906.01265); also
+`load_dataset("clue", "chid")`. Openly downloadable (Apache-2.0). **[VERIFIED]**
+from the dataset card.
+
+- **Splits:** `train` / `validation` / `test`; use **`validation`** — it carries
+  gold answers. (The loader default is `hf_split="validation"`.)
+- **Schema [INSPECT]:** the HF viewer shows a single `text` column whose value is a
+  **JSON object** with `candidates` (list of 10 candidate chengyu) and `content`
+  (list of passage strings). Blanks are inline markers `#idiomNNNNNN#` (e.g.
+  `#idiom000000#`); a passage may contain several. The gold field is not shown in
+  the viewer — the original ChID release uses `groundTruth` (list of idiom strings,
+  aligned to the blanks in order); CLUE-chid uses `answers`/`answer`. The loader
+  (`tasks_zh.load_chid`) is defensive across all of these and also unwraps the
+  `text`-JSON column automatically.
+
+> Note: the task brief said "7-way", but the live `thu-coai/chid` has **10
+> candidates** per blank. The loader uses `len(candidates)`, so either works.
+
+```python
+from datasets import load_dataset
+ds = load_dataset("thu-coai/chid", split="validation")
+print(ds.features)                    # confirm content/candidates/groundTruth
+ds.to_json("data/eval/zh/chid_valid.jsonl", force_ascii=False, lines=True)
+```
+
+**Scoring:** for each blank, split the passage into LEFT / RIGHT (other blanks in
+the same passage → `____`); context = LEFT, continuation = `candidate + RIGHT`
+(no leading space; Chinese is unspaced). All candidates are 4-char chengyu with an
+identical RIGHT, so **`acc` (raw summed log-prob) is the primary metric** (RIGHT
+cancels in the arg-max). `score_mode="continuation"` — both `acc` and `acc_norm`
+are emitted; read `acc`.
+
+---
+
+## 6. Chengyu-Bench (connotation + appropriateness) — `chengyu_bench`
+
+**Source:** GitHub `sofyc/ChengyuBench` (arXiv 2506.18105). `git clone`-only
+(JSON files). **[INSPECT] — schema UNVERIFIED:** GitHub was network-blocked at
+authoring time, so the exact JSON field/file names could not be confirmed. The
+loader (`tasks_zh.load_chengyu_bench`) is written defensively from the paper's
+task descriptions; **confirm the real names after cloning** and adjust the field
+aliases / label maps in `tasks_zh.py` (`_CHENGYU_BENCH_ALIASES`,
+`_connotation_gold`, `_appropriateness_gold`) if they differ.
+
+```bash
+git clone https://github.com/sofyc/ChengyuBench.git data/eval/zh/ChengyuBench
+ls data/eval/zh/ChengyuBench        # <-- confirm file names + open one to see fields
+```
+
+Two binary subtasks (pick one via `--chengyu_bench_subtask`):
+
+- **`connotation`** — an item has an idiom + a positive/negative label. Template
+  `成语「{idiom}」的感情色彩是：`, options `[" 褒义", " 贬义"]` (positive / negative),
+  gold from the label. Idiom aliases: `idiom/chengyu/word/成语/query`; label
+  aliases: `label/connotation/sentiment/polarity/感情色彩/answer`.
+- **`appropriateness`** — a passage with the target idiom marked (e.g. `##idiom##`)
+  + a correct/wrong label. Template `{passage}\n上文中成语的使用是否恰当？答：`,
+  options `[" 恰当", " 不恰当"]`. Passage aliases: `passage/content/sentence/text/context`;
+  label aliases: `label/appropriate/correct/恰当/answer`.
+
+The loader finds the subtask file by name (any json/jsonl whose name contains a
+subtask keyword) under `--chengyu_bench_dir`; or pass a specific file as
+`data_path`. `score_mode="continuation"`.
+
+---
+
+## 7. CMMLU (China-specific cultural subjects) — `cmmlu`
+
+**Source:** HF `haonan-li/cmmlu` (Li et al., 2023). Not gated. **[VERIFIED]** —
+67 subject configs, `dev` + `test` splits; **script dataset → `trust_remote_code`**.
+
+- **Columns:** `Question, A, B, C, D, Answer` (Answer is a letter). MMLU-style.
+- **Default subjects (16 China-specific):** `ancient_chinese, chinese_history,
+  chinese_literature, chinese_civil_service_exam, chinese_driving_rule,
+  chinese_food_culture, chinese_foreign_policy, chinese_teacher_qualification,
+  construction_project_management, elementary_chinese, elementary_commonsense,
+  ethnology, high_school_politics, modern_chinese, traditional_chinese_medicine,
+  marxist_theory` — override with `--cmmlu_subjects a,b,c`.
+- **Few-shot** exemplars come from each subject's own `dev` split (5-shot default,
+  `--cmmlu_num_fewshot`), so there is no test leakage.
+
+Loads live at eval time; to pre-download the whole repo:
+```bash
+huggingface-cli download haonan-li/cmmlu --repo-type dataset \
+  --local-dir data/eval/zh/cmmlu
+```
+```python
+from datasets import load_dataset
+ds = load_dataset("haonan-li/cmmlu", "ancient_chinese", split="test",
+                  trust_remote_code=True)
+print(ds.features)                    # Question, A, B, C, D, Answer
+```
+
+> If the script loader breaks on a newer `datasets`, the loader auto-falls back to
+> the parquet mirror `lmlmcat/cmmlu`. Scored by log-likelihood on the answer
+> **letter** (`score_mode="letter"`), so `acc == acc_norm`.
+
+---
+
+## 8. CCPM (Chinese Classical Poetry Matching) — `ccpm`
+
+**Source:** GitHub `THUNLP-AIPoet/CCPM` (Li et al., 2021, arXiv 2106.01979).
+`git clone`-only (JSONL). **[INSPECT]** — GitHub was network-blocked at authoring
+time; the schema below is per the paper and could not be verified live.
+
+- **Schema (per line):** `{"translation": <modern paraphrase>, "choices": [4
+  classical lines], "answer": <index>}`.
+
+```bash
+git clone https://github.com/THUNLP-AIPoet/CCPM.git data/eval/zh/CCPM
+ls data/eval/zh/CCPM                 # <-- confirm the JSONL path (e.g. data/test.jsonl)
+```
+
+Point the loader at the JSONL with `--ccpm_path data/eval/zh/CCPM/<...>.jsonl`.
+Template `现代文：{translation}\n对应的诗句是：`, options `[" " + line]`, gold =
+`answer` index. Options differ in length → **`acc_norm`** is the fair metric
+(`score_mode="continuation"`).
+
+---
+
 ## Environment caveats (for reproducing this doc's verification)
 
 Verified against reachable sources (HuggingFace card/files, arXiv, the SEACrowd
