@@ -166,26 +166,70 @@ def _chid_split(passage: str, matches: List[re.Match], k: int) -> tuple:
     return left, right
 
 
-def load_chid(data_path: Optional[str] = None, num_fewshot: int = 0,
-              limit: Optional[int] = None, seed: int = 42,
+def _load_chid_answers(path: str):
+    """Load a ChID answer file → dict {blank_tag: gold} or ordered list [gold, ...].
+
+    The original ChID release (GitHub ``chujiezheng/ChID-Dataset``) ships gold
+    labels SEPARATELY from the passages: a ``*_answer.json`` (dict keyed by the
+    numbered blank tag, e.g. ``{"#idiom000000#": 3}``) or a ``*_answer.csv``
+    (rows ``tag,index`` — or a single ``index`` column in blank order).
+    """
+    ext = os.path.splitext(path)[1].lower()
+    if ext == ".csv":
+        d, flat = {}, []
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                parts = [p.strip() for p in line.split(",")]
+                if len(parts) >= 2:
+                    d[parts[0]] = parts[1]
+                elif parts:
+                    flat.append(parts[0])
+        return d or flat
+    with open(path, encoding="utf-8") as f:
+        if ext == ".jsonl":
+            items = [json.loads(l) for l in f if l.strip()]
+            if items and all(isinstance(x, dict) for x in items):
+                merged = {}
+                for x in items:
+                    merged.update(x)
+                return merged
+            return items
+        return json.load(f)                        # dict {tag: gold} or list [gold, ...]
+
+
+def load_chid(data_path: Optional[str] = None, answer_path: Optional[str] = None,
+              num_fewshot: int = 0, limit: Optional[int] = None, seed: int = 42,
               hf_repo: str = "thu-coai/chid", hf_split: str = "validation") -> MCTask:
     """ChID chengyu cloze. One :class:`MCExample` per blank.
 
     For each blank we split the passage into LEFT / RIGHT; the context is LEFT and
     each option's continuation is ``candidate + RIGHT`` (no leading space — Chinese
-    text is unspaced, so the idiom must sit flush against LEFT). All candidates are
+    text is unspaced, so the idiom must sit flush against LEFT). Candidates are
     4-char chengyu sharing the identical RIGHT, so the RIGHT log-prob cancels in
     the arg-max: **``acc`` (raw summed log-prob) is the primary metric**, hence
     ``score_mode="continuation"`` (which also reports ``acc_norm``).
 
-    Uses HF ``thu-coai/chid`` (``validation`` split, which carries gold answers)
-    unless ``data_path`` points at a local jsonl in the same schema.
+    Gold source (in priority order):
+    - ``answer_path``: a separate ChID answer file (dict keyed by blank tag, or an
+      ordered list) — REQUIRED for a scorable eval, because the HF mirror
+      ``thu-coai/chid`` ships **no** gold in any split. Get it from the original
+      ``chujiezheng/ChID-Dataset`` (``*_answer.json`` / ``*_answer.csv``).
+    - else in-row ``groundTruth`` (some local dumps carry it).
+
+    ``candidates`` may be a single shared list (the ChID competition format; one
+    index per blank into that list) or a list-of-lists (per-blank candidates).
     """
     rng = random.Random(seed)
     rows = _read_rows(data_path) if data_path else _load_hf(hf_repo, split=hf_split)
+    answer_map = _load_chid_answers(answer_path) if answer_path else None
+    ans_is_dict = isinstance(answer_map, dict)
 
-    parsed: List[tuple] = []                       # (left, options, gold, qid)
+    parsed: List[tuple] = []                        # (left, options, gold, qid)
     n_missing = 0
+    gblank = 0                                      # global blank index (list-mode answers)
     for i, row in enumerate(rows):
         row = _chid_unwrap(row)
         content = _first(row, ["content", "passage", "sentence"])
@@ -194,27 +238,41 @@ def load_chid(data_path: Optional[str] = None, num_fewshot: int = 0,
             cands = json.loads(cands)
         if not content or not cands:
             continue
-        cands = [str(c) for c in cands]
-        passages = content if isinstance(content, list) else [content]
-        golds = _chid_golds(row)
+        per_blank = isinstance(cands[0], list)      # list-of-lists → per-blank candidates
+        if not per_blank:
+            cands = [str(c) for c in cands]
+        in_row_golds = _chid_golds(row)             # fallback when no answer_map
         rid = str(_first(row, ["id", "qid", "idx"], i))
-        gi = 0
+        passages = content if isinstance(content, list) else [content]
+        blank_k = 0                                 # blank index within this row
         for p_idx, passage in enumerate(passages):
             matches = list(CHID_BLANK_RE.finditer(passage))
-            for k in range(len(matches)):
-                gold_raw = golds[gi] if gi < len(golds) else None
-                gi += 1
-                gold = _chid_resolve_gold(gold_raw, cands)
+            for m_idx in range(len(matches)):
+                tag = matches[m_idx].group(0)
+                blank_cands = [str(c) for c in cands[blank_k]] if per_blank else cands
+                if answer_map is not None:
+                    gold_raw = (answer_map.get(tag) if ans_is_dict
+                                else (answer_map[gblank] if gblank < len(answer_map) else None))
+                else:
+                    gold_raw = in_row_golds[blank_k] if blank_k < len(in_row_golds) else None
+                gold = _chid_resolve_gold(gold_raw, blank_cands)
                 if gold is None:
                     n_missing += 1
-                    gold = 0                       # no gold (e.g. unlabeled test split)
-                left, right = _chid_split(passage, matches, k)
-                options = [c + right for c in cands]
-                parsed.append((left, options, gold, f"{rid}-{p_idx}-{k}"))
+                    gold = 0
+                left, right = _chid_split(passage, matches, m_idx)
+                options = [c + right for c in blank_cands]
+                parsed.append((left, options, gold, f"{rid}-{p_idx}-{m_idx}"))
+                blank_k += 1
+                gblank += 1
 
+    if parsed and n_missing == len(parsed):
+        raise ValueError(
+            "ChID: no gold answers resolved (all defaulted). thu-coai/chid ships no "
+            "groundTruth; download the original chujiezheng/ChID-Dataset and pass "
+            "--chid_path <dev.json/jsonl> and --chid_answer_path <dev_answer.json/csv>.")
     if n_missing:
-        logger.warning("ChID: %d blank(s) had no resolvable gold (defaulted to 0); "
-                       "use a split with groundTruth (e.g. validation).", n_missing)
+        logger.warning("ChID: %d/%d blank(s) had no resolvable gold (defaulted to 0).",
+                       n_missing, len(parsed))
 
     # Few-shot demonstrations are filled-in passages (LEFT + correct idiom + RIGHT).
     prefix = ""
@@ -359,6 +417,7 @@ def load_chengyu_bench(chengyu_bench_dir: Optional[str] = None,
 # --------------------------------------------------------------------------- #
 def load_cmmlu(subjects: Optional[List[str]] = None, num_fewshot: int = 5,
                limit: Optional[int] = None, seed: int = 42,
+               cmmlu_dir: Optional[str] = None,
                hf_repo: str = "haonan-li/cmmlu",
                fallback_repo: str = "lmlmcat/cmmlu") -> MCTask:
     """CMMLU over the China-specific subject configs, concatenated.
@@ -366,8 +425,14 @@ def load_cmmlu(subjects: Optional[List[str]] = None, num_fewshot: int = 5,
     Mirrors :func:`tasks.load_milu`: score the answer letter (A/B/C/D),
     ``score_mode="letter"``. Few-shot exemplars come from each subject's own
     ``dev`` split (no test leakage). Columns: ``Question, A, B, C, D, Answer``.
-    Loads via ``trust_remote_code=True``; falls back to the parquet mirror
-    ``lmlmcat/cmmlu`` if the script repo fails on newer ``datasets``.
+
+    Data source (in priority order):
+    - ``cmmlu_dir``: **local CSV mode** — reads ``<cmmlu_dir>/test/<subject>.csv``
+      and ``<cmmlu_dir>/dev/<subject>.csv`` directly (the layout produced by
+      ``huggingface-cli download haonan-li/cmmlu``). Use this when the HF *script*
+      loader is unavailable (it is removed in ``datasets>=4.0``).
+    - else HuggingFace via ``trust_remote_code=True``, falling back to the parquet
+      mirror ``lmlmcat/cmmlu`` if the script repo fails.
     """
     rng = random.Random(seed)
     subjects = subjects or list(CMMLU_DEFAULT_SUBJECTS)
@@ -385,8 +450,12 @@ def load_cmmlu(subjects: Optional[List[str]] = None, num_fewshot: int = 5,
 
     examples: List[MCExample] = []
     for subj in subjects:
-        test_rows = _load_hf_trust(hf_repo, "test", subj, fallback_repo)
-        dev_rows = _load_hf_trust(hf_repo, "dev", subj, fallback_repo)
+        if cmmlu_dir:
+            test_rows = _read_rows(os.path.join(cmmlu_dir, "test", f"{subj}.csv"))
+            dev_rows = _read_rows(os.path.join(cmmlu_dir, "dev", f"{subj}.csv"))
+        else:
+            test_rows = _load_hf_trust(hf_repo, "test", subj, fallback_repo)
+            dev_rows = _load_hf_trust(hf_repo, "dev", subj, fallback_repo)
         test_parsed = [parse(r, i, subj) for i, r in enumerate(test_rows)]
         dev_parsed = [parse(r, i, subj) for i, r in enumerate(dev_rows)]
 

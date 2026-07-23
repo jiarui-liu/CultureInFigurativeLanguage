@@ -245,30 +245,38 @@ DATA_DIR=data/eval/zh bash src/culture/evaluation/download_zh.sh
 
 ## 5. ChID (chengyu cloze) — `chid`
 
-**Source:** HF `thu-coai/chid` (Zheng et al., ACL 2019, arXiv 1906.01265); also
-`load_dataset("clue", "chid")`. Openly downloadable (Apache-2.0). **[VERIFIED]**
-from the dataset card.
+**Source:** GitHub `chujiezheng/ChID-Dataset` (Zheng et al., ACL 2019, arXiv
+1906.01265). **[VERIFIED on a live download]** — use this, NOT the HF mirror.
 
-- **Splits:** `train` / `validation` / `test`; use **`validation`** — it carries
-  gold answers. (The loader default is `hf_split="validation"`.)
-- **Schema [INSPECT]:** the HF viewer shows a single `text` column whose value is a
-  **JSON object** with `candidates` (list of 10 candidate chengyu) and `content`
-  (list of passage strings). Blanks are inline markers `#idiomNNNNNN#` (e.g.
-  `#idiom000000#`); a passage may contain several. The gold field is not shown in
-  the viewer — the original ChID release uses `groundTruth` (list of idiom strings,
-  aligned to the blanks in order); CLUE-chid uses `answers`/`answer`. The loader
-  (`tasks_zh.load_chid`) is defensive across all of these and also unwraps the
-  `text`-JSON column automatically.
+> **The HF mirror `thu-coai/chid` ships NO gold answers** in any split
+> (`train`/`validation`/`test` all have only `content` + `candidates`), so it is
+> **not scorable** — a live test found every gold defaulting to 0. `clue/chid` is a
+> dead script dataset. You **must** use the original release, whose gold labels live
+> in a **separate answer file**.
 
-> Note: the task brief said "7-way", but the live `thu-coai/chid` has **10
-> candidates** per blank. The loader uses `len(candidates)`, so either works.
+- **Two files:** a passages file (e.g. `dev.json`) with `content` (passage
+  strings, blanks marked `#idiomNNNNNN#`, e.g. `#idiom000000#`) + `candidates`
+  (10 candidate chengyu, shared per example); and a **separate answer file** (e.g.
+  `dev_answer.json` — a dict `{blank_tag: gold_index}` — or `dev_answer.csv` —
+  rows `tag,index`).
+- **[INSPECT]** exact file names / subdirs vary by release — `ls -R` after clone.
 
-```python
-from datasets import load_dataset
-ds = load_dataset("thu-coai/chid", split="validation")
-print(ds.features)                    # confirm content/candidates/groundTruth
-ds.to_json("data/eval/zh/chid_valid.jsonl", force_ascii=False, lines=True)
+```bash
+git clone https://github.com/chujiezheng/ChID-Dataset.git data/eval/zh/ChID-Dataset
+ls -R data/eval/zh/ChID-Dataset       # find the passages file + its *_answer.* file
 ```
+
+Pass **both** to the loader:
+```bash
+--chid_path data/eval/zh/ChID-Dataset/dev.json \
+--chid_answer_path data/eval/zh/ChID-Dataset/dev_answer.json
+```
+`tasks_zh.load_chid` joins them by blank tag (dict) or by blank order (list/csv),
+unwraps a `text`-JSON column if present, handles shared or per-blank `candidates`,
+and **raises a clear error** (rather than silently scoring 0) if no gold resolves.
+
+> Note: the brief said "7-way", but ChID has **10 candidates** per blank; the
+> loader uses `len(candidates)`, so either works.
 
 **Scoring:** for each blank, split the passage into LEFT / RIGHT (other blanks in
 the same passage → `____`); context = LEFT, continuation = `candidate + RIGHT`
@@ -282,12 +290,10 @@ are emitted; read `acc`.
 ## 6. Chengyu-Bench (connotation + appropriateness) — `chengyu_bench`
 
 **Source:** GitHub `sofyc/ChengyuBench` (arXiv 2506.18105). `git clone`-only
-(JSON files). **[INSPECT] — schema UNVERIFIED:** GitHub was network-blocked at
-authoring time, so the exact JSON field/file names could not be confirmed. The
-loader (`tasks_zh.load_chengyu_bench`) is written defensively from the paper's
-task descriptions; **confirm the real names after cloning** and adjust the field
-aliases / label maps in `tasks_zh.py` (`_CHENGYU_BENCH_ALIASES`,
-`_connotation_gold`, `_appropriateness_gold`) if they differ.
+(JSON files). **[VERIFIED on a live download]** — both subtasks load and score
+(connotation 540 items, appropriateness 572, gold resolves). If a future release
+renames fields, adjust the aliases / label maps in `tasks_zh.py`
+(`_CHENGYU_BENCH_ALIASES`, `_connotation_gold`, `_appropriateness_gold`).
 
 ```bash
 git clone https://github.com/sofyc/ChengyuBench.git data/eval/zh/ChengyuBench
@@ -326,39 +332,41 @@ subtask keyword) under `--chengyu_bench_dir`; or pass a specific file as
 - **Few-shot** exemplars come from each subject's own `dev` split (5-shot default,
   `--cmmlu_num_fewshot`), so there is no test leakage.
 
-Loads live at eval time; to pre-download the whole repo:
+> **Use local-CSV mode.** The `haonan-li/cmmlu` **script loader is removed in
+> `datasets>=4.0`** (confirmed on a live server), so download the CSVs and point the
+> loader at the directory:
 ```bash
 huggingface-cli download haonan-li/cmmlu --repo-type dataset \
   --local-dir data/eval/zh/cmmlu
+# -> data/eval/zh/cmmlu/test/<subject>.csv  and  .../dev/<subject>.csv
 ```
-```python
-from datasets import load_dataset
-ds = load_dataset("haonan-li/cmmlu", "ancient_chinese", split="test",
-                  trust_remote_code=True)
-print(ds.features)                    # Question, A, B, C, D, Answer
-```
-
-> If the script loader breaks on a newer `datasets`, the loader auto-falls back to
-> the parquet mirror `lmlmcat/cmmlu`. Scored by log-likelihood on the answer
-> **letter** (`score_mode="letter"`), so `acc == acc_norm`.
+Then pass `--cmmlu_dir data/eval/zh/cmmlu` — the loader reads
+`<dir>/test/<subject>.csv` (+ `<dir>/dev/<subject>.csv` for few-shot) directly via
+`csv.DictReader`, bypassing the dead HF script. (Without `--cmmlu_dir` it still
+tries HF `trust_remote_code=True` and falls back to the parquet mirror
+`lmlmcat/cmmlu`, but on `datasets>=4.0` prefer the local dir.) Scored by
+log-likelihood on the answer **letter** (`score_mode="letter"`), so
+`acc == acc_norm`.
 
 ---
 
 ## 8. CCPM (Chinese Classical Poetry Matching) — `ccpm`
 
 **Source:** GitHub `THUNLP-AIPoet/CCPM` (Li et al., 2021, arXiv 2106.01979).
-`git clone`-only (JSONL). **[INSPECT]** — GitHub was network-blocked at authoring
-time; the schema below is per the paper and could not be verified live.
+`git clone`-only (JSONL). **[VERIFIED on a live download]** with one caveat below.
 
 - **Schema (per line):** `{"translation": <modern paraphrase>, "choices": [4
   classical lines], "answer": <index>}`.
 
+> **Use `valid.jsonl`** (2,720 items, carries answers). **`test_public.jsonl` is
+> UNLABELED** (competition test set) → not scorable.
+
 ```bash
 git clone https://github.com/THUNLP-AIPoet/CCPM.git data/eval/zh/CCPM
-ls data/eval/zh/CCPM                 # <-- confirm the JSONL path (e.g. data/test.jsonl)
+ls data/eval/zh/CCPM                 # valid.jsonl (labeled) vs test_public.jsonl (unlabeled)
 ```
 
-Point the loader at the JSONL with `--ccpm_path data/eval/zh/CCPM/<...>.jsonl`.
+Point the loader at the labeled JSONL with `--ccpm_path data/eval/zh/CCPM/valid.jsonl`.
 Template `现代文：{translation}\n对应的诗句是：`, options `[" " + line]`, gold =
 `answer` index. Options differ in length → **`acc_norm`** is the fair metric
 (`score_mode="continuation"`).

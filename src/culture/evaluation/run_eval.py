@@ -149,6 +149,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     # Chinese tasks (see docs/plans/eval_benchmarks_download.md + download_zh.sh).
     p.add_argument("--chid_path", default=None, help="Local ChID jsonl; else HF thu-coai/chid (validation).")
+    p.add_argument("--chid_answer_path", default=None,
+                   help="ChID answer file (chujiezheng/ChID-Dataset *_answer.json/csv); "
+                        "REQUIRED for scorable ChID — the HF mirror ships no gold.")
     p.add_argument("--chengyu_bench_dir", default=None,
                    help="Cloned sofyc/ChengyuBench repo dir (Chengyu-Bench).")
     p.add_argument("--chengyu_bench_subtask", default="connotation",
@@ -156,6 +159,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Chengyu-Bench binary subtask.")
     p.add_argument("--cmmlu_subjects", default=None,
                    help="Comma-separated CMMLU subject configs (default: 16 China-specific).")
+    p.add_argument("--cmmlu_dir", default=None,
+                   help="Local CMMLU dir (<dir>/test/<subject>.csv, <dir>/dev/<subject>.csv) "
+                        "from `hf download haonan-li/cmmlu`; bypasses the dead HF script loader.")
     p.add_argument("--ccpm_path", default=None,
                    help="Local CCPM jsonl (git clone THUNLP-AIPoet/CCPM).")
 
@@ -217,7 +223,8 @@ def main():
             task = LOADERS[name](args.boolq_path, num_fewshot=args.num_fewshot,
                                  limit=args.limit, seed=args.seed)
         elif name == "chid":
-            task = LOADERS[name](args.chid_path, num_fewshot=args.num_fewshot,
+            task = LOADERS[name](args.chid_path, answer_path=args.chid_answer_path,
+                                 num_fewshot=args.num_fewshot,
                                  limit=args.limit, seed=args.seed)
         elif name == "chengyu_bench":
             task = LOADERS[name](args.chengyu_bench_dir,
@@ -228,7 +235,7 @@ def main():
             subjects = ([s.strip() for s in args.cmmlu_subjects.split(",") if s.strip()]
                         if args.cmmlu_subjects else None)
             task = LOADERS[name](subjects=subjects, num_fewshot=args.cmmlu_num_fewshot,
-                                 limit=args.limit, seed=args.seed)
+                                 cmmlu_dir=args.cmmlu_dir, limit=args.limit, seed=args.seed)
         elif name == "ccpm":
             task = LOADERS[name](args.ccpm_path, num_fewshot=args.num_fewshot,
                                  limit=args.limit, seed=args.seed)

@@ -15,17 +15,22 @@ CPT_MODEL=${CPT_MODEL:-/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretrain
 
 # --- Local eval data (see download_zh.sh + eval_benchmarks_download.md) -----
 DATA_DIR=${DATA_DIR:-data/eval/zh}
-# ChID: local jsonl if set, else pulled from HF thu-coai/chid (validation).
-CHID_ARGS=()
-[[ -n "${CHID_PATH:-}" ]] && CHID_ARGS+=(--chid_path "$CHID_PATH")
+# ChID: the HF mirror thu-coai/chid ships NO gold, so we need the original
+# chujiezheng/ChID-Dataset, whose answers live in a SEPARATE file. Confirm/adjust
+# these paths after cloning (e.g. dev.json + dev_answer.csv, possibly under a subdir).
+CHID_PATH=${CHID_PATH:-$DATA_DIR/ChID-Dataset/dev.json}
+CHID_ANSWER_PATH=${CHID_ANSWER_PATH:-$DATA_DIR/ChID-Dataset/dev_answer.json}
+CHID_ARGS=(--chid_path "$CHID_PATH" --chid_answer_path "$CHID_ANSWER_PATH")
 # Chengyu-Bench: cloned repo dir + which binary subtask.
 CHENGYU_BENCH_DIR=${CHENGYU_BENCH_DIR:-$DATA_DIR/ChengyuBench}
 CHENGYU_BENCH_SUBTASK=${CHENGYU_BENCH_SUBTASK:-connotation}
-# CCPM: point at the cloned JSONL (confirm the exact file name after git clone).
-CCPM_PATH=${CCPM_PATH:-$DATA_DIR/CCPM/data/test.jsonl}
-# CMMLU: 16 China-specific subjects by default (loader default); override here.
+# CCPM: use valid.jsonl — it carries answers (test_public.jsonl is UNLABELED).
+CCPM_PATH=${CCPM_PATH:-$DATA_DIR/CCPM/valid.jsonl}
+# CMMLU: local CSVs (the HF *script* loader is removed in datasets>=4.0, so read
+# <dir>/test/<subject>.csv + <dir>/dev/<subject>.csv from `hf download`).
+CMMLU_DIR=${CMMLU_DIR:-$DATA_DIR/cmmlu}
 CMMLU_SUBJECTS=${CMMLU_SUBJECTS:-}
-CMMLU_ARGS=()
+CMMLU_ARGS=(--cmmlu_dir "$CMMLU_DIR")
 [[ -n "$CMMLU_SUBJECTS" ]] && CMMLU_ARGS+=(--cmmlu_subjects "$CMMLU_SUBJECTS")
 
 OUT_DIR=${OUT_DIR:-results/zh}

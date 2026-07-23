@@ -24,18 +24,17 @@ pip install "huggingface_hub[cli]" datasets >/dev/null 2>&1 || \
   echo "  (install huggingface_hub[cli] + datasets manually if this failed)"
 
 # --- 1. ChID (chengyu cloze) ----------------------------------------------
-# Loads live from HF thu-coai/chid (validation split carries gold answers).
-# To pre-download / inspect the schema and dump a local jsonl:
-echo "=== 1. ChID (thu-coai/chid) ==="
-python - "$DATA_DIR" <<'PY' || echo "  ChID pre-download skipped (datasets not installed?)"
-import sys
-from datasets import load_dataset
-out = sys.argv[1]
-ds = load_dataset("thu-coai/chid", split="validation")
-print("ChID validation features:", ds.features)
-ds.to_json(f"{out}/chid_valid.jsonl", force_ascii=False, lines=True)
-print(f"Wrote {out}/chid_valid.jsonl")
-PY
+# IMPORTANT: the HF mirror thu-coai/chid ships NO gold answers in ANY split
+# (competition format), so it is not scorable on its own. Use the ORIGINAL
+# chujiezheng/ChID-Dataset, which ships passages + a SEPARATE answer file.
+echo "=== 1. ChID (chujiezheng/ChID-Dataset — gold-bearing) ==="
+if [[ ! -d "$DATA_DIR/ChID-Dataset" ]]; then
+  git clone https://github.com/chujiezheng/ChID-Dataset.git "$DATA_DIR/ChID-Dataset" || \
+    echo "  ChID clone failed (network?). Retry: git clone https://github.com/chujiezheng/ChID-Dataset $DATA_DIR/ChID-Dataset"
+fi
+echo "  After clone, locate the passages + answer file and pass BOTH:"
+echo "    --chid_path <dev.json/jsonl>  --chid_answer_path <dev_answer.json/csv>"
+echo "    (inspect: ls -R $DATA_DIR/ChID-Dataset ; names/subdirs may differ)"
 
 # --- 2. CMMLU (China-specific subjects) -----------------------------------
 # Loads live from HF haonan-li/cmmlu at eval time (trust_remote_code=True). To
@@ -65,12 +64,16 @@ cat <<EOF
 
 === Done. Expected layout ===
 $DATA_DIR/
-├── chid_valid.jsonl              # ChID (optional local copy; else loads from HF)
-├── cmmlu/                        # CMMLU repo (optional; else loads from HF)
+├── ChID-Dataset/                 # git clone chujiezheng/ChID-Dataset (gold-bearing)
+│                                 #   -> --chid_path <dev.json> --chid_answer_path <dev_answer.*>
+├── cmmlu/                        # hf download haonan-li/cmmlu -> --cmmlu_dir (local CSV mode)
+│                                 #   (<dir>/test/<subject>.csv, <dir>/dev/<subject>.csv)
 ├── ChengyuBench/                 # git clone sofyc/ChengyuBench  -> --chengyu_bench_dir
-└── CCPM/                         # git clone THUNLP-AIPoet/CCPM   -> --ccpm_path <the .jsonl>
+└── CCPM/                         # git clone THUNLP-AIPoet/CCPM   -> --ccpm_path <VALID>.jsonl
 
-Confirm the Chengyu-Bench + CCPM file names, then point the loaders at them:
-  ls $DATA_DIR/ChengyuBench
-  ls $DATA_DIR/CCPM
+Confirm exact file names, then point the loaders at them:
+  ls -R $DATA_DIR/ChID-Dataset          # find dev.json + dev_answer.* (gold)
+  ls    $DATA_DIR/cmmlu/test | head     # <subject>.csv files
+  ls    $DATA_DIR/ChengyuBench
+  ls    $DATA_DIR/CCPM                  # use valid.jsonl (has answers), NOT test_public.jsonl
 EOF

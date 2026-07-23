@@ -151,12 +151,20 @@ BASE_MODEL=/path/to/Qwen3.5-9B CPT_MODEL=/path/to/qwen3p5-9b-zh-cpt \
   DATA_DIR=data/eval/zh bash src/culture/evaluation/run_eval_zh.sh
 ```
 
-> **Schema caveat.** ChID + CMMLU load from HuggingFace (`thu-coai/chid`,
-> `haonan-li/cmmlu`; neither gated). **Chengyu-Bench (`sofyc/ChengyuBench`) and
-> CCPM (`THUNLP-AIPoet/CCPM`) are GitHub-only** and their exact JSON/JSONL field
-> names were **unverified** (GitHub was unreachable at authoring time) — the
-> loaders are defensive, but **confirm the field/file names after `git clone`** and
-> adjust the aliases in `tasks_zh.py` if needed.
+> **Data sources (verified on a live download).** All four are `git clone` / local:
+> - **`chid`**: use the original **`chujiezheng/ChID-Dataset`** (gold-bearing) —
+>   pass `--chid_path <dev.json>` **and** `--chid_answer_path <dev_answer.json/csv>`.
+>   The HF mirror `thu-coai/chid` ships **no gold** and is not scorable (the loader
+>   errors rather than scoring all-zero).
+> - **`cmmlu`**: `hf download haonan-li/cmmlu` then `--cmmlu_dir <dir>` (local CSV) —
+>   the HF **script loader is dead on `datasets>=4.0`**.
+> - **`ccpm`**: `--ccpm_path <CCPM>/valid.jsonl` (labeled). `test_public.jsonl` is
+>   unlabeled → not scorable.
+> - **`chengyu_bench`**: `git clone sofyc/ChengyuBench` → `--chengyu_bench_dir`;
+>   both subtasks verified (connotation 540, appropriateness 572).
+>
+> `run_eval_zh.sh` already defaults to these paths under `$DATA_DIR`; confirm exact
+> file names after `git clone` (they can vary by release).
 
 ## Dimensions 1 & 2
 
