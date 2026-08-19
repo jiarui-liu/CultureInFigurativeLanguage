@@ -49,6 +49,9 @@ def main():
     p.add_argument("--hf_text_files", default=None,
                    help="Comma-separated repo-relative .txt paths streamed line-by-line "
                         "(e.g. data/hi-1.txt,data/hi-2.txt). One line = one document.")
+    p.add_argument("--data_files", default=None,
+                   help="Comma-separated data_files globs for load_dataset (e.g. "
+                        "'4_5/000*.parquet,4_5/001*.parquet' for a score-tier subset).")
     p.add_argument("--source_label", required=True)
     p.add_argument("--token_budget", type=int, required=True)
     p.add_argument("--out_dir", required=True)
@@ -82,8 +85,13 @@ def main():
         texts = text_iter()
     else:
         from datasets import load_dataset
-        ds = load_dataset(args.path, args.name, split=args.split, streaming=True,
-                          token=os.environ.get("HF_TOKEN"))
+        df = [g.strip() for g in args.data_files.split(",")] if args.data_files else None
+        if df:
+            ds = load_dataset(args.path, data_files=df, split=args.split, streaming=True,
+                              token=os.environ.get("HF_TOKEN"))
+        else:
+            ds = load_dataset(args.path, args.name, split=args.split, streaming=True,
+                              token=os.environ.get("HF_TOKEN"))
         ds = ds.shuffle(seed=args.seed, buffer_size=args.shuffle_buffer)
         texts = (_text_of(row) for row in ds)
 

@@ -43,7 +43,13 @@ export no_proxy="*" NO_PROXY="*"
 
 BASE_MODEL="/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B"
 CPT_MODEL="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt"
-if [[ "${RUN}" == "base" ]]; then MODEL="${BASE_MODEL}"; else MODEL="${CPT_MODEL}"; fi
+UNF_MODEL="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt-unfiltered"
+case "${RUN}" in
+  base) MODEL="${BASE_MODEL}" ;;
+  cpt) MODEL="${CPT_MODEL}" ;;
+  unfiltered) MODEL="${UNF_MODEL}" ;;
+  *) echo "unknown RUN='${RUN}' (use base|cpt|unfiltered)"; exit 1 ;;
+esac
 
 DATA="${REPO_ROOT}/data/eval/hi"
 OUT="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/hi/${RUN}"

@@ -436,6 +436,13 @@ def load_cmmlu(subjects: Optional[List[str]] = None, num_fewshot: int = 5,
     """
     rng = random.Random(seed)
     subjects = subjects or list(CMMLU_DEFAULT_SUBJECTS)
+    # Sentinel: --cmmlu_subjects all -> every subject present (all 67 in full CMMLU).
+    if [s.lower() for s in subjects] == ["all"]:
+        import glob
+        if not cmmlu_dir:
+            raise ValueError("--cmmlu_subjects all requires --cmmlu_dir (local CSVs).")
+        subjects = sorted(os.path.splitext(os.path.basename(p))[0]
+                          for p in glob.glob(os.path.join(cmmlu_dir, "test", "*.csv")))
 
     def parse(row: Dict[str, Any], i: int, subj: str) -> tuple:
         question = _first(row, ["Question", "question"])

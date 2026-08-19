@@ -18,7 +18,11 @@ unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy; export no_proxy="*" NO_PROX
 export HF_HOME="/tmp/hf_${SLURM_JOB_ID}" TOKENIZERS_PARALLELISM=false TRITON_CACHE_DIR="/tmp/triton_${SLURM_JOB_ID}"
 BASE=/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
 CPT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt
-if [ "$RUN" = base ]; then M="$BASE"; else M="$CPT"; fi
+UNF=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt-unfiltered
+case "$RUN" in
+  base) M="$BASE" ;; cpt) M="$CPT" ;; unfiltered) M="$UNF" ;;
+  *) echo "unknown RUN=$RUN (use base|cpt|unfiltered)"; exit 1 ;;
+esac
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/hi/$RUN/en_gen
 python -m culture.evaluation.run_english_gen --model_path "$M" --run_name "$RUN" \
   --tasks gsm8k,humaneval --gen_batch_size 16 --output_dir "$OUT"
