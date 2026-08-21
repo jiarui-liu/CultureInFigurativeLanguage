@@ -31,6 +31,12 @@
 
 *Gated / inaccessible (not ranked) / 受限或不可访问（未排名）:* `uonlp/CulturaX` (ar), `oscar-corpus/OSCAR-2301` (ar), `BAAI/ArabicText-2022` — all returned 0 rows (gated). Note: earlier shallow sampling had ranked 101B higher; **deep sampling revealed its heavy MT/SEO spam**, hence its drop to last. | 上述均返回 0 行（受限）。注：早期浅层采样曾将 101B 排名更高，深度采样暴露其大量机翻/SEO 垃圾，故降至末位。
 
+**🔄 Refresh — re-verified 2026-07-22 / 更新（2026-07-22 复核）:**
+- **Gating unchanged / 受限状态不变:** `uonlp/CulturaX` (ar), `oscar-corpus/OSCAR-2301` (ar; manual approval "suspended"), and `BAAI/ArabicText-2022` are **all still gated** — the notes above remain accurate. No newer OSCAR release exists (23.01 is the latest). | 三者仍受限（OSCAR-2301 的人工审批"已暂停"），上述结论仍成立；无更新的 OSCAR 版本（23.01 为最新）。
+- **Refreshed public sizes / 公开数据规模更新:** FineWeb-2 `arb_Arab` ≈106 GB parquet (~55M docs); `arabic-billion-words` 5.22M rows / 8.05 GB; `HPLT2.0_cleaned` `ara_Arab` 82.7M rows; C4 `ar` ≈53.3M rows; 101B 33.1M rows / 333 GB. | 已更新各公开集规模（见左）。
+- **New public, ranking-worthy (not yet hands-on sampled) / 新增公开、值得纳入排名（尚未实测抽样）:** **`epfml/FineWeb2-HQ` `arb_Arab`** (5.56M docs / 94 GB, model-quality-filtered top-56% of FineWeb-2 — likely a top-tier clean choice) and **`HuggingFaceFW/finepdfs` `arb_Arab`** (PDF-native text; AraMix found it the most distinctive Arabic source, 98.5% cross-source survival). **HPLT 3.0** (`HPLT/HPLT3.0`, `arb_Arab` + dialect configs) is now the latest HPLT (files hosted off-HF → load via URL-map JSON). | 新增两条值得实测排名的公开集：FineWeb2-HQ（模型质量过滤，或为最干净首选）与 FinePDFs（PDF 原生，跨源存活率最高）；HPLT 3.0 为最新版（文件不在 HF 托管）。
+- **11 new corpora written up below / 下方新增 11 条语料条目:** see §2 "Refresh additions" and the comparison table (rows 33–43). | 见 §2"补充"小节与对比表（第 33–43 行）。
+
 ---
 
 > **Scope / 范围:** This review covers research that (a) performs **continued / continual pretraining (CPT)** to adapt an existing LLM to Arabic (Modern Standard Arabic and dialects), and (b) **introduces a pretraining corpus / dataset** for Arabic, including from-scratch Arabic-centric foundation models and pretrained language models (PLMs) whose papers describe their pretraining corpus.
@@ -41,7 +47,7 @@
 
 ## Taxonomy / 分类导览
 - **(A) Continued pretraining & dialectal adaptation / 持续预训练与方言适配:** AceGPT, Bilingual Adaptation (Jais-adapted), AraLLaMA, Atlas-Chat (Darija), NileChat, Nile-Chat (Egyptian), Resource-Aware Arabic LLM.
-- **(B) Pretraining corpora & datasets / 预训练语料与数据集:** 101 Billion Arabic Words, ArabicWeb / Data-Scale, A Large and Diverse Arabic Corpus, 1.5 Billion Words (Abu El-Khair), Fineweb-Edu-Ar, ArabicWeb-Edu, AMCrawl, HPLT v1/v2/3.0, OSCAR 22.01, AraFast.
+- **(B) Pretraining corpora & datasets / 预训练语料与数据集:** 101 Billion Arabic Words, ArabicWeb / Data-Scale, A Large and Diverse Arabic Corpus, 1.5 Billion Words (Abu El-Khair), Fineweb-Edu-Ar, ArabicWeb-Edu, AMCrawl, HPLT v1/v2/3.0, OSCAR 22.01, AraFast. **Refresh (2026-07-22 additions) / 2026-07-22 补充:** AraMix/MixMinMatch, ArabicWeb24, FineWeb-2, FinePDFs, FineWeb2-HQ, MADLAD-400, CulturaX, mC4, Nemotron-CC v2, GlotCC-V1, Glot500-c.
 - **(C) Foundation LLMs — Arabic-centric & bilingual / 基座大模型（以阿语为中心与双语）:** Jais, ALLaM, Fanar, Fanar 2.0, AraMUS.
 - **(D) From-scratch PLMs — generative & encoder/seq2seq / 从零训练的语言模型（生成式与编码/序列到序列）:** JASMINE, AraGPT2, ArabianGPT, AraBERT, AraELECTRA, ARBERT & MARBERT, CAMeLBERT, AraT5, EgyBERT.
 
@@ -178,7 +184,7 @@
 
 ### Skipped / Unverified — batch note (Corpora) / 跳过/未验证——批次备注（语料）
 
-- **AraMix: Recycling, Refiltering, and Deduplicating to Deliver the Largest Arabic Pretraining Corpus — SKIPPED (title/ID mismatch).** arXiv:2512.18834 exists but resolves to a DIFFERENT paper: "Mix, MinHash, and Match: Cross-Source Agreement for Multilingual Pretraining Datasets" (Sultan Alrashed & Francesco Orabona, submitted Dec 2025, cs.CL). That paper covers Arabic/Turkish/Hindi via cross-source MinHash deduplication (MixMinMatch), not an Arabic-only corpus named "AraMix." The requested title could not be verified at this ID, so it is not written up. | 已跳过（标题/编号不符）。arXiv:2512.18834 确实存在，但对应的是另一篇论文《Mix, MinHash, and Match: Cross-Source Agreement for Multilingual Pretraining Datasets》（Sultan Alrashed 与 Francesco Orabona，2025 年 12 月提交，cs.CL），内容为通过跨源 MinHash 去重（MixMinMatch）处理阿拉伯语/土耳其语/印地语，而非名为"AraMix"的纯阿拉伯语语料。该编号无法验证所请求的标题，故不予撰写。
+- **AraMix (arXiv:2512.18834) — ✅ CORRECTED 2026-07-22: now verified and written up as a full entry (see §2 "Refresh additions" → *AraMix / MixMinMatch*).** The earlier skip was a v1→v2 retitle confusion: v1 (21 Dec 2025) was literally titled *"AraMix: Recycling, Refiltering, and Deduplicating to Deliver the Largest Arabic Pretraining Corpus"*; v2 (29 Jan 2026) generalized the title to *"Mix, MinHash, and Match: Cross-Source Agreement for Multilingual Pretraining Datasets."* Arabic **is** the flagship corpus (177.8B-token MinHash / 54.1B-token Matched releases, HF `AdaMLLab/mixminmatch`) and all figures are verifiable, so it is no longer skipped. | ✅ 已更正（2026-07-22）：现已核实并作为完整条目撰写（见 §2"补充"→ AraMix / MixMinMatch）。此前跳过是 v1→v2 改名造成的误会：v1（2025-12-21）标题即为《AraMix……最大的阿拉伯语预训练语料》，v2（2026-01-29）泛化为《Mix, MinHash, and Match……》。阿拉伯语确为其旗舰语料（MinHash 版 1778 亿 token / Matched 版 541 亿 token，HF `AdaMLLab/mixminmatch`），数据均可核实，故不再跳过。
 
 - **AMCrawl: An Arabic Web-Scale Dataset of Interleaved Image-Text Documents and Image-Text Pairs (Aboukozzana et al., 2025) — PARTIALLY VERIFIED, full text unreachable.** The paper is confirmed to exist (ArabicNLP 2025, https://aclanthology.org/2025.arabicnlp-main.37/) with the exact stated title, and a matching HuggingFace dataset exists (oushiea/AMCrawl, uploader "shahad Aboukozzana"). However, the ACL full text and abstract were hard-blocked by the proxy, and the HF dataset has NO dataset card. Only minimal, non-authoritative metadata is available: the public HF sample is text-only, ~56,744 rows (train 31.6k / test 25.1k, ~413 MB) with `answers` and `caption` fields — evidently a small QA/caption sample, not the full web-scale interleaved image-text corpus described by the title. There is insufficient verified content (sources, image/text filtering pipeline, image-text-pair counts, models, evaluation, findings, limitations) to write an accurate section without fabrication, so it is left as unverified. | 部分验证，全文无法访问。论文确认存在（ArabicNLP 2025，https://aclanthology.org/2025.arabicnlp-main.37/），标题与所述完全一致，且 HuggingFace 上有同名数据集（oushiea/AMCrawl，上传者 "shahad Aboukozzana"）。但 ACL 全文与摘要被代理硬性封锁，且该 HF 数据集没有任何数据集卡片。仅有少量非权威元数据：公开的 HF 样本为纯文本，约 56,744 行（训练 31.6k／测试 25.1k，约 413 MB），含 `answers` 与 `caption` 字段——显然是小规模问答/字幕样本，而非标题所述的网页级图文交错大语料。缺乏足够可验证内容（来源、图文过滤流程、图文对数量、模型、评测、发现、局限），无法在不虚构的情况下撰写准确章节，故标为未验证。
 
@@ -233,6 +239,135 @@
 ### AraFast: Developing and Evaluating a Comprehensive Modern Standard Arabic Corpus (Al-… et al., 2024) — SKIPPED
 - **Venue / Link:** Applied Sciences (MDPI) 2024, 14(12):5294, https://www.mdpi.com/2076-3417/14/12/5294 (DOI 10.3390/app14125294)
 - **Status / 状态:** SKIPPED — could not access the full text. In this environment WebFetch only reaches arxiv.org and huggingface.co; every attempt to fetch mdpi.com (article and /htm and /pdf and DOI), doaj.org, ouci.dntb.gov.ua, api.semanticscholar.org, and api.openalex.org returned "Socket is closed" (network-blocked), and direct curl failed (exit 56). To avoid fabrication, no corpus size, sources, cleaning steps, models, or evaluation numbers are reported for AraFast. | 已跳过——无法访问全文。本环境的 WebFetch 仅能访问 arxiv.org 与 huggingface.co;对 mdpi.com(文章页/htm/pdf/DOI)、doaj.org、ouci.dntb.gov.ua、api.semanticscholar.org、api.openalex.org 的所有尝试均返回"Socket is closed"(网络被封锁),直接 curl 也失败(退出码 56)。为避免编造,不报告 AraFast 的语料规模、来源、清洗步骤、模型或评测数据。
+
+---
+
+### Refresh additions (2025–2026) / 补充条目（2025–2026 新增）
+
+*Added 2026-07-22. Bilingual (English | 中文); Arabic-portion figures verified from papers / HF cards, unverifiable items flagged. Exact Arabic-config sizes for FineWeb-2 `arb_Arab` and FinePDFs `arb_Arab` could not be pulled (HF size API unreachable at authoring time) — query `datasets-server.huggingface.co/size` to fill them. / 2026-07-22 新增。双语；阿语部分数据均经论文/HF 卡片核实，不可核实处已标注。FineWeb-2 与 FinePDFs 的阿语配置确切规模因 HF 尺寸 API 不可达而缺失，可查询 `datasets-server` 补齐。*
+
+---
+
+### AraMix / MixMinMatch (Alrashed & Orabona, 2025/2026)
+- **Venue / Link:** arXiv:2512.18834 [cs.CL] (v1 21 Dec 2025 as "AraMix…"; v2 29 Jan 2026 retitled "Mix, MinHash, and Match: Cross-Source Agreement for Multilingual Pretraining Datasets"), https://arxiv.org/abs/2512.18834 ; dataset HF `AdaMLLab/mixminmatch`
+- **Motivation / 动机:** Independent Arabic web corpora heavily re-crawl the same pages — over 40% of tokens are duplicated across major Arabic sources — so cross-source agreement can act as a free, model-free quality signal instead of training a costly quality classifier. | 各独立的阿拉伯语网络语料大量重复抓取相同网页——主流阿语数据源之间超过 40% 的 token 相互重复——因此"跨源一致性"可作为免费、无需模型的质量信号，替代成本高昂的质量分类器。
+- **Corpus & Data / 语料与数据:** Arabic corpus built by pooling seven public sources — CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4 (Arabic), ClusterLab 101 Billion Arabic Words, and FinePDFs. Stages (Arabic): Quality-Filtered 300.9B tokens / 283.4M docs → document-level MinHash-deduped **177.8B tokens / 178.9M docs** (the "AraMix-MinHash" release, ~4.3× more unique tokens than ArabicWeb24's 41B) → cross-source "Matched" subset (docs recovered by ≥2 sources) **54.1B tokens / 47.9M docs** (the high-quality "AraMix-Matched" release). No MSA-vs-dialect-vs-classical breakdown reported (stated limitation). License: paper CC BY 4.0; dataset at HF `AdaMLLab/mixminmatch`. | 通过合并七个公开源构建阿语语料——CulturaX、ArabicWeb24、HPLT 2.0、FineWeb-2、C4（阿语）、ClusterLab 101 Billion Arabic Words、FinePDFs。各阶段（阿语）：质量过滤后 3009 亿 token / 2.834 亿文档 → 文档级 MinHash 去重 **1778 亿 token / 1.789 亿文档**（"AraMix-MinHash"版本，唯一 token 约为 ArabicWeb24（410 亿）的 4.3 倍）→ 跨源"Matched"子集（被 ≥2 个源共同收录的文档）**541 亿 token / 4790 万文档**（高质量"AraMix-Matched"版本）。未报告 MSA/方言/古典语划分（作者明示的局限）。许可：论文 CC BY 4.0；数据集见 HF `AdaMLLab/mixminmatch`。
+- **Method / 方法:** Arabic-specific quality filters (terminal-punctuation, Arabic-script ratio, repetition thresholds) → cross-dataset document-level MinHash near-duplicate detection (5-char shingles) → "match" any document recovered by ≥2 independent sources, using multi-source recovery as the quality proxy. Built on the `datatrove` library. | 阿语专用质量过滤（句末标点、阿拉伯文字占比、重复阈值）→ 跨数据集文档级 MinHash 近重复检测（5 字符 shingle）→ 将被 ≥2 个独立源共同收录的文档标记为"matched"，以多源命中作为质量代理。基于 `datatrove` 库实现。
+- **Models & Eval / 模型与评测:** 1.46B-parameter Llama-style models trained on ~29.36B tokens (14 layers, hidden 2048, gemma-2b tokenizer). Aggregate Arabic FineTasks: ArabicWeb24 baseline 0.154; AraMix-MinHash 0.153 (−0.6%, but 4.3× more tokens); **AraMix-Matched 0.161 (+4.5%)**, also beating the model-based FineWeb2-HQ. | 训练 14.6 亿参数 Llama 式模型，约 293.6 亿 token（14 层，隐藏维 2048，gemma-2b 分词器）。阿语 FineTasks 聚合分：ArabicWeb24 基线 0.154；AraMix-MinHash 0.153（−0.6%，但 token 多 4.3 倍）；**AraMix-Matched 0.161（+4.5%）**，且超过基于模型的 FineWeb2-HQ。
+- **Key Findings / 主要发现:** Cross-source redundancy is a strong, training-free quality filter: FinePDFs has the highest cross-dedup survival (98.5%, novel PDF content), ArabicWeb24 93.8%, vs CulturaX 65.0% / C4 59.8% / FineWeb-2 56.0% / HPLT 2.0 53.1%; the largest pairwise overlap is C4↔CulturaX (9.16B tokens); 7.1B tokens appear in ≥4 sources. English-style filters (C4/Gopher) wrongly reject much valid Arabic. | 跨源冗余是强力且无需训练的质量过滤器：FinePDFs 跨源去重存活率最高（98.5%，PDF 新内容），ArabicWeb24 93.8%，而 CulturaX 65.0% / C4 59.8% / FineWeb-2 56.0% / HPLT 2.0 53.1%；最大两两重叠为 C4↔CulturaX（91.6 亿 token）；71 亿 token 出现在 ≥4 个源中。英语式过滤器（C4/Gopher）会错误剔除大量合规阿语。
+- **Limitations / 局限:** Only 1.46B models on ~29B tokens (transfer to 7B+ untested); fixed "≥2 sources" threshold; no dialect/register analysis; noted the ClusterLab 101B HF release appears incomplete (~22.6B words present vs 101B claimed). | 仅 14.6 亿参数、约 290 亿 token（未验证向 7B+ 迁移）；"≥2 源"阈值固定；无方言/语域分析；指出 ClusterLab 101B 的 HF 版似不完整（实际约 226 亿词，而非号称 1010 亿）。
+
+---
+
+### ArabicWeb24 (LightOn & INSAT, 2024)
+- **Venue / Link:** Dataset release (LightOn blog + HF), HF `lightonai/ArabicWeb24`, https://huggingface.co/datasets/lightonai/ArabicWeb24
+- **Motivation / 动机:** Provide a high-quality, web-only Arabic pretraining dataset built with a modern FineWeb-style pipeline, to close the Arabic high-quality-web-data gap. | 用现代 FineWeb 式流水线构建一个高质量、纯网络的阿拉伯语预训练数据集，以弥补阿语高质量网络数据的缺口。
+- **Corpus & Data / 语料与数据:** ~28B tokens of cleaned & deduplicated Arabic web text in the main release (banner advertises ">39B tokens"; counts via the aragpt2 tokenizer); **471 GB**; 10M–100M documents. Source is a customized 2024 web crawl (sample dates Feb 2024), not distinguished by MSA vs dialect (single `ar` label with a language score). Two configs: `ArabicWeb24` (full pipeline) and `ArabicWeb24-no-sentence-dedup` (v5). License: **odc-by** (access gated behind contact-sharing). | 主版本约 280 亿 token 的清洗与去重阿语网络文本（横幅宣称">390 亿 token"；按 aragpt2 分词器计）；**471 GB**；1000 万–1 亿文档。数据源为 2024 年定制网络抓取（样本日期 2024 年 2 月），未区分 MSA 与方言（仅 `ar` 标签加语言分）。两个配置：`ArabicWeb24`（完整流水线）与 `ArabicWeb24-no-sentence-dedup`（v5）。许可：**odc-by**（需共享联系方式方可访问）。
+- **Method / 方法:** `datatrove`-based pipeline: fastText language identification, quality filtering, document- and sentence-level deduplication (the v5 config omits sentence dedup for ablation). Processing code shared on GitHub. | 基于 `datatrove` 的流水线：fastText 语种识别、质量过滤、文档级与句子级去重（v5 配置为消融而省略句子去重）。处理代码见 GitHub。
+- **Models & Eval / 模型与评测:** Two ablation models released (`ArabicWeb24-ablation-model-v1`/`-v5`) to validate the pipeline; no benchmark table on the HF card (results in the blog). | 发布两个消融模型以验证流水线；HF 卡片本身未给出基准表（结果在博客中）。
+- **Key Findings / 主要发现:** Demonstrates a reproducible datatrove pipeline yields a clean ~28B-token Arabic web corpus; later independently corroborated by AraMix (2nd-highest cross-source survival, 93.8% — relatively distinctive/clean). | 证明可复现的 datatrove 流水线可产出干净的约 280 亿 token 阿语网络语料；后被 AraMix 独立佐证（跨源存活率第二，93.8%，内容相对独特/干净）。
+- **Limitations / 局限:** Token-count inconsistency on the card (28B vs 39B); no MSA/dialect breakdown; no formal downstream benchmark on the card; access is gated. | 卡片上 token 数不一致（280 亿 vs 390 亿）；无 MSA/方言细分；卡片无正式下游基准；访问受限。
+
+---
+
+### FineWeb2: One Pipeline to Scale Them All (Penedo et al., 2025) — Arabic portion
+- **Venue / Link:** COLM 2025, arXiv:2506.20920, https://arxiv.org/abs/2506.20920 ; HF `HuggingFaceFW/fineweb-2`, config `arb_Arab`
+- **Motivation / 动机:** Adapting web-data filtering/dedup pipelines to many languages is labor-intensive; the paper introduces one pipeline that auto-adapts to essentially any language, producing a multilingual successor to FineWeb. | 将网络数据过滤/去重流水线适配到众多语言极为费力；本文提出一条可自动适配几乎任意语言的统一流水线，作为 FineWeb 的多语后继版本。
+- **Corpus & Data / 语料与数据:** ~20 TB, ~5 billion documents from 96 Common Crawl snapshots (summer 2013–April 2024), covering 1,868 language–script pairs ("1000+ languages"). Arabic is a first-class config `arb_Arab` (Standard Arabic in Arabic script; `arb_Latn` kept separate); the Arabic parquet folder is ≈106 GB. Exact `arb_Arab` rows/tokens **not verified** (HF size API unreachable); ~9.9M docs inferred from FineWeb2-HQ's 56% Arabic retention (flagged as inference). Dialects largely folded under MSA `arb_Arab`. License: paper CC BY 4.0; dataset **odc-by**. | 约 20 TB、约 50 亿文档，来自 96 个 Common Crawl 快照（2013 年夏–2024 年 4 月），覆盖 1,868 个语言–文字对（"1000+ 语言"）。阿语为一级配置 `arb_Arab`（阿拉伯文字标准阿语；`arb_Latn` 单列），阿语 parquet 目录约 106 GB。`arb_Arab` 确切行数/token **未核实**（HF 尺寸 API 不可达）；据 FineWeb2-HQ 阿语 56% 保留率推算约 990 万文档（标注为推算）。方言大多并入 MSA `arb_Arab`。许可：论文 CC BY 4.0；数据集 **odc-by**。
+- **Method / 方法:** URL blocklist → trafilatura extraction → GlotLID language ID (Arabic confidence >0.8) → global per-language MinHash dedup (14 buckets × 8 hashes, 5-grams) → stopword + adapted Gopher + FineWeb quality thresholds → precision filtering for low-resource languages → **rehydration** (duplication-aware upsampling: quality is U-shaped in duplication count, so the lowest-removal band is up-weighted). | URL 黑名单 → trafilatura 抽正文 → GlotLID 语种识别（阿语置信 >0.8）→ 按语言全局 MinHash 去重（14 桶 × 8 哈希，5-gram）→ 停用词 + 改造版 Gopher + FineWeb 质量阈值 → 低资源语言精确过滤 → **rehydration**（感知重复度上采样）。
+- **Models & Eval / 模型与评测:** Corpus paper; validated via ~1B canary models judged on **FineTasks** (84/197 benchmarks across 9 canary languages incl. Arabic). No standalone Arabic score in the extracted text. | 语料型论文；以约 10 亿参数 canary 模型在 **FineTasks**（9 种 canary 语言含阿语，197 选 84 基准）验证。所提取正文未单列阿语分数。
+- **Key Findings / 主要发现:** The single adaptive pipeline outperforms prior multilingual web datasets across languages; duplication-aware rehydration adds a consistent gain over naïve dedup. | 这一条自适应流水线在各语言上均优于以往多语网络数据集；感知重复度的 rehydration 相较朴素去重带来一致增益。
+- **Limitations / 局限:** Arabic dialects merged under one MSA macro-config; GlotLID is MSA-centric; web-only noise remains; no per-language Arabic benchmark; exact Arabic config size not surfaced. | 阿语方言并入单一 MSA 宏配置；GlotLID 以 MSA 为中心；仍存网络噪声；无分语言阿语基准；阿语配置确切规模不可得。
+
+---
+
+### FinePDFs (Hugging Face, 2025) — Arabic portion
+- **Venue / Link:** Dataset release (no dedicated paper; HF card), HF `HuggingFaceFW/finepdfs`, config `arb_Arab`, https://huggingface.co/datasets/HuggingFaceFW/finepdfs
+- **Motivation / 动机:** Unlock high-value text locked inside PDFs — complementing HTML-derived web corpora with PDF-native content (which AraMix later found the most distinctive Arabic source). | 释放锁在 PDF 中的高价值文本——以 PDF 原生内容补充 HTML 网络语料（AraMix 后来发现其为最独特的阿语来源）。
+- **Corpus & Data / 语料与数据:** ~3T tokens total, 476M documents, 1000+ language configs, extracted from web-sourced PDFs (via Common Crawl). Arabic config `arb_Arab` exists (train/test splits); exact `arb_Arab` rows/tokens/GB **not verifiable** (HF size API unreachable). A `FinePDFs-Edu` variant adds 350B+ educational tokens. License: **odc-by**. No MSA/dialect breakdown. | 总计约 3 万亿 token、4.76 亿文档、1000+ 语言配置，从网络来源 PDF（经 Common Crawl）抽取。存在阿语配置 `arb_Arab`（train/test 划分）；`arb_Arab` 确切规模 **无法核实**（HF 尺寸 API 不可达）。`FinePDFs-Edu` 变体另加 3500 亿+ 教育类 token。许可：**odc-by**。无 MSA/方言划分。
+- **Method / 方法:** PDF text-extraction pipeline over Common-Crawl-sourced PDFs (routing between direct extraction and OCR); exact extraction stack not confirmed from a fetchable primary source. | 针对 Common Crawl 来源 PDF 的文本抽取流水线（在直接抽取与 OCR 间路由）；具体工具栈无法从一手来源确认。
+- **Models & Eval / 模型与评测:** Corpus only; no model or benchmark on the card. | 仅语料；卡片无模型或基准。
+- **Key Findings / 主要发现:** PDF-native content is a large, relatively non-redundant complement to HTML crawls; AraMix found FinePDFs had the highest Arabic cross-source survival (98.5%). | PDF 原生内容是对 HTML 抓取的大规模、低冗余补充；AraMix 发现其阿语跨源存活率最高（98.5%）。
+- **Limitations / 局限:** No peer-reviewed paper; exact Arabic size unverifiable; extraction/OCR method unconfirmed; no MSA/dialect labelling. | 无同行评审论文；阿语确切规模无法核实；抽取/OCR 方法未确认；无 MSA/方言标注。
+
+---
+
+### FineWeb2-HQ (Messmer, Sabolčec & Jaggi / EPFL, 2025) — Arabic portion
+- **Venue / Link:** NeurIPS 2025 Datasets & Benchmarks, arXiv:2502.10361, https://arxiv.org/abs/2502.10361 ; HF `epfml/FineWeb2-HQ`, config `arb_Arab`
+- **Motivation / 动机:** Add model-based (not just heuristic) quality selection on top of FineWeb-2 to speed up multilingual pretraining. | 在 FineWeb-2 之上引入基于模型（而非仅启发式）的质量筛选，以加速多语预训练。
+- **Corpus & Data / 语料与数据:** A model-filtered high-quality subset of FineWeb-2 across 20 languages (380,138,261 rows total). **Arabic `arb_Arab` = 5,560,599 documents, ~94 GB** (top-56% retention of the Arabic FineWeb-2 config; retention is language-specific — 10% for high-resource en/de/fr/zh, 56% Arabic, 65% Danish). License: dataset **ODC-By v1.0**; paper CC BY 4.0. | 覆盖 20 种语言的 FineWeb-2 模型过滤高质量子集（共 380,138,261 行）。**阿语 `arb_Arab` = 5,560,599 文档、约 94 GB**（保留阿语 FineWeb-2 配置前 56%；保留率因语言而异——高资源 en/de/fr/zh 为 10%、阿语 56%、丹麦语 65%）。许可：数据集 **ODC-By v1.0**；论文 CC BY 4.0。
+- **Method / 方法:** XLM-RoBERTa-base embeddings (279M params) → MLP classifier (1 hidden layer 256, ReLU, dropout 20%, sigmoid, AdamW, 6 epochs; best config "MLP MKC+"), trained on LLM-derived quality annotations, applied per-language. | XLM-RoBERTa-base 嵌入（2.79 亿参数）→ MLP 分类器（1 隐层 256，ReLU，dropout 20%，sigmoid，AdamW，6 轮；最优"MLP MKC+"），在 LLM 生成的质量标注上训练，按语言逐一应用。
+- **Models & Eval / 模型与评测:** 1B Llama-like models (70B/119B tokens); matches FineWeb-2's MMLU with ~15% of tokens (~6× faster); beats DCLM/FineWeb-Edu on some benchmarks. Arabic only as a plot (Fig 2e); gains **less pronounced for lower-resource languages** like Arabic — no exact Arabic score. | 1B Llama 式模型（70B/119B token）；仅用约 15% token 即匹配 FineWeb-2 的 MMLU（约快 6 倍）；部分基准上超过 DCLM/FineWeb-Edu。阿语仅以图（图 2e）展示；对阿语等**较低资源语言增益不显著**——无确切阿语分数。
+- **Key Findings / 主要发现:** Embedding+MLP model-based selection substantially accelerates multilingual pretraining, but the benefit shrinks for lower-resource languages (Arabic), where less data is filtered out. | 基于"嵌入+MLP"的模型化筛选可大幅加速多语预训练，但对较低资源语言（阿语）增益减弱，因其被过滤数据更少。
+- **Limitations / 局限:** Gains depend on LLM-annotation quality; benefit is weaker for Arabic and other lower-resource languages. | 增益取决于 LLM 标注质量；对阿语及其他较低资源语言收益较弱。
+
+---
+
+### MADLAD-400 (Kudugunta et al., 2023) — Arabic portion
+- **Venue / Link:** NeurIPS 2023 Datasets & Benchmarks, arXiv:2309.04662, https://arxiv.org/abs/2309.04662 ; HF `allenai/MADLAD-400`
+- **Motivation / 动机:** Build a large, document-level, manually **audited** multilingual corpus covering far more languages than prior work, treating data auditing as a first-class step. | 构建一个大规模、文档级、经人工**审计**的多语语料，覆盖远多于以往的语言，并将数据审计视为一等步骤。
+- **Corpus & Data / 语料与数据:** ~3T tokens, 419 languages, from Common Crawl (all snapshots up to 1 Aug 2022). **Arabic `ar` (rated "good"):** noisy version 67.6M docs / 39B tokens / 115.9 GB; clean version **12,411,641 docs / 7.1B tokens / 20.9 GB**. Romanized `ar-Latn` marked "remove". Arabic treated as one bucket (no MSA/dialect split for `ar`). License: card shows a conflict — header tag `odc-by`, body `CC-BY-4.0` (+ Common Crawl terms). | 约 3 万亿 token、419 种语言，源自 Common Crawl（至 2022-08-01 的所有快照）。**阿语 `ar`（评级"good"）：** noisy 版 6760 万文档 / 390 亿 token / 115.9 GB；clean 版 **12,411,641 文档 / 71 亿 token / 20.9 GB**。罗马化 `ar-Latn` 标"remove"。阿语作为单一桶处理（`ar` 无 MSA/方言划分）。许可：卡片冲突——头部 `odc-by`，正文 `CC-BY-4.0`（另加 Common Crawl 条款）。
+- **Method / 方法:** Document-level dedup and document-level LangID for both versions; the clean version additionally drops docs with >20% "questionable" sentences (a `pct_questionable` score) and docs under 5 sentences. | 两版本均做文档级去重与文档级语种识别；clean 版另丢弃"questionable"句占比 >20% 的文档（`pct_questionable` 分）及少于 5 句的文档。
+- **Models & Eval / 模型与评测:** Released MADLAD-400 MT (10.7B, 250B tokens, 450+ languages) and an 8B LM on few-shot translation; MT competitive with much larger models. (No Arabic-specific LM benchmark.) | 发布 MADLAD-400 MT（10.7B，250 亿 token，450+ 语言）与 8B LM（少样本翻译）；MT 与大得多的模型相当。（无阿语专属 LM 基准。）
+- **Key Findings / 主要发现:** Manual auditing (~20 docs/language) materially improves quality and reveals filtering needs; Arabic survives auditing well ("good"), yielding a sizable clean subset (7.1B tokens). | 人工审计（每语约 20 篇）显著提升质量并揭示过滤需求；阿语审计表现良好（"good"），得到相当规模的 clean 子集（71 亿 token）。
+- **Limitations / 局限:** Web noise; single macro `ar` label (no dialect split); clean filtering drops ~82% of Arabic docs vs noisy; license labeling inconsistent (odc-by vs CC-BY-4.0). | 网络噪声；单一 `ar` 宏标签（无方言划分）；clean 过滤较 noisy 丢弃约 82% 阿语文档；许可标注前后不一。
+
+---
+
+### CulturaX (Nguyen et al., 2023) — Arabic portion
+- **Venue / Link:** arXiv:2309.09400, https://arxiv.org/abs/2309.09400 ; HF `uonlp/CulturaX` (gated — must accept conditions)
+- **Motivation / 动机:** Provide a large, thoroughly **cleaned and openly documented** multilingual corpus, addressing the opacity and inadequate cleaning of earlier multilingual training data. | 提供一个大规模、经**彻底清洗且公开记录**的多语语料，解决以往多语训练数据不透明、清洗不足的问题。
+- **Corpus & Data / 语料与数据:** 6.3T tokens, 167 languages, combining the latest mC4 (v3.1.0) + OSCAR (20.19/21.09/22.01/23.01). **Arabic `ar`: 74,027,952 documents, 69,354,335,076 tokens (~69.35B) = 1.10% of total tokens.** Single `ar` bucket (no MSA/dialect/classical split). License: defers to mC4 and OSCAR-2301 source licenses; HF dataset gated. | 6.3 万亿 token、167 种语言，合并最新 mC4（v3.1.0）+ OSCAR（20.19/21.09/22.01/23.01）。**阿语 `ar`：74,027,952 文档、69,354,335,076 token（约 693.5 亿），占总 token 的 1.10%。** 单一 `ar` 桶（无 MSA/方言/古典划分）。许可：沿用 mC4 与 OSCAR-2301 源许可；HF 数据集受限。
+- **Method / 方法:** Five stages — (1) language identification, (2) URL-based filtering, (3) metric-based cleaning, (4) document refinement, (5) document-level **MinHash fuzzy deduplication**. | 五阶段——（1）语种识别，（2）基于 URL 过滤，（3）基于指标清洗，（4）文档精炼，（5）文档级 **MinHash 模糊去重**。
+- **Models & Eval / 模型与评测:** Corpus only; no companion model reported by the authors. | 仅语料；作者未报告配套模型。
+- **Key Findings / 主要发现:** After re-cleaning mC4+OSCAR, Arabic yields ~69.35B tokens — larger than raw mC4 Arabic — with heavy fuzzy dedup; emphasizes transparency to support hallucination/bias research. | 对 mC4+OSCAR 重新清洗后，阿语得到约 693.5 亿 token（大于原始 mC4 阿语），并做强力模糊去重；强调透明度以支持幻觉/偏见研究。
+- **Limitations / 局限:** Marked "ongoing work"; single `ar` code (no dialect/classical breakdown); gated access; inherits mC4/OSCAR biases. | 标注"进行中"；单一 `ar` 码（无方言/古典细分）；受限访问；继承 mC4/OSCAR 偏差。
+
+---
+
+### mC4 (Xue et al., 2021) — Arabic portion
+- **Venue / Link:** NAACL 2021 (mT5), arXiv:2010.11934, https://arxiv.org/abs/2010.11934 ; HF `allenai/c4` config `ar` (legacy `mc4`)
+- **Motivation / 动机:** Extend the English-only C4 to a 101-language Common Crawl corpus to pretrain the multilingual mT5. | 将纯英语的 C4 扩展为 101 种语言的 Common Crawl 语料，用于预训练多语 mT5。
+- **Corpus & Data / 语料与数据:** 6.6B pages / 6.3T tokens across ~101 languages, from all 71 monthly Common Crawl scrapes. **Arabic `ar`: 57B tokens, 53M pages** (1.66% of the mT5 mix at α=0.3; HF `allenai/c4` `ar` ≈53.3M rows). Single `ar` bucket via cld3 (no MSA/dialect split). License: **ODC-BY** (+ Common Crawl ToU). | 约 101 种语言，66 亿页 / 6.3 万亿 token，源自全部 71 个月度 Common Crawl 抓取。**阿语 `ar`：570 亿 token、5300 万页**（α=0.3 时占 mT5 混合的 1.66%；HF `allenai/c4` 的 `ar` 约 5330 万行）。经 cld3 的单一 `ar` 桶（无 MSA/方言划分）。许可：**ODC-BY**（另加 Common Crawl 使用条款）。
+- **Method / 方法:** cld3 language ID (drop pages <70% confidence) → line-length filter (≥3 lines of ≥200 chars) → cross-document line dedup → LDNOOBW bad-words filter → keep languages with ≥10k pages. | cld3 语种识别（丢弃置信 <70% 的页）→ 行长过滤（≥3 行、每行 ≥200 字符）→ 跨文档行级去重 → LDNOOBW 脏词过滤 → 保留 ≥1 万页的语言。
+- **Models & Eval / 模型与评测:** Used to pretrain mT5 (up to 13B), SOTA on many multilingual benchmarks; introduced a fix for "accidental translation" in zero-shot generation. | 用于预训练 mT5（至 13B），在众多多语基准上达 SOTA；提出修复零样本生成中"意外翻译"的方法。
+- **Key Findings / 主要发现:** mC4 Arabic (57B tokens) was, in 2020–21, one of the larger openly documented Arabic web subsets and a base ingredient for later corpora (CulturaX etc.). | mC4 阿语（570 亿 token）在 2020–21 年是较大的公开记录阿语网络子集之一，是后续语料（CulturaX 等）的基础成分。
+- **Limitations / 局限:** Web noise; single `ar` label (no dialect/classical); cld3 LangID errors; per-language GB not reported. | 网络噪声；单一 `ar` 标签（无方言/古典）；cld3 语种识别有误差；未报告分语言 GB。
+
+---
+
+### Nemotron-CC v2 (multilingual) (NVIDIA, 2025) — Arabic portion
+- **Venue / Link:** Released with "NVIDIA Nemotron Nano 2," arXiv:2508.14444, https://arxiv.org/abs/2508.14444 ; HF `nvidia/Nemotron-CC-v2`
+- **Motivation / 动机:** Extend the English-only Nemotron-CC into a multilingual long-horizon pretraining dataset (Arabic among 15 languages) with heavy synthetic augmentation. | 将纯英语的 Nemotron-CC 扩展为多语长程预训练数据集（阿语在 15 语之列），并大量采用合成增强。
+- **Corpus & Data / 语料与数据:** Nemotron-CC-v2 adds 8 Common Crawl snapshots (2024–2025); its multilingual CC portion comes from 3 snapshots and explicitly covers **15 languages including Arabic**. Whole-dataset totals: ~6,585.4B tokens; "Diverse QA" 692.4B; "Translated Diverse QA" ~558B (15-language combined). **Arabic-specific token count not published — unverifiable.** No MSA/dialect breakdown. License: **NVIDIA Open Data License Agreement** (synthetic parts may carry Qwen/DeepSeek terms). | Nemotron-CC-v2 新增 8 个 Common Crawl 快照（2024–2025）；其多语 CC 部分来自 3 个快照，明确覆盖**含阿语在内的 15 种语言**。全数据集：约 65,854 亿 token；"Diverse QA" 6924 亿；"Translated Diverse QA" 约 5580 亿（15 语合计）。**阿语专属 token 数未公布——无法核实。** 无 MSA/方言划分。许可：**NVIDIA Open Data License Agreement**（合成部分可能附带 Qwen/DeepSeek 条款）。
+- **Method / 方法:** Global fuzzy dedup + synthetic rephrasing with Qwen3-30B-A3B; multilingual QA built two ways — English "Diverse QA" translated into all 15 languages, and synthetic QA generated directly from target-language Wikipedia. Heuristic filtering (some filters disabled for high-false-positive languages) due to lack of reliable non-English quality classifiers. | 全局模糊去重 + 用 Qwen3-30B-A3B 合成改写；多语 QA 两种构建方式——英语"Diverse QA"翻译成 15 语，及直接基于目标语维基百科生成合成 QA。因缺乏可靠非英语质量分类器，采用启发式过滤（对高误报语言停用部分过滤器）。
+- **Models & Eval / 模型与评测:** Pretrained Nemotron Nano 2 (9B hybrid Mamba-Transformer, 20T tokens). Adding translated Diverse QA raised average Global-MMLU to **47.0 vs 37.0** (multilingual-CC only). No Arabic-only score. | 预训练 Nemotron Nano 2（9B 混合 Mamba-Transformer，20 万亿 token）。加入翻译版 Diverse QA 使平均 Global-MMLU 由 37.0 升至 **47.0**（仅多语 CC 时）。无阿语单项分数。
+- **Key Findings / 主要发现:** Large-scale synthetic rephrasing + translated QA markedly lift multilingual (incl. Arabic) knowledge benchmarks over raw multilingual CC. | 大规模合成改写 + 翻译版 QA 相较原始多语 CC 显著提升多语（含阿语）知识类基准。
+- **Limitations / 局限:** No Arabic-specific size/score; no MSA/dialect split; weaker non-English quality filtering; restrictive NVIDIA license; heavy synthetic dependence. | 无阿语专属规模/分数；无 MSA/方言划分；非英语质量过滤较弱；NVIDIA 许可限制较严；高度依赖合成数据。
+
+---
+
+### GlotCC-V1 (Kargaran, Yvon & Schütze, 2024) — Arabic & dialects
+- **Venue / Link:** NeurIPS 2024 Datasets & Benchmarks, arXiv:2410.23825, https://arxiv.org/abs/2410.23825 ; HF `cis-lmu/GlotCC-V1`
+- **Motivation / 动机:** Provide an open, broad-coverage Common Crawl corpus and reproducible pipeline emphasizing minority languages and fine-grained script/dialect distinctions. | 提供一个开放、广覆盖的 Common Crawl 语料与可复现流水线，侧重少数语言及细粒度文字/方言区分。
+- **Corpus & Data / 语料与数据:** ~2 TB, document-level, >1000 languages. Notably keeps **distinct Arabic dialect codes**: `arb-Arab` (MSA) + `arb-Latn`, plus `ary-Arab` (Moroccan), `arz-Arab` (Egyptian), `ars-Arab` (Najdi), `acm-Arab` (Mesopotamian), `apc-Arab` (Levantine), `ajp-Arab` (S. Levantine), `aeb-Arab` (Tunisian), `arq-Arab` (Algerian), `shu-Arab` (Chadic), etc. **Per-Arabic-code sizes not surfaced — unverifiable.** License: **CC0-1.0**. | 约 2 TB、文档级、>1000 种语言。尤其保留**独立的阿语方言码**：`arb-Arab`（MSA）+ `arb-Latn`，及 `ary-Arab`（摩洛哥）、`arz-Arab`（埃及）、`ars-Arab`（内志）、`acm-Arab`（美索不达米亚）、`apc-Arab`（黎凡特）、`ajp-Arab`（南黎凡特）、`aeb-Arab`（突尼斯）、`arq-Arab`（阿尔及利亚）、`shu-Arab`（乍得）等。**分方言码规模未获取——无法核实。** 许可：**CC0-1.0**。
+- **Method / 方法:** Common Crawl → GlotLID broad-coverage, script-aware language identification → custom noise-cleaning filters → document-level output. | Common Crawl → GlotLID 广覆盖、文字感知语种识别 → 自定义去噪过滤 → 文档级产出。
+- **Models & Eval / 模型与评测:** Corpus + pipeline release; no dedicated Arabic downstream model/benchmark. | 语料 + 流水线发布；无专门阿语下游模型/基准。
+- **Key Findings / 主要发现:** Unlike most web corpora, GlotCC keeps Arabic dialects as separate, script-tagged configs — valuable for dialect-specific Arabic pretraining rather than a single MSA bucket. | 与多数网络语料不同，GlotCC 将阿语方言保留为独立、带文字标签的配置——对方言专属阿语预训练价值高于单一 MSA 桶。
+- **Limitations / 局限:** Per-language/dialect sizes not readily verifiable; broad-coverage LID can misclassify low-resource dialects; web noise. | 分语言/方言规模不易核实；广覆盖 LID 可能误分低资源方言；网络噪声。
+
+---
+
+### Glot500-c / Glot500 (ImaniGooghari et al., 2023) — Arabic coverage
+- **Venue / Link:** ACL 2023, arXiv:2305.12182, https://arxiv.org/abs/2305.12182 ; code/data github.com/cisnlp/Glot500
+- **Motivation / 动机:** Scale multilingual corpora and models to 500+ languages/varieties, especially low-resource ones, and study what drives cross-lingual transfer. | 将多语语料与模型扩展到 500+ 语言/变体（尤其低资源），并研究驱动跨语迁移的因素。
+- **Corpus & Data / 语料与数据:** Glot500-c covers 511 languages/varieties (incl. Standard Arabic and several Arabic-script/dialect varieties). **Total size and Arabic-specific token/GB counts not stated in accessible sources — unverifiable.** License: not verifiable from fetched sources. | Glot500-c 覆盖 511 种语言/变体（含标准阿语及若干阿拉伯文字/方言变体）。**总规模及阿语专属 token/GB 在可访问来源中未给出——无法核实。** 许可：无法从所获来源核实。
+- **Method / 方法:** Corpus aggregation across 511 varieties; the model **Glot500-m** is produced by continued pretraining of XLM-R over these languages. | 跨 511 变体聚合语料；模型 **Glot500-m** 通过对 XLM-R 在这些语言上继续预训练得到。
+- **Models & Eval / 模型与评测:** Glot500-m evaluated on 5 tasks; large gains for both high- and low-resource languages vs XLM-R; quality driven by corpus size, script, related-language support, and model capacity. | Glot500-m 在 5 项任务上评测；相较 XLM-R 对高、低资源语言均有大幅提升；质量受语料规模、文字、亲缘语言支持与模型容量驱动。
+- **Key Findings / 主要发现:** Corpus + CPT to 500+ languages meaningfully improves multilingual representation, including Arabic-script varieties; corpus size is a key driver. | 将语料与继续预训练扩展到 500+ 语言可显著改善多语表示（含阿拉伯文字变体）；语料规模是关键驱动因素。
+- **Limitations / 局限:** Arabic-specific sizes/scores not extractable from accessible sources; primarily an encoder (XLM-R CPT), not a generative Arabic LM. | 阿语专属规模/分数无法从可访问来源提取；主要为编码器（XLM-R 继续预训练），非生成式阿语 LM。
+
+---
 
 ## 3. Foundation LLMs — Arabic-Centric & Bilingual / 三、基座大模型（以阿语为中心与双语）
 
@@ -410,6 +545,17 @@
 | 30 | CAMeLBERT (2021) | PLM (scratch) | MSA 107 / DA 54 / CA 6 GB | 167 GB / 17.3B words | variant proximity > size |
 | 31 | AraT5 (2022, ACL) | PLM (scratch) | T5 enc-dec | 248 GB / 29B tok | Arabic generation |
 | 32 | EgyBERT (2024) | PLM (scratch, dialect) | Egyptian only | 10.4 GB | dialectal BERT |
+| 33 | AraMix / MixMinMatch (2025) | Corpus | 7 Arabic sources merged (datatrove) | 177.8B tok MinHash / 54.1B tok Matched | cross-source agreement = free quality filter (+4.5%) |
+| 34 | ArabicWeb24 (2024) | Corpus | custom 2024 Arabic web crawl (datatrove) | ~28B tok / 471 GB | FineWeb-style Arabic web; 2 ablation models |
+| 35 | FineWeb-2 (2025, COLM) | Corpus (multiling.) | multilingual CC, config arb_Arab | ~106 GB ar (20 TB total) | one adaptive pipeline + rehydration |
+| 36 | FinePDFs (2025) | Corpus (multiling.) | web PDFs, config arb_Arab | 3T tok total / ar size unverif. | PDF-native; highest ar cross-source survival 98.5% |
+| 37 | FineWeb2-HQ (2025, NeurIPS) | Corpus | model-filtered FineWeb-2 subset | arb_Arab 5.56M docs / ~94 GB | XLM-R+MLP quality selection, ~6× faster |
+| 38 | MADLAD-400 (2023, NeurIPS) | Corpus (multiling.) | audited CC, code ar | ar clean 7.1B tok / 12.4M docs (noisy 39B) | manual audit; ar rated "good" |
+| 39 | CulturaX (2023) | Corpus (multiling.) | mC4 + OSCAR re-cleaned, code ar | ar 69.35B tok / 74.0M docs | MinHash fuzzy dedup; gated |
+| 40 | mC4 (2021, NAACL) | Corpus (multiling.) | multilingual CC (mT5), code ar | ar 57B tok / 53M pages | base ingredient for later ar corpora |
+| 41 | Nemotron-CC v2 multilingual (2025) | Corpus (multiling.) | multilingual CC + synthetic, incl. ar | 6.6T tok total / ar size unverif. | Qwen3 rephrasing; Global-MMLU 37→47 |
+| 42 | GlotCC-V1 (2024, NeurIPS) | Corpus (multiling.) | broad-coverage CC (GlotLID) | ~2 TB total / per-dialect unverif. | keeps distinct Arabic dialect codes (arz/ary/apc…) |
+| 43 | Glot500-c (2023, ACL) | Corpus (multiling.) | 511-variety corpus + Glot500-m CPT | total / ar size unverif. | 500+ langs incl. Arabic-script varieties |
 
 ## 7. References / 参考文献
 
