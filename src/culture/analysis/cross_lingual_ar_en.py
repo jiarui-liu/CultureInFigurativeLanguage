@@ -58,6 +58,33 @@ logging.basicConfig(level=logging.INFO,
 logger = logging.getLogger("culture.analysis.ar_en")
 
 
+# Arabic proverb dictionaries (al-Maydani, Taymur) write the entry as
+# ETYMOLOGY/ANECDOTE first and only then the actual usage gloss, introduced by
+# "يُضرب في/لمن ..." ("it is said of / applied to ..."). So a raw
+# `figurative_meanings` string averages 191 chars — 3x the English side (64) and
+# 10x the Chinese side (18) — and most of that length is a story about which
+# Companion said what, which is NOT what the English gloss means. Embedding the
+# whole passage buries the comparable signal: at the Chinese pipeline's own
+# threshold of 0.70 it yields 21 ar-en pairs against zh-en's 37,045.
+#
+# Trimming to the يضرب clause recovers a gloss-length string (median 54 chars)
+# for the 38.2% of meanings that have one (49.3% of the passages over 150 chars).
+YUDRAB_RE = re.compile(r"[يت]ُ?ضْ?رَ?ب")
+
+
+def usage_gloss(meaning: str, min_len: int = 10) -> str:
+    """Trim an Arabic dictionary entry to its "يُضرب ..." usage clause.
+
+    Returns `meaning` unchanged when there is no such clause, or when the clause
+    is too short to embed meaningfully.
+    """
+    m = YUDRAB_RE.search(meaning)
+    if not m:
+        return meaning
+    clause = meaning[m.start():].strip()
+    return clause if len(clause) >= min_len else meaning
+
+
 def en_fld(row: Dict[str, Any], name: str) -> List[str]:
     """Field accessor for the English KB (same {output:{...}} shape)."""
     v = (row.get("output") or {}).get(name)      # rows may have "output": null
@@ -84,11 +111,38 @@ def cmd_pairs(args) -> Dict[str, Any]:
     ar = [r for r in ar if r.get("output")]
     en = [r for r in en if r.get("output")]
     ar_items: List[Tuple[int, str]] = []
+    n_trimmed = 0
     for i, r in enumerate(ar):
-        ms = en_fld(r, "figurative_meanings_en") or fld(r, "figurative_meanings")
+        en_ms = en_fld(r, "figurative_meanings_en")
+        # English glosses are already gloss-shaped; only the Arabic exegesis needs trimming.
+        ms = en_ms or [usage_gloss(m) if args.usage_gloss else m
+                       for m in fld(r, "figurative_meanings")]
+        if not en_ms and args.usage_gloss:
+            n_trimmed += sum(1 for a, b in zip(ms, fld(r, "figurative_meanings")) if a != b)
         for m in ms[:2]:
             if len(m) >= 10:
                 ar_items.append((i, m[:400]))
+    if args.usage_gloss:
+        logger.info("trimmed %d Arabic meanings to their يضرب usage clause", n_trimmed)
+
+    # Translate the Arabic side to English so the comparison is English<->English
+    # (see translate_meanings for the measurement that forces this).
+    if args.translate:
+        need = [m for _, m in ar_items if not m.isascii()]
+        if args.max_translate:
+            need = need[:args.max_translate]
+            logger.info("translation capped at %d meanings (--max_translate)",
+                        args.max_translate)
+        tr = translate_meanings(need, outdir / "cache" / "meaning_translations_ar_en.jsonl",
+                                model=args.model)
+        translated = [(i, tr.get(m) or m, m) for i, m in ar_items]
+        n_ok = sum(1 for i, new, old in translated if new != old)
+        logger.info("using %d translated Arabic meanings (%d left untranslated)",
+                    n_ok, len(translated) - n_ok)
+        ar_items = [(i, m) for i, m, _ in translated if len(m) >= 10]
+        ar_source = {(i, m): src for i, m, src in translated if len(m) >= 10}
+    else:
+        ar_source = {}
     en_items: List[Tuple[int, str]] = []
     for j, r in enumerate(en):
         for m in en_fld(r, "figurative_meanings")[:2]:
@@ -117,7 +171,11 @@ def cmd_pairs(args) -> Dict[str, Any]:
                 ej, em = en_items[j]
                 pairs.append({
                     "ar_idiom": ar[ai]["output"]["idiom"],
+                    # `ar_matched_meaning` is the text that was actually embedded; when
+                    # --translate is on that is an English paraphrase, and the Arabic it
+                    # came from is kept in `ar_matched_meaning_source`.
                     "ar_matched_meaning": am,
+                    "ar_matched_meaning_source": ar_source.get((ai, am), am),
                     "ar_figurative_meanings": fld(ar[ai], "figurative_meanings"),
                     "ar_entities": fld(ar[ai], "entities"),
                     "ar_literal_meanings": fld(ar[ai], "literal_meanings"),
@@ -216,6 +274,67 @@ def translate_entities(ents: List[str], cache_path: Path, batch: int = 40,
     return cache
 
 
+def translate_meanings(meanings: List[str], cache_path: Path, batch: int = 20,
+                       model: Optional[str] = None) -> Dict[str, str]:
+    """Arabic figurative-meaning gloss -> one-line English paraphrase (disk-cached).
+
+    Needed because the embedding space does not align Arabic with English at the
+    sentence level. Measured on this KB, top-1 similarity against 4,538 English
+    glosses:
+
+        Arabic-language meanings (n=9,596)   mean 0.354  p99 0.465  **max 0.607**
+        human English glosses    (n=1,590)   mean 0.502  p99 0.695  max 0.825
+
+    Not one Arabic-language meaning reaches the Chinese pipeline's 0.70 threshold
+    — and Chinese *does* reach it directly (zh<->en max 0.879, 37,045 pairs). The
+    content is not the problem: the same Arabic entries whose meaning happens to
+    carry a human English gloss match fine. So the Arabic side is translated to
+    English first and matched English<->English, which is exactly the trick that
+    makes the A6 entity analysis work.
+    """
+    cache: Dict[str, str] = {}
+    if cache_path.exists():
+        for line in open(cache_path, encoding="utf-8"):
+            if line.strip():
+                d = json.loads(line)
+                cache[d["ar"]] = d["en"]
+        logger.info("meaning-translation cache: %d", len(cache))
+    missing = [m for m in dict.fromkeys(meanings) if m not in cache]
+    if missing:
+        from autoresearch.utils.llm import chat
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(cache_path, "a", encoding="utf-8") as f:
+            for i in range(0, len(missing), batch):
+                chunk = missing[i:i + batch]
+                prompt = (
+                    "Each item below is the meaning of an Arabic proverb or idiom, as "
+                    "written in an Arabic dictionary. For each one, give a SHORT English "
+                    "paraphrase of what the proverb MEANS (one clause, under 15 words). "
+                    "Ignore etymology, anecdotes and who said it. Reply with ONLY a JSON "
+                    "array of strings, same length and order as the input.\n\n"
+                    + json.dumps(chunk, ensure_ascii=False))
+                kw = {"max_tokens": 2000}
+                if model:
+                    kw["model"] = model
+                try:
+                    raw = chat([{"role": "user", "content": prompt}], **kw)
+                    m = re.search(r"\[.*\]", raw or "", re.DOTALL)
+                    arr = json.loads(m.group(0)) if m else []
+                except Exception as e:  # noqa: BLE001 — a dropped batch is recoverable
+                    logger.warning("translate batch failed: %s", str(e)[:120])
+                    arr = []
+                if len(arr) != len(chunk):
+                    arr = arr + [""] * (len(chunk) - len(arr))
+                for a, e in zip(chunk, arr):
+                    v = str(e).strip()
+                    cache[a] = v
+                    f.write(json.dumps({"ar": a, "en": v}, ensure_ascii=False) + "\n")
+                f.flush()
+                logger.info("  translated %d/%d meanings", min(i + batch, len(missing)),
+                            len(missing))
+    return cache
+
+
 def cmd_entities(args) -> Dict[str, Any]:
     ar = load_rows(args.ar_input)
     en = load_rows(args.en_input)
@@ -293,7 +412,22 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ar_input", default="data/idioms/ar/idioms_merged_llm_formatted.jsonl")
     p.add_argument("--en_input", default="data/idioms/en/idioms_merged_llm_formatted.jsonl")
     p.add_argument("--outdir", default="data/idioms/ar/analysis")
-    p.add_argument("--threshold", type=float, default=0.80)
+    # 0.70 matches the Chinese pipeline (data/idioms/cross_lingual_pairs.jsonl,
+    # 37,045 pairs, max observed similarity 0.879), so the two are comparable.
+    p.add_argument("--threshold", type=float, default=0.70)
+    p.add_argument("--no-usage-gloss", dest="usage_gloss", action="store_false",
+                   help="Embed the FULL Arabic dictionary entry instead of trimming it to "
+                        "the يضرب usage clause. Off by default because the untrimmed "
+                        "etymological commentary buries the comparable signal.")
+    p.set_defaults(usage_gloss=True)
+    p.add_argument("--no-translate", dest="translate", action="store_false",
+                   help="Match raw Arabic against English instead of translating the "
+                        "Arabic side first. Measured to yield almost nothing: no "
+                        "Arabic-language meaning exceeds 0.607 similarity to any English "
+                        "gloss, against a 0.70 threshold.")
+    p.set_defaults(translate=True)
+    p.add_argument("--max_translate", type=int, default=None,
+                   help="Cap how many Arabic meanings get translated (API cost).")
     p.add_argument("--top_k", type=int, default=5)
     p.add_argument("--max_en", type=int, default=None, help="Cap English rows (cost).")
     p.add_argument("--top_entities", type=int, default=150)
