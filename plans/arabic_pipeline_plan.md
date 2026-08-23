@@ -130,12 +130,94 @@ NFKC) and 21.8% show lām-alef ligature corruption (detect and drop).
 
 ---
 
-## 5. Phase 5 — Evaluation benchmarks 🔄
+## 5. Phase 5 — Evaluation benchmarks ✅
 
-Agent running (first attempt died on an API error and was relaunched). Requirements: ≥5 real
-examples per benchmark, and an explicit **contamination check** — Jawaher, Kinayat, Absher,
-Tunisian proverbs and tahaalselwii are all **ingested into our training KB**, so they cannot be
-used as evaluation without train/test leakage.
+~45 Hub searches; **26 candidates screened, ≥5 verbatim examples read from every one**, each
+checked for train/test leakage against the 10,375 unique normalised surfaces in
+`data/idioms/ar/idioms_merged_llm_formatted.jsonl`. Implemented in
+`src/culture/evaluation/tasks_ar.py` (registered in `run_eval.py`), downloaded by
+`download_ar.sh`, probes by `build_ar_probes.py`, launched by `run_eval_ar.sh` / `eval_ar.slurm`.
+
+### ✅ Accepted
+
+| Task | Source | n | Scoring | Role |
+|---|---|---:|---|---|
+| `ar_figurative` | Alyah figurative (214) + DziriEval figurative (100) | **314** | `acc_norm` | **Dim 3** — the only clean figurative set that exists |
+| `arabculture` | `MBZUAI/ArabCulture`, 13 countries | 3,471 | `acc_norm` | Dim 4 primary; native cultural completion |
+| `arabic_cultural_qa` | `QCRI/ArabicCulturalQA` `mcq/test.jsonl` | 2,000 (×6 variants) | `acc` letter | Dim 4 primary; cross-dialect axis via `--acqa_dialects all` |
+| `arabicmmlu` | `MBZUAI/ArabicMMLU`, 13 Arab-region subjects | 10,529 | `acc` letter | Dim 4 primary; the CMMLU-China-specific analogue |
+| `global_piqa_ar` | Global-PIQA non-parallel, 13 Arabic varieties | 1,099 | `acc_norm` | Dialect-level cultural commonsense |
+| `alyah` | `tiiuae/alyah-emirati-benchmark` (full) | 1,173 | `acc_norm` | Gulf/Emirati depth |
+| `dzirieval` | `touati-kamel/DziriEval` | 950 | `acc_norm` | Maghreb; **secondary** (no license, no paper) |
+| `global_piqa_ar_parallel` | Global-PIQA parallel arb/ary/arz | 309 | `acc_norm` | **Control** — culture-agnostic physics; regression detector |
+| `ar_fineweb2_heldout` | FineWeb-2 `arb_Arab` **official test split** | 2,000 docs | BPB | Dim 2 in-domain |
+| `ar_wiki_heldout` | Arabic Wikipedia, title-decontaminated | 2,000 docs | BPB | Dim 2 out-of-domain |
+
+Counts are what the loaders actually return, verified against the downloaded files. Two differ
+from the raw row counts on purpose: ArabCulture 3,482 → **3,471** (11 rows carry the annotators'
+`should_discard=Yes`), DziriEval 1,000 → **950** (see D5.3).
+
+### ❌ Discarded — contaminated by our own training KB
+
+| Benchmark | Overlap with our KB |
+|---|---|
+| `menaattia/Kinayat` | **314 / 325 (96.6 %)** |
+| `UBC-NLP/Jawaher-benchmark` | **199 / 200 test (99.5 %)**, 812/817 train |
+| `Renad10/Absher-Benchmark` | 81/83 + 408/478 — *plus* gold leaked into the prompt, mixed Latin/Arabic answer letters, 58 missing golds, 91 % position bias |
+| `ahmed02mk/amthal-hassaniya` | **319 / 319 (100 %)** |
+| `tahaalselwii/*`, `HabibaAbderrahim` Tunisian | 7,589 / 952 rows — lexicons, already `EXCLUDED_SOURCES` |
+
+**Say this plainly in the paper: there is no Arabic ChID, and the one Arabic idiom cloze that
+exists is contaminated by our own pipeline.** Kinayat is the only `sentence`-with-blank +
+correct/incorrect-idiom dataset on the Hub, and we ingested 96.6 % of it.
+
+**Procedural defect found while measuring this:** `build_ar_idioms.py` merges Jawaher *train* and
+*test* under one source label `"jawaher"` with **no split provenance in `meta`**, so the
+contamination is invisible from inside the KB and had to be re-derived from the upstream files.
+Record `split` before the next rebuild.
+
+### ❌ Discarded — quality / wrong construct
+
+`OALL/ACVA` (GPT-3.5 templated; 125/195 exact duplicates in `Arabic_Food`, 390/575 share a 4-word
+prefix) · `CohereForAI/Global-MMLU ar` (MMLU translated into Arabic; its "culturally sensitive"
+rows are *Western*-culture — Polaris from the USA, US/European history) · `nayeon212/BLEnD`
+(0 Arabic-script prompts; 304 base questions inflated to 20,364 rows) · `QCRI/AraDiCE-Culture`
+(no answer field at all) · `QCRI/AraDiCE` root (an 8-row index table) · `HYU-NLP/MIDAS AR_Idioms`
+(8,051 idioms but `"Sentence": []` on **every** row and 24.2 % OCR-corrupt: `هللا`/`اال`
+ligature damage) · `nassimjp/multilingual-proverb-reasoning` (Japanese proverbs glossed in
+Pashto) · `asas-ai/Arabic_WSD_Benchmark` · `Raniahossam33/Arabic_Culture_Dataset` (LLM DPO pairs)
+· `kellycyy/CulturalBench` (English-only) · `neulab/CulturalGround` (synthetic training data) ·
+`ashabrawy/dia_figqa` + `cmu-lti/multi-figqa` (**no Arabic subset** — MABL, which we use for
+Hindi, has no Arabic counterpart) · `ArSyra/*`, `IdiomX`, `IdiomTranslate30` (already excluded as
+synthetic/translation corpora).
+
+### Two ways to strengthen Dim 3 later
+
+314 items give ±5.5 pp SE at 50 % accuracy — enough for a large CPT effect, not a subtle one.
+
+1. **Score Kinayat anyway, labelled "contaminated — memorization ceiling."** The gap between it
+   and the clean 314 separates memorization from generalization.
+2. **Build the missing ChID-Arabic.** MIDAS AR contributes **7,973 idioms absent from our KB**
+   (overlap 21/7,994 = 0.3 % — it is the one large contamination-free Arabic idiom lexicon), and
+   FineWeb-2 `arb_Arab/test` is a 121 M-char held-out corpus to mine natural usages from. Blank
+   the idiom, draw distractors from same-length MIDAS entries. Requires cleaning the 24 % OCR
+   damage first. This is the single highest-value addition to the eval story.
+
+### Wikipedia is inside FineWeb-2 — measured, and handled
+
+95 / 42,080 docs (0.23 %) in the FineWeb-2 test shard come from `*.wikipedia.org`, 71 from
+`ar.wikipedia.org`; 0.32 % of bytes. Extrapolated over ~55 M `arb_Arab` docs that is ~43 k–93 k
+articles, **4–8 % of the Arabic dump**. So `build_ar_probes.py --exclude_urls '<train shards>'`
+collects every `ar.wikipedia.org/wiki/<title>` in the shards that will actually be trained on and
+excludes those titles from the OOD probe. For the *filtered* arm residual overlap is ≈0.01 %; for
+an *unfiltered* arm the flag is mandatory.
+
+### Verified end-to-end
+
+All 8 MC tasks scored with a real model (`Qwen/Qwen3-0.6B`, `--limit 60`). The length-bias
+correction is doing real work: on `ar_figurative` raw `acc` = 0.117 vs `acc_norm` = 0.317 —
+un-normalised log-prob collapses onto the shortest option. **Read `primary`** (= `acc_norm` for
+continuation tasks, `acc` for letter tasks), never raw `acc` on Alyah / `ar_figurative`.
 
 ---
 
@@ -202,6 +284,12 @@ configs so the three runs stay comparable.
 | D4.2 | Over-weight FinePDFs vs its size | 7–20× the idiom density of any web corpus |
 | D6.1 | **Tier-2 stem matching off by default** | measured false positives on real text |
 | D6.2 | Keep substring semantics (no word boundaries) | boundaries would destroy 21.4% of genuine hits |
+| D5.1 | Discard every Arabic *idiom* benchmark, keep a 314-item figurative set | we ingested 96.6–100% of Kinayat / Jawaher / Absher / amthal-hassaniya; a leaked benchmark is worse than a small one |
+| D5.2 | In-domain BPB probe = FineWeb-2's **official test split**, not a reserved train shard | genuinely held out, stable across runs, and strictly better than the zh in-domain probe, which is contaminated by design |
+| D5.3 | Dedup DziriEval on **question text**, not `id` | `id` is not a unique key: only 850 distinct ids for 950 distinct questions, because 50 ids are reused for different questions (49 with different golds). An id-keyed dedup silently deletes 100 real items |
+| D5.4 | `acc_norm` primary for all continuation tasks | Alyah's gold is the longest option 57.5% of the time (chance 25%); measured raw `acc` 0.117 vs `acc_norm` 0.317 on `ar_figurative` |
+| D5.5 | `--ar_kb_path` decontamination is opt-in, not forced | measured impact is 2/1173 (Alyah) and 0/314 (`ar_figurative`); those are incidental pan-Arab proverb overlaps, not item leakage, so dropping them is a choice not a fix |
+| D5.6 | Download benchmarks with `curl`, not `hf_hub_download` | every Xet-backed file stalls at 0 bytes behind this proxy; `resolve/main` over plain HTTPS works |
 
 ---
 
@@ -307,11 +395,29 @@ Qwen3.5's optional `s_aux`; `.json.gz` is not directly loadable by LLaMA-Factory
 ### 9.6 Evaluate
 
 ```bash
+# --- one-time: fetch the benchmarks (~14 MB) and build the BPB probes ---------
+bash src/culture/evaluation/download_ar.sh            # -> data/eval/ar/raw/
+python src/culture/evaluation/build_ar_probes.py \
+  --out_dir data/eval/ar \
+  --exclude_urls "$DATA_ROOT/train_ar/*.json.gz"      # excludes training Wikipedia titles
+
+# verify the loaders before burning GPU time (expected counts printed by download_ar.sh)
+PYTHONPATH=src python -c "from culture.evaluation.tasks_ar import LOADERS_AR as L; \
+  [print(k, len(f(ar_data_dir='data/eval/ar/raw').examples)) for k,f in L.items()]"
+
+# --- run it -------------------------------------------------------------------
 BASE_MODEL=/path/Qwen3.5-9B CPT_MODEL=/path/qwen3p5-9b-ar-cpt \
-  bash src/culture/evaluation/run_perplexity.sh    # Dim 2, Arabic LM
-  bash src/culture/evaluation/run_lm_eval.sh       # Dim 1, English retention
-# Dim 3/4 Arabic benchmarks: see Phase 5 once the benchmark set is finalised.
+  bash src/culture/evaluation/run_eval_ar.sh          # Dim 2 BPB + Dim 3/4 MC + delta
+# or on slurm, one checkpoint per job:
+sbatch src/culture/evaluation/eval_ar.slurm base
+sbatch src/culture/evaluation/eval_ar.slurm cpt
+
+# English-retention check (Dim 1) is language-agnostic, reuse the existing script:
+bash src/culture/evaluation/run_lm_eval.sh
 ```
+
+Read the `primary` field in `summary.json`, not `acc` — see D5.4. `eval_ar.slurm` sets
+`HF_HUB_OFFLINE=1`, so both commands above must have been run beforehand on a networked node.
 
 ---
 

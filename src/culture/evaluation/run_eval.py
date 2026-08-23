@@ -35,15 +35,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 from culture.evaluation.scorer import HFModel
 from culture.evaluation.tasks import LOADERS, GenTask, MCTask
 from culture.evaluation.tasks_zh import LOADERS_ZH
+from culture.evaluation.tasks_ar import LOADERS_AR
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("culture.eval")
 
-# Merge the Chinese loaders into the shared registry (Hindi + English + Chinese).
-LOADERS = {**LOADERS, **LOADERS_ZH}
+# Merge the per-language loaders into the shared registry
+# (Hindi + English + Chinese + Arabic).
+LOADERS = {**LOADERS, **LOADERS_ZH, **LOADERS_AR}
 
 MC_TASKS = {"mabl", "milu", "global_piqa", "mmlu", "boolq",
-            "chid", "chengyu_bench", "cmmlu", "ccpm"}
+            "chid", "chengyu_bench", "cmmlu", "ccpm",
+            *LOADERS_AR}
 GEN_TASKS = {"idiomce"}
 
 
@@ -165,6 +168,28 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ccpm_path", default=None,
                    help="Local CCPM jsonl (git clone THUNLP-AIPoet/CCPM).")
 
+    # Arabic (dimension 3+4) — one root dir drives every Arabic task.
+    p.add_argument("--ar_data_dir", default=None,
+                   help="Root of the Arabic benchmark tree written by download_ar.sh "
+                        "(default data/eval/ar/raw).")
+    p.add_argument("--ar_kb_path", default=None,
+                   help="Arabic idiom KB jsonl. If given, examples whose stem contains a "
+                        "KB idiom surface are DROPPED (belt-and-braces decontamination; "
+                        "measured impact is <1%% on Alyah/DziriEval).")
+    p.add_argument("--arabculture_countries", default=None,
+                   help="Comma-separated ArabCulture countries (default: all 13).")
+    p.add_argument("--acqa_dialects", default="msa",
+                   help="ArabicCulturalQA dialect variants: msa|egyptian|gulf|levantine|"
+                        "maghrebi|english, comma-separated, or 'all'.")
+    p.add_argument("--arabicmmlu_subjects", default=None,
+                   help="Comma-separated ArabicMMLU subjects, or 'all' (default: the 13 "
+                        "Arab-region subjects, 10,529 rows).")
+    p.add_argument("--global_piqa_ar_all", action="store_true",
+                   help="Keep Global-PIQA Arabic items with approx_cultural_score != 1 "
+                        "(default: culturally-scored items only).")
+    p.add_argument("--ar_num_fewshot", type=int, default=0,
+                   help="Few-shot for the Arabic tasks (0 = zero-shot, matching zh/hi).")
+
     # Prompting / scoring.
     p.add_argument("--num_fewshot", type=int, default=0, help="Few-shot for MABL/Global PIQA.")
     p.add_argument("--milu_num_fewshot", type=int, default=5)
@@ -185,6 +210,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--judge_batch_size", type=int, default=20)
     p.add_argument("--no_judge", action="store_true", help="Generate IdiomCE outputs but skip judging.")
     return p
+
+
+def _split_csv(s: str) -> List[str]:
+    return [x.strip() for x in s.split(",") if x.strip()]
 
 
 def main():
@@ -239,6 +268,20 @@ def main():
         elif name == "ccpm":
             task = LOADERS[name](args.ccpm_path, num_fewshot=args.num_fewshot,
                                  limit=args.limit, seed=args.seed)
+        elif name in LOADERS_AR:
+            # Every Arabic loader shares (ar_data_dir, num_fewshot, limit, seed, kb_path);
+            # task-specific selectors are passed only where they exist.
+            kw = dict(ar_data_dir=args.ar_data_dir, num_fewshot=args.ar_num_fewshot,
+                      limit=args.limit, seed=args.seed, kb_path=args.ar_kb_path)
+            if name == "arabculture" and args.arabculture_countries:
+                kw["countries"] = _split_csv(args.arabculture_countries)
+            elif name == "arabic_cultural_qa":
+                kw["dialects"] = _split_csv(args.acqa_dialects)
+            elif name == "arabicmmlu" and args.arabicmmlu_subjects:
+                kw["subjects"] = _split_csv(args.arabicmmlu_subjects)
+            elif name == "global_piqa_ar":
+                kw["cultural_only"] = not args.global_piqa_ar_all
+            task = LOADERS[name](**kw)
 
         if name in MC_TASKS:
             out = eval_mc(model, task, batch_size=args.batch_size)
