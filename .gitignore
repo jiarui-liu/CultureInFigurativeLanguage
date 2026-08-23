@@ -40,3 +40,15 @@ htmlcov/
 # wandb run artifacts
 logs/wandb/
 **/wandb/
+
+# Idiom datasets and analysis artifacts (868 MB).
+# Published to the HuggingFace dataset repo instead of git:
+#   https://huggingface.co/datasets/Jerry9999/CultureInFigurativeLanguage
+# Rebuild locally with src/culture/data_processing/ar_idioms/build_ar_idioms.py
+# or pull with:  huggingface-cli download Jerry9999/CultureInFigurativeLanguage \
+#                  --repo-type dataset --include "data/*" --local-dir .
+data/
+
+# Embedding / LLM response caches (regenerable, large)
+**/analysis/cache/
+**/enrich_cache.jsonl

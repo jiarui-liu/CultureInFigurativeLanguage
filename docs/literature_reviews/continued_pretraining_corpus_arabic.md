@@ -1,6 +1,13 @@
 # Continued Pretraining & Pretraining Corpora for Arabic — A Literature Review
 # 阿拉伯语持续预训练与预训练语料综述
 
+> **Companion doc / 姊妹文档:** this review covers the **web corpora** (pipeline step 2).
+> For the **idiom/proverb inventory** (pipeline step 1 — the أمثال / كنايات knowledge base with
+> literal meanings, figurative meanings and example sentences), see
+> [`arabic_idiom_resources.md`](arabic_idiom_resources.md).
+> 本文覆盖**网页语料**（流水线第 2 步）；**习语/谚语清单**（第 1 步，含字面义、比喻义与例句）见
+> [`arabic_idiom_resources.md`](arabic_idiom_resources.md)。
+
 ## ⭐ Dataset Quality Ranking — Hands-On Deep Sampling / 数据集质量实测排名（深度抽样）
 
 *Method / 方法:* Real HuggingFace dataset-viewer rows were pulled directly via curl at **deep, varied offsets** — pages p=0, 20, 30, 100, 500, 2000 (rows 0 → 200k+), ~20–30 real rows per dataset. Judged on fluency, cleanliness (boilerplate/HTML/ads/tatweel), MSA-vs-dialect-vs-foreign leakage, repetition, informational value, and **deep-offset degradation** (shallow sampling misses this). Only general-domain corpora actually sampled are ranked; gated sets are listed at the bottom. / 通过 curl 直接抓取 HF viewer 的真实数据行，覆盖 p=0 至 p=2000 的深层、多样页面，每个数据集读取约 20–30 条真实文本，重点考察深层是否退化。仅排名实际采样到的通用语料，受限数据集列于末尾。

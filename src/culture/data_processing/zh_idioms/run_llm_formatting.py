@@ -125,6 +125,46 @@ def get_processed_indices(output_path: str) -> Set[int]:
                         continue
     return processed
 
+_OUTPUT_LIST_FIELDS = ("entities", "literal_meanings", "figurative_meanings", "examples")
+
+
+def normalize_llm_output(item: Any) -> Any:
+    """Coerce one LLM result object to the KB schema.
+
+    The model intermittently returns a list-of-lists for a field
+    (``"literal_meanings": [["a","b"]]``). Storing that verbatim is what left
+    nested lists in 16.1% of the Chinese KB. Flatten recursively, de-duplicate
+    while preserving order, and drop empties — see
+    ``culture/data_processing/repair_idiom_kb.py``, which fixes already-written
+    files with the identical rule.
+    """
+    if not isinstance(item, dict):
+        return item
+    for field in _OUTPUT_LIST_FIELDS:
+        if field not in item:
+            continue
+        flat: List[str] = []
+
+        def walk(v: Any) -> None:
+            if v is None:
+                return
+            if isinstance(v, (list, tuple, set)):
+                for x in v:
+                    walk(x)
+            elif isinstance(v, dict):
+                for x in v.values():
+                    walk(x)
+            else:
+                s = str(v).strip()
+                if s:
+                    flat.append(s)
+
+        walk(item[field])
+        seen: Set[str] = set()
+        item[field] = [x for x in flat if not (x in seen or seen.add(x))]
+    return item
+
+
 def parse_llm_output(output: str, chunk: List[tuple]) -> Optional[List[Dict]]:
     """
     Parse LLM output and match results to the chunk.
@@ -152,7 +192,10 @@ def parse_llm_output(output: str, chunk: List[tuple]) -> Optional[List[Dict]]:
                 results.append({
                     "idiom": idiom,
                     "index": idx,
-                    "output": idiom_to_result[idiom]
+                    # Coerce the model's object to the schema. Without this the
+                    # LLM's occasional `[["a","b"]]` was stored verbatim, which
+                    # left nested lists in 16.1% of the shipped Chinese KB.
+                    "output": normalize_llm_output(idiom_to_result[idiom])
                 })
             else:
                 # If idiom not found in output, store None or empty dict

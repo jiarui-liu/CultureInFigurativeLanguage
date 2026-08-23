@@ -45,6 +45,10 @@ from datasets import load_dataset
 import logging
 import requests
 
+# Allow running this file directly (not just as an installed `culture` package);
+# parents[3] is <repo>/src. Needed by the Arabic normalizer import below.
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -609,20 +613,75 @@ def create_ahocorasick_matcher(idioms: Set[str], case_insensitive: bool = False)
         # Remove content in parentheses for English
         base_idiom = re.sub(r'\([^)]*\)', '', idiom).strip() or idiom
         key = base_idiom.lower() if case_insensitive else base_idiom
+        # The stored VALUE stays the un-normalized surface form so that
+        # idiom_doc_counts keys join straight back to the idiom KB.
         A.add_word(key, base_idiom)
     A.make_automaton()
     logger.info(f"Created Aho-Corasick matcher with {len(A)} patterns (case_insensitive={case_insensitive})")
     return A
 
 
+def create_arabic_matcher(idioms: Set[str]):
+    """Aho-Corasick matcher for Arabic, keyed on NORMALIZED idiom forms.
+
+    Arabic idiom dictionaries are vocalized (tashkil) while web text is not, and
+    hamza carriers / alif-maksura / teh-marbuta vary freely. Matching raw surface
+    forms recovers almost nothing, so both the patterns here and the search text
+    (see :func:`prepare_search_text`) are normalized first.
+    """
+    import ahocorasick
+    from culture.data_processing.ar_idioms.normalize import (
+        MIN_PATTERN_CHARS,
+        normalize_idiom_for_matching,
+        strip_quote_furniture,
+    )
+    A = ahocorasick.Automaton()
+    skipped_empty = skipped_short = 0
+    for idiom in idioms:
+        base_idiom = re.sub(r'\([^)]*\)', '', idiom).strip() or idiom
+        base_idiom = strip_quote_furniture(base_idiom) or base_idiom
+        key = normalize_idiom_for_matching(idiom)
+        if not key:
+            skipped_empty += 1
+            continue
+        # Very short patterns are where essentially all false positives come from.
+        if len(key) < MIN_PATTERN_CHARS:
+            skipped_short += 1
+            continue
+        A.add_word(key, base_idiom)
+    A.make_automaton()
+    logger.info(
+        f"Created Arabic Aho-Corasick matcher with {len(A)} normalized patterns "
+        f"(skipped {skipped_empty} empty, {skipped_short} shorter than "
+        f"{MIN_PATTERN_CHARS} chars)"
+    )
+    return A
+
+
 def create_matcher(lang: str, idioms: Set[str]):
     """Create appropriate matcher for language."""
+    if lang == "ar":
+        return create_arabic_matcher(idioms)
     return create_ahocorasick_matcher(idioms, case_insensitive=(lang == "en"))
+
+
+def prepare_search_text(text: str, lang: str) -> str:
+    """Transform document text into the space the matcher's patterns live in.
+
+    Must stay in sync with :func:`create_matcher`: en -> lowercase,
+    ar -> Arabic normalization, everything else -> unchanged.
+    """
+    if lang == "en":
+        return text.lower()
+    if lang == "ar":
+        from culture.data_processing.ar_idioms.normalize import normalize_ar
+        return normalize_ar(text)
+    return text
 
 
 def check_contains_idiom(text: str, lang: str, matcher) -> bool:
     """Check if text contains idiom using Aho-Corasick automaton."""
-    search_text = text.lower() if lang == "en" else text
+    search_text = prepare_search_text(text, lang)
     for _ in matcher.iter(search_text):
         return True
     return False
@@ -779,7 +838,7 @@ def download_and_filter_chunked(
                 matched_indices.append(doc_idx)
 
                 # Count which idioms matched in this doc using Aho-Corasick
-                search_text = text.lower() if lang == "en" else text
+                search_text = prepare_search_text(text, lang)
                 seen_in_doc = set()
                 for _, matched_idiom in matcher.iter(search_text):
                     if matched_idiom not in seen_in_doc:

@@ -1,18 +1,32 @@
 {
   "hi_proverbs": {
     "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train",
-    "columns": { "prompt": "text" }
+    "columns": {
+      "prompt": "text"
+    }
   },
   "hi_unfiltered": {
     "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_unfiltered_prepared",
-    "columns": { "prompt": "text" }
+    "columns": {
+      "prompt": "text"
+    }
   },
   "zh_chengyu": {
     "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh",
-    "columns": { "prompt": "text" }
+    "columns": {
+      "prompt": "text"
+    }
   },
   "zh_unfiltered": {
     "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_unfiltered_prepared",
-    "columns": { "prompt": "text" }
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "ar_amthal": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar",
+    "columns": {
+      "prompt": "text"
+    }
   }
 }
