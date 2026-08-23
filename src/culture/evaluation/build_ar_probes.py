@@ -105,10 +105,24 @@ def _wiki_title(url: str) -> Optional[str]:
 
 
 def collect_excluded_titles(patterns: List[str]) -> Set[str]:
-    """Arabic-Wikipedia titles reachable from the URLs in the training shards."""
+    """Arabic-Wikipedia titles reachable from the URLs in the training shards.
+
+    Point this at the **tagged** shards (`.../data/*/tagged_*.json.gz`), NOT at the
+    `train_ar/` output of `prepare_data.py`. Two reasons, both of which make the
+    latter fail silently:
+      - prepare_data writes `train_*.jsonl`, so a `*.json.gz` glob matches nothing;
+      - it projects onto KEEP_FIELDS = (text, source, matched_idioms), i.e. it
+        **drops `url`**, so there would be no titles to find even with a right glob.
+    A silent no-op here would leave the "decontaminated" probe contaminated, so
+    both empty cases below are hard errors rather than warnings.
+    """
     titles: Set[str] = set()
-    n_docs = 0
+    n_docs = n_files = 0
     for pattern in patterns:
+        matched = sorted(glob.glob(pattern))
+        n_files += len(matched)
+        if not matched:
+            logger.warning("--exclude_urls pattern matched no files: %s", pattern)
         for row in _iter_shard_lines(pattern):
             n_docs += 1
             for key in ("url", "URL", "source_url", "id"):
@@ -116,8 +130,27 @@ def collect_excluded_titles(patterns: List[str]) -> Set[str]:
                 if t:
                     titles.add(t)
                     break
-    logger.info("scanned %d training docs -> %d ar.wikipedia titles to exclude",
-                n_docs, len(titles))
+    if n_files == 0:
+        raise SystemExit(
+            f"--exclude_urls matched 0 files ({patterns}). Point it at the TAGGED shards, "
+            "e.g. '$DATA_ROOT/ar-amthal-cpt/data/*/tagged_*.json.gz'. Refusing to write a "
+            "probe labelled decontaminated when no decontamination happened."
+        )
+    # ~0.23% of FineWeb-2 arb_Arab docs are ar.wikipedia, so over this many docs a
+    # zero count means the `url` field is missing, not that Wikipedia is absent.
+    # Below it, zero is the expected outcome and must not be treated as an error.
+    IMPLAUSIBLE_ZERO_ABOVE = 10_000
+    if n_docs > IMPLAUSIBLE_ZERO_ABOVE and not titles:
+        raise SystemExit(
+            f"Scanned {n_docs} docs across {n_files} files and found no ar.wikipedia URLs; "
+            "at ~0.23% expected rate that is implausible. The shards probably lack a `url` "
+            "field — prepare_data.py drops it. Use the tagged shards instead."
+        )
+    if n_docs <= IMPLAUSIBLE_ZERO_ABOVE and not titles:
+        logger.warning("no ar.wikipedia URLs in %d docs — expected for a small sample "
+                       "(~0.23%% rate), but pass the FULL tagged set for a real run", n_docs)
+    logger.info("scanned %d training docs in %d files -> %d ar.wikipedia titles to exclude",
+                n_docs, n_files, len(titles))
     return titles
 
 

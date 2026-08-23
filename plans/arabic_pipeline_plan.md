@@ -414,19 +414,33 @@ export DATA_ROOT=/lustre/.../culture-pretraining-data
 ### 9.2 Build the Arabic idiom KB (fast, ~2 min — or just use the published one)
 
 ```bash
-# Option A: pull the finished KB from HuggingFace (recommended)
-huggingface-cli download Jerry9999/CultureInFigurativeLanguage --repo-type dataset \
+# Option A: pull the finished KB from HuggingFace (RECOMMENDED — it is already
+# enriched, repaired and audited, and skips ~10,386 LLM calls).
+export HF_HUB_DISABLE_XET=1        # Xet-backed files stall at 0 B behind some proxies
+hf download Jerry9999/CultureInFigurativeLanguage --repo-type dataset \
   --include "data/idioms/ar/*" --local-dir .
 
-# Option B: rebuild from the upstream sources
+# Option B: rebuild from the upstream sources — ALL FOUR STEPS, in order.
 python src/culture/data_processing/ar_idioms/build_ar_idioms.py \
     --out data/idioms/ar/idioms_merged_llm_formatted.jsonl \
     --report data/idioms/ar/build_report.json
-# then enrich (needs METAGEN_API_KEY):
-python src/culture/data_processing/ar_idioms/enrich_ar_idioms.py \
+# enrich: adds `entities` + `literal_meanings` (needs METAGEN_API_KEY). ~40 min.
+python -m culture.data_processing.ar_idioms.enrich_ar_idioms \
     --input data/idioms/ar/idioms_merged_llm_formatted.jsonl \
     --cache data/idioms/ar/enrich_cache.jsonl --workers 24
+# repair: strips editing notation and cloze blanks the builder cannot see.
+# Idempotent, and asserts no entry loses its idiom or all of its meanings.
+python -m culture.data_processing.ar_idioms.repair_ar_kb \
+    --input data/idioms/ar/idioms_merged_llm_formatted.jsonl
+# audit: 16 deterministic checks. Expect ~99.1% clean; investigate if lower.
+python -m culture.data_processing.ar_idioms.audit_idioms \
+    --input data/idioms/ar/idioms_merged_llm_formatted.jsonl --lang ar \
+    --report data/idioms/ar/audit_report.json
 ```
+
+Expected end state: **10,386 entries, 99.09 % audit-clean**, `figurative_meanings` 100 %
+(human), `literal_meanings` 100 % and `entities` 87.8 % (LLM, flagged in
+`meta.field_provenance`), `variety_region`/`register` 100 %, ISO `variety` code 97.8 %.
 
 ### 9.3 Filter + tag the pretraining corpus
 
@@ -435,6 +449,10 @@ concatenate; each writes `tagged_*.json.gz`.
 
 ```bash
 AR=src/culture/training/mC4/filter_and_tag_ar.py
+# Every command below reads the KB from --idioms, which DEFAULTS to
+# data/idioms/ar/idioms_merged_llm_formatted.jsonl. Pass it explicitly if the KB
+# lives elsewhere. Run 9.2 first — a stale/unrepaired KB silently loses recall
+# (24 entries had variant furniture that never matches running text).
 
 # 1) FinePDFs — highest idiom density, run this one first
 python $AR filter --dataset HuggingFaceFW/finepdfs --config arb_Arab \
@@ -499,9 +517,14 @@ Qwen3.5's optional `s_aux`; `.json.gz` is not directly loadable by LLaMA-Factory
 ```bash
 # --- one-time: fetch the benchmarks (~14 MB) and build the BPB probes ---------
 bash src/culture/evaluation/download_ar.sh            # -> data/eval/ar/raw/
+# NOTE the path: the TAGGED shards, not train_ar/. prepare_data.py writes
+# train_*.jsonl (so a *.json.gz glob matches nothing) AND projects onto
+# KEEP_FIELDS = (text, source, matched_idioms), i.e. it drops `url` — so there
+# would be no Wikipedia titles to exclude. build_ar_probes.py now hard-errors on
+# both mistakes rather than silently writing an undecontaminated probe.
 python src/culture/evaluation/build_ar_probes.py \
   --out_dir data/eval/ar \
-  --exclude_urls "$DATA_ROOT/train_ar/*.json.gz"      # excludes training Wikipedia titles
+  --exclude_urls "$DATA_ROOT/ar-amthal-cpt/data/*/tagged_*.json.gz"
 
 # verify the loaders before burning GPU time (expected counts printed by download_ar.sh)
 PYTHONPATH=src python -c "from culture.evaluation.tasks_ar import LOADERS_AR as L; \
@@ -519,7 +542,26 @@ bash src/culture/evaluation/run_lm_eval.sh
 ```
 
 Read the `primary` field in `summary.json`, not `acc` — see D5.4. `eval_ar.slurm` sets
-`HF_HUB_OFFLINE=1`, so both commands above must have been run beforehand on a networked node.
+`HF_HUB_OFFLINE=1`, so both one-time commands above must have been run beforehand on a
+networked node.
+
+### 9.7 Order of operations, and what each step needs
+
+| # | Step | Needs network | Needs GPU | Needs API key | Rough time |
+|---|---|---|---|---|---|
+| 9.1 | env | ✅ | — | — | 10 min |
+| 9.2 | KB — Option A download | ✅ | — | — | 1 min |
+| 9.2 | KB — Option B rebuild | ✅ | — | `METAGEN_API_KEY` | ~45 min |
+| 9.3 | filter + tag corpus | ✅ (streams) | — | — | hours, per source |
+| 9.4 | reshard | — | — | — | minutes |
+| 9.5 | train | — | ✅ 4×8 | — | days |
+| 9.6 | benchmarks + probes (one-time) | ✅ | — | — | 5 min |
+| 9.6 | evaluate | — | ✅ 1 | — | hours |
+
+Two ordering constraints that are easy to get wrong:
+- **9.2 before 9.3.** The matcher reads the KB; an unrepaired KB silently loses recall.
+- **9.3 before 9.6's probe build.** The Wikipedia probe excludes titles found in the tagged
+  shards, so those shards must already exist.
 
 ---
 
