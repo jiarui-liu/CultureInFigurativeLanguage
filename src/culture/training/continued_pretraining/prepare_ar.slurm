@@ -74,8 +74,12 @@ for shard in sorted(glob.glob(os.path.join(out_dir, "train_*.jsonl"))):
             batch.append(json.loads(line)["text"]); ndocs += 1
             if len(batch) >= 1000: flush()
 flush()
-with open(os.path.join(out_dir, "token_budget.txt"), "w") as f:
+# IMPORTANT: write the budget file OUTSIDE the dataset dir. A stray non-.jsonl
+# file inside train_ar makes LLaMA-Factory's directory loader fail with
+# "ValueError: File types should be identical." (mixed .jsonl/.txt extensions).
+budget_path = out_dir.rstrip("/") + ".token_budget.txt"
+with open(budget_path, "w") as f:
     f.write(str(total))
-print(f"TOKEN_BUDGET docs={ndocs} tokens={total} ({total/1e9:.3f}B) -> {out_dir}/token_budget.txt")
+print(f"TOKEN_BUDGET docs={ndocs} tokens={total} ({total/1e9:.3f}B) -> {budget_path}")
 PY
-echo "PREPARE_DONE out=$OUT budget=$(cat "$OUT/token_budget.txt" 2>/dev/null)"
+echo "PREPARE_DONE out=$OUT budget=$(cat "${OUT}.token_budget.txt" 2>/dev/null)"

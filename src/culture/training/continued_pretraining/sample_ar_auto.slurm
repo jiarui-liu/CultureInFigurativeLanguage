@@ -22,7 +22,7 @@ export HF_HUB_DOWNLOAD_TIMEOUT=60 HF_HUB_DISABLE_XET=1
 export HF_HOME="/lustre-storage/fsx_0/user/jiaruiliu/hfcache_ar"
 
 DATA_ROOT=/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data
-BUDGET_FILE="$DATA_ROOT/train_ar/token_budget.txt"
+BUDGET_FILE="$DATA_ROOT/train_ar.token_budget.txt"   # sibling of train_ar (NOT inside it)
 OUT="$DATA_ROOT/train_ar_unfiltered"
 PREP="$DATA_ROOT/train_ar_unfiltered_prepared"
 MODEL=/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
