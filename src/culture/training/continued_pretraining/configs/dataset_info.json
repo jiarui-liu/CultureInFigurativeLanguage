@@ -28,5 +28,11 @@
     "columns": {
       "prompt": "text"
     }
+  },
+  "ar_unfiltered": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_unfiltered_prepared",
+    "columns": {
+      "prompt": "text"
+    }
   }
 }

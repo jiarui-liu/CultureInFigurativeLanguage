@@ -36,8 +36,8 @@ echo "### [Dim1] zh chengyu in-domain (CONTAMINATED)"
 python -m culture.evaluation.perplexity --model_path "$M" --run_name "$RUN" \
   --data_path "$DATA/zh_chengyu_heldout.jsonl" --text_field text --output_dir "$OUT/ppl_zh_chengyu"
 
-# --- base reuses Dim2 + WikiText from the (identical) Qwen3.5-9B base run; only cpt runs them ---
-if [ "$RUN" = cpt ]; then
+# --- base reuses Dim2 + WikiText from the (identical) Qwen3.5-9B base run; cpt/unfiltered are distinct models so run them ---
+if [ "$RUN" = cpt ] || [ "$RUN" = unfiltered ]; then
   echo "### [Dim1] WikiText-103 (English retention)"
   python -m culture.evaluation.perplexity --model_path "$M" --run_name "$RUN" \
     --hf_dataset Salesforce/wikitext --hf_config wikitext-103-raw-v1 --hf_split test \

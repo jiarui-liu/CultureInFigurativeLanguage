@@ -317,10 +317,21 @@ def tag_document(text: str, surfaces: List[str],
 # Corpus streaming
 # --------------------------------------------------------------------------- #
 def stream_corpus(dataset: str, config: Optional[str], split: str,
-                  text_field: str, limit: Optional[int]) -> Iterator[Dict[str, Any]]:
+                  text_field: str, limit: Optional[int],
+                  data_files: Optional[List[str]] = None) -> Iterator[Dict[str, Any]]:
     from datasets import load_dataset
-    ds = load_dataset(dataset, config, split=split, streaming=True,
-                      token=os.environ.get("HF_TOKEN"))
+    if data_files:
+        # Parallel-shard mode: read an explicit subset of parquet files directly
+        # via the generic "parquet" builder (the fineweb-2 builder is config-based
+        # and rejects data_files -> "BuilderConfig 'default' not found"). Repo-
+        # relative paths are turned into hf:// URLs so no config is needed.
+        hf_files = [p if p.startswith("hf://") else f"hf://datasets/{dataset}/{p}"
+                    for p in data_files]
+        ds = load_dataset("parquet", data_files=hf_files, split=split, streaming=True,
+                          token=os.environ.get("HF_TOKEN"))
+    else:
+        ds = load_dataset(dataset, config, split=split, streaming=True,
+                          token=os.environ.get("HF_TOKEN"))
     for i, row in enumerate(ds):
         if limit and i >= limit:
             break
@@ -330,12 +341,13 @@ def stream_corpus(dataset: str, config: Optional[str], split: str,
 
 
 class ShardWriter:
-    """Rolling gzip-JSONL writer producing tagged_NNNNN.json.gz."""
+    """Rolling gzip-JSONL writer producing tagged_<prefix>NNNNN.json.gz."""
 
-    def __init__(self, outdir: Path, docs_per_shard: int = 50_000):
+    def __init__(self, outdir: Path, docs_per_shard: int = 50_000, prefix: str = ""):
         self.outdir = outdir
         self.outdir.mkdir(parents=True, exist_ok=True)
         self.docs_per_shard = docs_per_shard
+        self.prefix = prefix          # namespaces shards when several jobs share a dir
         self.n = 0
         self.shard = 0
         self.fh = None
@@ -343,7 +355,7 @@ class ShardWriter:
     def _roll(self):
         if self.fh:
             self.fh.close()
-        p = self.outdir / f"tagged_{self.shard:05d}.json.gz"
+        p = self.outdir / f"tagged_{self.prefix}{self.shard:05d}.json.gz"
         self.fh = gzip.open(p, "wt", encoding="utf-8")
         logger.info("writing %s", p)
         self.shard += 1
@@ -365,7 +377,7 @@ class ShardWriter:
 def run(args) -> Dict[str, Any]:
     idioms = load_idioms(args.idioms)
     matcher = ArabicIdiomMatcher(idioms, use_stem=args.use_stem)
-    writer = ShardWriter(Path(args.out), args.docs_per_shard)
+    writer = ShardWriter(Path(args.out), args.docs_per_shard, prefix=args.shard_prefix)
 
     per_idiom = Counter()
     stats = Counter()
@@ -376,8 +388,13 @@ def run(args) -> Dict[str, Any]:
     is_pdf = args.is_pdf or "finepdf" in (args.dataset or "").lower()
     if is_pdf:
         logger.info("PDF mode: NFKC repair + lam-alef corruption screening enabled")
+    data_files = None
+    if args.data_files:
+        data_files = [s.strip() for s in args.data_files.split(",") if s.strip()]
+        logger.info("parallel-shard mode: %d data_files, prefix=%r",
+                    len(data_files), args.shard_prefix)
     for doc in stream_corpus(args.dataset, args.config, args.split,
-                             args.text_field, args.limit):
+                             args.text_field, args.limit, data_files=data_files):
         stats["scanned"] += 1
         if not args.no_quality_filter:
             reason = reject_reason(doc["text"], is_pdf=is_pdf,
@@ -427,7 +444,8 @@ def run(args) -> Dict[str, Any]:
         "kept_chars": kept_chars,
         "top_idioms": per_idiom.most_common(20),
     }
-    rep = Path(args.out) / "filter_report.json"
+    rep_name = f"filter_report_{args.shard_prefix.rstrip('_')}.json" if args.shard_prefix else "filter_report.json"
+    rep = Path(args.out) / rep_name
     with open(rep, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
     logger.info("report -> %s", rep)
@@ -549,6 +567,16 @@ def build_parser() -> argparse.ArgumentParser:
                         "Auto-enabled when --dataset contains 'finepdf'.")
     p.add_argument("--max_docs_per_idiom", type=int, default=10_000)
     p.add_argument("--docs_per_shard", type=int, default=50_000)
+    p.add_argument("--data_files", default=None,
+                   help="Comma-separated repo-relative parquet globs to stream instead of "
+                        "the whole config (e.g. 'arb_Arab/train/000_0000*.parquet'). Used to "
+                        "PARALLELIZE filtering across disjoint shards; when set, --config is "
+                        "ignored by the loader. Set a distinct --shard_prefix per job and "
+                        "divide --max_docs_per_idiom by the number of jobs.")
+    p.add_argument("--shard_prefix", default="",
+                   help="Prefix inserted into output filenames (tagged_<prefix>NNNNN.json.gz "
+                        "and filter_report_<prefix>.json) so parallel jobs can share one --out "
+                        "dir without colliding. prepare_data.py's tagged_*.json.gz glob still matches.")
     p.add_argument("--log_every", type=int, default=20_000)
     # Tier 2 is opt-IN: its extra hits measured as false positives on real text.
     p.add_argument("--use_stem", action="store_true",
