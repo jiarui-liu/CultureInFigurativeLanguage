@@ -169,13 +169,41 @@ double-counts against FineWeb-2/HPLT/FinePDFs.
 live (3.45% vs 0.17–0.50%). Cost: 15.2% of its docs are in Arabic Presentation Forms (fix with
 NFKC) and 21.8% show lām-alef ligature corruption (detect and drop).
 
-### Mandatory filter stack (before the idiom matcher)
+### Mandatory filter stack (before the idiom matcher) — ✅ IMPLEMENTED
+
+`src/culture/training/mC4/quality_ar.py`, called from `filter_and_tag_ar.py` before the matcher.
+Every drop is attributed by gate in `filter_report.json → rejected_by_gate`. Disable for
+ablations with `--no_quality_filter`.
+
 1. Drop docs with **no sentence punctuation** (kills 101B-style text and title-only stubs).
 2. Gambling/porn blocklist — guard the FPs above.
 3. Machinery/Alibaba SEO blocklist (`كسارة|مطحنة|المصنعين والموردين|مصنع من الصين`).
 4. Forex/binary-options + transliteration garble.
 5. FinePDFs only: `NFKC`, then drop ≥3 hits of `إال |اآل|األ`, and Latin ratio > 0.35.
 6. Drop Arabic-char ratio < 0.5, docs < 300 chars, line-uniqueness < 0.6.
+
+**Measured on live traffic:**
+
+| Corpus | scanned | rejected | top gates | match rate after |
+|---|---:|---:|---|---:|
+| FineWeb-2 `arb_Arab` | 4,000 | **46 (1.2 %)** | not_arabic_enough 24 · too_short 21 · spam_adult 1 | 3.58 % |
+| FinePDFs `arb_Arab` | 3,000 | **1,245 (41.5 %)** | **pdf_ligature_corrupt 836 (27.9 %)** · not_arabic_enough 226 · too_short 111 · latin_heavy 50 · repetitive_lines 22 | 5.53 % |
+
+The PDF gate is the one that earns its keep: **27.9 % ligature corruption measured, above the
+21.8 % the survey estimated.** FinePDFs is 30 % of the mix, so without this gate roughly **8 % of
+the entire training corpus would be lām-alef-corrupted text**. And FinePDFs still out-densities
+every web source *after* discarding 41.5 % of it (5.53 % vs 3.58 % idiom-bearing), which
+re-confirms D4.2.
+
+False positives were the design constraint, not an afterthought: the blocklists match multi-word
+collocations, never bare substrings, because `كسارة` (crusher) collides with `كسكس` (couscous) and
+`ساسكس` (Sussex), and prose *about* the ethics of `قمار` (gambling) is legitimate. Cross-checked
+against the KB: **0 of 1,515 long idiom meanings are falsely blocked.**
+
+> **Gotcha:** the streaming reader segfaults at interpreter teardown
+> (`PyGILState_Release`) on some `datasets`/`pyarrow` builds. It fires *after*
+> `filter_report.json` and the shards are written and flushed — outputs verified intact. Ignore
+> it, or check the report file rather than the exit code.
 
 ---
 
@@ -454,7 +482,9 @@ AR=src/culture/training/mC4/filter_and_tag_ar.py
 # lives elsewhere. Run 9.2 first — a stale/unrepaired KB silently loses recall
 # (24 entries had variant furniture that never matches running text).
 
-# 1) FinePDFs — highest idiom density, run this one first
+# 1) FinePDFs — highest idiom density, run this one first. PDF mode (NFKC +
+#    lam-alef screening) auto-enables on the dataset name; 41.5% of docs are
+#    dropped by the quality gates, 27.9% for ligature corruption alone.
 python $AR filter --dataset HuggingFaceFW/finepdfs --config arb_Arab \
     --out $DATA_ROOT/ar-amthal-cpt/data/finepdfs --max_docs_per_idiom 10000
 
@@ -481,8 +511,14 @@ python $AR measure --limit 20000 --out /tmp/ar_measure
 ```
 
 Each run writes `filter_report.json` (scanned / matched / written / inventory coverage /
-top idioms). **Check the `over_matching_idioms` list** and prune any expression firing on
->0.5% of the corpus before the full build.
+top idioms / **`rejected_by_gate`**). Two things to check before committing to a full build:
+**`over_matching_idioms`** — prune any expression firing on >0.5% of the corpus — and
+**`rejected_by_gate`**, which should look like the table in §4; a wildly different profile means
+the source is not what the survey measured.
+
+The streaming reader may segfault at interpreter exit (`PyGILState_Release`) on some
+`datasets`/`pyarrow` builds. It happens after the shards and report are flushed, so judge success
+by `filter_report.json`, not the exit code.
 
 ### 9.4 Reshard for LLaMA-Factory
 

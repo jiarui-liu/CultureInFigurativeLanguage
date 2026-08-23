@@ -80,6 +80,10 @@ from culture.data_processing.ar_idioms.normalize import (  # noqa: E402
     normalize_idiom_for_matching,
 )
 from culture.data_processing.ar_idioms.stem import StemMatcher  # noqa: E402
+from culture.training.mC4.quality_ar import (  # noqa: E402
+    reject_reason,
+    repair_pdf_text,
+)
 
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -250,12 +254,26 @@ def run(args) -> Dict[str, Any]:
 
     per_idiom = Counter()
     stats = Counter()
+    rejects = Counter()
     kept_chars = 0
+    # FinePDFs needs NFKC + ligature-corruption screening; HTML sources do not
+    # (and NFKC is lossy on ordinary web text, so it is not applied blindly).
+    is_pdf = args.is_pdf or "finepdf" in (args.dataset or "").lower()
+    if is_pdf:
+        logger.info("PDF mode: NFKC repair + lam-alef corruption screening enabled")
     for doc in stream_corpus(args.dataset, args.config, args.split,
                              args.text_field, args.limit):
         stats["scanned"] += 1
-        if len(doc["text"]) < args.min_doc_chars:
-            stats["too_short"] += 1
+        if not args.no_quality_filter:
+            reason = reject_reason(doc["text"], is_pdf=is_pdf,
+                                   min_chars=args.min_doc_chars)
+            if reason:
+                rejects[reason] += 1
+                continue
+            if is_pdf:
+                doc["text"], _ = repair_pdf_text(doc["text"])
+        elif len(doc["text"]) < args.min_doc_chars:
+            rejects["too_short"] += 1
             continue
         hits = matcher.match(doc["text"])
         if not hits:
@@ -284,6 +302,8 @@ def run(args) -> Dict[str, Any]:
 
     out = {
         **dict(stats),
+        "rejected_by_gate": dict(rejects.most_common()),
+        "rejected_total": sum(rejects.values()),
         "unique_idioms_hit": len(per_idiom),
         "inventory_size": len(idioms),
         "coverage_pct": round(100 * len(per_idiom) / max(len(idioms), 1), 2),
@@ -392,7 +412,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--text_field", default="text")
     p.add_argument("--out", default="/tmp/ar_tagged")
     p.add_argument("--limit", type=int, default=None)
-    p.add_argument("--min_doc_chars", type=int, default=200)
+    p.add_argument("--min_doc_chars", type=int, default=300,
+                   help="Plan §4 gate 6. Was 200; 300 is what the corpus survey "
+                        "measured as the point below which Arabic web docs are stubs.")
+    p.add_argument("--no_quality_filter", action="store_true",
+                   help="Skip the §4 quality gates (quality_ar.reject_reason) and keep "
+                        "only the length check. For ablations -- the gates are what make "
+                        "the accepted corpus mix safe.")
+    p.add_argument("--is_pdf", action="store_true",
+                   help="Force PDF mode (NFKC + lam-alef corruption screening). "
+                        "Auto-enabled when --dataset contains 'finepdf'.")
     p.add_argument("--max_docs_per_idiom", type=int, default=10_000)
     p.add_argument("--docs_per_shard", type=int, default=50_000)
     p.add_argument("--log_every", type=int, default=20_000)
