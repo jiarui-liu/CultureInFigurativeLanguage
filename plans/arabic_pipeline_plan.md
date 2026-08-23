@@ -6,6 +6,10 @@
 Tracks every task, **every decision and why**, and ends with the exact commands to
 download the corpus and run training on another server (§9).
 
+**One-line summary:** CPT Qwen3.5-9B on **FineWeb-2 `arb_Arab`** — quality-gated, filtered down
+to the ~3.6 % of documents containing one of our 10,386 Arabic idioms, each tagged with an Arabic
+knowledge block giving that idiom's figurative meaning, literal meaning, entities and dialect.
+
 ---
 
 ## 0. Context / inputs ✅
@@ -464,6 +468,39 @@ Run `git push origin main` yourself from an interactive shell.
 
 Everything below is copy-paste. `$REPO` = this repository, `$DATA_ROOT` = a large scratch disk.
 
+### What this pipeline actually does
+
+> **Pretraining corpus: `HuggingFaceFW/fineweb-2`, config `arb_Arab`, split `train` — one
+> source, nothing else** (decision **D4.3**, measured head-to-head against FinePDFs and
+> FineWeb2-HQ in §4).
+>
+> We do **not** train on it raw. The corpus is streamed and each document goes through:
+>
+> 1. **Quality gates** (`quality_ar.py`) — punctuation, Arabic ratio, line uniqueness, length,
+>    and adult/SEO/forex blocklists. Drops ~1.1 % of FineWeb-2; every drop is attributed by gate
+>    in `filter_report.json`.
+> 2. **Idiom filtering** (`filter_and_tag_ar.py`) — morphology-aware matching of the
+>    10,386-entry Arabic KB against the normalized document. **Keeps only the ~3.6 % of documents
+>    that actually contain an idiom**; raw substring matching would keep 0 %.
+> 3. **Windowing** — documents too long for `cutoff_len` are trimmed to a window around the
+>    matched idiom, so the idiom and its gloss stay in the same training sequence.
+> 4. **Metadata tagging** — an Arabic knowledge block is appended to each kept document:
+>    figurative meaning, literal meaning, entities and dialect for every idiom it contains.
+>
+> Output is `tagged_*.json.gz` → resharded by `prepare_data.py` → LLaMA-Factory `pt` stage.
+> So the training text is **`<original FineWeb-2 document>\n\n<Arabic knowledge block>`**.
+
+A tagged document ends like this:
+
+```
+المعاني الاصطلاحية للتعابير الواردة في النص:
+- يِقْتِلِ الْقَتِيلْ وِيِمْشِي فِي جَنَازْتُهْ
+  المعنى المجازي: يُضرَب لمن بلغ في الدهاء مبلغًا عظيمًا.
+  المعنى الحرفي: يقتل القتيل ثم يمشي في جنازته.
+  العناصر: الْقَتِيلْ، جَنَازْتُهْ
+  اللهجة: Egyptian، Libyan
+```
+
 ### 9.1 Environment
 
 ```bash
@@ -551,10 +588,10 @@ by `filter_report.json`, not the exit code.
 ### 9.4 Reshard for LLaMA-Factory
 
 ```bash
-mkdir -p $DATA_ROOT/ar-amthal-cpt/data_all
-cp $DATA_ROOT/ar-amthal-cpt/data/*/tagged_*.json.gz $DATA_ROOT/ar-amthal-cpt/data_all/
+# Single source, so point prepare_data.py straight at 9.3's output dir.
+# (If you added fallback sources, cp their tagged_*.json.gz into one dir first.)
 python src/culture/training/continued_pretraining/prepare_data.py \
-    --src_dir $DATA_ROOT/ar-amthal-cpt/data_all \
+    --src_dir $DATA_ROOT/ar-amthal-cpt/data/fineweb2 \
     --out_dir $DATA_ROOT/train_ar
 python src/culture/training/continued_pretraining/prepare_data.py \
     --verify_only --out_dir $DATA_ROOT/train_ar        # prints the doc count
