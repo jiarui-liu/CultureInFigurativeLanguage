@@ -140,6 +140,44 @@ def clean_source_text(s: str, *, strip_footnote: bool = False) -> str:
     return s
 
 
+# al-Maydani lists a head proverb and then its variant forms inline, in quotes:
+#   أَضَلُّ مِنْ ضَبٍّ، و"مِنْ وَرَلٍ"و"مِنْ وَلَدِ الْيَرْبُوعِ"
+# and sometimes an editorial citation:  ...اليقِينُ(انظر الفاخر ١.٢)قال هشام
+# Left in the `idiom` field this is not merely untidy — the surface never occurs
+# in running text, so the corpus matcher scores ZERO recall on those entries.
+# Split the head off and keep the variants in `meta.idiom_variants` (lossless).
+# NB the waw may carry a diacritic (وَ"...") and the variant may be introduced by a
+# guillemet instead of a quote. Requiring a bare `و"` missed 7 of the 16 cases.
+_HARAKAT = r"[ً-ْٰ]*"
+_RE_VARIANT_TAIL = re.compile(
+    rf"[،,؛;]\s*و{_HARAKAT}\s*(?=[\"«“])"      # ...، و"variant"   /   ...، وَ"variant"
+    rf"|\s*،?\s*ويقال{_HARAKAT}\s*(?=[\"«“])"  # ...، ويقال"variant"
+    rf"|\s+(?=«)"                              # ...المثل « variant
+)
+_RE_EDITORIAL = re.compile(r"\s*\((?:انظر|راجع)[^)]*\)\s*.*$")
+# A lone quote left dangling at an EDGE, either after the head is split off or
+# present in the source (…وَالجَمَلْ مَا شَالهُمْ"). It breaks corpus matching.
+# Edges only, deliberately: an INTERIOR quote is doing word-separation work in
+# these scraped entries, and deleting it glues words together — stripping every
+# quote turned وأظنه"إنا into وأظنهإنا and معه"مِنْ"نحو into معهمِنْنحو.
+_RE_STRAY_QUOTE = re.compile(r"^[\"«»“”„‟']+|[\"«»“”„‟']+$")
+
+
+def split_variant_furniture(idiom: str) -> tuple:
+    """``idiom`` -> (head_idiom, [variant strings]). No-op when there is no tail."""
+    if not idiom:
+        return "", []
+    s = _RE_EDITORIAL.sub("", idiom).strip()
+    m = _RE_VARIANT_TAIL.search(s)
+    if not m:
+        # No variant tail, but a dangling quote may still be present.
+        return _RE_STRAY_QUOTE.sub("", s).strip(" ،,؛;"), []
+    head, tail = s[:m.start()].strip(" ،,؛;"), s[m.start():]
+    variants = [v.strip() for v in re.findall(r"[\"«“]([^\"»”]+)[\"»”]?", tail) if v.strip()]
+    head = _RE_STRAY_QUOTE.sub("", head).strip(" ،,؛;")
+    return (head or s), variants
+
+
 def is_contentless_meaning(s: str) -> bool:
     """True for glosses that assert no meaning (fails inclusion criterion 2).
 
@@ -406,6 +444,10 @@ def make_record(parsed: Dict[str, Any], spec: SourceSpec) -> Optional[Dict[str, 
     idiom = _clean(parsed.get("idiom"))
     # Trailing scrape footnote (e.g. «...»٨٩) then wrapping quote furniture.
     idiom = strip_quote_furniture(clean_source_text(idiom, strip_footnote=True))
+    # al-Maydani appends variant forms in quotes after the head proverb. Keeping
+    # them in `idiom` makes the surface unmatchable in running text (zero corpus
+    # recall for those entries), so split them off and preserve them separately.
+    idiom, idiom_variants = split_variant_furniture(idiom)
     if not idiom or not looks_arabic(idiom):
         return None
     if len(idiom.split()) < MIN_IDIOM_TOKENS:
@@ -425,6 +467,7 @@ def make_record(parsed: Dict[str, Any], spec: SourceSpec) -> Optional[Dict[str, 
         "examples": _as_list(parsed.get("examples")),
         "_variety": parsed.get("variety") or spec.variety,
         "_source": spec.name,
+        "_idiom_variants": idiom_variants,
     }
     # Criterion 2: at least one meaning.
     if not rec["literal_meanings"] and not rec["figurative_meanings"]:
