@@ -60,7 +60,7 @@ Result: 10,386 calls, **0 failures**; entities **87.8%**, literal **100.0%**.
 
 ---
 
-## 3. Phase 3 — Analyses ✅ (A5/A6 🔄)
+## 3. Phase 3 — Analyses ✅ (A6 ✅, A5 🔄 re-running)
 
 `src/culture/analysis/analyze_ar_idioms.py` · `cross_lingual_ar_en.py`
 Outputs in `data/idioms/ar/analysis/`.
@@ -72,12 +72,26 @@ Outputs in `data/idioms/ar/analysis/`.
 | A3 cluster | 12 k-means clusters over 1,353 entities + 2-D PCA map |
 | A4 semantic | **89** shared-meaning clusters, 114 idiom pairs (cosine ≥ 0.86) |
 | A7 variety | 10 varieties contrasted; distinctive entities per dialect via lift |
-| A5/A6 | 🔄 running (English side capped at 6,000 rows — see D3.2) |
+| A6 shared entities | ✅ **97 of the top 150 Arabic entities also head English idioms.** عين=eye (ar 108 / en 39), يد=hand (35/35), يوم=day (37/31), شيء=thing (32/86). → `shared_entities_ar_en.jsonl`, `shared_entity_stats_ar_en.json` |
+| A5 pairs | 🔄 re-running (English side capped at 6,000 rows — see D3.2) |
 
 **D3.1 — cross-lingual against English**, the pivot the zh pipeline already uses; the Arabic KB
 also carries 796 human English glosses to anchor on.
 **D3.2 — cap the English side at 6,000 rows.** Embedding all 32,080 English entries (~48k
 vectors) would cost ~1.5 h of API time for a marginal gain. Documented cap, not a silent one.
+
+**Two operational failures worth recording** (both fixed in `embed_cached`):
+
+1. The first A5 run died at 1,152/4,084 English vectors on a single transient `HTTP 504`.
+   `autoresearch.utils.llm.embed_texts` re-raises 5xx, so one blip killed a 40-minute job.
+   `_embed_with_retry` now backs off exponentially (5→160 s, 6 attempts). Everything already
+   embedded is on disk, so a rerun resumes from the cache and costs nothing.
+2. The relaunch then 401'd because embeddings hit the **APE** endpoint but
+   `EmbeddingSettings.from_env()` reads `EMBEDDING_API_KEY` first and `METAGEN_API_KEY` only as a
+   fallback — exporting `APE_API_KEY` alone silently authenticates with the *wrong* key. Run
+   `export EMBEDDING_API_KEY=$APE_API_KEY`. Auth errors now fail fast with that message instead
+   of burning five minutes of backoff. Related: `~/.bashrc` returns early in non-interactive
+   shells, so `source ~/.bashrc` inside a `tmux new-session` command sets nothing.
 
 ---
 
@@ -260,10 +274,22 @@ configs so the three runs stay comparable.
 
 ---
 
-## 7. Phase 7 — Publish & commit 🔄
+## 7. Phase 7 — Publish & commit ✅ (push blocked)
 
-- Upload `data/idioms/ar/**` to `Jerry9999/CultureInFigurativeLanguage` under `data/` (additive).
-- `git commit` + `git push`.
+**HuggingFace — done.** 22 files uploaded to
+[`Jerry9999/CultureInFigurativeLanguage`](https://huggingface.co/datasets/Jerry9999/CultureInFigurativeLanguage/tree/main/data/idioms/ar)
+under `data/idioms/ar/`. Purely additive: the repo had 13,485 files and **no `ar` files**
+beforehand. Includes the KB (11 MB), `build_report.json`, `audit_report.json`,
+`enrich_cache.jsonl`, the six audit `review/` shards, nine `analysis/` outputs, two plots, and a
+`README.md` dataset card documenting the schema, `field_provenance`, per-source counts and the
+evaluation-contamination warning. **Excluded:** `analysis/cache/` (191 MB of embedding vectors,
+regenerable) — `data/` is also in `.gitignore`, so the Hub is the distribution channel.
+
+**git commit — done.** `e6581f4` (pipeline) and `c4fc35e` (evaluation suite).
+
+**⚠️ `git push` must be run by you.** It fails from this agent:
+`fwdproxy ... 403 ... github.com has not been allowlisted in filter {"agent_id":"agent:claude_code"}`.
+Run `git push origin main` yourself from an interactive shell.
 
 > **⚠️ Rotate the HF token.** It was pasted in plaintext into the chat, so it is in the
 > transcript. It is used here only via an environment variable and never written to a file, log
@@ -430,3 +456,6 @@ Read the `primary` field in `summary.json`, not `acc` — see D5.4. `eval_ar.slu
 | 2026-08-22 | Phase 3 A1–A4 + A7 complete; A5/A6 running |
 | 2026-08-22 | Phase 4 complete: 5 corpora accepted, 4 discarded with measured evidence |
 | 2026-08-22 | Phase 6 complete: matcher measured 0 → 142 docs/4k; Tier 2 disabled on precision evidence; CPT config + slurm added |
+| 2026-08-22 | Phase 5 complete: 26 benchmarks screened (≥5 examples each), 8 tasks + 2 BPB probes implemented in `tasks_ar.py`; every Arabic *idiom* benchmark discarded as KB-contaminated; verified end-to-end with Qwen3-0.6B |
+| 2026-08-22 | Phase 7: 22 Arabic artifacts published to HuggingFace (additive); commits `e6581f4` + `c4fc35e`. **`git push` blocked by fwdproxy — user must run it.** |
+| 2026-08-22 | A6 complete (97/150 top Arabic entities shared with English). A5 re-running after a 504 and a wrong-key 401; retry + fail-fast added to `embed_cached` |

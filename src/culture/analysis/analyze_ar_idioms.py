@@ -154,13 +154,46 @@ def embed_cached(texts: List[str], cache_path: Path, batch: int = 128) -> np.nda
         with open(cache_path, "a", encoding="utf-8") as f:
             for i in range(0, len(missing), batch):
                 chunk = missing[i:i + batch]
-                vecs = embed_texts(chunk)
+                vecs = _embed_with_retry(embed_texts, chunk)
                 for t, v in zip(chunk, vecs):
                     cache[t] = v
                     f.write(json.dumps({"t": t, "v": v}, ensure_ascii=False) + "\n")
                 f.flush()
                 logger.info("  embedded %d/%d", min(i + batch, len(missing)), len(missing))
     return np.array([cache[t] for t in texts], dtype=np.float32)
+
+
+def _embed_with_retry(embed_texts, chunk: List[str], attempts: int = 6):
+    """Retry one embedding batch with exponential backoff.
+
+    ``autoresearch.utils.llm.embed_texts`` raises straight through on 5xx, so a
+    single transient gateway timeout used to kill a 40-minute run: the ar<->en
+    job died at 1,152/4,084 on ``HTTP Error 504``. Everything already embedded is
+    on disk, so a retry here (and a rerun at worst) costs nothing but time.
+    """
+    import time
+    for attempt in range(attempts):
+        try:
+            return embed_texts(chunk)
+        except Exception as e:  # noqa: BLE001 — any transport/5xx error is worth retrying
+            # 401/403 is a missing or wrong APE_API_KEY, not a blip. Backing off
+            # six times just delays the same failure by five minutes.
+            if getattr(e, "code", None) in (401, 403):
+                raise RuntimeError(
+                    f"Embedding API rejected the credentials (HTTP {e.code}). Embeddings go "
+                    "to the APE endpoint, and EmbeddingSettings.from_env() reads "
+                    "EMBEDDING_API_KEY first and METAGEN_API_KEY only as a fallback -- so "
+                    "run `export EMBEDDING_API_KEY=$APE_API_KEY`. Exporting APE_API_KEY "
+                    "alone silently falls back to the METAGEN key, which that endpoint "
+                    "rejects. Note also that ~/.bashrc returns early in non-interactive "
+                    "shells, so `source ~/.bashrc` inside a tmux command sets nothing."
+                ) from e
+            if attempt == attempts - 1:
+                raise
+            delay = 5 * (2 ** attempt)
+            logger.warning("  embed batch failed (%s: %s); retry %d/%d in %ds",
+                           type(e).__name__, str(e)[:120], attempt + 1, attempts - 1, delay)
+            time.sleep(delay)
 
 
 def l2norm(x: np.ndarray) -> np.ndarray:
