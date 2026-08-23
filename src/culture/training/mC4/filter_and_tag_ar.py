@@ -165,6 +165,22 @@ class ArabicIdiomMatcher:
 KB_HEADER = "المعاني الاصطلاحية للتعابير الواردة في النص:"   # "Idiomatic meanings of the expressions above:"
 
 
+# A classical dictionary entry can run to 21,140 characters of etymology and
+# anecdote before it reaches the actual gloss. Injecting that verbatim both blows
+# the context budget and teaches the wrong thing, so each meaning is trimmed to
+# its "يُضرب في/لمن…" usage clause (the same transform A5 uses) and then hard-capped.
+MAX_MEANING_CHARS = 300
+
+
+def _gloss(meaning: str, cap: int = MAX_MEANING_CHARS) -> str:
+    from culture.analysis.cross_lingual_ar_en import usage_gloss
+    g = usage_gloss(meaning).strip()
+    if len(g) <= cap:
+        return g
+    cut = g.rfind(" ", 0, cap)           # never cut mid-word
+    return g[:cut if cut > cap // 2 else cap].rstrip() + "…"
+
+
 def knowledge_block(surfaces: Iterable[str], by_surface: Dict[str, Dict[str, Any]],
                     max_meanings: int = 2) -> str:
     """Render the appended knowledge block, in Arabic, for the matched idioms."""
@@ -174,8 +190,10 @@ def knowledge_block(surfaces: Iterable[str], by_surface: Dict[str, Dict[str, Any
         if not o:
             continue
         parts = [f"- {s}"]
-        fig = _lst(o, "figurative_meanings")[:max_meanings]
-        lit = _lst(o, "literal_meanings")[:1]
+        fig = [_gloss(m) for m in _lst(o, "figurative_meanings")[:max_meanings]]
+        fig = [m for m in fig if m]
+        lit = [_gloss(m) for m in _lst(o, "literal_meanings")[:1]]
+        lit = [m for m in lit if m]
         if fig:
             parts.append("  المعنى المجازي: " + " | ".join(fig))
         if lit:
@@ -192,9 +210,106 @@ def knowledge_block(surfaces: Iterable[str], by_surface: Dict[str, Dict[str, Any
     return KB_HEADER + "\n" + "\n".join(lines)
 
 
+# Invert the normalizer's own fold tables so the window locator can never drift
+# out of sync with the matcher: for each NORMALIZED letter, the set of ORIGINAL
+# characters that fold to it (ه ← ة, ا ← أإآٱ, ي ← ى, ...).
+def _build_fold_variants() -> Dict[str, str]:
+    from culture.data_processing.ar_idioms import normalize as _nz
+    variants: Dict[str, Set[str]] = {}
+    for table_name in ("_PERSO_URDU", "_ALEF_FORMS", "_MAQSURA", "_TEH_MARBUTA"):
+        table = getattr(_nz, table_name, None) or {}
+        for src, dst in table.items():
+            src_ch = chr(src) if isinstance(src, int) else src
+            if isinstance(dst, str) and len(dst) == 1:
+                variants.setdefault(dst, set()).add(src_ch)
+    return {k: "".join(sorted(v | {k})) for k, v in variants.items()}
+
+
+_FOLD_VARIANTS = _build_fold_variants()
+_DIACRITIC_GAP = r"[\sـً-ْٰ‌-‏]*"      # harakat, tatweel, bidi, spaces
+
+
+def _match_span(text: str, surfaces: List[str]) -> Optional[Tuple[int, int]]:
+    """Character span of the earliest matched idiom in the ORIGINAL text.
+
+    The document is unvocalized-or-not and the KB surface is usually vocalized, so
+    a plain ``find`` misses most real hits. Falling back to a regex built from the
+    *normalized* letters is not enough either: the normalizer FOLDS characters
+    (ة→ه, أ→ا, ى→ي), so a pattern of normalized letters cannot match the original
+    spelling. Each letter is therefore expanded back to its fold class using the
+    normalizer's own tables, with diacritics/tatweel/spaces allowed between.
+    """
+    for s in surfaces:
+        i = text.find(s)
+        if i >= 0:
+            return i, i + len(s)
+    for s in surfaces:
+        letters = [c for c in normalize_ar(s) if not c.isspace()]
+        if len(letters) < 4:
+            continue
+        pat = _DIACRITIC_GAP.join(
+            f"[{re.escape(_FOLD_VARIANTS.get(c, c))}]" for c in letters[:24])
+        m = re.search(pat, text)
+        if m:
+            return m.start(), m.end()
+    return None
+
+
+def window_around_match(text: str, surfaces: List[str], max_chars: int) -> str:
+    """Trim an over-long document to a window containing a matched idiom.
+
+    WHY THIS EXISTS. The knowledge block is appended at the END of the document,
+    and training packs to ``cutoff_len`` (16,384 tokens). Measured with the Qwen
+    tokenizer on real tagged output:
+
+        FinePDFs     median 95,664 tokens/doc — 93% exceed one window
+        FineWeb-2    median  4,198 tokens/doc — 28% exceed
+        FineWeb2-HQ  median  3,510 tokens/doc — 23% exceed
+
+    For every document past the cutoff, the idiom occurrence and its gloss land in
+    DIFFERENT training sequences, so the model never sees them together and the
+    whole tagging mechanism is defeated for that document. Windowing the text
+    around the match guarantees co-occurrence.
+
+    Boundaries are snapped to the nearest newline/sentence end so we do not hand
+    the model a fragment starting mid-word.
+    """
+    if len(text) <= max_chars:
+        return text
+    span = _match_span(text, surfaces)
+    if span is None:                       # cannot locate it; head is the safe default
+        return text[:max_chars]
+    mid = (span[0] + span[1]) // 2
+    half = max_chars // 2
+    start, end = max(0, mid - half), min(len(text), mid + half)
+    # Snap to a sentence/line boundary inside the window (never outside it).
+    lo = max((text.rfind(c, start, min(span[0], start + 400)) for c in "\n.!؟؛"), default=-1)
+    if lo > start:
+        start = lo + 1
+    hi = min((x for x in (text.find(c, max(span[1], end - 400), end) for c in "\n.!؟؛")
+              if x != -1), default=-1)
+    if hi > span[1]:
+        end = hi + 1
+    return text[start:end].strip()
+
+
 def tag_document(text: str, surfaces: List[str],
-                 by_surface: Dict[str, Dict[str, Any]]) -> str:
+                 by_surface: Dict[str, Dict[str, Any]],
+                 max_doc_chars: Optional[int] = None) -> str:
+    """Window the document (if needed) and append the knowledge block.
+
+    The block is built FIRST and its length is charged against the budget: it is
+    not free, and on documents matching many idioms with long classical exegesis
+    it runs to thousands of characters. Budgeting only the body left 7% of tagged
+    docs over ``cutoff_len`` even after windowing — the whole point being that the
+    idiom and its gloss must land in the SAME training sequence.
+    """
     kb = knowledge_block(surfaces, by_surface)
+    if max_doc_chars:
+        # Always leave the body a workable share of the window, even when the
+        # block is enormous; a 200-char snippet of context is still useful.
+        body_budget = max(2000, max_doc_chars - len(kb))
+        text = window_around_match(text, sorted(surfaces), body_budget)
     return f"{text}\n\n{kb}" if kb else text
 
 
@@ -288,7 +403,8 @@ def run(args) -> Dict[str, Any]:
         for s in keep:
             per_idiom[s] += 1
 
-        text = tag_document(doc["text"], keep, matcher.by_surface)
+        text = tag_document(doc["text"], keep, matcher.by_surface,
+                            max_doc_chars=args.max_doc_chars)
         kept_chars += len(text)
         writer.write({"text": text, "source": f"{args.dataset}:{args.config or ''}",
                       "url": doc.get("url", ""), "doc_index": doc["doc_index"],
@@ -415,6 +531,15 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--min_doc_chars", type=int, default=300,
                    help="Plan §4 gate 6. Was 200; 300 is what the corpus survey "
                         "measured as the point below which Arabic web docs are stubs.")
+    p.add_argument("--max_doc_chars", type=int, default=25000,
+                   help="Trim over-long docs to a window around the matched idiom so the "
+                        "appended knowledge block stays in the SAME cutoff_len window -- "
+                        "otherwise the idiom and its gloss land in different training "
+                        "sequences and the tagging is wasted. Budget is in CHARS as a "
+                        "proxy for tokens: measured chars/token on real tagged Arabic is "
+                        "median 2.52 but as low as 1.56, so 25000 (=16384*1.56) is the "
+                        "value that holds even for the worst-tokenising documents. "
+                        "0 disables windowing.")
     p.add_argument("--no_quality_filter", action="store_true",
                    help="Skip the §4 quality gates (quality_ar.reject_reason) and keep "
                         "only the length check. For ablations -- the gates are what make "
