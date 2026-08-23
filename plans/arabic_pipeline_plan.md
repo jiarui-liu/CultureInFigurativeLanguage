@@ -137,15 +137,49 @@ scanned for punctuation, Arabic ratio, PDF presentation-forms, porn/gambling/SEO
 and **idiom density** — with every spam regex hit hand-verified (`ساسكس`=Sussex, `كسكس`=couscous,
 `بوكر`=Booker all fire naively).
 
-### ✅ Accepted (recommended mix — Strategy A)
+### ✅ SELECTED: `HuggingFaceFW/fineweb-2` `arb_Arab` — single corpus
 
-| # | Corpus | Size | Share | Why |
+**D4.3 (2026-08-23) — one corpus, not a five-way blend.** The hand-tuned mix below was
+over-engineered and, once the candidates were measured end-to-end on the same footing, two of its
+premises turned out to be false. Head-to-head, quality gates on, same inventory:
+
+| Corpus | scanned | match rate | uniq idioms **per 1M kept chars** | median tokens/doc | % docs > `cutoff_len` |
+|---|---:|---:|---:|---:|---:|
+| **`fineweb-2`** | 4,000 | **3.58 %** | **14.7** | **4,198** | 28 % |
+| `finepdfs` | 3,000 | 5.53 % | 4.3 | 95,664 | **93 %** |
+| `FineWeb2-HQ` | 3,000 | **1.00 %** | 8.2 | 3,510 | 23 % |
+
+Two corrections this forced:
+
+- **FineWeb2-HQ was to be the largest share (35 %) on the survey's claim of "2× FineWeb-2 idiom
+  density". It is 3.6× WORSE (1.00 % vs 3.58 %).** The HQ classifier selects formal/encyclopedic
+  register — precisely where colloquial proverbs do not appear. Optimising for generic "quality"
+  optimises against our signal.
+- **FinePDFs' density advantage is mostly unusable.** Its median document is 95,664 Qwen tokens
+  (5.8 training sequences) and 93 % exceed `cutoff_len`. The knowledge block is appended at the
+  END, so for 93 % of its documents the idiom and its gloss land in *different training
+  sequences* and the tagging does nothing. Normalised per character kept, it yields 4.3 unique
+  idioms/1M vs FineWeb-2's 14.7 — a 3.4× deficit.
+
+FineWeb-2 wins on the metric that matters (idiom yield per character actually trained on), fits
+the context window, is the largest single source at 106 GB, has the lowest gate-rejection rate
+(1.1 %), and showed **0.00 % verified porn** in 4,000 sampled docs. One source also makes the
+recipe reproducible without defending five arbitrary percentages.
+
+<details><summary>Superseded five-way mix (kept for the record)</summary>
+
+| # | Corpus | Size | Share | Original rationale |
 |---|---|---|---:|---|
-| 1 | `epfml/FineWeb2-HQ` `arb_Arab` | 100 GB | 35% | best prose register, 2× FineWeb-2 idiom density |
-| 2 | `HuggingFaceFW/finepdfs` `arb_Arab` | 56.6 GB | 30% | **3.45% idiom-bearing docs — 7–20× every web corpus**; books, literature, theses |
-| 3 | `HuggingFaceFW/fineweb-2` `arb_Arab` | 106 GB | 20% | volume + breadth; **0.00% verified porn** in 4,000 docs |
+| 1 | `epfml/FineWeb2-HQ` | 100 GB | 35% | best prose register, "2× density" — **disproved** |
+| 2 | `HuggingFaceFW/finepdfs` | 56.6 GB | 30% | 3.45% idiom-bearing — **true but unusable at 16K ctx** |
+| 3 | `HuggingFaceFW/fineweb-2` | 106 GB | 20% | volume + breadth — **now the sole source** |
 | 4 | `HPLT/HPLT2.0_cleaned` `ara_Arab_1..5` | ~250 GB | 10% | lowest SEO spam (0.07%), different crawl |
-| 5 | `MohamedRashad/arabic-billion-words` | 8.1 GB | 5% | spotless MSA press; columnists quote أمثال constantly. ⚠️ license undeclared |
+| 5 | `MohamedRashad/arabic-billion-words` | 8.1 GB | 5% | spotless MSA press. ⚠️ license undeclared |
+
+Reach for these only if FineWeb-2 alone does not yield enough tokens. HPLT is the natural second
+(different crawl, low spam); FinePDFs becomes viable now that `--max_doc_chars` windows long
+documents, and is the best source of *literary* register if register diversity is wanted.
+</details>
 
 ### ❌ Discarded — with measured evidence
 
@@ -416,6 +450,9 @@ Run `git push origin main` yourself from an interactive shell.
 | D5.3 | Dedup DziriEval on **question text**, not `id` | `id` is not a unique key: only 850 distinct ids for 950 distinct questions, because 50 ids are reused for different questions (49 with different golds). An id-keyed dedup silently deletes 100 real items |
 | D5.4 | `acc_norm` primary for all continuation tasks | Alyah's gold is the longest option 57.5% of the time (chance 25%); measured raw `acc` 0.117 vs `acc_norm` 0.317 on `ar_figurative` |
 | D5.5 | `--ar_kb_path` decontamination is opt-in, not forced | measured impact is 2/1173 (Alyah) and 0/314 (`ar_figurative`); those are incidental pan-Arab proverb overlaps, not item leakage, so dropping them is a choice not a fix |
+| D4.3 | **One corpus (`fineweb-2 arb_Arab`), not a 5-way blend** | measured head-to-head: FineWeb2-HQ is 3.6× *worse* on idiom density than the survey claimed it was better, and 93% of FinePDFs docs exceed `cutoff_len` so their knowledge block never co-occurs with the idiom. FineWeb-2 leads on idioms per character actually trained on (14.7/1M vs 4.3) |
+| D4.4 | Window over-long docs around the match (`--max_doc_chars 25000`) | 36% of tagged FineWeb-2 docs exceeded `cutoff_len`; budget uses the worst measured chars/token (1.56), not the median (2.52) |
+| D4.5 | Trim knowledge-block meanings to the يُضرب clause, cap 300 chars | one classical entry ran to 21,140 chars of etymology — wrong content to inject, and it alone blew the window |
 | D5.6 | Download benchmarks with `curl`, not `hf_hub_download` | every Xet-backed file stalls at 0 bytes behind this proxy; `resolve/main` over plain HTTPS works |
 | D3.3 | Translate Arabic meanings to English before matching (A5) | measured: no Arabic-language meaning exceeds 0.607 cosine to any English gloss, vs a 0.70 threshold Chinese clears directly at 0.879 |
 | D3.4 | Trim Arabic meanings to the `يُضرب` usage clause | Arabic dictionaries put etymology first; cuts 230→54 chars on 38.2% of meanings. Kept for correctness, but it did **not** change the pair count |
@@ -472,43 +509,34 @@ Expected end state: **10,386 entries, 99.09 % audit-clean**, `figurative_meaning
 
 ### 9.3 Filter + tag the pretraining corpus
 
-The corpus is **streamed**, so there is no multi-TB download step. Run one job per source and
-concatenate; each writes `tagged_*.json.gz`.
+One source (`fineweb-2 arb_Arab`, see D4.3), streamed — no multi-TB download step. Writes
+`tagged_*.json.gz`.
 
 ```bash
 AR=src/culture/training/mC4/filter_and_tag_ar.py
-# Every command below reads the KB from --idioms, which DEFAULTS to
-# data/idioms/ar/idioms_merged_llm_formatted.jsonl. Pass it explicitly if the KB
-# lives elsewhere. Run 9.2 first — a stale/unrepaired KB silently loses recall
-# (24 entries had variant furniture that never matches running text).
+# --idioms defaults to data/idioms/ar/idioms_merged_llm_formatted.jsonl, so run
+# 9.2 first: a stale/unrepaired KB silently loses recall.
+# The corpus is STREAMED - there is no multi-TB download step.
 
-# 1) FinePDFs — highest idiom density, run this one first. PDF mode (NFKC +
-#    lam-alef screening) auto-enables on the dataset name; 41.5% of docs are
-#    dropped by the quality gates, 27.9% for ligature corruption alone.
-python $AR filter --dataset HuggingFaceFW/finepdfs --config arb_Arab \
-    --out $DATA_ROOT/ar-amthal-cpt/data/finepdfs --max_docs_per_idiom 10000
-
-# 2) FineWeb2-HQ
-python $AR filter --dataset epfml/FineWeb2-HQ --config arb_Arab \
-    --out $DATA_ROOT/ar-amthal-cpt/data/fineweb2hq --max_docs_per_idiom 10000
-
-# 3) FineWeb-2
-python $AR filter --dataset HuggingFaceFW/fineweb-2 --config arb_Arab \
-    --out $DATA_ROOT/ar-amthal-cpt/data/fineweb2 --max_docs_per_idiom 10000
-
-# 4) HPLT 2.0 (five shard-configs)
-for c in ara_Arab_1 ara_Arab_2 ara_Arab_3 ara_Arab_4 ara_Arab_5; do
-  python $AR filter --dataset HPLT/HPLT2.0_cleaned --config $c \
-      --out $DATA_ROOT/ar-amthal-cpt/data/hplt_$c --max_docs_per_idiom 10000
-done
-
-# 5) arabic-billion-words (purity anchor)
-python $AR filter --dataset MohamedRashad/arabic-billion-words --config default \
-    --out $DATA_ROOT/ar-amthal-cpt/data/abw --max_docs_per_idiom 10000
+python $AR filter \
+    --dataset HuggingFaceFW/fineweb-2 --config arb_Arab --split train \
+    --out $DATA_ROOT/ar-amthal-cpt/data/fineweb2 \
+    --max_docs_per_idiom 10000
 
 # sanity: recall/precision + over-matching diagnostic on a sample
 python $AR measure --limit 20000 --out /tmp/ar_measure
 ```
+
+Defaults worth knowing (all measured, see §4): the §4 quality gates run before the matcher
+(`--no_quality_filter` to disable), `--max_doc_chars 25000` windows over-long documents so the
+knowledge block stays inside `cutoff_len`, and `--min_doc_chars 300`.
+
+**If you need more tokens than FineWeb-2 alone provides**, add sources one at a time and
+concatenate the output dirs — `HPLT/HPLT2.0_cleaned` (`ara_Arab_1`…`_5`) first, then
+`HuggingFaceFW/finepdfs` (`--is_pdf` auto-enables; expect ~41.5% of its docs to be dropped, 27.9%
+for lam-alef corruption alone). Do **not** add `epfml/FineWeb2-HQ`: measured 1.00% idiom density,
+3.6× worse than FineWeb-2.
+
 
 Each run writes `filter_report.json` (scanned / matched / written / inventory coverage /
 top idioms / **`rejected_by_gate`**). Two things to check before committing to a full build:
