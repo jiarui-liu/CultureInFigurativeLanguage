@@ -53,7 +53,7 @@ done
 echo "### [Dim3+4] Arabic MC benchmarks"
 python -m culture.evaluation.run_eval \
   --model_path "$M" --run_name "$RUN" \
-  --tasks ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel \
+  --tasks kinayat_cloze,kinayat_meaning,ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel \
   --ar_data_dir "$DATA/raw" \
   --ar_kb_path "$KB" \
   --acqa_dialects msa \

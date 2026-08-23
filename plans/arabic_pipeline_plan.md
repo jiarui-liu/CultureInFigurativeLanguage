@@ -182,7 +182,7 @@ NFKC) and 21.8% show lām-alef ligature corruption (detect and drop).
 ## 5. Phase 5 — Evaluation benchmarks ✅
 
 ~45 Hub searches; **26 candidates screened, ≥5 verbatim examples read from every one**, each
-checked for train/test leakage against the 10,375 unique normalised surfaces in
+checked for genuine item leakage (see the three-way distinction below) against the 10,375 unique normalised surfaces in
 `data/idioms/ar/idioms_merged_llm_formatted.jsonl`. Implemented in
 `src/culture/evaluation/tasks_ar.py` (registered in `run_eval.py`), downloaded by
 `download_ar.sh`, probes by `build_ar_probes.py`, launched by `run_eval_ar.sh` / `eval_ar.slurm`.
@@ -191,7 +191,9 @@ checked for train/test leakage against the 10,375 unique normalised surfaces in
 
 | Task | Source | n | Scoring | Role |
 |---|---|---:|---|---|
-| `ar_figurative` | Alyah figurative (214) + DziriEval figurative (100) | **314** | `acc_norm` | **Dim 3** — the only clean figurative set that exists |
+| `kinayat_cloze` | `menaattia/Kinayat`, `sentence`+`correct`/`incorrect` | **150** | `acc_norm` | **Dim 3 primary — the Arabic ChID.** Fill a `ـــــ` blank with the right idiom |
+| `kinayat_meaning` | `menaattia/Kinayat`, `Ar_`/`Incorrect_Explanation` | **325** | `acc_norm` | Dim 3 — meaning selection. Measures *knowledge injection*; see the caveat below |
+| `ar_figurative` | Alyah figurative (214) + DziriEval figurative (100) | **314** | `acc_norm` | Dim 3 — figurative comprehension on idioms outside the KB |
 | `arabculture` | `MBZUAI/ArabCulture`, 13 countries | 3,471 | `acc_norm` | Dim 4 primary; native cultural completion |
 | `arabic_cultural_qa` | `QCRI/ArabicCulturalQA` `mcq/test.jsonl` | 2,000 (×6 variants) | `acc` letter | Dim 4 primary; cross-dialect axis via `--acqa_dialects all` |
 | `arabicmmlu` | `MBZUAI/ArabicMMLU`, 13 Arab-region subjects | 10,529 | `acc` letter | Dim 4 primary; the CMMLU-China-specific analogue |
@@ -206,24 +208,52 @@ Counts are what the loaders actually return, verified against the downloaded fil
 from the raw row counts on purpose: ArabCulture 3,482 → **3,471** (11 rows carry the annotators'
 `should_discard=Yes`), DziriEval 1,000 → **950** (see D5.3).
 
-### ❌ Discarded — contaminated by our own training KB
+### Contamination — three distinct things, only one disqualifying
 
-| Benchmark | Overlap with our KB |
+**Correction (2026-08-23).** An earlier version of this plan discarded every Arabic idiom
+benchmark on the grounds that its idioms appear in our training KB. That criterion was wrong and
+it cost us the best benchmark in the survey. Sharing *knowledge* with the training corpus is what
+CPT is for — by that standard MMLU would be void because Wikipedia is in every pretraining mix.
+The three cases must be separated:
+
+| # | Case | Verdict | Here |
+|---|---|---|---|
+| 1 | **Knowledge overlap** — the idiom and its meaning are in training | Not contamination; it is the intervention | `kinayat_cloze`, and every Dim-4 task |
+| 2 | **Answer-string familiarity** — the gold answer *string* is injected verbatim, the distractor is not | Usable, must be labelled | `kinayat_meaning`, Jawaher |
+| 3 | **Item leakage** — the eval instance (stem + options + answer) is in training | Fatal | **nothing** |
+
+**Measured, not argued.** `filter_and_tag_ar.py::knowledge_block` emits only
+`figurative_meanings`, `literal_meanings`, `entities` and `region` — it never emits the
+`examples` field, so Kinayat's usage sentences never leave the KB jsonl. Checked against a real
+tagged shard: **0 of 298 Kinayat stems appear in the tagged corpus** (3 of 317 gold *meanings*
+do, which is case 1 working as designed).
+
+`kinayat_cloze` is therefore clean, and **it is the Arabic ChID we earlier said did not exist**.
+Solving it needs to know which of two idioms fits a context — unanswerable by recalling a seen
+string. Exposure across the options is near-symmetric (94 golds vs 84 distractors are KB idioms);
+`--kinayat_symmetric` restricts to the 116 items where both options have identical KB status.
+No length bias (gold longer in 69/150). Gold position is randomised at load time because the
+source file always lists the correct idiom first.
+
+`kinayat_meaning` is case 2: the gold explanation is exactly the string we inject, the distractor
+is not, so a model can win by recognition. Report it as **knowledge injection**, and read
+`kinayat_cloze` for **comprehension**. Note the distractors are LLM-written and fluent while the
+golds are terse dictionary prose — Qwen3-0.6B scores 0.09, well *below* chance, so a base model
+has no free ride here.
+
+### ❌ Discarded — on their own merits, not for overlap
+
+| Benchmark | Reason |
 |---|---|
-| `menaattia/Kinayat` | **314 / 325 (96.6 %)** |
-| `UBC-NLP/Jawaher-benchmark` | **199 / 200 test (99.5 %)**, 812/817 train |
-| `Renad10/Absher-Benchmark` | 81/83 + 408/478 — *plus* gold leaked into the prompt, mixed Latin/Arabic answer letters, 58 missing golds, 91 % position bias |
-| `ahmed02mk/amthal-hassaniya` | **319 / 319 (100 %)** |
-| `tahaalselwii/*`, `HabibaAbderrahim` Tunisian | 7,589 / 952 rows — lexicons, already `EXCLUDED_SOURCES` |
+| `Renad10/Absher-Benchmark` | The gold answer is concatenated into the prompt string in ~10 % of rows; 58 missing golds; 91 % position bias (majority-class ≈ 54 %); answer column mixes `A/B/C/D` with `أ/ب/ج/د`. Broken regardless of overlap |
+| `ahmed02mk/amthal-hassaniya` | Instruction/output generation, no options → not log-likelihood scorable |
+| `UBC-NLP/Jawaher-benchmark` | Free-text explanation, no options → needs the LLM judge; and it is case 2 at its most extreme (the gold explanation is verbatim training data), so the judge would be scoring memorised text. Left out, not declared invalid — worth revisiting with a generation-mode eval |
+| `tahaalselwii/*`, `HabibaAbderrahim` Tunisian | Lexicons, not benchmarks; already in `EXCLUDED_SOURCES` |
 
-**Say this plainly in the paper: there is no Arabic ChID, and the one Arabic idiom cloze that
-exists is contaminated by our own pipeline.** Kinayat is the only `sentence`-with-blank +
-correct/incorrect-idiom dataset on the Hub, and we ingested 96.6 % of it.
-
-**Procedural defect found while measuring this:** `build_ar_idioms.py` merges Jawaher *train* and
-*test* under one source label `"jawaher"` with **no split provenance in `meta`**, so the
-contamination is invisible from inside the KB and had to be re-derived from the upstream files.
-Record `split` before the next rebuild.
+**Procedural defect still worth fixing:** `build_ar_idioms.py` merges Jawaher *train* and *test*
+under one source label `"jawaher"` with **no split provenance in `meta`**. That is not a
+contamination problem, but it does mean the KB cannot tell you which upstream split an entry came
+from. Record `split` before the next rebuild.
 
 ### ❌ Discarded — quality / wrong construct
 
@@ -240,17 +270,23 @@ Pashto) · `asas-ai/Arabic_WSD_Benchmark` · `Raniahossam33/Arabic_Culture_Datas
 Hindi, has no Arabic counterpart) · `ArSyra/*`, `IdiomX`, `IdiomTranslate30` (already excluded as
 synthetic/translation corpora).
 
-### Two ways to strengthen Dim 3 later
+### The Dim-3 suite, and how to read it
 
-314 items give ±5.5 pp SE at 50 % accuracy — enough for a large CPT effect, not a subtle one.
+| Task | n | What a gain means |
+|---|---:|---|
+| `kinayat_cloze` | 150 | **Comprehension** on KB idioms: picks the right idiom for an unseen context |
+| `kinayat_meaning` | 325 | **Knowledge injection** on KB idioms (answer-string familiarity applies) |
+| `ar_figurative` | 314 | **Generalisation**: Alyah/DziriEval idioms are ~99 % outside the KB |
 
-1. **Score Kinayat anyway, labelled "contaminated — memorization ceiling."** The gap between it
-   and the clean 314 separates memorization from generalization.
-2. **Build the missing ChID-Arabic.** MIDAS AR contributes **7,973 idioms absent from our KB**
-   (overlap 21/7,994 = 0.3 % — it is the one large contamination-free Arabic idiom lexicon), and
-   FineWeb-2 `arb_Arab/test` is a 121 M-char held-out corpus to mine natural usages from. Blank
-   the idiom, draw distractors from same-length MIDAS entries. Requires cleaning the 24 % OCR
-   damage first. This is the single highest-value addition to the eval story.
+Together 789 items across three constructs, and the *pattern* across them is the finding: a rise
+in `kinayat_meaning` alone is memorisation; a rise in `kinayat_cloze` is comprehension of injected
+idioms; a rise in `ar_figurative` is transfer to idioms we never trained on.
+
+Still worth building later: **a larger ChID-Arabic.** MIDAS AR contributes **7,973 idioms absent
+from our KB** (overlap 21/7,994 = 0.3 %), and FineWeb-2 `arb_Arab/test` is a 121 M-char held-out
+corpus to mine natural usages from — blank the idiom, draw distractors from same-length MIDAS
+entries. That would give a held-out-idiom cloze to sit alongside `kinayat_cloze`'s in-KB cloze,
+which is the cleanest possible pairing. Requires cleaning MIDAS's 24 % OCR damage first.
 
 ### Wikipedia is inside FineWeb-2 — measured, and handled
 
@@ -345,7 +381,9 @@ Run `git push origin main` yourself from an interactive shell.
 | D4.2 | Over-weight FinePDFs vs its size | 7–20× the idiom density of any web corpus |
 | D6.1 | **Tier-2 stem matching off by default** | measured false positives on real text |
 | D6.2 | Keep substring semantics (no word boundaries) | boundaries would destroy 21.4% of genuine hits |
-| D5.1 | Discard every Arabic *idiom* benchmark, keep a 314-item figurative set | we ingested 96.6–100% of Kinayat / Jawaher / Absher / amthal-hassaniya; a leaked benchmark is worse than a small one |
+| D5.1 | ~~Discard every Arabic *idiom* benchmark~~ **REVERSED 2026-08-23** | The original criterion (idioms overlap the training KB) conflated knowledge overlap with item leakage. Only item leakage disqualifies, and there is none: the tagger never emits `examples`, so 0/298 Kinayat stems reach the corpus. `kinayat_cloze` (150) restored as the Dim-3 primary — it is the Arabic ChID |
+| D5.1b | Keep `kinayat_meaning` but label it | Its gold string IS injected verbatim while the distractor is not — an answer-string familiarity shortcut. Valid for measuring knowledge injection, not comprehension |
+| D5.1c | Randomise gold position in both Kinayat tasks | The source CSV always lists the correct option first |
 | D5.2 | In-domain BPB probe = FineWeb-2's **official test split**, not a reserved train shard | genuinely held out, stable across runs, and strictly better than the zh in-domain probe, which is contaminated by design |
 | D5.3 | Dedup DziriEval on **question text**, not `id` | `id` is not a unique key: only 850 distinct ids for 950 distinct questions, because 50 ids are reused for different questions (49 with different golds). An id-keyed dedup silently deletes 100 real items |
 | D5.4 | `acc_norm` primary for all continuation tasks | Alyah's gold is the longest option 57.5% of the time (chance 25%); measured raw `acc` 0.117 vs `acc_norm` 0.317 on `ar_figurative` |

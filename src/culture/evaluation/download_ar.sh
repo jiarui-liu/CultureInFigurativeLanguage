@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Download the Arabic evaluation benchmarks into data/eval/ar/raw/.
 #
-# Dimension 3 (figurative)          Dimension 4 (cultural competence)
-#   ar_figurative  <- alyah+dziri     arabculture, arabic_cultural_qa, arabicmmlu,
-#                                     global_piqa_ar, alyah, dzirieval,
-#                                     global_piqa_ar_parallel (control)
+# Dimension 3 (idiom / figurative)   Dimension 4 (cultural competence)
+#   kinayat_cloze  <- the Arabic ChID  arabculture, arabic_cultural_qa, arabicmmlu,
+#   kinayat_meaning                    global_piqa_ar, alyah, dzirieval,
+#   ar_figurative  <- alyah+dziri      global_piqa_ar_parallel (control)
 # Dimension 2 (PPL/BPB) probes are built separately by build_ar_probes.py.
 #
 # WHY curl AND NOT `hf download` / `load_dataset`:
@@ -14,16 +14,21 @@
 #
 # None of these repos is gated, so no HF_TOKEN is required.
 #
-# NOT downloaded, on purpose — CONTAMINATED BY OUR OWN TRAINING KB:
-#   menaattia/Kinayat              314/325 test items are in data/idioms/ar (96.6%)
-#   UBC-NLP/Jawaher-benchmark      199/200 test items (99.5%)
-#   Renad10/Absher-Benchmark       81/83 + 408/478 (also: gold leaked into prompt,
-#                                  mixed Latin/Arabic answer letters, 58 missing golds,
-#                                  91% position bias)
-#   ahmed02mk/amthal-hassaniya     319/319 (100%)
-# Kinayat is the only true ChID-style Arabic idiom cloze in existence; if you want
-# it as a labelled *memorization ceiling* rather than a benchmark, fetch it by hand
-# and report it separately. See plans/arabic_pipeline_plan.md §5.
+# NOT downloaded, and NOT for overlap reasons — these fail on their own merits:
+#   Renad10/Absher-Benchmark    the gold answer is concatenated into the prompt string
+#                               in ~10% of rows, 58 missing golds, 91% position bias,
+#                               and the answer column mixes A/B/C/D with أ/ب/ج/د
+#   ahmed02mk/amthal-hassaniya  instruction/output generation, no options -> not
+#                               log-likelihood scorable
+#   UBC-NLP/Jawaher-benchmark   free-text explanation, no options; and its gold
+#                               explanation is exactly what we inject into the corpus,
+#                               so a judge would score memorised text
+#
+# Sharing idioms with the training KB is NOT a reason to drop a benchmark: that is
+# the knowledge CPT is supposed to inject, the same way MMLU overlaps Wikipedia.
+# What matters is whether the evaluation ITEM leaks. Measured: the tagger emits only
+# meanings/entities/region, never `examples`, so 0 of 298 Kinayat stems appear in a
+# real tagged shard. Kinayat is downloaded and used. See plans/... §5.
 set -euo pipefail
 
 DATA_DIR=${DATA_DIR:-data/eval/ar/raw}
@@ -69,10 +74,13 @@ hf_get tiiuae/alyah-emirati-benchmark data/test-00000-of-00001.parquet "$DATA_DI
 echo "=== 7. touati-kamel/DziriEval (1,000 rows -> 950 unique questions; 100 figurative) ==="
 hf_get touati-kamel/DziriEval dzirieval.jsonl "$DATA_DIR/dzirieval.jsonl"
 
+echo "=== 8. menaattia/Kinayat — the Arabic ChID (150 cloze + 325 meaning items) ==="
+hf_get menaattia/Kinayat "Arabic_Idioms%20-%20Kinayat_test.csv" "$DATA_DIR/kinayat_test.csv"
+
 echo
 echo "=== Done. Verify with: ==="
 echo "  PYTHONPATH=src python -c \"from culture.evaluation.tasks_ar import LOADERS_AR as L;"
 echo "  [print(k, len(f(ar_data_dir='$DATA_DIR').examples)) for k,f in L.items()]\""
-echo "Expected: ar_figurative 314 | arabculture 3471 | arabic_cultural_qa 2000 |"
-echo "          arabicmmlu 10529 | global_piqa_ar 1099 | global_piqa_ar_parallel 309 |"
-echo "          alyah 1173 | dzirieval 950"
+echo "Expected: kinayat_cloze 150 | kinayat_meaning 325 | ar_figurative 314 |"
+echo "          arabculture 3471 | arabic_cultural_qa 2000 | arabicmmlu 10529 |"
+echo "          global_piqa_ar 1099 | global_piqa_ar_parallel 309 | alyah 1173 | dzirieval 950"

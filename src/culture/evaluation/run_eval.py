@@ -189,6 +189,10 @@ def build_parser() -> argparse.ArgumentParser:
                         "(default: culturally-scored items only).")
     p.add_argument("--ar_num_fewshot", type=int, default=0,
                    help="Few-shot for the Arabic tasks (0 = zero-shot, matching zh/hi).")
+    p.add_argument("--kinayat_symmetric", action="store_true",
+                   help="Restrict kinayat_cloze to the 116 items where the gold and the "
+                        "distractor idiom have the SAME training-KB status, so neither "
+                        "option gets more CPT exposure. Requires --ar_kb_path.")
 
     # Prompting / scoring.
     p.add_argument("--num_fewshot", type=int, default=0, help="Few-shot for MABL/Global PIQA.")
@@ -281,6 +285,8 @@ def main():
                 kw["subjects"] = _split_csv(args.arabicmmlu_subjects)
             elif name == "global_piqa_ar":
                 kw["cultural_only"] = not args.global_piqa_ar_all
+            elif name == "kinayat_cloze":
+                kw["symmetric_only"] = args.kinayat_symmetric
             task = LOADERS[name](**kw)
 
         if name in MC_TASKS:

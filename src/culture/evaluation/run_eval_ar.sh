@@ -32,7 +32,7 @@ AR_KB_PATH=${AR_KB_PATH:-data/idioms/ar/idioms_merged_llm_formatted.jsonl}
 KB_ARGS=(); [[ -f "$AR_KB_PATH" ]] && KB_ARGS=(--ar_kb_path "$AR_KB_PATH")
 
 OUT_DIR=${OUT_DIR:-results/ar}
-TASKS=${TASKS:-ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel}
+TASKS=${TASKS:-kinayat_cloze,kinayat_meaning,ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel}
 # 'all' -> the full cross-dialect axis (msa+5 dialects+english, 12,000 items).
 ACQA_DIALECTS=${ACQA_DIALECTS:-msa}
 BATCH_SIZE=${BATCH_SIZE:-8}

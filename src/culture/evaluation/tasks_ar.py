@@ -11,7 +11,9 @@ Every task below is base-model MULTIPLE-CHOICE, scored by log-likelihood via
 existing :func:`culture.evaluation.run_eval.eval_mc` (no new scoring code).
 
 Dimension 3 — Arabic idiom / figurative understanding
-  ``ar_figurative``            Alyah figurative + DziriEval figurative (314 items, clean)
+  ``kinayat_cloze``            Kinayat idiom cloze — the Arabic ChID (150 items)
+  ``kinayat_meaning``          Kinayat meaning selection (150 items; see the caveat)
+  ``ar_figurative``            Alyah figurative + DziriEval figurative (314 items)
 
 Dimension 4 — Arabic general cultural competence
   ``arabculture``              MBZUAI/ArabCulture, 13 countries, 3-way completion
@@ -22,14 +24,33 @@ Dimension 4 — Arabic general cultural competence
   ``dzirieval``                touati-kamel/DziriEval, Algerian Darija, 4-way
   ``global_piqa_ar_parallel``  Global-PIQA parallel arb/ary/arz — CONTROL, culture-agnostic
 
-CONTAMINATION (see plans/arabic_pipeline_plan.md §5). The obvious Arabic idiom
-benchmarks are unusable because our own training KB ingested them:
-``menaattia/Kinayat`` 314/325 items in the KB, ``UBC-NLP/Jawaher-benchmark``
-199/200 test items, ``Renad10/Absher`` 81/83 + 408/478, ``amthal-hassaniya``
-319/319. They are NOT loadable here on purpose. The two figurative sources that
-ARE used were measured contamination-free (Alyah 6/724 = 0.8 %, DziriEval
-1/501 = 0.2 %, and those hits are incidental pan-Arab proverb overlap, not item
-leakage). ``--drop_kb_overlap`` removes even those for a zero-overlap claim.
+CONTAMINATION — three different things, only one of which disqualifies a
+benchmark (see plans/arabic_pipeline_plan.md §5):
+
+1. *Knowledge overlap* — the idiom and its meaning are in the training corpus.
+   This is the POINT of the CPT run, exactly as MMLU overlaps Wikipedia. It is
+   not contamination and does not invalidate anything.
+2. *Answer-string familiarity* — the gold answer STRING is injected verbatim
+   while the distractor is not, so the model can prefer the gold by recognition.
+   Usable, but must be labelled: ``kinayat_meaning`` is in this class.
+3. *Item leakage* — the evaluation instance (stem + options + answer) is in the
+   training data. Fatal. Nothing here is in this class.
+
+Measured, not assumed: the tagger (``filter_and_tag_ar.py::knowledge_block``)
+emits only figurative_meanings, literal_meanings, entities and region — never
+``examples`` — so **0 of 298 Kinayat stems appear in a real tagged shard**.
+``kinayat_cloze`` is therefore clean and is the Arabic ChID.
+
+Discarded for reasons unrelated to overlap: ``Renad10/Absher`` (gold leaked into
+the prompt string, 58 missing golds, 91 % position bias, mixed Latin/Arabic
+answer letters) and ``amthal-hassaniya`` (generation format, no options).
+``UBC-NLP/Jawaher-benchmark`` is free-text explanation with the gold verbatim in
+training — class 2 at its most extreme, and not log-likelihood scorable; left
+out rather than declared invalid.
+
+For Alyah/DziriEval, ``--ar_kb_path`` optionally drops the few items whose stem
+contains a KB idiom (measured 2/1173 and 0/314) — a belt-and-braces option, not
+a fix for a real problem.
 
 SCORING NOTES that the loader encodes deliberately:
 - Alyah has a measured 57.5 % longest-option-is-gold bias (chance 25 %), so it is
@@ -80,6 +101,12 @@ ARABICMMLU_CONTEXT_TEMPLATE = "{context}\n\nالسؤال: {question}\n{options_b
 AR_QA_TEMPLATE = "{question}\nالإجابة:"
 # Global-PIQA: the prompt is a sentence fragment or question; solutions continue it.
 GLOBAL_PIQA_AR_TEMPLATE = "{prompt}\n"
+# Kinayat cloze: the stem already carries a ـــــ blank. Mirrors the ChID setup —
+# the passage IS the context, and the options are the candidate idioms.
+# "أكمل الفراغ بالتعبير المناسب" = "fill the blank with the appropriate expression".
+KINAYAT_CLOZE_TEMPLATE = "أكمل الفراغ بالتعبير المناسب:\n{sentence}\nالتعبير:"
+# Kinayat meaning selection. "ما معنى التعبير ... في الجملة" = what does X mean here.
+KINAYAT_MEANING_TEMPLATE = "{sentence}\nما معنى «{idiom}» في هذه الجملة؟\nالمعنى:"
 
 # ArabicMMLU subjects that probe Arab-region knowledge (the CMMLU
 # "China-specific subjects" analogue). Excludes Biology/Physics/Math/CS/etc.,
@@ -640,7 +667,136 @@ def load_ar_figurative(ar_data_dir: Optional[str] = None, num_fewshot: int = 0,
     return MCTask(name="ar_figurative", examples=examples, score_mode="continuation")
 
 
+# --------------------------------------------------------------------------- #
+# 8. Kinayat — the Arabic ChID (idiom cloze) + a meaning-selection variant
+# --------------------------------------------------------------------------- #
+def _kinayat_rows(ar_data_dir: Optional[str]) -> List[Dict[str, Any]]:
+    return _read_any(_require(_resolve(ar_data_dir, "kinayat_test.csv"), "Kinayat test csv"))
+
+
+def load_kinayat_cloze(ar_data_dir: Optional[str] = None, num_fewshot: int = 0,
+                       limit: Optional[int] = None, seed: int = 42,
+                       kb_path: Optional[str] = None,
+                       symmetric_only: bool = False) -> MCTask:
+    """menaattia/Kinayat idiom cloze — **the Arabic ChID**. 150 items, 2 options.
+
+    Schema: ``sentence`` (Egyptian Arabic with the idiom replaced by a ``ـــــ``
+    blank), ``correct`` / ``incorrect`` idiom surfaces. 150 of the 325 rows carry
+    the cloze fields; the rest have explanations only (see `load_kinayat_meaning`).
+
+    WHY THIS IS NOT CONTAMINATED, despite 314/325 of Kinayat's idioms being in
+    our training KB. Two different things get confused here:
+
+    - *Knowledge overlap* — the idiom and its meaning appear in training. That is
+      the entire point of the CPT run, exactly as MMLU overlaps Wikipedia. It
+      does not invalidate a benchmark.
+    - *Item leakage* — the evaluation instance (stem + options + answer) appears
+      in training. That does.
+
+    Only the second is disqualifying, and it does not happen here. The tagger
+    (`filter_and_tag_ar.py::knowledge_block`) emits ONLY figurative_meanings,
+    literal_meanings, entities and region — never the ``examples`` field. Measured
+    on a real tagged shard: **0 of 298 Kinayat stems appear in the tagged corpus.**
+    The model has to know which of two idioms fits the context, which is precisely
+    the capability CPT targets and cannot be answered by recall of a seen string.
+
+    Exposure is also near-symmetric across the two options — 94 golds and 84
+    distractors are KB idioms — so CPT does not simply make the gold more
+    familiar. ``symmetric_only=True`` keeps the 116 items where gold and
+    distractor have identical KB status, for a bias-free subset.
+
+    No length bias (gold is longer in 69/150). Scored ``acc_norm``.
+    """
+    rng = random.Random(seed)
+    # kb_path is used ONLY to compute option symmetry here — Kinayat items are not
+    # dropped for KB overlap, because that overlap is intended knowledge, not leakage.
+    surfaces = _kb_surfaces(kb_path) if (kb_path and symmetric_only) else set()
+    parsed = []
+    for i, row in enumerate(_kinayat_rows(ar_data_dir)):
+        stem, gold_s, dist = (_clean(row.get("sentence")), _clean(row.get("correct")),
+                              _clean(row.get("incorrect")))
+        if not (stem and gold_s and dist):
+            continue
+        if symmetric_only and surfaces:
+            from culture.data_processing.ar_idioms.normalize import normalize_ar
+            if (normalize_ar(gold_s) in surfaces) != (normalize_ar(dist) in surfaces):
+                continue
+        # Randomise which side the gold sits on: the source file always lists the
+        # correct idiom first, and a fixed answer position is a free 100% for any
+        # model with a position prior.
+        opts = [gold_s, dist]
+        gold = 0
+        if rng.random() < 0.5:
+            opts, gold = [dist, gold_s], 1
+        parsed.append((stem, opts, gold, f"kinayat/{_clean(row.get('Idiom')) or i}"))
+
+    prefix = _mc_fewshot_prefix(
+        [(KINAYAT_CLOZE_TEMPLATE.format(sentence=s), o, g) for s, o, g, _ in parsed],
+        num_fewshot, rng)
+    examples = [
+        MCExample(qid=qid, context=prefix + KINAYAT_CLOZE_TEMPLATE.format(sentence=stem),
+                  options=[" " + o for o in opts], gold=gold,
+                  meta={"source": "kinayat", "task": "cloze", "options": opts})
+        for stem, opts, gold, qid in parsed
+    ]
+    if limit:
+        examples = examples[:limit]
+    return MCTask(name="kinayat_cloze", examples=examples, score_mode="continuation")
+
+
+def load_kinayat_meaning(ar_data_dir: Optional[str] = None, num_fewshot: int = 0,
+                         limit: Optional[int] = None, seed: int = 42,
+                         kb_path: Optional[str] = None) -> MCTask:
+    """Kinayat meaning selection: idiom in context -> correct vs incorrect explanation.
+
+    Schema: ``Idiom``, ``Ar_Explanation`` (gold), ``Incorrect_Explanation``
+    (a plausible written distractor), ``full_sentence``.
+
+    ⚠️ **Report this one with a caveat that the cloze does not need.** Unlike the
+    cloze, the gold ANSWER STRING here is what we inject into the pretraining
+    corpus verbatim (``figurative_meanings``), while the distractor never appears.
+    That is not item leakage — the stem and the pairing are unseen — but it does
+    leave an answer-string familiarity shortcut: a model can prefer the gold
+    because it has seen that sentence, not because it understood the idiom. Treat
+    it as a measure of *knowledge injection*, and read the cloze for
+    *comprehension*.
+
+    The distractor is on average LONGER than the gold (109 vs 91 chars; the gold
+    is longer in only 17/150), so ``acc_norm`` is the fair metric here too.
+    """
+    rng = random.Random(seed)
+    parsed = []
+    for i, row in enumerate(_kinayat_rows(ar_data_dir)):
+        gold_m, dist = (_clean(row.get("Ar_Explanation")),
+                        _clean(row.get("Incorrect_Explanation")))
+        idiom = _clean(row.get("Idiom"))
+        if not (gold_m and dist and idiom):
+            continue
+        ctx = _clean(row.get("full_sentence")) or idiom
+        opts, gold = [gold_m, dist], 0
+        if rng.random() < 0.5:
+            opts, gold = [dist, gold_m], 1
+        parsed.append((idiom, ctx, opts, gold, f"kinayat/{idiom or i}"))
+
+    prefix = _mc_fewshot_prefix(
+        [(KINAYAT_MEANING_TEMPLATE.format(sentence=c, idiom=idm), o, g)
+         for idm, c, o, g, _ in parsed], num_fewshot, rng)
+    examples = [
+        MCExample(qid=qid,
+                  context=prefix + KINAYAT_MEANING_TEMPLATE.format(sentence=ctx, idiom=idiom),
+                  options=[" " + o for o in opts], gold=gold,
+                  meta={"source": "kinayat", "task": "meaning", "idiom": idiom,
+                        "answer_string_in_training": True, "options": opts})
+        for idiom, ctx, opts, gold, qid in parsed
+    ]
+    if limit:
+        examples = examples[:limit]
+    return MCTask(name="kinayat_meaning", examples=examples, score_mode="continuation")
+
+
 LOADERS_AR = {
+    "kinayat_cloze": load_kinayat_cloze,
+    "kinayat_meaning": load_kinayat_meaning,
     "ar_figurative": load_ar_figurative,
     "arabculture": load_arabculture,
     "arabic_cultural_qa": load_arabic_cultural_qa,
