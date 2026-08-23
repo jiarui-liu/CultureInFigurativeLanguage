@@ -60,7 +60,7 @@ Result: 10,386 calls, **0 failures**; entities **87.8%**, literal **100.0%**.
 
 ---
 
-## 3. Phase 3 — Analyses ✅ (A6 ✅, A5 🔄 re-running)
+## 3. Phase 3 — Analyses ✅
 
 `src/culture/analysis/analyze_ar_idioms.py` · `cross_lingual_ar_en.py`
 Outputs in `data/idioms/ar/analysis/`.
@@ -73,7 +73,42 @@ Outputs in `data/idioms/ar/analysis/`.
 | A4 semantic | **89** shared-meaning clusters, 114 idiom pairs (cosine ≥ 0.86) |
 | A7 variety | 10 varieties contrasted; distinctive entities per dialect via lift |
 | A6 shared entities | ✅ **97 of the top 150 Arabic entities also head English idioms.** عين=eye (ar 108 / en 39), يد=hand (35/35), يوم=day (37/31), شيء=thing (32/86). → `shared_entities_ar_en.jsonl`, `shared_entity_stats_ar_en.json` |
-| A5 pairs | 🔄 re-running (English side capped at 6,000 rows — see D3.2) |
+| A5 pairs | ✅ **363 same-meaning/different-entity ar↔en pairs** (258 unique Arabic idioms, 251 English). 285 have entities on both sides and **all 285 have entirely non-overlapping entities** — which is the point of A5. → `cross_lingual_pairs_ar_en.jsonl` |
+
+**A5 finding — the cross-lingual meaning pivot does not transfer from Chinese to Arabic.**
+Running it the Chinese way (embed both sides, cosine ≥ 0.70) gave **21 pairs against zh-en's
+37,045**. That gap is not a threshold choice or a data defect; measuring top-1 similarity against
+the 4,538 English glosses shows why:
+
+| Arabic side embedded as | n | mean | p99 | max | ≥ 0.70 |
+|---|---:|---:|---:|---:|---:|
+| Arabic text | 9,596 | 0.354 | 0.465 | **0.607** | **0** |
+| human English gloss | 1,590 | 0.502 | 0.695 | 0.825 | 15 |
+
+**Not one Arabic-language meaning reaches 0.70**, while Chinese clears it directly (max 0.879)
+with the same `text-embedding-3-small` @512d. The content is not at fault — the Arabic entries
+that happen to carry a human English gloss match normally — so this is Arabic↔English *sentence*
+alignment in the embedding model. Every one of those 21 pairs came from the 796 English-glossed
+entries; the other 9,590 contributed nothing.
+
+Fix (**D3.3**): translate the Arabic meanings to short English paraphrases first, then match
+English↔English — the same move that makes A6 work. **21 → 363 pairs, a 17× recovery.** 9,680 of
+11,152 meanings were translated (mean 40 chars, matching the English glosses' 64; 0.1 % empty).
+Six randomly sampled pairs were all valid equivalences with different entities — e.g.
+`ضَرِطُ البَلْقاءِ` ↔ *chin music* (boastful empty talk), `تمحي في الزبدة وتحفي في اللبن` ↔ *bang
+one's head against a brick wall*, `أشأَمُ مِنَ اْلأَخْيَلِ` ↔ *bad news bears*.
+
+Still an order of magnitude below zh-en's 37,045, and the residual gap is honest signal rather
+than a bug: the Arabic KB is a third the size on the meaning side (11,152 vs 47,085 meanings),
+and its entries are dictionary exegesis of largely classical proverbs, which have fewer direct
+English counterparts than modern Chinese chengyu glosses do.
+
+A second, linguistic fix went in alongside (**D3.4**): Arabic proverb dictionaries write
+etymology and anecdote first and the actual gloss last, after `يُضرب في/لمن…` ("it is said
+of…"). `usage_gloss()` trims to that clause, cutting a mean 230-char entry to a 54-char median
+gloss, and it fires on 38.2 % of meanings (49.3 % of entries over 150 chars). It is on by default
+because it removes text that is genuinely not the meaning — but reported honestly: **on its own
+it did not move the pair count at all**, because the ceiling was the embedding space, not length.
 
 **D3.1 — cross-lingual against English**, the pivot the zh pipeline already uses; the Arabic KB
 also carries 796 human English glosses to anchor on.
@@ -316,6 +351,9 @@ Run `git push origin main` yourself from an interactive shell.
 | D5.4 | `acc_norm` primary for all continuation tasks | Alyah's gold is the longest option 57.5% of the time (chance 25%); measured raw `acc` 0.117 vs `acc_norm` 0.317 on `ar_figurative` |
 | D5.5 | `--ar_kb_path` decontamination is opt-in, not forced | measured impact is 2/1173 (Alyah) and 0/314 (`ar_figurative`); those are incidental pan-Arab proverb overlaps, not item leakage, so dropping them is a choice not a fix |
 | D5.6 | Download benchmarks with `curl`, not `hf_hub_download` | every Xet-backed file stalls at 0 bytes behind this proxy; `resolve/main` over plain HTTPS works |
+| D3.3 | Translate Arabic meanings to English before matching (A5) | measured: no Arabic-language meaning exceeds 0.607 cosine to any English gloss, vs a 0.70 threshold Chinese clears directly at 0.879 |
+| D3.4 | Trim Arabic meanings to the `يُضرب` usage clause | Arabic dictionaries put etymology first; cuts 230→54 chars on 38.2% of meanings. Kept for correctness, but it did **not** change the pair count |
+| D3.5 | A5 threshold 0.70, matching the Chinese run | comparability; 0.80 was my earlier mismatch and yielded 3 pairs |
 
 ---
 
@@ -459,3 +497,4 @@ Read the `primary` field in `summary.json`, not `acc` — see D5.4. `eval_ar.slu
 | 2026-08-22 | Phase 5 complete: 26 benchmarks screened (≥5 examples each), 8 tasks + 2 BPB probes implemented in `tasks_ar.py`; every Arabic *idiom* benchmark discarded as KB-contaminated; verified end-to-end with Qwen3-0.6B |
 | 2026-08-22 | Phase 7: 22 Arabic artifacts published to HuggingFace (additive); commits `e6581f4` + `c4fc35e`. **`git push` blocked by fwdproxy — user must run it.** |
 | 2026-08-22 | A6 complete (97/150 top Arabic entities shared with English). A5 re-running after a 504 and a wrong-key 401; retry + fail-fast added to `embed_cached` |
+| 2026-08-22 | **Phase 3 complete.** A5 finished: raw ar↔en embedding matching yields 21 pairs (no Arabic meaning exceeds 0.607 similarity); translating the Arabic side first gives **363 pairs**, sample-validated. All analyses done |
