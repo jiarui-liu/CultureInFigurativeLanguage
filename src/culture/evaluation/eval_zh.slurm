@@ -22,7 +22,7 @@ export TRITON_CACHE_DIR="/tmp/triton_${SLURM_JOB_ID}"
 
 BASE_MODEL=/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
 CPT_MODEL=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt
-case "$RUN" in base) M="$BASE_MODEL";; cpt) M="$CPT_MODEL";; unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-unfiltered";; *) echo bad RUN; exit 1;; esac
+case "$RUN" in base) M="$BASE_MODEL";; cpt) M="$CPT_MODEL";; unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-unfiltered";; untagged) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-untagged";; *) echo bad RUN; exit 1;; esac
 
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/zh
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/zh/$RUN
