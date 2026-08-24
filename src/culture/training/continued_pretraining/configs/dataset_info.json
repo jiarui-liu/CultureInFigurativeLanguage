@@ -34,5 +34,23 @@
     "columns": {
       "prompt": "text"
     }
+  },
+  "hi_filtered_untagged": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_untagged",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "zh_filtered_untagged": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_untagged",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "ar_filtered_untagged": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_untagged",
+    "columns": {
+      "prompt": "text"
+    }
   }
 }

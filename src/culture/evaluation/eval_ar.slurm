@@ -26,6 +26,7 @@ case "$RUN" in
   base) M="$BASE_MODEL";;
   cpt)  M="$CPT_MODEL";;
   unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-unfiltered";;
+  untagged) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-untagged";;
   *) echo bad RUN; exit 1;;
 esac
 

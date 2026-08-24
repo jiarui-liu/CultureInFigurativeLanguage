@@ -1,0 +1,58 @@
+# Continued pretraining of Qwen 3.5 9B on the Chinese chengyu corpus.
+# LLaMA-Factory `pt` stage (raw-text continued pretraining).
+#
+# Sibling of qwen3p5_9b_cpt.yaml (Hindi). Same recipe; only the dataset,
+# output_dir, run_name (and save_steps) differ. Runs as a SEPARATE Slurm job.
+#   Corpus: fineweb-edu-zh-chengyu-cpt — 3.74M docs / ~7.8B tokens, plaintext
+#   Chinese with an appended `【成语注释】` chengyu-meaning knowledge block.
+
+### model
+model_name_or_path: /lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B   # Qwen 3.5 9B base (non-instruct)
+trust_remote_code: true
+flash_attn: sdpa                            # NOT fa2: transformers 5.6 FA2 path crashes on Qwen3.5's
+                                            # optional attention-sink `s_aux` (None) -> AttributeError at step 1.
+template: default                           # pt stage is raw text; template is inert
+
+### method
+stage: pt                                   # continued PRETRAINING (raw text)
+do_train: true
+finetuning_type: full                       # full-parameter CPT
+deepspeed: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs/ds_z3.json
+
+### dataset
+dataset_dir: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs   # dir holding dataset_info.json
+dataset: zh_filtered_untagged                     # filtered-untagged control (paper point 6)
+streaming: false                            # fixed local corpus -> preprocess + epoch over it
+cutoff_len: 16384                           # 16K context
+packing: true                               # pack docs to cutoff_len
+neat_packing: false                         # only supported for SFT in LLaMA-Factory
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### train  (optimizer following OdysSim, arXiv:2606.14199, midtraining)
+per_device_train_batch_size: 1              # 16K ctx is activation-heavy; keep at 1
+gradient_accumulation_steps: 4             # global = 1 x 4 x 32 GPU = 128 seq ~= 2.1M tokens/step
+gradient_checkpointing: true               # needed at 16K ctx
+num_train_epochs: 3                         # ~7.8B tokens x 3 (~11,157 steps @ 2.1M/step; ~30h+ wall — reduce to 1-2 if too long)
+max_steps: 11157                          # token-match to the augmented run (packing cycles the corpus)
+learning_rate: 1.0e-5                       # OdysSim peak LR
+lr_scheduler_type: cosine                   # decay to ~0 across the fixed run
+warmup_ratio: 0.03                          # ~330 warmup steps at ~11k total; safe from a converged base
+weight_decay: 0.01                          # OdysSim
+adam_beta1: 0.9                             # OdysSim
+adam_beta2: 0.999                           # OdysSim
+adam_epsilon: 1.0e-8                        # HF default
+max_grad_norm: 1.0                          # OdysSim grad clip = 1.0
+bf16: true
+torch_compile: false                        # dynamo fails to trace Qwen3.5 hybrid (mamba) forward
+seed: 42
+
+### checkpoint / logging
+output_dir: /lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-untagged
+save_strategy: steps
+save_steps: 500                             # larger corpus/step count -> save a bit less densely than Hindi (200)
+save_total_limit: 10
+logging_steps: 10
+report_to: wandb
+run_name: qwen3p5-9b-zh-cpt-untagged
+overwrite_output_dir: false                 # auto-resume from latest checkpoint on requeue

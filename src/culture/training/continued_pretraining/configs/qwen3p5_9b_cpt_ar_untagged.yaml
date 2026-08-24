@@ -1,0 +1,65 @@
+# Continued pretraining of Qwen 3.5 9B on the Arabic amthal (أمثال) corpus.
+# LLaMA-Factory `pt` stage (raw-text continued pretraining).
+#
+# Mirrors configs/qwen3p5_9b_cpt.yaml (Hindi) and _zh.yaml (Chinese); only the
+# dataset, output dir and run name differ. Keep the optimizer block identical so
+# the three language runs stay comparable.
+#
+# Corpus: built by src/culture/training/mC4/filter_and_tag_ar.py from
+# FineWeb-2 `arb_Arab`, filtered with the morphology-aware matcher and tagged
+# with an Arabic knowledge block. See plans/arabic_pipeline_plan.md for the
+# download + build commands.
+#
+# Paths are absolute so this works regardless of CWD. Launch via ../cpt_ar.slurm
+# (sbatch) or: llamafactory-cli train <this file>.
+
+### model
+model_name_or_path: /lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B   # Qwen 3.5 9B base (non-instruct)
+trust_remote_code: true
+flash_attn: sdpa                            # NOT fa2: transformers 5.6 FA2 path crashes on Qwen3.5's
+                                            # optional attention-sink `s_aux` (None) -> AttributeError at step 1.
+template: default                           # pt stage is raw text; template is inert
+
+### method
+stage: pt                                   # continued PRETRAINING (raw text)
+do_train: true
+finetuning_type: full                       # full-parameter CPT
+deepspeed: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs/ds_z3.json
+
+### dataset
+dataset_dir: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs   # dir holding dataset_info.json
+dataset: ar_filtered_untagged                     # filtered-untagged control (paper point 6)
+streaming: false                            # fixed local corpus -> preprocess + epoch over it
+cutoff_len: 16384                           # 16K context
+packing: true                               # pack docs to cutoff_len
+neat_packing: false                         # only supported for SFT in LLaMA-Factory
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### train  (optimizer following OdysSim, arXiv:2606.14199, midtraining — identical to hi/zh)
+per_device_train_batch_size: 1              # 16K ctx is activation-heavy; keep at 1
+gradient_accumulation_steps: 4              # global = 1 x 4 x 32 GPU = 128 seq ~= 2.1M tokens/step
+gradient_checkpointing: true                # needed at 16K ctx
+num_train_epochs: 3
+max_steps: 1608                          # token-match to the augmented run (packing cycles the corpus)
+learning_rate: 1.0e-5                       # OdysSim peak LR
+lr_scheduler_type: cosine                   # decay to ~0 across the fixed run
+warmup_ratio: 0.03                          # safe from a converged base
+weight_decay: 0.01                          # OdysSim
+adam_beta1: 0.9                             # OdysSim
+adam_beta2: 0.999                           # OdysSim
+adam_epsilon: 1.0e-8                        # HF default
+max_grad_norm: 1.0                          # OdysSim grad clip = 1.0
+bf16: true
+torch_compile: false                        # dynamo fails to trace Qwen3.5 hybrid (mamba) forward
+seed: 42
+
+### checkpoint / logging
+output_dir: /lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-untagged
+save_strategy: steps
+save_steps: 200
+save_total_limit: 10
+logging_steps: 10
+report_to: wandb
+run_name: qwen3p5-9b-ar-cpt-untagged
+overwrite_output_dir: false                 # auto-resume from latest checkpoint on requeue
