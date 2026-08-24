@@ -32,7 +32,7 @@ esac
 # Everything under DATA is produced offline by download_ar.sh + build_ar_probes.py
 # (HF_HUB_OFFLINE=1 here, so nothing may hit the network at eval time).
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/ar
-KB=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/data/idioms/ar/idioms_merged_llm_formatted.jsonl
+KB=/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/ar-kb/data/idioms/ar/idioms_merged_llm_formatted.jsonl
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/ar/$RUN
 mkdir -p "$OUT"
 
