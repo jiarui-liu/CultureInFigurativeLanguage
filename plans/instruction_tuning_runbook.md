@@ -7,10 +7,9 @@ on a **combined, globally shuffled mixture of ONE target-language instruction da
 English instruction dataset**, so the model gains in-language instruction following without
 losing the general capability the base model came with.
 
-**Scope:** English (the shared anchor half), **Arabic**, **Hindi**. Chinese is **out of scope for
-this draft** — the zh dataset review was still running when this was written. §9 says what to add.
+**Scope:** English (the shared anchor half), **Arabic**, **Hindi**, **Chinese**.
 
-**Companion docs:** `docs/literature_reviews/instruction_tuning_datasets_{english,arabic,hindi}.md` ·
+**Companion docs:** `docs/literature_reviews/instruction_tuning_datasets_{english,arabic,hindi,chinese}.md` ·
 `plans/arabic_pipeline_plan.md` · `docs/plans/paper_strengthening_plan.md`
 
 ---
@@ -51,14 +50,15 @@ mandatory cheap verification pass before any bulk download.
 | Base model | `/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B` |
 | CPT ckpt (hi) | `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt/checkpoint-2100` |
 | CPT ckpt (ar) | `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt/checkpoint-1608` |
+| CPT ckpt (zh) | `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt/checkpoint-11157` |
 | SFT data root | `/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data` (new) |
-| SFT ckpt root | `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-{hi,ar}-cpt-sft` |
+| SFT ckpt root | `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-{hi,ar,zh}-cpt-sft` |
 | Code dir | `src/culture/training/instruction_tuning/` (new; sibling of `continued_pretraining/`) |
 | venv | `/storage/home/jiaruiliu/local/git-repos/monitorability-prertaining/.venv` (working `llamafactory-cli` + transformers 5.6 + deepspeed) |
 | HF cache / token | `export HF_HOME=/lustre-storage/fsx_0/user/jiaruiliu/hfcache_sft` · `export HF_TOKEN=...` — **the stored token is expired** |
 
 > Checkpoint step numbers are the augmented runs' `global_step` from
-> `docs/plans/paper_strengthening_plan.md` (hi 2100 / ar 1608). Confirm with `ls <ckpt_root>`
+> `docs/plans/paper_strengthening_plan.md` (hi 2100 / ar 1608 / zh 11157). Confirm with `ls <ckpt_root>`
 > before launching — take the newest `checkpoint-*` if they differ.
 
 ---
@@ -70,6 +70,7 @@ mandatory cheap verification pass before any bulk download.
 | **English anchor** | **SmolTalk2** | `HuggingFaceTB/smoltalk2` | English splits, ≫120K | ⚠️ **no license field on the card** |
 | **Arabic** | **SmolKalam** | `AdaMLLab/smolkalam-arabic-conversational-sft` | 1,790,478 (24 configs) | Apache-2.0 (source `SultanR/smolkalam` gated, CC-BY-4.0) |
 | **Hindi** | **IndicAlign** (`hin_Deva`) | `ai4bharat/indic-align` | 381,173 across Wiki-Conv 141,435 / Wiki-Chat 198,254 / WikiHow 20,313 / Indic-ShareLlama 21,171 | CC-BY-4.0 ✅ |
+| **Chinese** | **Infinity-Instruct (Chinese-only mirror)** | `lhoestq/Infinity-Instruct-Chinese-Only` | 751,313 (100% `zh-cn`) | ⚠️ mirror untagged; upstream **CC-BY-SA-4.0** |
 
 **Why SmolTalk2 for English:** its reasoning half is distilled from **Qwen3-32B** — the same family
 as our base. GRAPE (arXiv:2502.04194) measures 3–13% from teacher/student distributional fit. Use
@@ -85,6 +86,12 @@ identifiers (`i` → `أنا`) and has `user`/`gpt` swapped at offset 600K; Aya'
 + Mixtral), so it carries no OpenAI-output license taint — the Hindi arm stays releasable, which is
 not true of the English one. 100% Devanagari, robust at depth.
 
+**Why Infinity-Instruct-Chinese-Only for Chinese:** 751,313 rows verified **100% `zh-cn`**, ungated,
+deep-probed to the final shard, and it **preserves multi-turn** — twice the rows of the
+`Mxode/Chinese-Instruct` route with the dialogue structure intact. If the untagged mirror is a
+release blocker, the license-clean single-dataset swap is `Mxode/Chinese-Instruct` (4,845,389 rows,
+CC-BY-SA-4.0); take its `stem_zh` + `firefly` + `neo_sft_phase2` subsets.
+
 **License note.** SmolTalk2 having no license field is the one real risk to a weight release. It
 does not block experiments. If release is blocked, the single-dataset swap is
 `allenai/tulu-3-sft-mixture` (ODC-BY) **filtered to English-only rows** — it is ~22% non-English by
@@ -95,6 +102,9 @@ so unfiltered it would silently contaminate the English anchor.
 - IndicAlign: exclude the `IndoWordNet` config (96.8M rows, ~100 paraphrases of one fact). The
   `Anudesh` subset turns **Marathi** at depth — run per-row language ID, do not trust config names.
 - SmolKalam: gate on `LR ≥ 0.85`, `SCR ≥ 0.95` (verify field names in §2.1).
+- Chinese: `Magpie-Qwen2-Air-3M-v0.1` (2,133,622 zh rows, the largest pool found) is the
+  **unfiltered** Magpie pool — sampled rows carry rewards of −6.3 and −9.1 and interleave zh/en.
+  Not a substitute. Also: Aya's `achinese` config (8.2M rows) is **Acehnese, not Chinese**.
 - SmolTalk2: cap response length — the review found 19K–22K-token reasoning rows in sibling
   datasets that silently truncate at our `cutoff_len`.
 
@@ -111,7 +121,8 @@ import os
 api = HfApi(token=os.environ["HF_TOKEN"])
 for r in ["HuggingFaceTB/smoltalk2",
           "AdaMLLab/smolkalam-arabic-conversational-sft",
-          "ai4bharat/indic-align"]:
+          "ai4bharat/indic-align",
+          "lhoestq/Infinity-Instruct-Chinese-Only"]:
     try:
         info = api.dataset_info(r)
         cfgs = get_dataset_config_names(r, token=os.environ["HF_TOKEN"])
@@ -142,6 +153,7 @@ hf download HuggingFaceTB/smoltalk2 --repo-type dataset --local-dir "$SFT_ROOT/s
 hf download AdaMLLab/smolkalam-arabic-conversational-sft --repo-type dataset --local-dir "$SFT_ROOT/smolkalam"
 hf download ai4bharat/indic-align --repo-type dataset \
   --include "*hin_Deva*" --local-dir "$SFT_ROOT/indic-align"   # NB: --include also keeps IndoWordNet out
+hf download lhoestq/Infinity-Instruct-Chinese-Only --repo-type dataset --local-dir "$SFT_ROOT/infinity-instruct-zh"
 ```
 
 If the SmolKalam mirror disappears, request access to the gated source `SultanR/smolkalam`.
@@ -168,7 +180,7 @@ and re-derive per-subset analyses without rebuilding.
 2. **Structural validity** — drop empty turns, non-alternating human/gpt sequences, a `gpt` turn
    first, or role values that are not literally `human`/`gpt`.
 3. **Language ID + script ratio** per row: Hindi assistant turns ≥ 70% Devanagari, Arabic ≥ 70%
-   Arabic script, English rows must ID as `en`. This keeps Marathi out of the Hindi half and
+   Arabic script, Chinese ≥ 70% Han, English rows must ID as `en`. This keeps Marathi out of the Hindi half and
    enforces the English-anchor purity noted in §2. Log drop rate per source.
 4. **Degeneration filter** — reject assistant turns with a character 3-gram repeated past a
    threshold. Airavata's `chrF++ ≥ 50` gate is far too lenient: the review found a fully degenerate
@@ -177,7 +189,7 @@ and re-derive per-subset analyses without rebuilding.
 6. **Near-dedup** (MinHash over prompts) and **decontaminate** against every benchmark prompt used
    in `src/culture/evaluation/`. Log removals — a hit here would invalidate the paper's numbers.
 7. **Sample to quota** (180K target / 120K English), **concatenate, global shuffle `seed=42`**,
-   write `train_sft_{ar,hi}/part-*.jsonl` + `manifest.json` recording pre/post-filter counts,
+   write `train_sft_{ar,hi,zh}/part-*.jsonl` + `manifest.json` recording pre/post-filter counts,
    realized ratio, token estimate, and each HF repo's commit SHA.
 
 ```bash
@@ -185,6 +197,8 @@ python3 build_sft_mixture.py --lang hi --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi
 python3 build_sft_mixture.py --lang ar --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar
+python3 build_sft_mixture.py --lang zh --target_ratio 0.6 --total 300000 \
+  --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh
 python3 build_sft_mixture.py --verify_only --out_dir .../train_sft_hi
 ```
 
@@ -209,6 +223,13 @@ reuse the same `dataset_dir`, so there is one registry):
   "columns": { "messages": "conversations" },
   "tags": { "role_tag": "from", "content_tag": "value",
             "user_tag": "human", "assistant_tag": "gpt" }
+},
+"zh_sft_mix": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh",
+  "formatting": "sharegpt",
+  "columns": { "messages": "conversations" },
+  "tags": { "role_tag": "from", "content_tag": "value",
+            "user_tag": "human", "assistant_tag": "gpt" }
 }
 ```
 
@@ -216,7 +237,7 @@ reuse the same `dataset_dir`, so there is one registry):
 
 ## 4. Training configs
 
-New: `src/culture/training/instruction_tuning/configs/qwen3p5_9b_sft_{hi,ar}.yaml`. Deltas from the
+New: `src/culture/training/instruction_tuning/configs/qwen3p5_9b_sft_{hi,ar,zh}.yaml`. Deltas from the
 CPT configs — everything else stays identical so runs remain comparable.
 
 | Field | CPT value | SFT value | Why |
@@ -224,7 +245,7 @@ CPT configs — everything else stays identical so runs remain comparable.
 | `stage` | `pt` | **`sft`** | supervised instruction tuning |
 | `model_name_or_path` | base Qwen3.5-9B | **the CPT checkpoint** (§1) | this is the point of the run |
 | `template` | `default` | **`qwen`** | base model has no chat template; verify the exact name in this LLaMA-Factory build |
-| `dataset` | `hi_proverbs` / `ar_amthal` | `hi_sft_mix` / `ar_sft_mix` | §3.3 |
+| `dataset` | `hi_proverbs` / `ar_amthal` / `zh_chengyu` | `hi_sft_mix` / `ar_sft_mix` / `zh_sft_mix` | §3.3 |
 | `cutoff_len` | 16384 | **8192** | SFT rows are short; halves activation cost |
 | `neat_packing` | `false` | **`true`** | SFT-only in LLaMA-Factory; prevents cross-example attention contamination |
 | `num_train_epochs` | 3 | **2** | standard for a ~300K-example SFT |
@@ -244,7 +265,7 @@ global 128 seq × 8192 ≈ **1.05M tokens/step**. ~210M tokens × 2 epochs ≈ *
 
 ## 5. Launch
 
-`sft_hi.slurm` / `sft_ar.slurm` — copy `continued_pretraining/cpt_ar.slurm` and change `CONFIG`,
+`sft_hi.slurm` / `sft_ar.slurm` / `sft_zh.slurm` — copy `continued_pretraining/cpt_ar.slurm` and change `CONFIG`,
 `--job-name`, and the `mkdir -p` output dir. It already does the right things: `--chdir` pins CWD,
 `source env.sh` sets NCCL/IB, `MASTER_ADDR` from `scontrol`, `HF_DATASETS_OFFLINE=1`, per-job `/tmp`
 caches for HF/Triton, `WANDB_MODE=offline`, `FORCE_TORCHRUN=1` + `NNODES`/`NODE_RANK` per task.
@@ -253,6 +274,7 @@ caches for HF/Triton, `WANDB_MODE=offline`, `FORCE_TORCHRUN=1` + `NNODES`/`NODE_
 cd src/culture/training/instruction_tuning
 sbatch sft_hi.slurm     # Hindi:  CPT-hi ckpt + hi_sft_mix
 sbatch sft_ar.slurm     # Arabic: CPT-ar ckpt + ar_sft_mix   (parallel, separate job)
+sbatch sft_zh.slurm     # Chinese: CPT-zh ckpt + zh_sft_mix  (parallel, separate job)
 ```
 
 **Watch the first 20 steps:** loss should start well below a from-scratch SFT (the base is already
@@ -264,14 +286,14 @@ tok/step. Flat-0 or NaN loss is almost always the template or the role tags in �
 ## 6. Evaluation
 
 1. **Target-language instruction following** — the language's idiom/cultural tasks
-   (`kinayat_meaning`, `kinayat_cloze`, `ar_figurative`; Hindi MILU etc.) plus a generative
+   (`kinayat_meaning`, `kinayat_cloze`, `ar_figurative`; Hindi MILU; Chinese ChID / Chengyu-Bench) plus a generative
    instruction-following check. The CPT → CPT+SFT delta is the headline.
 2. **English retention (Dim-1)** — MMLU / BoolQ / GSM8K / HumanEval / WikiText on the SFT'd
    checkpoint vs. the pre-SFT CPT checkpoint. **This is the number that tests D0.2**: if the
    English half is doing its job, retention is flat or up.
 
 Write per-item `records` to
-`/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/{hi,ar}/cpt-sft/<task>.json`,
+`/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/{hi,ar,zh}/cpt-sft/<task>.json`,
 matching the existing layout so `src/culture/evaluation/compute_cis.py` picks it up unchanged.
 
 ---
@@ -292,13 +314,18 @@ expected shape, not a bug, and the preference stage is the higher-value next lev
 
 ---
 
-## 8. When the Chinese review lands
+## 8. Chinese-specific notes
 
-Add a `zh` arm symmetric to Arabic: pick the **single** backbone dataset from
-`docs/literature_reviews/instruction_tuning_datasets_chinese.md`, add `zh_sft_mix` to §3.3, a
-`qwen3p5_9b_sft_zh.yaml` to §4, and `sft_zh.slurm` to §5. CPT checkpoint:
-`…/ckpts/qwen3p5-9b-zh-cpt` (augmented run `global_step` 11157). Everything else carries over.
-Re-check the 60/40 ratio — Chinese data is far more plentiful, so the quota, not the pool, binds.
+- **The quota binds, not the pool.** 751K zh rows for a 180K quota means the 60/40 ratio is a free
+  choice here, unlike Hindi (381K available) or Arabic-after-filtering. Worth re-checking the ratio
+  for zh specifically in the §7 A1 ablation.
+- **The zh CPT run is the long one** (`global_step` 11157 vs hi 2100 / ar 1608), but SFT cost is set
+  by the mixture, not the CPT length — expect the same ~400 steps as hi/ar.
+- **Sampling bias warning, carried from the review.** Chinese-share estimates from partial shard
+  scans are unreliable because shards are often **time-ordered**: WildChat's zh share falls
+  monotonically from 25.53% (shard 0) to 2.65% (shard 11), which produced a 63% overestimate until a
+  full 14-shard scan corrected it. If §3.2 ever needs a language share from a multi-shard dataset,
+  scan **all** shards.
 
 ---
 
@@ -307,12 +334,12 @@ Re-check the 60/40 ratio — Chinese data is far more plentiful, so the quota, n
 - [ ] §2.1 verification pass — all three repos resolve, field names confirmed, deviations recorded here
 - [ ] `HF_TOKEN` refreshed (the stored one is expired)
 - [ ] Download complete + re-run `hf download` to confirm no `.incomplete` orphans
-- [ ] `build_sft_mixture.py` written and run for hi + ar
+- [ ] `build_sft_mixture.py` written and run for hi + ar + zh
 - [ ] `manifest.json` reviewed: realized ratio ≈ 60/40, drop rates sane, decontamination log empty-or-explained
 - [ ] 20 random rows per language read by a human
 - [ ] `dataset_info.json` entries added; `template: qwen` verified against this LLaMA-Factory build
 - [ ] CPT checkpoint paths confirmed on disk (newest `checkpoint-*`)
 - [ ] SFT configs + slurm launchers written
 - [ ] First-20-steps sanity check passed (loss masking, throughput)
-- [ ] Both runs complete; eval records written to the standard layout
+- [ ] All three runs complete; eval records written to the standard layout
 - [ ] English retention compared pre-/post-SFT (the D0.2 test)
