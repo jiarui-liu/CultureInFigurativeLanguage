@@ -1,14 +1,74 @@
 
+===== AR =====
+[alyah]  base=0.334  cpt=0.381  unfiltered=0.352  untagged=0.372
+    *cpt_vs_base: Δ=+0.047 CI[+0.026,+0.068] p=0.0000 (win 103/48)
+    *cpt_vs_unfiltered: Δ=+0.029 CI[+0.012,+0.046] p=0.0014 (win 71/37)
+     cpt_vs_untagged: Δ=+0.009 CI[-0.002,+0.019] p=0.1433 (win 24/14)
+[ar_figurative]  base=0.293  cpt=0.334  unfiltered=0.280  untagged=0.319
+    *cpt_vs_base: Δ=+0.041 CI[+0.006,+0.080] p=0.0410 (win 24/11)
+    *cpt_vs_unfiltered: Δ=+0.054 CI[+0.016,+0.092] p=0.0076 (win 27/10)
+     cpt_vs_untagged: Δ=+0.016 CI[-0.013,+0.045] p=0.3593 (win 12/7)
+[arabculture]  base=0.472  cpt=0.506  unfiltered=0.503  untagged=0.507
+    *cpt_vs_base: Δ=+0.034 CI[+0.018,+0.050] p=0.0001 (win 200/126)
+     cpt_vs_unfiltered: Δ=+0.003 CI[-0.009,+0.016] p=0.6503 (win 91/84)
+     cpt_vs_untagged: Δ=-0.001 CI[-0.007,+0.006] p=1.0000 (win 28/29)
+[arabic_cultural_qa]  base=0.708  cpt=0.707  unfiltered=0.718  untagged=0.703
+     cpt_vs_base: Δ=-0.001 CI[-0.017,+0.015] p=0.9509 (win 131/133)
+     cpt_vs_unfiltered: Δ=-0.011 CI[-0.025,+0.003] p=0.1294 (win 85/107)
+     cpt_vs_untagged: Δ=+0.004 CI[-0.005,+0.012] p=0.4828 (win 40/33)
+[arabicmmlu]  base=0.673  cpt=0.679  unfiltered=0.675  untagged=0.681
+     cpt_vs_base: Δ=+0.006 CI[-0.001,+0.014] p=0.0801 (win 745/678)
+     cpt_vs_unfiltered: Δ=+0.005 CI[-0.002,+0.011] p=0.1625 (win 615/566)
+     cpt_vs_untagged: Δ=-0.002 CI[-0.006,+0.002] p=0.4542 (win 220/237)
+[dzirieval]  base=0.326  cpt=0.353  unfiltered=0.335  untagged=0.355
+    *cpt_vs_base: Δ=+0.026 CI[+0.005,+0.047] p=0.0199 (win 66/41)
+     cpt_vs_unfiltered: Δ=+0.018 CI[-0.001,+0.037] p=0.0784 (win 50/33)
+     cpt_vs_untagged: Δ=-0.002 CI[-0.013,+0.008] p=0.8450 (win 12/14)
+[global_piqa_ar]  base=0.581  cpt=0.592  unfiltered=0.594  untagged=0.588
+     cpt_vs_base: Δ=+0.011 CI[-0.011,+0.034] p=0.3755 (win 83/71)
+     cpt_vs_unfiltered: Δ=-0.002 CI[-0.021,+0.017] p=0.9267 (win 58/60)
+     cpt_vs_untagged: Δ=+0.004 CI[-0.005,+0.013] p=0.5572 (win 15/11)
+[global_piqa_ar_parallel]  base=0.298  cpt=0.282  unfiltered=0.272  untagged=0.282
+     cpt_vs_base: Δ=-0.016 CI[-0.055,+0.023] p=0.4996 (win 15/20)
+     cpt_vs_unfiltered: Δ=+0.010 CI[-0.026,+0.045] p=0.7111 (win 16/13)
+     cpt_vs_untagged: Δ=+0.000 CI[-0.016,+0.016] p=1.0000 (win 3/3)
+[kinayat_cloze]  base=0.500  cpt=0.527  unfiltered=0.533  untagged=0.507
+     cpt_vs_base: Δ=+0.027 CI[-0.047,+0.100] p=0.5966 (win 18/14)
+     cpt_vs_unfiltered: Δ=-0.007 CI[-0.073,+0.060] p=1.0000 (win 12/13)
+     cpt_vs_untagged: Δ=+0.020 CI[-0.027,+0.067] p=0.5810 (win 8/5)
+[kinayat_meaning]  base=0.222  cpt=0.452  unfiltered=0.237  untagged=0.317
+    *cpt_vs_base: Δ=+0.231 CI[+0.178,+0.283] p=0.0000 (win 85/10)
+    *cpt_vs_unfiltered: Δ=+0.215 CI[+0.166,+0.268] p=0.0000 (win 76/6)
+    *cpt_vs_untagged: Δ=+0.135 CI[+0.092,+0.178] p=0.0000 (win 52/8)
+
 ===== HI =====
 [global_piqa]  base=0.600  cpt=0.720  unfiltered=0.650  untagged=0.690
      cpt_vs_base: Δ=+0.120 CI[+0.000,+0.240] p=0.0730 (win 25/13)
      cpt_vs_unfiltered: Δ=+0.070 CI[+0.000,+0.140] p=0.0923 (win 10/3)
      cpt_vs_untagged: Δ=+0.030 CI[-0.030,+0.090] p=0.5078 (win 6/3)
 [mabl]  base=0.531  cpt=0.592  unfiltered=0.585  untagged=0.598
-    *cpt_vs_base: Δ=+0.061 CI[+0.025,+0.098] p=0.0013 (win 206/145)
+    *cpt_vs_base: Δ=+0.061 CI[+0.024,+0.098] p=0.0013 (win 206/145)
      cpt_vs_unfiltered: Δ=+0.007 CI[-0.012,+0.027] p=0.5467 (win 53/46)
      cpt_vs_untagged: Δ=-0.006 CI[-0.019,+0.007] p=0.4614 (win 20/26)
 [milu]  base=0.532  cpt=0.608  unfiltered=0.614  untagged=0.609
     *cpt_vs_base: Δ=+0.076 CI[+0.068,+0.084] p=0.0000 (win 2328/1204)
      cpt_vs_unfiltered: Δ=-0.006 CI[-0.012,-0.000] p=0.0501 (win 987/1077)
-     cpt_vs_untagged: Δ=-0.001 CI[-0.006,+0.003] p=0.6574 (win 564/580)
+     cpt_vs_untagged: Δ=-0.001 CI[-0.005,+0.003] p=0.6574 (win 564/580)
+
+===== ZH =====
+[ccpm]  base=0.787  cpt=0.809  unfiltered=0.815  untagged=0.808
+    *cpt_vs_base: Δ=+0.022 CI[+0.009,+0.035] p=0.0010 (win 192/132)
+     cpt_vs_unfiltered: Δ=-0.006 CI[-0.015,+0.003] p=0.2143 (win 65/81)
+     cpt_vs_untagged: Δ=+0.002 CI[-0.005,+0.008] p=0.7407 (win 43/39)
+[chengyu_bench]  base=0.478  cpt=0.957  unfiltered=0.889  untagged=0.931
+    *cpt_vs_base: Δ=+0.480 CI[+0.435,+0.522] p=0.0000 (win 264/5)
+    *cpt_vs_unfiltered: Δ=+0.069 CI[+0.044,+0.093] p=0.0000 (win 41/4)
+    *cpt_vs_untagged: Δ=+0.026 CI[+0.011,+0.043] p=0.0026 (win 17/3)
+[chid]  base=0.652  cpt=0.657  unfiltered=0.659  untagged=0.657
+     cpt_vs_base: Δ=+0.005 CI[-0.008,+0.018] p=0.4380 (win 195/179)
+     cpt_vs_unfiltered: Δ=-0.004 CI[-0.015,+0.007] p=0.5480 (win 133/144)
+     cpt_vs_untagged: Δ=-0.002 CI[-0.011,+0.007] p=0.7238 (win 97/103)
+[cmmlu]  base=0.809  cpt=0.804  unfiltered=0.803  untagged=0.800
+     cpt_vs_base: Δ=-0.005 CI[-0.011,+0.000] p=0.0713 (win 541/603)
+     cpt_vs_unfiltered: Δ=+0.000 CI[-0.004,+0.005] p=0.8895 (win 417/412)
+     cpt_vs_untagged: Δ=+0.004 CI[+0.000,+0.007] p=0.0569 (win 265/222)

@@ -1,0 +1,52 @@
+# SFT of Qwen3.5-9B — run: ar-base-sft
+# Auto-generated. See ../SFT_PROGRESS.md for the research decisions behind these values.
+# Launch: ../sft.slurm configs/qwen3p5_9b_sft_ar-base-sft.yaml   (via sbatch)
+
+### model
+model_name_or_path: /lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
+trust_remote_code: true
+flash_attn: sdpa                 # NOT fa2 (transformers 5.6 FA2 crashes on Qwen3.5 s_aux)
+template: qwen3_5_nothink        # model-native Qwen3.5 chat template; data has no reasoning traces
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs/ds_z3.json
+
+### dataset
+dataset_dir: /storage/home/jiaruiliu/local/git-repos/culture-pretraining/CultureInFigurativeLanguage/src/culture/training/continued_pretraining/configs
+dataset: ar_sft_mix
+streaming: false
+cutoff_len: 8192
+packing: false                   # Qwen3.5 is HYBRID (24/32 linear-attention layers) -> packing
+neat_packing: false              # leaks SSM/conv state across examples even with neat_packing
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### train  (optimizer identical to the CPT runs for comparability)
+per_device_train_batch_size: 1   # per_device=1 + no packing => zero padding waste
+gradient_accumulation_steps: 4   # global = 1 x 4 x 32 GPU = 128 sequences/step
+gradient_checkpointing: true
+num_train_epochs: 2
+learning_rate: 1.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1.0e-8
+max_grad_norm: 1.0
+bf16: true
+torch_compile: false
+seed: 42
+
+### checkpoint / logging
+output_dir: /lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-base-sft
+save_strategy: steps
+save_steps: 200
+save_total_limit: 3
+logging_steps: 10
+report_to: wandb
+run_name: qwen3p5-9b-sft-ar-base-sft
+overwrite_output_dir: false      # auto-resume from latest checkpoint on requeue

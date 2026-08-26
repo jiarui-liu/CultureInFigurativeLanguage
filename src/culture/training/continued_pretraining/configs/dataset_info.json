@@ -52,5 +52,31 @@
     "columns": {
       "prompt": "text"
     }
+  },
+  "hi_sft_mix": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "human",
+      "assistant_tag": "gpt"
+    }
+  },
+  "ar_sft_mix": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "human",
+      "assistant_tag": "gpt"
+    }
   }
 }
