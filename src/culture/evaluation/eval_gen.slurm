@@ -19,9 +19,10 @@ export HF_HOME="/tmp/hf_${SLURM_JOB_ID}" TOKENIZERS_PARALLELISM=false TRITON_CAC
 BASE=/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
 CPT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt
 UNF=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt-unfiltered
+UNTAG=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-hi-cpt-untagged
 case "$RUN" in
-  base) M="$BASE" ;; cpt) M="$CPT" ;; unfiltered) M="$UNF" ;;
-  *) echo "unknown RUN=$RUN (use base|cpt|unfiltered)"; exit 1 ;;
+  base) M="$BASE" ;; cpt) M="$CPT" ;; unfiltered) M="$UNF" ;; untagged) M="$UNTAG" ;;
+  *) echo "unknown RUN=$RUN (use base|cpt|unfiltered|untagged)"; exit 1 ;;
 esac
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/hi/$RUN/en_gen
 python -m culture.evaluation.run_english_gen --model_path "$M" --run_name "$RUN" \

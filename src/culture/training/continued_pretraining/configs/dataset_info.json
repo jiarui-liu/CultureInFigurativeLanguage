@@ -78,5 +78,18 @@
       "user_tag": "human",
       "assistant_tag": "gpt"
     }
+  },
+  "zh_sft_mix": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "human",
+      "assistant_tag": "gpt"
+    }
   }
 }

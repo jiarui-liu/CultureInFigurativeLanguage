@@ -41,6 +41,7 @@ def _ratio(text, lo, hi, extra_ranges=()):
 def deva_ratio(t):   return _ratio(t, 0x0900, 0x097F)
 def arab_ratio(t):   return _ratio(t, 0x0600, 0x06FF, [(0x0750,0x077F),(0x08A0,0x08FF),(0xFB50,0xFDFF),(0xFE70,0xFEFF)])
 def latin_ratio(t):  return _ratio(t, 0x0041, 0x007A, [(0x00C0,0x024F)])
+def han_ratio(t):    return _ratio(t, 0x4E00, 0x9FFF, [(0x3400,0x4DBF),(0xF900,0xFAFF),(0x20000,0x2A6DF)])
 
 THINK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
 
@@ -167,7 +168,48 @@ def iter_indicalign_hi(sft_root):
                 if turns:
                     yield turns, src
 
-# ---- build one side ---------------------------------------------------------
+def _rows_to_turns(row):
+    """Map an Infinity-Instruct row to (role,content) turns. Handles sharegpt
+    `conversations` (from/value) and OpenAI `messages` (role/content)."""
+    conv = row.get("conversations")
+    if isinstance(conv, list) and conv and isinstance(conv[0], dict) and "from" in conv[0]:
+        role_map = {"human":"human","user":"human","gpt":"gpt","assistant":"gpt",
+                    "system":"system","observation":"human","function":"gpt"}
+        return [(role_map.get(str(m.get("from","")).lower(),"human"),
+                 m.get("value") or m.get("content") or "") for m in conv]
+    msgs = row.get("messages")
+    if isinstance(msgs, list) and msgs and isinstance(msgs[0], dict):
+        return [("human" if m.get("role")=="user" else "gpt" if m.get("role")=="assistant" else "system",
+                 m.get("content") or "") for m in msgs]
+    return []
+
+def iter_infinity_zh(sft_root):
+    root = f"{sft_root}/infinity-instruct-zh"
+    files = sorted(glob.glob(f"{root}/**/*.parquet", recursive=True))
+    if files:
+        for f in files:
+            src = "infinity-instruct-zh"
+            pf = pq.ParquetFile(f)
+            names = pf.schema_arrow.names
+            cols = [c for c in ("conversations","messages") if c in names] or None
+            for b in pf.iter_batches(batch_size=1000, columns=cols):
+                for row in b.to_pylist():
+                    turns = _rows_to_turns(row)
+                    if turns:
+                        yield turns, src
+        return
+    # fallback: jsonl / jsonl.gz shards
+    for f in sorted(glob.glob(f"{root}/**/*.jsonl*", recursive=True)):
+        op = gzip.open if f.endswith(".gz") else open
+        with op(f, "rt", encoding="utf-8") as fh:
+            for line in fh:
+                try: row = json.loads(line)
+                except Exception: continue
+                turns = _rows_to_turns(row)
+                if turns:
+                    yield turns, "infinity-instruct-zh"
+
+
 def build_side(name, it, quota, lang, script_fn, rng, seen):
     res = Reservoir(quota, rng)
     kept = scanned = dropped_struct = dropped_lang = dropped_dup = dropped_len = dropped_degen = 0
@@ -193,7 +235,7 @@ def build_side(name, it, quota, lang, script_fn, rng, seen):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--lang", required=True, choices=["hi","ar"])
+    ap.add_argument("--lang", required=True, choices=["hi","ar","zh"])
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--sft_root", default=SFT_ROOT_DEFAULT)
     ap.add_argument("--target_total", type=int, default=180000)
@@ -207,6 +249,8 @@ def main():
 
     if args.lang == "hi":
         tgt_it, tgt_script = iter_indicalign_hi(args.sft_root), deva_ratio
+    elif args.lang == "zh":
+        tgt_it, tgt_script = iter_infinity_zh(args.sft_root), han_ratio
     else:
         tgt_it, tgt_script = iter_smolkalam(args.sft_root), arab_ratio
 

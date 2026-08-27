@@ -23,9 +23,11 @@ export HF_HOME="/tmp/hf_${SLURM_JOB_ID}" HF_DATASETS_CACHE="/tmp/hfds_${SLURM_JO
 export TOKENIZERS_PARALLELISM=false TRITON_CACHE_DIR="/tmp/triton_${SLURM_JOB_ID}"
 
 case "$RUN" in
-  cpt)        M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt" ;;
-  unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-unfiltered" ;;
-  *) echo "unknown RUN=$RUN (use cpt|unfiltered)"; exit 1 ;;
+  cpt)         M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt" ;;
+  unfiltered)  M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-unfiltered" ;;
+  ar-cpt-sft)  M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-sft" ;;
+  ar-base-sft) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-base-sft" ;;
+  *) echo "unknown RUN=$RUN (use cpt|unfiltered|ar-cpt-sft|ar-base-sft)"; exit 1 ;;
 esac
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/ar/$RUN/en
 OUTGEN=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/ar/$RUN/en_gen

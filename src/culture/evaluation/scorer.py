@@ -198,8 +198,15 @@ class HFModel:
         batch_size: int = 8,
         stop: Optional[List[str]] = None,
         progress: bool = True,
+        chat: bool = False,
     ) -> List[str]:
-        """Greedy completion for a list of raw-text prompts (no chat template)."""
+        """Greedy completion for a list of raw-text prompts.
+
+        If ``chat=True``, each prompt is wrapped as a single user turn and the
+        tokenizer's chat template is applied (with a generation prompt) before
+        decoding -- the correct protocol for instruction-tuned checkpoints, which
+        otherwise underperform when prompted as raw base models.
+        """
         outputs: List[str] = []
         iterator = range(0, len(prompts), batch_size)
         if progress:
@@ -207,13 +214,21 @@ class HFModel:
 
         for start in iterator:
             batch = prompts[start:start + batch_size]
+            if chat:
+                batch = [
+                    self.tokenizer.apply_chat_template(
+                        [{"role": "user", "content": p}],
+                        tokenize=False, add_generation_prompt=True,
+                    )
+                    for p in batch
+                ]
             enc = self.tokenizer(
                 batch,
                 return_tensors="pt",
                 padding=True,
                 truncation=True,
                 max_length=self.max_length,
-                add_special_tokens=True,
+                add_special_tokens=not chat,   # chat template already adds them
             ).to(self.device)
 
             gen = self.model.generate(

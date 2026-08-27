@@ -105,6 +105,7 @@ def eval_gen(model: HFModel, task: GenTask, args) -> Dict[str, Any]:
         max_new_tokens=args.max_new_tokens,
         batch_size=args.gen_batch_size,
         stop=["\n", "English:"],
+        chat=getattr(args, "chat", False),
     )
     records = [{
         "qid": ex.qid, "source": ex.source, "hypothesis": hyp,
@@ -209,6 +210,9 @@ def build_parser() -> argparse.ArgumentParser:
     # Generation + judge (IdiomCE).
     p.add_argument("--max_new_tokens", type=int, default=128)
     p.add_argument("--gen_batch_size", type=int, default=8)
+    p.add_argument("--chat", action="store_true",
+                   help="Apply the tokenizer chat template for generation (use for "
+                        "instruction-tuned checkpoints; IdiomCE only).")
     p.add_argument("--judge_model", default="gpt-4o")
     p.add_argument("--judge_provider", default="openai")
     p.add_argument("--judge_batch_size", type=int, default=20)
