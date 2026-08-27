@@ -16,10 +16,14 @@ losing the general capability the base model came with.
 
 ## 0. Design decisions (and why)
 
-**D0.1 — Exactly ONE dataset per language.** Each run mixes two datasets and no more: the target
-language's best dataset and the English anchor. Multi-source mixtures add per-source quota,
-dedup and provenance confounds that we would then have to ablate; with one source per side the
-only knobs are the ratio and the size.
+**D0.1 — Exactly ONE dataset per language, with ONE documented exception (Arabic).** Each run mixes
+two datasets and no more: the target language's best dataset and the English anchor. Multi-source
+mixtures add per-source quota, dedup and provenance confounds that we would then have to ablate;
+with one source per side the only knobs are the ratio and the size.
+**Arabic is the exception**, forced by the data landscape rather than chosen: a 2026-08-26 sweep of 381
+HF candidates plus the arXiv:2507.14688 survey of 366 Arabic post-training datasets found that
+**no large natively-Arabic instruction dataset exists** — big ⇒ machine-translated, native ⇒ small.
+So Arabic runs **SmolKalam (volume) + CIDAR (cultural overlay)**. See §2.
 
 **D0.2 — Mix into ONE shuffled SFT run, not two sequential stages.** Sequential (English → target)
 makes the second stage overwrite the first. A single globally shuffled mixture is what Airavata,
@@ -68,7 +72,8 @@ mandatory cheap verification pass before any bulk download.
 | Role | Dataset | HF repo | Rows available | License |
 |---|---|---|---|---|
 | **English anchor** | **SmolTalk2** | `HuggingFaceTB/smoltalk2` | English splits, ≫120K | ⚠️ **no license field on the card** |
-| **Arabic** | **SmolKalam** | `AdaMLLab/smolkalam-arabic-conversational-sft` | 1,790,478 (24 configs) | Apache-2.0 (source `SultanR/smolkalam` gated, CC-BY-4.0) |
+| **Arabic** (volume) | **SmolKalam** | `AdaMLLab/smolkalam-arabic-conversational-sft` | 1,790,478 (24 configs) | Apache-2.0 (source `SultanR/smolkalam` gated, CC-BY-4.0) |
+| **Arabic** (cultural overlay) | **CIDAR** | `arbml/CIDAR` | 10,000 | ⚠️ repo tag `apache-2.0`, **paper says CC-BY-NC** |
 | **Hindi** | **IndicAlign** (`hin_Deva`) | `ai4bharat/indic-align` | 381,173 across Wiki-Conv 141,435 / Wiki-Chat 198,254 / WikiHow 20,313 / Indic-ShareLlama 21,171 | CC-BY-4.0 ✅ |
 | **Chinese** | **Infinity-Instruct (Chinese-only mirror)** | `lhoestq/Infinity-Instruct-Chinese-Only` | 751,313 (100% `zh-cn`) | ⚠️ mirror untagged; upstream **CC-BY-SA-4.0** |
 
@@ -91,6 +96,27 @@ deep-probed to the final shard, and it **preserves multi-turn** — twice the ro
 `Mxode/Chinese-Instruct` route with the dialogue structure intact. If the untagged mirror is a
 release blocker, the license-clean single-dataset swap is `Mxode/Chinese-Instruct` (4,845,389 rows,
 CC-BY-SA-4.0); take its `stem_zh` + `firefly` + `neo_sft_phase2` subsets.
+
+**Why CIDAR is added to the Arabic arm.** SmolKalam is **translated** data (ensemble MT: SeedX-7B +
+Gemma-3-27B candidates reranked by a Qwen-2.5-1.5B reward model). It reads natively — which is why it
+wins on general quality — but its prompts and content are English-origin, so it carries no Arabic
+cultural grounding. That is the diagnosed cause of the weak idiom / cultural-benchmark results.
+CIDAR is the only fully **human-reviewed** general Arabic set: 9,109 rows translated then human-edited
+(**~64.5% required modification** during cultural localization) plus 891 natively written Arabic-grammar
+items from Al Jazeera's *Ask the Teacher*. Rows sampled directly on 2026-08-26 include a complete
+diacritized morphology table for the hollow verb `أجَارَ` (اسم الفاعل / اسم المفعول across all pronouns)
+and classical poetry with full tashkeel — capabilities translated data structurally cannot teach.
+
+**Three caveats on CIDAR, all load-bearing:**
+- **Size.** 10,000 rows against a 180K Arabic quota, and its answers are short. It **cannot carry the run**
+  — hence the overlay role, not a replacement. It is ~5.6% of the Arabic half.
+- **Do not upsample past 2×.** Repeating 10K rows many times to hit a quota overfits them. Default is
+  **1× (all 10,000, once)**; if an ablation wants more cultural weight, cap at 2× and record it in the manifest.
+- **License conflict.** The HF repo tags `apache-2.0` but the CIDAR paper states CC-BY-NC. Treat as
+  **non-commercial until resolved** — fine for experiments, blocking for a weight release.
+
+**Schema note:** CIDAR is **alpaca-style** (`instruction`, `output`, `index`), single-turn — *not* sharegpt
+like the other three. §3.2 step 1 must convert it: `instruction` → `human` turn, `output` → `gpt` turn.
 
 **License note.** SmolTalk2 having no license field is the one real risk to a weight release. It
 does not block experiments. If release is blocked, the single-dataset swap is
@@ -122,7 +148,8 @@ api = HfApi(token=os.environ["HF_TOKEN"])
 for r in ["HuggingFaceTB/smoltalk2",
           "AdaMLLab/smolkalam-arabic-conversational-sft",
           "ai4bharat/indic-align",
-          "lhoestq/Infinity-Instruct-Chinese-Only"]:
+          "lhoestq/Infinity-Instruct-Chinese-Only",
+          "arbml/CIDAR"]:
     try:
         info = api.dataset_info(r)
         cfgs = get_dataset_config_names(r, token=os.environ["HF_TOKEN"])
@@ -151,6 +178,8 @@ mkdir -p "$SFT_ROOT"
 
 hf download HuggingFaceTB/smoltalk2 --repo-type dataset --local-dir "$SFT_ROOT/smoltalk2"
 hf download AdaMLLab/smolkalam-arabic-conversational-sft --repo-type dataset --local-dir "$SFT_ROOT/smolkalam"
+# CIDAR: ungated, one ~10K-row parquet (data/train-00000-of-00001-*.parquet) — seconds to pull
+hf download arbml/CIDAR --repo-type dataset --local-dir "$SFT_ROOT/cidar"
 hf download ai4bharat/indic-align --repo-type dataset \
   --include "*hin_Deva*" --local-dir "$SFT_ROOT/indic-align"   # NB: --include also keeps IndoWordNet out
 hf download lhoestq/Infinity-Instruct-Chinese-Only --repo-type dataset --local-dir "$SFT_ROOT/infinity-instruct-zh"
@@ -176,7 +205,8 @@ and re-derive per-subset analyses without rebuilding.
 
 **Pipeline, in order:**
 
-1. **Normalize** both sides to the sharegpt schema (IndicAlign `hin_Deva` column; drop `IndoWordNet`).
+1. **Normalize** every side to the sharegpt schema (IndicAlign `hin_Deva` column; drop `IndoWordNet`;
+   **CIDAR's alpaca `instruction`/`output` → one human turn + one gpt turn**).
 2. **Structural validity** — drop empty turns, non-alternating human/gpt sequences, a `gpt` turn
    first, or role values that are not literally `human`/`gpt`.
 3. **Language ID + script ratio** per row: Hindi assistant turns ≥ 70% Devanagari, Arabic ≥ 70%
@@ -188,14 +218,15 @@ and re-derive per-subset analyses without rebuilding.
 5. **Quality gates** — SmolKalam `LR ≥ 0.85` / `SCR ≥ 0.95`; response length ≤ `cutoff_len`.
 6. **Near-dedup** (MinHash over prompts) and **decontaminate** against every benchmark prompt used
    in `src/culture/evaluation/`. Log removals — a hit here would invalidate the paper's numbers.
-7. **Sample to quota** (180K target / 120K English), **concatenate, global shuffle `seed=42`**,
+7. **Sample to quota** — 180K target / 120K English; for Arabic the target half is
+   **SmolKalam 170K + CIDAR 10,000 (all of it, 1×)**, **concatenate, global shuffle `seed=42`**,
    write `train_sft_{ar,hi,zh}/part-*.jsonl` + `manifest.json` recording pre/post-filter counts,
    realized ratio, token estimate, and each HF repo's commit SHA.
 
 ```bash
 python3 build_sft_mixture.py --lang hi --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi
-python3 build_sft_mixture.py --lang ar --target_ratio 0.6 --total 300000 \
+python3 build_sft_mixture.py --lang ar --target_ratio 0.6 --total 300000 --cidar_repeat 1 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar
 python3 build_sft_mixture.py --lang zh --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh
@@ -305,9 +336,10 @@ matching the existing layout so `src/culture/evaluation/compute_cis.py` picks it
 | A1 | ratio 40/60 and 80/20 vs 60/40 | 2 runs/lang | is D0.3's Qwen-specific >50% claim real for us? |
 | A2 | target-only SFT (no English half) | 1/lang | quantifies exactly what the English anchor buys |
 | A3 | SFT the `unfiltered` CPT checkpoint, same mixture | 1/lang | does SFT wash out the CPT curation effect? **most paper-relevant** |
-| A4 | DPO on top | — | see below |
+| A4 | Arabic **with vs. without** the CIDAR overlay | 1 (ar) | isolates what the cultural overlay buys on the idiom/cultural benchmarks — the reason it was added |
+| A5 | DPO on top | — | see below |
 
-**A4 is worth flagging now.** NVIDIA's Nemotron-Mini-Hindi ablation, run on a Hindi-CPT'd base —
+**A5 is worth flagging now.** NVIDIA's Nemotron-Mini-Hindi ablation, run on a Hindi-CPT'd base —
 exactly our setting — found Hindi **DPO** buys the same gain as translated Hindi SFT (4.30 vs 4.28,
 baseline 3.81) and that **the two do not stack**. If §6 shows a small SFT delta, that is the
 expected shape, not a bug, and the preference stage is the higher-value next lever.
@@ -336,6 +368,7 @@ expected shape, not a bug, and the preference stage is the higher-value next lev
 - [ ] Download complete + re-run `hf download` to confirm no `.incomplete` orphans
 - [ ] `build_sft_mixture.py` written and run for hi + ar + zh
 - [ ] `manifest.json` reviewed: realized ratio ≈ 60/40, drop rates sane, decontamination log empty-or-explained
+- [ ] Arabic manifest shows CIDAR at 10,000 rows / 1× repeat, converted from alpaca to sharegpt
 - [ ] 20 random rows per language read by a human
 - [ ] `dataset_info.json` entries added; `template: qwen` verified against this LLaMA-Factory build
 - [ ] CPT checkpoint paths confirmed on disk (newest `checkpoint-*`)
