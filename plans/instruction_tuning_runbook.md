@@ -23,7 +23,8 @@ with one source per side the only knobs are the ratio and the size.
 **Arabic is the exception**, forced by the data landscape rather than chosen: a 2026-08-26 sweep of 381
 HF candidates plus the arXiv:2507.14688 survey of 366 Arabic post-training datasets found that
 **no large natively-Arabic instruction dataset exists** — big ⇒ machine-translated, native ⇒ small.
-So Arabic runs **SmolKalam (volume) + CIDAR (cultural overlay)**. See §2.
+Arabic therefore runs the **two best native-leaning sets, Quora-Arabic-GPT4 + CIDAR**, and accepts a
+much smaller run rather than padding with translated volume (D0.3b). See §2.
 
 **D0.2 — Mix into ONE shuffled SFT run, not two sequential stages.** Sequential (English → target)
 makes the second stage overwrite the first. A single globally shuffled mixture is what Airavata,
@@ -34,9 +35,22 @@ Mantra-14B and Nemotron-Mini-Hindi do, and it is the only variant where "English
 to our base) reports best results with the target share **above 50%** on a Qwen backbone — and
 below 50% on Phi-4, so this is backbone-specific, not universal. §8 ablates it.
 
-**D0.4 — Size ≈ 300K examples per run** (180K target + 120K English), 2 epochs. At ~700
-tokens/example that is ~210M tokens ≈ 400 optimizer steps at the batch size in §5 — hours, not
-days, so the ratio ablation is affordable.
+**D0.4 — The ratio is fixed at 60/40; the SIZE is whatever the target-language pool allows.**
+English is downsampled to hold the ratio — it is never the binding constraint, because SmolTalk2 has
+far more English than any run needs. Per language: `english = target_rows / 0.6 × 0.4`.
+- hi / zh: 180K target + **120K English** = 300K, ~210M tokens ≈ 400 steps at 2 epochs.
+- ar: 53,050 target + **35,367 English** = 88,417, ~62M tokens ≈ 120 steps (D0.3b).
+Hours, not days, in every case — so the ratio ablation stays affordable.
+
+**D0.3b — Arabic holds the same 60/40 ratio; the run is simply smaller (~88K, not 300K).** Dropping
+SmolKalam caps the Arabic half at the 53,050 rows that actually exist natively (Quora 43,050 +
+CIDAR 10,000). Rather than break the ratio, **English is downsampled to match**:
+**53,050 Arabic + 35,367 English = 88,417 examples** ≈ 62M tokens ≈ **~120 steps** at 2 epochs.
+Downsampling English is the right lever — SmolTalk2 has far more than we need, so cutting it costs
+nothing, whereas breaking the ratio would make the Arabic arm non-comparable to hi/zh in the A1
+ablation. **Do not upsample Arabic to reach 300K** — repeating 53K rows 3.4× to match hi/zh would
+overfit them and is a worse trade than a shorter run. Consider 3 epochs for Arabic only if the loss
+curve says the run ended early; record the choice in the manifest.
 
 **D0.5 — SFT the *augmented* CPT checkpoint first.** The paper's four variants per language
 (base / cpt / unfiltered / untagged) would mean 4× the runs. Run `cpt` first, then decide.
@@ -67,25 +81,44 @@ mandatory cheap verification pass before any bulk download.
 
 ---
 
-## 2. The three datasets
+## 2. The four datasets (five repos — Arabic uses two)
 
 | Role | Dataset | HF repo | Rows available | License |
 |---|---|---|---|---|
-| **English anchor** | **SmolTalk2** | `HuggingFaceTB/smoltalk2` | English splits, ≫120K | ⚠️ **no license field on the card** |
-| **Arabic** (volume) | **SmolKalam** | `AdaMLLab/smolkalam-arabic-conversational-sft` | 1,790,478 (24 configs) | Apache-2.0 (source `SultanR/smolkalam` gated, CC-BY-4.0) |
-| **Arabic** (cultural overlay) | **CIDAR** | `arbml/CIDAR` | 10,000 | ⚠️ repo tag `apache-2.0`, **paper says CC-BY-NC** |
+| **English anchor** | **SmolTalk2** | `HuggingFaceTB/smoltalk2` | English splits, ≫120K (downsample per run: 120K hi/zh, 35,367 ar) | ⚠️ **no license field on the card** |
+| **Arabic** (native prompts) | **Quora-Arabic-GPT4** | `FreedomIntelligence/Quora-Arabic-GPT4` | 43,050 | Apache-2.0 ✅ |
+| **Arabic** (cultural / human-reviewed) | **CIDAR** | `arbml/CIDAR` | 10,000 | ⚠️ repo tag `apache-2.0`, **paper says CC-BY-NC** |
 | **Hindi** | **IndicAlign** (`hin_Deva`) | `ai4bharat/indic-align` | 381,173 across Wiki-Conv 141,435 / Wiki-Chat 198,254 / WikiHow 20,313 / Indic-ShareLlama 21,171 | CC-BY-4.0 ✅ |
 | **Chinese** | **Infinity-Instruct (Chinese-only mirror)** | `lhoestq/Infinity-Instruct-Chinese-Only` | 751,313 (100% `zh-cn`) | ⚠️ mirror untagged; upstream **CC-BY-SA-4.0** |
 
 **Why SmolTalk2 for English:** its reasoning half is distilled from **Qwen3-32B** — the same family
 as our base. GRAPE (arXiv:2502.04194) measures 3–13% from teacher/student distributional fit. Use
-the English splits, `no_think` as the bulk plus the reasoning/IF splits, sampled to 120K.
+the English splits, `no_think` as the bulk plus the reasoning/IF splits, sampled to whatever the
+run needs: **120K for hi/zh, 35,367 for ar** (D0.4). English is always the downsampled side.
 
-**Why SmolKalam for Arabic:** the only Arabic set that is both large and clean, and it ships
-per-row quality scores (`LR`, `SCR`) so the 150K–180K we need can be taken off the top. Everything
-else in the Arabic landscape is machine-translated: `2A2I/Arabic-OpenHermes-2.5` translated code
+**Why Quora-Arabic-GPT4 + CIDAR for Arabic — and why NOT SmolKalam.** SmolKalam was the original pick
+and is still the highest-quality *general* Arabic text available, but it is **translated** (ensemble MT:
+SeedX-7B + Gemma-3-27B candidates reranked by a Qwen-2.5-1.5B reward model). Its prompts and content are
+English-origin, so it teaches assistant behaviour in fluent Arabic while carrying no Arabic cultural
+grounding — the diagnosed cause of the weak idiom / cultural-benchmark results. The residual shows in the
+text: *Eternal Sunshine of the Spotless Mind* appears as the calque `أشعة الشمس الأبدية للعقل النقي`
+instead of its established Arabic title. The two replacements are chosen for **nativeness over volume**:
+
+- **Quora-Arabic-GPT4 (43,050)** — the largest set whose *prompts* are genuinely Arabic-native: real
+  questions scraped from Arabic Quora, colloquial Egyptian phrasing included
+  (`شباب بقولكم اي النظام في مادة النسا والتوليد`). This is AceGPT's "native questions in the wild"
+  recipe; the prompt distribution is what Arabic users actually ask. Verified by direct sampling at
+  offsets 0 / 15,000 / 42,000 on 2026-08-26: answers are substantive multi-paragraph Arabic and hold at depth.
+- **CIDAR (10,000)** — the only fully **human-reviewed** general Arabic set: 9,109 rows translated then
+  human-edited (**~64.5% required modification** during cultural localization) plus 891 natively written
+  Arabic-grammar items from Al Jazeera's *Ask the Teacher*. Sampled rows include a complete diacritized
+  morphology table for the hollow verb `أجَارَ` and classical poetry with full tashkeel — capabilities
+  translated data structurally cannot teach.
+
+Everything else in the landscape is machine-translated: `2A2I/Arabic-OpenHermes-2.5` translated code
 identifiers (`i` → `أنا`) and has `user`/`gpt` swapped at offset 600K; Aya's seven ~4.12M Arabic
-"dialect" configs are one English source fanned out by MT with identical row IDs.
+"dialect" configs are one English source fanned out by MT with identical row IDs;
+`Mohaddz/arabic-sft-mix` (2,253,127) is **79.9% Hala**, i.e. the same translated corpus re-mixed.
 
 **Why IndicAlign for Hindi:** the only large Hindi pool distilled from **open** teachers (Llama-2-70B
 + Mixtral), so it carries no OpenAI-output license taint — the Hindi arm stays releasable, which is
@@ -97,26 +130,21 @@ deep-probed to the final shard, and it **preserves multi-turn** — twice the ro
 release blocker, the license-clean single-dataset swap is `Mxode/Chinese-Instruct` (4,845,389 rows,
 CC-BY-SA-4.0); take its `stem_zh` + `firefly` + `neo_sft_phase2` subsets.
 
-**Why CIDAR is added to the Arabic arm.** SmolKalam is **translated** data (ensemble MT: SeedX-7B +
-Gemma-3-27B candidates reranked by a Qwen-2.5-1.5B reward model). It reads natively — which is why it
-wins on general quality — but its prompts and content are English-origin, so it carries no Arabic
-cultural grounding. That is the diagnosed cause of the weak idiom / cultural-benchmark results.
-CIDAR is the only fully **human-reviewed** general Arabic set: 9,109 rows translated then human-edited
-(**~64.5% required modification** during cultural localization) plus 891 natively written Arabic-grammar
-items from Al Jazeera's *Ask the Teacher*. Rows sampled directly on 2026-08-26 include a complete
-diacritized morphology table for the hollow verb `أجَارَ` (اسم الفاعل / اسم المفعول across all pronouns)
-and classical poetry with full tashkeel — capabilities translated data structurally cannot teach.
+**Four caveats on the Arabic arm, all load-bearing:**
+- **Size.** 53,050 rows total. This is why the Arabic run is ~88K examples, not 300K (D0.3b), and why
+  **neither set may be upsampled** to fake volume — 1× each.
+- **No multi-turn.** Both sets are single-turn; SmolKalam's genuine multi-turn dialogue is gone. The
+  Arabic model will see multi-turn structure **only from the English half**. Accept it or add a
+  multi-turn source later, but do not discover it after the run.
+- **No code or math in Arabic.** Quora is student/career/religion/relationship questions with almost
+  no code or math; CIDAR is short-form. Arabic code/math ability rides entirely on the English half.
+- **License conflict on CIDAR.** The HF repo tags `apache-2.0` but the CIDAR paper states CC-BY-NC.
+  Treat as **non-commercial until resolved** — fine for experiments, blocking for a weight release.
+  Quora-Arabic-GPT4 is cleanly Apache-2.0, but its answers are GPT-4-distilled.
 
-**Three caveats on CIDAR, all load-bearing:**
-- **Size.** 10,000 rows against a 180K Arabic quota, and its answers are short. It **cannot carry the run**
-  — hence the overlay role, not a replacement. It is ~5.6% of the Arabic half.
-- **Do not upsample past 2×.** Repeating 10K rows many times to hit a quota overfits them. Default is
-  **1× (all 10,000, once)**; if an ablation wants more cultural weight, cap at 2× and record it in the manifest.
-- **License conflict.** The HF repo tags `apache-2.0` but the CIDAR paper states CC-BY-NC. Treat as
-  **non-commercial until resolved** — fine for experiments, blocking for a weight release.
-
-**Schema note:** CIDAR is **alpaca-style** (`instruction`, `output`, `index`), single-turn — *not* sharegpt
-like the other three. §3.2 step 1 must convert it: `instruction` → `human` turn, `output` → `gpt` turn.
+**Schema note:** Quora-Arabic-GPT4 is already **sharegpt** (`conversations` with `from`/`value`).
+CIDAR is **alpaca-style** (`instruction`, `output`, `index`) — §3.2 step 1 must convert it:
+`instruction` → `human` turn, `output` → `gpt` turn. Both are single-turn.
 
 **License note.** SmolTalk2 having no license field is the one real risk to a weight release. It
 does not block experiments. If release is blocked, the single-dataset swap is
@@ -127,7 +155,10 @@ so unfiltered it would silently contaminate the English anchor.
 **Per-dataset traps to encode in §3.2:**
 - IndicAlign: exclude the `IndoWordNet` config (96.8M rows, ~100 paraphrases of one fact). The
   `Anudesh` subset turns **Marathi** at depth — run per-row language ID, do not trust config names.
-- SmolKalam: gate on `LR ≥ 0.85`, `SCR ≥ 0.95` (verify field names in §2.1).
+- Quora-Arabic-GPT4: answers are GPT-4-distilled — I caught a mild garble at offset 42,000
+  (`حتى ثمانية التقنيات`). Keep the degeneration filter on; do not assume distilled = clean.
+- CIDAR: some `output` rows are retrieved classical poems rather than generated text. Fine for SFT,
+  but do not let the near-dedup step treat repeated famous verses as corpus duplication to delete.
 - Chinese: `Magpie-Qwen2-Air-3M-v0.1` (2,133,622 zh rows, the largest pool found) is the
   **unfiltered** Magpie pool — sampled rows carry rewards of −6.3 and −9.1 and interleave zh/en.
   Not a substitute. Also: Aya's `achinese` config (8.2M rows) is **Acehnese, not Chinese**.
@@ -146,7 +177,7 @@ from huggingface_hub import HfApi
 import os
 api = HfApi(token=os.environ["HF_TOKEN"])
 for r in ["HuggingFaceTB/smoltalk2",
-          "AdaMLLab/smolkalam-arabic-conversational-sft",
+          "FreedomIntelligence/Quora-Arabic-GPT4",
           "ai4bharat/indic-align",
           "lhoestq/Infinity-Instruct-Chinese-Only",
           "arbml/CIDAR"]:
@@ -159,8 +190,8 @@ for r in ["HuggingFaceTB/smoltalk2",
 PY
 ```
 
-Then pull **5 rows** of each chosen split and confirm: the chat-turn schema, SmolKalam's `LR`/`SCR`
-columns, IndicAlign's `hin_Deva` column, SmolTalk2's English split names. Record any deviation from
+Then pull **5 rows** of each chosen split and confirm: the chat-turn schema, Quora's `conversations`
+field, CIDAR's `instruction`/`output` fields, IndicAlign's `hin_Deva` column, SmolTalk2's English split names. Record any deviation from
 §2 in this file before proceeding.
 
 ---
@@ -177,15 +208,18 @@ SFT_ROOT=/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data
 mkdir -p "$SFT_ROOT"
 
 hf download HuggingFaceTB/smoltalk2 --repo-type dataset --local-dir "$SFT_ROOT/smoltalk2"
-hf download AdaMLLab/smolkalam-arabic-conversational-sft --repo-type dataset --local-dir "$SFT_ROOT/smolkalam"
-# CIDAR: ungated, one ~10K-row parquet (data/train-00000-of-00001-*.parquet) — seconds to pull
-hf download arbml/CIDAR --repo-type dataset --local-dir "$SFT_ROOT/cidar"
+# Arabic: both ungated and small — the whole Arabic arm is ~53K rows, seconds to pull.
+hf download FreedomIntelligence/Quora-Arabic-GPT4 --repo-type dataset --local-dir "$SFT_ROOT/quora-ar-gpt4"
+hf download arbml/CIDAR --repo-type dataset --local-dir "$SFT_ROOT/cidar"   # one parquet, 10K rows
 hf download ai4bharat/indic-align --repo-type dataset \
   --include "*hin_Deva*" --local-dir "$SFT_ROOT/indic-align"   # NB: --include also keeps IndoWordNet out
 hf download lhoestq/Infinity-Instruct-Chinese-Only --repo-type dataset --local-dir "$SFT_ROOT/infinity-instruct-zh"
 ```
 
-If the SmolKalam mirror disappears, request access to the gated source `SultanR/smolkalam`.
+Neither Arabic repo is gated, so no access request is needed. If more Arabic volume is ever required,
+the next candidate is `QCRI/ArabicCulturalQA` (53,814 rows, CC-BY-NC-SA-4.0) — but it is a **benchmark**:
+its test split must be excluded and its train/val checked for overlap against `kinayat_meaning` /
+`ar_figurative` before use.
 
 ### 3.2 Build — `build_sft_mixture.py`
 
@@ -206,7 +240,7 @@ and re-derive per-subset analyses without rebuilding.
 **Pipeline, in order:**
 
 1. **Normalize** every side to the sharegpt schema (IndicAlign `hin_Deva` column; drop `IndoWordNet`;
-   **CIDAR's alpaca `instruction`/`output` → one human turn + one gpt turn**).
+   Quora is already sharegpt; **CIDAR's alpaca `instruction`/`output` → one human turn + one gpt turn**).
 2. **Structural validity** — drop empty turns, non-alternating human/gpt sequences, a `gpt` turn
    first, or role values that are not literally `human`/`gpt`.
 3. **Language ID + script ratio** per row: Hindi assistant turns ≥ 70% Devanagari, Arabic ≥ 70%
@@ -215,18 +249,19 @@ and re-derive per-subset analyses without rebuilding.
 4. **Degeneration filter** — reject assistant turns with a character 3-gram repeated past a
    threshold. Airavata's `chrF++ ≥ 50` gate is far too lenient: the review found a fully degenerate
    row (`-तो-तो-तो-…`) scoring **94.33**.
-5. **Quality gates** — SmolKalam `LR ≥ 0.85` / `SCR ≥ 0.95`; response length ≤ `cutoff_len`.
+5. **Quality gates** — response length ≤ `cutoff_len`. (The Arabic sets ship no per-row quality
+   scores now that SmolKalam is out; steps 3–4 carry the whole load for Arabic.)
 6. **Near-dedup** (MinHash over prompts) and **decontaminate** against every benchmark prompt used
    in `src/culture/evaluation/`. Log removals — a hit here would invalidate the paper's numbers.
-7. **Sample to quota** — 180K target / 120K English; for Arabic the target half is
-   **SmolKalam 170K + CIDAR 10,000 (all of it, 1×)**, **concatenate, global shuffle `seed=42`**,
+7. **Sample to quota** — 180K target / 120K English for hi and zh; **Arabic uses everything it has:
+   Quora 43,050 + CIDAR 10,000 = 53,050 (1× each, no upsampling) + ~35,367 English ≈ 88,417 total**, **concatenate, global shuffle `seed=42`**,
    write `train_sft_{ar,hi,zh}/part-*.jsonl` + `manifest.json` recording pre/post-filter counts,
    realized ratio, token estimate, and each HF repo's commit SHA.
 
 ```bash
 python3 build_sft_mixture.py --lang hi --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi
-python3 build_sft_mixture.py --lang ar --target_ratio 0.6 --total 300000 --cidar_repeat 1 \
+python3 build_sft_mixture.py --lang ar --target_ratio 0.6 --total 88417 --no_upsample \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar
 python3 build_sft_mixture.py --lang zh --target_ratio 0.6 --total 300000 \
   --out_dir /lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh
@@ -289,8 +324,10 @@ Unchanged: `learning_rate: 1.0e-5` cosine w/ `warmup_ratio: 0.03`, `flash_attn: 
 `overwrite_output_dir: false` for auto-resume on requeue.
 
 **Batch:** `per_device_train_batch_size: 1`, `gradient_accumulation_steps: 4`, 4 nodes × 8 GPUs →
-global 128 seq × 8192 ≈ **1.05M tokens/step**. ~210M tokens × 2 epochs ≈ **400 steps**.
-`save_steps: 100`, `save_total_limit: 5`.
+global 128 seq × 8192 ≈ **1.05M tokens/step**. hi/zh: ~210M tokens × 2 epochs ≈ **400 steps**.
+**Arabic is ~88K examples ≈ 62M tokens × 2 epochs ≈ ~120 steps** (D0.3b) — drop it to
+`save_steps: 40` so the shorter run still yields several checkpoints, and consider 2 nodes instead of 4.
+`save_total_limit: 5`.
 
 ---
 
@@ -336,7 +373,7 @@ matching the existing layout so `src/culture/evaluation/compute_cis.py` picks it
 | A1 | ratio 40/60 and 80/20 vs 60/40 | 2 runs/lang | is D0.3's Qwen-specific >50% claim real for us? |
 | A2 | target-only SFT (no English half) | 1/lang | quantifies exactly what the English anchor buys |
 | A3 | SFT the `unfiltered` CPT checkpoint, same mixture | 1/lang | does SFT wash out the CPT curation effect? **most paper-relevant** |
-| A4 | Arabic **with vs. without** the CIDAR overlay | 1 (ar) | isolates what the cultural overlay buys on the idiom/cultural benchmarks — the reason it was added |
+| A4 | Arabic **Quora+CIDAR vs. SmolKalam** on the same CPT ckpt | 1 (ar) | the native-vs-translated question directly: does dropping 1.7M translated rows for 53K native ones actually win on the idiom/cultural benchmarks? |
 | A5 | DPO on top | — | see below |
 
 **A5 is worth flagging now.** NVIDIA's Nemotron-Mini-Hindi ablation, run on a Hindi-CPT'd base —
@@ -368,7 +405,9 @@ expected shape, not a bug, and the preference stage is the higher-value next lev
 - [ ] Download complete + re-run `hf download` to confirm no `.incomplete` orphans
 - [ ] `build_sft_mixture.py` written and run for hi + ar + zh
 - [ ] `manifest.json` reviewed: realized ratio ≈ 60/40, drop rates sane, decontamination log empty-or-explained
-- [ ] Arabic manifest shows CIDAR at 10,000 rows / 1× repeat, converted from alpaca to sharegpt
+- [ ] Arabic manifest shows Quora 43,050 + CIDAR 10,000, 1× each, no upsampling, CIDAR converted from alpaca
+- [ ] Arabic run sized at ~88K examples / ~120 steps, NOT padded to 300K
+- [ ] Arabic realized ratio is 60/40 (English downsampled to 35,367), same as hi/zh
 - [ ] 20 random rows per language read by a human
 - [ ] `dataset_info.json` entries added; `template: qwen` verified against this LLaMA-Factory build
 - [ ] CPT checkpoint paths confirmed on disk (newest `checkpoint-*`)
