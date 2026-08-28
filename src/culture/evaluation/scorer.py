@@ -190,6 +190,22 @@ class HFModel:
     # ------------------------------------------------------------------ #
     # Generation (IdiomCE)
     # ------------------------------------------------------------------ #
+    def _apply_chat_template(self, prompt: str) -> str:
+        """Wrap a raw prompt as a user turn with the chat template.
+
+        These checkpoints are instruction-tuned in Qwen3.5's *nothink* mode (no
+        reasoning traces), so we disable thinking; otherwise the template opens a
+        ``<think>`` block and the model emits reasoning before the answer, which the
+        line-based stop rules would capture instead of the translation/answer.
+        """
+        msg = [{"role": "user", "content": prompt}]
+        try:
+            return self.tokenizer.apply_chat_template(
+                msg, tokenize=False, add_generation_prompt=True, enable_thinking=False)
+        except TypeError:  # tokenizer's template doesn't accept enable_thinking
+            return self.tokenizer.apply_chat_template(
+                msg, tokenize=False, add_generation_prompt=True)
+
     @torch.no_grad()
     def generate(
         self,
@@ -216,10 +232,7 @@ class HFModel:
             batch = prompts[start:start + batch_size]
             if chat:
                 batch = [
-                    self.tokenizer.apply_chat_template(
-                        [{"role": "user", "content": p}],
-                        tokenize=False, add_generation_prompt=True,
-                    )
+                    self._apply_chat_template(p)
                     for p in batch
                 ]
             enc = self.tokenizer(

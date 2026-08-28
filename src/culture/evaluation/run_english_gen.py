@@ -80,7 +80,7 @@ def _gsm8k_fewshot_prefix(train_rows, k: int) -> str:
 
 
 def eval_gsm8k(model: HFModel, limit: Optional[int], num_fewshot: int,
-               max_new_tokens: int, batch_size: int) -> Dict[str, Any]:
+               max_new_tokens: int, batch_size: int, chat: bool = False) -> Dict[str, Any]:
     from datasets import load_dataset
     tok = os.environ.get("HF_TOKEN")
     test = list(load_dataset("openai/gsm8k", "main", split="test", token=tok))
@@ -89,8 +89,11 @@ def eval_gsm8k(model: HFModel, limit: Optional[int], num_fewshot: int,
         test = test[:limit]
     prefix = _gsm8k_fewshot_prefix(train, num_fewshot)
     prompts = [prefix + f"Question: {r['question']}\nAnswer:" for r in test]
+    # Instruction-tuned models emit free-form reasoning that ends at EOS rather than
+    # at "\nQuestion:", so under chat mode we rely on the numeric answer extractor.
+    stop = None if chat else ["\nQuestion:", "\n\nQuestion", "\n\n\n"]
     gens = model.generate(prompts, max_new_tokens=max_new_tokens, batch_size=batch_size,
-                          stop=["\nQuestion:", "\n\nQuestion", "\n\n\n"])
+                          stop=stop, chat=chat)
     records, correct = [], 0
     for r, g in zip(test, gens):
         gold = _gold_number(r["answer"])
@@ -131,25 +134,55 @@ def _run_program(program: str, timeout: float = 12.0) -> bool:
             pass
 
 
+def _extract_code(text: str) -> str:
+    """Pull a runnable Python snippet out of an instruction-tuned model's reply.
+
+    Instruct models wrap code in Markdown fences and add prose; base models emit a
+    bare completion. Prefer the first ```python fenced block; otherwise strip a lone
+    leading fence; otherwise return the text unchanged.
+    """
+    import re
+    m = re.search(r"```(?:python|py)?\s*\n(.*?)```", text, re.DOTALL)
+    if m:
+        return m.group(1)
+    if "```" in text:  # unterminated fence
+        return text.split("```", 1)[1].lstrip("python").lstrip("py").lstrip("\n")
+    return text
+
+
 def eval_humaneval(model: HFModel, limit: Optional[int], max_new_tokens: int,
-                   batch_size: int, timeout: float) -> Dict[str, Any]:
+                   batch_size: int, timeout: float, chat: bool = False) -> Dict[str, Any]:
     from datasets import load_dataset
     tok = os.environ.get("HF_TOKEN")
     data = list(load_dataset("openai/openai_humaneval", split="test", token=tok))
     if limit:
         data = data[:limit]
     prompts = [r["prompt"] for r in data]
+    # Base models: bare code completion (stop at the next top-level stmt). Instruct
+    # models: free-form reply with fenced code, so no stop tokens; extract the block.
+    stop = None if chat else _STOP_CODE
     gens = model.generate(prompts, max_new_tokens=max_new_tokens, batch_size=batch_size,
-                          stop=_STOP_CODE)
+                          stop=stop, chat=chat)
     records, passed = [], 0
     for r, completion in zip(data, gens):
-        # HFModel.generate() strips leading whitespace, which destroys the body's
-        # base indentation (first line ends up at column 0 while nested lines keep
-        # theirs) -> IndentationError. Re-indent the body by one level if the model
-        # didn't emit leading whitespace itself.
-        body = completion if (completion[:1] in (" ", "\t")) else ("    " + completion)
-        program = (r["prompt"] + body + "\n\n" + r["test"]
-                   + f"\n\ncheck({r['entry_point']})\n")
+        if chat:
+            code = _extract_code(completion)
+            # A full function (def entry_point) is self-contained; a bare body must be
+            # re-attached to the prompt signature and indented one level.
+            if f"def {r['entry_point']}" in code or code.lstrip().startswith(("def ", "import ", "from ")):
+                program = code + "\n\n" + r["test"] + f"\n\ncheck({r['entry_point']})\n"
+            else:
+                body = code if (code[:1] in (" ", "\t")) else ("    " + code)
+                program = (r["prompt"] + body + "\n\n" + r["test"]
+                           + f"\n\ncheck({r['entry_point']})\n")
+        else:
+            # HFModel.generate() strips leading whitespace, which destroys the body's
+            # base indentation (first line ends up at column 0 while nested lines keep
+            # theirs) -> IndentationError. Re-indent the body by one level if the model
+            # didn't emit leading whitespace itself.
+            body = completion if (completion[:1] in (" ", "\t")) else ("    " + completion)
+            program = (r["prompt"] + body + "\n\n" + r["test"]
+                       + f"\n\ncheck({r['entry_point']})\n")
         ok = _run_program(program, timeout=timeout)
         passed += ok
         records.append({"task_id": r["task_id"], "passed": ok, "completion": completion})
@@ -178,6 +211,9 @@ def main():
     p.add_argument("--humaneval_max_new_tokens", type=int, default=512)
     p.add_argument("--gen_batch_size", type=int, default=8)
     p.add_argument("--humaneval_timeout", type=float, default=12.0)
+    p.add_argument("--chat", action="store_true",
+                   help="Apply the tokenizer chat template (use for instruction-tuned "
+                        "checkpoints; base/CPT checkpoints should stay raw few-shot).")
     args = p.parse_args()
 
     tasks = [t.strip() for t in args.tasks.split(",") if t.strip()]
@@ -192,10 +228,10 @@ def main():
         logger.info("=== Task: %s ===", name)
         if name == "gsm8k":
             out = eval_gsm8k(model, args.limit, args.gsm8k_num_fewshot,
-                             args.gsm8k_max_new_tokens, args.gen_batch_size)
+                             args.gsm8k_max_new_tokens, args.gen_batch_size, chat=args.chat)
         elif name == "humaneval":
             out = eval_humaneval(model, args.limit, args.humaneval_max_new_tokens,
-                                 args.gen_batch_size, args.humaneval_timeout)
+                                 args.gen_batch_size, args.humaneval_timeout, chat=args.chat)
         else:
             logger.warning("Unknown task %s; skipping.", name)
             continue

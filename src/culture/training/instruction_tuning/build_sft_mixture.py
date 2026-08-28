@@ -210,6 +210,47 @@ def iter_infinity_zh(sft_root):
                     yield turns, "infinity-instruct-zh"
 
 
+def iter_quora_ar(sft_root):
+    """Quora-Arabic-GPT4 (FreedomIntelligence): native Arabic Quora questions with
+    GPT-4 answers. Handles sharegpt `conversations`, OpenAI `messages`, alpaca
+    `instruction`/`output`, and `question`/`answer` schemas."""
+    files = sorted(glob.glob(f"{sft_root}/quora-ar-gpt4/**/*.parquet", recursive=True))
+    for f in files:
+        pf = pq.ParquetFile(f)
+        names = pf.schema_arrow.names
+        for b in pf.iter_batches(batch_size=2000):
+            for row in b.to_pylist():
+                turns = _rows_to_turns(row)                       # conversations / messages
+                if not turns:
+                    instr = (row.get("instruction") or row.get("question") or "").strip()
+                    inp = (row.get("input") or "").strip()
+                    out = (row.get("output") or row.get("answer") or row.get("response") or "").strip()
+                    if instr and out:
+                        human = instr if not inp else f"{instr}\n\n{inp}"
+                        turns = [("human", human), ("gpt", out)]
+                if turns:
+                    yield turns, "quora-ar-gpt4"
+
+
+def iter_cidar(sft_root):
+    """CIDAR: human-reviewed Arabic, alpaca-style (instruction[/input]/output).
+    Map to a single human turn + single gpt turn."""
+    files = sorted(glob.glob(f"{sft_root}/cidar/**/*.parquet", recursive=True))
+    for f in files:
+        pf = pq.ParquetFile(f)
+        names = pf.schema_arrow.names
+        cols = [c for c in ("instruction", "input", "output") if c in names]
+        for b in pf.iter_batches(batch_size=2000, columns=cols):
+            for row in b.to_pylist():
+                instr = (row.get("instruction") or "").strip()
+                inp = (row.get("input") or "").strip()
+                out = (row.get("output") or "").strip()
+                if not instr or not out:
+                    continue
+                human = instr if not inp else f"{instr}\n\n{inp}"
+                yield [("human", human), ("gpt", out)], "cidar"
+
+
 def build_side(name, it, quota, lang, script_fn, rng, seen):
     res = Reservoir(quota, rng)
     kept = scanned = dropped_struct = dropped_lang = dropped_dup = dropped_len = dropped_degen = 0
@@ -242,6 +283,11 @@ def main():
     ap.add_argument("--english_total", type=int, default=120000)
     ap.add_argument("--shards", type=int, default=8)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--cidar_repeat", type=int, default=0,
+                    help="(legacy) ar/smolkalam recipe: mix in CIDAR this many times.")
+    ap.add_argument("--ar_recipe", choices=["smolkalam", "native"], default="smolkalam",
+                    help="ar target half: 'smolkalam' (translated, 1st run) or 'native' "
+                         "(Quora-Arabic-GPT4 + CIDAR, no upsampling; runbook §2).")
     args = ap.parse_args()
 
     rng = random.Random(args.seed)
@@ -249,13 +295,36 @@ def main():
 
     if args.lang == "hi":
         tgt_it, tgt_script = iter_indicalign_hi(args.sft_root), deva_ratio
+        tgt, tgt_stats = build_side("target", tgt_it, args.target_total, args.lang, tgt_script, rng, seen)
     elif args.lang == "zh":
         tgt_it, tgt_script = iter_infinity_zh(args.sft_root), han_ratio
+        tgt, tgt_stats = build_side("target", tgt_it, args.target_total, args.lang, tgt_script, rng, seen)
+    elif args.lang == "ar" and args.ar_recipe == "native":
+        # Native-Arabic recipe (runbook §2): Quora-Arabic-GPT4 (volume, native prompts)
+        # + CIDAR (human-reviewed cultural overlay). 1x each, NO upsampling; SmolKalam dropped.
+        print("== building CIDAR (native, all) ==", flush=True)
+        cid, cid_stats = build_side("cidar", iter_cidar(args.sft_root), 20000, "ar", arab_ratio, rng, seen)
+        print("== building Quora-Arabic-GPT4 (native, all) ==", flush=True)
+        quo, quo_stats = build_side("quora", iter_quora_ar(args.sft_root), args.target_total, "ar", arab_ratio, rng, seen)
+        tgt = quo + cid
+        tgt_stats = {"quora": quo_stats, "cidar": cid_stats, "recipe": "native"}
+    elif args.lang == "ar" and args.cidar_repeat > 0:
+        print(f"== building CIDAR overlay (repeat={args.cidar_repeat}) ==", flush=True)
+        def _cidar_repeated():
+            for _ in range(args.cidar_repeat):
+                yield from iter_cidar(args.sft_root)
+        cid, cid_stats = build_side("cidar", _cidar_repeated(), 10000 * args.cidar_repeat,
+                                    "ar", arab_ratio, rng, seen)
+        sk_quota = max(0, args.target_total - len(cid))
+        print(f"== building TARGET (ar/SmolKalam) quota={sk_quota} (+{len(cid)} CIDAR) ==", flush=True)
+        sk, sk_stats = build_side("smolkalam", iter_smolkalam(args.sft_root), sk_quota,
+                                  "ar", arab_ratio, rng, seen)
+        tgt = sk + cid
+        tgt_stats = {"smolkalam": sk_stats, "cidar": cid_stats, "cidar_repeat": args.cidar_repeat}
     else:
         tgt_it, tgt_script = iter_smolkalam(args.sft_root), arab_ratio
+        tgt, tgt_stats = build_side("target", tgt_it, args.target_total, args.lang, tgt_script, rng, seen)
 
-    print(f"== building TARGET ({args.lang}) quota={args.target_total} ==", flush=True)
-    tgt, tgt_stats = build_side("target", tgt_it, args.target_total, args.lang, tgt_script, rng, seen)
     print(f"== building ENGLISH quota={args.english_total} ==", flush=True)
     eng, eng_stats = build_side("english", iter_smoltalk2_english(args.sft_root),
                                 args.english_total, "en", latin_ratio, rng, seen)
