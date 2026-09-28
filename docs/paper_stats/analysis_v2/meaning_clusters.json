@@ -1,0 +1,491 @@
+{
+  "cluster_sizes": {
+    "n_clusters": 3494,
+    "n_en_idioms_total": 3963,
+    "n_zh_idioms_total": 3989,
+    "frac_1en_1zh": 0.8251,
+    "frac_single_on_at_least_one_side": 0.9903,
+    "frac_ge2_both_sides": 0.0097,
+    "n_ge2_both_sides": 34,
+    "frac_ge2_at_least_one_side": 0.1749,
+    "frac_en_eq1": 0.9027,
+    "frac_zh_eq1": 0.9127,
+    "frac_total_ge5": 0.0223,
+    "n_ratio_ge3_and_larger_side_ge3": 165,
+    "en_size_hist": {
+      "1": 3154,
+      "2": 255,
+      "3": 62,
+      "4": 15,
+      "5": 5,
+      "6": 1,
+      "8": 1,
+      "10": 1
+    },
+    "zh_size_hist": {
+      "1": 3189,
+      "2": 208,
+      "3": 54,
+      "4": 21,
+      "5": 12,
+      "6": 4,
+      "7": 3,
+      "9": 1,
+      "10": 2
+    },
+    "max_en": 14,
+    "max_zh": 12,
+    "mean_en": 1.134,
+    "mean_zh": 1.142,
+    "note": "sizes capped at 10 (10 = 10+) in histograms"
+  },
+  "pairs": {
+    "n_pairs": 37045,
+    "n_zh_idioms": 6477,
+    "n_en_idioms": 8227,
+    "frac_sim_lt_0.75": 0.8772,
+    "bin_counts": {
+      "0.70-0.72": 20471,
+      "0.72-0.75": 12026,
+      "0.75-0.80": 4179,
+      ">=0.80": 369
+    }
+  },
+  "shared_entity_rate": {
+    "all": {
+      "both_have_entities": 23600,
+      "translatable": 20068,
+      "share_entity": 1107,
+      "share_rate_of_translatable": 0.0552
+    },
+    ">=0.75": {
+      "both_have_entities": 2832,
+      "translatable": 2401,
+      "share_entity": 181,
+      "share_rate_of_translatable": 0.0754
+    },
+    "per_bin": {
+      "0.70-0.72": {
+        "both_have_entities": 13151,
+        "translatable": 11196,
+        "share_entity": 541,
+        "share_rate_of_translatable": 0.0483
+      },
+      "0.72-0.75": {
+        "both_have_entities": 7617,
+        "translatable": 6471,
+        "share_entity": 385,
+        "share_rate_of_translatable": 0.0595
+      },
+      "0.75-0.80": {
+        "both_have_entities": 2627,
+        "translatable": 2229,
+        "share_entity": 160,
+        "share_rate_of_translatable": 0.0718
+      },
+      ">=0.80": {
+        "both_have_entities": 205,
+        "translatable": 172,
+        "share_entity": 21,
+        "share_rate_of_translatable": 0.1221
+      }
+    }
+  },
+  "llm_judged_precision": {
+    "note": "LLM-judged proxy for human annotation (not human labels). 50 pairs per bin, uniform random within bin, seed 0; judge sees idioms and the matched figurative meanings; 10 pairs per call, bins shuffled.",
+    "judges": {
+      "Qwen3.5-27B-FP8": {
+        "0.70-0.72": {
+          "n": 50,
+          "yes": 8,
+          "partial": 24,
+          "no": 18,
+          "precision_strict": 0.16,
+          "precision_strict_ci95": [
+            0.083,
+            0.285
+          ],
+          "precision_lenient": 0.64,
+          "precision_lenient_ci95": [
+            0.501,
+            0.759
+          ]
+        },
+        "0.72-0.75": {
+          "n": 50,
+          "yes": 18,
+          "partial": 20,
+          "no": 12,
+          "precision_strict": 0.36,
+          "precision_strict_ci95": [
+            0.241,
+            0.499
+          ],
+          "precision_lenient": 0.76,
+          "precision_lenient_ci95": [
+            0.626,
+            0.857
+          ]
+        },
+        "0.75-0.80": {
+          "n": 50,
+          "yes": 26,
+          "partial": 18,
+          "no": 6,
+          "precision_strict": 0.52,
+          "precision_strict_ci95": [
+            0.385,
+            0.652
+          ],
+          "precision_lenient": 0.88,
+          "precision_lenient_ci95": [
+            0.762,
+            0.944
+          ]
+        },
+        ">=0.80": {
+          "n": 50,
+          "yes": 34,
+          "partial": 12,
+          "no": 4,
+          "precision_strict": 0.68,
+          "precision_strict_ci95": [
+            0.542,
+            0.792
+          ],
+          "precision_lenient": 0.92,
+          "precision_lenient_ci95": [
+            0.812,
+            0.968
+          ]
+        },
+        "population_weighted": {
+          "strict": 0.271,
+          "lenient": 0.709
+        },
+        "n_valid": 200
+      },
+      "Qwen3.5-9B": {
+        "0.70-0.72": {
+          "n": 50,
+          "yes": 15,
+          "partial": 5,
+          "no": 30,
+          "precision_strict": 0.3,
+          "precision_strict_ci95": [
+            0.191,
+            0.438
+          ],
+          "precision_lenient": 0.4,
+          "precision_lenient_ci95": [
+            0.276,
+            0.538
+          ]
+        },
+        "0.72-0.75": {
+          "n": 50,
+          "yes": 25,
+          "partial": 2,
+          "no": 23,
+          "precision_strict": 0.5,
+          "precision_strict_ci95": [
+            0.366,
+            0.634
+          ],
+          "precision_lenient": 0.54,
+          "precision_lenient_ci95": [
+            0.404,
+            0.67
+          ]
+        },
+        "0.75-0.80": {
+          "n": 50,
+          "yes": 31,
+          "partial": 3,
+          "no": 16,
+          "precision_strict": 0.62,
+          "precision_strict_ci95": [
+            0.482,
+            0.741
+          ],
+          "precision_lenient": 0.68,
+          "precision_lenient_ci95": [
+            0.542,
+            0.792
+          ]
+        },
+        ">=0.80": {
+          "n": 50,
+          "yes": 41,
+          "partial": 0,
+          "no": 9,
+          "precision_strict": 0.82,
+          "precision_strict_ci95": [
+            0.692,
+            0.902
+          ],
+          "precision_lenient": 0.82,
+          "precision_lenient_ci95": [
+            0.692,
+            0.902
+          ]
+        },
+        "population_weighted": {
+          "strict": 0.406,
+          "lenient": 0.481
+        },
+        "n_valid": 200
+      },
+      "aya-expanse-8b": {
+        "0.70-0.72": {
+          "n": 36,
+          "yes": 8,
+          "partial": 14,
+          "no": 14,
+          "precision_strict": 0.222,
+          "precision_strict_ci95": [
+            0.117,
+            0.381
+          ],
+          "precision_lenient": 0.611,
+          "precision_lenient_ci95": [
+            0.449,
+            0.752
+          ]
+        },
+        "0.72-0.75": {
+          "n": 37,
+          "yes": 10,
+          "partial": 12,
+          "no": 15,
+          "precision_strict": 0.27,
+          "precision_strict_ci95": [
+            0.154,
+            0.43
+          ],
+          "precision_lenient": 0.595,
+          "precision_lenient_ci95": [
+            0.435,
+            0.737
+          ]
+        },
+        "0.75-0.80": {
+          "n": 37,
+          "yes": 17,
+          "partial": 10,
+          "no": 10,
+          "precision_strict": 0.459,
+          "precision_strict_ci95": [
+            0.31,
+            0.616
+          ],
+          "precision_lenient": 0.73,
+          "precision_lenient_ci95": [
+            0.57,
+            0.846
+          ]
+        },
+        ">=0.80": {
+          "n": 30,
+          "yes": 15,
+          "partial": 7,
+          "no": 8,
+          "precision_strict": 0.5,
+          "precision_strict_ci95": [
+            0.332,
+            0.668
+          ],
+          "precision_lenient": 0.733,
+          "precision_lenient_ci95": [
+            0.556,
+            0.858
+          ]
+        },
+        "population_weighted": {
+          "strict": 0.267,
+          "lenient": 0.62
+        },
+        "n_valid": 140
+      },
+      "nemotron-3-ultra-550b": {
+        "0.70-0.72": {
+          "n": 50,
+          "yes": 5,
+          "partial": 20,
+          "no": 25,
+          "precision_strict": 0.1,
+          "precision_strict_ci95": [
+            0.043,
+            0.214
+          ],
+          "precision_lenient": 0.5,
+          "precision_lenient_ci95": [
+            0.366,
+            0.634
+          ]
+        },
+        "0.72-0.75": {
+          "n": 50,
+          "yes": 20,
+          "partial": 14,
+          "no": 16,
+          "precision_strict": 0.4,
+          "precision_strict_ci95": [
+            0.276,
+            0.538
+          ],
+          "precision_lenient": 0.68,
+          "precision_lenient_ci95": [
+            0.542,
+            0.792
+          ]
+        },
+        "0.75-0.80": {
+          "n": 50,
+          "yes": 27,
+          "partial": 15,
+          "no": 8,
+          "precision_strict": 0.54,
+          "precision_strict_ci95": [
+            0.404,
+            0.67
+          ],
+          "precision_lenient": 0.84,
+          "precision_lenient_ci95": [
+            0.715,
+            0.917
+          ]
+        },
+        ">=0.80": {
+          "n": 50,
+          "yes": 34,
+          "partial": 11,
+          "no": 5,
+          "precision_strict": 0.68,
+          "precision_strict_ci95": [
+            0.542,
+            0.792
+          ],
+          "precision_lenient": 0.9,
+          "precision_lenient_ci95": [
+            0.786,
+            0.957
+          ]
+        },
+        "population_weighted": {
+          "strict": 0.253,
+          "lenient": 0.601
+        },
+        "n_valid": 200
+      },
+      "majority_vote": {
+        "0.70-0.72": {
+          "n": 50,
+          "yes": 5,
+          "partial": 15,
+          "no": 30,
+          "precision_strict": 0.1,
+          "precision_strict_ci95": [
+            0.043,
+            0.214
+          ],
+          "precision_lenient": 0.4,
+          "precision_lenient_ci95": [
+            0.276,
+            0.538
+          ]
+        },
+        "0.72-0.75": {
+          "n": 50,
+          "yes": 20,
+          "partial": 12,
+          "no": 18,
+          "precision_strict": 0.4,
+          "precision_strict_ci95": [
+            0.276,
+            0.538
+          ],
+          "precision_lenient": 0.64,
+          "precision_lenient_ci95": [
+            0.501,
+            0.759
+          ]
+        },
+        "0.75-0.80": {
+          "n": 50,
+          "yes": 27,
+          "partial": 11,
+          "no": 12,
+          "precision_strict": 0.54,
+          "precision_strict_ci95": [
+            0.404,
+            0.67
+          ],
+          "precision_lenient": 0.76,
+          "precision_lenient_ci95": [
+            0.626,
+            0.857
+          ]
+        },
+        ">=0.80": {
+          "n": 50,
+          "yes": 36,
+          "partial": 6,
+          "no": 8,
+          "precision_strict": 0.72,
+          "precision_strict_ci95": [
+            0.583,
+            0.825
+          ],
+          "precision_lenient": 0.84,
+          "precision_lenient_ci95": [
+            0.715,
+            0.917
+          ]
+        },
+        "population_weighted": {
+          "strict": 0.253,
+          "lenient": 0.523
+        }
+      }
+    },
+    "inter_judge_agreement": {
+      "Qwen3.5-27B-FP8 vs Qwen3.5-9B": {
+        "n": 200,
+        "raw_agreement_3way": 0.65,
+        "cohen_kappa_3way": 0.472,
+        "cohen_kappa_yes_vs_not": 0.666
+      },
+      "Qwen3.5-27B-FP8 vs aya-expanse-8b": {
+        "n": 140,
+        "raw_agreement_3way": 0.507,
+        "cohen_kappa_3way": 0.259,
+        "cohen_kappa_yes_vs_not": 0.392
+      },
+      "Qwen3.5-27B-FP8 vs nemotron-3-ultra-550b": {
+        "n": 200,
+        "raw_agreement_3way": 0.71,
+        "cohen_kappa_3way": 0.554,
+        "cohen_kappa_yes_vs_not": 0.653
+      },
+      "Qwen3.5-9B vs aya-expanse-8b": {
+        "n": 140,
+        "raw_agreement_3way": 0.486,
+        "cohen_kappa_3way": 0.214,
+        "cohen_kappa_yes_vs_not": 0.219
+      },
+      "Qwen3.5-9B vs nemotron-3-ultra-550b": {
+        "n": 200,
+        "raw_agreement_3way": 0.64,
+        "cohen_kappa_3way": 0.437,
+        "cohen_kappa_yes_vs_not": 0.528
+      },
+      "aya-expanse-8b vs nemotron-3-ultra-550b": {
+        "n": 140,
+        "raw_agreement_3way": 0.486,
+        "cohen_kappa_3way": 0.224,
+        "cohen_kappa_yes_vs_not": 0.315
+      }
+    }
+  }
+}

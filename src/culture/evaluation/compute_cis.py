@@ -42,11 +42,16 @@ def load_run(run_dir):
         mode = d.get("metrics", {}).get("score_mode", "continuation")
         key = "correct_norm" if mode == "continuation" else "correct"
         item = {}
+        seen = {}
         for r in recs:
             qid = r.get("qid")
             v = r.get(key, r.get("correct"))
             if qid is not None and v is not None:
-                item[qid] = int(v)
+                # Some loaders (ArabCulture) emit non-unique qids; disambiguate by
+                # occurrence order, which is identical across runs of the same loader.
+                k = seen.get(qid, 0)
+                seen[qid] = k + 1
+                item[qid if k == 0 else f"{qid}#{k}"] = int(v)
         if item:
             tasks[name] = item
     return tasks

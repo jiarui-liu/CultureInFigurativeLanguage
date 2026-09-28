@@ -25,6 +25,7 @@ CK=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts
 case "${RUN}" in
   hi-cpt-sft)  MODEL="${CK}/qwen3p5-9b-hi-cpt-sft" ;;
   hi-base-sft) MODEL="${CK}/qwen3p5-9b-hi-base-sft" ;;
+  hi-unfiltered-sft) MODEL="${CK}/qwen3p5-9b-hi-unfiltered-sft" ;;
   *) echo "unknown RUN='${RUN}'"; exit 1 ;;
 esac
 DATA="${REPO_ROOT}/data/eval/hi"

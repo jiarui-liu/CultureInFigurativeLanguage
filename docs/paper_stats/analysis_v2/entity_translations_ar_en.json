@@ -1,0 +1,2102 @@
+{
+  "الله": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "lord"
+    ]
+  },
+  "ناس": {
+    "en": "people",
+    "syn": [
+      "folk",
+      "humans"
+    ]
+  },
+  "عين": {
+    "en": "eye",
+    "syn": [
+      "sight",
+      "vision"
+    ]
+  },
+  "كلب": {
+    "en": "dog",
+    "syn": [
+      "hound",
+      "canine"
+    ]
+  },
+  "جمل": {
+    "en": "camel",
+    "syn": [
+      "dromedary",
+      "beast"
+    ]
+  },
+  "حمار": {
+    "en": "donkey",
+    "syn": [
+      "ass",
+      "mule"
+    ]
+  },
+  "دار": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "قلب": {
+    "en": "heart",
+    "syn": [
+      "core",
+      "soul"
+    ]
+  },
+  "باب": {
+    "en": "door",
+    "syn": [
+      "gate",
+      "entrance"
+    ]
+  },
+  "ماء": {
+    "en": "water",
+    "syn": [
+      "liquid",
+      "stream"
+    ]
+  },
+  "راس": {
+    "en": "head",
+    "syn": [
+      "skull",
+      "brain"
+    ]
+  },
+  "مال": {
+    "en": "wealth",
+    "syn": [
+      "money",
+      "fortune"
+    ]
+  },
+  "ارض": {
+    "en": "earth",
+    "syn": [
+      "ground",
+      "soil"
+    ]
+  },
+  "نار": {
+    "en": "fire",
+    "syn": [
+      "flame",
+      "blaze"
+    ]
+  },
+  "بيت": {
+    "en": "house",
+    "syn": [
+      "home",
+      "hut"
+    ]
+  },
+  "دنيا": {
+    "en": "world",
+    "syn": [
+      "life",
+      "earth"
+    ]
+  },
+  "ميه": {
+    "en": "water",
+    "syn": [
+      "liquid",
+      "stream"
+    ]
+  },
+  "ليل": {
+    "en": "night",
+    "syn": [
+      "darkness",
+      "evening"
+    ]
+  },
+  "بحر": {
+    "en": "sea",
+    "syn": [
+      "ocean",
+      "water"
+    ]
+  },
+  "خير": {
+    "en": "good",
+    "syn": [
+      "virtue",
+      "benefit"
+    ]
+  },
+  "امه": {
+    "en": "mother",
+    "syn": [
+      "mom",
+      "parent"
+    ]
+  },
+  "شر": {
+    "en": "evil",
+    "syn": [
+      "bad",
+      "harm"
+    ]
+  },
+  "قوم": {
+    "en": "people",
+    "syn": [
+      "folk",
+      "tribe"
+    ]
+  },
+  "يوم": {
+    "en": "day",
+    "syn": [
+      "time",
+      "period"
+    ]
+  },
+  "حجر": {
+    "en": "stone",
+    "syn": [
+      "rock",
+      "pebble"
+    ]
+  },
+  "ابن": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "حق": {
+    "en": "truth",
+    "syn": [
+      "right",
+      "fact"
+    ]
+  },
+  "راجل": {
+    "en": "man",
+    "syn": [
+      "person",
+      "male"
+    ]
+  },
+  "رجال": {
+    "en": "men",
+    "syn": [
+      "menfolk",
+      "people"
+    ]
+  },
+  "ذئب": {
+    "en": "wolf",
+    "syn": [
+      "beast",
+      "predator"
+    ]
+  },
+  "يد": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "عبد": {
+    "en": "slave",
+    "syn": [
+      "servant",
+      "bondman"
+    ]
+  },
+  "ايده": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "نهار": {
+    "en": "day",
+    "syn": [
+      "morning",
+      "light"
+    ]
+  },
+  "امر": {
+    "en": "matter",
+    "syn": [
+      "thing",
+      "affair"
+    ]
+  },
+  "شيء": {
+    "en": "thing",
+    "syn": [
+      "matter",
+      "object"
+    ]
+  },
+  "ولد": {
+    "en": "child",
+    "syn": [
+      "offspring",
+      "son"
+    ]
+  },
+  "ام": {
+    "en": "mother",
+    "syn": [
+      "mom",
+      "parent"
+    ]
+  },
+  "غراب": {
+    "en": "crow",
+    "syn": [
+      "raven",
+      "bird"
+    ]
+  },
+  "عسل": {
+    "en": "honey",
+    "syn": [
+      "nectar",
+      "sweet"
+    ]
+  },
+  "دهر": {
+    "en": "time",
+    "syn": [
+      "age",
+      "era"
+    ]
+  },
+  "راسه": {
+    "en": "head",
+    "syn": [
+      "skull",
+      "brain"
+    ]
+  },
+  "بنت": {
+    "en": "daughter",
+    "syn": [
+      "girl",
+      "child"
+    ]
+  },
+  "كلاب": {
+    "en": "dogs",
+    "syn": [
+      "hounds",
+      "canines"
+    ]
+  },
+  "ضب": {
+    "en": "monitor",
+    "syn": [
+      "lizard",
+      "reptile"
+    ]
+  },
+  "عيش": {
+    "en": "life",
+    "syn": [
+      "living",
+      "existence"
+    ]
+  },
+  "كلام": {
+    "en": "speech",
+    "syn": [
+      "words",
+      "talk"
+    ]
+  },
+  "عدو": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "adversary"
+    ]
+  },
+  "ايد": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "لسان": {
+    "en": "tongue",
+    "syn": [
+      "speech",
+      "voice"
+    ]
+  },
+  "عير": {
+    "en": "caravan",
+    "syn": [
+      "convoy",
+      "train"
+    ]
+  },
+  "ريح": {
+    "en": "wind",
+    "syn": [
+      "breeze",
+      "gust"
+    ]
+  },
+  "خبر": {
+    "en": "news",
+    "syn": [
+      "report",
+      "tale"
+    ]
+  },
+  "عود": {
+    "en": "stick",
+    "syn": [
+      "branch",
+      "log"
+    ]
+  },
+  "موت": {
+    "en": "death",
+    "syn": [
+      "demise",
+      "end"
+    ]
+  },
+  "عصا": {
+    "en": "stick",
+    "syn": [
+      "rod",
+      "staff"
+    ]
+  },
+  "لحم": {
+    "en": "flesh",
+    "syn": [
+      "meat",
+      "body"
+    ]
+  },
+  "نفسه": {
+    "en": "self",
+    "syn": [
+      "soul",
+      "person"
+    ]
+  },
+  "عقل": {
+    "en": "mind",
+    "syn": [
+      "reason",
+      "intellect"
+    ]
+  },
+  "رجل": {
+    "en": "man",
+    "syn": [
+      "person",
+      "individual"
+    ]
+  },
+  "ليله": {
+    "en": "night",
+    "syn": [
+      "evening",
+      "darkness"
+    ]
+  },
+  "دم": {
+    "en": "blood",
+    "syn": [
+      "life",
+      "lineage"
+    ]
+  },
+  "فم": {
+    "en": "mouth",
+    "syn": [
+      "lip",
+      "jaw"
+    ]
+  },
+  "ابل": {
+    "en": "camel",
+    "syn": [
+      "beast",
+      "animal"
+    ]
+  },
+  "سنه": {
+    "en": "year",
+    "syn": [
+      "season",
+      "time"
+    ]
+  },
+  "حبل": {
+    "en": "rope",
+    "syn": [
+      "cord",
+      "line"
+    ]
+  },
+  "بلد": {
+    "en": "town",
+    "syn": [
+      "village",
+      "place"
+    ]
+  },
+  "عمر": {
+    "en": "life",
+    "syn": [
+      "lifetime",
+      "age"
+    ]
+  },
+  "جارك": {
+    "en": "neighbor",
+    "syn": [
+      "neighbour",
+      "adjacent"
+    ]
+  },
+  "صوف": {
+    "en": "wool",
+    "syn": [
+      "fleece",
+      "hair"
+    ]
+  },
+  "وش": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "عينه": {
+    "en": "eye",
+    "syn": [
+      "gaze",
+      "sight"
+    ]
+  },
+  "طريق": {
+    "en": "road",
+    "syn": [
+      "path",
+      "way"
+    ]
+  },
+  "سوق": {
+    "en": "market",
+    "syn": [
+      "bazaar",
+      "fair"
+    ]
+  },
+  "بيضه": {
+    "en": "egg",
+    "syn": [
+      "ovum",
+      "seed"
+    ]
+  },
+  "لقمه": {
+    "en": "mouthful",
+    "syn": [
+      "bite",
+      "bit"
+    ]
+  },
+  "عنب": {
+    "en": "grape",
+    "syn": [
+      "berry",
+      "fruit"
+    ]
+  },
+  "ديك": {
+    "en": "rooster",
+    "syn": [
+      "cock",
+      "hen"
+    ]
+  },
+  "فرس": {
+    "en": "horse",
+    "syn": [
+      "steed",
+      "mare"
+    ]
+  },
+  "جار": {
+    "en": "neighbor",
+    "syn": [
+      "neighbour",
+      "adjacent"
+    ]
+  },
+  "قرد": {
+    "en": "monkey",
+    "syn": [
+      "ape",
+      "simian"
+    ]
+  },
+  "قمر": {
+    "en": "moon",
+    "syn": [
+      "lunar",
+      "satellite"
+    ]
+  },
+  "زمان": {
+    "en": "time",
+    "syn": [
+      "era",
+      "age"
+    ]
+  },
+  "بطنه": {
+    "en": "belly",
+    "syn": [
+      "stomach",
+      "gut"
+    ]
+  },
+  "طير": {
+    "en": "bird",
+    "syn": [
+      "fowl",
+      "avian"
+    ]
+  },
+  "شمس": {
+    "en": "sun",
+    "syn": [
+      "star",
+      "orb"
+    ]
+  },
+  "حب": {
+    "en": "grain",
+    "syn": [
+      "seed",
+      "kernel"
+    ]
+  },
+  "اعمي": {
+    "en": "blind",
+    "syn": [
+      "sightless",
+      "dark"
+    ]
+  },
+  "حمير": {
+    "en": "donkey",
+    "syn": [
+      "ass",
+      "beast"
+    ]
+  },
+  "عريان": {
+    "en": "naked",
+    "syn": [
+      "bare",
+      "stripped"
+    ]
+  },
+  "عمي": {
+    "en": "blindness",
+    "syn": [
+      "darkness",
+      "ignorance"
+    ]
+  },
+  "جبل": {
+    "en": "mountain",
+    "syn": [
+      "peak",
+      "hill"
+    ]
+  },
+  "ميت": {
+    "en": "dead",
+    "syn": [
+      "corpse",
+      "deceased"
+    ]
+  },
+  "بطن": {
+    "en": "belly",
+    "syn": [
+      "stomach",
+      "gut"
+    ]
+  },
+  "اهله": {
+    "en": "family",
+    "syn": [
+      "kin",
+      "folk"
+    ]
+  },
+  "لبن": {
+    "en": "milk",
+    "syn": [
+      "lactation",
+      "cream"
+    ]
+  },
+  "امك": {
+    "en": "mother",
+    "syn": [
+      "mom",
+      "parent"
+    ]
+  },
+  "نفس": {
+    "en": "soul",
+    "syn": [
+      "self",
+      "spirit"
+    ]
+  },
+  "مرء": {
+    "en": "man",
+    "syn": [
+      "person",
+      "individual"
+    ]
+  },
+  "وجه": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "مراه": {
+    "en": "woman",
+    "syn": [
+      "wife",
+      "female"
+    ]
+  },
+  "ايدك": {
+    "en": "hand",
+    "syn": [
+      "grip",
+      "hold"
+    ]
+  },
+  "مره": {
+    "en": "woman",
+    "syn": [
+      "wife",
+      "female"
+    ]
+  },
+  "بعير": {
+    "en": "camel",
+    "syn": [
+      "dromedary",
+      "beast"
+    ]
+  },
+  "نوم": {
+    "en": "sleep",
+    "syn": [
+      "rest",
+      "slumber"
+    ]
+  },
+  "شيخ": {
+    "en": "elder",
+    "syn": [
+      "chief",
+      "senior"
+    ]
+  },
+  "اسد": {
+    "en": "lion",
+    "syn": [
+      "beast",
+      "king"
+    ]
+  },
+  "جمال": {
+    "en": "beauty",
+    "syn": [
+      "charm",
+      "grace"
+    ]
+  },
+  "سلطان": {
+    "en": "ruler",
+    "syn": [
+      "king",
+      "master"
+    ]
+  },
+  "بصل": {
+    "en": "onion",
+    "syn": [
+      "bulb",
+      "vegetable"
+    ]
+  },
+  "عدوك": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "adversary"
+    ]
+  },
+  "فرح": {
+    "en": "joy",
+    "syn": [
+      "happiness",
+      "delight"
+    ]
+  },
+  "حديد": {
+    "en": "iron",
+    "syn": [
+      "metal",
+      "steel"
+    ]
+  },
+  "سيل": {
+    "en": "flood",
+    "syn": [
+      "torrent",
+      "deluge"
+    ]
+  },
+  "اعور": {
+    "en": "lame",
+    "syn": [
+      "cripple",
+      "disabled"
+    ]
+  },
+  "صيف": {
+    "en": "summer",
+    "syn": [
+      "season",
+      "heat"
+    ]
+  },
+  "خيل": {
+    "en": "horse",
+    "syn": [
+      "steed",
+      "mount"
+    ]
+  },
+  "قلبه": {
+    "en": "heart",
+    "syn": [
+      "soul",
+      "core"
+    ]
+  },
+  "عينك": {
+    "en": "eye",
+    "syn": [
+      "vision",
+      "sight"
+    ]
+  },
+  "بصله": {
+    "en": "onion",
+    "syn": [
+      "bulb",
+      "vegetable"
+    ]
+  },
+  "راسك": {
+    "en": "head",
+    "syn": [
+      "skull",
+      "top"
+    ]
+  },
+  "قط": {
+    "en": "cat",
+    "syn": [
+      "feline",
+      "kitten"
+    ]
+  },
+  "هم": {
+    "en": "worry",
+    "syn": [
+      "anxiety",
+      "care"
+    ]
+  },
+  "ربيع": {
+    "en": "spring",
+    "syn": [
+      "season",
+      "bloom"
+    ]
+  },
+  "ضبع": {
+    "en": "hyena",
+    "syn": [
+      "beast",
+      "predator"
+    ]
+  },
+  "سيف": {
+    "en": "sword",
+    "syn": [
+      "blade",
+      "weapon"
+    ]
+  },
+  "اهل": {
+    "en": "family",
+    "syn": [
+      "kin",
+      "folk"
+    ]
+  },
+  "قدر": {
+    "en": "pot",
+    "syn": [
+      "cauldron",
+      "vessel"
+    ]
+  },
+  "ضيف": {
+    "en": "guest",
+    "syn": [
+      "visitor",
+      "stranger"
+    ]
+  },
+  "ظهر": {
+    "en": "back",
+    "syn": [
+      "spine",
+      "rear"
+    ]
+  },
+  "سهم": {
+    "en": "arrow",
+    "syn": [
+      "bolt",
+      "missile"
+    ]
+  },
+  "خمر": {
+    "en": "wine",
+    "syn": [
+      "drink",
+      "intoxicant"
+    ]
+  },
+  "جنه": {
+    "en": "genie",
+    "syn": [
+      "spirit",
+      "demon"
+    ]
+  },
+  "لحمه": {
+    "en": "flesh",
+    "syn": [
+      "meat",
+      "body"
+    ]
+  },
+  "كلمه": {
+    "en": "word",
+    "syn": [
+      "phrase",
+      "utterance"
+    ]
+  },
+  "زيت": {
+    "en": "oil",
+    "syn": [
+      "fat",
+      "liquid"
+    ]
+  },
+  "امها": {
+    "en": "mother",
+    "syn": [
+      "parent",
+      "matriarch"
+    ]
+  },
+  "ابوك": {
+    "en": "father",
+    "syn": [
+      "parent",
+      "sire"
+    ]
+  },
+  "حبيب": {
+    "en": "beloved",
+    "syn": [
+      "lover",
+      "friend"
+    ]
+  },
+  "روس": {
+    "en": "heads",
+    "syn": [
+      "skulls",
+      "tops"
+    ]
+  },
+  "جحا": {
+    "en": "juhha",
+    "syn": [
+      "fool",
+      "jester"
+    ]
+  },
+  "فار": {
+    "en": "mouse",
+    "syn": [
+      "rodent",
+      "vermin"
+    ]
+  },
+  "ولاد": {
+    "en": "children",
+    "syn": [
+      "kids",
+      "offspring"
+    ]
+  },
+  "قلوب": {
+    "en": "hearts",
+    "syn": [
+      "souls",
+      "minds"
+    ]
+  },
+  "نعامه": {
+    "en": "ostrich",
+    "syn": [
+      "bird",
+      "fowl"
+    ]
+  },
+  "علم": {
+    "en": "flag",
+    "syn": [
+      "banner",
+      "standard"
+    ]
+  },
+  "اكل": {
+    "en": "eating",
+    "syn": [
+      "food",
+      "meal"
+    ]
+  },
+  "تمره": {
+    "en": "date",
+    "syn": [
+      "fruit",
+      "palm"
+    ]
+  },
+  "باطل": {
+    "en": "falsehood",
+    "syn": [
+      "lie",
+      "untruth"
+    ]
+  },
+  "وادي": {
+    "en": "valley",
+    "syn": [
+      "gully",
+      "ravine"
+    ]
+  },
+  "صاحب": {
+    "en": "owner",
+    "syn": [
+      "possessor",
+      "master"
+    ]
+  },
+  "مالك": {
+    "en": "owner",
+    "syn": [
+      "possessor",
+      "master"
+    ]
+  },
+  "بيض": {
+    "en": "egg",
+    "syn": [
+      "ovum",
+      "yolk"
+    ]
+  },
+  "استه": {
+    "en": "buttocks",
+    "syn": [
+      "rump",
+      "rear"
+    ]
+  },
+  "بنات": {
+    "en": "daughters",
+    "syn": [
+      "offspring",
+      "children"
+    ]
+  },
+  "طبيب": {
+    "en": "doctor",
+    "syn": [
+      "physician",
+      "healer"
+    ]
+  },
+  "دين": {
+    "en": "debt",
+    "syn": [
+      "loan",
+      "owe"
+    ]
+  },
+  "صبر": {
+    "en": "patience",
+    "syn": [
+      "forbearance",
+      "endurance"
+    ]
+  },
+  "رب": {
+    "en": "lord",
+    "syn": [
+      "master",
+      "owner"
+    ]
+  },
+  "خبز": {
+    "en": "bread",
+    "syn": [
+      "loaf",
+      "staple"
+    ]
+  },
+  "عيشه": {
+    "en": "life",
+    "syn": [
+      "livelihood",
+      "existence"
+    ]
+  },
+  "لسانه": {
+    "en": "tongue",
+    "syn": [
+      "speech",
+      "language"
+    ]
+  },
+  "عشره": {
+    "en": "ten",
+    "syn": [
+      "decade",
+      "tenfold"
+    ]
+  },
+  "ذهب": {
+    "en": "gold",
+    "syn": [
+      "metal",
+      "treasure"
+    ]
+  },
+  "سعد": {
+    "en": "luck",
+    "syn": [
+      "fortune",
+      "fate"
+    ]
+  },
+  "صاحبك": {
+    "en": "friend",
+    "syn": [
+      "companion",
+      "ally"
+    ]
+  },
+  "فرخه": {
+    "en": "chick",
+    "syn": [
+      "offspring",
+      "young"
+    ]
+  },
+  "قلبي": {
+    "en": "heart",
+    "syn": [
+      "soul",
+      "mind"
+    ]
+  },
+  "عروسه": {
+    "en": "bride",
+    "syn": [
+      "newlywed",
+      "wife"
+    ]
+  },
+  "است": {
+    "en": "buttocks",
+    "syn": [
+      "rump",
+      "rear"
+    ]
+  },
+  "نفسك": {
+    "en": "self",
+    "syn": [
+      "soul",
+      "person"
+    ]
+  },
+  "دخان": {
+    "en": "smoke",
+    "syn": [
+      "fume",
+      "vapor"
+    ]
+  },
+  "حمام": {
+    "en": "pigeon",
+    "syn": [
+      "dove",
+      "bird"
+    ]
+  },
+  "ظبي": {
+    "en": "gazelle",
+    "syn": [
+      "deer",
+      "antelope"
+    ]
+  },
+  "ابنك": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "حاجه": {
+    "en": "need",
+    "syn": [
+      "necessity",
+      "requirement"
+    ]
+  },
+  "ابوه": {
+    "en": "father",
+    "syn": [
+      "dad",
+      "parent"
+    ]
+  },
+  "جلد": {
+    "en": "skin",
+    "syn": [
+      "hide",
+      "pelt"
+    ]
+  },
+  "عيني": {
+    "en": "eye",
+    "syn": [
+      "sight",
+      "gaze"
+    ]
+  },
+  "قاضي": {
+    "en": "judge",
+    "syn": [
+      "magistrate",
+      "arbiter"
+    ]
+  },
+  "ايام": {
+    "en": "days",
+    "syn": [
+      "times",
+      "periods"
+    ]
+  },
+  "حجره": {
+    "en": "stone",
+    "syn": [
+      "rock",
+      "pebble"
+    ]
+  },
+  "حيه": {
+    "en": "snake",
+    "syn": [
+      "serpent",
+      "viper"
+    ]
+  },
+  "عقله": {
+    "en": "mind",
+    "syn": [
+      "intellect",
+      "reason"
+    ]
+  },
+  "يدي": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "جره": {
+    "en": "jar",
+    "syn": [
+      "pot",
+      "vessel"
+    ]
+  },
+  "سبع": {
+    "en": "lion",
+    "syn": [
+      "beast",
+      "predator"
+    ]
+  },
+  "صبي": {
+    "en": "child",
+    "syn": [
+      "boy",
+      "kid"
+    ]
+  },
+  "بر": {
+    "en": "righteousness",
+    "syn": [
+      "virtue",
+      "goodness"
+    ]
+  },
+  "واد": {
+    "en": "valley",
+    "syn": [
+      "dale",
+      "glen"
+    ]
+  },
+  "بقر": {
+    "en": "cow",
+    "syn": [
+      "cattle",
+      "beast"
+    ]
+  },
+  "عمه": {
+    "en": "uncle",
+    "syn": [
+      "aunt",
+      "relative"
+    ]
+  },
+  "صوت": {
+    "en": "voice",
+    "syn": [
+      "sound",
+      "cry"
+    ]
+  },
+  "تمر": {
+    "en": "date",
+    "syn": [
+      "fruit",
+      "palm"
+    ]
+  },
+  "بكره": {
+    "en": "mule",
+    "syn": [
+      "beast",
+      "pack-animal"
+    ]
+  },
+  "تراب": {
+    "en": "dust",
+    "syn": [
+      "soil",
+      "earth"
+    ]
+  },
+  "سمك": {
+    "en": "fish",
+    "syn": [
+      "seafood",
+      "creature"
+    ]
+  },
+  "دارك": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "عرس": {
+    "en": "wedding",
+    "syn": [
+      "celebration",
+      "feast"
+    ]
+  },
+  "حيطه": {
+    "en": "wall",
+    "syn": [
+      "partition",
+      "barrier"
+    ]
+  },
+  "مطرح": {
+    "en": "place",
+    "syn": [
+      "spot",
+      "location"
+    ]
+  },
+  "لي": {
+    "en": "one",
+    "syn": [
+      "person",
+      "who"
+    ]
+  },
+  "وشه": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "فلوس": {
+    "en": "money",
+    "syn": [
+      "cash",
+      "wealth"
+    ]
+  },
+  "داره": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "نخاله": {
+    "en": "chaff",
+    "syn": [
+      "husk",
+      "bran"
+    ]
+  },
+  "ورد": {
+    "en": "flower",
+    "syn": [
+      "blossom",
+      "rose"
+    ]
+  },
+  "حرامي": {
+    "en": "thief",
+    "syn": [
+      "robber",
+      "bandit"
+    ]
+  },
+  "ربي": {
+    "en": "lord",
+    "syn": [
+      "master",
+      "god"
+    ]
+  },
+  "اخاك": {
+    "en": "brother",
+    "syn": [
+      "sibling",
+      "kinsman"
+    ]
+  },
+  "فتي": {
+    "en": "youth",
+    "syn": [
+      "lad",
+      "youngster"
+    ]
+  },
+  "عنز": {
+    "en": "goat",
+    "syn": [
+      "she-goat",
+      "nanny"
+    ]
+  },
+  "ذنب": {
+    "en": "tail",
+    "syn": [
+      "appendage",
+      "end"
+    ]
+  },
+  "غني": {
+    "en": "wealth",
+    "syn": [
+      "riches",
+      "affluence"
+    ]
+  },
+  "ذيل": {
+    "en": "tail",
+    "syn": [
+      "appendage",
+      "end"
+    ]
+  },
+  "حديث": {
+    "en": "speech",
+    "syn": [
+      "talk",
+      "discourse"
+    ]
+  },
+  "امي": {
+    "en": "mother",
+    "syn": [
+      "mom",
+      "mum"
+    ]
+  },
+  "بيتك": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "مطر": {
+    "en": "rain",
+    "syn": [
+      "downpour",
+      "shower"
+    ]
+  },
+  "ابره": {
+    "en": "needle",
+    "syn": [
+      "pin",
+      "stitcher"
+    ]
+  },
+  "بقره": {
+    "en": "cow",
+    "syn": [
+      "cattle",
+      "beast"
+    ]
+  },
+  "جراد": {
+    "en": "locust",
+    "syn": [
+      "grasshopper",
+      "swarm"
+    ]
+  },
+  "زاد": {
+    "en": "provisions",
+    "syn": [
+      "supplies",
+      "food"
+    ]
+  },
+  "قفاه": {
+    "en": "back",
+    "syn": [
+      "rear",
+      "hindquarters"
+    ]
+  },
+  "فقر": {
+    "en": "poverty",
+    "syn": [
+      "need",
+      "destitution"
+    ]
+  },
+  "خروف": {
+    "en": "sheep",
+    "syn": [
+      "lamb",
+      "flock"
+    ]
+  },
+  "دره": {
+    "en": "grain",
+    "syn": [
+      "kernel",
+      "seed"
+    ]
+  },
+  "حد": {
+    "en": "limit",
+    "syn": [
+      "boundary",
+      "extent"
+    ]
+  },
+  "شعير": {
+    "en": "barley",
+    "syn": [
+      "grain",
+      "cereal"
+    ]
+  },
+  "صبح": {
+    "en": "dawn",
+    "syn": [
+      "daybreak",
+      "morning"
+    ]
+  },
+  "ريحه": {
+    "en": "wind",
+    "syn": [
+      "breeze",
+      "gust"
+    ]
+  },
+  "نجار": {
+    "en": "carpenter",
+    "syn": [
+      "joiner",
+      "woodworker"
+    ]
+  },
+  "حبه": {
+    "en": "grain",
+    "syn": [
+      "kernel",
+      "seed"
+    ]
+  },
+  "غزال": {
+    "en": "gazelle",
+    "syn": [
+      "deer",
+      "antelope"
+    ]
+  },
+  "سما": {
+    "en": "sky",
+    "syn": [
+      "heaven",
+      "firmament"
+    ]
+  },
+  "حماره": {
+    "en": "donkey",
+    "syn": [
+      "ass",
+      "mule"
+    ]
+  },
+  "فوله": {
+    "en": "fava",
+    "syn": [
+      "bean",
+      "pulse"
+    ]
+  },
+  "جامع": {
+    "en": "mosque",
+    "syn": [
+      "prayer-hall",
+      "sanctuary"
+    ]
+  },
+  "بير": {
+    "en": "well",
+    "syn": [
+      "cistern",
+      "pit"
+    ]
+  },
+  "بركه": {
+    "en": "blessing",
+    "syn": [
+      "boon",
+      "grace"
+    ]
+  },
+  "جوز": {
+    "en": "husband",
+    "syn": [
+      "spouse",
+      "mate"
+    ]
+  },
+  "حيط": {
+    "en": "wall",
+    "syn": [
+      "partition",
+      "barrier"
+    ]
+  },
+  "رزق": {
+    "en": "sustenance",
+    "syn": [
+      "livelihood",
+      "provision"
+    ]
+  },
+  "شتا": {
+    "en": "winter",
+    "syn": [
+      "cold",
+      "season"
+    ]
+  },
+  "قمح": {
+    "en": "wheat",
+    "syn": [
+      "grain",
+      "corn"
+    ]
+  },
+  "اخوك": {
+    "en": "brother",
+    "syn": [
+      "sibling",
+      "kinsman"
+    ]
+  },
+  "صيد": {
+    "en": "game",
+    "syn": [
+      "prey",
+      "hunt"
+    ]
+  },
+  "شيطان": {
+    "en": "devil",
+    "syn": [
+      "demon",
+      "fiend"
+    ]
+  },
+  "شوك": {
+    "en": "thorn",
+    "syn": [
+      "prickle",
+      "spine"
+    ]
+  },
+  "امير": {
+    "en": "prince",
+    "syn": [
+      "ruler",
+      "lord"
+    ]
+  },
+  "شجره": {
+    "en": "tree",
+    "syn": [
+      "plant",
+      "wood"
+    ]
+  },
+  "راي": {
+    "en": "opinion",
+    "syn": [
+      "view",
+      "judgment"
+    ]
+  },
+  "اهلها": {
+    "en": "people",
+    "syn": [
+      "inhabitants",
+      "owners"
+    ]
+  },
+  "ماله": {
+    "en": "wealth",
+    "syn": [
+      "money",
+      "property"
+    ]
+  },
+  "انسان": {
+    "en": "human",
+    "syn": [
+      "person",
+      "man"
+    ]
+  },
+  "غلام": {
+    "en": "boy",
+    "syn": [
+      "youth",
+      "lad"
+    ]
+  },
+  "بغل": {
+    "en": "mule",
+    "syn": [
+      "beast",
+      "animal"
+    ]
+  },
+  "حنه": {
+    "en": "henna",
+    "syn": [
+      "dye",
+      "stain"
+    ]
+  },
+  "عقاب": {
+    "en": "eagle",
+    "syn": [
+      "falcon",
+      "bird"
+    ]
+  },
+  "يتيم": {
+    "en": "orphan",
+    "syn": [
+      "child",
+      "waif"
+    ]
+  },
+  "ناقه": {
+    "en": "camel",
+    "syn": [
+      "beast",
+      "animal"
+    ]
+  },
+  "حر": {
+    "en": "free",
+    "syn": [
+      "noble",
+      "man"
+    ]
+  },
+  "ما": {
+    "en": "thing",
+    "syn": [
+      "matter",
+      "affair"
+    ]
+  },
+  "خيط": {
+    "en": "thread",
+    "syn": [
+      "string",
+      "cord"
+    ]
+  },
+  "صديق": {
+    "en": "friend",
+    "syn": [
+      "companion",
+      "ally"
+    ]
+  },
+  "حباري": {
+    "en": "cuttlefish",
+    "syn": [
+      "squid",
+      "cephalopod"
+    ]
+  },
+  "حلم": {
+    "en": "patience",
+    "syn": [
+      "forbearance",
+      "tolerance"
+    ]
+  },
+  "عجل": {
+    "en": "calf",
+    "syn": [
+      "ox",
+      "beast"
+    ]
+  },
+  "دمه": {
+    "en": "blood",
+    "syn": [
+      "life",
+      "essence"
+    ]
+  },
+  "مركب": {
+    "en": "mount",
+    "syn": [
+      "ride",
+      "vehicle"
+    ]
+  },
+  "معروف": {
+    "en": "good",
+    "syn": [
+      "virtue",
+      "kindness"
+    ]
+  },
+  "سعيد": {
+    "en": "happy",
+    "syn": [
+      "fortunate",
+      "blessed"
+    ]
+  },
+  "شهر": {
+    "en": "month",
+    "syn": [
+      "period",
+      "time"
+    ]
+  },
+  "سن": {
+    "en": "tooth",
+    "syn": [
+      "fang",
+      "molar"
+    ]
+  },
+  "ابنه": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "بيته": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "غنم": {
+    "en": "sheep",
+    "syn": [
+      "flock",
+      "animal"
+    ]
+  },
+  "خشب": {
+    "en": "wood",
+    "syn": [
+      "timber",
+      "stick"
+    ]
+  },
+  "زرع": {
+    "en": "crop",
+    "syn": [
+      "plant",
+      "seedling"
+    ]
+  },
+  "ديب": {
+    "en": "bear",
+    "syn": [
+      "beast",
+      "animal"
+    ]
+  },
+  "قبر": {
+    "en": "grave",
+    "syn": [
+      "tomb",
+      "burial"
+    ]
+  },
+  "رجلين": {
+    "en": "legs",
+    "syn": [
+      "feet",
+      "limbs"
+    ]
+  },
+  "طور": {
+    "en": "udder",
+    "syn": [
+      "teat",
+      "bag"
+    ]
+  },
+  "تعبان": {
+    "en": "scorpion",
+    "syn": [
+      "insect",
+      "creature"
+    ]
+  },
+  "روحه": {
+    "en": "soul",
+    "syn": [
+      "spirit",
+      "life"
+    ]
+  },
+  "عيد": {
+    "en": "feast",
+    "syn": [
+      "holiday",
+      "celebration"
+    ]
+  },
+  "صابون": {
+    "en": "soap",
+    "syn": [
+      "cleanser",
+      "detergent"
+    ]
+  },
+  "حاره": {
+    "en": "heat",
+    "syn": [
+      "sun",
+      "warmth"
+    ]
+  },
+  "نساء": {
+    "en": "women",
+    "syn": [
+      "females",
+      "ladies"
+    ]
+  },
+  "ملح": {
+    "en": "salt",
+    "syn": [
+      "mineral",
+      "seasoning"
+    ]
+  },
+  "قدح": {
+    "en": "cup",
+    "syn": [
+      "vessel",
+      "glass"
+    ]
+  },
+  "كحل": {
+    "en": "kohl",
+    "syn": [
+      "eyeliner",
+      "powder"
+    ]
+  },
+  "رغيف": {
+    "en": "loaf",
+    "syn": [
+      "bread",
+      "slice"
+    ]
+  },
+  "حي": {
+    "en": "tribe",
+    "syn": [
+      "clan",
+      "community"
+    ]
+  },
+  "كف": {
+    "en": "palm",
+    "syn": [
+      "hand",
+      "fist"
+    ]
+  },
+  "خاله": {
+    "en": "uncle",
+    "syn": [
+      "relative",
+      "kin"
+    ]
+  },
+  "نخل": {
+    "en": "palm",
+    "syn": [
+      "tree",
+      "grove"
+    ]
+  },
+  "بلاد": {
+    "en": "land",
+    "syn": [
+      "country",
+      "region"
+    ]
+  },
+  "قرن": {
+    "en": "horn",
+    "syn": [
+      "antler",
+      "tusk"
+    ]
+  },
+  "ثور": {
+    "en": "ox",
+    "syn": [
+      "bull",
+      "beast"
+    ]
+  }
+}

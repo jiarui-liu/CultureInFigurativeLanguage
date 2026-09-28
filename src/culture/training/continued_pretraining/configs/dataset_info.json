@@ -104,5 +104,41 @@
       "user_tag": "human",
       "assistant_tag": "gpt"
     }
+  },
+  "ar_culture": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culture",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "ar_culturenotes": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culturenotes",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hi_culture": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culture",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hi_culturenotes": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culturenotes",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "zh_culture": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culture",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "zh_culturenotes": {
+    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culturenotes",
+    "columns": {
+      "prompt": "text"
+    }
   }
 }

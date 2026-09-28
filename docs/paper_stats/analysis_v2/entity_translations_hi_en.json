@@ -1,0 +1,2036 @@
+{
+  "घर": {
+    "en": "house",
+    "syn": [
+      "home",
+      "dwelling"
+    ]
+  },
+  "धन": {
+    "en": "wealth",
+    "syn": [
+      "money",
+      "fortune"
+    ]
+  },
+  "पानी": {
+    "en": "water",
+    "syn": [
+      "liquid",
+      "fluid"
+    ]
+  },
+  "हाथ": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "पेट": {
+    "en": "stomach",
+    "syn": [
+      "belly",
+      "gut"
+    ]
+  },
+  "स्त्री": {
+    "en": "woman",
+    "syn": [
+      "female",
+      "wife"
+    ]
+  },
+  "सिर": {
+    "en": "head",
+    "syn": [
+      "skull",
+      "top"
+    ]
+  },
+  "मुँह": {
+    "en": "mouth",
+    "syn": [
+      "face",
+      "lip"
+    ]
+  },
+  "आदमी": {
+    "en": "man",
+    "syn": [
+      "person",
+      "individual"
+    ]
+  },
+  "मनुष्य": {
+    "en": "human",
+    "syn": [
+      "person",
+      "being"
+    ]
+  },
+  "चोर": {
+    "en": "thief",
+    "syn": [
+      "robber",
+      "burglar"
+    ]
+  },
+  "व्यक्ति": {
+    "en": "person",
+    "syn": [
+      "individual",
+      "human"
+    ]
+  },
+  "काम": {
+    "en": "work",
+    "syn": [
+      "task",
+      "job"
+    ]
+  },
+  "कुत्ता": {
+    "en": "dog",
+    "syn": [
+      "hound",
+      "canine"
+    ]
+  },
+  "माँ": {
+    "en": "mother",
+    "syn": [
+      "mom",
+      "parent"
+    ]
+  },
+  "राजा": {
+    "en": "king",
+    "syn": [
+      "ruler",
+      "monarch"
+    ]
+  },
+  "गाँव": {
+    "en": "village",
+    "syn": [
+      "hamlet",
+      "town"
+    ]
+  },
+  "आँख": {
+    "en": "eye",
+    "syn": [
+      "vision",
+      "organ"
+    ]
+  },
+  "ईश्वर": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "divine"
+    ]
+  },
+  "बाप": {
+    "en": "father",
+    "syn": [
+      "dad",
+      "parent"
+    ]
+  },
+  "खेत": {
+    "en": "field",
+    "syn": [
+      "land",
+      "acre"
+    ]
+  },
+  "दूध": {
+    "en": "milk",
+    "syn": [
+      "lactate",
+      "fluid"
+    ]
+  },
+  "रोटी": {
+    "en": "bread",
+    "syn": [
+      "food",
+      "loaf"
+    ]
+  },
+  "आग": {
+    "en": "fire",
+    "syn": [
+      "flame",
+      "blaze"
+    ]
+  },
+  "बैल": {
+    "en": "ox",
+    "syn": [
+      "bull",
+      "beast"
+    ]
+  },
+  "घोड़ा": {
+    "en": "horse",
+    "syn": [
+      "steed",
+      "mare"
+    ]
+  },
+  "भोजन": {
+    "en": "food",
+    "syn": [
+      "meal",
+      "grain"
+    ]
+  },
+  "मन": {
+    "en": "mind",
+    "syn": [
+      "heart",
+      "soul"
+    ]
+  },
+  "बनिया": {
+    "en": "merchant",
+    "syn": [
+      "trader",
+      "shopkeeper"
+    ]
+  },
+  "राम": {
+    "en": "ram",
+    "syn": [
+      "god",
+      "deity"
+    ]
+  },
+  "गाय": {
+    "en": "cow",
+    "syn": [
+      "cattle",
+      "beast"
+    ]
+  },
+  "पति": {
+    "en": "husband",
+    "syn": [
+      "spouse",
+      "mate"
+    ]
+  },
+  "लड़का": {
+    "en": "boy",
+    "syn": [
+      "child",
+      "son"
+    ]
+  },
+  "बहू": {
+    "en": "daughter-in-law",
+    "syn": [
+      "bride",
+      "wife"
+    ]
+  },
+  "खेती": {
+    "en": "farmer",
+    "syn": [
+      "peasant",
+      "cultivator"
+    ]
+  },
+  "बात": {
+    "en": "word",
+    "syn": [
+      "speech",
+      "talk"
+    ]
+  },
+  "कान": {
+    "en": "ear",
+    "syn": [
+      "hearing",
+      "organ"
+    ]
+  },
+  "पुत्र": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "पैसा": {
+    "en": "money",
+    "syn": [
+      "cash",
+      "coin"
+    ]
+  },
+  "घी": {
+    "en": "ghee",
+    "syn": [
+      "clarified butter",
+      "fat"
+    ]
+  },
+  "दिन": {
+    "en": "day",
+    "syn": [
+      "time",
+      "period"
+    ]
+  },
+  "ऊँट": {
+    "en": "camel",
+    "syn": [
+      "beast",
+      "dromedary"
+    ]
+  },
+  "साँप": {
+    "en": "snake",
+    "syn": [
+      "serpent",
+      "reptile"
+    ]
+  },
+  "बेटा": {
+    "en": "son",
+    "syn": [
+      "child",
+      "boy"
+    ]
+  },
+  "हाथी": {
+    "en": "elephant",
+    "syn": [
+      "beast",
+      "giant"
+    ]
+  },
+  "गुड़": {
+    "en": "jaggery",
+    "syn": [
+      "sugar",
+      "sweet"
+    ]
+  },
+  "पाँव": {
+    "en": "foot",
+    "syn": [
+      "leg",
+      "limb"
+    ]
+  },
+  "गधा": {
+    "en": "donkey",
+    "syn": [
+      "ass",
+      "beast"
+    ]
+  },
+  "भाई": {
+    "en": "brother",
+    "syn": [
+      "sibling",
+      "kin"
+    ]
+  },
+  "बिल्ली": {
+    "en": "cat",
+    "syn": [
+      "feline",
+      "kitten"
+    ]
+  },
+  "संसार": {
+    "en": "world",
+    "syn": [
+      "society",
+      "life"
+    ]
+  },
+  "तेल": {
+    "en": "oil",
+    "syn": [
+      "fat",
+      "grease"
+    ]
+  },
+  "भैंस": {
+    "en": "buffalo",
+    "syn": [
+      "cow",
+      "beast"
+    ]
+  },
+  "रात": {
+    "en": "night",
+    "syn": [
+      "evening",
+      "darkness"
+    ]
+  },
+  "भगवान": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "divine"
+    ]
+  },
+  "ब्राह्मण": {
+    "en": "brahmin",
+    "syn": [
+      "priest",
+      "caste"
+    ]
+  },
+  "माल": {
+    "en": "wealth",
+    "syn": [
+      "property",
+      "goods"
+    ]
+  },
+  "अंधा": {
+    "en": "blind",
+    "syn": [
+      "blindman",
+      "sightless"
+    ]
+  },
+  "दाँत": {
+    "en": "tooth",
+    "syn": [
+      "teeth",
+      "fang"
+    ]
+  },
+  "वस्तु": {
+    "en": "thing",
+    "syn": [
+      "object",
+      "matter"
+    ]
+  },
+  "बेटी": {
+    "en": "daughter",
+    "syn": [
+      "girl",
+      "child"
+    ]
+  },
+  "नाक": {
+    "en": "nose",
+    "syn": [
+      "snout",
+      "nostril"
+    ]
+  },
+  "बच्चे": {
+    "en": "child",
+    "syn": [
+      "offspring",
+      "baby"
+    ]
+  },
+  "खुदा": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "lord"
+    ]
+  },
+  "अन्न": {
+    "en": "food",
+    "syn": [
+      "grain",
+      "grist"
+    ]
+  },
+  "पत्थर": {
+    "en": "stone",
+    "syn": [
+      "rock",
+      "pebble"
+    ]
+  },
+  "सोना": {
+    "en": "gold",
+    "syn": [
+      "metal",
+      "treasure"
+    ]
+  },
+  "पूत": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "दिल": {
+    "en": "heart",
+    "syn": [
+      "mind",
+      "soul"
+    ]
+  },
+  "बादल": {
+    "en": "cloud",
+    "syn": [
+      "storm",
+      "sky"
+    ]
+  },
+  "कुआँ": {
+    "en": "well",
+    "syn": [
+      "pit",
+      "cistern"
+    ]
+  },
+  "ब्याह": {
+    "en": "marriage",
+    "syn": [
+      "wedding",
+      "union"
+    ]
+  },
+  "खाना": {
+    "en": "food",
+    "syn": [
+      "meal",
+      "dinner"
+    ]
+  },
+  "बच्चा": {
+    "en": "child",
+    "syn": [
+      "offspring",
+      "baby"
+    ]
+  },
+  "दुनिया": {
+    "en": "world",
+    "syn": [
+      "earth",
+      "universe"
+    ]
+  },
+  "मियाँ": {
+    "en": "husband",
+    "syn": [
+      "man",
+      "spouse"
+    ]
+  },
+  "मालिक": {
+    "en": "master",
+    "syn": [
+      "owner",
+      "lord"
+    ]
+  },
+  "भाग्य": {
+    "en": "fate",
+    "syn": [
+      "destiny",
+      "luck"
+    ]
+  },
+  "बाल": {
+    "en": "hair",
+    "syn": [
+      "lock",
+      "tress"
+    ]
+  },
+  "किसान": {
+    "en": "farmer",
+    "syn": [
+      "peasant",
+      "cultivator"
+    ]
+  },
+  "धान": {
+    "en": "grain",
+    "syn": [
+      "rice",
+      "crop"
+    ]
+  },
+  "चना": {
+    "en": "chickpea",
+    "syn": [
+      "bean",
+      "pulse"
+    ]
+  },
+  "सास": {
+    "en": "mother-in-law",
+    "syn": [
+      "in-law",
+      "relative"
+    ]
+  },
+  "आटा": {
+    "en": "flour",
+    "syn": [
+      "meal",
+      "dough"
+    ]
+  },
+  "मुंह": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "नौकर": {
+    "en": "servant",
+    "syn": [
+      "slave",
+      "worker"
+    ]
+  },
+  "साधु": {
+    "en": "saint",
+    "syn": [
+      "holy",
+      "ascetic"
+    ]
+  },
+  "वर्षा": {
+    "en": "rain",
+    "syn": [
+      "monsoon",
+      "shower"
+    ]
+  },
+  "लोग": {
+    "en": "people",
+    "syn": [
+      "folk",
+      "public"
+    ]
+  },
+  "रुपया": {
+    "en": "rupee",
+    "syn": [
+      "coin",
+      "money"
+    ]
+  },
+  "ससुराल": {
+    "en": "in-laws",
+    "syn": [
+      "home",
+      "house"
+    ]
+  },
+  "आँखें": {
+    "en": "eyes",
+    "syn": [
+      "sight",
+      "vision"
+    ]
+  },
+  "सुख": {
+    "en": "happiness",
+    "syn": [
+      "joy",
+      "bliss"
+    ]
+  },
+  "फल": {
+    "en": "fruit",
+    "syn": [
+      "produce",
+      "yield"
+    ]
+  },
+  "मित्र": {
+    "en": "friend",
+    "syn": [
+      "companion",
+      "ally"
+    ]
+  },
+  "गरीब": {
+    "en": "poor",
+    "syn": [
+      "pauper",
+      "beggar"
+    ]
+  },
+  "परिवार": {
+    "en": "family",
+    "syn": [
+      "household",
+      "clan"
+    ]
+  },
+  "सावन": {
+    "en": "monsoon",
+    "syn": [
+      "rain",
+      "season"
+    ]
+  },
+  "गेहूँ": {
+    "en": "wheat",
+    "syn": [
+      "grain",
+      "crop"
+    ]
+  },
+  "पेड़": {
+    "en": "tree",
+    "syn": [
+      "plant",
+      "wood"
+    ]
+  },
+  "घास": {
+    "en": "grass",
+    "syn": [
+      "herb",
+      "fodder"
+    ]
+  },
+  "जोरू": {
+    "en": "blind",
+    "syn": [
+      "none",
+      "none"
+    ]
+  },
+  "समय": {
+    "en": "time",
+    "syn": [
+      "season",
+      "moment"
+    ]
+  },
+  "जोगी": {
+    "en": "ascetic",
+    "syn": [
+      "yogi",
+      "hermit"
+    ]
+  },
+  "भूख": {
+    "en": "hunger",
+    "syn": [
+      "famine",
+      "starvation"
+    ]
+  },
+  "जल": {
+    "en": "water",
+    "syn": [
+      "liquid",
+      "fluid"
+    ]
+  },
+  "नाम": {
+    "en": "name",
+    "syn": [
+      "title",
+      "designation"
+    ]
+  },
+  "स्त्रियाँ": {
+    "en": "women",
+    "syn": [
+      "ladies",
+      "females"
+    ]
+  },
+  "कपड़े": {
+    "en": "clothes",
+    "syn": [
+      "garments",
+      "attire"
+    ]
+  },
+  "गुरु": {
+    "en": "teacher",
+    "syn": [
+      "guru",
+      "master"
+    ]
+  },
+  "पत्नी": {
+    "en": "wife",
+    "syn": [
+      "spouse",
+      "partner"
+    ]
+  },
+  "भीख": {
+    "en": "begging",
+    "syn": [
+      "alms",
+      "charity"
+    ]
+  },
+  "हल": {
+    "en": "plow",
+    "syn": [
+      "plough",
+      "cultivator"
+    ]
+  },
+  "लड़की": {
+    "en": "daughter",
+    "syn": [
+      "girl",
+      "child"
+    ]
+  },
+  "मूर्ख": {
+    "en": "fool",
+    "syn": [
+      "idiot",
+      "simpleton"
+    ]
+  },
+  "बकरी": {
+    "en": "goat",
+    "syn": [
+      "she-goat",
+      "animal"
+    ]
+  },
+  "औरत": {
+    "en": "woman",
+    "syn": [
+      "female",
+      "lady"
+    ]
+  },
+  "कौआ": {
+    "en": "crow",
+    "syn": [
+      "bird",
+      "raven"
+    ]
+  },
+  "गंगा": {
+    "en": "river",
+    "syn": [
+      "stream",
+      "waterway"
+    ]
+  },
+  "पैर": {
+    "en": "foot",
+    "syn": [
+      "leg",
+      "limb"
+    ]
+  },
+  "लाठी": {
+    "en": "stick",
+    "syn": [
+      "staff",
+      "cane"
+    ]
+  },
+  "पुरुष": {
+    "en": "man",
+    "syn": [
+      "male",
+      "human"
+    ]
+  },
+  "पान": {
+    "en": "betel",
+    "syn": [
+      "leaf",
+      "chewing"
+    ]
+  },
+  "मिट्टी": {
+    "en": "mud",
+    "syn": [
+      "clay",
+      "earth"
+    ]
+  },
+  "भूत": {
+    "en": "ghost",
+    "syn": [
+      "spirit",
+      "phantom"
+    ]
+  },
+  "गाँठ": {
+    "en": "knot",
+    "syn": [
+      "tie",
+      "loop"
+    ]
+  },
+  "चूल्हा": {
+    "en": "stove",
+    "syn": [
+      "hearth",
+      "fireplace"
+    ]
+  },
+  "मौत": {
+    "en": "death",
+    "syn": [
+      "end",
+      "demise"
+    ]
+  },
+  "भात": {
+    "en": "rice",
+    "syn": [
+      "grain",
+      "food"
+    ]
+  },
+  "जान": {
+    "en": "life",
+    "syn": [
+      "soul",
+      "being"
+    ]
+  },
+  "मर्द": {
+    "en": "man",
+    "syn": [
+      "male",
+      "person"
+    ]
+  },
+  "लकड़ी": {
+    "en": "stick",
+    "syn": [
+      "staff",
+      "cane"
+    ]
+  },
+  "फूल": {
+    "en": "flower",
+    "syn": [
+      "bloom",
+      "petal"
+    ]
+  },
+  "शेर": {
+    "en": "lion",
+    "syn": [
+      "beast",
+      "king"
+    ]
+  },
+  "पहाड़": {
+    "en": "mountain",
+    "syn": [
+      "hill",
+      "peak"
+    ]
+  },
+  "लड़के": {
+    "en": "boys",
+    "syn": [
+      "children",
+      "sons"
+    ]
+  },
+  "बुद्धि": {
+    "en": "wisdom",
+    "syn": [
+      "intelligence",
+      "mind"
+    ]
+  },
+  "विपत्ति": {
+    "en": "misfortune",
+    "syn": [
+      "calamity",
+      "trouble"
+    ]
+  },
+  "विद्या": {
+    "en": "knowledge",
+    "syn": [
+      "learning",
+      "education"
+    ]
+  },
+  "रोग": {
+    "en": "disease",
+    "syn": [
+      "illness",
+      "sickness"
+    ]
+  },
+  "शरीर": {
+    "en": "body",
+    "syn": [
+      "flesh",
+      "frame"
+    ]
+  },
+  "झूठ": {
+    "en": "lie",
+    "syn": [
+      "falsehood",
+      "untruth"
+    ]
+  },
+  "धोबी": {
+    "en": "washer",
+    "syn": [
+      "laundryman",
+      "cleaner"
+    ]
+  },
+  "धर्म": {
+    "en": "duty",
+    "syn": [
+      "religion",
+      "virtue"
+    ]
+  },
+  "दुख": {
+    "en": "sorrow",
+    "syn": [
+      "grief",
+      "pain"
+    ]
+  },
+  "आम": {
+    "en": "mango",
+    "syn": [
+      "fruit",
+      "tree"
+    ]
+  },
+  "माघ": {
+    "en": "month",
+    "syn": [
+      "period",
+      "time"
+    ]
+  },
+  "नमक": {
+    "en": "salt",
+    "syn": [
+      "mineral",
+      "seasoning"
+    ]
+  },
+  "दही": {
+    "en": "curd",
+    "syn": [
+      "yogurt",
+      "dairy"
+    ]
+  },
+  "पीठ": {
+    "en": "back",
+    "syn": [
+      "spine",
+      "rear"
+    ]
+  },
+  "गाड़ी": {
+    "en": "carriage",
+    "syn": [
+      "cart",
+      "vehicle"
+    ]
+  },
+  "हृदय": {
+    "en": "none",
+    "syn": []
+  },
+  "बीज": {
+    "en": "none",
+    "syn": []
+  },
+  "यार": {
+    "en": "friend",
+    "syn": [
+      "companion",
+      "ally"
+    ]
+  },
+  "पड़ोसी": {
+    "en": "neighbor",
+    "syn": [
+      "neighbour",
+      "adjacent"
+    ]
+  },
+  "टका": {
+    "en": "money",
+    "syn": [
+      "cash",
+      "coin"
+    ]
+  },
+  "दाना": {
+    "en": "grain",
+    "syn": [
+      "seed",
+      "kernel"
+    ]
+  },
+  "अनाज": {
+    "en": "grain",
+    "syn": [
+      "cereal",
+      "food"
+    ]
+  },
+  "दुश्मन": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "adversary"
+    ]
+  },
+  "नदी": {
+    "en": "river",
+    "syn": [
+      "stream",
+      "waterway"
+    ]
+  },
+  "रानी": {
+    "en": "queen",
+    "syn": [
+      "princess",
+      "royal"
+    ]
+  },
+  "मछली": {
+    "en": "none",
+    "syn": []
+  },
+  "दाल": {
+    "en": "lentil",
+    "syn": [
+      "pulse",
+      "bean"
+    ]
+  },
+  "देवता": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "divinity"
+    ]
+  },
+  "काल": {
+    "en": "time",
+    "syn": [
+      "era",
+      "age"
+    ]
+  },
+  "घड़ा": {
+    "en": "pot",
+    "syn": [
+      "jar",
+      "vessel"
+    ]
+  },
+  "तलवार": {
+    "en": "sword",
+    "syn": [
+      "blade",
+      "weapon"
+    ]
+  },
+  "खसम": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "rival"
+    ]
+  },
+  "भादों": {
+    "en": "none",
+    "syn": []
+  },
+  "पाप": {
+    "en": "sin",
+    "syn": [
+      "evil",
+      "wrong"
+    ]
+  },
+  "संतान": {
+    "en": "none",
+    "syn": []
+  },
+  "अक्ल": {
+    "en": "none",
+    "syn": []
+  },
+  "दाम": {
+    "en": "price",
+    "syn": [
+      "value",
+      "cost"
+    ]
+  },
+  "तेली": {
+    "en": "oilman",
+    "syn": [
+      "oil-presser",
+      "merchant"
+    ]
+  },
+  "लड्डू": {
+    "en": "sweet",
+    "syn": [
+      "ball",
+      "treat"
+    ]
+  },
+  "नौकरी": {
+    "en": "job",
+    "syn": [
+      "service",
+      "employment"
+    ]
+  },
+  "जेठ": {
+    "en": "none",
+    "syn": []
+  },
+  "घोड़ी": {
+    "en": "mare",
+    "syn": [
+      "horse",
+      "steed"
+    ]
+  },
+  "चावल": {
+    "en": "none",
+    "syn": []
+  },
+  "दुःख": {
+    "en": "sorrow",
+    "syn": [
+      "grief",
+      "pain"
+    ]
+  },
+  "धूप": {
+    "en": "sun",
+    "syn": [
+      "sunshine",
+      "heat"
+    ]
+  },
+  "कपास": {
+    "en": "cotton",
+    "syn": [
+      "fiber",
+      "plant"
+    ]
+  },
+  "दवा": {
+    "en": "medicine",
+    "syn": [
+      "cure",
+      "remedy"
+    ]
+  },
+  "दाढ़ी": {
+    "en": "beard",
+    "syn": [
+      "whiskers",
+      "facial-hair"
+    ]
+  },
+  "जग": {
+    "en": "world",
+    "syn": [
+      "earth",
+      "universe"
+    ]
+  },
+  "जाति": {
+    "en": "caste",
+    "syn": [
+      "class",
+      "group"
+    ]
+  },
+  "जाड़ा": {
+    "en": "winter",
+    "syn": [
+      "cold",
+      "season"
+    ]
+  },
+  "नाव": {
+    "en": "boat",
+    "syn": [
+      "ship",
+      "vessel"
+    ]
+  },
+  "धूल": {
+    "en": "none",
+    "syn": []
+  },
+  "भाँग": {
+    "en": "none",
+    "syn": []
+  },
+  "कौड़ी": {
+    "en": "none",
+    "syn": []
+  },
+  "मेहमान": {
+    "en": "guest",
+    "syn": [
+      "visitor",
+      "stranger"
+    ]
+  },
+  "नाई": {
+    "en": "barber",
+    "syn": [
+      "hairdresser",
+      "shaver"
+    ]
+  },
+  "कुम्हार": {
+    "en": "potter",
+    "syn": [
+      "ceramist",
+      "maker"
+    ]
+  },
+  "रस्सी": {
+    "en": "none",
+    "syn": []
+  },
+  "मुसलमान": {
+    "en": "none",
+    "syn": []
+  },
+  "लात": {
+    "en": "kick",
+    "syn": [
+      "blow",
+      "strike"
+    ]
+  },
+  "बाज़ार": {
+    "en": "none",
+    "syn": []
+  },
+  "पशु": {
+    "en": "animal",
+    "syn": [
+      "beast",
+      "creature"
+    ]
+  },
+  "सींग": {
+    "en": "horn",
+    "syn": [
+      "tusk",
+      "antler"
+    ]
+  },
+  "कपड़ा": {
+    "en": "clothes",
+    "syn": [
+      "garments",
+      "attire"
+    ]
+  },
+  "जूता": {
+    "en": "shoe",
+    "syn": [
+      "footwear",
+      "boot"
+    ]
+  },
+  "माँ-बाप": {
+    "en": "parents",
+    "syn": [
+      "folks",
+      "elders"
+    ]
+  },
+  "बड़े": {
+    "en": "elder",
+    "syn": [
+      "senior",
+      "veteran"
+    ]
+  },
+  "दान": {
+    "en": "charity",
+    "syn": [
+      "donation",
+      "gift"
+    ]
+  },
+  "जीवन": {
+    "en": "life",
+    "syn": [
+      "existence",
+      "living"
+    ]
+  },
+  "विष": {
+    "en": "poison",
+    "syn": [
+      "toxin",
+      "venom"
+    ]
+  },
+  "आकाश": {
+    "en": "sky",
+    "syn": [
+      "heavens",
+      "firmament"
+    ]
+  },
+  "चमार": {
+    "en": "shoe-maker",
+    "syn": [
+      "cobbler",
+      "leather-worker"
+    ]
+  },
+  "टाँग": {
+    "en": "leg",
+    "syn": [
+      "limb",
+      "thigh"
+    ]
+  },
+  "बंदर": {
+    "en": "monkey",
+    "syn": [
+      "ape",
+      "simian"
+    ]
+  },
+  "पूँछ": {
+    "en": "tail",
+    "syn": [
+      "appendage",
+      "rear"
+    ]
+  },
+  "राह": {
+    "en": "path",
+    "syn": [
+      "way",
+      "road"
+    ]
+  },
+  "मूसल": {
+    "en": "mace",
+    "syn": [
+      "club",
+      "bludgeon"
+    ]
+  },
+  "खीर": {
+    "en": "kheer",
+    "syn": [
+      "pudding",
+      "rice-porridge"
+    ]
+  },
+  "प्राण": {
+    "en": "life",
+    "syn": [
+      "soul",
+      "breath"
+    ]
+  },
+  "तन": {
+    "en": "body",
+    "syn": [
+      "flesh",
+      "frame"
+    ]
+  },
+  "उधार": {
+    "en": "loan",
+    "syn": [
+      "credit",
+      "debt"
+    ]
+  },
+  "शत्रु": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "adversary"
+    ]
+  },
+  "जीभ": {
+    "en": "tongue",
+    "syn": [
+      "speech",
+      "language"
+    ]
+  },
+  "बुढ़िया": {
+    "en": "old-woman",
+    "syn": [
+      "crone",
+      "matron"
+    ]
+  },
+  "हवा": {
+    "en": "wind",
+    "syn": [
+      "breeze",
+      "air"
+    ]
+  },
+  "गीत": {
+    "en": "song",
+    "syn": [
+      "melody",
+      "tune"
+    ]
+  },
+  "आषाढ़": {
+    "en": "monsoon",
+    "syn": [
+      "rainy-season",
+      "shower"
+    ]
+  },
+  "गला": {
+    "en": "throat",
+    "syn": [
+      "neck",
+      "gullet"
+    ]
+  },
+  "पिता": {
+    "en": "father",
+    "syn": [
+      "parent",
+      "sire"
+    ]
+  },
+  "कुतिया": {
+    "en": "bitch",
+    "syn": [
+      "female-dog",
+      "dog"
+    ]
+  },
+  "दिल्ली": {
+    "en": "delhi",
+    "syn": [
+      "capital",
+      "city"
+    ]
+  },
+  "माया": {
+    "en": "love",
+    "syn": [
+      "affection",
+      "attachment"
+    ]
+  },
+  "चींटी": {
+    "en": "ant",
+    "syn": [
+      "insect",
+      "bug"
+    ]
+  },
+  "बाँस": {
+    "en": "bamboo",
+    "syn": [
+      "reed",
+      "stalk"
+    ]
+  },
+  "जंगल": {
+    "en": "forest",
+    "syn": [
+      "jungle",
+      "woods"
+    ]
+  },
+  "अकाल": {
+    "en": "famine",
+    "syn": [
+      "scarcity",
+      "drought"
+    ]
+  },
+  "जाट": {
+    "en": "jatt",
+    "syn": [
+      "farmer",
+      "peasant"
+    ]
+  },
+  "कार्य": {
+    "en": "work",
+    "syn": [
+      "task",
+      "duty"
+    ]
+  },
+  "घोड़े": {
+    "en": "horse",
+    "syn": [
+      "steed",
+      "mount"
+    ]
+  },
+  "सूर्य": {
+    "en": "sun",
+    "syn": [
+      "star",
+      "solar"
+    ]
+  },
+  "ज़बान": {
+    "en": "tongue",
+    "syn": [
+      "speech",
+      "voice"
+    ]
+  },
+  "बीबी": {
+    "en": "wife",
+    "syn": [
+      "spouse",
+      "partner"
+    ]
+  },
+  "कसाई": {
+    "en": "butcher",
+    "syn": [
+      "slaughterer",
+      "meat-cutter"
+    ]
+  },
+  "दूल्हा": {
+    "en": "groom",
+    "syn": [
+      "bridegroom",
+      "husband"
+    ]
+  },
+  "भाड़": {
+    "en": "rent",
+    "syn": [
+      "lease",
+      "hire"
+    ]
+  },
+  "ज़मीन": {
+    "en": "land",
+    "syn": [
+      "soil",
+      "earth"
+    ]
+  },
+  "मक्खी": {
+    "en": "fly",
+    "syn": [
+      "insect",
+      "bug"
+    ]
+  },
+  "पंडित": {
+    "en": "pandit",
+    "syn": [
+      "scholar",
+      "priest"
+    ]
+  },
+  "कुत्ते": {
+    "en": "dog",
+    "syn": [
+      "canine",
+      "hound"
+    ]
+  },
+  "कर्म": {
+    "en": "deed",
+    "syn": [
+      "action",
+      "act"
+    ]
+  },
+  "प्रेम": {
+    "en": "love",
+    "syn": [
+      "affection",
+      "passion"
+    ]
+  },
+  "धरती": {
+    "en": "earth",
+    "syn": [
+      "ground",
+      "soil"
+    ]
+  },
+  "फ़सल": {
+    "en": "crop",
+    "syn": [
+      "harvest",
+      "yield"
+    ]
+  },
+  "लक्ष्मी": {
+    "en": "none",
+    "syn": []
+  },
+  "इज्जत": {
+    "en": "none",
+    "syn": []
+  },
+  "शैतान": {
+    "en": "devil",
+    "syn": [
+      "demon",
+      "fiend"
+    ]
+  },
+  "आसमान": {
+    "en": "sky",
+    "syn": [
+      "heaven",
+      "firmament"
+    ]
+  },
+  "ईंट": {
+    "en": "brick",
+    "syn": [
+      "tile",
+      "block"
+    ]
+  },
+  "चिड़िया": {
+    "en": "bird",
+    "syn": [
+      "sparrow",
+      "fowl"
+    ]
+  },
+  "रांड": {
+    "en": "prostitute",
+    "syn": [
+      "whore",
+      "harlot"
+    ]
+  },
+  "बारात": {
+    "en": "procession",
+    "syn": [
+      "cortege",
+      "entourage"
+    ]
+  },
+  "मेह": {
+    "en": "ant",
+    "syn": [
+      "insect",
+      "bug"
+    ]
+  },
+  "देह": {
+    "en": "body",
+    "syn": [
+      "corpse",
+      "frame"
+    ]
+  },
+  "फ़क़ीर": {
+    "en": "beggar",
+    "syn": [
+      "mendicant",
+      "pauper"
+    ]
+  },
+  "छाया": {
+    "en": "shadow",
+    "syn": [
+      "shade",
+      "silhouette"
+    ]
+  },
+  "मृत्यु": {
+    "en": "death",
+    "syn": [
+      "demise",
+      "end"
+    ]
+  },
+  "गोबर": {
+    "en": "dung",
+    "syn": [
+      "manure",
+      "excrement"
+    ]
+  },
+  "नीम": {
+    "en": "neem",
+    "syn": [
+      "margosa",
+      "tree"
+    ]
+  },
+  "बिजली": {
+    "en": "lightning",
+    "syn": [
+      "bolt",
+      "flash"
+    ]
+  },
+  "चूहा": {
+    "en": "rat",
+    "syn": [
+      "mouse",
+      "rodent"
+    ]
+  },
+  "चोरी": {
+    "en": "theft",
+    "syn": [
+      "stealing",
+      "robbery"
+    ]
+  },
+  "सिंह": {
+    "en": "lion",
+    "syn": [
+      "beast",
+      "tiger"
+    ]
+  },
+  "वर": {
+    "en": "husband",
+    "syn": [
+      "groom",
+      "spouse"
+    ]
+  },
+  "मोती": {
+    "en": "pearl",
+    "syn": [
+      "gem",
+      "jewel"
+    ]
+  },
+  "मुर्गी": {
+    "en": "hen",
+    "syn": [
+      "chicken",
+      "fowl"
+    ]
+  },
+  "वक्त": {
+    "en": "time",
+    "syn": [
+      "moment",
+      "hour"
+    ]
+  },
+  "खाट": {
+    "en": "cot",
+    "syn": [
+      "bed",
+      "couch"
+    ]
+  },
+  "थाली": {
+    "en": "plate",
+    "syn": [
+      "dish",
+      "bowl"
+    ]
+  },
+  "बल": {
+    "en": "strength",
+    "syn": [
+      "power",
+      "might"
+    ]
+  },
+  "चाँद": {
+    "en": "moon",
+    "syn": [
+      "lune",
+      "satellite"
+    ]
+  },
+  "पीर": {
+    "en": "saint",
+    "syn": [
+      "sage",
+      "holy man"
+    ]
+  },
+  "चक्की": {
+    "en": "mill",
+    "syn": [
+      "grinder",
+      "quern"
+    ]
+  },
+  "देश": {
+    "en": "none",
+    "syn": []
+  },
+  "दमड़ी": {
+    "en": "skin",
+    "syn": [
+      "hide",
+      "pelt"
+    ]
+  },
+  "स्वर्ग": {
+    "en": "heaven",
+    "syn": [
+      "paradise",
+      "sky"
+    ]
+  },
+  "दीपक": {
+    "en": "lamp",
+    "syn": [
+      "light",
+      "candle"
+    ]
+  },
+  "संपत्ति": {
+    "en": "none",
+    "syn": []
+  },
+  "छाती": {
+    "en": "chest",
+    "syn": [
+      "breast",
+      "bosom"
+    ]
+  },
+  "भूमि": {
+    "en": "land",
+    "syn": [
+      "soil",
+      "ground"
+    ]
+  },
+  "दुकान": {
+    "en": "shop",
+    "syn": [
+      "store",
+      "stall"
+    ]
+  },
+  "ज्ञान": {
+    "en": "knowledge",
+    "syn": [
+      "wisdom",
+      "learning"
+    ]
+  },
+  "शादी": {
+    "en": "none",
+    "syn": []
+  },
+  "बर्तन": {
+    "en": "none",
+    "syn": []
+  },
+  "सियार": {
+    "en": "jackal",
+    "syn": [
+      "fox",
+      "beast"
+    ]
+  },
+  "रंग": {
+    "en": "color",
+    "syn": [
+      "hue",
+      "tint"
+    ]
+  },
+  "विवाह": {
+    "en": "none",
+    "syn": []
+  },
+  "पगड़ी": {
+    "en": "turban",
+    "syn": [
+      "headgear",
+      "scarf"
+    ]
+  },
+  "ठाकुर": {
+    "en": "lord",
+    "syn": [
+      "master",
+      "chief"
+    ]
+  },
+  "होली": {
+    "en": "festival",
+    "syn": [
+      "celebration",
+      "holiday"
+    ]
+  },
+  "जवानी": {
+    "en": "youth",
+    "syn": [
+      "youthfulness",
+      "prime"
+    ]
+  },
+  "लड़ाई": {
+    "en": "fight",
+    "syn": [
+      "battle",
+      "quarrel"
+    ]
+  },
+  "हरि": {
+    "en": "god",
+    "syn": [
+      "deity",
+      "divine"
+    ]
+  },
+  "वेश्या": {
+    "en": "none",
+    "syn": []
+  }
+}

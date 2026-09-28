@@ -1,0 +1,2802 @@
+[
+  {
+    "en_idiom": "time after time",
+    "en_matched_meaning": "repeatedly or consistently; happening over and over again",
+    "zh_idiom": "接二连三",
+    "zh_matched_meaning": "连续不断地发生或出现",
+    "similarity": 0.801082968711853,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "lose ground (to someone or something)",
+    "en_matched_meaning": "to fall behind someone or something.",
+    "zh_idiom": "望尘莫及",
+    "zh_matched_meaning": "比喻远远落在后面。",
+    "similarity": 0.7165109515190125,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "keep something quiet",
+    "en_matched_meaning": "to keep something a secret.",
+    "zh_idiom": "守口如瓶",
+    "zh_matched_meaning": "保守秘密，不泄露出去",
+    "similarity": 0.7742765545845032,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "switch from something to something else",
+    "en_matched_meaning": "to change one’s choice from one thing to another.",
+    "zh_idiom": "反覆无常",
+    "zh_matched_meaning": "经常改变主意或态度",
+    "similarity": 0.7474445700645447,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "poise oneself for something",
+    "en_matched_meaning": "to get ready for something.",
+    "zh_idiom": "摩厉以需",
+    "zh_matched_meaning": "比喻做好准备，等待时机。",
+    "similarity": 0.7014819979667664,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "in a pinch",
+    "en_matched_meaning": "In an urgent or difficult situation; when no other solution is available",
+    "zh_idiom": "急中生智",
+    "zh_matched_meaning": "在紧急的情况下，能够迅速反应并找到聪明的解决办法",
+    "similarity": 0.7080335021018982,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "whack up",
+    "en_matched_meaning": "To gather together; to accumulate or come up with",
+    "zh_idiom": "百川归海",
+    "zh_matched_meaning": "形容众多事物汇聚到一起，归于一个总体或主题",
+    "similarity": 0.7154511213302612,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "brace of shakes",
+    "en_matched_meaning": "A very short time",
+    "zh_idiom": "一朝一夕",
+    "zh_matched_meaning": "短时间内；很短的时间",
+    "similarity": 0.7788206934928894,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "shoot straight",
+    "en_matched_meaning": "to be honest, direct, or straightforward in communication or behavior",
+    "zh_idiom": "打开天窗说亮话",
+    "zh_matched_meaning": "直截了当地讲话，坦白地说出真实的想法",
+    "similarity": 0.7419320940971375,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "like the clappers",
+    "en_matched_meaning": "to do something quickly or energetically",
+    "zh_idiom": "二话没说",
+    "zh_matched_meaning": "指很干脆地采取行动",
+    "similarity": 0.7169760465621948,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "carry off",
+    "en_matched_meaning": "To achieve (something); to succeed at (something)",
+    "zh_idiom": "无往不克",
+    "zh_matched_meaning": "比喻无论到哪里或做什么都能取得成功或克服困难",
+    "similarity": 0.7438592910766602,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "a den of iniquity",
+    "en_matched_meaning": "a place filled with criminal activity or wickedness.",
+    "zh_idiom": "鲍鱼之肆",
+    "zh_matched_meaning": "比喻坏人成堆的地方.",
+    "similarity": 0.7797999978065491,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "time after time",
+    "en_matched_meaning": "repeatedly or consistently; happening over and over again",
+    "zh_idiom": "几次三番",
+    "zh_matched_meaning": "多次，连续多次",
+    "similarity": 0.8130632638931274,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "call _ tune",
+    "en_matched_meaning": "to be in control or have authority over a situation or a group of people",
+    "zh_idiom": "股掌之上",
+    "zh_matched_meaning": "指掌握权力，控制整个局势的位置",
+    "similarity": 0.767724335193634,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "in a row",
+    "en_matched_meaning": "consecutively or continuously; without interruption or break",
+    "zh_idiom": "无尽无休",
+    "zh_matched_meaning": "形容事情没有止境，持续不断",
+    "similarity": 0.7069280743598938,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "go hand in hand",
+    "en_matched_meaning": "to be closely associated or connected with something, often occurring or existing together",
+    "zh_idiom": "息息相关",
+    "zh_matched_meaning": "互相关联，紧密相连",
+    "similarity": 0.8007038831710815,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "kiss someone's ring",
+    "en_matched_meaning": "To give respect or reverence to someone; to express servitude to someone",
+    "zh_idiom": "五体投地",
+    "zh_matched_meaning": "形容极度崇拜或敬佩，连连叩首以示谦卑和敬意",
+    "similarity": 0.7260067462921143,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "make an example of",
+    "en_matched_meaning": "To punish someone so as to give a warning to others",
+    "zh_idiom": "以儆效尤",
+    "zh_matched_meaning": "用惩罚别人的事情来警戒自己。",
+    "similarity": 0.8231246471405029,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "cheesed off",
+    "en_matched_meaning": "Annoyed, upset, angry",
+    "zh_idiom": "怫然不悦",
+    "zh_matched_meaning": "愤怒，很不愉快。",
+    "similarity": 0.7618033289909363,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "feel out",
+    "en_matched_meaning": "To attempt to ascertain a person's point of view, or the nature of a situation, by cautious and subtle means",
+    "zh_idiom": "听其言而观其行",
+    "zh_matched_meaning": "观察对方的言行，来了解他的真实意图",
+    "similarity": 0.7242862582206726,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "throw one's cap over the windmill",
+    "en_matched_meaning": "To act in a bizarre or eccentric manner",
+    "zh_idiom": "神头鬼脸",
+    "zh_matched_meaning": "做出怪异的表情或举止。形容人行为反常，莫名其妙。",
+    "similarity": 0.7357922196388245,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "time and (time) again",
+    "en_matched_meaning": "repeatedly; over and over (again).",
+    "zh_idiom": "层见叠出",
+    "zh_matched_meaning": "指接连不断地多次出现。",
+    "similarity": 0.7790349125862122,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "keep your cool",
+    "en_matched_meaning": "to remain calm and composed, especially in a challenging or stressful situation",
+    "zh_idiom": "不慌不忙",
+    "zh_matched_meaning": "保持冷静和稳定，面对困难或紧急情况",
+    "similarity": 0.8212754726409912,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "one could do it in one's sleep",
+    "en_matched_meaning": "Said of something that can be done very easily or effortlessly.",
+    "zh_idiom": "摧枯折腐",
+    "zh_matched_meaning": "比喻极容易做到。",
+    "similarity": 0.8040553331375122,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "put the toothpaste back in the tube",
+    "en_matched_meaning": "To revert a situation; to put things back as they were before something (usually an unwelcome thing) became a reality",
+    "zh_idiom": "光复旧物",
+    "zh_matched_meaning": "恢复古老的事物或状况",
+    "similarity": 0.7932699918746948,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "built different",
+    "en_matched_meaning": "Able to do things which others cannot; extremely talented or unusual",
+    "zh_idiom": "大显神通",
+    "zh_matched_meaning": "展示出非凡的才华、能力或技巧",
+    "similarity": 0.8079137206077576,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "stand tall",
+    "en_matched_meaning": "To behave in a brave, proud, or unyielding manner, without retreating from confrontation, danger, or adversity",
+    "zh_idiom": "劈风斩浪",
+    "zh_matched_meaning": "形容勇敢、奋勇向前，毫不畏惧困难和阻碍",
+    "similarity": 0.7138841152191162,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "shot to hell",
+    "en_matched_meaning": "to be very intoxicated due to drink or drugs.",
+    "zh_idiom": "酗酒滋事",
+    "zh_matched_meaning": "指因沉迷于酗酒而引发各种麻烦和问题",
+    "similarity": 0.7247791886329651,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "drop in the pond",
+    "en_matched_meaning": "A very small or insignificant amount; something of little importance",
+    "zh_idiom": "微不足道",
+    "zh_matched_meaning": "形容事物非常小，重要性不值得一提",
+    "similarity": 0.8574240803718567,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "better safe than sorry",
+    "en_matched_meaning": "to take precautions or be cautious in order to avoid potential problems or regrets later on",
+    "zh_idiom": "以防万一",
+    "zh_matched_meaning": "为了预防发生意外或不利的情况，在事前采取措施",
+    "similarity": 0.7247862815856934,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "go one's own way",
+    "en_matched_meaning": "To act on one's own or according to one's own wishes, without regard of the advice of others",
+    "zh_idiom": "我行我素",
+    "zh_matched_meaning": "按照自己的意愿行事，不受他人干扰或影响",
+    "similarity": 0.8011882901191711,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "apple of discord",
+    "en_matched_meaning": "a source of disagreement or anger; a cause of conflict or strife",
+    "zh_idiom": "拔剑论功",
+    "zh_matched_meaning": "指争论功劳激烈到几乎动武。",
+    "similarity": 0.7381992340087891,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "bust one's chops",
+    "en_matched_meaning": "To exert oneself",
+    "zh_idiom": "尽心竭力",
+    "zh_matched_meaning": "全力以赴，不遗余力地做某事",
+    "similarity": 0.700308620929718,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "war with someone",
+    "en_matched_meaning": "to fight or dispute with someone.",
+    "zh_idiom": "难解难分",
+    "zh_matched_meaning": "指双方争吵、斗争、比赛等相持不下，难以分开。",
+    "similarity": 0.7192954421043396,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "look down one’s nose at someone or something",
+    "en_matched_meaning": "to view someone or something as lowly or unworthy.",
+    "zh_idiom": "孤雏腐鼠",
+    "zh_matched_meaning": "比喻微贱而不值得一说的人或事物.",
+    "similarity": 0.7043916583061218,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "put one on one’s guard",
+    "en_matched_meaning": "to make one wary or cautious.",
+    "zh_idiom": "择地而蹈",
+    "zh_matched_meaning": "形容做事小心谨慎。",
+    "similarity": 0.7455636262893677,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "all ends up",
+    "en_matched_meaning": "Completely; totally",
+    "zh_idiom": "一干二净",
+    "zh_matched_meaning": "完全地，彻底地",
+    "similarity": 0.8331558704376221,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "dime's worth",
+    "en_matched_meaning": "An insignificant amount",
+    "zh_idiom": "微不足道",
+    "zh_matched_meaning": "微小得很，不值得一提。",
+    "similarity": 0.7695886492729187,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "a feather in one’s cap",
+    "en_matched_meaning": "an honor; a reward for something.",
+    "zh_idiom": "酬功给效",
+    "zh_matched_meaning": "指赏赐有功劳者。",
+    "similarity": 0.7054964900016785,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "pencil-neck",
+    "en_matched_meaning": "An insubstantial person; a weakling",
+    "zh_idiom": "老弱残兵",
+    "zh_matched_meaning": "比喻力量虚弱、不堪一击的人或事物",
+    "similarity": 0.723737895488739,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "to the hilt",
+    "en_matched_meaning": "to the maximum extent possible or to the greatest degree",
+    "zh_idiom": "竭尽全力",
+    "zh_matched_meaning": "用尽全部力量。",
+    "similarity": 0.7331517934799194,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "hew to something",
+    "en_matched_meaning": "to conform to a rule or principle.",
+    "zh_idiom": "蹈矩循规",
+    "zh_matched_meaning": "指遵守规矩。",
+    "similarity": 0.8103753328323364,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "fight tooth and nail",
+    "en_matched_meaning": "to fight or argue fiercely and with great determination",
+    "zh_idiom": "大打出手",
+    "zh_matched_meaning": "指争吵、争执等激烈的、非常激烈的斗争或战斗",
+    "similarity": 0.7408043146133423,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "day in, day out",
+    "en_matched_meaning": "Every day; daily; constantly or continuously (especially, of something that has become routine or monotonous)",
+    "zh_idiom": "三天两头",
+    "zh_matched_meaning": "隔一天，或几乎每天。形容经常、频繁。",
+    "similarity": 0.7335510849952698,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "drag out",
+    "en_matched_meaning": "to go on slowly for a very long time; to last a very long time.",
+    "zh_idiom": "地久天长",
+    "zh_matched_meaning": "形容时间很长，久久无穷",
+    "similarity": 0.7427929639816284,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "go on for an age",
+    "en_matched_meaning": "to continue for a very long time.",
+    "zh_idiom": "持之以恒",
+    "zh_matched_meaning": "长久坚持下去。",
+    "similarity": 0.8226088285446167,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "give one's all",
+    "en_matched_meaning": "To make the utmost effort; to contribute, using all of one's abilities and resources",
+    "zh_idiom": "拼死拼活",
+    "zh_matched_meaning": "用尽全部精力。",
+    "similarity": 0.7643987536430359,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "turn heads",
+    "en_matched_meaning": "To cause people to notice or be attracted to someone or something",
+    "zh_idiom": "招蜂引蝶",
+    "zh_matched_meaning": "比喻吸引别人的注意.",
+    "similarity": 0.8236408233642578,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "Speedy Gonzales",
+    "en_matched_meaning": "Someone who moves or acts exceptionally fast",
+    "zh_idiom": "三步两脚",
+    "zh_matched_meaning": "快速行走的样子。",
+    "similarity": 0.7893030047416687,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "in capital letters",
+    "en_matched_meaning": "Of someone or something, emphasizing notability, significance, or exemplary status",
+    "zh_idiom": "非同寻常",
+    "zh_matched_meaning": "形容人和事物很突出，不同于一般。",
+    "similarity": 0.7138527035713196,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "entrap someone (in something) (with something)",
+    "en_matched_meaning": "to use something to deceive someone into involvement in something.",
+    "zh_idiom": "偷天换日",
+    "zh_matched_meaning": "欺骗或瞒骗他人，换取利益的手段。",
+    "similarity": 0.7655190825462341,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "square off (for something)",
+    "en_matched_meaning": "to get ready for an argument or a fight.",
+    "zh_idiom": "厉兵秣马",
+    "zh_matched_meaning": "形容准备战斗。",
+    "similarity": 0.7718276381492615,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "take someone apart†",
+    "en_matched_meaning": "Inf. to criticize or defame someone or something.",
+    "zh_idiom": "发奸擿伏",
+    "zh_matched_meaning": "揭发隐秘的坏人坏事。",
+    "similarity": 0.7084090709686279,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "at all times",
+    "en_matched_meaning": "constantly; continuously.",
+    "zh_idiom": "日出不穷",
+    "zh_matched_meaning": "形容接连不断地出现。",
+    "similarity": 0.7300829887390137,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "come out in(to) the open with something",
+    "en_matched_meaning": "to make something known publicly.",
+    "zh_idiom": "公之于众",
+    "zh_matched_meaning": "将事情公开、公布给大众知道",
+    "similarity": 0.8123411536216736,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "all the time",
+    "en_matched_meaning": "repeatedly; habitually.",
+    "zh_idiom": "层出不穷",
+    "zh_matched_meaning": "不断出现，接连不断",
+    "similarity": 0.7416249513626099,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "in apple-pie order",
+    "en_matched_meaning": "neatly organized or arranged; in perfect order or condition",
+    "zh_idiom": "井井有序",
+    "zh_matched_meaning": "有条理，有秩序。",
+    "similarity": 0.8014224767684937,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "spit in the ocean",
+    "en_matched_meaning": "A very small or insignificant amount; something of little importance",
+    "zh_idiom": "鼠肝虫臂",
+    "zh_matched_meaning": "比喻极微小而无价值的东西。",
+    "similarity": 0.7512514591217041,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "cover up",
+    "en_matched_meaning": "To conceal or disguise",
+    "zh_idiom": "发隐擿伏",
+    "zh_matched_meaning": "揭露隐蔽的坏人坏事。",
+    "similarity": 0.7100056409835815,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "break one's duck",
+    "en_matched_meaning": "To do something for the first time",
+    "zh_idiom": "跃跃欲试",
+    "zh_matched_meaning": "渴望尝试或参与某事",
+    "similarity": 0.7233368754386902,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "interest someone in someone or something",
+    "en_matched_meaning": "to arouse the interest of someone in someone or something.",
+    "zh_idiom": "引人注目",
+    "zh_matched_meaning": "吸引人们注意。",
+    "similarity": 0.7536334991455078,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "have a mountain to climb",
+    "en_matched_meaning": "to face a difficult or challenging task or situation",
+    "zh_idiom": "昂首挺胸",
+    "zh_matched_meaning": "自信而坚定地面对困难或挑战",
+    "similarity": 0.7509560585021973,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "steaming (mad)",
+    "en_matched_meaning": "very angry; very mad; very upset.",
+    "zh_idiom": "火冒三丈",
+    "zh_matched_meaning": "非常生气或愤怒",
+    "similarity": 0.7349477410316467,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "high and low",
+    "en_matched_meaning": "Wholly; entirely",
+    "zh_idiom": "通前澈后",
+    "zh_matched_meaning": "全部，整个。",
+    "similarity": 0.738618791103363,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "soft",
+    "en_matched_meaning": "Lacking strength or resolve; not tough, wimpy",
+    "zh_idiom": "独木难支",
+    "zh_matched_meaning": "形容个人或者力量单薄，无法独自支撑或应付现实困境",
+    "similarity": 0.7026144862174988,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "have something on the ball",
+    "en_matched_meaning": "to have a particular amount of smartness or cleverness.",
+    "zh_idiom": "才高八斗",
+    "zh_matched_meaning": "形容一个人才华出众，非常聪明",
+    "similarity": 0.728078305721283,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "hold fast",
+    "en_matched_meaning": "To stubbornly resist assault, pressure or opposition, either physically or mentally",
+    "zh_idiom": "负隅顽抗",
+    "zh_matched_meaning": "因受压力或危险而坚持抵抗或反抗",
+    "similarity": 0.837499737739563,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "top to bottom",
+    "en_matched_meaning": "Completely; entirely",
+    "zh_idiom": "通前澈后",
+    "zh_matched_meaning": "全部，整个。",
+    "similarity": 0.8079823851585388,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "hear the grass grow",
+    "en_matched_meaning": "To be very aware or discerning; to pay attention to every small detail",
+    "zh_idiom": "先悉必具",
+    "zh_matched_meaning": "纤悉细微详尽。",
+    "similarity": 0.7056694030761719,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "quantum leap",
+    "en_matched_meaning": "a significant and often sudden advancement or improvement",
+    "zh_idiom": "大有起色",
+    "zh_matched_meaning": "形容情况或事物有很大的进展或改善",
+    "similarity": 0.8272625207901001,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "sheathe the sword",
+    "en_matched_meaning": "To end a battle; to make peace",
+    "zh_idiom": "休兵罢战",
+    "zh_matched_meaning": "停止或结束战争。",
+    "similarity": 0.8017266392707825,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "the vale of years",
+    "en_matched_meaning": "old age; the later years of a person's life",
+    "zh_idiom": "头童齿豁",
+    "zh_matched_meaning": "形容人衰老的状态.",
+    "similarity": 0.7404255867004395,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "to cut a long story short",
+    "en_matched_meaning": "To summarize or give a concise version of a story or explanation",
+    "zh_idiom": "一言以蔽之",
+    "zh_matched_meaning": "用一句话来概括或总结",
+    "similarity": 0.7538825869560242,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "that's all she wrote",
+    "en_matched_meaning": "Indicating an abrupt termination of a project, or of one’s hopes or plans.",
+    "zh_idiom": "瓦解冰消",
+    "zh_matched_meaning": "比喻完全消逝或彻底崩溃。",
+    "similarity": 0.7050506472587585,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "push the envelope",
+    "en_matched_meaning": "to go beyond the usual limits or boundaries; to take risks or be innovative in order to achieve a desired outcome",
+    "zh_idiom": "跃跃欲试",
+    "zh_matched_meaning": "渴望尝试或参与某事",
+    "similarity": 0.7023810744285583,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "live wire",
+    "en_matched_meaning": "an energetic, lively, or dynamic person",
+    "zh_idiom": "蹦蹦跳跳",
+    "zh_matched_meaning": "精力充沛的充满活力的样子",
+    "similarity": 0.7657119035720825,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "make light of",
+    "en_matched_meaning": "to treat or consider something as unimportant or insignificant",
+    "zh_idiom": "无关紧要",
+    "zh_matched_meaning": "不重要，不值得关注或考虑",
+    "similarity": 0.727082371711731,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "back into",
+    "en_matched_meaning": "To be forced into a situation by circumstances",
+    "zh_idiom": "勉为其难",
+    "zh_matched_meaning": "不情愿地勉强做某事",
+    "similarity": 0.7082025408744812,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "change one's battery",
+    "en_matched_meaning": "To alter the direction of attacking; to take a new approach to try to achieve an objective",
+    "zh_idiom": "更弦易辙",
+    "zh_matched_meaning": "比喻改变方法或态度。",
+    "similarity": 0.7206708192825317,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "come on strong",
+    "en_matched_meaning": "to seem aggressive; to impress people initially as very aggressive and assertive.",
+    "zh_idiom": "气冲牛斗",
+    "zh_matched_meaning": "形容气势凶猛，非常嚣张、咄咄逼人的样子",
+    "similarity": 0.7075183987617493,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "at all times",
+    "en_matched_meaning": "constantly; continuously.",
+    "zh_idiom": "浮想联翩",
+    "zh_matched_meaning": "比喻连续不断。",
+    "similarity": 0.7359594106674194,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "in fighting trim",
+    "en_matched_meaning": "in good preparation or condition; ready to confront a challenge",
+    "zh_idiom": "练兵秣马",
+    "zh_matched_meaning": "指作好战斗准备。",
+    "similarity": 0.7279809713363647,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "put one past",
+    "en_matched_meaning": "To deceive, trick, or fool (someone), especially by concealing something",
+    "zh_idiom": "侜张为幻",
+    "zh_matched_meaning": "用欺骗迷惑人。",
+    "similarity": 0.7506570816040039,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "choke someone up†",
+    "en_matched_meaning": "to cause someone to feel like starting to cry.",
+    "zh_idiom": "潸然泪下",
+    "zh_matched_meaning": "形容悲伤或感动而流下眼泪",
+    "similarity": 0.7266641855239868,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "lure someone or something in†",
+    "en_matched_meaning": "to entice someone or something into something or a place.",
+    "zh_idiom": "招蜂引蝶",
+    "zh_matched_meaning": "比喻吸引别人的注意.",
+    "similarity": 0.7639040946960449,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "lick log",
+    "en_matched_meaning": "A crucial or challenging moment; a moment in time when a decision must be made",
+    "zh_idiom": "十字路口",
+    "zh_matched_meaning": "比喻重要的抉择或关键时刻，需要做出决策或选择的地方",
+    "similarity": 0.7909289598464966,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "a mere trifle",
+    "en_matched_meaning": "a tiny bit; a small, unimportant matter; a small amount of money.",
+    "zh_idiom": "寸田尺宅",
+    "zh_matched_meaning": "比喻微薄的资产。",
+    "similarity": 0.7451397776603699,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "wet one's pants",
+    "en_matched_meaning": "To be afraid; especially, to be extremely afraid",
+    "zh_idiom": "悬心吊胆",
+    "zh_matched_meaning": "形容十分担心或害怕。",
+    "similarity": 0.7249618172645569,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "sea change",
+    "en_matched_meaning": "a significant and transformative shift; a profound and remarkable change",
+    "zh_idiom": "伐毛换髓",
+    "zh_matched_meaning": "比喻彻底改变原来的面貌。",
+    "similarity": 0.7030954360961914,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "wait for the ball to drop",
+    "en_matched_meaning": "to wait for something significant or anticipated to happen",
+    "zh_idiom": "坐以待旦",
+    "zh_matched_meaning": "等待某种重大事情的发生或结果的揭晓",
+    "similarity": 0.8018433451652527,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "hive of activity",
+    "en_matched_meaning": "an extremely busy or bustling place",
+    "zh_idiom": "大街小巷",
+    "zh_matched_meaning": "形容非常繁忙、拥挤的场所",
+    "similarity": 0.8126399517059326,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "jack-of-all-trades",
+    "en_matched_meaning": "a person who has a wide range of skills or abilities, but is not necessarily an expert in any particular one",
+    "zh_idiom": "七十二行",
+    "zh_matched_meaning": "形容一个人通晓多种技能或从事多种行业",
+    "similarity": 0.7753559350967407,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "boggle at something",
+    "en_matched_meaning": "to be amazed at something, particularly something large or surprising.",
+    "zh_idiom": "拍案惊奇",
+    "zh_matched_meaning": "形容听到或看到了非常令人惊讶的事情，失去了镇静的样子",
+    "similarity": 0.7382980585098267,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "make do",
+    "en_matched_meaning": "to manage with what is available or to make the best of a difficult situation",
+    "zh_idiom": "穷则思变",
+    "zh_matched_meaning": "在困难中寻求变通的办法",
+    "similarity": 0.7035926580429077,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "line of attack",
+    "en_matched_meaning": "An approach to addressing a problem",
+    "zh_idiom": "以汤止沸",
+    "zh_matched_meaning": "用某种方法或措施来解决问题，使问题得到缓解或稳定",
+    "similarity": 0.7439736723899841,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "put-up job",
+    "en_matched_meaning": "An attempt to trick, deceive, or con someone",
+    "zh_idiom": "声东击西",
+    "zh_matched_meaning": "通过制造干扰或转移目标的注意力来达到自己的目的",
+    "similarity": 0.7032659649848938,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "time and (time) again",
+    "en_matched_meaning": "repeatedly; over and over (again).",
+    "zh_idiom": "三番两次",
+    "zh_matched_meaning": "屡次，多次。",
+    "similarity": 0.775410532951355,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "worried sick (about someone or something)",
+    "en_matched_meaning": "very worried or anxious about someone or something.",
+    "zh_idiom": "惶惶不安",
+    "zh_matched_meaning": "非常担忧或不安的样子",
+    "similarity": 0.807054877281189,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "ride on the back of",
+    "en_matched_meaning": "To make use of; to take advantage of",
+    "zh_idiom": "将机就计",
+    "zh_matched_meaning": "无利用机会施行计谋。",
+    "similarity": 0.7020877599716187,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "a leopard can't change his spots",
+    "en_matched_meaning": "Someone cannot change their basic nature or character.",
+    "zh_idiom": "禀性难移",
+    "zh_matched_meaning": "本性难以改变。",
+    "similarity": 0.8071445226669312,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "fuck this",
+    "en_matched_meaning": "A dismissive expression of great indifference or nonchalance.",
+    "zh_idiom": "不凉不酸",
+    "zh_matched_meaning": "形容态度冷漠。",
+    "similarity": 0.7199349999427795,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "press on",
+    "en_matched_meaning": "To persist, to continue to advance",
+    "zh_idiom": "滔滔不竭",
+    "zh_matched_meaning": "源源不断，持续不停",
+    "similarity": 0.7325513958930969,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "raise hell (with something)",
+    "en_matched_meaning": "to cause trouble with something.",
+    "zh_idiom": "惹是招非",
+    "zh_matched_meaning": "引起麻烦之事。",
+    "similarity": 0.7660000324249268,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "at the helm (of something)",
+    "en_matched_meaning": "in the position of being in control of something.",
+    "zh_idiom": "股掌之上",
+    "zh_matched_meaning": "指掌握权力，控制整个局势的位置",
+    "similarity": 0.8147057294845581,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "give it one's best shot",
+    "en_matched_meaning": "To make one's best effort or attempt; to try as hard as possible",
+    "zh_idiom": "憔神悴力",
+    "zh_matched_meaning": "指竭尽心力。",
+    "similarity": 0.7821495532989502,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "fence in",
+    "en_matched_meaning": "To restrict freedom",
+    "zh_idiom": "按行自抑",
+    "zh_matched_meaning": "约束自己的行为。",
+    "similarity": 0.7001504302024841,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "run someone or something down†",
+    "en_matched_meaning": "to criticize or deride someone or something.",
+    "zh_idiom": "一棍子打死",
+    "zh_matched_meaning": "过于极端地打击或批评一个人或一件事情",
+    "similarity": 0.7003278732299805,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "make a believer (out) of someone",
+    "en_matched_meaning": "to convince someone decisively about something.",
+    "zh_idiom": "谆谆教导",
+    "zh_matched_meaning": "反复恳切地教导或劝告别人",
+    "similarity": 0.7090532779693604,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "on the lam",
+    "en_matched_meaning": "To be on the run or fleeing from the authorities",
+    "zh_idiom": "东躲西藏",
+    "zh_matched_meaning": "躲避或藏匿，避免被发现或被捕",
+    "similarity": 0.7550841569900513,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "run around",
+    "en_matched_meaning": "To be very busy doing many different things",
+    "zh_idiom": "日理万机",
+    "zh_matched_meaning": "形容工作繁忙，处理多项事务",
+    "similarity": 0.777754545211792,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "top to bottom",
+    "en_matched_meaning": "Completely; entirely",
+    "zh_idiom": "通前至后",
+    "zh_matched_meaning": "全部，整个。",
+    "similarity": 0.8079823851585388,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "plain as a pikestaff",
+    "en_matched_meaning": "very clear or obvious",
+    "zh_idiom": "显而易见",
+    "zh_matched_meaning": "非常明显或明确",
+    "similarity": 0.7562437057495117,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "have a change of heart",
+    "en_matched_meaning": "to change one’s attitude or decision, usually from a negative to a positive position.",
+    "zh_idiom": "改辙易途",
+    "zh_matched_meaning": "比喻改变方向、目标或做法。",
+    "similarity": 0.717984676361084,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "in capital letters",
+    "en_matched_meaning": "Of someone or something, emphasizing notability, significance, or exemplary status",
+    "zh_idiom": "鹤立鸡群",
+    "zh_matched_meaning": "比喻一个人的仪表或才能在周围一群人里显得很突出。",
+    "similarity": 0.7009268999099731,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "backwards and forwards",
+    "en_matched_meaning": "Thoroughly; completely, comprehensively",
+    "zh_idiom": "一干二净",
+    "zh_matched_meaning": "完全地，彻底地",
+    "similarity": 0.7747469544410706,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "hang tough",
+    "en_matched_meaning": "to remain strong and persevere in difficult or challenging situations",
+    "zh_idiom": "沐雨栉风",
+    "zh_matched_meaning": "形容经历困难或风雨考验后，更加坚强和有韧性",
+    "similarity": 0.720746636390686,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "behind closed doors",
+    "en_matched_meaning": "in secret; privately; hidden from public view",
+    "zh_idiom": "法不传六耳",
+    "zh_matched_meaning": "指极端秘密，不能让第三者知道。",
+    "similarity": 0.7568593621253967,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "watch this space",
+    "en_matched_meaning": "to wait for further information or developments about a particular situation or topic",
+    "zh_idiom": "坐以待旦",
+    "zh_matched_meaning": "等待某种重大事情的发生或结果的揭晓",
+    "similarity": 0.7445279955863953,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "off again, on again",
+    "en_matched_meaning": "uncertain; indecisive.",
+    "zh_idiom": "进退首鼠",
+    "zh_matched_meaning": "进退不定；犹豫不决。",
+    "similarity": 0.8165700435638428,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "herd cats",
+    "en_matched_meaning": "To attempt to control the uncontrollable; to attempt to manage a great many unruly factors or people to a single end",
+    "zh_idiom": "操纵自如",
+    "zh_matched_meaning": "能够熟练地控制或操作某种事物",
+    "similarity": 0.7155256867408752,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "till the cows come home",
+    "en_matched_meaning": "for a very long time; indefinitely",
+    "zh_idiom": "旷日长久",
+    "zh_matched_meaning": "历时长久，久经时日。",
+    "similarity": 0.7384524941444397,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "kindle-coal",
+    "en_matched_meaning": "A troublemaker",
+    "zh_idiom": "反间之计",
+    "zh_matched_meaning": "Using a strategy of sowing discord among enemies",
+    "similarity": 0.7034862637519836,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "face off",
+    "en_matched_meaning": "to prepare for a confrontation.",
+    "zh_idiom": "临阵磨枪",
+    "zh_matched_meaning": "比喻临到战场之前才急忙准备",
+    "similarity": 0.7096534967422485,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "grease someone's palm",
+    "en_matched_meaning": "to bribe or give money to someone in order to gain favor or influence",
+    "zh_idiom": "收买人心",
+    "zh_matched_meaning": "通过贿赂或其他手段取悦或控制他人，以达到自己的目的",
+    "similarity": 0.7586463689804077,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "in a bake",
+    "en_matched_meaning": "Very angry",
+    "zh_idiom": "大动肝火",
+    "zh_matched_meaning": "非常生气",
+    "similarity": 0.7853392362594604,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "lose one’s temper (at someone or something)",
+    "en_matched_meaning": "to become angry at someone or something.",
+    "zh_idiom": "火冒三丈",
+    "zh_matched_meaning": "非常生气或愤怒",
+    "similarity": 0.782355785369873,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "in perpetuity",
+    "en_matched_meaning": "for an indefinitely long period of time; eternally.",
+    "zh_idiom": "长此以往",
+    "zh_matched_meaning": "指事情长时间延续下去，不会有改变的意思",
+    "similarity": 0.7337217330932617,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "whistle for",
+    "en_matched_meaning": "To request or ask for with no chance of success",
+    "zh_idiom": "不情之请",
+    "zh_matched_meaning": "不情愿地提出请求",
+    "similarity": 0.7046380043029785,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "drop in the ocean",
+    "en_matched_meaning": "A very small or insignificant amount; something of little importance, especially an inconsequential effort or action as compared to a huge problem",
+    "zh_idiom": "不足为虑",
+    "zh_matched_meaning": "形容问题或困难微不足道，不必担忧或考虑",
+    "similarity": 0.7674487233161926,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "hang out",
+    "en_matched_meaning": "To be unyielding; to hold out",
+    "zh_idiom": "坚贞不渝",
+    "zh_matched_meaning": "形容人或事物坚定不移，始终如一",
+    "similarity": 0.7075946927070618,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "be one’s own man",
+    "en_matched_meaning": "to be someone who is not controlled by other people; to be an independent person.",
+    "zh_idiom": "独立自主",
+    "zh_matched_meaning": "自己独立地做主，不受他人控制",
+    "similarity": 0.7679066061973572,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "no biggie",
+    "en_matched_meaning": ": not important, not something to worry about",
+    "zh_idiom": "无关紧要",
+    "zh_matched_meaning": "不重要，不值得关注或考虑",
+    "similarity": 0.7563302516937256,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "take fire",
+    "en_matched_meaning": "To become excited or enthused about something",
+    "zh_idiom": "兴趣盎然",
+    "zh_matched_meaning": "兴趣浓厚或高涨",
+    "similarity": 0.7367283701896667,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "small change",
+    "en_matched_meaning": "A person or thing of little importance or value",
+    "zh_idiom": "微不足道",
+    "zh_matched_meaning": "形容事物非常小，重要性不值得一提",
+    "similarity": 0.7770777344703674,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "drop in the sea",
+    "en_matched_meaning": "A very small or insignificant amount; something of little importance",
+    "zh_idiom": "片鳞碎甲",
+    "zh_matched_meaning": "比喻事物的极小部分。",
+    "similarity": 0.7235163450241089,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "drag on",
+    "en_matched_meaning": "to go on slowly for a very long time; to last a very long time.",
+    "zh_idiom": "万古千秋",
+    "zh_matched_meaning": "形容延续的时间极久。",
+    "similarity": 0.7682272791862488,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "keep your head",
+    "en_matched_meaning": "to remain calm and think clearly, especially in a difficult or stressful situation",
+    "zh_idiom": "不慌不忙",
+    "zh_matched_meaning": "保持冷静和稳定，面对困难或紧急情况",
+    "similarity": 0.8092271089553833,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "silver-tongued",
+    "en_matched_meaning": "Articulate and charming in speech; eloquent; also, having a pleasant-sounding voice or way of speaking",
+    "zh_idiom": "雅人深致",
+    "zh_matched_meaning": "形容人的言谈举止不俗。",
+    "similarity": 0.7097082138061523,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "drop in the ocean",
+    "en_matched_meaning": "A very small or insignificant amount; something of little importance, especially an inconsequential effort or action as compared to a huge problem",
+    "zh_idiom": "微不足道",
+    "zh_matched_meaning": "形容事物非常小，重要性不值得一提",
+    "similarity": 0.8171164989471436,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "holy macaroni",
+    "en_matched_meaning": "An expression of surprise",
+    "zh_idiom": "惊愕失色",
+    "zh_matched_meaning": "形容十分吃惊.",
+    "similarity": 0.7135716080665588,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "leap at someone or something",
+    "en_matched_meaning": "to accept or choose someone or something eagerly.",
+    "zh_idiom": "心甘情愿",
+    "zh_matched_meaning": "愿意，乐意地接受或做某事",
+    "similarity": 0.7912750244140625,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "apples and oranges",
+    "en_matched_meaning": "two entities that are not similar. (Used especially in reference to comparisons of unlike things.)",
+    "zh_idiom": "大有径庭",
+    "zh_matched_meaning": "比喻相差很远，大不相同。",
+    "similarity": 0.7102007269859314,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "new York minute",
+    "en_matched_meaning": "An extremely short amount of time or moment; something that happens very quickly.",
+    "zh_idiom": "一夕一朝",
+    "zh_matched_meaning": "形容很短的时间。",
+    "similarity": 0.8300089836120605,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "lust for something",
+    "en_matched_meaning": "to desire something.",
+    "zh_idiom": "白首之心",
+    "zh_matched_meaning": "形容一直怀有某种愿望或决心",
+    "similarity": 0.7027926445007324,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "keep mum",
+    "en_matched_meaning": "to remain silent, not reveal information, or keep a secret",
+    "zh_idiom": "三缄其口",
+    "zh_matched_meaning": "形容对某事保持沉默，不说出来",
+    "similarity": 0.7751457691192627,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "understand the assignment",
+    "en_matched_meaning": "To excel at something; to demonstrate one's skill or talent",
+    "zh_idiom": "大显神通",
+    "zh_matched_meaning": "展示出非凡的才华、能力或技巧",
+    "similarity": 0.806136965751648,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "get it",
+    "en_matched_meaning": "Used to encourage someone, especially to indicate that someone is doing something well.",
+    "zh_idiom": "赏一劝众",
+    "zh_matched_meaning": "奖励一个人的先进事迹而鼓励好多人。",
+    "similarity": 0.7240639925003052,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "pour in(to something)",
+    "en_matched_meaning": "[for people or things] to continue to arrive in great numbers.",
+    "zh_idiom": "源源而来",
+    "zh_matched_meaning": "形容接连不断地到来。",
+    "similarity": 0.7771733999252319,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "flit from person to person",
+    "en_matched_meaning": "to move quickly from person to person or thing to thing.",
+    "zh_idiom": "流星赶月",
+    "zh_matched_meaning": "形容行动迅速。",
+    "similarity": 0.7068144083023071,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "one could do it in one's sleep",
+    "en_matched_meaning": "Said of something that can be done very easily or effortlessly.",
+    "zh_idiom": "易于反掌",
+    "zh_matched_meaning": "比喻事情非常容易做.",
+    "similarity": 0.8375550508499146,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "of sorts",
+    "en_matched_meaning": "Resembling; similar to; in a way; partially or not entirely",
+    "zh_idiom": "无独有偶",
+    "zh_matched_meaning": "表示两事或两人十分相似。",
+    "similarity": 0.7743327617645264,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "switch over (to someone or something)",
+    "en_matched_meaning": "to change to or choose someone or something else.",
+    "zh_idiom": "临敌易将",
+    "zh_matched_meaning": "易改变，变换。",
+    "similarity": 0.7535920739173889,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "backwards and forwards",
+    "en_matched_meaning": "Thoroughly; completely, comprehensively",
+    "zh_idiom": "面面俱到",
+    "zh_matched_meaning": "全面周到，毫不疏漏",
+    "similarity": 0.7551295757293701,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "out of the ordinary",
+    "en_matched_meaning": "Unusual or exceptional, especially for the better",
+    "zh_idiom": "异乎寻常",
+    "zh_matched_meaning": "与寻常不同，非常特殊或出众",
+    "similarity": 0.8097143173217773,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "bend the knee",
+    "en_matched_meaning": "To submit to or show reverence toward a divine power",
+    "zh_idiom": "敬若神明",
+    "zh_matched_meaning": "To respect and revere someone as if they were a deity.",
+    "similarity": 0.8228398561477661,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "pull a stunt (on someone)",
+    "en_matched_meaning": "to deceive someone; to play a trick on someone.",
+    "zh_idiom": "故作玄虚",
+    "zh_matched_meaning": "指故意玩弄花招，迷惑人，欺骗人。",
+    "similarity": 0.7246911525726318,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "clean someone's clock",
+    "en_matched_meaning": "To defeat someone decisively, in a physical fight or other competition or negotiation",
+    "zh_idiom": "敌力角气",
+    "zh_matched_meaning": "指以力气相斗。",
+    "similarity": 0.7156510353088379,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "make a splash",
+    "en_matched_meaning": "To attract attention or make a noticeable impact or impression.",
+    "zh_idiom": "引人注目",
+    "zh_matched_meaning": "吸引人们注意。",
+    "similarity": 0.8215392231941223,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "Don’t tell a soul.",
+    "en_matched_meaning": "Please do not tell anyone this gossip.",
+    "zh_idiom": "守口如瓶",
+    "zh_matched_meaning": "保守秘密，不泄露出去",
+    "similarity": 0.715711236000061,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "round the clock",
+    "en_matched_meaning": "continuous or non-stop, without interruption or pause",
+    "zh_idiom": "绵绵不断",
+    "zh_matched_meaning": "持续不断，没有间断",
+    "similarity": 0.8016218543052673,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "zero in",
+    "en_matched_meaning": "To concentrate or focus one's attention (on a task)",
+    "zh_idiom": "目不转睛",
+    "zh_matched_meaning": "形容注意力集中。",
+    "similarity": 0.7523604035377502,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "spread like wildfire",
+    "en_matched_meaning": "[for something] to spread rapidly.",
+    "zh_idiom": "无翼而飞",
+    "zh_matched_meaning": "比喻事物很快地传播开来。",
+    "similarity": 0.8003241419792175,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "storm in(to some place)",
+    "en_matched_meaning": "to burst into something or some place angrily.",
+    "zh_idiom": "火冒三丈",
+    "zh_matched_meaning": "非常生气或愤怒",
+    "similarity": 0.7615147829055786,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "have the guts",
+    "en_matched_meaning": "to have the courage or boldness to do something",
+    "zh_idiom": "斩关夺隘",
+    "zh_matched_meaning": "以强大的力量和决心克服障碍和困难",
+    "similarity": 0.7035053372383118,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "joined at the hip",
+    "en_matched_meaning": "Closely connected, as in an intimate friendship",
+    "zh_idiom": "淫朋密友",
+    "zh_matched_meaning": "亲近密切的朋友。",
+    "similarity": 0.8231148719787598,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "go on for an age",
+    "en_matched_meaning": "to continue for a very long time.",
+    "zh_idiom": "旷日引月",
+    "zh_matched_meaning": "历时长久。",
+    "similarity": 0.7662896513938904,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "go to bat for someone",
+    "en_matched_meaning": "to support or help someone.",
+    "zh_idiom": "相呴相济",
+    "zh_matched_meaning": "指互相救助。",
+    "similarity": 0.7213789224624634,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "hand someone his head",
+    "en_matched_meaning": "To destroy; to defeat utterly",
+    "zh_idiom": "焚巢荡穴",
+    "zh_matched_meaning": "比喻彻底摧毁.",
+    "similarity": 0.7580485343933105,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "make your blood boil",
+    "en_matched_meaning": "to cause extreme anger or frustration",
+    "zh_idiom": "火冒三丈",
+    "zh_matched_meaning": "非常生气或愤怒",
+    "similarity": 0.8031646609306335,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "vale of years",
+    "en_matched_meaning": "an old age; the later years of a person's life",
+    "zh_idiom": "骀背鹤发",
+    "zh_matched_meaning": "形容年老高寿.",
+    "similarity": 0.7248963117599487,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "catch someone’s eye",
+    "en_matched_meaning": "to appear and attract someone’s interest.",
+    "zh_idiom": "引人注目",
+    "zh_matched_meaning": "吸引人们注意。",
+    "similarity": 0.8142228722572327,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "run to",
+    "en_matched_meaning": "To be capable of reaching or achieving",
+    "zh_idiom": "水长船高",
+    "zh_matched_meaning": "形容物质条件或能力的提高与发展",
+    "similarity": 0.7017096877098083,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "at a stretch",
+    "en_matched_meaning": "continuously or for a long period of time without interruption or rest",
+    "zh_idiom": "绵绵不断",
+    "zh_matched_meaning": "持续不断，没有间断",
+    "similarity": 0.8043566942214966,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "blow a fuse",
+    "en_matched_meaning": "To lose one's temper; to become enraged",
+    "zh_idiom": "怒气冲天",
+    "zh_matched_meaning": "形容愤怒到了极点，情绪激动到无法控制的状态",
+    "similarity": 0.7077609300613403,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "cool as cucumber",
+    "en_matched_meaning": "to remain calm and composed, especially in difficult situations",
+    "zh_idiom": "处之泰然",
+    "zh_matched_meaning": "面对困境或困难时，能够保持冷静和镇定的态度",
+    "similarity": 0.8195998668670654,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "have a mountain to climb",
+    "en_matched_meaning": "to face a difficult or challenging task or situation",
+    "zh_idiom": "荆棘载途",
+    "zh_matched_meaning": "面对困难和阻碍，前进的道路充满艰辛和挑战",
+    "similarity": 0.7060304880142212,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "in the same breath",
+    "en_matched_meaning": "to mention or discuss two or more contrasting ideas or topics at the same time",
+    "zh_idiom": "同日而语",
+    "zh_matched_meaning": "同时讨论两个以上的相对立的问题",
+    "similarity": 0.8006752133369446,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "make an example of",
+    "en_matched_meaning": "To punish someone so as to give a warning to others",
+    "zh_idiom": "杀鸡骇猴",
+    "zh_matched_meaning": "比喻用惩罚一个人的办法来警告别的人。",
+    "similarity": 0.8100652694702148,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "empty the tank",
+    "en_matched_meaning": "To make the utmost effort; to contribute to the absolute limit of one's energy and abilities",
+    "zh_idiom": "饱以老拳",
+    "zh_matched_meaning": "形容用尽全力，竭尽所能",
+    "similarity": 0.761573314666748,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "sleeves from one's vest",
+    "en_matched_meaning": "Something non-existent; something of no value or cost",
+    "zh_idiom": "分毫不值",
+    "zh_matched_meaning": "形容没有任何价值。",
+    "similarity": 0.7471056580543518,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "pile the work on (someone)",
+    "en_matched_meaning": "to give someone a lot of work to do.",
+    "zh_idiom": "遗大投艰",
+    "zh_matched_meaning": "指交给重大艰难的任务。",
+    "similarity": 0.7438379526138306,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "keep on about",
+    "en_matched_meaning": "To harp on; to continue to speak or discuss something repeatedly",
+    "zh_idiom": "口口声声",
+    "zh_matched_meaning": "形容一次一次地说，或经常说。",
+    "similarity": 0.7115428447723389,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "partial",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "pull someone through (something)",
+    "en_matched_meaning": "to help someone survive or get through something difficult.",
+    "zh_idiom": "扶危救困",
+    "zh_matched_meaning": "帮助那些处于困境或危险中的人。",
+    "similarity": 0.8221648335456848,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "silver lining",
+    "en_matched_meaning": "an unexpected positive aspect or outcome within a negative or difficult situation",
+    "zh_idiom": "歪打正着",
+    "zh_matched_meaning": "When something goes wrong, but ends up working out unexpectedly in a positive way.",
+    "similarity": 0.842694878578186,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "go to ground",
+    "en_matched_meaning": "to hide or go into hiding, especially to avoid being caught or discovered",
+    "zh_idiom": "东躲西藏",
+    "zh_matched_meaning": "躲避或藏匿，避免被发现或被捕",
+    "similarity": 0.8333206176757812,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "look through",
+    "en_matched_meaning": "To appear or pretend not to see something or someone who is clearly visible",
+    "zh_idiom": "乔装打扮",
+    "zh_matched_meaning": "指进行伪装，隐藏身份。",
+    "similarity": 0.7219094038009644,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "breeze through (something)",
+    "en_matched_meaning": "to complete some task rapidly and easily.",
+    "zh_idiom": "一挥而就",
+    "zh_matched_meaning": "形容工作或写作等事情快速、轻松地完成",
+    "similarity": 0.8005273938179016,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "forever and a day",
+    "en_matched_meaning": "For a very long or seemingly endless time",
+    "zh_idiom": "天荒地老",
+    "zh_matched_meaning": "指经历的时间极久。",
+    "similarity": 0.7375839948654175,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "rocking horse shit",
+    "en_matched_meaning": "Something exceedingly rare or, more likely, nonexistent",
+    "zh_idiom": "希奇古怪",
+    "zh_matched_meaning": "奇怪而罕见。",
+    "similarity": 0.8128292560577393,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "shut one's eyes",
+    "en_matched_meaning": "To ignore or deliberately overlook",
+    "zh_idiom": "视而不见",
+    "zh_matched_meaning": "也指不理睬，看见了当作没看见。",
+    "similarity": 0.7230544686317444,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": null,
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "all ends up",
+    "en_matched_meaning": "Completely; totally",
+    "zh_idiom": "一心一意",
+    "zh_matched_meaning": "全心全意地，彻底地",
+    "similarity": 0.7581925392150879,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "no"
+    }
+  },
+  {
+    "en_idiom": "not have a care in the world",
+    "en_matched_meaning": "free and casual; unworried and carefree.",
+    "zh_idiom": "悠闲自在",
+    "zh_matched_meaning": "形容生活或工作无压力、无拘束，自由自在",
+    "similarity": 0.7324289083480835,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "lock into",
+    "en_matched_meaning": "To firmly commit to (something or someone)",
+    "zh_idiom": "至死不变",
+    "zh_matched_meaning": "坚定不移地始终如一",
+    "similarity": 0.7016346454620361,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "partial",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "take someone apart†",
+    "en_matched_meaning": "Inf. to criticize or defame someone or something.",
+    "zh_idiom": "口诛笔伐",
+    "zh_matched_meaning": "公开批评和攻击，通过口头和书面的方式表达对某人的不满或反对",
+    "similarity": 0.7319105863571167,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "cut and thrust",
+    "en_matched_meaning": "vigorous debate or competition",
+    "zh_idiom": "击搏挽裂",
+    "zh_matched_meaning": "形容争斗激烈.",
+    "similarity": 0.7869231104850769,
+    "bin": 2,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "out of sight, out of mind",
+    "en_matched_meaning": "Something or someone that is not seen or heard from is easily forgotten or ignored",
+    "zh_idiom": "过眼云烟",
+    "zh_matched_meaning": "事物或事情过去，很快就被人忘记了",
+    "similarity": 0.7110310792922974,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "partial"
+    }
+  },
+  {
+    "en_idiom": "household name",
+    "en_matched_meaning": "a person or thing that has become widely known or recognized",
+    "zh_idiom": "举世皆知",
+    "zh_matched_meaning": "指某事或某人已经为人们所广泛知晓、熟悉",
+    "similarity": 0.8082619309425354,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "yes",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "stir shit",
+    "en_matched_meaning": "To deliberately cause trouble",
+    "zh_idiom": "寻事生非",
+    "zh_matched_meaning": "故意找事情引起纷争或争端",
+    "similarity": 0.7335710525512695,
+    "bin": 1,
+    "labels": {
+      "Qwen3.5-27B-FP8": "yes",
+      "Qwen3.5-9B": "yes",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "fly off",
+    "en_matched_meaning": "To be spurred into ranting, shouting or otherwise agitated speaking",
+    "zh_idiom": "暴跳如雷",
+    "zh_matched_meaning": "非常生气，发脾气",
+    "similarity": 0.700518012046814,
+    "bin": 0,
+    "labels": {
+      "Qwen3.5-27B-FP8": "partial",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "yes"
+    }
+  },
+  {
+    "en_idiom": "cash in one's chips",
+    "en_matched_meaning": "To die",
+    "zh_idiom": "一箭双雕",
+    "zh_matched_meaning": "To kill two birds with one stone",
+    "similarity": 0.8097512125968933,
+    "bin": 3,
+    "labels": {
+      "Qwen3.5-27B-FP8": "no",
+      "Qwen3.5-9B": "no",
+      "aya-expanse-8b": "no",
+      "nemotron-3-ultra-550b": "no"
+    }
+  }
+]

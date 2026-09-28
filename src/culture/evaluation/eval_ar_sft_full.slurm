@@ -32,6 +32,7 @@ case "$RUN" in
   ar-base-native-sft) M="$CK/qwen3p5-9b-ar-base-native-sft" ;;
   ar-cpt-sft)        M="$CK/qwen3p5-9b-ar-cpt-sft" ;;
   ar-base-sft)       M="$CK/qwen3p5-9b-ar-base-sft" ;;
+  ar-unfiltered-native-sft) M="$CK/qwen3p5-9b-ar-unfiltered-native-sft" ;;
   *) echo "bad RUN=$RUN"; exit 1;;
 esac
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/ar

@@ -50,6 +50,23 @@ MC_TASKS = {"mabl", "milu", "global_piqa", "mmlu", "boolq",
 GEN_TASKS = {"idiomce"}
 
 
+def load_jsonl_mc(path: str, name: str, limit=None) -> MCTask:
+    """Pre-built MC task: one JSON object per line with qid, context, options, gold, meta.
+
+    Used for tasks built offline (IdiomAtlas-MC, symbolism probe). Options are
+    scored as continuations (acc_norm is the primary metric)."""
+    from culture.evaluation.tasks import MCExample
+    ex = []
+    for line in open(path, encoding="utf-8"):
+        if line.strip():
+            o = json.loads(line)
+            ex.append(MCExample(qid=o["qid"], context=o["context"], options=o["options"],
+                                gold=o["gold"], meta=o.get("meta", {})))
+    if limit:
+        ex = ex[:limit]
+    return MCTask(name=name, examples=ex, score_mode="continuation")
+
+
 # --------------------------------------------------------------------------- #
 # Multiple-choice evaluation
 # --------------------------------------------------------------------------- #
@@ -158,6 +175,8 @@ def build_parser() -> argparse.ArgumentParser:
                         "REQUIRED for scorable ChID — the HF mirror ships no gold.")
     p.add_argument("--chengyu_bench_dir", default=None,
                    help="Cloned sofyc/ChengyuBench repo dir (Chengyu-Bench).")
+    p.add_argument("--mc_jsonl_dir", default=None,
+                   help="Directory of pre-built MC tasks, selected as --tasks jsonl:<file stem>.")
     p.add_argument("--chengyu_bench_subtask", default="connotation",
                    choices=["connotation", "appropriateness"],
                    help="Chengyu-Bench binary subtask.")
@@ -227,7 +246,7 @@ def _split_csv(s: str) -> List[str]:
 def main():
     args = build_parser().parse_args()
     tasks = [t.strip() for t in args.tasks.split(",") if t.strip()]
-    unknown = set(tasks) - set(LOADERS)
+    unknown = {t for t in tasks if not t.startswith("jsonl:")} - set(LOADERS) - {"chengyu_bench_app"}
     if unknown:
         raise SystemExit(f"Unknown tasks: {sorted(unknown)}; choose from {sorted(LOADERS)}")
 
@@ -263,6 +282,14 @@ def main():
             task = LOADERS[name](args.chid_path, answer_path=args.chid_answer_path,
                                  num_fewshot=args.num_fewshot,
                                  limit=args.limit, seed=args.seed)
+        elif name.startswith("jsonl:"):
+            fn = name.split(":", 1)[1]
+            task = load_jsonl_mc(os.path.join(args.mc_jsonl_dir, fn + ".jsonl"), fn, limit=args.limit)
+        elif name == "chengyu_bench_app":
+            task = LOADERS["chengyu_bench"](args.chengyu_bench_dir, subtask="appropriateness",
+                                            num_fewshot=args.num_fewshot, limit=args.limit,
+                                            seed=args.seed)
+            task.name = "chengyu_bench_app"
         elif name == "chengyu_bench":
             task = LOADERS[name](args.chengyu_bench_dir,
                                  subtask=args.chengyu_bench_subtask,
@@ -293,15 +320,16 @@ def main():
                 kw["symmetric_only"] = args.kinayat_symmetric
             task = LOADERS[name](**kw)
 
-        if name in MC_TASKS:
+        if name in MC_TASKS or name.startswith("jsonl:") or name == "chengyu_bench_app":
             out = eval_mc(model, task, batch_size=args.batch_size)
         else:
             out = eval_gen(model, task, args)
 
         # Persist per-task detail + fold metrics into the summary.
-        with open(os.path.join(args.output_dir, f"{name}.json"), "w", encoding="utf-8") as f:
+        fname = name.replace("jsonl:", "")
+        with open(os.path.join(args.output_dir, f"{fname}.json"), "w", encoding="utf-8") as f:
             json.dump(out, f, ensure_ascii=False, indent=2)
-        summary["tasks"][name] = out["metrics"]
+        summary["tasks"][fname] = out["metrics"]
         logger.info("%s -> %s", name, json.dumps(out["metrics"], ensure_ascii=False))
 
     with open(os.path.join(args.output_dir, "summary.json"), "w", encoding="utf-8") as f:

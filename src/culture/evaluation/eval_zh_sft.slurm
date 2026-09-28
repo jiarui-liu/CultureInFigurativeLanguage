@@ -23,6 +23,7 @@ CK=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts
 case "$RUN" in
   zh-cpt-sft)  M="${CK}/qwen3p5-9b-zh-cpt-sft" ;;
   zh-base-sft) M="${CK}/qwen3p5-9b-zh-base-sft" ;;
+  zh-unfiltered-sft) M="${CK}/qwen3p5-9b-zh-unfiltered-sft" ;;
   *) echo bad RUN; exit 1;;
 esac
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/zh

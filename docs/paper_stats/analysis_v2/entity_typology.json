@@ -1,0 +1,932 @@
+{
+  "method": {
+    "entities": "all distinct normalized entities per language (mention = entity listed for an idiom, de-duplicated within idiom; English lower-cased, 6 slot fillers dropped; Arabic normalize_ar + article strip; Arabic entities from the GPT-5.4-enriched HF release)",
+    "annotator": "Qwen3.5-27B-FP8 (local vLLM, greedy, thinking off), 50 entities per call, one example idiom per entity",
+    "typology": "- animal: real or mythical animals (including birds, fish, insects) and their parts (horn, tail, feather).\n- body_mind: parts of the human body, bodily fluids and functions, the senses, and mental or emotional faculties (mind, soul as a faculty, memory).\n- nature_cosmos: the natural world and the cosmos: sky, heavenly bodies, weather, seasons and the day-night cycle, land and landforms, water bodies, fire, stone and minerals, plants, trees and flowers.\n- food_drink: foods, dishes, ingredients, drinks, and grains or produce considered as food.\n- kinship_social: people and social relations: kin terms, generic people (man, woman, child, people), social roles and ranks (king, master, servant, guest, neighbour, enemy, thief), social or ethnic groups, and named persons or characters.\n- religion_supernatural: gods, spirits, demons, ghosts, religious figures and functionaries, religious places, rituals, and sacred texts or concepts.\n- occupation_economy: money, wealth, prices, debt, trade, markets, work and labour, and people or activities defined by an occupation or trade.\n- artefact_household: man-made objects: tools, vessels, furniture, clothing and ornaments, buildings and their parts, roads, vehicles, weapons, and household items.\n- abstract_other: abstract nouns, actions, qualities, colours, numbers and measures, grammatical placeholders, and anything that fits none of the types above.",
+    "test": "Pearson chi-square test of independence, language x type, on mention counts; Cramer's V; adjusted standardized residuals"
+  },
+  "coverage": {
+    "en": {
+      "n_idioms": 21278,
+      "n_idioms_with_entity": 15075,
+      "distinct_entities": 4615,
+      "mentions": 18771,
+      "classified_entities": 4615,
+      "unclassified_entities": 0,
+      "mention_coverage_classified": 1.0,
+      "mention_coverage_top2000": 0.8513
+    },
+    "zh": {
+      "n_idioms": 27297,
+      "n_idioms_with_entity": 25605,
+      "distinct_entities": 11963,
+      "mentions": 47722,
+      "classified_entities": 11963,
+      "unclassified_entities": 0,
+      "mention_coverage_classified": 1.0,
+      "mention_coverage_top2000": 0.7134
+    },
+    "hi": {
+      "n_idioms": 16617,
+      "n_idioms_with_entity": 15816,
+      "distinct_entities": 8375,
+      "mentions": 42181,
+      "classified_entities": 8375,
+      "unclassified_entities": 0,
+      "mention_coverage_classified": 1.0,
+      "mention_coverage_top2000": 0.8028
+    },
+    "ar": {
+      "n_idioms": 10386,
+      "n_idioms_with_entity": 9113,
+      "distinct_entities": 7343,
+      "mentions": 17049,
+      "classified_entities": 7343,
+      "unclassified_entities": 0,
+      "mention_coverage_classified": 1.0,
+      "mention_coverage_top2000": 0.6614
+    }
+  },
+  "all_entities": {
+    "n_mentions": {
+      "en": 18771,
+      "zh": 47722,
+      "hi": 42181,
+      "ar": 17049
+    },
+    "counts": {
+      "en": {
+        "animal": 1348,
+        "body_mind": 3010,
+        "nature_cosmos": 1949,
+        "food_drink": 771,
+        "kinship_social": 1213,
+        "religion_supernatural": 435,
+        "occupation_economy": 717,
+        "artefact_household": 3684,
+        "abstract_other": 5644
+      },
+      "zh": {
+        "animal": 4064,
+        "body_mind": 7371,
+        "nature_cosmos": 8287,
+        "food_drink": 1105,
+        "kinship_social": 3977,
+        "religion_supernatural": 761,
+        "occupation_economy": 812,
+        "artefact_household": 5791,
+        "abstract_other": 15554
+      },
+      "hi": {
+        "animal": 3414,
+        "body_mind": 4369,
+        "nature_cosmos": 5885,
+        "food_drink": 3460,
+        "kinship_social": 9674,
+        "religion_supernatural": 2614,
+        "occupation_economy": 2755,
+        "artefact_household": 4987,
+        "abstract_other": 5023
+      },
+      "ar": {
+        "animal": 2055,
+        "body_mind": 2499,
+        "nature_cosmos": 2207,
+        "food_drink": 1220,
+        "kinship_social": 3177,
+        "religion_supernatural": 452,
+        "occupation_economy": 633,
+        "artefact_household": 1928,
+        "abstract_other": 2878
+      }
+    },
+    "shares": {
+      "en": {
+        "animal": 0.0718,
+        "body_mind": 0.1604,
+        "nature_cosmos": 0.1038,
+        "food_drink": 0.0411,
+        "kinship_social": 0.0646,
+        "religion_supernatural": 0.0232,
+        "occupation_economy": 0.0382,
+        "artefact_household": 0.1963,
+        "abstract_other": 0.3007
+      },
+      "zh": {
+        "animal": 0.0852,
+        "body_mind": 0.1545,
+        "nature_cosmos": 0.1737,
+        "food_drink": 0.0232,
+        "kinship_social": 0.0833,
+        "religion_supernatural": 0.0159,
+        "occupation_economy": 0.017,
+        "artefact_household": 0.1213,
+        "abstract_other": 0.3259
+      },
+      "hi": {
+        "animal": 0.0809,
+        "body_mind": 0.1036,
+        "nature_cosmos": 0.1395,
+        "food_drink": 0.082,
+        "kinship_social": 0.2293,
+        "religion_supernatural": 0.062,
+        "occupation_economy": 0.0653,
+        "artefact_household": 0.1182,
+        "abstract_other": 0.1191
+      },
+      "ar": {
+        "animal": 0.1205,
+        "body_mind": 0.1466,
+        "nature_cosmos": 0.1295,
+        "food_drink": 0.0716,
+        "kinship_social": 0.1863,
+        "religion_supernatural": 0.0265,
+        "occupation_economy": 0.0371,
+        "artefact_household": 0.1131,
+        "abstract_other": 0.1688
+      }
+    },
+    "chi2": 15835.301325908738,
+    "dof": 24,
+    "p": 0.0,
+    "cramers_v": 0.2049,
+    "pairwise_cramers_v": {
+      "en-zh": 0.1518,
+      "en-hi": 0.3225,
+      "en-ar": 0.2677,
+      "zh-hi": 0.3662,
+      "zh-ar": 0.2406,
+      "hi-ar": 0.1435
+    },
+    "adjusted_residuals": {
+      "en": {
+        "animal": -7.8,
+        "body_mind": 10.0,
+        "nature_cosmos": -17.7,
+        "food_drink": -7.4,
+        "kinship_social": -33.4,
+        "religion_supernatural": -8.8,
+        "occupation_economy": -0.7,
+        "artefact_household": 29.1,
+        "abstract_other": 24.4
+      },
+      "zh": {
+        "animal": -1.4,
+        "body_mind": 13.9,
+        "nature_cosmos": 21.9,
+        "food_drink": -36.2,
+        "kinship_social": -47.6,
+        "religion_supernatural": -27.5,
+        "occupation_economy": -31.6,
+        "artefact_household": -7.4,
+        "abstract_other": 62.1
+      },
+      "hi": {
+        "animal": -5.0,
+        "body_mind": -24.6,
+        "nature_cosmos": -4.5,
+        "food_drink": 33.9,
+        "kinship_social": 61.7,
+        "religion_supernatural": 39.1,
+        "occupation_economy": 34.1,
+        "artefact_household": -9.1,
+        "abstract_other": -67.1
+      },
+      "ar": {
+        "animal": 17.0,
+        "body_mind": 3.8,
+        "nature_cosmos": -6.5,
+        "food_drink": 12.3,
+        "kinship_social": 17.2,
+        "religion_supernatural": -5.7,
+        "occupation_economy": -1.4,
+        "artefact_household": -7.2,
+        "abstract_other": -20.9
+      }
+    }
+  },
+  "top2000_entities": {
+    "n_mentions": {
+      "en": 15979,
+      "zh": 34046,
+      "hi": 33865,
+      "ar": 11277
+    },
+    "counts": {
+      "en": {
+        "animal": 1189,
+        "body_mind": 2792,
+        "nature_cosmos": 1741,
+        "food_drink": 611,
+        "kinship_social": 863,
+        "religion_supernatural": 352,
+        "occupation_economy": 582,
+        "artefact_household": 3157,
+        "abstract_other": 4692
+      },
+      "zh": {
+        "animal": 3174,
+        "body_mind": 6182,
+        "nature_cosmos": 6415,
+        "food_drink": 741,
+        "kinship_social": 2538,
+        "religion_supernatural": 417,
+        "occupation_economy": 501,
+        "artefact_household": 3780,
+        "abstract_other": 10298
+      },
+      "hi": {
+        "animal": 2862,
+        "body_mind": 3884,
+        "nature_cosmos": 4778,
+        "food_drink": 2850,
+        "kinship_social": 7758,
+        "religion_supernatural": 2002,
+        "occupation_economy": 2282,
+        "artefact_household": 3780,
+        "abstract_other": 3669
+      },
+      "ar": {
+        "animal": 1546,
+        "body_mind": 1793,
+        "nature_cosmos": 1519,
+        "food_drink": 711,
+        "kinship_social": 2143,
+        "religion_supernatural": 336,
+        "occupation_economy": 417,
+        "artefact_household": 1045,
+        "abstract_other": 1767
+      }
+    },
+    "shares": {
+      "en": {
+        "animal": 0.0744,
+        "body_mind": 0.1747,
+        "nature_cosmos": 0.109,
+        "food_drink": 0.0382,
+        "kinship_social": 0.054,
+        "religion_supernatural": 0.022,
+        "occupation_economy": 0.0364,
+        "artefact_household": 0.1976,
+        "abstract_other": 0.2936
+      },
+      "zh": {
+        "animal": 0.0932,
+        "body_mind": 0.1816,
+        "nature_cosmos": 0.1884,
+        "food_drink": 0.0218,
+        "kinship_social": 0.0745,
+        "religion_supernatural": 0.0122,
+        "occupation_economy": 0.0147,
+        "artefact_household": 0.111,
+        "abstract_other": 0.3025
+      },
+      "hi": {
+        "animal": 0.0845,
+        "body_mind": 0.1147,
+        "nature_cosmos": 0.1411,
+        "food_drink": 0.0842,
+        "kinship_social": 0.2291,
+        "religion_supernatural": 0.0591,
+        "occupation_economy": 0.0674,
+        "artefact_household": 0.1116,
+        "abstract_other": 0.1083
+      },
+      "ar": {
+        "animal": 0.1371,
+        "body_mind": 0.159,
+        "nature_cosmos": 0.1347,
+        "food_drink": 0.063,
+        "kinship_social": 0.19,
+        "religion_supernatural": 0.0298,
+        "occupation_economy": 0.037,
+        "artefact_household": 0.0927,
+        "abstract_other": 0.1567
+      }
+    },
+    "chi2": 13737.322151128252,
+    "dof": 24,
+    "p": 0.0,
+    "cramers_v": 0.2194,
+    "pairwise_cramers_v": {
+      "en-zh": 0.1754,
+      "en-hi": 0.3452,
+      "en-ar": 0.3034,
+      "zh-hi": 0.3835,
+      "zh-ar": 0.2544,
+      "hi-ar": 0.1447
+    },
+    "adjusted_residuals": {
+      "en": {
+        "animal": -8.5,
+        "body_mind": 8.0,
+        "nature_cosmos": -16.6,
+        "food_drink": -8.4,
+        "kinship_social": -34.3,
+        "religion_supernatural": -8.3,
+        "occupation_economy": -2.4,
+        "artefact_household": 31.1,
+        "abstract_other": 26.7
+      },
+      "zh": {
+        "animal": 0.8,
+        "body_mind": 17.6,
+        "nature_cosmos": 23.4,
+        "food_drink": -31.1,
+        "kinship_social": -43.3,
+        "religion_supernatural": -26.4,
+        "occupation_economy": -29.5,
+        "artefact_household": -8.8,
+        "abstract_other": 49.3
+      },
+      "hi": {
+        "animal": -6.1,
+        "body_mind": -24.9,
+        "nature_cosmos": -6.9,
+        "food_drink": 33.7,
+        "kinship_social": 59.1,
+        "religion_supernatural": 34.2,
+        "occupation_economy": 32.4,
+        "artefact_household": -8.3,
+        "abstract_other": -59.4
+      },
+      "ar": {
+        "animal": 17.6,
+        "body_mind": 1.6,
+        "nature_cosmos": -5.4,
+        "food_drink": 5.8,
+        "kinship_social": 16.4,
+        "religion_supernatural": -1.8,
+        "occupation_economy": -1.6,
+        "artefact_household": -10.6,
+        "abstract_other": -16.0
+      }
+    }
+  },
+  "all_entities_excluding_abstract": {
+    "n_mentions": {
+      "en": 13127,
+      "zh": 32168,
+      "hi": 37158,
+      "ar": 14171
+    },
+    "counts": {
+      "en": {
+        "animal": 1348,
+        "body_mind": 3010,
+        "nature_cosmos": 1949,
+        "food_drink": 771,
+        "kinship_social": 1213,
+        "religion_supernatural": 435,
+        "occupation_economy": 717,
+        "artefact_household": 3684
+      },
+      "zh": {
+        "animal": 4064,
+        "body_mind": 7371,
+        "nature_cosmos": 8287,
+        "food_drink": 1105,
+        "kinship_social": 3977,
+        "religion_supernatural": 761,
+        "occupation_economy": 812,
+        "artefact_household": 5791
+      },
+      "hi": {
+        "animal": 3414,
+        "body_mind": 4369,
+        "nature_cosmos": 5885,
+        "food_drink": 3460,
+        "kinship_social": 9674,
+        "religion_supernatural": 2614,
+        "occupation_economy": 2755,
+        "artefact_household": 4987
+      },
+      "ar": {
+        "animal": 2055,
+        "body_mind": 2499,
+        "nature_cosmos": 2207,
+        "food_drink": 1220,
+        "kinship_social": 3177,
+        "religion_supernatural": 452,
+        "occupation_economy": 633,
+        "artefact_household": 1928
+      }
+    },
+    "shares": {
+      "en": {
+        "animal": 0.1027,
+        "body_mind": 0.2293,
+        "nature_cosmos": 0.1485,
+        "food_drink": 0.0587,
+        "kinship_social": 0.0924,
+        "religion_supernatural": 0.0331,
+        "occupation_economy": 0.0546,
+        "artefact_household": 0.2806
+      },
+      "zh": {
+        "animal": 0.1263,
+        "body_mind": 0.2291,
+        "nature_cosmos": 0.2576,
+        "food_drink": 0.0344,
+        "kinship_social": 0.1236,
+        "religion_supernatural": 0.0237,
+        "occupation_economy": 0.0252,
+        "artefact_household": 0.18
+      },
+      "hi": {
+        "animal": 0.0919,
+        "body_mind": 0.1176,
+        "nature_cosmos": 0.1584,
+        "food_drink": 0.0931,
+        "kinship_social": 0.2603,
+        "religion_supernatural": 0.0703,
+        "occupation_economy": 0.0741,
+        "artefact_household": 0.1342
+      },
+      "ar": {
+        "animal": 0.145,
+        "body_mind": 0.1763,
+        "nature_cosmos": 0.1557,
+        "food_drink": 0.0861,
+        "kinship_social": 0.2242,
+        "religion_supernatural": 0.0319,
+        "occupation_economy": 0.0447,
+        "artefact_household": 0.1361
+      }
+    },
+    "chi2": 9542.912477286907,
+    "dof": 21,
+    "p": 0.0,
+    "cramers_v": 0.1814,
+    "pairwise_cramers_v": {
+      "en-zh": 0.1801,
+      "en-hi": 0.2721,
+      "en-ar": 0.2501,
+      "zh-hi": 0.3094,
+      "zh-ar": 0.2095,
+      "hi-ar": 0.1386
+    },
+    "adjusted_residuals": {
+      "en": {
+        "animal": -3.9,
+        "body_mind": 16.3,
+        "nature_cosmos": -13.0,
+        "food_drink": -4.5,
+        "kinship_social": -29.8,
+        "religion_supernatural": -6.6,
+        "occupation_economy": 2.1,
+        "artefact_household": 36.5
+      },
+      "zh": {
+        "animal": 9.5,
+        "body_mind": 29.0,
+        "nature_cosmos": 38.1,
+        "food_drink": -29.3,
+        "kinship_social": -35.5,
+        "religion_supernatural": -21.9,
+        "occupation_economy": -25.6,
+        "artefact_household": 6.1
+      },
+      "hi": {
+        "animal": -16.1,
+        "body_mind": -39.1,
+        "nature_cosmos": -19.6,
+        "food_drink": 24.7,
+        "kinship_social": 46.4,
+        "religion_supernatural": 31.4,
+        "occupation_economy": 26.0,
+        "artefact_household": -23.2
+      },
+      "ar": {
+        "animal": 13.2,
+        "body_mind": -0.7,
+        "nature_cosmos": -11.2,
+        "food_drink": 9.3,
+        "kinship_social": 12.4,
+        "religion_supernatural": -7.7,
+        "occupation_economy": -3.6,
+        "artefact_household": -11.5
+      }
+    }
+  },
+  "idiom_level_share_with_type": {
+    "en": {
+      "n_idioms": 15075,
+      "animal": 0.0834,
+      "body_mind": 0.1877,
+      "nature_cosmos": 0.1223,
+      "food_drink": 0.0474,
+      "kinship_social": 0.0736,
+      "religion_supernatural": 0.0278,
+      "occupation_economy": 0.0458,
+      "artefact_household": 0.2294,
+      "abstract_other": 0.3451
+    },
+    "zh": {
+      "n_idioms": 25605,
+      "animal": 0.1126,
+      "body_mind": 0.2111,
+      "nature_cosmos": 0.2292,
+      "food_drink": 0.0362,
+      "kinship_social": 0.127,
+      "religion_supernatural": 0.0245,
+      "occupation_economy": 0.0293,
+      "artefact_household": 0.1755,
+      "abstract_other": 0.4284
+    },
+    "hi": {
+      "n_idioms": 15816,
+      "animal": 0.1725,
+      "body_mind": 0.219,
+      "nature_cosmos": 0.235,
+      "food_drink": 0.1676,
+      "kinship_social": 0.4144,
+      "religion_supernatural": 0.129,
+      "occupation_economy": 0.1394,
+      "artefact_household": 0.2517,
+      "abstract_other": 0.2358
+    },
+    "ar": {
+      "n_idioms": 9113,
+      "animal": 0.1923,
+      "body_mind": 0.2324,
+      "nature_cosmos": 0.1949,
+      "food_drink": 0.1082,
+      "kinship_social": 0.2841,
+      "religion_supernatural": 0.0458,
+      "occupation_economy": 0.0625,
+      "artefact_household": 0.1827,
+      "abstract_other": 0.2528
+    }
+  },
+  "top_entities_per_type": {
+    "en": {
+      "animal": [
+        "dog",
+        "horse",
+        "cat",
+        "ass",
+        "hair",
+        "fish",
+        "fly",
+        "animal"
+      ],
+      "body_mind": [
+        "head",
+        "hand",
+        "eye",
+        "heart",
+        "foot",
+        "mind",
+        "back",
+        "ear"
+      ],
+      "nature_cosmos": [
+        "day",
+        "water",
+        "fire",
+        "world",
+        "light",
+        "wind",
+        "ground",
+        "air"
+      ],
+      "food_drink": [
+        "egg",
+        "apple",
+        "nut",
+        "bread",
+        "salt",
+        "cake",
+        "butter",
+        "pie"
+      ],
+      "kinship_social": [
+        "man",
+        "boy",
+        "fool",
+        "job",
+        "oneself",
+        "mother",
+        "woman",
+        "party"
+      ],
+      "religion_supernatural": [
+        "hell",
+        "devil",
+        "god",
+        "heaven",
+        "ghost",
+        "cross",
+        "spell",
+        "angel"
+      ],
+      "occupation_economy": [
+        "money",
+        "work",
+        "business",
+        "penny",
+        "deal",
+        "buck",
+        "ticket",
+        "dime"
+      ],
+      "artefact_household": [
+        "home",
+        "stick",
+        "ball",
+        "hat",
+        "door",
+        "wall",
+        "book",
+        "card"
+      ],
+      "abstract_other": [
+        "time",
+        "word",
+        "life",
+        "line",
+        "end",
+        "side",
+        "point",
+        "shit"
+      ]
+    },
+    "zh": {
+      "animal": [
+        "马",
+        "虎",
+        "龙",
+        "鱼",
+        "凤",
+        "狗",
+        "鸡",
+        "狼"
+      ],
+      "body_mind": [
+        "心",
+        "目",
+        "口",
+        "手",
+        "气",
+        "头",
+        "意",
+        "情"
+      ],
+      "nature_cosmos": [
+        "天",
+        "风",
+        "地",
+        "水",
+        "日",
+        "云",
+        "山",
+        "火"
+      ],
+      "food_drink": [
+        "食",
+        "酒",
+        "肉",
+        "饭",
+        "谷",
+        "瓜",
+        "汤",
+        "豆"
+      ],
+      "kinship_social": [
+        "人",
+        "兵",
+        "家",
+        "国",
+        "民",
+        "朝",
+        "己",
+        "公"
+      ],
+      "religion_supernatural": [
+        "神",
+        "鬼",
+        "佛",
+        "怪",
+        "尸",
+        "阴",
+        "盟",
+        "地狱"
+      ],
+      "occupation_economy": [
+        "金",
+        "利",
+        "财",
+        "千金",
+        "铢",
+        "贫",
+        "市",
+        "价"
+      ],
+      "artefact_household": [
+        "门",
+        "衣",
+        "车",
+        "鼎",
+        "戈",
+        "书",
+        "刀",
+        "路"
+      ],
+      "abstract_other": [
+        "言",
+        "声",
+        "事",
+        "世",
+        "道",
+        "义",
+        "行",
+        "名"
+      ]
+    },
+    "hi": {
+      "animal": [
+        "कुत्ता",
+        "बैल",
+        "घोड़ा",
+        "गाय",
+        "ऊँट",
+        "साँप",
+        "हाथी",
+        "गधा"
+      ],
+      "body_mind": [
+        "हाथ",
+        "पेट",
+        "सिर",
+        "मुँह",
+        "आँख",
+        "मन",
+        "कान",
+        "पाँव"
+      ],
+      "nature_cosmos": [
+        "पानी",
+        "खेत",
+        "आग",
+        "दिन",
+        "रात",
+        "पत्थर",
+        "बादल",
+        "कुआँ"
+      ],
+      "food_drink": [
+        "दूध",
+        "रोटी",
+        "भोजन",
+        "घी",
+        "गुड़",
+        "तेल",
+        "अन्न",
+        "खाना"
+      ],
+      "kinship_social": [
+        "स्त्री",
+        "आदमी",
+        "मनुष्य",
+        "चोर",
+        "व्यक्ति",
+        "माँ",
+        "राजा",
+        "बाप"
+      ],
+      "religion_supernatural": [
+        "ईश्वर",
+        "राम",
+        "भगवान",
+        "खुदा",
+        "साधु",
+        "जोगी",
+        "नाम",
+        "गुरु"
+      ],
+      "occupation_economy": [
+        "धन",
+        "खेती",
+        "पैसा",
+        "माल",
+        "सोना",
+        "रुपया",
+        "भीख",
+        "धोबी"
+      ],
+      "artefact_household": [
+        "घर",
+        "गाँव",
+        "ससुराल",
+        "कपड़े",
+        "हल",
+        "लाठी",
+        "चूल्हा",
+        "गाड़ी"
+      ],
+      "abstract_other": [
+        "काम",
+        "बात",
+        "संसार",
+        "वस्तु",
+        "दुनिया",
+        "भाग्य",
+        "सुख",
+        "समय"
+      ]
+    },
+    "ar": {
+      "animal": [
+        "كلب",
+        "جمل",
+        "حمار",
+        "ذئب",
+        "غراب",
+        "كلاب",
+        "ضب",
+        "عير"
+      ],
+      "body_mind": [
+        "عين",
+        "قلب",
+        "راس",
+        "يد",
+        "ايده",
+        "راسه",
+        "ايد",
+        "لسان"
+      ],
+      "nature_cosmos": [
+        "ماء",
+        "ارض",
+        "نار",
+        "ميه",
+        "ليل",
+        "بحر",
+        "يوم",
+        "حجر"
+      ],
+      "food_drink": [
+        "عسل",
+        "لحم",
+        "بيضه",
+        "لقمه",
+        "عنب",
+        "حب",
+        "لبن",
+        "بصل"
+      ],
+      "kinship_social": [
+        "ناس",
+        "امه",
+        "قوم",
+        "ابن",
+        "راجل",
+        "رجال",
+        "عبد",
+        "ولد"
+      ],
+      "religion_supernatural": [
+        "الله",
+        "رب",
+        "ربي",
+        "جامع",
+        "رزق",
+        "شيطان",
+        "قبر",
+        "عيد"
+      ],
+      "occupation_economy": [
+        "مال",
+        "سوق",
+        "طبيب",
+        "دين",
+        "قاضي",
+        "فلوس",
+        "غني",
+        "فقر"
+      ],
+      "artefact_household": [
+        "دار",
+        "باب",
+        "بيت",
+        "عصا",
+        "حبل",
+        "طريق",
+        "سيف",
+        "قدر"
+      ],
+      "abstract_other": [
+        "دنيا",
+        "خير",
+        "شر",
+        "حق",
+        "امر",
+        "شيء",
+        "دهر",
+        "عيش"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1366 @@
+{
+  "n_entity_analyses": 516,
+  "min_idioms_per_side": 5,
+  "n_qualifying_as_analyzed": 327,
+  "n_qualifying_full": 304,
+  "mean_idioms_as_analyzed_all": {
+    "en": 13.5,
+    "zh": 15.03
+  },
+  "mean_idioms_with_fig_all": {
+    "en": 10.82,
+    "zh": 13.63
+  },
+  "n_glossed": {
+    "en": 5155,
+    "en_total": 5155,
+    "zh": 6261,
+    "zh_total": 6261
+  },
+  "settings": {
+    "gloss_as_analyzed": {
+      "n_entities": 327,
+      "centroid": {
+        "cross_same": {
+          "mean": 0.2246,
+          "ci95": [
+            0.2205,
+            0.2288
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.2658,
+          "ci95": [
+            0.2629,
+            0.2687
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.1614,
+          "ci95": [
+            0.1582,
+            0.1644
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": 0.1534,
+          "ci95": [
+            0.1506,
+            0.1562
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.253,
+          "ci95": [
+            0.2503,
+            0.2559
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.2569,
+          "ci95": [
+            0.254,
+            0.2597
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8899,
+        "divergence_index_aggregate": {
+          "value": 0.604,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "energy": {
+        "cross_same": {
+          "mean": 0.0888,
+          "ci95": [
+            0.0825,
+            0.0955
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.1417,
+          "ci95": [
+            0.1367,
+            0.147
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.0009,
+          "ci95": [
+            -0.0004,
+            0.0023
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": 0.0003,
+          "ci95": [
+            -0.001,
+            0.0016
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.1194,
+          "ci95": [
+            0.1142,
+            0.125
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.1365,
+          "ci95": [
+            0.1308,
+            0.1424
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8716,
+        "divergence_index_aggregate": {
+          "value": 0.583,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "chamfer": {
+        "cross_same": {
+          "mean": 0.4397,
+          "ci95": [
+            0.4354,
+            0.444
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.4729,
+          "ci95": [
+            0.471,
+            0.4748
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.3632,
+          "ci95": [
+            0.3562,
+            0.3699
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": 0.3499,
+          "ci95": [
+            0.3431,
+            0.3559
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.4647,
+          "ci95": [
+            0.4626,
+            0.4668
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.4617,
+          "ci95": [
+            0.4601,
+            0.4632
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8318,
+        "divergence_index_aggregate": {
+          "value": 0.732,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "full_set_calibration": {
+        "n_entities": 327,
+        "mean_percentile": 0.2241,
+        "median_percentile": 0.138,
+        "frac_true_pair_top1_a2b": 0.1315,
+        "frac_percentile_le_0.05": 0.2875,
+        "frac_percentile_le_0.10": 0.422,
+        "frac_percentile_ge_0.50": 0.1346,
+        "mean_centroid_div_true": 0.1444,
+        "mean_centroid_div_random": 0.1898
+      },
+      "spearman_vs_llm_shared_ratio": {
+        "centroid_div": [
+          -0.239,
+          1.2402921141744054e-05
+        ],
+        "percentile": [
+          -0.301,
+          2.716602443456657e-08
+        ]
+      }
+    },
+    "native_as_analyzed": {
+      "n_entities": 327,
+      "centroid": {
+        "cross_same": {
+          "mean": 0.3766,
+          "ci95": [
+            0.3726,
+            0.3809
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.41,
+          "ci95": [
+            0.4077,
+            0.4123
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.1632,
+          "ci95": [
+            0.1601,
+            0.1663
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": 0.1435,
+          "ci95": [
+            0.1413,
+            0.1458
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.2435,
+          "ci95": [
+            0.2407,
+            0.2466
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.238,
+          "ci95": [
+            0.2351,
+            0.2409
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8287,
+        "divergence_index_aggregate": {
+          "value": 0.872,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "energy": {
+        "cross_same": {
+          "mean": 0.2837,
+          "ci95": [
+            0.2772,
+            0.2901
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.3264,
+          "ci95": [
+            0.3211,
+            0.3317
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.0005,
+          "ci95": [
+            -0.0008,
+            0.0018
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": -0.0001,
+          "ci95": [
+            -0.0013,
+            0.0011
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.1043,
+          "ci95": [
+            0.0995,
+            0.1095
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.126,
+          "ci95": [
+            0.1208,
+            0.1314
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8104,
+        "divergence_index_aggregate": {
+          "value": 0.861,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "chamfer": {
+        "cross_same": {
+          "mean": 0.5381,
+          "ci95": [
+            0.5343,
+            0.5417
+          ],
+          "n": 327
+        },
+        "cross_diff": {
+          "mean": 0.5656,
+          "ci95": [
+            0.5641,
+            0.5671
+          ],
+          "n": 327
+        },
+        "within_same_a": {
+          "mean": 0.3698,
+          "ci95": [
+            0.3633,
+            0.3762
+          ],
+          "n": 246
+        },
+        "within_same_b": {
+          "mean": 0.3448,
+          "ci95": [
+            0.3391,
+            0.3497
+          ],
+          "n": 286
+        },
+        "within_diff_a": {
+          "mean": 0.4581,
+          "ci95": [
+            0.4559,
+            0.4603
+          ],
+          "n": 327
+        },
+        "within_diff_b": {
+          "mean": 0.4391,
+          "ci95": [
+            0.4373,
+            0.4409
+          ],
+          "n": 327
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.789,
+        "divergence_index_aggregate": {
+          "value": 0.879,
+          "n_entities": 213,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "full_set_calibration": {
+        "n_entities": 327,
+        "mean_percentile": 0.2423,
+        "median_percentile": 0.1794,
+        "frac_true_pair_top1_a2b": 0.0979,
+        "frac_percentile_le_0.05": 0.2569,
+        "frac_percentile_le_0.10": 0.3486,
+        "frac_percentile_ge_0.50": 0.1346,
+        "mean_centroid_div_true": 0.314,
+        "mean_centroid_div_random": 0.3515
+      },
+      "spearman_vs_llm_shared_ratio": {
+        "centroid_div": [
+          -0.238,
+          1.3844691392480573e-05
+        ],
+        "percentile": [
+          -0.273,
+          5.353568996548537e-07
+        ]
+      }
+    },
+    "native_full": {
+      "n_entities": 304,
+      "centroid": {
+        "cross_same": {
+          "mean": 0.3778,
+          "ci95": [
+            0.3737,
+            0.3822
+          ],
+          "n": 304
+        },
+        "cross_diff": {
+          "mean": 0.4133,
+          "ci95": [
+            0.4109,
+            0.4158
+          ],
+          "n": 304
+        },
+        "within_same_a": {
+          "mean": 0.162,
+          "ci95": [
+            0.1591,
+            0.1649
+          ],
+          "n": 228
+        },
+        "within_same_b": {
+          "mean": 0.1424,
+          "ci95": [
+            0.1402,
+            0.1446
+          ],
+          "n": 267
+        },
+        "within_diff_a": {
+          "mean": 0.2449,
+          "ci95": [
+            0.2418,
+            0.248
+          ],
+          "n": 304
+        },
+        "within_diff_b": {
+          "mean": 0.2403,
+          "ci95": [
+            0.2374,
+            0.2436
+          ],
+          "n": 304
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8355,
+        "divergence_index_aggregate": {
+          "value": 0.866,
+          "n_entities": 200,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "energy": {
+        "cross_same": {
+          "mean": 0.2876,
+          "ci95": [
+            0.2816,
+            0.2939
+          ],
+          "n": 304
+        },
+        "cross_diff": {
+          "mean": 0.3329,
+          "ci95": [
+            0.3277,
+            0.3388
+          ],
+          "n": 304
+        },
+        "within_same_a": {
+          "mean": 0.0001,
+          "ci95": [
+            -0.0012,
+            0.0014
+          ],
+          "n": 228
+        },
+        "within_same_b": {
+          "mean": 0.0002,
+          "ci95": [
+            -0.0008,
+            0.0012
+          ],
+          "n": 267
+        },
+        "within_diff_a": {
+          "mean": 0.107,
+          "ci95": [
+            0.1022,
+            0.1122
+          ],
+          "n": 304
+        },
+        "within_diff_b": {
+          "mean": 0.1305,
+          "ci95": [
+            0.1251,
+            0.1362
+          ],
+          "n": 304
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8487,
+        "divergence_index_aggregate": {
+          "value": 0.858,
+          "n_entities": 200,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "chamfer": {
+        "cross_same": {
+          "mean": 0.5384,
+          "ci95": [
+            0.5346,
+            0.5419
+          ],
+          "n": 304
+        },
+        "cross_diff": {
+          "mean": 0.5671,
+          "ci95": [
+            0.5657,
+            0.5687
+          ],
+          "n": 304
+        },
+        "within_same_a": {
+          "mean": 0.3676,
+          "ci95": [
+            0.361,
+            0.3736
+          ],
+          "n": 228
+        },
+        "within_same_b": {
+          "mean": 0.3409,
+          "ci95": [
+            0.3358,
+            0.3463
+          ],
+          "n": 267
+        },
+        "within_diff_a": {
+          "mean": 0.4583,
+          "ci95": [
+            0.4559,
+            0.4606
+          ],
+          "n": 304
+        },
+        "within_diff_b": {
+          "mean": 0.4397,
+          "ci95": [
+            0.4378,
+            0.4415
+          ],
+          "n": 304
+        },
+        "frac_entities_cross_same_lt_cross_diff": 0.8355,
+        "divergence_index_aggregate": {
+          "value": 0.877,
+          "n_entities": 200,
+          "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+        }
+      },
+      "full_set_calibration": {
+        "n_entities": 304,
+        "mean_percentile": 0.2363,
+        "median_percentile": 0.1749,
+        "frac_true_pair_top1_a2b": 0.1283,
+        "frac_percentile_le_0.05": 0.273,
+        "frac_percentile_le_0.10": 0.3618,
+        "frac_percentile_ge_0.50": 0.1316,
+        "mean_centroid_div_true": 0.3058,
+        "mean_centroid_div_random": 0.345
+      },
+      "spearman_vs_llm_shared_ratio": {
+        "centroid_div": [
+          -0.27,
+          1.8066413518216634e-06
+        ],
+        "percentile": [
+          -0.306,
+          5.232777730994209e-08
+        ]
+      }
+    }
+  },
+  "top15_most_divergent": [
+    {
+      "entity_en": "pound",
+      "entity_zh": "磅",
+      "n_en": 11,
+      "n_zh": 5,
+      "centroid_div": 0.3465,
+      "percentile": 0.887,
+      "rank_en2zh": 326,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "fall",
+      "entity_zh": "秋",
+      "n_en": 5,
+      "n_zh": 15,
+      "centroid_div": 0.2897,
+      "percentile": 0.814,
+      "rank_en2zh": 208,
+      "llm_shared": 3,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "intercourse",
+      "entity_zh": "交",
+      "n_en": 7,
+      "n_zh": 20,
+      "centroid_div": 0.2895,
+      "percentile": 0.859,
+      "rank_en2zh": 285,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "character",
+      "entity_zh": "字",
+      "n_en": 5,
+      "n_zh": 14,
+      "centroid_div": 0.2867,
+      "percentile": 0.876,
+      "rank_en2zh": 303,
+      "llm_shared": 2,
+      "llm_unique": 4
+    },
+    {
+      "entity_en": "tide",
+      "entity_zh": "海潮",
+      "n_en": 13,
+      "n_zh": 8,
+      "centroid_div": 0.2826,
+      "percentile": 0.785,
+      "rank_en2zh": 319,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "suit",
+      "entity_zh": "诉讼",
+      "n_en": 12,
+      "n_zh": 5,
+      "centroid_div": 0.2728,
+      "percentile": 0.874,
+      "rank_en2zh": 316,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "floor",
+      "entity_zh": "层",
+      "n_en": 10,
+      "n_zh": 8,
+      "centroid_div": 0.2724,
+      "percentile": 0.655,
+      "rank_en2zh": 323,
+      "llm_shared": 2,
+      "llm_unique": 4
+    },
+    {
+      "entity_en": "plate",
+      "entity_zh": "盘子",
+      "n_en": 11,
+      "n_zh": 14,
+      "centroid_div": 0.2714,
+      "percentile": 0.724,
+      "rank_en2zh": 155,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "sake",
+      "entity_zh": "故",
+      "n_en": 19,
+      "n_zh": 15,
+      "centroid_div": 0.2674,
+      "percentile": 0.87,
+      "rank_en2zh": 267,
+      "llm_shared": 2,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "bosom",
+      "entity_zh": "怀",
+      "n_en": 7,
+      "n_zh": 19,
+      "centroid_div": 0.2648,
+      "percentile": 0.782,
+      "rank_en2zh": 201,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "citizenry",
+      "entity_zh": "民",
+      "n_en": 5,
+      "n_zh": 15,
+      "centroid_div": 0.2592,
+      "percentile": 0.744,
+      "rank_en2zh": 196,
+      "llm_shared": 2,
+      "llm_unique": 4
+    },
+    {
+      "entity_en": "palm",
+      "entity_zh": "掌",
+      "n_en": 9,
+      "n_zh": 20,
+      "centroid_div": 0.2586,
+      "percentile": 0.713,
+      "rank_en2zh": 150,
+      "llm_shared": 2,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "rate",
+      "entity_zh": "率",
+      "n_en": 7,
+      "n_zh": 19,
+      "centroid_div": 0.2532,
+      "percentile": 0.755,
+      "rank_en2zh": 192,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "shoulder",
+      "entity_zh": "肩",
+      "n_en": 18,
+      "n_zh": 20,
+      "centroid_div": 0.2521,
+      "percentile": 0.828,
+      "rank_en2zh": 318,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "store",
+      "entity_zh": "店铺",
+      "n_en": 8,
+      "n_zh": 6,
+      "centroid_div": 0.2472,
+      "percentile": 0.822,
+      "rank_en2zh": 291,
+      "llm_shared": 2,
+      "llm_unique": 6
+    }
+  ],
+  "top15_least_divergent": [
+    {
+      "entity_en": "fire",
+      "entity_zh": "火",
+      "n_en": 16,
+      "n_zh": 20,
+      "centroid_div": 0.0564,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 4,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "heart",
+      "entity_zh": "心",
+      "n_en": 19,
+      "n_zh": 19,
+      "centroid_div": 0.0575,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 5,
+      "llm_unique": 8
+    },
+    {
+      "entity_en": "luck",
+      "entity_zh": "时运",
+      "n_en": 19,
+      "n_zh": 20,
+      "centroid_div": 0.0667,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 8
+    },
+    {
+      "entity_en": "law",
+      "entity_zh": "法",
+      "n_en": 18,
+      "n_zh": 17,
+      "centroid_div": 0.0684,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 4,
+      "llm_unique": 8
+    },
+    {
+      "entity_en": "friend",
+      "entity_zh": "友",
+      "n_en": 14,
+      "n_zh": 17,
+      "centroid_div": 0.0695,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "fury",
+      "entity_zh": "怒",
+      "n_en": 8,
+      "n_zh": 17,
+      "centroid_div": 0.0698,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "eye",
+      "entity_zh": "眼",
+      "n_en": 18,
+      "n_zh": 18,
+      "centroid_div": 0.0735,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "mouth",
+      "entity_zh": "嘴",
+      "n_en": 20,
+      "n_zh": 18,
+      "centroid_div": 0.0751,
+      "percentile": 0.003,
+      "rank_en2zh": 2,
+      "llm_shared": 4,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "ear",
+      "entity_zh": "耳朵",
+      "n_en": 17,
+      "n_zh": 19,
+      "centroid_div": 0.0758,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "wall",
+      "entity_zh": "墙壁",
+      "n_en": 17,
+      "n_zh": 18,
+      "centroid_div": 0.0764,
+      "percentile": 0.025,
+      "rank_en2zh": 13,
+      "llm_shared": 3,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "gold",
+      "entity_zh": "黄金",
+      "n_en": 20,
+      "n_zh": 18,
+      "centroid_div": 0.077,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "year",
+      "entity_zh": "年",
+      "n_en": 13,
+      "n_zh": 17,
+      "centroid_div": 0.0815,
+      "percentile": 0.002,
+      "rank_en2zh": 1,
+      "llm_shared": 4,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "bone",
+      "entity_zh": "骨头",
+      "n_en": 14,
+      "n_zh": 17,
+      "centroid_div": 0.0819,
+      "percentile": 0.006,
+      "rank_en2zh": 5,
+      "llm_shared": 3,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "secret",
+      "entity_zh": "秘密",
+      "n_en": 7,
+      "n_zh": 6,
+      "centroid_div": 0.0821,
+      "percentile": 0.0,
+      "rank_en2zh": 1,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "tongue",
+      "entity_zh": "舌",
+      "n_en": 20,
+      "n_zh": 19,
+      "centroid_div": 0.0827,
+      "percentile": 0.003,
+      "rank_en2zh": 2,
+      "llm_shared": 4,
+      "llm_unique": 8
+    }
+  ],
+  "top15_most_divergent_by_percentile": [
+    {
+      "entity_en": "pound",
+      "entity_zh": "磅",
+      "n_en": 11,
+      "n_zh": 5,
+      "centroid_div": 0.3465,
+      "percentile": 0.887,
+      "rank_en2zh": 326,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "character",
+      "entity_zh": "字",
+      "n_en": 5,
+      "n_zh": 14,
+      "centroid_div": 0.2867,
+      "percentile": 0.876,
+      "rank_en2zh": 303,
+      "llm_shared": 2,
+      "llm_unique": 4
+    },
+    {
+      "entity_en": "suit",
+      "entity_zh": "诉讼",
+      "n_en": 12,
+      "n_zh": 5,
+      "centroid_div": 0.2728,
+      "percentile": 0.874,
+      "rank_en2zh": 316,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "sake",
+      "entity_zh": "故",
+      "n_en": 19,
+      "n_zh": 15,
+      "centroid_div": 0.2674,
+      "percentile": 0.87,
+      "rank_en2zh": 267,
+      "llm_shared": 2,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "intercourse",
+      "entity_zh": "交",
+      "n_en": 7,
+      "n_zh": 20,
+      "centroid_div": 0.2895,
+      "percentile": 0.859,
+      "rank_en2zh": 285,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "shoulder",
+      "entity_zh": "肩",
+      "n_en": 18,
+      "n_zh": 20,
+      "centroid_div": 0.2521,
+      "percentile": 0.828,
+      "rank_en2zh": 318,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "store",
+      "entity_zh": "店铺",
+      "n_en": 8,
+      "n_zh": 6,
+      "centroid_div": 0.2472,
+      "percentile": 0.822,
+      "rank_en2zh": 291,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "fall",
+      "entity_zh": "秋",
+      "n_en": 5,
+      "n_zh": 15,
+      "centroid_div": 0.2897,
+      "percentile": 0.814,
+      "rank_en2zh": 208,
+      "llm_shared": 3,
+      "llm_unique": 7
+    },
+    {
+      "entity_en": "tide",
+      "entity_zh": "海潮",
+      "n_en": 13,
+      "n_zh": 8,
+      "centroid_div": 0.2826,
+      "percentile": 0.785,
+      "rank_en2zh": 319,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "bosom",
+      "entity_zh": "怀",
+      "n_en": 7,
+      "n_zh": 19,
+      "centroid_div": 0.2648,
+      "percentile": 0.782,
+      "rank_en2zh": 201,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "elbow",
+      "entity_zh": "肘",
+      "n_en": 10,
+      "n_zh": 14,
+      "centroid_div": 0.2115,
+      "percentile": 0.756,
+      "rank_en2zh": 266,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "rate",
+      "entity_zh": "率",
+      "n_en": 7,
+      "n_zh": 19,
+      "centroid_div": 0.2532,
+      "percentile": 0.755,
+      "rank_en2zh": 192,
+      "llm_shared": 2,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "chapter",
+      "entity_zh": "章",
+      "n_en": 5,
+      "n_zh": 18,
+      "centroid_div": 0.2428,
+      "percentile": 0.747,
+      "rank_en2zh": 254,
+      "llm_shared": 3,
+      "llm_unique": 6
+    },
+    {
+      "entity_en": "citizenry",
+      "entity_zh": "民",
+      "n_en": 5,
+      "n_zh": 15,
+      "centroid_div": 0.2592,
+      "percentile": 0.744,
+      "rank_en2zh": 196,
+      "llm_shared": 2,
+      "llm_unique": 4
+    },
+    {
+      "entity_en": "plate",
+      "entity_zh": "盘子",
+      "n_en": 11,
+      "n_zh": 14,
+      "centroid_div": 0.2714,
+      "percentile": 0.724,
+      "rank_en2zh": 155,
+      "llm_shared": 3,
+      "llm_unique": 6
+    }
+  ],
+  "llm_counts_all": {
+    "n": 516,
+    "mean_shared": 2.57,
+    "mean_en_unique": 2.81,
+    "mean_zh_unique": 3.06,
+    "mean_unique_total": 5.88,
+    "frac_unique_gt_shared": 0.9981,
+    "frac_en_unique_gt_shared": 0.2733,
+    "frac_each_side_unique_ge_shared": 0.969,
+    "shared_count_distribution": {
+      "0": 1,
+      "2": 238,
+      "3": 259,
+      "4": 17,
+      "5": 1
+    },
+    "mean_idioms_analyzed": {
+      "en": 13.5,
+      "zh": 15.03
+    }
+  },
+  "llm_counts_qualifying": {
+    "n": 327,
+    "mean_shared": 2.73,
+    "mean_en_unique": 2.93,
+    "mean_zh_unique": 3.17,
+    "mean_unique_total": 6.1,
+    "frac_unique_gt_shared": 1.0,
+    "frac_en_unique_gt_shared": 0.2385,
+    "frac_each_side_unique_ge_shared": 0.9541,
+    "shared_count_distribution": {
+      "2": 106,
+      "3": 203,
+      "4": 17,
+      "5": 1
+    },
+    "mean_idioms_analyzed": {
+      "en": 15.7,
+      "zh": 17.48
+    }
+  },
+  "entity_cases": {
+    "heart": {
+      "entity_zh": "心",
+      "direction": "en_to_zh",
+      "n_analyzed_en": 20,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 19,
+      "n_with_fig_zh": 19,
+      "n_full_kb_en": 127,
+      "n_full_kb_zh": 662,
+      "en_cluster": [
+        "heart"
+      ],
+      "zh_cluster": [
+        "心"
+      ],
+      "qualifies_ge5": true,
+      "scores": {
+        "gloss_as_analyzed": {
+          "centroid_div": 0.0575,
+          "pct_a2b": 0.0,
+          "pct_b2a": 0.0,
+          "rank_a2b": 1,
+          "mean_div_random": 0.1771,
+          "z": 2.7618,
+          "percentile": 0.0
+        },
+        "native_as_analyzed": {
+          "centroid_div": 0.2691,
+          "pct_a2b": 0.0031,
+          "pct_b2a": 0.0215,
+          "rank_a2b": 2,
+          "mean_div_random": 0.3533,
+          "z": 2.4281,
+          "percentile": 0.0123
+        },
+        "native_full": {
+          "centroid_div": 0.2392,
+          "pct_a2b": 0.0033,
+          "pct_b2a": 0.0,
+          "rank_a2b": 2,
+          "mean_div_random": 0.3203,
+          "z": 2.3328,
+          "percentile": 0.0017
+        }
+      }
+    },
+    "dog": {
+      "entity_zh": "犬",
+      "direction": "en_to_zh",
+      "n_analyzed_en": 20,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 18,
+      "n_with_fig_zh": 20,
+      "n_full_kb_en": 80,
+      "n_full_kb_zh": 149,
+      "en_cluster": [
+        "dog"
+      ],
+      "zh_cluster": [
+        "犬",
+        "狗"
+      ],
+      "qualifies_ge5": true,
+      "scores": {
+        "gloss_as_analyzed": {
+          "centroid_div": 0.0948,
+          "pct_a2b": 0.0276,
+          "pct_b2a": 0.0,
+          "rank_a2b": 10,
+          "mean_div_random": 0.1529,
+          "z": 1.3949,
+          "percentile": 0.0138
+        },
+        "native_as_analyzed": {
+          "centroid_div": 0.3074,
+          "pct_a2b": 0.3712,
+          "pct_b2a": 0.0307,
+          "rank_a2b": 122,
+          "mean_div_random": 0.3202,
+          "z": 0.3771,
+          "percentile": 0.2009
+        },
+        "native_full": {
+          "centroid_div": 0.2668,
+          "pct_a2b": 0.1551,
+          "pct_b2a": 0.0165,
+          "rank_a2b": 48,
+          "mean_div_random": 0.3,
+          "z": 1.0016,
+          "percentile": 0.0858
+        }
+      }
+    },
+    "moon": {
+      "entity_zh": "玉盘",
+      "direction": "en_to_zh",
+      "n_analyzed_en": 15,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 15,
+      "n_with_fig_zh": 18,
+      "n_full_kb_en": 15,
+      "n_full_kb_zh": 168,
+      "en_cluster": [
+        "moon"
+      ],
+      "zh_cluster": [
+        "冰轮",
+        "太阴",
+        "寒月",
+        "明月",
+        "月",
+        "月亮",
+        "朗月",
+        "玉盘",
+        "玉轮",
+        "皓月",
+        "银盘"
+      ],
+      "qualifies_ge5": true,
+      "scores": {
+        "gloss_as_analyzed": {
+          "centroid_div": 0.1444,
+          "pct_a2b": 0.1779,
+          "pct_b2a": 0.3067,
+          "rank_a2b": 59,
+          "mean_div_random": 0.1828,
+          "z": 0.9204,
+          "percentile": 0.2423
+        },
+        "native_as_analyzed": {
+          "centroid_div": 0.3305,
+          "pct_a2b": 0.273,
+          "pct_b2a": 0.2822,
+          "rank_a2b": 90,
+          "mean_div_random": 0.3485,
+          "z": 0.5631,
+          "percentile": 0.2776
+        },
+        "native_full": {
+          "centroid_div": 0.3109,
+          "pct_a2b": 0.1221,
+          "pct_b2a": 0.2706,
+          "rank_a2b": 38,
+          "mean_div_random": 0.3454,
+          "z": 1.0812,
+          "percentile": 0.1964
+        }
+      }
+    },
+    "dragon": {
+      "entity_zh": "龙",
+      "direction": "zh_to_en",
+      "n_analyzed_en": 2,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 2,
+      "n_with_fig_zh": 20,
+      "n_full_kb_en": 2,
+      "n_full_kb_zh": 193,
+      "en_cluster": [
+        "chinese dragon",
+        "dragon"
+      ],
+      "zh_cluster": [
+        "龙"
+      ],
+      "qualifies_ge5": false,
+      "scores": {}
+    },
+    "phoenix": {
+      "entity_zh": "凤",
+      "direction": "zh_to_en",
+      "n_analyzed_en": 1,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 1,
+      "n_with_fig_zh": 17,
+      "n_full_kb_en": 1,
+      "n_full_kb_zh": 131,
+      "en_cluster": [
+        "phoenix",
+        "phoenix bird"
+      ],
+      "zh_cluster": [
+        "凤"
+      ],
+      "qualifies_ge5": false,
+      "scores": {}
+    },
+    "turtle": {
+      "entity_zh": "龟",
+      "direction": "zh_to_en",
+      "n_analyzed_en": 3,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 3,
+      "n_with_fig_zh": 19,
+      "n_full_kb_en": 3,
+      "n_full_kb_zh": 20,
+      "en_cluster": [
+        "turtle",
+        "turtles"
+      ],
+      "zh_cluster": [
+        "龟"
+      ],
+      "qualifies_ge5": false,
+      "scores": {}
+    },
+    "red": {
+      "entity_zh": "红",
+      "direction": "zh_to_en",
+      "n_analyzed_en": 4,
+      "n_analyzed_zh": 20,
+      "n_with_fig_en": 4,
+      "n_with_fig_zh": 19,
+      "n_full_kb_en": 4,
+      "n_full_kb_zh": 19,
+      "en_cluster": [
+        "red"
+      ],
+      "zh_cluster": [
+        "红"
+      ],
+      "qualifies_ge5": false,
+      "scores": {}
+    }
+  }
+}

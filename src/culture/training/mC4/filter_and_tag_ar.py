@@ -325,8 +325,8 @@ def stream_corpus(dataset: str, config: Optional[str], split: str,
         # via the generic "parquet" builder (the fineweb-2 builder is config-based
         # and rejects data_files -> "BuilderConfig 'default' not found"). Repo-
         # relative paths are turned into hf:// URLs so no config is needed.
-        hf_files = [p if p.startswith("hf://") else f"hf://datasets/{dataset}/{p}"
-                    for p in data_files]
+        hf_files = [p if (p.startswith("hf://") or os.path.exists(p))
+                    else f"hf://datasets/{dataset}/{p}" for p in data_files]
         ds = load_dataset("parquet", data_files=hf_files, split=split, streaming=True,
                           token=os.environ.get("HF_TOKEN"))
     else:

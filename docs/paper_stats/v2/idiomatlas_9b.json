@@ -1,0 +1,205 @@
+{
+ "ar_seen": {
+  "base": 42.0,
+  "unfiltered": 43.2,
+  "untagged": 46.7,
+  "cpt": 68.3,
+  "cpt-unfiltered": [
+   25.2,
+   [
+    20.8,
+    29.5
+   ],
+   0.0
+  ],
+  "cpt-base": [
+   26.3,
+   [
+    22.0,
+    30.7
+   ],
+   0.0
+  ],
+  "cpt-untagged": [
+   21.7,
+   [
+    17.8,
+    25.3
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   3.5,
+   [
+    0.5,
+    6.5
+   ],
+   0.0314
+  ]
+ },
+ "ar_unseen": {
+  "base": 37.8,
+  "unfiltered": 36.8,
+  "untagged": 40.0,
+  "cpt": 32.5,
+  "cpt-unfiltered": [
+   -4.3,
+   [
+    -7.8,
+    -0.8
+   ],
+   0.0221
+  ],
+  "cpt-base": [
+   -5.3,
+   [
+    -9.5,
+    -1.2
+   ],
+   0.0159
+  ],
+  "cpt-untagged": [
+   -7.5,
+   [
+    -10.5,
+    -4.5
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   3.2,
+   [
+    0.3,
+    6.0
+   ],
+   0.0422
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.404,
+  "seen_distractor_share": 0.415,
+  "cpt_wrong_pick_seen_share": 0.457
+ },
+ "hi_seen": {
+  "base": 36.2,
+  "unfiltered": 50.5,
+  "untagged": 56.7,
+  "cpt": 75.8,
+  "cpt-unfiltered": [
+   25.3,
+   [
+    21.7,
+    29.0
+   ],
+   0.0
+  ],
+  "cpt-base": [
+   39.7,
+   [
+    35.0,
+    44.3
+   ],
+   0.0
+  ],
+  "cpt-untagged": [
+   19.2,
+   [
+    15.8,
+    22.5
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   6.2,
+   [
+    3.3,
+    9.0
+   ],
+   0.0
+  ]
+ },
+ "hi_unseen": {
+  "base": 38.8,
+  "unfiltered": 52.3,
+  "untagged": 53.3,
+  "cpt": 53.8,
+  "cpt-unfiltered": [
+   1.5,
+   [
+    -2.0,
+    5.0
+   ],
+   0.4437
+  ],
+  "cpt-base": [
+   15.0,
+   [
+    10.2,
+    19.8
+   ],
+   0.0
+  ],
+  "cpt-untagged": [
+   0.5,
+   [
+    -2.3,
+    3.3
+   ],
+   0.8199
+  ],
+  "untagged-unf": [
+   1.0,
+   [
+    -1.7,
+    3.7
+   ],
+   0.5386
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.161,
+  "seen_distractor_share": 0.135,
+  "cpt_wrong_pick_seen_share": 0.148
+ },
+ "zh_seen": {
+  "base": 79.0,
+  "unfiltered": 79.8,
+  "cpt": 90.5,
+  "cpt-unfiltered": [
+   10.7,
+   [
+    8.2,
+    13.3
+   ],
+   0.0
+  ],
+  "cpt-base": [
+   11.5,
+   [
+    8.7,
+    14.5
+   ],
+   0.0
+  ]
+ },
+ "zh_unseen": {
+  "base": 52.6,
+  "unfiltered": 57.7,
+  "cpt": 61.5,
+  "cpt-unfiltered": [
+   3.8,
+   [
+    -2.6,
+    10.3
+   ],
+   0.4531
+  ],
+  "cpt-base": [
+   9.0,
+   [
+    1.3,
+    16.7
+   ],
+   0.0654
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.788,
+  "seen_distractor_share": 0.774,
+  "cpt_wrong_pick_seen_share": 0.833
+ }
+}

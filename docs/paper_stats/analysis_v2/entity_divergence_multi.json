@@ -1,0 +1,6978 @@
+{
+  "method": "Task 4: the prompt-independent divergence score for en-zh, en-hi and en-ar under ONE protocol.\n\n1. Take the top-300 entities (by mentions) of zh / hi / ar.\n2. The LLM translates each (shown with its surface form and one example idiom) into English\n   singular nouns: a primary translation and up to two close synonyms, or \"none\".\n3. Source entities with the same primary translation are merged (e.g. Arabic singular/plural\n   forms, Hindi oblique forms); the English side is every English idiom whose entity list\n   contains the primary translation (synonyms are not used: they are often loose).\n4. Up to 20 idioms per side are sampled (seed 0), as in the original en-zh analysis; each idiom's\n   figurative meaning is paraphrased into English by the same local LLM (Qwen3.5-27B-FP8) for all\n   languages (gloss space) and also embedded natively.\n5. Divergence and size-matched baselines as in divergence.py; headline statistics use entities\n   with >=5 idioms per side.\n\n    PYTHONPATH=src python src/culture/analysis/v2/entity_divergence_multi.py\n",
+  "pairs": {
+    "en-zh": {
+      "top_entities": 300,
+      "translated": 300,
+      "translated_not_none": 300,
+      "distinct_english_translations": 265,
+      "matched_to_english_entities": 224,
+      "mention_share_of_top300": 0.4281,
+      "gloss": {
+        "n_entities": 156,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.2154,
+            "ci95": [
+              0.2103,
+              0.2204
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.2572,
+            "ci95": [
+              0.2532,
+              0.2619
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": 0.1598,
+            "ci95": [
+              0.1555,
+              0.1641
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.1556,
+            "ci95": [
+              0.152,
+              0.1593
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.2486,
+            "ci95": [
+              0.2443,
+              0.2532
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.2428,
+            "ci95": [
+              0.2395,
+              0.2465
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.9231,
+          "divergence_index_aggregate": {
+            "value": 0.576,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.0766,
+            "ci95": [
+              0.0687,
+              0.0853
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.1297,
+            "ci95": [
+              0.1225,
+              0.1378
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": -0.0013,
+            "ci95": [
+              -0.0031,
+              0.0006
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.0015,
+            "ci95": [
+              0.0001,
+              0.003
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.1178,
+            "ci95": [
+              0.1103,
+              0.1264
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.1119,
+            "ci95": [
+              0.1054,
+              0.1188
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.9038,
+          "divergence_index_aggregate": {
+            "value": 0.565,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.434,
+            "ci95": [
+              0.4274,
+              0.4399
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.4678,
+            "ci95": [
+              0.4649,
+              0.4708
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": 0.3652,
+            "ci95": [
+              0.3564,
+              0.3735
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.3591,
+            "ci95": [
+              0.3503,
+              0.367
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.4603,
+            "ci95": [
+              0.4573,
+              0.4635
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.4554,
+            "ci95": [
+              0.4533,
+              0.4575
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8526,
+          "divergence_index_aggregate": {
+            "value": 0.698,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 156,
+          "mean_percentile": 0.1869,
+          "median_percentile": 0.1097,
+          "frac_true_pair_top1_en2src": 0.2115,
+          "frac_percentile_le_0.05": 0.3782,
+          "frac_percentile_ge_0.50": 0.1026,
+          "mean_centroid_div_true": 0.1245,
+          "mean_centroid_div_random": 0.1709
+        }
+      },
+      "n_qualifying_ge5": 156,
+      "top10_most_divergent": [
+        {
+          "entity_en": "character",
+          "entities_src": [
+            "字"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 30,
+          "centroid_div": 0.2816,
+          "percentile": 0.906
+        },
+        {
+          "entity_en": "shoulder",
+          "entities_src": [
+            "肩"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 38,
+          "n_src_full": 58,
+          "centroid_div": 0.2526,
+          "percentile": 0.777
+        },
+        {
+          "entity_en": "daughter",
+          "entities_src": [
+            "女"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 27,
+          "centroid_div": 0.25,
+          "percentile": 0.323
+        },
+        {
+          "entity_en": "soul",
+          "entities_src": [
+            "魂",
+            "魄"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 20,
+          "n_src_full": 105,
+          "centroid_div": 0.2354,
+          "percentile": 0.729
+        },
+        {
+          "entity_en": "branch",
+          "entities_src": [
+            "枝",
+            "节"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 90,
+          "centroid_div": 0.2295,
+          "percentile": 0.819
+        },
+        {
+          "entity_en": "eyebrow",
+          "entities_src": [
+            "眉"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 96,
+          "centroid_div": 0.2216,
+          "percentile": 0.445
+        },
+        {
+          "entity_en": "hare",
+          "entities_src": [
+            "兔"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 35,
+          "centroid_div": 0.2198,
+          "percentile": 0.684
+        },
+        {
+          "entity_en": "crime",
+          "entities_src": [
+            "罪"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 41,
+          "centroid_div": 0.2104,
+          "percentile": 0.335
+        },
+        {
+          "entity_en": "length",
+          "entities_src": [
+            "长"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 29,
+          "centroid_div": 0.2069,
+          "percentile": 0.765
+        },
+        {
+          "entity_en": "fox",
+          "entities_src": [
+            "狐"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 34,
+          "centroid_div": 0.2055,
+          "percentile": 0.671
+        }
+      ],
+      "top10_least_divergent": [
+        {
+          "entity_en": "lightning",
+          "entities_src": [
+            "电"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 46,
+          "centroid_div": 0.0375,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "mouth",
+          "entities_src": [
+            "口",
+            "嘴"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 75,
+          "n_src_full": 265,
+          "centroid_div": 0.0484,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "day",
+          "entities_src": [
+            "日"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 103,
+          "n_src_full": 221,
+          "centroid_div": 0.0525,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "law",
+          "entities_src": [
+            "法"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 27,
+          "n_src_full": 49,
+          "centroid_div": 0.065,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "tooth",
+          "entities_src": [
+            "齿",
+            "牙"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 56,
+          "n_src_full": 102,
+          "centroid_div": 0.0663,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "word",
+          "entities_src": [
+            "言",
+            "词",
+            "语"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 118,
+          "n_src_full": 328,
+          "centroid_div": 0.0673,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "mile",
+          "entities_src": [
+            "千里",
+            "里"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 82,
+          "centroid_div": 0.068,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "face",
+          "entities_src": [
+            "面",
+            "颜",
+            "脸"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 83,
+          "n_src_full": 161,
+          "centroid_div": 0.0704,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "sky",
+          "entities_src": [
+            "天"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 447,
+          "centroid_div": 0.0725,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "year",
+          "entities_src": [
+            "年"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 56,
+          "centroid_div": 0.0731,
+          "percentile": 0.0
+        }
+      ],
+      "per_entity": [
+        {
+          "entity_en": "character",
+          "entities_src": [
+            "字"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 30,
+          "centroid_div": 0.2816,
+          "percentile": 0.906
+        },
+        {
+          "entity_en": "shoulder",
+          "entities_src": [
+            "肩"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 38,
+          "n_src_full": 58,
+          "centroid_div": 0.2526,
+          "percentile": 0.777
+        },
+        {
+          "entity_en": "daughter",
+          "entities_src": [
+            "女"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 27,
+          "centroid_div": 0.25,
+          "percentile": 0.323
+        },
+        {
+          "entity_en": "soul",
+          "entities_src": [
+            "魂",
+            "魄"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 20,
+          "n_src_full": 105,
+          "centroid_div": 0.2354,
+          "percentile": 0.729
+        },
+        {
+          "entity_en": "branch",
+          "entities_src": [
+            "枝",
+            "节"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 90,
+          "centroid_div": 0.2295,
+          "percentile": 0.819
+        },
+        {
+          "entity_en": "eyebrow",
+          "entities_src": [
+            "眉"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 96,
+          "centroid_div": 0.2216,
+          "percentile": 0.445
+        },
+        {
+          "entity_en": "hare",
+          "entities_src": [
+            "兔"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 35,
+          "centroid_div": 0.2198,
+          "percentile": 0.684
+        },
+        {
+          "entity_en": "crime",
+          "entities_src": [
+            "罪"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 41,
+          "centroid_div": 0.2104,
+          "percentile": 0.335
+        },
+        {
+          "entity_en": "length",
+          "entities_src": [
+            "长"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 29,
+          "centroid_div": 0.2069,
+          "percentile": 0.765
+        },
+        {
+          "entity_en": "fox",
+          "entities_src": [
+            "狐"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 34,
+          "centroid_div": 0.2055,
+          "percentile": 0.671
+        },
+        {
+          "entity_en": "scale",
+          "entities_src": [
+            "甲",
+            "鳞"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 85,
+          "centroid_div": 0.1985,
+          "percentile": 0.71
+        },
+        {
+          "entity_en": "praise",
+          "entities_src": [
+            "誉"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 27,
+          "centroid_div": 0.1982,
+          "percentile": 0.184
+        },
+        {
+          "entity_en": "river",
+          "entities_src": [
+            "河"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 72,
+          "centroid_div": 0.1939,
+          "percentile": 0.732
+        },
+        {
+          "entity_en": "dirt",
+          "entities_src": [
+            "垢"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 33,
+          "centroid_div": 0.1924,
+          "percentile": 0.513
+        },
+        {
+          "entity_en": "bottom",
+          "entities_src": [
+            "下"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 31,
+          "n_src_full": 38,
+          "centroid_div": 0.1911,
+          "percentile": 0.561
+        },
+        {
+          "entity_en": "path",
+          "entities_src": [
+            "途"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 27,
+          "centroid_div": 0.1834,
+          "percentile": 0.497
+        },
+        {
+          "entity_en": "song",
+          "entities_src": [
+            "歌"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 38,
+          "centroid_div": 0.1815,
+          "percentile": 0.51
+        },
+        {
+          "entity_en": "favor",
+          "entities_src": [
+            "恩"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 41,
+          "centroid_div": 0.1812,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "right",
+          "entities_src": [
+            "正"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 27,
+          "centroid_div": 0.1802,
+          "percentile": 0.323
+        },
+        {
+          "entity_en": "detail",
+          "entities_src": [
+            "微"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 28,
+          "centroid_div": 0.1795,
+          "percentile": 0.052
+        },
+        {
+          "entity_en": "will",
+          "entities_src": [
+            "志"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 90,
+          "centroid_div": 0.1768,
+          "percentile": 0.352
+        },
+        {
+          "entity_en": "belly",
+          "entities_src": [
+            "腹"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 58,
+          "centroid_div": 0.1705,
+          "percentile": 0.51
+        },
+        {
+          "entity_en": "court",
+          "entities_src": [
+            "朝"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 64,
+          "centroid_div": 0.1691,
+          "percentile": 0.532
+        },
+        {
+          "entity_en": "grain",
+          "entities_src": [
+            "谷"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 32,
+          "centroid_div": 0.1682,
+          "percentile": 0.503
+        },
+        {
+          "entity_en": "evil",
+          "entities_src": [
+            "恶"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 73,
+          "centroid_div": 0.1626,
+          "percentile": 0.048
+        },
+        {
+          "entity_en": "enemy",
+          "entities_src": [
+            "敌",
+            "仇"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 56,
+          "centroid_div": 0.1617,
+          "percentile": 0.271
+        },
+        {
+          "entity_en": "smoke",
+          "entities_src": [
+            "烟"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 27,
+          "centroid_div": 0.1598,
+          "percentile": 0.332
+        },
+        {
+          "entity_en": "paper",
+          "entities_src": [
+            "纸"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 25,
+          "centroid_div": 0.1591,
+          "percentile": 0.194
+        },
+        {
+          "entity_en": "tiger",
+          "entities_src": [
+            "虎"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 204,
+          "centroid_div": 0.1568,
+          "percentile": 0.232
+        },
+        {
+          "entity_en": "joy",
+          "entities_src": [
+            "乐"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 50,
+          "centroid_div": 0.1566,
+          "percentile": 0.023
+        },
+        {
+          "entity_en": "star",
+          "entities_src": [
+            "星"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 45,
+          "centroid_div": 0.1564,
+          "percentile": 0.471
+        },
+        {
+          "entity_en": "nature",
+          "entities_src": [
+            "性"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 27,
+          "centroid_div": 0.1559,
+          "percentile": 0.297
+        },
+        {
+          "entity_en": "seat",
+          "entities_src": [
+            "席"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 39,
+          "centroid_div": 0.1556,
+          "percentile": 0.445
+        },
+        {
+          "entity_en": "son",
+          "entities_src": [
+            "子"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 40,
+          "centroid_div": 0.1551,
+          "percentile": 0.087
+        },
+        {
+          "entity_en": "iron",
+          "entities_src": [
+            "铁"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 31,
+          "centroid_div": 0.1547,
+          "percentile": 0.423
+        },
+        {
+          "entity_en": "scene",
+          "entities_src": [
+            "景"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 29,
+          "centroid_div": 0.1541,
+          "percentile": 0.306
+        },
+        {
+          "entity_en": "brush",
+          "entities_src": [
+            "笔"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 47,
+          "centroid_div": 0.1537,
+          "percentile": 0.326
+        },
+        {
+          "entity_en": "state",
+          "entities_src": [
+            "国"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 79,
+          "centroid_div": 0.1505,
+          "percentile": 0.255
+        },
+        {
+          "entity_en": "bee",
+          "entities_src": [
+            "蜂"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 40,
+          "centroid_div": 0.1488,
+          "percentile": 0.313
+        },
+        {
+          "entity_en": "pearl",
+          "entities_src": [
+            "珠"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 74,
+          "centroid_div": 0.1477,
+          "percentile": 0.29
+        },
+        {
+          "entity_en": "bird",
+          "entities_src": [
+            "鸟"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 29,
+          "n_src_full": 48,
+          "centroid_div": 0.1475,
+          "percentile": 0.519
+        },
+        {
+          "entity_en": "snow",
+          "entities_src": [
+            "雪"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 72,
+          "centroid_div": 0.1468,
+          "percentile": 0.397
+        },
+        {
+          "entity_en": "lip",
+          "entities_src": [
+            "唇"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 30,
+          "n_src_full": 54,
+          "centroid_div": 0.1449,
+          "percentile": 0.216
+        },
+        {
+          "entity_en": "thunder",
+          "entities_src": [
+            "雷"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 35,
+          "centroid_div": 0.1441,
+          "percentile": 0.184
+        },
+        {
+          "entity_en": "top",
+          "entities_src": [
+            "上"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 39,
+          "centroid_div": 0.143,
+          "percentile": 0.419
+        },
+        {
+          "entity_en": "blessing",
+          "entities_src": [
+            "福"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 47,
+          "centroid_div": 0.1421,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "good",
+          "entities_src": [
+            "善"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 53,
+          "centroid_div": 0.1417,
+          "percentile": 0.235
+        },
+        {
+          "entity_en": "heel",
+          "entities_src": [
+            "踵"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 37,
+          "n_src_full": 44,
+          "centroid_div": 0.1408,
+          "percentile": 0.377
+        },
+        {
+          "entity_en": "meat",
+          "entities_src": [
+            "肉"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 50,
+          "centroid_div": 0.1405,
+          "percentile": 0.365
+        },
+        {
+          "entity_en": "chest",
+          "entities_src": [
+            "胸"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 39,
+          "centroid_div": 0.1388,
+          "percentile": 0.242
+        },
+        {
+          "entity_en": "room",
+          "entities_src": [
+            "室"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 33,
+          "centroid_div": 0.1387,
+          "percentile": 0.348
+        },
+        {
+          "entity_en": "wine",
+          "entities_src": [
+            "酒"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 58,
+          "centroid_div": 0.1369,
+          "percentile": 0.148
+        },
+        {
+          "entity_en": "sheep",
+          "entities_src": [
+            "羊"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 35,
+          "centroid_div": 0.1348,
+          "percentile": 0.274
+        },
+        {
+          "entity_en": "bell",
+          "entities_src": [
+            "钟"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 34,
+          "centroid_div": 0.1344,
+          "percentile": 0.455
+        },
+        {
+          "entity_en": "spring",
+          "entities_src": [
+            "春"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 29,
+          "centroid_div": 0.1335,
+          "percentile": 0.032
+        },
+        {
+          "entity_en": "crowd",
+          "entities_src": [
+            "众"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 26,
+          "centroid_div": 0.1333,
+          "percentile": 0.097
+        },
+        {
+          "entity_en": "plan",
+          "entities_src": [
+            "计"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 84,
+          "centroid_div": 0.1304,
+          "percentile": 0.106
+        },
+        {
+          "entity_en": "rule",
+          "entities_src": [
+            "规"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 28,
+          "centroid_div": 0.1294,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "body",
+          "entities_src": [
+            "身",
+            "体"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 174,
+          "centroid_div": 0.1292,
+          "percentile": 0.29
+        },
+        {
+          "entity_en": "ghost",
+          "entities_src": [
+            "鬼"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 77,
+          "centroid_div": 0.128,
+          "percentile": 0.081
+        },
+        {
+          "entity_en": "strength",
+          "entities_src": [
+            "力"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 114,
+          "centroid_div": 0.128,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "spirit",
+          "entities_src": [
+            "神"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 145,
+          "centroid_div": 0.1274,
+          "percentile": 0.161
+        },
+        {
+          "entity_en": "well",
+          "entities_src": [
+            "井"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 49,
+          "centroid_div": 0.1265,
+          "percentile": 0.239
+        },
+        {
+          "entity_en": "ice",
+          "entities_src": [
+            "冰"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 87,
+          "centroid_div": 0.1262,
+          "percentile": 0.287
+        },
+        {
+          "entity_en": "shape",
+          "entities_src": [
+            "形"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 69,
+          "centroid_div": 0.1262,
+          "percentile": 0.329
+        },
+        {
+          "entity_en": "sea",
+          "entities_src": [
+            "海"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 132,
+          "centroid_div": 0.1254,
+          "percentile": 0.113
+        },
+        {
+          "entity_en": "nest",
+          "entities_src": [
+            "巢"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 43,
+          "centroid_div": 0.1243,
+          "percentile": 0.065
+        },
+        {
+          "entity_en": "wave",
+          "entities_src": [
+            "波",
+            "浪"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 56,
+          "centroid_div": 0.1228,
+          "percentile": 0.226
+        },
+        {
+          "entity_en": "chicken",
+          "entities_src": [
+            "鸡"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 76,
+          "centroid_div": 0.1221,
+          "percentile": 0.271
+        },
+        {
+          "entity_en": "mountain",
+          "entities_src": [
+            "山"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 200,
+          "centroid_div": 0.1212,
+          "percentile": 0.032
+        },
+        {
+          "entity_en": "horn",
+          "entities_src": [
+            "角"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 33,
+          "centroid_div": 0.1208,
+          "percentile": 0.181
+        },
+        {
+          "entity_en": "food",
+          "entities_src": [
+            "食"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 122,
+          "centroid_div": 0.1204,
+          "percentile": 0.01
+        },
+        {
+          "entity_en": "goose",
+          "entities_src": [
+            "雁"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 28,
+          "centroid_div": 0.1186,
+          "percentile": 0.232
+        },
+        {
+          "entity_en": "egg",
+          "entities_src": [
+            "卵"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 26,
+          "centroid_div": 0.1181,
+          "percentile": 0.245
+        },
+        {
+          "entity_en": "stone",
+          "entities_src": [
+            "石"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 86,
+          "centroid_div": 0.1164,
+          "percentile": 0.274
+        },
+        {
+          "entity_en": "shadow",
+          "entities_src": [
+            "影"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 79,
+          "centroid_div": 0.1157,
+          "percentile": 0.084
+        },
+        {
+          "entity_en": "hat",
+          "entities_src": [
+            "冠"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 55,
+          "n_src_full": 46,
+          "centroid_div": 0.1155,
+          "percentile": 0.155
+        },
+        {
+          "entity_en": "door",
+          "entities_src": [
+            "门"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 49,
+          "n_src_full": 127,
+          "centroid_div": 0.115,
+          "percentile": 0.116
+        },
+        {
+          "entity_en": "road",
+          "entities_src": [
+            "路"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 33,
+          "n_src_full": 56,
+          "centroid_div": 0.1148,
+          "percentile": 0.223
+        },
+        {
+          "entity_en": "rain",
+          "entities_src": [
+            "雨"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 152,
+          "centroid_div": 0.1147,
+          "percentile": 0.187
+        },
+        {
+          "entity_en": "sword",
+          "entities_src": [
+            "剑"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 51,
+          "centroid_div": 0.1135,
+          "percentile": 0.071
+        },
+        {
+          "entity_en": "root",
+          "entities_src": [
+            "根",
+            "本"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 147,
+          "centroid_div": 0.1133,
+          "percentile": 0.013
+        },
+        {
+          "entity_en": "front",
+          "entities_src": [
+            "前"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 26,
+          "centroid_div": 0.1126,
+          "percentile": 0.145
+        },
+        {
+          "entity_en": "moon",
+          "entities_src": [
+            "月"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 151,
+          "centroid_div": 0.112,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "horse",
+          "entities_src": [
+            "马"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 71,
+          "n_src_full": 229,
+          "centroid_div": 0.1115,
+          "percentile": 0.206
+        },
+        {
+          "entity_en": "reason",
+          "entities_src": [
+            "理"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 52,
+          "centroid_div": 0.1114,
+          "percentile": 0.019
+        },
+        {
+          "entity_en": "cloud",
+          "entities_src": [
+            "云"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 209,
+          "centroid_div": 0.1114,
+          "percentile": 0.087
+        },
+        {
+          "entity_en": "fish",
+          "entities_src": [
+            "鱼"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 40,
+          "n_src_full": 151,
+          "centroid_div": 0.1109,
+          "percentile": 0.226
+        },
+        {
+          "entity_en": "shoe",
+          "entities_src": [
+            "履"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 35,
+          "n_src_full": 47,
+          "centroid_div": 0.1101,
+          "percentile": 0.213
+        },
+        {
+          "entity_en": "ground",
+          "entities_src": [
+            "地"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 274,
+          "centroid_div": 0.1101,
+          "percentile": 0.181
+        },
+        {
+          "entity_en": "drum",
+          "entities_src": [
+            "鼓"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 41,
+          "centroid_div": 0.1099,
+          "percentile": 0.152
+        },
+        {
+          "entity_en": "back",
+          "entities_src": [
+            "背"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 107,
+          "n_src_full": 47,
+          "centroid_div": 0.1097,
+          "percentile": 0.168
+        },
+        {
+          "entity_en": "needle",
+          "entities_src": [
+            "针"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 29,
+          "centroid_div": 0.1096,
+          "percentile": 0.081
+        },
+        {
+          "entity_en": "light",
+          "entities_src": [
+            "光"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 50,
+          "n_src_full": 48,
+          "centroid_div": 0.109,
+          "percentile": 0.145
+        },
+        {
+          "entity_en": "knife",
+          "entities_src": [
+            "刀"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 59,
+          "centroid_div": 0.1087,
+          "percentile": 0.135
+        },
+        {
+          "entity_en": "grass",
+          "entities_src": [
+            "草"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 60,
+          "centroid_div": 0.1081,
+          "percentile": 0.2
+        },
+        {
+          "entity_en": "blood",
+          "entities_src": [
+            "血"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 47,
+          "n_src_full": 63,
+          "centroid_div": 0.1077,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "one",
+          "entities_src": [
+            "一"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 20,
+          "n_src_full": 35,
+          "centroid_div": 0.1049,
+          "percentile": 0.174
+        },
+        {
+          "entity_en": "soup",
+          "entities_src": [
+            "汤"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 27,
+          "centroid_div": 0.1045,
+          "percentile": 0.106
+        },
+        {
+          "entity_en": "end",
+          "entities_src": [
+            "末",
+            "终"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 56,
+          "n_src_full": 66,
+          "centroid_div": 0.1042,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "sand",
+          "entities_src": [
+            "沙"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 46,
+          "centroid_div": 0.1036,
+          "percentile": 0.123
+        },
+        {
+          "entity_en": "hand",
+          "entities_src": [
+            "手"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 180,
+          "n_src_full": 169,
+          "centroid_div": 0.1027,
+          "percentile": 0.187
+        },
+        {
+          "entity_en": "feeling",
+          "entities_src": [
+            "情"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 150,
+          "centroid_div": 0.1008,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "snake",
+          "entities_src": [
+            "蛇"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 48,
+          "centroid_div": 0.1008,
+          "percentile": 0.042
+        },
+        {
+          "entity_en": "name",
+          "entities_src": [
+            "名"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 108,
+          "centroid_div": 0.1005,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "dust",
+          "entities_src": [
+            "尘"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 20,
+          "n_src_full": 41,
+          "centroid_div": 0.1,
+          "percentile": 0.071
+        },
+        {
+          "entity_en": "matter",
+          "entities_src": [
+            "事"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 131,
+          "centroid_div": 0.1,
+          "percentile": 0.077
+        },
+        {
+          "entity_en": "dog",
+          "entities_src": [
+            "狗",
+            "犬"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 80,
+          "n_src_full": 149,
+          "centroid_div": 0.0997,
+          "percentile": 0.168
+        },
+        {
+          "entity_en": "mind",
+          "entities_src": [
+            "意"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 113,
+          "n_src_full": 161,
+          "centroid_div": 0.0987,
+          "percentile": 0.026
+        },
+        {
+          "entity_en": "boat",
+          "entities_src": [
+            "舟",
+            "船"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 75,
+          "centroid_div": 0.098,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "finger",
+          "entities_src": [
+            "指"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 55,
+          "n_src_full": 34,
+          "centroid_div": 0.0969,
+          "percentile": 0.097
+        },
+        {
+          "entity_en": "breath",
+          "entities_src": [
+            "气"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 163,
+          "centroid_div": 0.0967,
+          "percentile": 0.065
+        },
+        {
+          "entity_en": "book",
+          "entities_src": [
+            "书"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 44,
+          "n_src_full": 60,
+          "centroid_div": 0.0927,
+          "percentile": 0.019
+        },
+        {
+          "entity_en": "dream",
+          "entities_src": [
+            "梦"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 40,
+          "centroid_div": 0.0919,
+          "percentile": 0.006
+        },
+        {
+          "entity_en": "heart",
+          "entities_src": [
+            "心",
+            "人心"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 127,
+          "n_src_full": 695,
+          "centroid_div": 0.0902,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "night",
+          "entities_src": [
+            "夜"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 30,
+          "centroid_div": 0.09,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "string",
+          "entities_src": [
+            "弦"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 24,
+          "n_src_full": 31,
+          "centroid_div": 0.09,
+          "percentile": 0.055
+        },
+        {
+          "entity_en": "self",
+          "entities_src": [
+            "己"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 52,
+          "centroid_div": 0.0897,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "house",
+          "entities_src": [
+            "屋"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 43,
+          "centroid_div": 0.0895,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "water",
+          "entities_src": [
+            "水"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 79,
+          "n_src_full": 228,
+          "centroid_div": 0.0885,
+          "percentile": 0.106
+        },
+        {
+          "entity_en": "step",
+          "entities_src": [
+            "步"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 34,
+          "n_src_full": 47,
+          "centroid_div": 0.0885,
+          "percentile": 0.013
+        },
+        {
+          "entity_en": "wolf",
+          "entities_src": [
+            "狼"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 73,
+          "centroid_div": 0.0881,
+          "percentile": 0.019
+        },
+        {
+          "entity_en": "hair",
+          "entities_src": [
+            "发",
+            "毛"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 46,
+          "n_src_full": 102,
+          "centroid_div": 0.0873,
+          "percentile": 0.058
+        },
+        {
+          "entity_en": "world",
+          "entities_src": [
+            "世",
+            "天下"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 68,
+          "n_src_full": 181,
+          "centroid_div": 0.0871,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "thought",
+          "entities_src": [
+            "思"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 37,
+          "centroid_div": 0.0863,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "fire",
+          "entities_src": [
+            "火"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 74,
+          "n_src_full": 161,
+          "centroid_div": 0.0854,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "foot",
+          "entities_src": [
+            "足",
+            "脚"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 122,
+          "n_src_full": 186,
+          "centroid_div": 0.0852,
+          "percentile": 0.042
+        },
+        {
+          "entity_en": "wind",
+          "entities_src": [
+            "风"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 47,
+          "n_src_full": 411,
+          "centroid_div": 0.0851,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "eye",
+          "entities_src": [
+            "目",
+            "眼",
+            "眼睛"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 159,
+          "n_src_full": 358,
+          "centroid_div": 0.0849,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "gold",
+          "entities_src": [
+            "金",
+            "千金"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 155,
+          "centroid_div": 0.0839,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "line",
+          "entities_src": [
+            "行"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 81,
+          "n_src_full": 109,
+          "centroid_div": 0.0835,
+          "percentile": 0.019
+        },
+        {
+          "entity_en": "bone",
+          "entities_src": [
+            "骨"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 40,
+          "n_src_full": 105,
+          "centroid_div": 0.083,
+          "percentile": 0.019
+        },
+        {
+          "entity_en": "wing",
+          "entities_src": [
+            "翼"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 27,
+          "centroid_div": 0.0825,
+          "percentile": 0.029
+        },
+        {
+          "entity_en": "head",
+          "entities_src": [
+            "头",
+            "首",
+            "脑"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 208,
+          "n_src_full": 244,
+          "centroid_div": 0.0819,
+          "percentile": 0.045
+        },
+        {
+          "entity_en": "tree",
+          "entities_src": [
+            "木",
+            "树"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 79,
+          "centroid_div": 0.0818,
+          "percentile": 0.045
+        },
+        {
+          "entity_en": "life",
+          "entities_src": [
+            "生",
+            "命"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 82,
+          "n_src_full": 140,
+          "centroid_div": 0.0816,
+          "percentile": 0.013
+        },
+        {
+          "entity_en": "skin",
+          "entities_src": [
+            "皮"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 30,
+          "n_src_full": 34,
+          "centroid_div": 0.0809,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "death",
+          "entities_src": [
+            "死"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 42,
+          "n_src_full": 99,
+          "centroid_div": 0.0803,
+          "percentile": 0.006
+        },
+        {
+          "entity_en": "wall",
+          "entities_src": [
+            "墙",
+            "壁"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 48,
+          "n_src_full": 62,
+          "centroid_div": 0.0803,
+          "percentile": 0.087
+        },
+        {
+          "entity_en": "opportunity",
+          "entities_src": [
+            "机"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 31,
+          "centroid_div": 0.0794,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "time",
+          "entities_src": [
+            "时"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 185,
+          "n_src_full": 98,
+          "centroid_div": 0.0789,
+          "percentile": 0.006
+        },
+        {
+          "entity_en": "tail",
+          "entities_src": [
+            "尾"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 31,
+          "n_src_full": 38,
+          "centroid_div": 0.0785,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "ear",
+          "entities_src": [
+            "耳"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 91,
+          "n_src_full": 124,
+          "centroid_div": 0.078,
+          "percentile": 0.006
+        },
+        {
+          "entity_en": "rat",
+          "entities_src": [
+            "鼠"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 59,
+          "centroid_div": 0.0752,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "tongue",
+          "entities_src": [
+            "舌"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 119,
+          "centroid_div": 0.0746,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "track",
+          "entities_src": [
+            "辙"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 29,
+          "n_src_full": 27,
+          "centroid_div": 0.0733,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "year",
+          "entities_src": [
+            "年"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 56,
+          "centroid_div": 0.0731,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "sky",
+          "entities_src": [
+            "天"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 447,
+          "centroid_div": 0.0725,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "face",
+          "entities_src": [
+            "面",
+            "颜",
+            "脸"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 83,
+          "n_src_full": 161,
+          "centroid_div": 0.0704,
+          "percentile": 0.003
+        },
+        {
+          "entity_en": "mile",
+          "entities_src": [
+            "千里",
+            "里"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 82,
+          "centroid_div": 0.068,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "word",
+          "entities_src": [
+            "言",
+            "词",
+            "语"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 118,
+          "n_src_full": 328,
+          "centroid_div": 0.0673,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "tooth",
+          "entities_src": [
+            "齿",
+            "牙"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 56,
+          "n_src_full": 102,
+          "centroid_div": 0.0663,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "law",
+          "entities_src": [
+            "法"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 27,
+          "n_src_full": 49,
+          "centroid_div": 0.065,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "day",
+          "entities_src": [
+            "日"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 103,
+          "n_src_full": 221,
+          "centroid_div": 0.0525,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "mouth",
+          "entities_src": [
+            "口",
+            "嘴"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 75,
+          "n_src_full": 265,
+          "centroid_div": 0.0484,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "lightning",
+          "entities_src": [
+            "电"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 46,
+          "centroid_div": 0.0375,
+          "percentile": 0.0
+        }
+      ],
+      "native": {
+        "n_entities": 156,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.3729,
+            "ci95": [
+              0.3675,
+              0.3783
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.4086,
+            "ci95": [
+              0.4055,
+              0.4117
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": 0.1626,
+            "ci95": [
+              0.1581,
+              0.1669
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.147,
+            "ci95": [
+              0.144,
+              0.1499
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.2403,
+            "ci95": [
+              0.2364,
+              0.2443
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.2293,
+            "ci95": [
+              0.2258,
+              0.2331
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8269,
+          "divergence_index_aggregate": {
+            "value": 0.865,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.2757,
+            "ci95": [
+              0.267,
+              0.2846
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.3209,
+            "ci95": [
+              0.3142,
+              0.3277
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": -0.0011,
+            "ci95": [
+              -0.0029,
+              0.0008
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.0008,
+            "ci95": [
+              -0.0006,
+              0.0022
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.1017,
+            "ci95": [
+              0.095,
+              0.1092
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.1065,
+            "ci95": [
+              0.101,
+              0.1125
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.859,
+          "divergence_index_aggregate": {
+            "value": 0.858,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.5378,
+            "ci95": [
+              0.5328,
+              0.5428
+            ],
+            "n": 156
+          },
+          "cross_diff": {
+            "mean": 0.5656,
+            "ci95": [
+              0.5633,
+              0.5677
+            ],
+            "n": 156
+          },
+          "within_same_a": {
+            "mean": 0.3734,
+            "ci95": [
+              0.3644,
+              0.3823
+            ],
+            "n": 113
+          },
+          "within_same_b": {
+            "mean": 0.3561,
+            "ci95": [
+              0.3491,
+              0.3628
+            ],
+            "n": 156
+          },
+          "within_diff_a": {
+            "mean": 0.4562,
+            "ci95": [
+              0.4532,
+              0.4592
+            ],
+            "n": 156
+          },
+          "within_diff_b": {
+            "mean": 0.4373,
+            "ci95": [
+              0.4347,
+              0.4398
+            ],
+            "n": 156
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8462,
+          "divergence_index_aggregate": {
+            "value": 0.872,
+            "n_entities": 113,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 156,
+          "mean_percentile": 0.2164,
+          "median_percentile": 0.1532,
+          "frac_true_pair_top1_en2src": 0.1346,
+          "frac_percentile_le_0.05": 0.2821,
+          "frac_percentile_ge_0.50": 0.1154,
+          "mean_centroid_div_true": 0.3031,
+          "mean_centroid_div_random": 0.3419
+        }
+      }
+    },
+    "en-hi": {
+      "top_entities": 300,
+      "translated": 300,
+      "translated_not_none": 278,
+      "distinct_english_translations": 224,
+      "matched_to_english_entities": 171,
+      "mention_share_of_top300": 0.4728,
+      "gloss": {
+        "n_entities": 128,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.2583,
+            "ci95": [
+              0.2516,
+              0.265
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.3043,
+            "ci95": [
+              0.2997,
+              0.3092
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.1648,
+            "ci95": [
+              0.1588,
+              0.1707
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": 0.1868,
+            "ci95": [
+              0.1833,
+              0.1906
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.2608,
+            "ci95": [
+              0.2558,
+              0.2662
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.2565,
+            "ci95": [
+              0.2519,
+              0.2615
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.9219,
+          "divergence_index_aggregate": {
+            "value": 0.623,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.1019,
+            "ci95": [
+              0.0918,
+              0.1125
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.1569,
+            "ci95": [
+              0.1489,
+              0.1662
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.0007,
+            "ci95": [
+              -0.0016,
+              0.0033
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": -0.0005,
+            "ci95": [
+              -0.0018,
+              0.0008
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.1232,
+            "ci95": [
+              0.1151,
+              0.1318
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.0812,
+            "ci95": [
+              0.0747,
+              0.0882
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8984,
+          "divergence_index_aggregate": {
+            "value": 0.625,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.4793,
+            "ci95": [
+              0.4737,
+              0.4845
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.5117,
+            "ci95": [
+              0.5084,
+              0.5148
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.3727,
+            "ci95": [
+              0.3602,
+              0.385
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": 0.4342,
+            "ci95": [
+              0.4286,
+              0.44
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.4713,
+            "ci95": [
+              0.4675,
+              0.4755
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.49,
+            "ci95": [
+              0.4869,
+              0.493
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.9141,
+          "divergence_index_aggregate": {
+            "value": 0.689,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 128,
+          "mean_percentile": 0.194,
+          "median_percentile": 0.1378,
+          "frac_true_pair_top1_en2src": 0.1562,
+          "frac_percentile_le_0.05": 0.2734,
+          "frac_percentile_ge_0.50": 0.0859,
+          "mean_centroid_div_true": 0.1597,
+          "mean_centroid_div_random": 0.211
+        }
+      },
+      "n_qualifying_ge5": 128,
+      "top10_most_divergent": [
+        {
+          "entity_en": "knot",
+          "entities_src": [
+            "गाँठ"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 49,
+          "centroid_div": 0.3355,
+          "percentile": 0.819
+        },
+        {
+          "entity_en": "duty",
+          "entities_src": [
+            "धर्म"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 45,
+          "centroid_div": 0.3264,
+          "percentile": 0.827
+        },
+        {
+          "entity_en": "lightning",
+          "entities_src": [
+            "बिजली"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 28,
+          "centroid_div": 0.3156,
+          "percentile": 0.441
+        },
+        {
+          "entity_en": "crop",
+          "entities_src": [
+            "फ़सल"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 29,
+          "centroid_div": 0.2809,
+          "percentile": 0.614
+        },
+        {
+          "entity_en": "donkey",
+          "entities_src": [
+            "गधा"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 106,
+          "centroid_div": 0.2766,
+          "percentile": 0.693
+        },
+        {
+          "entity_en": "plate",
+          "entities_src": [
+            "थाली"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 27,
+          "centroid_div": 0.2747,
+          "percentile": 0.547
+        },
+        {
+          "entity_en": "medicine",
+          "entities_src": [
+            "दवा"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 38,
+          "centroid_div": 0.259,
+          "percentile": 0.728
+        },
+        {
+          "entity_en": "rain",
+          "entities_src": [
+            "वर्षा"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 66,
+          "centroid_div": 0.2582,
+          "percentile": 0.492
+        },
+        {
+          "entity_en": "grain",
+          "entities_src": [
+            "धान",
+            "दाना",
+            "अनाज"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 152,
+          "centroid_div": 0.2551,
+          "percentile": 0.772
+        },
+        {
+          "entity_en": "cloud",
+          "entities_src": [
+            "बादल"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 78,
+          "centroid_div": 0.2492,
+          "percentile": 0.429
+        }
+      ],
+      "top10_least_divergent": [
+        {
+          "entity_en": "devil",
+          "entities_src": [
+            "शैतान"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 61,
+          "n_src_full": 29,
+          "centroid_div": 0.0758,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "bread",
+          "entities_src": [
+            "रोटी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 150,
+          "centroid_div": 0.0971,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "death",
+          "entities_src": [
+            "मौत",
+            "मृत्यु"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 42,
+          "n_src_full": 77,
+          "centroid_div": 0.0971,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "thief",
+          "entities_src": [
+            "चोर"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 206,
+          "centroid_div": 0.0973,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "lie",
+          "entities_src": [
+            "झूठ"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 46,
+          "centroid_div": 0.0989,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "friend",
+          "entities_src": [
+            "मित्र",
+            "यार"
+          ],
+          "n_en": 16,
+          "n_src": 20,
+          "n_en_full": 16,
+          "n_src_full": 105,
+          "centroid_div": 0.1015,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "woman",
+          "entities_src": [
+            "स्त्री",
+            "औरत"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 304,
+          "centroid_div": 0.1028,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "dog",
+          "entities_src": [
+            "कुत्ता",
+            "कुत्ते"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 80,
+          "n_src_full": 215,
+          "centroid_div": 0.105,
+          "percentile": 0.063
+        },
+        {
+          "entity_en": "tongue",
+          "entities_src": [
+            "जीभ",
+            "ज़बान"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 64,
+          "centroid_div": 0.1051,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "child",
+          "entities_src": [
+            "बच्चे",
+            "बच्चा"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 157,
+          "centroid_div": 0.1061,
+          "percentile": 0.0
+        }
+      ],
+      "per_entity": [
+        {
+          "entity_en": "knot",
+          "entities_src": [
+            "गाँठ"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 49,
+          "centroid_div": 0.3355,
+          "percentile": 0.819
+        },
+        {
+          "entity_en": "duty",
+          "entities_src": [
+            "धर्म"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 45,
+          "centroid_div": 0.3264,
+          "percentile": 0.827
+        },
+        {
+          "entity_en": "lightning",
+          "entities_src": [
+            "बिजली"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 28,
+          "centroid_div": 0.3156,
+          "percentile": 0.441
+        },
+        {
+          "entity_en": "crop",
+          "entities_src": [
+            "फ़सल"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 29,
+          "centroid_div": 0.2809,
+          "percentile": 0.614
+        },
+        {
+          "entity_en": "donkey",
+          "entities_src": [
+            "गधा"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 106,
+          "centroid_div": 0.2766,
+          "percentile": 0.693
+        },
+        {
+          "entity_en": "plate",
+          "entities_src": [
+            "थाली"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 27,
+          "centroid_div": 0.2747,
+          "percentile": 0.547
+        },
+        {
+          "entity_en": "medicine",
+          "entities_src": [
+            "दवा"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 38,
+          "centroid_div": 0.259,
+          "percentile": 0.728
+        },
+        {
+          "entity_en": "rain",
+          "entities_src": [
+            "वर्षा"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 66,
+          "centroid_div": 0.2582,
+          "percentile": 0.492
+        },
+        {
+          "entity_en": "grain",
+          "entities_src": [
+            "धान",
+            "दाना",
+            "अनाज"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 152,
+          "centroid_div": 0.2551,
+          "percentile": 0.772
+        },
+        {
+          "entity_en": "cloud",
+          "entities_src": [
+            "बादल"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 78,
+          "centroid_div": 0.2492,
+          "percentile": 0.429
+        },
+        {
+          "entity_en": "cotton",
+          "entities_src": [
+            "कपास"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 38,
+          "centroid_div": 0.2452,
+          "percentile": 0.654
+        },
+        {
+          "entity_en": "animal",
+          "entities_src": [
+            "पशु"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 35,
+          "centroid_div": 0.2285,
+          "percentile": 0.378
+        },
+        {
+          "entity_en": "plow",
+          "entities_src": [
+            "हल"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 55,
+          "centroid_div": 0.2206,
+          "percentile": 0.362
+        },
+        {
+          "entity_en": "shadow",
+          "entities_src": [
+            "छाया"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 28,
+          "centroid_div": 0.2204,
+          "percentile": 0.504
+        },
+        {
+          "entity_en": "poison",
+          "entities_src": [
+            "विष"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 34,
+          "centroid_div": 0.2137,
+          "percentile": 0.327
+        },
+        {
+          "entity_en": "daughter",
+          "entities_src": [
+            "बेटी",
+            "लड़की"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 139,
+          "centroid_div": 0.2099,
+          "percentile": 0.039
+        },
+        {
+          "entity_en": "skin",
+          "entities_src": [
+            "दमड़ी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 30,
+          "n_src_full": 27,
+          "centroid_div": 0.207,
+          "percentile": 0.587
+        },
+        {
+          "entity_en": "field",
+          "entities_src": [
+            "खेत"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 150,
+          "centroid_div": 0.2021,
+          "percentile": 0.421
+        },
+        {
+          "entity_en": "tooth",
+          "entities_src": [
+            "दाँत"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 56,
+          "n_src_full": 93,
+          "centroid_div": 0.2015,
+          "percentile": 0.528
+        },
+        {
+          "entity_en": "pearl",
+          "entities_src": [
+            "मोती"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 27,
+          "centroid_div": 0.2008,
+          "percentile": 0.421
+        },
+        {
+          "entity_en": "kick",
+          "entities_src": [
+            "लात"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 35,
+          "centroid_div": 0.1983,
+          "percentile": 0.465
+        },
+        {
+          "entity_en": "horn",
+          "entities_src": [
+            "सींग"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 35,
+          "centroid_div": 0.197,
+          "percentile": 0.437
+        },
+        {
+          "entity_en": "lion",
+          "entities_src": [
+            "शेर",
+            "सिंह"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 74,
+          "centroid_div": 0.1936,
+          "percentile": 0.15
+        },
+        {
+          "entity_en": "river",
+          "entities_src": [
+            "गंगा",
+            "नदी"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 92,
+          "centroid_div": 0.1889,
+          "percentile": 0.449
+        },
+        {
+          "entity_en": "son",
+          "entities_src": [
+            "पुत्र",
+            "बेटा",
+            "पूत"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 303,
+          "centroid_div": 0.1882,
+          "percentile": 0.173
+        },
+        {
+          "entity_en": "shop",
+          "entities_src": [
+            "दुकान"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 26,
+          "centroid_div": 0.1879,
+          "percentile": 0.169
+        },
+        {
+          "entity_en": "earth",
+          "entities_src": [
+            "धरती"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 26,
+          "n_src_full": 29,
+          "centroid_div": 0.1873,
+          "percentile": 0.315
+        },
+        {
+          "entity_en": "job",
+          "entities_src": [
+            "नौकरी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 25,
+          "n_src_full": 38,
+          "centroid_div": 0.1869,
+          "percentile": 0.295
+        },
+        {
+          "entity_en": "stomach",
+          "entities_src": [
+            "पेट"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 262,
+          "centroid_div": 0.1862,
+          "percentile": 0.157
+        },
+        {
+          "entity_en": "food",
+          "entities_src": [
+            "भोजन",
+            "अन्न",
+            "खाना"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 287,
+          "centroid_div": 0.1849,
+          "percentile": 0.193
+        },
+        {
+          "entity_en": "monkey",
+          "entities_src": [
+            "बंदर"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 25,
+          "n_src_full": 33,
+          "centroid_div": 0.1848,
+          "percentile": 0.472
+        },
+        {
+          "entity_en": "king",
+          "entities_src": [
+            "राजा"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 173,
+          "centroid_div": 0.1841,
+          "percentile": 0.185
+        },
+        {
+          "entity_en": "crow",
+          "entities_src": [
+            "कौआ"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 52,
+          "centroid_div": 0.1836,
+          "percentile": 0.272
+        },
+        {
+          "entity_en": "milk",
+          "entities_src": [
+            "दूध"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 150,
+          "centroid_div": 0.1826,
+          "percentile": 0.343
+        },
+        {
+          "entity_en": "body",
+          "entities_src": [
+            "शरीर",
+            "तन",
+            "देह"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 105,
+          "centroid_div": 0.1815,
+          "percentile": 0.425
+        },
+        {
+          "entity_en": "path",
+          "entities_src": [
+            "राह"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 33,
+          "centroid_div": 0.1773,
+          "percentile": 0.252
+        },
+        {
+          "entity_en": "heaven",
+          "entities_src": [
+            "स्वर्ग"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 27,
+          "n_src_full": 26,
+          "centroid_div": 0.1765,
+          "percentile": 0.15
+        },
+        {
+          "entity_en": "mind",
+          "entities_src": [
+            "मन"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 113,
+          "n_src_full": 133,
+          "centroid_div": 0.1743,
+          "percentile": 0.181
+        },
+        {
+          "entity_en": "father",
+          "entities_src": [
+            "बाप",
+            "पिता"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 196,
+          "centroid_div": 0.1741,
+          "percentile": 0.028
+        },
+        {
+          "entity_en": "wind",
+          "entities_src": [
+            "हवा"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 47,
+          "n_src_full": 32,
+          "centroid_div": 0.1735,
+          "percentile": 0.252
+        },
+        {
+          "entity_en": "song",
+          "entities_src": [
+            "गीत"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 32,
+          "centroid_div": 0.1729,
+          "percentile": 0.354
+        },
+        {
+          "entity_en": "wife",
+          "entities_src": [
+            "पत्नी",
+            "बीबी"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 87,
+          "centroid_div": 0.1718,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "ghost",
+          "entities_src": [
+            "भूत"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 49,
+          "centroid_div": 0.169,
+          "percentile": 0.197
+        },
+        {
+          "entity_en": "color",
+          "entities_src": [
+            "रंग"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 25,
+          "centroid_div": 0.1683,
+          "percentile": 0.295
+        },
+        {
+          "entity_en": "moon",
+          "entities_src": [
+            "चाँद"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 27,
+          "centroid_div": 0.1675,
+          "percentile": 0.114
+        },
+        {
+          "entity_en": "mud",
+          "entities_src": [
+            "मिट्टी"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 50,
+          "centroid_div": 0.1672,
+          "percentile": 0.37
+        },
+        {
+          "entity_en": "camel",
+          "entities_src": [
+            "ऊँट"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 114,
+          "centroid_div": 0.1652,
+          "percentile": 0.283
+        },
+        {
+          "entity_en": "elephant",
+          "entities_src": [
+            "हाथी"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 108,
+          "centroid_div": 0.1644,
+          "percentile": 0.13
+        },
+        {
+          "entity_en": "heart",
+          "entities_src": [
+            "दिल"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 127,
+          "n_src_full": 78,
+          "centroid_div": 0.1633,
+          "percentile": 0.039
+        },
+        {
+          "entity_en": "fire",
+          "entities_src": [
+            "आग"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 74,
+          "n_src_full": 148,
+          "centroid_div": 0.162,
+          "percentile": 0.213
+        },
+        {
+          "entity_en": "sword",
+          "entities_src": [
+            "तलवार"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 41,
+          "centroid_div": 0.162,
+          "percentile": 0.106
+        },
+        {
+          "entity_en": "rat",
+          "entities_src": [
+            "चूहा"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 28,
+          "centroid_div": 0.1612,
+          "percentile": 0.272
+        },
+        {
+          "entity_en": "hair",
+          "entities_src": [
+            "बाल"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 46,
+          "n_src_full": 69,
+          "centroid_div": 0.1608,
+          "percentile": 0.201
+        },
+        {
+          "entity_en": "sin",
+          "entities_src": [
+            "पाप"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 40,
+          "centroid_div": 0.1601,
+          "percentile": 0.035
+        },
+        {
+          "entity_en": "bitch",
+          "entities_src": [
+            "कुतिया"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 32,
+          "centroid_div": 0.1579,
+          "percentile": 0.154
+        },
+        {
+          "entity_en": "fight",
+          "entities_src": [
+            "लड़ाई"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 25,
+          "centroid_div": 0.1568,
+          "percentile": 0.024
+        },
+        {
+          "entity_en": "shoe",
+          "entities_src": [
+            "जूता"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 35,
+          "n_src_full": 34,
+          "centroid_div": 0.1528,
+          "percentile": 0.24
+        },
+        {
+          "entity_en": "land",
+          "entities_src": [
+            "ज़मीन",
+            "भूमि"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 56,
+          "centroid_div": 0.1519,
+          "percentile": 0.094
+        },
+        {
+          "entity_en": "god",
+          "entities_src": [
+            "ईश्वर",
+            "भगवान",
+            "खुदा",
+            "देवता"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 50,
+          "n_src_full": 378,
+          "centroid_div": 0.1504,
+          "percentile": 0.083
+        },
+        {
+          "entity_en": "throat",
+          "entities_src": [
+            "गला"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 32,
+          "centroid_div": 0.15,
+          "percentile": 0.26
+        },
+        {
+          "entity_en": "world",
+          "entities_src": [
+            "संसार",
+            "दुनिया",
+            "जग"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 68,
+          "n_src_full": 203,
+          "centroid_div": 0.1486,
+          "percentile": 0.295
+        },
+        {
+          "entity_en": "boat",
+          "entities_src": [
+            "नाव"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 38,
+          "centroid_div": 0.1477,
+          "percentile": 0.146
+        },
+        {
+          "entity_en": "eye",
+          "entities_src": [
+            "आँख"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 159,
+          "n_src_full": 167,
+          "centroid_div": 0.1474,
+          "percentile": 0.232
+        },
+        {
+          "entity_en": "chest",
+          "entities_src": [
+            "छाती"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 26,
+          "centroid_div": 0.1469,
+          "percentile": 0.197
+        },
+        {
+          "entity_en": "mouth",
+          "entities_src": [
+            "मुँह"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 75,
+          "n_src_full": 225,
+          "centroid_div": 0.1456,
+          "percentile": 0.161
+        },
+        {
+          "entity_en": "love",
+          "entities_src": [
+            "माया",
+            "प्रेम"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 62,
+          "centroid_div": 0.1455,
+          "percentile": 0.067
+        },
+        {
+          "entity_en": "salt",
+          "entities_src": [
+            "नमक"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 44,
+          "centroid_div": 0.1432,
+          "percentile": 0.228
+        },
+        {
+          "entity_en": "enemy",
+          "entities_src": [
+            "दुश्मन",
+            "खसम",
+            "शत्रु"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 114,
+          "centroid_div": 0.1427,
+          "percentile": 0.102
+        },
+        {
+          "entity_en": "mountain",
+          "entities_src": [
+            "पहाड़"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 47,
+          "centroid_div": 0.1421,
+          "percentile": 0.094
+        },
+        {
+          "entity_en": "work",
+          "entities_src": [
+            "काम",
+            "कार्य"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 53,
+          "n_src_full": 217,
+          "centroid_div": 0.142,
+          "percentile": 0.028
+        },
+        {
+          "entity_en": "cat",
+          "entities_src": [
+            "बिल्ली"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 62,
+          "n_src_full": 104,
+          "centroid_div": 0.1414,
+          "percentile": 0.22
+        },
+        {
+          "entity_en": "house",
+          "entities_src": [
+            "घर"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 783,
+          "centroid_div": 0.1401,
+          "percentile": 0.091
+        },
+        {
+          "entity_en": "ear",
+          "entities_src": [
+            "कान"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 91,
+          "n_src_full": 120,
+          "centroid_div": 0.14,
+          "percentile": 0.098
+        },
+        {
+          "entity_en": "fate",
+          "entities_src": [
+            "भाग्य"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 69,
+          "centroid_div": 0.1394,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "master",
+          "entities_src": [
+            "मालिक"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 70,
+          "centroid_div": 0.1383,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "lord",
+          "entities_src": [
+            "ठाकुर"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 25,
+          "centroid_div": 0.1363,
+          "percentile": 0.154
+        },
+        {
+          "entity_en": "face",
+          "entities_src": [
+            "मुंह"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 83,
+          "n_src_full": 67,
+          "centroid_div": 0.1362,
+          "percentile": 0.13
+        },
+        {
+          "entity_en": "sun",
+          "entities_src": [
+            "धूप",
+            "सूर्य"
+          ],
+          "n_en": 18,
+          "n_src": 20,
+          "n_en_full": 18,
+          "n_src_full": 69,
+          "centroid_div": 0.1358,
+          "percentile": 0.024
+        },
+        {
+          "entity_en": "beggar",
+          "entities_src": [
+            "फ़क़ीर"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 28,
+          "centroid_div": 0.1356,
+          "percentile": 0.173
+        },
+        {
+          "entity_en": "stick",
+          "entities_src": [
+            "लाठी",
+            "लकड़ी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 61,
+          "n_src_full": 96,
+          "centroid_div": 0.1353,
+          "percentile": 0.185
+        },
+        {
+          "entity_en": "time",
+          "entities_src": [
+            "समय",
+            "काल",
+            "वक्त"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 185,
+          "n_src_full": 121,
+          "centroid_div": 0.1352,
+          "percentile": 0.024
+        },
+        {
+          "entity_en": "fruit",
+          "entities_src": [
+            "फल"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 63,
+          "centroid_div": 0.1352,
+          "percentile": 0.047
+        },
+        {
+          "entity_en": "well",
+          "entities_src": [
+            "कुआँ"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 75,
+          "centroid_div": 0.1348,
+          "percentile": 0.047
+        },
+        {
+          "entity_en": "grass",
+          "entities_src": [
+            "घास"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 58,
+          "centroid_div": 0.1348,
+          "percentile": 0.217
+        },
+        {
+          "entity_en": "strength",
+          "entities_src": [
+            "बल"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 27,
+          "centroid_div": 0.1343,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "sky",
+          "entities_src": [
+            "आकाश",
+            "आसमान"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 63,
+          "centroid_div": 0.134,
+          "percentile": 0.071
+        },
+        {
+          "entity_en": "money",
+          "entities_src": [
+            "पैसा",
+            "टका"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 82,
+          "n_src_full": 159,
+          "centroid_div": 0.1337,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "foot",
+          "entities_src": [
+            "पाँव",
+            "पैर"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 122,
+          "n_src_full": 155,
+          "centroid_div": 0.1336,
+          "percentile": 0.169
+        },
+        {
+          "entity_en": "back",
+          "entities_src": [
+            "पीठ"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 107,
+          "n_src_full": 44,
+          "centroid_div": 0.1331,
+          "percentile": 0.118
+        },
+        {
+          "entity_en": "tail",
+          "entities_src": [
+            "पूँछ"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 31,
+          "n_src_full": 33,
+          "centroid_div": 0.1323,
+          "percentile": 0.13
+        },
+        {
+          "entity_en": "snake",
+          "entities_src": [
+            "साँप"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 113,
+          "centroid_div": 0.1322,
+          "percentile": 0.075
+        },
+        {
+          "entity_en": "cow",
+          "entities_src": [
+            "गाय"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 128,
+          "centroid_div": 0.1318,
+          "percentile": 0.122
+        },
+        {
+          "entity_en": "life",
+          "entities_src": [
+            "जान",
+            "जीवन",
+            "प्राण"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 82,
+          "n_src_full": 113,
+          "centroid_div": 0.1306,
+          "percentile": 0.039
+        },
+        {
+          "entity_en": "tree",
+          "entities_src": [
+            "पेड़"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 60,
+          "centroid_div": 0.1304,
+          "percentile": 0.181
+        },
+        {
+          "entity_en": "price",
+          "entities_src": [
+            "दाम"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 40,
+          "centroid_div": 0.1288,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "name",
+          "entities_src": [
+            "नाम"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 57,
+          "centroid_div": 0.1273,
+          "percentile": 0.028
+        },
+        {
+          "entity_en": "leg",
+          "entities_src": [
+            "टाँग"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 34,
+          "n_src_full": 34,
+          "centroid_div": 0.1264,
+          "percentile": 0.122
+        },
+        {
+          "entity_en": "mill",
+          "entities_src": [
+            "चक्की"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 27,
+          "centroid_div": 0.126,
+          "percentile": 0.146
+        },
+        {
+          "entity_en": "horse",
+          "entities_src": [
+            "घोड़ा",
+            "घोड़े"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 71,
+          "n_src_full": 174,
+          "centroid_div": 0.1256,
+          "percentile": 0.157
+        },
+        {
+          "entity_en": "oil",
+          "entities_src": [
+            "तेल"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 102,
+          "centroid_div": 0.1249,
+          "percentile": 0.063
+        },
+        {
+          "entity_en": "fool",
+          "entities_src": [
+            "मूर्ख"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 27,
+          "n_src_full": 53,
+          "centroid_div": 0.1245,
+          "percentile": 0.094
+        },
+        {
+          "entity_en": "boy",
+          "entities_src": [
+            "लड़का"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 30,
+          "n_src_full": 123,
+          "centroid_div": 0.1232,
+          "percentile": 0.079
+        },
+        {
+          "entity_en": "nose",
+          "entities_src": [
+            "नाक"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 76,
+          "n_src_full": 87,
+          "centroid_div": 0.1225,
+          "percentile": 0.106
+        },
+        {
+          "entity_en": "man",
+          "entities_src": [
+            "आदमी",
+            "पुरुष",
+            "मर्द"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 113,
+          "n_src_full": 310,
+          "centroid_div": 0.1194,
+          "percentile": 0.102
+        },
+        {
+          "entity_en": "water",
+          "entities_src": [
+            "पानी",
+            "जल"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 79,
+          "n_src_full": 415,
+          "centroid_div": 0.119,
+          "percentile": 0.079
+        },
+        {
+          "entity_en": "gold",
+          "entities_src": [
+            "सोना"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 81,
+          "centroid_div": 0.119,
+          "percentile": 0.024
+        },
+        {
+          "entity_en": "head",
+          "entities_src": [
+            "सिर"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 208,
+          "n_src_full": 232,
+          "centroid_div": 0.1179,
+          "percentile": 0.075
+        },
+        {
+          "entity_en": "family",
+          "entities_src": [
+            "परिवार"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 62,
+          "centroid_div": 0.1177,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "brick",
+          "entities_src": [
+            "ईंट"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 29,
+          "centroid_div": 0.116,
+          "percentile": 0.071
+        },
+        {
+          "entity_en": "night",
+          "entities_src": [
+            "रात"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 98,
+          "centroid_div": 0.1148,
+          "percentile": 0.024
+        },
+        {
+          "entity_en": "bird",
+          "entities_src": [
+            "चिड़िया"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 29,
+          "n_src_full": 29,
+          "centroid_div": 0.1144,
+          "percentile": 0.087
+        },
+        {
+          "entity_en": "day",
+          "entities_src": [
+            "दिन"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 103,
+          "n_src_full": 114,
+          "centroid_div": 0.1137,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "fly",
+          "entities_src": [
+            "मक्खी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 34,
+          "n_src_full": 30,
+          "centroid_div": 0.1125,
+          "percentile": 0.02
+        },
+        {
+          "entity_en": "word",
+          "entities_src": [
+            "बात"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 118,
+          "n_src_full": 121,
+          "centroid_div": 0.112,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "stone",
+          "entities_src": [
+            "पत्थर"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 83,
+          "centroid_div": 0.1117,
+          "percentile": 0.051
+        },
+        {
+          "entity_en": "hand",
+          "entities_src": [
+            "हाथ"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 180,
+          "n_src_full": 289,
+          "centroid_div": 0.1106,
+          "percentile": 0.047
+        },
+        {
+          "entity_en": "mother",
+          "entities_src": [
+            "माँ"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 175,
+          "centroid_div": 0.1095,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "pot",
+          "entities_src": [
+            "घड़ा"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 41,
+          "centroid_div": 0.1076,
+          "percentile": 0.055
+        },
+        {
+          "entity_en": "child",
+          "entities_src": [
+            "बच्चे",
+            "बच्चा"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 157,
+          "centroid_div": 0.1061,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "tongue",
+          "entities_src": [
+            "जीभ",
+            "ज़बान"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 64,
+          "centroid_div": 0.1051,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "dog",
+          "entities_src": [
+            "कुत्ता",
+            "कुत्ते"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 80,
+          "n_src_full": 215,
+          "centroid_div": 0.105,
+          "percentile": 0.063
+        },
+        {
+          "entity_en": "woman",
+          "entities_src": [
+            "स्त्री",
+            "औरत"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 304,
+          "centroid_div": 0.1028,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "friend",
+          "entities_src": [
+            "मित्र",
+            "यार"
+          ],
+          "n_en": 16,
+          "n_src": 20,
+          "n_en_full": 16,
+          "n_src_full": 105,
+          "centroid_div": 0.1015,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "lie",
+          "entities_src": [
+            "झूठ"
+          ],
+          "n_en": 12,
+          "n_src": 20,
+          "n_en_full": 12,
+          "n_src_full": 46,
+          "centroid_div": 0.0989,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "thief",
+          "entities_src": [
+            "चोर"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 206,
+          "centroid_div": 0.0973,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "death",
+          "entities_src": [
+            "मौत",
+            "मृत्यु"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 42,
+          "n_src_full": 77,
+          "centroid_div": 0.0971,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "bread",
+          "entities_src": [
+            "रोटी"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 22,
+          "n_src_full": 150,
+          "centroid_div": 0.0971,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "devil",
+          "entities_src": [
+            "शैतान"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 61,
+          "n_src_full": 29,
+          "centroid_div": 0.0758,
+          "percentile": 0.012
+        }
+      ],
+      "native": {
+        "n_entities": 128,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.4138,
+            "ci95": [
+              0.4065,
+              0.4218
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.456,
+            "ci95": [
+              0.4519,
+              0.46
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.1676,
+            "ci95": [
+              0.1621,
+              0.1731
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": 0.2355,
+            "ci95": [
+              0.231,
+              0.2403
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.2528,
+            "ci95": [
+              0.2482,
+              0.2579
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.3515,
+            "ci95": [
+              0.3454,
+              0.3577
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8438,
+          "divergence_index_aggregate": {
+            "value": 0.814,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.2458,
+            "ci95": [
+              0.234,
+              0.2581
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.2942,
+            "ci95": [
+              0.285,
+              0.3039
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.0003,
+            "ci95": [
+              -0.002,
+              0.0025
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": 0.0001,
+            "ci95": [
+              -0.0012,
+              0.0014
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.1084,
+            "ci95": [
+              0.1012,
+              0.1161
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.1215,
+            "ci95": [
+              0.1139,
+              0.1304
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8203,
+          "divergence_index_aggregate": {
+            "value": 0.817,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.6023,
+            "ci95": [
+              0.597,
+              0.6076
+            ],
+            "n": 128
+          },
+          "cross_diff": {
+            "mean": 0.6292,
+            "ci95": [
+              0.6266,
+              0.6316
+            ],
+            "n": 128
+          },
+          "within_same_a": {
+            "mean": 0.3795,
+            "ci95": [
+              0.3668,
+              0.3918
+            ],
+            "n": 95
+          },
+          "within_same_b": {
+            "mean": 0.5018,
+            "ci95": [
+              0.4959,
+              0.5076
+            ],
+            "n": 128
+          },
+          "within_diff_a": {
+            "mean": 0.4662,
+            "ci95": [
+              0.4623,
+              0.4705
+            ],
+            "n": 128
+          },
+          "within_diff_b": {
+            "mean": 0.5798,
+            "ci95": [
+              0.5768,
+              0.5829
+            ],
+            "n": 128
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8438,
+          "divergence_index_aggregate": {
+            "value": 0.842,
+            "n_entities": 95,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 128,
+          "mean_percentile": 0.2265,
+          "median_percentile": 0.1693,
+          "frac_true_pair_top1_en2src": 0.1719,
+          "frac_percentile_le_0.05": 0.2656,
+          "frac_percentile_ge_0.50": 0.1172,
+          "mean_centroid_div_true": 0.3207,
+          "mean_centroid_div_random": 0.3698
+        }
+      }
+    },
+    "en-ar": {
+      "top_entities": 300,
+      "translated": 300,
+      "translated_not_none": 300,
+      "distinct_english_translations": 217,
+      "matched_to_english_entities": 168,
+      "mention_share_of_top300": 0.3225,
+      "gloss": {
+        "n_entities": 129,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.237,
+            "ci95": [
+              0.2317,
+              0.2425
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.2741,
+            "ci95": [
+              0.269,
+              0.2792
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": 0.1662,
+            "ci95": [
+              0.1614,
+              0.1711
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.1896,
+            "ci95": [
+              0.1861,
+              0.1932
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.2662,
+            "ci95": [
+              0.261,
+              0.2716
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.2375,
+            "ci95": [
+              0.2342,
+              0.2407
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.876,
+          "divergence_index_aggregate": {
+            "value": 0.572,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.0737,
+            "ci95": [
+              0.0665,
+              0.0817
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.1177,
+            "ci95": [
+              0.1098,
+              0.1261
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": -0.0029,
+            "ci95": [
+              -0.0048,
+              -0.0011
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.0012,
+            "ci95": [
+              -0.0004,
+              0.0028
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.1262,
+            "ci95": [
+              0.1184,
+              0.1345
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.0573,
+            "ci95": [
+              0.0529,
+              0.0618
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.8915,
+          "divergence_index_aggregate": {
+            "value": 0.573,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.4663,
+            "ci95": [
+              0.4608,
+              0.4713
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.4951,
+            "ci95": [
+              0.4923,
+              0.4983
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": 0.3811,
+            "ci95": [
+              0.3712,
+              0.391
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.4366,
+            "ci95": [
+              0.4311,
+              0.4424
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.4774,
+            "ci95": [
+              0.4741,
+              0.481
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.4803,
+            "ci95": [
+              0.4775,
+              0.4831
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.845,
+          "divergence_index_aggregate": {
+            "value": 0.652,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 129,
+          "mean_percentile": 0.2258,
+          "median_percentile": 0.1562,
+          "frac_true_pair_top1_en2src": 0.186,
+          "frac_percentile_le_0.05": 0.2636,
+          "frac_percentile_ge_0.50": 0.124,
+          "mean_centroid_div_true": 0.1416,
+          "mean_centroid_div_random": 0.1822
+        }
+      },
+      "n_qualifying_ge5": 129,
+      "top10_most_divergent": [
+        {
+          "entity_en": "thorn",
+          "entities_src": [
+            "شوك"
+          ],
+          "n_en": 6,
+          "n_src": 9,
+          "n_en_full": 6,
+          "n_src_full": 9,
+          "centroid_div": 0.2743,
+          "percentile": 0.801
+        },
+        {
+          "entity_en": "bear",
+          "entities_src": [
+            "ديب"
+          ],
+          "n_en": 13,
+          "n_src": 9,
+          "n_en_full": 13,
+          "n_src_full": 9,
+          "centroid_div": 0.2651,
+          "percentile": 0.82
+        },
+        {
+          "entity_en": "limit",
+          "entities_src": [
+            "حد"
+          ],
+          "n_en": 5,
+          "n_src": 10,
+          "n_en_full": 5,
+          "n_src_full": 10,
+          "centroid_div": 0.2587,
+          "percentile": 0.742
+        },
+        {
+          "entity_en": "crop",
+          "entities_src": [
+            "زرع"
+          ],
+          "n_en": 5,
+          "n_src": 9,
+          "n_en_full": 5,
+          "n_src_full": 9,
+          "centroid_div": 0.2582,
+          "percentile": 0.742
+        },
+        {
+          "entity_en": "loaf",
+          "entities_src": [
+            "رغيف"
+          ],
+          "n_en": 6,
+          "n_src": 8,
+          "n_en_full": 6,
+          "n_src_full": 8,
+          "centroid_div": 0.2409,
+          "percentile": 0.602
+        },
+        {
+          "entity_en": "flag",
+          "entities_src": [
+            "علم"
+          ],
+          "n_en": 9,
+          "n_src": 13,
+          "n_en_full": 9,
+          "n_src_full": 13,
+          "centroid_div": 0.2399,
+          "percentile": 0.734
+        },
+        {
+          "entity_en": "donkey",
+          "entities_src": [
+            "حمار",
+            "حمير",
+            "حماره"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 89,
+          "centroid_div": 0.2382,
+          "percentile": 0.652
+        },
+        {
+          "entity_en": "heat",
+          "entities_src": [
+            "حاره"
+          ],
+          "n_en": 16,
+          "n_src": 9,
+          "n_en_full": 16,
+          "n_src_full": 9,
+          "centroid_div": 0.2291,
+          "percentile": 0.715
+        },
+        {
+          "entity_en": "palm",
+          "entities_src": [
+            "كف",
+            "نخل"
+          ],
+          "n_en": 9,
+          "n_src": 16,
+          "n_en_full": 9,
+          "n_src_full": 16,
+          "centroid_div": 0.2285,
+          "percentile": 0.629
+        },
+        {
+          "entity_en": "land",
+          "entities_src": [
+            "بلاد"
+          ],
+          "n_en": 18,
+          "n_src": 8,
+          "n_en_full": 18,
+          "n_src_full": 8,
+          "centroid_div": 0.2239,
+          "percentile": 0.512
+        }
+      ],
+      "top10_least_divergent": [
+        {
+          "entity_en": "dog",
+          "entities_src": [
+            "كلب"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 80,
+          "n_src_full": 76,
+          "centroid_div": 0.0676,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "day",
+          "entities_src": [
+            "يوم",
+            "نهار"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 103,
+          "n_src_full": 69,
+          "centroid_div": 0.0763,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "money",
+          "entities_src": [
+            "فلوس"
+          ],
+          "n_en": 20,
+          "n_src": 11,
+          "n_en_full": 82,
+          "n_src_full": 11,
+          "centroid_div": 0.0779,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "wolf",
+          "entities_src": [
+            "ذئب"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 33,
+          "centroid_div": 0.0812,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "house",
+          "entities_src": [
+            "دار",
+            "بيت",
+            "دارك",
+            "داره"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 148,
+          "centroid_div": 0.0817,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "head",
+          "entities_src": [
+            "راس",
+            "راسه",
+            "راسك"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 208,
+          "n_src_full": 93,
+          "centroid_div": 0.0823,
+          "percentile": 0.055
+        },
+        {
+          "entity_en": "bird",
+          "entities_src": [
+            "طير"
+          ],
+          "n_en": 20,
+          "n_src": 19,
+          "n_en_full": 29,
+          "n_src_full": 19,
+          "centroid_div": 0.0829,
+          "percentile": 0.031
+        },
+        {
+          "entity_en": "cow",
+          "entities_src": [
+            "بقر",
+            "بقره"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 21,
+          "centroid_div": 0.0837,
+          "percentile": 0.102
+        },
+        {
+          "entity_en": "hand",
+          "entities_src": [
+            "يد",
+            "ايده",
+            "ايد",
+            "ايدك"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 180,
+          "n_src_full": 121,
+          "centroid_div": 0.0849,
+          "percentile": 0.02
+        },
+        {
+          "entity_en": "gold",
+          "entities_src": [
+            "ذهب"
+          ],
+          "n_en": 20,
+          "n_src": 13,
+          "n_en_full": 21,
+          "n_src_full": 13,
+          "centroid_div": 0.0862,
+          "percentile": 0.004
+        }
+      ],
+      "per_entity": [
+        {
+          "entity_en": "thorn",
+          "entities_src": [
+            "شوك"
+          ],
+          "n_en": 6,
+          "n_src": 9,
+          "n_en_full": 6,
+          "n_src_full": 9,
+          "centroid_div": 0.2743,
+          "percentile": 0.801
+        },
+        {
+          "entity_en": "bear",
+          "entities_src": [
+            "ديب"
+          ],
+          "n_en": 13,
+          "n_src": 9,
+          "n_en_full": 13,
+          "n_src_full": 9,
+          "centroid_div": 0.2651,
+          "percentile": 0.82
+        },
+        {
+          "entity_en": "limit",
+          "entities_src": [
+            "حد"
+          ],
+          "n_en": 5,
+          "n_src": 10,
+          "n_en_full": 5,
+          "n_src_full": 10,
+          "centroid_div": 0.2587,
+          "percentile": 0.742
+        },
+        {
+          "entity_en": "crop",
+          "entities_src": [
+            "زرع"
+          ],
+          "n_en": 5,
+          "n_src": 9,
+          "n_en_full": 5,
+          "n_src_full": 9,
+          "centroid_div": 0.2582,
+          "percentile": 0.742
+        },
+        {
+          "entity_en": "loaf",
+          "entities_src": [
+            "رغيف"
+          ],
+          "n_en": 6,
+          "n_src": 8,
+          "n_en_full": 6,
+          "n_src_full": 8,
+          "centroid_div": 0.2409,
+          "percentile": 0.602
+        },
+        {
+          "entity_en": "flag",
+          "entities_src": [
+            "علم"
+          ],
+          "n_en": 9,
+          "n_src": 13,
+          "n_en_full": 9,
+          "n_src_full": 13,
+          "centroid_div": 0.2399,
+          "percentile": 0.734
+        },
+        {
+          "entity_en": "donkey",
+          "entities_src": [
+            "حمار",
+            "حمير",
+            "حماره"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 89,
+          "centroid_div": 0.2382,
+          "percentile": 0.652
+        },
+        {
+          "entity_en": "heat",
+          "entities_src": [
+            "حاره"
+          ],
+          "n_en": 16,
+          "n_src": 9,
+          "n_en_full": 16,
+          "n_src_full": 9,
+          "centroid_div": 0.2291,
+          "percentile": 0.715
+        },
+        {
+          "entity_en": "palm",
+          "entities_src": [
+            "كف",
+            "نخل"
+          ],
+          "n_en": 9,
+          "n_src": 16,
+          "n_en_full": 9,
+          "n_src_full": 16,
+          "centroid_div": 0.2285,
+          "percentile": 0.629
+        },
+        {
+          "entity_en": "land",
+          "entities_src": [
+            "بلاد"
+          ],
+          "n_en": 18,
+          "n_src": 8,
+          "n_en_full": 18,
+          "n_src_full": 8,
+          "centroid_div": 0.2239,
+          "percentile": 0.512
+        },
+        {
+          "entity_en": "boy",
+          "entities_src": [
+            "غلام"
+          ],
+          "n_en": 20,
+          "n_src": 9,
+          "n_en_full": 30,
+          "n_src_full": 9,
+          "centroid_div": 0.2226,
+          "percentile": 0.547
+        },
+        {
+          "entity_en": "soap",
+          "entities_src": [
+            "صابون"
+          ],
+          "n_en": 6,
+          "n_src": 9,
+          "n_en_full": 6,
+          "n_src_full": 9,
+          "centroid_div": 0.2159,
+          "percentile": 0.668
+        },
+        {
+          "entity_en": "wool",
+          "entities_src": [
+            "صوف"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 22,
+          "centroid_div": 0.2128,
+          "percentile": 0.641
+        },
+        {
+          "entity_en": "wine",
+          "entities_src": [
+            "خمر"
+          ],
+          "n_en": 7,
+          "n_src": 14,
+          "n_en_full": 7,
+          "n_src_full": 14,
+          "centroid_div": 0.2125,
+          "percentile": 0.707
+        },
+        {
+          "entity_en": "pigeon",
+          "entities_src": [
+            "حمام"
+          ],
+          "n_en": 5,
+          "n_src": 12,
+          "n_en_full": 5,
+          "n_src_full": 12,
+          "centroid_div": 0.2122,
+          "percentile": 0.469
+        },
+        {
+          "entity_en": "year",
+          "entities_src": [
+            "سنه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 22,
+          "centroid_div": 0.2102,
+          "percentile": 0.496
+        },
+        {
+          "entity_en": "joy",
+          "entities_src": [
+            "فرح"
+          ],
+          "n_en": 6,
+          "n_src": 16,
+          "n_en_full": 6,
+          "n_src_full": 16,
+          "centroid_div": 0.2082,
+          "percentile": 0.406
+        },
+        {
+          "entity_en": "date",
+          "entities_src": [
+            "تمره",
+            "تمر"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 23,
+          "centroid_div": 0.1972,
+          "percentile": 0.484
+        },
+        {
+          "entity_en": "family",
+          "entities_src": [
+            "اهله",
+            "اهل"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 32,
+          "centroid_div": 0.195,
+          "percentile": 0.324
+        },
+        {
+          "entity_en": "spring",
+          "entities_src": [
+            "ربيع"
+          ],
+          "n_en": 8,
+          "n_src": 14,
+          "n_en_full": 8,
+          "n_src_full": 14,
+          "centroid_div": 0.1917,
+          "percentile": 0.355
+        },
+        {
+          "entity_en": "blessing",
+          "entities_src": [
+            "بركه"
+          ],
+          "n_en": 6,
+          "n_src": 10,
+          "n_en_full": 6,
+          "n_src_full": 10,
+          "centroid_div": 0.1893,
+          "percentile": 0.355
+        },
+        {
+          "entity_en": "smoke",
+          "entities_src": [
+            "دخان"
+          ],
+          "n_en": 11,
+          "n_src": 12,
+          "n_en_full": 11,
+          "n_src_full": 12,
+          "centroid_div": 0.1889,
+          "percentile": 0.527
+        },
+        {
+          "entity_en": "uncle",
+          "entities_src": [
+            "عمه",
+            "خاله"
+          ],
+          "n_en": 9,
+          "n_src": 17,
+          "n_en_full": 9,
+          "n_src_full": 17,
+          "centroid_div": 0.1844,
+          "percentile": 0.383
+        },
+        {
+          "entity_en": "patience",
+          "entities_src": [
+            "صبر",
+            "حلم"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 22,
+          "centroid_div": 0.1822,
+          "percentile": 0.324
+        },
+        {
+          "entity_en": "milk",
+          "entities_src": [
+            "لبن"
+          ],
+          "n_en": 9,
+          "n_src": 18,
+          "n_en_full": 9,
+          "n_src_full": 18,
+          "centroid_div": 0.1802,
+          "percentile": 0.598
+        },
+        {
+          "entity_en": "belly",
+          "entities_src": [
+            "بطنه",
+            "بطن"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 37,
+          "centroid_div": 0.1771,
+          "percentile": 0.426
+        },
+        {
+          "entity_en": "mind",
+          "entities_src": [
+            "عقل",
+            "عقله"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 113,
+          "n_src_full": 35,
+          "centroid_div": 0.1728,
+          "percentile": 0.453
+        },
+        {
+          "entity_en": "horn",
+          "entities_src": [
+            "قرن"
+          ],
+          "n_en": 19,
+          "n_src": 8,
+          "n_en_full": 19,
+          "n_src_full": 8,
+          "centroid_div": 0.1721,
+          "percentile": 0.383
+        },
+        {
+          "entity_en": "snake",
+          "entities_src": [
+            "حيه"
+          ],
+          "n_en": 12,
+          "n_src": 12,
+          "n_en_full": 12,
+          "n_src_full": 12,
+          "centroid_div": 0.1654,
+          "percentile": 0.371
+        },
+        {
+          "entity_en": "cup",
+          "entities_src": [
+            "قدح"
+          ],
+          "n_en": 9,
+          "n_src": 8,
+          "n_en_full": 9,
+          "n_src_full": 8,
+          "centroid_div": 0.1635,
+          "percentile": 0.469
+        },
+        {
+          "entity_en": "salt",
+          "entities_src": [
+            "ملح"
+          ],
+          "n_en": 20,
+          "n_src": 8,
+          "n_en_full": 21,
+          "n_src_full": 8,
+          "centroid_div": 0.162,
+          "percentile": 0.469
+        },
+        {
+          "entity_en": "judge",
+          "entities_src": [
+            "قاضي"
+          ],
+          "n_en": 8,
+          "n_src": 12,
+          "n_en_full": 8,
+          "n_src_full": 12,
+          "centroid_div": 0.1616,
+          "percentile": 0.109
+        },
+        {
+          "entity_en": "tree",
+          "entities_src": [
+            "شجره"
+          ],
+          "n_en": 20,
+          "n_src": 9,
+          "n_en_full": 22,
+          "n_src_full": 9,
+          "centroid_div": 0.1605,
+          "percentile": 0.453
+        },
+        {
+          "entity_en": "moon",
+          "entities_src": [
+            "قمر"
+          ],
+          "n_en": 15,
+          "n_src": 19,
+          "n_en_full": 15,
+          "n_src_full": 19,
+          "centroid_div": 0.1595,
+          "percentile": 0.324
+        },
+        {
+          "entity_en": "voice",
+          "entities_src": [
+            "صوت"
+          ],
+          "n_en": 11,
+          "n_src": 11,
+          "n_en_full": 11,
+          "n_src_full": 11,
+          "centroid_div": 0.158,
+          "percentile": 0.293
+        },
+        {
+          "entity_en": "slave",
+          "entities_src": [
+            "عبد"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 33,
+          "centroid_div": 0.1571,
+          "percentile": 0.195
+        },
+        {
+          "entity_en": "enemy",
+          "entities_src": [
+            "عدو",
+            "عدوك"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 43,
+          "centroid_div": 0.1559,
+          "percentile": 0.203
+        },
+        {
+          "entity_en": "tooth",
+          "entities_src": [
+            "سن"
+          ],
+          "n_en": 20,
+          "n_src": 9,
+          "n_en_full": 56,
+          "n_src_full": 9,
+          "centroid_div": 0.155,
+          "percentile": 0.434
+        },
+        {
+          "entity_en": "grain",
+          "entities_src": [
+            "حب",
+            "دره",
+            "حبه"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 39,
+          "centroid_div": 0.1545,
+          "percentile": 0.352
+        },
+        {
+          "entity_en": "town",
+          "entities_src": [
+            "بلد"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 22,
+          "centroid_div": 0.1533,
+          "percentile": 0.23
+        },
+        {
+          "entity_en": "doctor",
+          "entities_src": [
+            "طبيب"
+          ],
+          "n_en": 8,
+          "n_src": 13,
+          "n_en_full": 8,
+          "n_src_full": 13,
+          "centroid_div": 0.1531,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "daughter",
+          "entities_src": [
+            "بنت"
+          ],
+          "n_en": 5,
+          "n_src": 20,
+          "n_en_full": 5,
+          "n_src_full": 28,
+          "centroid_div": 0.1529,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "mouse",
+          "entities_src": [
+            "فار"
+          ],
+          "n_en": 10,
+          "n_src": 14,
+          "n_en_full": 10,
+          "n_src_full": 14,
+          "centroid_div": 0.1487,
+          "percentile": 0.355
+        },
+        {
+          "entity_en": "dust",
+          "entities_src": [
+            "تراب"
+          ],
+          "n_en": 20,
+          "n_src": 11,
+          "n_en_full": 20,
+          "n_src_full": 11,
+          "centroid_div": 0.1486,
+          "percentile": 0.41
+        },
+        {
+          "entity_en": "honey",
+          "entities_src": [
+            "عسل"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 29,
+          "centroid_div": 0.1484,
+          "percentile": 0.254
+        },
+        {
+          "entity_en": "one",
+          "entities_src": [
+            "لي"
+          ],
+          "n_en": 20,
+          "n_src": 11,
+          "n_en_full": 20,
+          "n_src_full": 11,
+          "centroid_div": 0.1481,
+          "percentile": 0.402
+        },
+        {
+          "entity_en": "father",
+          "entities_src": [
+            "ابوك",
+            "ابوه"
+          ],
+          "n_en": 11,
+          "n_src": 20,
+          "n_en_full": 11,
+          "n_src_full": 26,
+          "centroid_div": 0.1476,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "oil",
+          "entities_src": [
+            "زيت"
+          ],
+          "n_en": 10,
+          "n_src": 14,
+          "n_en_full": 10,
+          "n_src_full": 14,
+          "centroid_div": 0.1451,
+          "percentile": 0.375
+        },
+        {
+          "entity_en": "opinion",
+          "entities_src": [
+            "راي"
+          ],
+          "n_en": 11,
+          "n_src": 9,
+          "n_en_full": 11,
+          "n_src_full": 9,
+          "centroid_div": 0.1441,
+          "percentile": 0.051
+        },
+        {
+          "entity_en": "wind",
+          "entities_src": [
+            "ريح",
+            "ريحه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 47,
+          "n_src_full": 35,
+          "centroid_div": 0.1438,
+          "percentile": 0.305
+        },
+        {
+          "entity_en": "mountain",
+          "entities_src": [
+            "جبل"
+          ],
+          "n_en": 6,
+          "n_src": 18,
+          "n_en_full": 6,
+          "n_src_full": 18,
+          "centroid_div": 0.1422,
+          "percentile": 0.297
+        },
+        {
+          "entity_en": "sky",
+          "entities_src": [
+            "سما"
+          ],
+          "n_en": 12,
+          "n_src": 10,
+          "n_en_full": 12,
+          "n_src_full": 10,
+          "centroid_div": 0.1421,
+          "percentile": 0.262
+        },
+        {
+          "entity_en": "word",
+          "entities_src": [
+            "كلمه"
+          ],
+          "n_en": 20,
+          "n_src": 14,
+          "n_en_full": 118,
+          "n_src_full": 14,
+          "centroid_div": 0.141,
+          "percentile": 0.105
+        },
+        {
+          "entity_en": "wood",
+          "entities_src": [
+            "خشب"
+          ],
+          "n_en": 17,
+          "n_src": 9,
+          "n_en_full": 17,
+          "n_src_full": 9,
+          "centroid_div": 0.1397,
+          "percentile": 0.348
+        },
+        {
+          "entity_en": "well",
+          "entities_src": [
+            "بير"
+          ],
+          "n_en": 5,
+          "n_src": 10,
+          "n_en_full": 5,
+          "n_src_full": 10,
+          "centroid_div": 0.1394,
+          "percentile": 0.129
+        },
+        {
+          "entity_en": "sheep",
+          "entities_src": [
+            "خروف",
+            "غنم"
+          ],
+          "n_en": 7,
+          "n_src": 19,
+          "n_en_full": 7,
+          "n_src_full": 19,
+          "centroid_div": 0.1392,
+          "percentile": 0.297
+        },
+        {
+          "entity_en": "sword",
+          "entities_src": [
+            "سيف"
+          ],
+          "n_en": 13,
+          "n_src": 14,
+          "n_en_full": 13,
+          "n_src_full": 14,
+          "centroid_div": 0.1384,
+          "percentile": 0.078
+        },
+        {
+          "entity_en": "good",
+          "entities_src": [
+            "خير",
+            "معروف"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 48,
+          "centroid_div": 0.1371,
+          "percentile": 0.141
+        },
+        {
+          "entity_en": "dawn",
+          "entities_src": [
+            "صبح"
+          ],
+          "n_en": 12,
+          "n_src": 10,
+          "n_en_full": 12,
+          "n_src_full": 10,
+          "centroid_div": 0.1367,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "lord",
+          "entities_src": [
+            "رب",
+            "ربي"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 24,
+          "centroid_div": 0.1352,
+          "percentile": 0.289
+        },
+        {
+          "entity_en": "face",
+          "entities_src": [
+            "وش",
+            "وجه",
+            "وشه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 83,
+          "n_src_full": 50,
+          "centroid_div": 0.1345,
+          "percentile": 0.207
+        },
+        {
+          "entity_en": "fire",
+          "entities_src": [
+            "نار"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 74,
+          "n_src_full": 49,
+          "centroid_div": 0.133,
+          "percentile": 0.223
+        },
+        {
+          "entity_en": "son",
+          "entities_src": [
+            "ابن",
+            "ابنك",
+            "ابنه"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 55,
+          "centroid_div": 0.1312,
+          "percentile": 0.027
+        },
+        {
+          "entity_en": "market",
+          "entities_src": [
+            "سوق"
+          ],
+          "n_en": 10,
+          "n_src": 20,
+          "n_en_full": 10,
+          "n_src_full": 21,
+          "centroid_div": 0.1303,
+          "percentile": 0.156
+        },
+        {
+          "entity_en": "luck",
+          "entities_src": [
+            "سعد"
+          ],
+          "n_en": 20,
+          "n_src": 13,
+          "n_en_full": 30,
+          "n_src_full": 13,
+          "centroid_div": 0.1295,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "death",
+          "entities_src": [
+            "موت"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 42,
+          "n_src_full": 25,
+          "centroid_div": 0.1293,
+          "percentile": 0.113
+        },
+        {
+          "entity_en": "needle",
+          "entities_src": [
+            "ابره"
+          ],
+          "n_en": 11,
+          "n_src": 10,
+          "n_en_full": 11,
+          "n_src_full": 10,
+          "centroid_div": 0.1281,
+          "percentile": 0.172
+        },
+        {
+          "entity_en": "rain",
+          "entities_src": [
+            "مطر"
+          ],
+          "n_en": 20,
+          "n_src": 10,
+          "n_en_full": 22,
+          "n_src_full": 10,
+          "centroid_div": 0.128,
+          "percentile": 0.094
+        },
+        {
+          "entity_en": "monkey",
+          "entities_src": [
+            "قرد"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 25,
+          "n_src_full": 20,
+          "centroid_div": 0.1279,
+          "percentile": 0.113
+        },
+        {
+          "entity_en": "lion",
+          "entities_src": [
+            "اسد",
+            "سبع"
+          ],
+          "n_en": 9,
+          "n_src": 20,
+          "n_en_full": 9,
+          "n_src_full": 28,
+          "centroid_div": 0.1276,
+          "percentile": 0.082
+        },
+        {
+          "entity_en": "fish",
+          "entities_src": [
+            "سمك"
+          ],
+          "n_en": 20,
+          "n_src": 11,
+          "n_en_full": 40,
+          "n_src_full": 11,
+          "centroid_div": 0.1271,
+          "percentile": 0.188
+        },
+        {
+          "entity_en": "self",
+          "entities_src": [
+            "نفسه",
+            "نفسك"
+          ],
+          "n_en": 14,
+          "n_src": 20,
+          "n_en_full": 14,
+          "n_src_full": 36,
+          "centroid_div": 0.1265,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "skin",
+          "entities_src": [
+            "جلد"
+          ],
+          "n_en": 20,
+          "n_src": 12,
+          "n_en_full": 30,
+          "n_src_full": 12,
+          "centroid_div": 0.1259,
+          "percentile": 0.188
+        },
+        {
+          "entity_en": "devil",
+          "entities_src": [
+            "شيطان"
+          ],
+          "n_en": 20,
+          "n_src": 9,
+          "n_en_full": 61,
+          "n_src_full": 9,
+          "centroid_div": 0.1253,
+          "percentile": 0.305
+        },
+        {
+          "entity_en": "thief",
+          "entities_src": [
+            "حرامي"
+          ],
+          "n_en": 11,
+          "n_src": 11,
+          "n_en_full": 11,
+          "n_src_full": 11,
+          "centroid_div": 0.1253,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "crow",
+          "entities_src": [
+            "غراب"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 30,
+          "centroid_div": 0.1252,
+          "percentile": 0.082
+        },
+        {
+          "entity_en": "iron",
+          "entities_src": [
+            "حديد"
+          ],
+          "n_en": 7,
+          "n_src": 15,
+          "n_en_full": 7,
+          "n_src_full": 15,
+          "centroid_div": 0.125,
+          "percentile": 0.062
+        },
+        {
+          "entity_en": "road",
+          "entities_src": [
+            "طريق"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 33,
+          "n_src_full": 21,
+          "centroid_div": 0.1233,
+          "percentile": 0.082
+        },
+        {
+          "entity_en": "camel",
+          "entities_src": [
+            "جمل",
+            "ابل",
+            "بعير",
+            "ناقه"
+          ],
+          "n_en": 7,
+          "n_src": 20,
+          "n_en_full": 7,
+          "n_src_full": 109,
+          "centroid_div": 0.1212,
+          "percentile": 0.156
+        },
+        {
+          "entity_en": "evil",
+          "entities_src": [
+            "شر"
+          ],
+          "n_en": 8,
+          "n_src": 20,
+          "n_en_full": 8,
+          "n_src_full": 37,
+          "centroid_div": 0.12,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "feast",
+          "entities_src": [
+            "عيد"
+          ],
+          "n_en": 8,
+          "n_src": 9,
+          "n_en_full": 8,
+          "n_src_full": 9,
+          "centroid_div": 0.1198,
+          "percentile": 0.219
+        },
+        {
+          "entity_en": "blood",
+          "entities_src": [
+            "دم",
+            "دمه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 47,
+          "n_src_full": 32,
+          "centroid_div": 0.1194,
+          "percentile": 0.09
+        },
+        {
+          "entity_en": "time",
+          "entities_src": [
+            "دهر",
+            "زمان"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 185,
+          "n_src_full": 47,
+          "centroid_div": 0.1192,
+          "percentile": 0.043
+        },
+        {
+          "entity_en": "child",
+          "entities_src": [
+            "ولد",
+            "صبي"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 43,
+          "centroid_div": 0.1191,
+          "percentile": 0.043
+        },
+        {
+          "entity_en": "woman",
+          "entities_src": [
+            "مراه",
+            "مره"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 34,
+          "centroid_div": 0.1188,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "stick",
+          "entities_src": [
+            "عود",
+            "عصا"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 61,
+          "n_src_full": 49,
+          "centroid_div": 0.1174,
+          "percentile": 0.219
+        },
+        {
+          "entity_en": "game",
+          "entities_src": [
+            "صيد"
+          ],
+          "n_en": 20,
+          "n_src": 9,
+          "n_en_full": 38,
+          "n_src_full": 9,
+          "centroid_div": 0.1172,
+          "percentile": 0.078
+        },
+        {
+          "entity_en": "rope",
+          "entities_src": [
+            "حبل"
+          ],
+          "n_en": 16,
+          "n_src": 20,
+          "n_en_full": 16,
+          "n_src_full": 22,
+          "centroid_div": 0.1165,
+          "percentile": 0.199
+        },
+        {
+          "entity_en": "sea",
+          "entities_src": [
+            "بحر"
+          ],
+          "n_en": 13,
+          "n_src": 20,
+          "n_en_full": 13,
+          "n_src_full": 41,
+          "centroid_div": 0.1162,
+          "percentile": 0.195
+        },
+        {
+          "entity_en": "tail",
+          "entities_src": [
+            "ذنب",
+            "ذيل"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 31,
+          "n_src_full": 20,
+          "centroid_div": 0.1159,
+          "percentile": 0.246
+        },
+        {
+          "entity_en": "heart",
+          "entities_src": [
+            "قلب",
+            "قلبه",
+            "قلبي"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 127,
+          "n_src_full": 83,
+          "centroid_div": 0.1144,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "pot",
+          "entities_src": [
+            "قدر"
+          ],
+          "n_en": 14,
+          "n_src": 14,
+          "n_en_full": 14,
+          "n_src_full": 14,
+          "centroid_div": 0.1133,
+          "percentile": 0.156
+        },
+        {
+          "entity_en": "earth",
+          "entities_src": [
+            "ارض"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 26,
+          "n_src_full": 49,
+          "centroid_div": 0.1132,
+          "percentile": 0.113
+        },
+        {
+          "entity_en": "flesh",
+          "entities_src": [
+            "لحم",
+            "لحمه"
+          ],
+          "n_en": 15,
+          "n_src": 20,
+          "n_en_full": 15,
+          "n_src_full": 38,
+          "centroid_div": 0.1111,
+          "percentile": 0.086
+        },
+        {
+          "entity_en": "cat",
+          "entities_src": [
+            "قط"
+          ],
+          "n_en": 20,
+          "n_src": 15,
+          "n_en_full": 62,
+          "n_src_full": 15,
+          "centroid_div": 0.1104,
+          "percentile": 0.113
+        },
+        {
+          "entity_en": "truth",
+          "entities_src": [
+            "حق"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 34,
+          "centroid_div": 0.1092,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "grave",
+          "entities_src": [
+            "قبر"
+          ],
+          "n_en": 19,
+          "n_src": 9,
+          "n_en_full": 19,
+          "n_src_full": 9,
+          "centroid_div": 0.1083,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "life",
+          "entities_src": [
+            "عيش",
+            "عمر",
+            "عيشه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 82,
+          "n_src_full": 62,
+          "centroid_div": 0.1077,
+          "percentile": 0.141
+        },
+        {
+          "entity_en": "tongue",
+          "entities_src": [
+            "لسان",
+            "لسانه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 41,
+          "n_src_full": 39,
+          "centroid_div": 0.1069,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "horse",
+          "entities_src": [
+            "فرس",
+            "خيل"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 71,
+          "n_src_full": 35,
+          "centroid_div": 0.1062,
+          "percentile": 0.211
+        },
+        {
+          "entity_en": "god",
+          "entities_src": [
+            "الله"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 50,
+          "n_src_full": 126,
+          "centroid_div": 0.1053,
+          "percentile": 0.086
+        },
+        {
+          "entity_en": "soul",
+          "entities_src": [
+            "نفس",
+            "روحه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 20,
+          "n_src_full": 26,
+          "centroid_div": 0.1053,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "matter",
+          "entities_src": [
+            "امر"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 32,
+          "centroid_div": 0.1046,
+          "percentile": 0.031
+        },
+        {
+          "entity_en": "wall",
+          "entities_src": [
+            "حيطه",
+            "حيط"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 48,
+          "n_src_full": 21,
+          "centroid_div": 0.1044,
+          "percentile": 0.133
+        },
+        {
+          "entity_en": "sun",
+          "entities_src": [
+            "شمس"
+          ],
+          "n_en": 18,
+          "n_src": 19,
+          "n_en_full": 18,
+          "n_src_full": 19,
+          "centroid_div": 0.1037,
+          "percentile": 0.039
+        },
+        {
+          "entity_en": "night",
+          "entities_src": [
+            "ليل",
+            "ليله"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 21,
+          "n_src_full": 65,
+          "centroid_div": 0.1014,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "mother",
+          "entities_src": [
+            "امه",
+            "ام",
+            "امك",
+            "امها"
+          ],
+          "n_en": 19,
+          "n_src": 20,
+          "n_en_full": 19,
+          "n_src_full": 109,
+          "centroid_div": 0.101,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "news",
+          "entities_src": [
+            "خبر"
+          ],
+          "n_en": 6,
+          "n_src": 20,
+          "n_en_full": 6,
+          "n_src_full": 25,
+          "centroid_div": 0.0995,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "friend",
+          "entities_src": [
+            "صاحبك",
+            "صديق"
+          ],
+          "n_en": 16,
+          "n_src": 20,
+          "n_en_full": 16,
+          "n_src_full": 22,
+          "centroid_div": 0.0992,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "eye",
+          "entities_src": [
+            "عين",
+            "عينه",
+            "عينك",
+            "عيني"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 159,
+          "n_src_full": 152,
+          "centroid_div": 0.0991,
+          "percentile": 0.062
+        },
+        {
+          "entity_en": "water",
+          "entities_src": [
+            "ماء",
+            "ميه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 79,
+          "n_src_full": 96,
+          "centroid_div": 0.0965,
+          "percentile": 0.098
+        },
+        {
+          "entity_en": "mouth",
+          "entities_src": [
+            "فم"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 75,
+          "n_src_full": 23,
+          "centroid_div": 0.0963,
+          "percentile": 0.078
+        },
+        {
+          "entity_en": "stone",
+          "entities_src": [
+            "حجر",
+            "حجره"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 28,
+          "n_src_full": 48,
+          "centroid_div": 0.0959,
+          "percentile": 0.055
+        },
+        {
+          "entity_en": "egg",
+          "entities_src": [
+            "بيضه",
+            "بيض"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 34,
+          "centroid_div": 0.0958,
+          "percentile": 0.09
+        },
+        {
+          "entity_en": "world",
+          "entities_src": [
+            "دنيا"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 68,
+          "n_src_full": 46,
+          "centroid_div": 0.0952,
+          "percentile": 0.043
+        },
+        {
+          "entity_en": "back",
+          "entities_src": [
+            "ظهر",
+            "قفاه"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 107,
+          "n_src_full": 24,
+          "centroid_div": 0.095,
+          "percentile": 0.023
+        },
+        {
+          "entity_en": "man",
+          "entities_src": [
+            "راجل",
+            "رجل",
+            "مرء"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 113,
+          "n_src_full": 74,
+          "centroid_div": 0.0936,
+          "percentile": 0.051
+        },
+        {
+          "entity_en": "door",
+          "entities_src": [
+            "باب"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 49,
+          "n_src_full": 56,
+          "centroid_div": 0.0913,
+          "percentile": 0.078
+        },
+        {
+          "entity_en": "bread",
+          "entities_src": [
+            "خبز"
+          ],
+          "n_en": 20,
+          "n_src": 13,
+          "n_en_full": 22,
+          "n_src_full": 13,
+          "centroid_div": 0.0897,
+          "percentile": 0.016
+        },
+        {
+          "entity_en": "gold",
+          "entities_src": [
+            "ذهب"
+          ],
+          "n_en": 20,
+          "n_src": 13,
+          "n_en_full": 21,
+          "n_src_full": 13,
+          "centroid_div": 0.0862,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "hand",
+          "entities_src": [
+            "يد",
+            "ايده",
+            "ايد",
+            "ايدك"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 180,
+          "n_src_full": 121,
+          "centroid_div": 0.0849,
+          "percentile": 0.02
+        },
+        {
+          "entity_en": "cow",
+          "entities_src": [
+            "بقر",
+            "بقره"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 21,
+          "centroid_div": 0.0837,
+          "percentile": 0.102
+        },
+        {
+          "entity_en": "bird",
+          "entities_src": [
+            "طير"
+          ],
+          "n_en": 20,
+          "n_src": 19,
+          "n_en_full": 29,
+          "n_src_full": 19,
+          "centroid_div": 0.0829,
+          "percentile": 0.031
+        },
+        {
+          "entity_en": "head",
+          "entities_src": [
+            "راس",
+            "راسه",
+            "راسك"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 208,
+          "n_src_full": 93,
+          "centroid_div": 0.0823,
+          "percentile": 0.055
+        },
+        {
+          "entity_en": "house",
+          "entities_src": [
+            "دار",
+            "بيت",
+            "دارك",
+            "داره"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 32,
+          "n_src_full": 148,
+          "centroid_div": 0.0817,
+          "percentile": 0.008
+        },
+        {
+          "entity_en": "wolf",
+          "entities_src": [
+            "ذئب"
+          ],
+          "n_en": 17,
+          "n_src": 20,
+          "n_en_full": 17,
+          "n_src_full": 33,
+          "centroid_div": 0.0812,
+          "percentile": 0.012
+        },
+        {
+          "entity_en": "money",
+          "entities_src": [
+            "فلوس"
+          ],
+          "n_en": 20,
+          "n_src": 11,
+          "n_en_full": 82,
+          "n_src_full": 11,
+          "centroid_div": 0.0779,
+          "percentile": 0.0
+        },
+        {
+          "entity_en": "day",
+          "entities_src": [
+            "يوم",
+            "نهار"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 103,
+          "n_src_full": 69,
+          "centroid_div": 0.0763,
+          "percentile": 0.004
+        },
+        {
+          "entity_en": "dog",
+          "entities_src": [
+            "كلب"
+          ],
+          "n_en": 20,
+          "n_src": 20,
+          "n_en_full": 80,
+          "n_src_full": 76,
+          "centroid_div": 0.0676,
+          "percentile": 0.012
+        }
+      ],
+      "native": {
+        "n_entities": 129,
+        "centroid": {
+          "cross_same": {
+            "mean": 0.4555,
+            "ci95": [
+              0.4484,
+              0.4629
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.4758,
+            "ci95": [
+              0.4715,
+              0.4799
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": 0.1647,
+            "ci95": [
+              0.1599,
+              0.1695
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.2696,
+            "ci95": [
+              0.2646,
+              0.2746
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.2513,
+            "ci95": [
+              0.2461,
+              0.2565
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.3286,
+            "ci95": [
+              0.3255,
+              0.3317
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.6822,
+          "divergence_index_aggregate": {
+            "value": 0.887,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "energy": {
+          "cross_same": {
+            "mean": 0.2749,
+            "ci95": [
+              0.2633,
+              0.2871
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.296,
+            "ci95": [
+              0.2883,
+              0.3043
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": -0.0027,
+            "ci95": [
+              -0.0045,
+              -0.0012
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.0003,
+            "ci95": [
+              -0.0011,
+              0.0016
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.1071,
+            "ci95": [
+              0.0999,
+              0.1148
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.0633,
+            "ci95": [
+              0.0589,
+              0.0678
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.6279,
+          "divergence_index_aggregate": {
+            "value": 0.883,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "chamfer": {
+          "cross_same": {
+            "mean": 0.633,
+            "ci95": [
+              0.6279,
+              0.6378
+            ],
+            "n": 129
+          },
+          "cross_diff": {
+            "mean": 0.6475,
+            "ci95": [
+              0.645,
+              0.6499
+            ],
+            "n": 129
+          },
+          "within_same_a": {
+            "mean": 0.3802,
+            "ci95": [
+              0.371,
+              0.3895
+            ],
+            "n": 94
+          },
+          "within_same_b": {
+            "mean": 0.5466,
+            "ci95": [
+              0.5401,
+              0.5535
+            ],
+            "n": 110
+          },
+          "within_diff_a": {
+            "mean": 0.4653,
+            "ci95": [
+              0.4619,
+              0.4691
+            ],
+            "n": 129
+          },
+          "within_diff_b": {
+            "mean": 0.5924,
+            "ci95": [
+              0.5901,
+              0.5945
+            ],
+            "n": 129
+          },
+          "frac_entities_cross_same_lt_cross_diff": 0.6977,
+          "divergence_index_aggregate": {
+            "value": 0.898,
+            "n_entities": 81,
+            "definition": "(mean cross_same - mean within_same) / (mean cross_diff - mean within_same)"
+          }
+        },
+        "full_set_calibration": {
+          "n_entities": 129,
+          "mean_percentile": 0.3266,
+          "median_percentile": 0.3047,
+          "frac_true_pair_top1_en2src": 0.0465,
+          "frac_percentile_le_0.05": 0.124,
+          "frac_percentile_ge_0.50": 0.2248,
+          "mean_centroid_div_true": 0.3658,
+          "mean_centroid_div_random": 0.3929
+        }
+      }
+    }
+  }
+}

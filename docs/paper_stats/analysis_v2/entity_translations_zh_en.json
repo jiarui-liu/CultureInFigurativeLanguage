@@ -1,0 +1,2102 @@
+{
+  "心": {
+    "en": "heart",
+    "syn": [
+      "mind",
+      "soul"
+    ]
+  },
+  "人": {
+    "en": "person",
+    "syn": [
+      "individual",
+      "human"
+    ]
+  },
+  "天": {
+    "en": "sky",
+    "syn": [
+      "heaven",
+      "firmament"
+    ]
+  },
+  "风": {
+    "en": "wind",
+    "syn": [
+      "breeze",
+      "gust"
+    ]
+  },
+  "地": {
+    "en": "ground",
+    "syn": [
+      "earth",
+      "soil"
+    ]
+  },
+  "言": {
+    "en": "word",
+    "syn": [
+      "speech",
+      "utterance"
+    ]
+  },
+  "马": {
+    "en": "horse",
+    "syn": [
+      "steed",
+      "mount"
+    ]
+  },
+  "水": {
+    "en": "water",
+    "syn": [
+      "liquid",
+      "stream"
+    ]
+  },
+  "日": {
+    "en": "day",
+    "syn": [
+      "sun",
+      "daytime"
+    ]
+  },
+  "目": {
+    "en": "eye",
+    "syn": [
+      "vision",
+      "sight"
+    ]
+  },
+  "云": {
+    "en": "cloud",
+    "syn": [
+      "mist",
+      "vapor"
+    ]
+  },
+  "虎": {
+    "en": "tiger",
+    "syn": [
+      "beast",
+      "cat"
+    ]
+  },
+  "口": {
+    "en": "mouth",
+    "syn": [
+      "lip",
+      "jaw"
+    ]
+  },
+  "山": {
+    "en": "mountain",
+    "syn": [
+      "peak",
+      "hill"
+    ]
+  },
+  "龙": {
+    "en": "dragon",
+    "syn": [
+      "serpent",
+      "beast"
+    ]
+  },
+  "手": {
+    "en": "hand",
+    "syn": [
+      "palm",
+      "limb"
+    ]
+  },
+  "气": {
+    "en": "breath",
+    "syn": [
+      "air",
+      "spirit"
+    ]
+  },
+  "头": {
+    "en": "head",
+    "syn": [
+      "skull",
+      "top"
+    ]
+  },
+  "火": {
+    "en": "fire",
+    "syn": [
+      "flame",
+      "blaze"
+    ]
+  },
+  "意": {
+    "en": "mind",
+    "syn": [
+      "thought",
+      "will"
+    ]
+  },
+  "雨": {
+    "en": "rain",
+    "syn": [
+      "shower",
+      "drizzle"
+    ]
+  },
+  "鱼": {
+    "en": "fish",
+    "syn": [
+      "catch",
+      "prey"
+    ]
+  },
+  "月": {
+    "en": "moon",
+    "syn": [
+      "lunar",
+      "satellite"
+    ]
+  },
+  "情": {
+    "en": "feeling",
+    "syn": [
+      "emotion",
+      "sentiment"
+    ]
+  },
+  "身": {
+    "en": "body",
+    "syn": [
+      "form",
+      "self"
+    ]
+  },
+  "花": {
+    "en": "flower",
+    "syn": [
+      "bloom",
+      "petal"
+    ]
+  },
+  "神": {
+    "en": "spirit",
+    "syn": [
+      "god",
+      "genius"
+    ]
+  },
+  "声": {
+    "en": "sound",
+    "syn": [
+      "voice",
+      "noise"
+    ]
+  },
+  "玉": {
+    "en": "jade",
+    "syn": [
+      "gem",
+      "stone"
+    ]
+  },
+  "海": {
+    "en": "sea",
+    "syn": [
+      "ocean",
+      "deep"
+    ]
+  },
+  "事": {
+    "en": "matter",
+    "syn": [
+      "affair",
+      "thing"
+    ]
+  },
+  "凤": {
+    "en": "phoenix",
+    "syn": [
+      "bird",
+      "fowl"
+    ]
+  },
+  "世": {
+    "en": "world",
+    "syn": [
+      "age",
+      "era"
+    ]
+  },
+  "门": {
+    "en": "door",
+    "syn": [
+      "gate",
+      "entrance"
+    ]
+  },
+  "耳": {
+    "en": "ear",
+    "syn": [
+      "hearing",
+      "auditory"
+    ]
+  },
+  "道": {
+    "en": "way",
+    "syn": [
+      "path",
+      "method"
+    ]
+  },
+  "金": {
+    "en": "gold",
+    "syn": [
+      "metal",
+      "coin"
+    ]
+  },
+  "食": {
+    "en": "food",
+    "syn": [
+      "meal",
+      "sustenance"
+    ]
+  },
+  "舌": {
+    "en": "tongue",
+    "syn": [
+      "speech",
+      "organ"
+    ]
+  },
+  "胆": {
+    "en": "gall",
+    "syn": [
+      "courage",
+      "nerve"
+    ]
+  },
+  "足": {
+    "en": "foot",
+    "syn": [
+      "leg",
+      "limb"
+    ]
+  },
+  "眼": {
+    "en": "eye",
+    "syn": [
+      "gaze",
+      "look"
+    ]
+  },
+  "力": {
+    "en": "strength",
+    "syn": [
+      "power",
+      "force"
+    ]
+  },
+  "兵": {
+    "en": "soldier",
+    "syn": [
+      "troop",
+      "army"
+    ]
+  },
+  "义": {
+    "en": "righteousness",
+    "syn": [
+      "justice",
+      "duty"
+    ]
+  },
+  "行": {
+    "en": "line",
+    "syn": [
+      "row",
+      "verse"
+    ]
+  },
+  "名": {
+    "en": "name",
+    "syn": [
+      "reputation",
+      "title"
+    ]
+  },
+  "骨": {
+    "en": "bone",
+    "syn": [
+      "skeleton",
+      "frame"
+    ]
+  },
+  "功": {
+    "en": "merit",
+    "syn": [
+      "achievement",
+      "deed"
+    ]
+  },
+  "文": {
+    "en": "text",
+    "syn": [
+      "document",
+      "writing"
+    ]
+  },
+  "死": {
+    "en": "death",
+    "syn": [
+      "dying",
+      "demise"
+    ]
+  },
+  "狗": {
+    "en": "dog",
+    "syn": [
+      "hound",
+      "cur"
+    ]
+  },
+  "时": {
+    "en": "time",
+    "syn": [
+      "era",
+      "season"
+    ]
+  },
+  "眉": {
+    "en": "eyebrow",
+    "syn": [
+      "brow",
+      "supercilium"
+    ]
+  },
+  "面": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "东": {
+    "en": "east",
+    "syn": [
+      "eastern",
+      "orient"
+    ]
+  },
+  "西": {
+    "en": "west",
+    "syn": [
+      "western",
+      "occident"
+    ]
+  },
+  "魂": {
+    "en": "soul",
+    "syn": [
+      "spirit",
+      "ghost"
+    ]
+  },
+  "俗": {
+    "en": "custom",
+    "syn": [
+      "habit",
+      "tradition"
+    ]
+  },
+  "志": {
+    "en": "will",
+    "syn": [
+      "intention",
+      "purpose"
+    ]
+  },
+  "家": {
+    "en": "household",
+    "syn": [
+      "family",
+      "home"
+    ]
+  },
+  "冰": {
+    "en": "ice",
+    "syn": [
+      "frost",
+      "glacier"
+    ]
+  },
+  "石": {
+    "en": "stone",
+    "syn": [
+      "rock",
+      "pebble"
+    ]
+  },
+  "计": {
+    "en": "plan",
+    "syn": [
+      "scheme",
+      "strategy"
+    ]
+  },
+  "德": {
+    "en": "virtue",
+    "syn": [
+      "morality",
+      "integrity"
+    ]
+  },
+  "色": {
+    "en": "expression",
+    "syn": [
+      "countenance",
+      "look"
+    ]
+  },
+  "物": {
+    "en": "thing",
+    "syn": [
+      "object",
+      "matter"
+    ]
+  },
+  "才": {
+    "en": "talent",
+    "syn": [
+      "ability",
+      "gift"
+    ]
+  },
+  "国": {
+    "en": "state",
+    "syn": [
+      "nation",
+      "country"
+    ]
+  },
+  "影": {
+    "en": "shadow",
+    "syn": [
+      "shade",
+      "silhouette"
+    ]
+  },
+  "根": {
+    "en": "root",
+    "syn": [
+      "base",
+      "origin"
+    ]
+  },
+  "生": {
+    "en": "life",
+    "syn": [
+      "existence",
+      "survival"
+    ]
+  },
+  "鬼": {
+    "en": "ghost",
+    "syn": [
+      "spirit",
+      "specter"
+    ]
+  },
+  "鸡": {
+    "en": "chicken",
+    "syn": [
+      "hen",
+      "fowl"
+    ]
+  },
+  "珠": {
+    "en": "pearl",
+    "syn": [
+      "gem",
+      "jewel"
+    ]
+  },
+  "今": {
+    "en": "present",
+    "syn": [
+      "now",
+      "current"
+    ]
+  },
+  "齿": {
+    "en": "tooth",
+    "syn": [
+      "teeth",
+      "fang"
+    ]
+  },
+  "首": {
+    "en": "head",
+    "syn": [
+      "top",
+      "chief"
+    ]
+  },
+  "恶": {
+    "en": "evil",
+    "syn": [
+      "wickedness",
+      "vice"
+    ]
+  },
+  "狼": {
+    "en": "wolf",
+    "syn": [
+      "beast",
+      "predator"
+    ]
+  },
+  "河": {
+    "en": "river",
+    "syn": [
+      "stream",
+      "water"
+    ]
+  },
+  "古": {
+    "en": "past",
+    "syn": [
+      "ancient",
+      "old"
+    ]
+  },
+  "雪": {
+    "en": "snow",
+    "syn": [
+      "flurry",
+      "drift"
+    ]
+  },
+  "本": {
+    "en": "root",
+    "syn": [
+      "basis",
+      "foundation"
+    ]
+  },
+  "脚": {
+    "en": "foot",
+    "syn": [
+      "leg",
+      "limb"
+    ]
+  },
+  "民": {
+    "en": "people",
+    "syn": [
+      "folk",
+      "citizens"
+    ]
+  },
+  "形": {
+    "en": "shape",
+    "syn": [
+      "form",
+      "figure"
+    ]
+  },
+  "鹤": {
+    "en": "crane",
+    "syn": [
+      "bird",
+      "heron"
+    ]
+  },
+  "祸": {
+    "en": "disaster",
+    "syn": [
+      "calamity",
+      "misfortune"
+    ]
+  },
+  "势": {
+    "en": "momentum",
+    "syn": [
+      "trend",
+      "force"
+    ]
+  },
+  "牛": {
+    "en": "ox",
+    "syn": [
+      "cow",
+      "bull"
+    ]
+  },
+  "衣": {
+    "en": "clothes",
+    "syn": [
+      "garment",
+      "attire"
+    ]
+  },
+  "嘴": {
+    "en": "mouth",
+    "syn": [
+      "lip",
+      "jaw"
+    ]
+  },
+  "车": {
+    "en": "carriage",
+    "syn": [
+      "cart",
+      "vehicle"
+    ]
+  },
+  "朝": {
+    "en": "court",
+    "syn": [
+      "dynasty",
+      "regime"
+    ]
+  },
+  "鼎": {
+    "en": "cauldron",
+    "syn": [
+      "tripod",
+      "pot"
+    ]
+  },
+  "命": {
+    "en": "life",
+    "syn": [
+      "fate",
+      "destiny"
+    ]
+  },
+  "血": {
+    "en": "blood",
+    "syn": [
+      "red",
+      "fluid"
+    ]
+  },
+  "戈": {
+    "en": "spear",
+    "syn": [
+      "halberd",
+      "weapon"
+    ]
+  },
+  "辞": {
+    "en": "words",
+    "syn": [
+      "speech",
+      "language"
+    ]
+  },
+  "书": {
+    "en": "book",
+    "syn": [
+      "volume",
+      "text"
+    ]
+  },
+  "草": {
+    "en": "grass",
+    "syn": [
+      "herb",
+      "weed"
+    ]
+  },
+  "刀": {
+    "en": "knife",
+    "syn": [
+      "blade",
+      "sword"
+    ]
+  },
+  "鸾": {
+    "en": "phoenix",
+    "syn": [
+      "feng",
+      "mythical bird"
+    ]
+  },
+  "鼠": {
+    "en": "rat",
+    "syn": [
+      "mouse",
+      "rodent"
+    ]
+  },
+  "魄": {
+    "en": "soul",
+    "syn": [
+      "spirit",
+      "essence"
+    ]
+  },
+  "酒": {
+    "en": "wine",
+    "syn": [
+      "liquor",
+      "drink"
+    ]
+  },
+  "肩": {
+    "en": "shoulder",
+    "syn": [
+      "shoulder",
+      "shoulder"
+    ]
+  },
+  "腹": {
+    "en": "belly",
+    "syn": [
+      "stomach",
+      "abdomen"
+    ]
+  },
+  "利": {
+    "en": "profit",
+    "syn": [
+      "gain",
+      "benefit"
+    ]
+  },
+  "路": {
+    "en": "road",
+    "syn": [
+      "path",
+      "way"
+    ]
+  },
+  "年": {
+    "en": "year",
+    "syn": [
+      "annum",
+      "time"
+    ]
+  },
+  "枝": {
+    "en": "branch",
+    "syn": [
+      "limb",
+      "twig"
+    ]
+  },
+  "千里": {
+    "en": "mile",
+    "syn": [
+      "distance",
+      "league"
+    ]
+  },
+  "甲": {
+    "en": "scale",
+    "syn": [
+      "armor",
+      "shell"
+    ]
+  },
+  "唇": {
+    "en": "lip",
+    "syn": [
+      "mouth",
+      "edge"
+    ]
+  },
+  "肝": {
+    "en": "liver",
+    "syn": [
+      "heart",
+      "organ"
+    ]
+  },
+  "柳": {
+    "en": "willow",
+    "syn": [
+      "tree",
+      "branch"
+    ]
+  },
+  "天下": {
+    "en": "world",
+    "syn": [
+      "realm",
+      "empire"
+    ]
+  },
+  "善": {
+    "en": "good",
+    "syn": [
+      "virtue",
+      "kindness"
+    ]
+  },
+  "发": {
+    "en": "hair",
+    "syn": [
+      "strand",
+      "thread"
+    ]
+  },
+  "理": {
+    "en": "reason",
+    "syn": [
+      "logic",
+      "principle"
+    ]
+  },
+  "肠": {
+    "en": "intestine",
+    "syn": [
+      "gut",
+      "bowel"
+    ]
+  },
+  "己": {
+    "en": "self",
+    "syn": [
+      "one",
+      "person"
+    ]
+  },
+  "迹": {
+    "en": "trace",
+    "syn": [
+      "mark",
+      "sign"
+    ]
+  },
+  "剑": {
+    "en": "sword",
+    "syn": [
+      "blade",
+      "weapon"
+    ]
+  },
+  "犬": {
+    "en": "dog",
+    "syn": [
+      "hound",
+      "canine"
+    ]
+  },
+  "乐": {
+    "en": "joy",
+    "syn": [
+      "happiness",
+      "pleasure"
+    ]
+  },
+  "毛": {
+    "en": "hair",
+    "syn": [
+      "fur",
+      "coat"
+    ]
+  },
+  "肉": {
+    "en": "meat",
+    "syn": [
+      "flesh",
+      "beef"
+    ]
+  },
+  "公": {
+    "en": "duke",
+    "syn": [
+      "lord",
+      "ruler"
+    ]
+  },
+  "词": {
+    "en": "word",
+    "syn": [
+      "statement",
+      "account"
+    ]
+  },
+  "井": {
+    "en": "well",
+    "syn": [
+      "pit",
+      "cistern"
+    ]
+  },
+  "法": {
+    "en": "law",
+    "syn": [
+      "rule",
+      "method"
+    ]
+  },
+  "燕": {
+    "en": "swallow",
+    "syn": [
+      "bird",
+      "swallow"
+    ]
+  },
+  "源": {
+    "en": "source",
+    "syn": [
+      "origin",
+      "spring"
+    ]
+  },
+  "叶": {
+    "en": "leaf",
+    "syn": [
+      "foliage",
+      "blade"
+    ]
+  },
+  "光": {
+    "en": "light",
+    "syn": [
+      "glow",
+      "radiance"
+    ]
+  },
+  "土": {
+    "en": "soil",
+    "syn": [
+      "earth",
+      "dirt"
+    ]
+  },
+  "蛇": {
+    "en": "snake",
+    "syn": [
+      "serpent",
+      "reptile"
+    ]
+  },
+  "鸟": {
+    "en": "bird",
+    "syn": [
+      "fowl",
+      "avian"
+    ]
+  },
+  "笔": {
+    "en": "brush",
+    "syn": [
+      "pen",
+      "tool"
+    ]
+  },
+  "步": {
+    "en": "step",
+    "syn": [
+      "pace",
+      "stride"
+    ]
+  },
+  "履": {
+    "en": "shoe",
+    "syn": [
+      "sandal",
+      "footwear"
+    ]
+  },
+  "背": {
+    "en": "back",
+    "syn": [
+      "spine",
+      "rear"
+    ]
+  },
+  "福": {
+    "en": "blessing",
+    "syn": [
+      "fortune",
+      "luck"
+    ]
+  },
+  "沙": {
+    "en": "sand",
+    "syn": [
+      "grain",
+      "dust"
+    ]
+  },
+  "舟": {
+    "en": "boat",
+    "syn": [
+      "ship",
+      "vessel"
+    ]
+  },
+  "冠": {
+    "en": "hat",
+    "syn": [
+      "cap",
+      "headgear"
+    ]
+  },
+  "薪": {
+    "en": "firewood",
+    "syn": [
+      "wood",
+      "fuel"
+    ]
+  },
+  "电": {
+    "en": "lightning",
+    "syn": [
+      "bolt",
+      "flash"
+    ]
+  },
+  "星": {
+    "en": "star",
+    "syn": [
+      "celestial",
+      "orb"
+    ]
+  },
+  "踵": {
+    "en": "heel",
+    "syn": [
+      "foot",
+      "sole"
+    ]
+  },
+  "脑": {
+    "en": "head",
+    "syn": [
+      "brain",
+      "skull"
+    ]
+  },
+  "木": {
+    "en": "tree",
+    "syn": [
+      "timber",
+      "wood"
+    ]
+  },
+  "屋": {
+    "en": "house",
+    "syn": [
+      "dwelling",
+      "home"
+    ]
+  },
+  "私": {
+    "en": "self-interest",
+    "syn": [
+      "private gain",
+      "personal profit"
+    ]
+  },
+  "巢": {
+    "en": "nest",
+    "syn": [
+      "roost",
+      "den"
+    ]
+  },
+  "语": {
+    "en": "word",
+    "syn": [
+      "speech",
+      "utterance"
+    ]
+  },
+  "财": {
+    "en": "wealth",
+    "syn": [
+      "money",
+      "fortune"
+    ]
+  },
+  "暮": {
+    "en": "evening",
+    "syn": [
+      "dusk",
+      "twilight"
+    ]
+  },
+  "李": {
+    "en": "plum",
+    "syn": [
+      "fruit",
+      "tree"
+    ]
+  },
+  "牙": {
+    "en": "tooth",
+    "syn": [
+      "fang",
+      "tusk"
+    ]
+  },
+  "尘": {
+    "en": "dust",
+    "syn": [
+      "particle",
+      "grain"
+    ]
+  },
+  "鼓": {
+    "en": "drum",
+    "syn": [
+      "percussion",
+      "beat"
+    ]
+  },
+  "谋": {
+    "en": "strategy",
+    "syn": [
+      "plan",
+      "scheme"
+    ]
+  },
+  "智": {
+    "en": "wisdom",
+    "syn": [
+      "intelligence",
+      "ingenuity"
+    ]
+  },
+  "罪": {
+    "en": "crime",
+    "syn": [
+      "offense",
+      "sin"
+    ]
+  },
+  "恩": {
+    "en": "favor",
+    "syn": [
+      "kindness",
+      "grace"
+    ]
+  },
+  "瑕": {
+    "en": "flaw",
+    "syn": [
+      "defect",
+      "blemish"
+    ]
+  },
+  "贤": {
+    "en": "sage",
+    "syn": [
+      "virtuous",
+      "worthy"
+    ]
+  },
+  "梦": {
+    "en": "dream",
+    "syn": [
+      "vision",
+      "reverie"
+    ]
+  },
+  "蜂": {
+    "en": "bee",
+    "syn": [
+      "insect",
+      "swarm"
+    ]
+  },
+  "子": {
+    "en": "son",
+    "syn": [
+      "child",
+      "offspring"
+    ]
+  },
+  "学": {
+    "en": "learning",
+    "syn": [
+      "study",
+      "knowledge"
+    ]
+  },
+  "上": {
+    "en": "top",
+    "syn": [
+      "upper",
+      "superior"
+    ]
+  },
+  "流": {
+    "en": "flow",
+    "syn": [
+      "stream",
+      "current"
+    ]
+  },
+  "过": {
+    "en": "fault",
+    "syn": [
+      "error",
+      "mistake"
+    ]
+  },
+  "武": {
+    "en": "martial",
+    "syn": [
+      "military",
+      "warlike"
+    ]
+  },
+  "胸": {
+    "en": "chest",
+    "syn": [
+      "breast",
+      "heart"
+    ]
+  },
+  "席": {
+    "en": "seat",
+    "syn": [
+      "position",
+      "place"
+    ]
+  },
+  "笑": {
+    "en": "smile",
+    "syn": [
+      "grin",
+      "laugh"
+    ]
+  },
+  "户": {
+    "en": "household",
+    "syn": [
+      "family",
+      "home"
+    ]
+  },
+  "下": {
+    "en": "bottom",
+    "syn": [
+      "lower",
+      "inferior"
+    ]
+  },
+  "歌": {
+    "en": "song",
+    "syn": [
+      "chant",
+      "melody"
+    ]
+  },
+  "精": {
+    "en": "essence",
+    "syn": [
+      "spirit",
+      "substance"
+    ]
+  },
+  "尾": {
+    "en": "tail",
+    "syn": [
+      "end",
+      "rear"
+    ]
+  },
+  "颜": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "expression"
+    ]
+  },
+  "末": {
+    "en": "end",
+    "syn": [
+      "tip",
+      "extremity"
+    ]
+  },
+  "丝": {
+    "en": "thread",
+    "syn": [
+      "strand",
+      "filament"
+    ]
+  },
+  "堂": {
+    "en": "hall",
+    "syn": [
+      "room",
+      "chamber"
+    ]
+  },
+  "思": {
+    "en": "thought",
+    "syn": [
+      "reflection",
+      "consideration"
+    ]
+  },
+  "雾": {
+    "en": "mist",
+    "syn": [
+      "fog",
+      "haze"
+    ]
+  },
+  "群": {
+    "en": "group",
+    "syn": [
+      "crowd",
+      "cluster"
+    ]
+  },
+  "节": {
+    "en": "branch",
+    "syn": [
+      "limb",
+      "section"
+    ]
+  },
+  "树": {
+    "en": "tree",
+    "syn": [
+      "plant",
+      "wood"
+    ]
+  },
+  "墙": {
+    "en": "wall",
+    "syn": [
+      "barrier",
+      "fence"
+    ]
+  },
+  "隙": {
+    "en": "gap",
+    "syn": [
+      "crack",
+      "opening"
+    ]
+  },
+  "一": {
+    "en": "one",
+    "syn": [
+      "single",
+      "first"
+    ]
+  },
+  "兔": {
+    "en": "hare",
+    "syn": [
+      "rabbit",
+      "bunny"
+    ]
+  },
+  "雷": {
+    "en": "thunder",
+    "syn": [
+      "clap",
+      "peal"
+    ]
+  },
+  "章": {
+    "en": "chapter",
+    "syn": [
+      "verse",
+      "stanza"
+    ]
+  },
+  "仁": {
+    "en": "benevolence",
+    "syn": [
+      "kindness",
+      "virtue"
+    ]
+  },
+  "羊": {
+    "en": "sheep",
+    "syn": [
+      "ram",
+      "ewe"
+    ]
+  },
+  "桃": {
+    "en": "peach",
+    "syn": [
+      "fruit",
+      "tree"
+    ]
+  },
+  "礼": {
+    "en": "courtesy",
+    "syn": [
+      "manners",
+      "etiquette"
+    ]
+  },
+  "指": {
+    "en": "finger",
+    "syn": [
+      "digit",
+      "hand"
+    ]
+  },
+  "狐": {
+    "en": "fox",
+    "syn": [
+      "vixen",
+      "animal"
+    ]
+  },
+  "饭": {
+    "en": "meal",
+    "syn": [
+      "food",
+      "dinner"
+    ]
+  },
+  "鳞": {
+    "en": "scale",
+    "syn": [
+      "fin",
+      "part"
+    ]
+  },
+  "苦": {
+    "en": "bitterness",
+    "syn": [
+      "suffering",
+      "hardship"
+    ]
+  },
+  "皮": {
+    "en": "skin",
+    "syn": [
+      "hide",
+      "fur"
+    ]
+  },
+  "新": {
+    "en": "new",
+    "syn": [
+      "novelty",
+      "freshness"
+    ]
+  },
+  "钟": {
+    "en": "bell",
+    "syn": [
+      "vessel",
+      "measure"
+    ]
+  },
+  "师": {
+    "en": "teacher",
+    "syn": [
+      "master",
+      "mentor"
+    ]
+  },
+  "波": {
+    "en": "wave",
+    "syn": [
+      "ripple",
+      "surge"
+    ]
+  },
+  "士": {
+    "en": "scholar",
+    "syn": [
+      "gentleman",
+      "warrior"
+    ]
+  },
+  "闻": {
+    "en": "hearing",
+    "syn": [
+      "sound",
+      "report"
+    ]
+  },
+  "敌": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "opponent"
+    ]
+  },
+  "室": {
+    "en": "room",
+    "syn": [
+      "house",
+      "chamber"
+    ]
+  },
+  "人心": {
+    "en": "heart",
+    "syn": [
+      "mind",
+      "will"
+    ]
+  },
+  "角": {
+    "en": "horn",
+    "syn": [
+      "tusk",
+      "antler"
+    ]
+  },
+  "蚁": {
+    "en": "ant",
+    "syn": [
+      "insect",
+      "creature"
+    ]
+  },
+  "霜": {
+    "en": "frost",
+    "syn": [
+      "ice",
+      "snow"
+    ]
+  },
+  "眼睛": {
+    "en": "eye",
+    "syn": [
+      "gaze",
+      "look"
+    ]
+  },
+  "垢": {
+    "en": "dirt",
+    "syn": [
+      "grime",
+      "filth"
+    ]
+  },
+  "千金": {
+    "en": "gold",
+    "syn": [
+      "wealth",
+      "treasure"
+    ]
+  },
+  "枕": {
+    "en": "pillow",
+    "syn": [
+      "cushion",
+      "rest"
+    ]
+  },
+  "谷": {
+    "en": "grain",
+    "syn": [
+      "crop",
+      "harvest"
+    ]
+  },
+  "信": {
+    "en": "trust",
+    "syn": [
+      "faith",
+      "credibility"
+    ]
+  },
+  "璧": {
+    "en": "jade",
+    "syn": [
+      "disc",
+      "gem"
+    ]
+  },
+  "将": {
+    "en": "general",
+    "syn": [
+      "commander",
+      "leader"
+    ]
+  },
+  "实": {
+    "en": "substance",
+    "syn": [
+      "reality",
+      "fact"
+    ]
+  },
+  "夕": {
+    "en": "evening",
+    "syn": [
+      "night",
+      "dusk"
+    ]
+  },
+  "琴": {
+    "en": "zither",
+    "syn": [
+      "instrument",
+      "string"
+    ]
+  },
+  "机": {
+    "en": "opportunity",
+    "syn": [
+      "moment",
+      "chance"
+    ]
+  },
+  "铁": {
+    "en": "iron",
+    "syn": [
+      "metal",
+      "steel"
+    ]
+  },
+  "弦": {
+    "en": "string",
+    "syn": [
+      "cord",
+      "bowstring"
+    ]
+  },
+  "瓜": {
+    "en": "melon",
+    "syn": [
+      "fruit",
+      "gourd"
+    ]
+  },
+  "字": {
+    "en": "character",
+    "syn": [
+      "word",
+      "letter"
+    ]
+  },
+  "渊": {
+    "en": "pool",
+    "syn": [
+      "deep",
+      "abyss"
+    ]
+  },
+  "虑": {
+    "en": "worry",
+    "syn": [
+      "concern",
+      "fear"
+    ]
+  },
+  "危": {
+    "en": "danger",
+    "syn": [
+      "peril",
+      "risk"
+    ]
+  },
+  "夜": {
+    "en": "night",
+    "syn": [
+      "dark",
+      "evening"
+    ]
+  },
+  "春": {
+    "en": "spring",
+    "syn": [
+      "season",
+      "beginning"
+    ]
+  },
+  "经": {
+    "en": "classic",
+    "syn": [
+      "scripture",
+      "text"
+    ]
+  },
+  "针": {
+    "en": "needle",
+    "syn": [
+      "pin",
+      "tool"
+    ]
+  },
+  "长": {
+    "en": "length",
+    "syn": [
+      "long",
+      "measure"
+    ]
+  },
+  "官": {
+    "en": "official",
+    "syn": [
+      "magistrate",
+      "authority"
+    ]
+  },
+  "船": {
+    "en": "boat",
+    "syn": [
+      "ship",
+      "vessel"
+    ]
+  },
+  "景": {
+    "en": "scene",
+    "syn": [
+      "scenery",
+      "view"
+    ]
+  },
+  "香": {
+    "en": "fragrance",
+    "syn": [
+      "scent",
+      "perfume"
+    ]
+  },
+  "劳": {
+    "en": "labor",
+    "syn": [
+      "work",
+      "toil"
+    ]
+  },
+  "短": {
+    "en": "shortcoming",
+    "syn": [
+      "flaw",
+      "defect"
+    ]
+  },
+  "饥": {
+    "en": "hunger",
+    "syn": [
+      "famine",
+      "starvation"
+    ]
+  },
+  "类": {
+    "en": "category",
+    "syn": [
+      "class",
+      "type"
+    ]
+  },
+  "微": {
+    "en": "detail",
+    "syn": [
+      "trifle",
+      "minority"
+    ]
+  },
+  "规": {
+    "en": "rule",
+    "syn": [
+      "standard",
+      "norm"
+    ]
+  },
+  "终": {
+    "en": "end",
+    "syn": [
+      "conclusion",
+      "finish"
+    ]
+  },
+  "雁": {
+    "en": "goose",
+    "syn": [
+      "wild goose",
+      "waterfowl"
+    ]
+  },
+  "脸": {
+    "en": "face",
+    "syn": [
+      "countenance",
+      "visage"
+    ]
+  },
+  "里": {
+    "en": "mile",
+    "syn": [
+      "distance",
+      "league"
+    ]
+  },
+  "文章": {
+    "en": "article",
+    "syn": [
+      "essay",
+      "piece"
+    ]
+  },
+  "烟": {
+    "en": "smoke",
+    "syn": [
+      "mist",
+      "vapor"
+    ]
+  },
+  "女": {
+    "en": "daughter",
+    "syn": [
+      "girl",
+      "female"
+    ]
+  },
+  "论": {
+    "en": "argument",
+    "syn": [
+      "thesis",
+      "opinion"
+    ]
+  },
+  "器": {
+    "en": "vessel",
+    "syn": [
+      "tool",
+      "instrument"
+    ]
+  },
+  "翼": {
+    "en": "wing",
+    "syn": [
+      "feather",
+      "pinion"
+    ]
+  },
+  "誉": {
+    "en": "praise",
+    "syn": [
+      "acclaim",
+      "honor"
+    ]
+  },
+  "雀": {
+    "en": "sparrow",
+    "syn": [
+      "bird",
+      "finch"
+    ]
+  },
+  "性": {
+    "en": "nature",
+    "syn": [
+      "temperament",
+      "character"
+    ]
+  },
+  "非": {
+    "en": "wrong",
+    "syn": [
+      "evil",
+      "misdeed"
+    ]
+  },
+  "浪": {
+    "en": "wave",
+    "syn": [
+      "surf",
+      "billow"
+    ]
+  },
+  "壁": {
+    "en": "wall",
+    "syn": [
+      "partition",
+      "barrier"
+    ]
+  },
+  "汤": {
+    "en": "soup",
+    "syn": [
+      "broth",
+      "stock"
+    ]
+  },
+  "紫": {
+    "en": "purple",
+    "syn": [
+      "violet",
+      "mauve"
+    ]
+  },
+  "体": {
+    "en": "body",
+    "syn": [
+      "structure",
+      "form"
+    ]
+  },
+  "瓦": {
+    "en": "tile",
+    "syn": [
+      "shard",
+      "pottery"
+    ]
+  },
+  "途": {
+    "en": "path",
+    "syn": [
+      "route",
+      "way"
+    ]
+  },
+  "矩": {
+    "en": "square",
+    "syn": [
+      "standard",
+      "measure"
+    ]
+  },
+  "正": {
+    "en": "right",
+    "syn": [
+      "justice",
+      "truth"
+    ]
+  },
+  "辙": {
+    "en": "track",
+    "syn": [
+      "rut",
+      "groove"
+    ]
+  },
+  "莺": {
+    "en": "oriole",
+    "syn": [
+      "yellow bird",
+      "warbler"
+    ]
+  },
+  "众": {
+    "en": "crowd",
+    "syn": [
+      "mass",
+      "multitude"
+    ]
+  },
+  "音": {
+    "en": "sound",
+    "syn": [
+      "voice",
+      "tone"
+    ]
+  },
+  "前": {
+    "en": "front",
+    "syn": [
+      "ahead",
+      "fore"
+    ]
+  },
+  "旧": {
+    "en": "old",
+    "syn": [
+      "former",
+      "past"
+    ]
+  },
+  "林": {
+    "en": "forest",
+    "syn": [
+      "woods",
+      "grove"
+    ]
+  },
+  "难": {
+    "en": "danger",
+    "syn": [
+      "peril",
+      "crisis"
+    ]
+  },
+  "亲": {
+    "en": "relative",
+    "syn": [
+      "kin",
+      "family"
+    ]
+  },
+  "仇": {
+    "en": "enemy",
+    "syn": [
+      "foe",
+      "adversary"
+    ]
+  },
+  "后": {
+    "en": "rear",
+    "syn": [
+      "back",
+      "behind"
+    ]
+  },
+  "卵": {
+    "en": "egg",
+    "syn": [
+      "ovum",
+      "yolk"
+    ]
+  },
+  "能": {
+    "en": "ability",
+    "syn": [
+      "skill",
+      "talent"
+    ]
+  },
+  "斗": {
+    "en": "dipper",
+    "syn": [
+      "constellation",
+      "star"
+    ]
+  },
+  "始": {
+    "en": "beginning",
+    "syn": [
+      "start",
+      "origin"
+    ]
+  },
+  "病": {
+    "en": "illness",
+    "syn": [
+      "sickness",
+      "disease"
+    ]
+  },
+  "白": {
+    "en": "white",
+    "syn": [
+      "blank",
+      "void"
+    ]
+  },
+  "纸": {
+    "en": "paper",
+    "syn": [
+      "sheet",
+      "document"
+    ]
+  },
+  "三": {
+    "en": "three",
+    "syn": [
+      "trio",
+      "triad"
+    ]
+  }
+}

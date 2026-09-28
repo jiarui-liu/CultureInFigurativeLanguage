@@ -1,0 +1,430 @@
+{
+  "sample": "75 entities per language, uniform random from the top-2000 entities by mentions (seed 0)",
+  "primary": "Qwen3.5-27B-FP8",
+  "Qwen3.5-9B": {
+    "n": 300,
+    "raw_agreement": 0.74,
+    "cohen_kappa": 0.695,
+    "per_language": {
+      "en": {
+        "n": 75,
+        "agreement": 0.72,
+        "kappa": 0.674
+      },
+      "zh": {
+        "n": 75,
+        "agreement": 0.827,
+        "kappa": 0.774
+      },
+      "hi": {
+        "n": 75,
+        "agreement": 0.693,
+        "kappa": 0.649
+      },
+      "ar": {
+        "n": 75,
+        "agreement": 0.72,
+        "kappa": 0.677
+      }
+    },
+    "confusion_rows_primary_cols_second": {
+      "labels": [
+        "animal",
+        "body_mind",
+        "nature_cosmos",
+        "food_drink",
+        "kinship_social",
+        "religion_supernatural",
+        "occupation_economy",
+        "artefact_household",
+        "abstract_other"
+      ],
+      "matrix": [
+        [
+          17,
+          2,
+          2,
+          1,
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          21,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          0,
+          31,
+          3,
+          0,
+          0,
+          0,
+          4,
+          6
+        ],
+        [
+          1,
+          0,
+          1,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          0,
+          33,
+          0,
+          6,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          4,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          43,
+          3
+        ],
+        [
+          0,
+          2,
+          2,
+          1,
+          2,
+          0,
+          3,
+          9,
+          49
+        ]
+      ]
+    },
+    "disagreements_examples": []
+  },
+  "aya-expanse-8b": {
+    "n": 292,
+    "raw_agreement": 0.613,
+    "cohen_kappa": 0.537,
+    "per_language": {
+      "en": {
+        "n": 75,
+        "agreement": 0.547,
+        "kappa": 0.429
+      },
+      "zh": {
+        "n": 72,
+        "agreement": 0.764,
+        "kappa": 0.692
+      },
+      "hi": {
+        "n": 71,
+        "agreement": 0.662,
+        "kappa": 0.61
+      },
+      "ar": {
+        "n": 74,
+        "agreement": 0.486,
+        "kappa": 0.401
+      }
+    },
+    "confusion_rows_primary_cols_second": {
+      "labels": [
+        "animal",
+        "body_mind",
+        "nature_cosmos",
+        "food_drink",
+        "kinship_social",
+        "religion_supernatural",
+        "occupation_economy",
+        "artefact_household",
+        "abstract_other"
+      ],
+      "matrix": [
+        [
+          16,
+          0,
+          4,
+          0,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          8,
+          2,
+          1,
+          1,
+          0,
+          0,
+          3,
+          11
+        ],
+        [
+          0,
+          0,
+          27,
+          2,
+          0,
+          0,
+          0,
+          1,
+          11
+        ],
+        [
+          0,
+          1,
+          2,
+          8,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          4,
+          0,
+          31,
+          0,
+          4,
+          2,
+          6
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          6,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          5,
+          2,
+          1,
+          0,
+          0,
+          28,
+          12
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          8,
+          0,
+          1,
+          2,
+          53
+        ]
+      ]
+    },
+    "disagreements_examples": []
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b:free": {
+    "n": 300,
+    "raw_agreement": 0.833,
+    "cohen_kappa": 0.805,
+    "per_language": {
+      "en": {
+        "n": 75,
+        "agreement": 0.853,
+        "kappa": 0.825
+      },
+      "zh": {
+        "n": 75,
+        "agreement": 0.907,
+        "kappa": 0.883
+      },
+      "hi": {
+        "n": 75,
+        "agreement": 0.787,
+        "kappa": 0.753
+      },
+      "ar": {
+        "n": 75,
+        "agreement": 0.787,
+        "kappa": 0.752
+      }
+    },
+    "confusion_rows_primary_cols_second": {
+      "labels": [
+        "animal",
+        "body_mind",
+        "nature_cosmos",
+        "food_drink",
+        "kinship_social",
+        "religion_supernatural",
+        "occupation_economy",
+        "artefact_household",
+        "abstract_other"
+      ],
+      "matrix": [
+        [
+          23,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          23,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          34,
+          0,
+          0,
+          1,
+          0,
+          4,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          41,
+          0,
+          6,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          6,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          47,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          3,
+          1,
+          0,
+          4,
+          54
+        ]
+      ]
+    },
+    "disagreements_examples": []
+  }
+}
