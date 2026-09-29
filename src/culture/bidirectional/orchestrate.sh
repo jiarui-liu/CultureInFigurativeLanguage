@@ -11,9 +11,9 @@ SEEDS=${SEEDS:-"42"}
 # Qwen/Qwen3.5-9B); Qwen3.5-2B-Base runs are kept as an ablation (run prefix "" vs "i_")
 MODELS=${MODELS:-"i_:Qwen/Qwen3.5-2B :Qwen/Qwen3.5-2B-Base"}
 PRE="--partition=preempt --qos=preempt_qos --requeue"
-TASKS_ar="kinayat_meaning+kinayat_cloze+ar_figurative+alyah+dzirieval+arabculture+arabic_cultural_qa+global_piqa_ar+global_piqa_ar_parallel+arabicmmlu+jsonl:idiomatlas_mc_ar_seen+jsonl:idiomatlas_mc_ar_unseen+jsonl:symbolism_ar"
-TASKS_hi="mabl+global_piqa+milu+jsonl:idiomatlas_mc_hi_seen+jsonl:idiomatlas_mc_hi_unseen+jsonl:symbolism_hi"
-TASKS_zh="chengyu_bench+chengyu_bench_app+chid+ccpm+cmmlu+jsonl:idiomatlas_mc_zh_seen+jsonl:idiomatlas_mc_zh_unseen+jsonl:symbolism_zh"
+TASKS_ar="kinayat_meaning+kinayat_cloze+ar_figurative+alyah+dzirieval+arabculture+arabic_cultural_qa+global_piqa_ar+global_piqa_ar_parallel+arabicmmlu+jsonl:idiomatlas_mc_ar_seen+jsonl:idiomatlas_mc_ar_unseen+jsonl:symbolism_v2_ar_letter"
+TASKS_hi="mabl+global_piqa+milu+jsonl:idiomatlas_mc_hi_seen+jsonl:idiomatlas_mc_hi_unseen+jsonl:symbolism_v2_hi_letter"
+TASKS_zh="chengyu_bench+chengyu_bench_app+chid+ccpm+cmmlu+jsonl:idiomatlas_mc_zh_seen+jsonl:idiomatlas_mc_zh_unseen+jsonl:symbolism_v2_zh_letter"
 once() { [ -f $ST/$1 ] && return 1; touch $ST/$1; return 0; }
 log() { echo "$(date '+%m-%d %H:%M') $*"; }
 cd $BIDIR
@@ -44,10 +44,13 @@ while true; do
         for s in $SEEDS; do
           run=${pre}$arm; [ $s != 42 ] && run=${run}_s$s
           if once train_${l}_$run; then
-            log "submit train $l $run ($MODEL)"; sbatch $PRE --job-name=t-$l-$run --export=ALL,MODEL=$MODEL,DATA=$B/packed/$l/$arm,OUT=$B/ckpt/$l/$run,SEED=$s train_cpt.slurm
+            if [ "$pre" = "i_" ]; then PART="--partition=general --qos=normal"
+            else PART="$PRE"; fi  # main (post-trained) runs on general, ablation on preempt
+            [ "$pre" = "i_" ] && [ "$l" = zh ] && [ "$arm" != culture_notes ] && [ "$arm" != idiom_tagged ] && PART="--partition=r3lit --qos=r3lit_qos --gres=gpu:4"
+            log "submit train $l $run ($MODEL) $PART"; sbatch $PART --job-name=t-$l-$run --export=ALL,MODEL=$MODEL,DATA=$B/packed/$l/$arm,OUT=$B/ckpt/$l/$run,SEED=$s train_cpt.slurm
           fi
           if [ -f $B/ckpt/$l/$run/train_manifest.json ] && once eval_${l}_$run; then
-            T=TASKS_$l; log "submit eval $l $run"; sbatch $PRE --export=ALL,MODEL=$B/ckpt/$l/$run,OUT=$B/eval2b/$l/$run,TASKS=${!T},BS=4 eval.slurm
+            T=TASKS_$l; log "submit eval $l $run"; sbatch --partition=general --qos=normal --export=ALL,MODEL=$B/ckpt/$l/$run,OUT=$B/eval2b/$l/$run,TASKS=${!T},BS=4 eval.slurm
           fi
         done
       done

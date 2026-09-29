@@ -17,4 +17,4 @@ REPO=/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage; export PYTHONP
 B=/data/group_data/r3lit_culture_pretrain/culture/bidir
 MODEL=$(python $REPO/src/culture/bidirectional/stage_hf.py ${NOTES_MODEL:-google/gemma-4-26B-A4B-it} | tail -1)
 python -m culture.bidirectional.culture_notes --lang $LANG_ --input $B/arms/$LANG_/culture_docs.jsonl.gz \
-  --model $MODEL --tp 2 --part ${SLURM_ARRAY_TASK_ID:-0} --nparts ${NPARTS:-4} --out_dir $B/arms/$LANG_/notes
+  --model $MODEL --tp ${NOTES_TP:-2} --part ${SLURM_ARRAY_TASK_ID:-0} --nparts ${NPARTS:-4} --out_dir $B/arms/$LANG_/notes

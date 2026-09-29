@@ -86,8 +86,9 @@ def main():
     from culture.bidirectional.build_pool import make_matcher
     matcher = make_matcher(a.lang)
     from vllm import LLM, SamplingParams
+    extra = {"quantization": os.environ["LLM_QUANT"]} if os.environ.get("LLM_QUANT") else {}
     llm = LLM(model=a.model, tensor_parallel_size=a.tp, max_model_len=8192,
-              gpu_memory_utilization=0.90, enable_prefix_caching=True)
+              gpu_memory_utilization=0.90, enable_prefix_caching=True, **extra)
     sp = SamplingParams(temperature=0.3, top_p=0.9, max_tokens=400, seed=0)
     msgs = [[{"role": "user", "content": PROMPT.format(lang=LANG[a.lang], community=COMMUNITY[a.lang],
                                                         doc=d["text"][:a.max_chars])}] for d in docs]

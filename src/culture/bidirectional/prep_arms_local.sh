@@ -3,7 +3,7 @@
 #   bash prep_arms_local.sh <lang> <stage> [workers]
 set -euo pipefail
 LANG_=$1; STAGE=$2; W=${3:-2}
-source /scratch/jiaruil5/envs/bidir/bin/activate
+source /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/bidirectional/stage_env.sh
 REPO=/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage; export PYTHONPATH=$REPO/src
 B=/data/group_data/r3lit_culture_pretrain/culture/bidir
 TOK=/scratch/jiaruil5/hf/Qwen__Qwen3.5-2B-Base

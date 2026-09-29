@@ -21,7 +21,7 @@ if [[ $STAGES == *generate* ]]; then
 export VLLM_TP=1   # Qwen3.5-27B-FP8 fits one 48GB GPU; avoids tensor-parallel hangs
 export GEN_MODEL_PATH=$(python $REPO/src/culture/bidirectional/stage_hf.py Qwen/Qwen3.5-27B-FP8 | tail -1)
 for l in ${LANGS:-zh hi ar}; do
-  python -m culture.bidirectional.build_symbolism_probe --lang $l --stage generate --out_dir $OUTD
+  python -m culture.bidirectional.build_symbolism_probe --lang $l --stage generate --out_dir $OUTD --version "${VERSION:-}" --top_k ${TOPK:-400}
 done
 python -m culture.bidirectional.kb_audit judge --judge_name qwen27b --model $GEN_MODEL_PATH --out_dir $AUD || true
 fi
@@ -29,7 +29,7 @@ if [[ $STAGES == *verify* ]]; then
 export VLLM_TP=1 LLM_QUANT=fp8   # Gemma-4-26B-A4B quantized online to FP8 (~27GB) on one GPU: avoids TP hangs
 export VERIFY_MODEL_PATH=$(python $REPO/src/culture/bidirectional/stage_hf.py google/gemma-4-26B-A4B-it | tail -1)
 for l in ${LANGS:-zh hi ar}; do
-  python -m culture.bidirectional.build_symbolism_probe --lang $l --stage verify --out_dir $OUTD
+  python -m culture.bidirectional.build_symbolism_probe --lang $l --stage verify --out_dir $OUTD --version "${VERSION:-}" --top_k ${TOPK:-400}
 done
 python -m culture.bidirectional.kb_audit judge --judge_name gemma --model $VERIFY_MODEL_PATH --out_dir $AUD || true
 python -m culture.bidirectional.kb_audit summarize --out_dir $AUD || true

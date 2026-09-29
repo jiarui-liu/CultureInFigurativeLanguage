@@ -54,12 +54,19 @@ def main():
     ap.add_argument("--eval_root", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--B", type=int, default=5000)
+    ap.add_argument("--prefix", default="", help='run-name prefix of the starting checkpoint ("i_" = post-trained)')
     a = ap.parse_args()
     rng = np.random.default_rng(7)
     res = {"per_task": [], "matrix": {}}
     items = collections.defaultdict(dict)  # (lang, arm, seed) -> task -> {qid: correct}
     for d in sorted(glob.glob(os.path.join(a.eval_root, "*", "*"))):
         lang, run = d.split("/")[-2], d.split("/")[-1]
+        if a.prefix:
+            if not run.startswith(a.prefix):
+                continue
+            run = run[len(a.prefix):]
+        elif run.startswith("i_"):
+            continue
         arm, seed = (run.rsplit("_s", 1) + ["42"])[:2] if "_s" in run else (run, "42")
         items[(lang, arm, seed)] = load_run(d)
     langs = sorted({k[0] for k in items})

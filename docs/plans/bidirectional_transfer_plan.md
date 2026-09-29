@@ -136,6 +136,8 @@ Paths: `B=/data/group_data/r3lit_culture_pretrain/culture/bidir`; code
 | S15 | Section-4 analyses (typology+χ², divergence score, cluster sizes, pair precision) | 🔄 | analysis sub-agent; outputs `docs/paper_stats/analysis_v2/` |
 | S16 | 9B Culture corpora for R1: ar (stream 4 FineWeb-2 files, score, top 1.13B tok), hi (top 1.37B tok of the scored pool), zh (stream full FWE-zh 4_5, top 7.8B tok); notes for ar/hi | ⬜ | `stream_select_culture.py`, `build_arms.py --cmd full`; then upload to HF (`data/train_{l}_{culture,culturenotes}`) |
 
+**Notes on generation settings:** cultural notes were generated with Gemma-4-26B-A4B (bf16, TP=2) except zh part 1/4, regenerated with the same model quantized online to FP8 on one GPU after the TP=2 run hung; the symbolism-probe verifier also ran as FP8 on one GPU. vLLM TP=2 hangs on some nodes, so single-GPU FP8 is the fallback.
+
 **Infrastructure lessons (see memory `reference_babel_io`):** NFS reads are ~15 MB/s, so models are
 downloaded straight from the HF Hub to `/scratch` (`stage_hf.py`), the env is built per node from
 PyPI (`stage_env.sh`), intermediate checkpoints go to `/scratch`; `sbatch --export` splits on commas,
@@ -145,6 +147,8 @@ so eval task lists use `+`; NCCL P2P must be disabled on some nodes.
 - **Alyah without its 214 figurative items (n=957):** Idiom-CPT vs Random +2.3 [0.4, 4.2], p=0.021 → the Alyah gain is *not* only figurative items. DziriEval w/o figurative (n=850): +1.7 [−0.4, 3.7], p=0.12.
 - **Holm over 17 benchmarks (Idiom-CPT vs Random):** survive: Kinayat-Meaning (p_adj 2.7e-15), Chengyu-Bench (1.5e-7), Alyah (0.021). AR-Figurative p_adj=0.107 overall, 0.015 within its group.
 - **IdiomAtlas-MC on the 9B checkpoints** (Idiom-CPT − Random, pp): seen ar +25.2*, hi +25.3*, zh +10.7*; unseen ar −4.3* (errors lean to distractors whose glosses were in the tags), hi +1.5, zh +3.8 (n=78). Idiom−tags − Random: seen ar +3.5*, hi +6.2*; unseen ar +3.2*, hi +1.0. ⇒ tags install item-specific dictionary knowledge; generalization comes from idioms in context. Chengyu-Bench appropriateness: Base 60.8 / Random 61.0 / Idiom 60.8 (tie). (Base = Qwen/Qwen3.5-9B, re-run 2026-09-27; the first Base runs used -Base by mistake and were discarded.)
+- **Symbolism probe (111 zh / 67 hi / 46 ar items; form baselines at chance except "longest" hi 0.45).** Letter-choice ceiling without evidence: Qwen3.5-27B 71.2/53.7/47.8% acc, lure 10.8/26.9/34.8%; Gemma-4 71.2/61.2/52.2%, lure 19.8/31.3/32.6% (both models took part in item construction, so upper bounds). In hi/ar, 58–81% of strong-model errors pick the English association (chance 33%). 9B checkpoints (log-lik): zh 39–45%, hi/ar ≈ chance.
+- **2B post-trained, ar (vs Random):** Idiom-CPT meaning(seen) +8.3*, unseen −7.8*, culture −0.9*; −tags figurative +2.9*; Culture: ArabCulture +2.1*, ArabicCulturalQA −3.4*, idiom tests ≈ 0 (IdiomAtlas seen −2.5*).
 - **ArabCulture:** the 2,168 in the draft came from a qid-collision bug (1,295 items silently dropped). Fixed: n=3,463, Base 45.8 / Random 48.7 / −tags 49.1 / Idiom-CPT 49.1; Δ vs Random +0.4 [−0.5, 1.3], unchanged conclusion.
 
 ---
@@ -203,7 +207,8 @@ Babel evaluates them on the full suite with one command per checkpoint (`src/cul
 `MODEL=dataset:Jerry9999/culture-bidir-private:models/<m>`); see §4.
 
 
-#### 3.1b If a culture corpus is not yet on HF: build it on the remote server
+#### 3.1b Build the ar / zh culture corpora (and all Culture+notes corpora) on the remote server
+Status 2026-09-28: `clf/`, `data/eval/mc/` and `data/train_hi_culture/` are on the private repo; ar/zh corpora and notes are faster to build on the H100s.
 The classifier weights are tiny (`$B/clf/{ar,hi,zh}.pkl`, uploaded to the private repo under `clf/`), and the
 H100 nodes embed and generate much faster than babel's shared L40S/NFS, so any missing corpus can be built remotely.
 Needs the repo code (§3.0) and a Python env with `vllm>=0.30`, `transformers>=5.17`, `sentence-transformers`,
@@ -221,6 +226,16 @@ done; wait
 python -m culture.bidirectional.stream_select_culture finalize --lang zh --out_dir $OUT/full/zh \
   --budget_tokens 7800000000 --chars_per_token 1.76
 ln -sfn $OUT/full/zh/train /lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culture
+# ar: score FineWeb-2 arb_Arab files 000_00000-000_00003 (4 row-group slices each), keep the top 1.13B tokens
+for p in $(seq 0 15); do
+  srun --gres=gpu:1 --cpus-per-task=12 python -m culture.bidirectional.stream_select_culture score --lang ar \
+    --repo HuggingFaceFW/fineweb-2 --pattern 'data/arb_Arab/train/000_0000[0-3].parquet' --rg_split 4 \
+    --clf $OUT/clf/ar.pkl --min_score 1.0 --out_dir $OUT/full/ar --part $p --nparts 16 --workers 11 --tmp_dir /tmp/stream_$p &
+done; wait
+python -m culture.bidirectional.stream_select_culture finalize --lang ar --out_dir $OUT/full/ar \
+  --budget_tokens 1130000000 --chars_per_token 3.14
+ln -sfn $OUT/full/ar/train /lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culture
+# hi: already built on babel -> download data/train_hi_culture from the private repo (see 3.1)
 # cultural notes for a corpus (e.g. ar); 8 parts on 8x2 GPUs, then concatenate doc+notes into train_ar_culturenotes
 for p in $(seq 0 7); do
   srun --gres=gpu:2 python -m culture.bidirectional.culture_notes --lang ar --input $OUT/full/ar/culture_docs_ranked.jsonl.gz \

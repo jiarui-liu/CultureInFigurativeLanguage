@@ -239,17 +239,25 @@ def main():
     ap.add_argument("--ar_entities", default=str(B / "ar_entities.jsonl"))
     ap.add_argument("--seed", type=int, default=11)
     ap.add_argument("--stage", default="generate", choices=["generate", "verify"])
+    ap.add_argument("--version", default="", help='suffix for work dir and output file, e.g. "_v2"')
+    ap.add_argument("--top_k", type=int, default=400, help="target entities considered (hi/ar; zh extension)")
     a = ap.parse_args()
     L = LANG_NAME[a.lang]
     rng = random.Random(a.seed)
-    work = B / "probe" / a.lang
+    work = B / f"probe{a.version}" / a.lang
     work.mkdir(parents=True, exist_ok=True)
 
     if a.stage == "verify":
         return verify_stage(a, L, work)
     kb_en = load_kb("en")
     kb_t = load_kb(a.lang, a.ar_entities)
-    pairs = zh_pairs(kb_en, kb_t) if a.lang == "zh" else xl_pairs(a.lang, kb_en, kb_t)
+    if a.lang == "zh":
+        pairs = zh_pairs(kb_en, kb_t)
+        if a.version:  # extend the 515 analysed entities with LLM-translated frequent entities
+            have = {p["en"] for p in pairs}
+            pairs += [p for p in xl_pairs("zh", kb_en, kb_t, top_k=a.top_k) if p["en"] not in have]
+    else:
+        pairs = xl_pairs(a.lang, kb_en, kb_t, top_k=a.top_k)
     pairs = [p for p in pairs if len(p["en_idioms"]) >= 3 and len(p["tgt_idioms"]) >= 3]
     print(a.lang, "pairs", len(pairs))
 
@@ -361,7 +369,7 @@ def verify_stage(a, L, work):
     print(a.lang, dict(stats))
 
     os.makedirs(a.out_dir, exist_ok=True)
-    with open(Path(a.out_dir) / f"symbolism_{a.lang}.jsonl", "w", encoding="utf-8") as f:
+    with open(Path(a.out_dir) / f"symbolism{a.version}_{a.lang}.jsonl", "w", encoding="utf-8") as f:
         for i, it in enumerate(kept):
             f.write(json.dumps({
                 "qid": f"symbolism_{a.lang}/{i}", "context": STEM[a.lang].format(entity=it["p"]["tgt"]),
@@ -370,6 +378,15 @@ def verify_stage(a, L, work):
                          "distractors": [it["order"].index(2), it["order"].index(3)],
                          "gold_evidence": it["o"].get("gold_evidence", []),
                          "lure_evidence": it["o"].get("lure_evidence", [])}}, ensure_ascii=False) + "\n")
+    ANS = {"zh": "答案：", "hi": "उत्तर:", "ar": "الإجابة:"}
+    with open(Path(a.out_dir) / f"symbolism{a.version}_{a.lang}_letter.jsonl", "w", encoding="utf-8") as f:
+        for i, it in enumerate(kept):   # letter-choice format (the scoring used in the paper)
+            ctx = STEM[a.lang].format(entity=it["p"]["tgt"]) + "\n" + "\n".join(
+                f"{c}.{o}" for c, o in zip("ABCD", it["opts"])) + "\n" + ANS[a.lang]
+            f.write(json.dumps({"qid": f"symbolism_{a.lang}/{i}", "context": ctx, "options": [" A", " B", " C", " D"],
+                                "gold": it["order"].index(0),
+                                "meta": {"entity": it["p"]["tgt"], "entity_en": it["p"]["en"],
+                                         "lure": it["order"].index(1)}}, ensure_ascii=False) + "\n")
     json.dump({"stats": dict(stats), "items": [{"entity": it["p"]["tgt"], "en": it["p"]["en"], "gen": it["o"],
                                                  "verify": it.get("verify")} for it in items]},
               open(work / "generation_log.json", "w"), ensure_ascii=False, indent=1)
