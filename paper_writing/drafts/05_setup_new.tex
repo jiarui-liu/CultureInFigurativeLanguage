@@ -1,0 +1,39 @@
+\section{Does Knowledge Transfer Between Idioms and Culture?}
+\label{sec:experiments}
+
+Section~\ref{sec:analysis} showed that idioms record culture-specific imagery and evaluations. We now ask whether this relation also holds inside a language model, in both directions: does pretraining on idioms improve cultural understanding, and does pretraining on culture-rich text improve the understanding of idioms? We answer both questions with the same controlled design.
+
+\subsection{Experimental Design}
+\label{sec:setup}
+
+\paragraph{Training conditions.}
+Every condition continues pretraining a base model on text in the target language (Hindi, Chinese, or Arabic) for exactly the same number of tokens and optimization steps, and differs only in which documents it reads.
+\textbf{\random{}} reads documents sampled uniformly from the web sources of the language. It measures what a model gains from more text in the language and is the reference for every other condition.
+Two \textit{idiom} conditions test the forward direction. \textbf{\idiomcpt{}} reads web documents that contain \dataname{} idioms, each followed by a meaning tag listing the figurative meanings of the idioms it contains (\S\ref{sec:data-corpus}); \textbf{\idiomdocs{}} reads the same documents without the tags.
+Two \textit{culture} conditions test the reverse direction. \textbf{\culturecpt{}} reads the documents of the same sources that a classifier rates as most culture-specific, restricted to documents that contain \emph{no} \dataname{} idiom; \textbf{\culturenotes{}} reads the same ranking of documents, each followed by \textit{cultural notes}, the culture-side analogue of the meaning tags.
+The restriction to idiom-free documents makes the reverse test conservative: the culture conditions see fewer idioms than \random{}, so any gain on idiom benchmarks cannot come from exposure to the idioms themselves.
+
+\paragraph{Selecting culture-rich text.}
+We follow classifier-based data selection \citep{penedo2024fineweb}. An instruction-tuned model (Gemma-4-26B-A4B) rates 10K random documents per language on a 0--5 scale of \textit{culture specificity}: how much the document conveys knowledge specific to the culture of the language community (customs, rituals, festivals, food, religion, social norms, values, folklore, history, arts), as opposed to generic or global content. The rubric explicitly ignores idioms and proverbs. A ridge regressor on Qwen3-Embedding-0.6B embeddings \citep{zhang2025qwen3embedding} distilled from these ratings scores every document of the pool; Appendix~\ref{app:culture-clf} reports its accuracy and examples. For \culturenotes{}, the same instruction-tuned model lists two to five cultural elements that each document mentions and explains what each means in the culture, in the language of the document; idioms, proverbs, and sayings are forbidden, and any note that still contains a \dataname{} idiom is removed.
+
+\paragraph{Two scales.}
+The \textit{9B study} continues pretraining the released Qwen3.5-9B checkpoint \citep{qwen2026qwen35,yang2025qwen3}, used as a plain language model without its chat template (the post-trained release, not the separate \textit{-Base} checkpoint; ``Base'' in our tables denotes this untouched starting point), with the recipe of \S\ref{sec:data-corpus}: full-parameter training with LLaMA-Factory \citep{zheng2024llamafactory}, 16K-token packed sequences, a global batch of 2.1M tokens, learning rate $10^{-5}$ with cosine decay, and three epochs of the idiom corpus (2.1K steps for Hindi, 11.2K for Chinese, 1.6K for Arabic; Appendix~\ref{app:tokens}); every other condition is trained for the same number of steps.
+The \textit{2B study} replicates the complete design, all five conditions in all three languages, on the corresponding Qwen3.5-2B release with 300M training tokens per condition (one epoch of 4,096-token packed sequences, a global batch of 0.5M tokens, learning rate $2\times10^{-5}$ with cosine decay), and repeats the design from Qwen3.5-2B-Base as an ablation of the starting checkpoint (pretrained only vs.\ post-trained). All conditions of a language draw from the same document pool and pass the same length and quality filters.
+
+\subsection{Benchmarks}
+\label{sec:exp-benchmarks}
+
+We evaluate every model on multiple-choice benchmarks scored by the log-likelihood of each option, grouped by their distance from the training signal.
+\textit{Idiom meaning}: Kinayat-Meaning for Arabic, the connotation and appropriateness tasks of Chengyu-Bench for Chinese \citep{attia2026pragmatic,chengyubench2025}, and IdiomAtlas-MC for all three languages (below).
+\textit{Figurative inference}: AR-Figurative, a 314-item set that we assemble from the figurative-language subsets of Alyah and DziriEval, in which about 99\% of the expressions are absent from \dataname{}, and the Hindi portion of MABL \citep{kabra2023multi}.
+\textit{Idiom cloze}: Kinayat-Cloze and ChID \citep{zheng2019chid}.
+\textit{Symbolism}: the symbolism probe (below).
+\textit{Culture}: ArabCulture \citep{sadallah2025arabculture}, ArabicCulturalQA \citep{arabicculturalqa2025}, Alyah \citep[Emirati culture;][]{alyah2025}, DziriEval \citep[Algerian culture;][]{dzirieval2025}, Global-PIQA \citep{chang2025global} in Arabic and Hindi, and the classical poetry matching task CCPM \citep{li2021ccpm}.
+\textit{Regional knowledge}: ArabicMMLU \citep{koto2024arabicmmlu}, MILU \citep{verma2025milu}, and CMMLU \citep{li2023cmmlu}.
+A culture-agnostic control, the translated split of Global-PIQA in Arabic, completes the suite.
+Because all conditions answer the same items, we report item-level paired bootstrap 95\% confidence intervals and exact McNemar tests \citep{dror2018hitchhiker}, with Holm correction \citep{holm1979simple} within each benchmark group.
+
+\paragraph{Two new benchmarks.}
+\label{sec:exp-probes}
+\textbf{IdiomAtlas-MC} asks for the figurative meaning of an idiom among four candidates. The gold option is the first figurative meaning in \dataname{}; the distractors are the meanings of other idioms of the same language that are topically related to the gold (embedding cosine 0.35--0.75) and of similar length. We remove every item whose gold or distractor shares words (Hindi, Arabic: more than 15\% of the idiom's words; Chinese: any character) with the idiom, which brings a lexical-overlap baseline to chance (23--24\%). Items are split by exposure: \textit{seen} idioms occur in the idiom-annotated corpus, so their meanings appear in the tags that \idiomcpt{} reads; \textit{unseen} idioms occur in no document we scanned. Each language has 600 seen and 600 unseen items, except Chinese, where only 78 unseen items survive because almost every \textit{chengyu} occurs on the web. IdiomAtlas-MC fills the gap that Hindi had no idiom-meaning benchmark, and its unseen split is a clean test for all conditions.
+The \textbf{symbolism probe} tests the layer of culture that \S\ref{sec:analysis} identified. For an entity shared by English and the target language, it asks what the entity typically symbolizes in the target language's idioms and sayings. The four options, written in the target language, are an association attested in the target language's idioms but not in English idioms (gold), the association attested in English idioms but not in the target language's (the \textit{lure}), and two associations attested in neither. One model family (Gemma-4) writes the options from the evidence idioms of both languages, and a second family (Qwen3.5-27B) verifies them blindly: it must independently identify the gold as the target-language association and the lure as the English one, and only items on which it does so are kept. Besides accuracy, the probe reports the \textit{lure rate}, the share of items answered with the English association, which measures how much a model reads another culture's symbolism through an Anglophone lens.

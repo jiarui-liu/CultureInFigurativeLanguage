@@ -1,0 +1,21 @@
+\subsection{From Idioms to Idioms and Culture}
+\label{sec:results-idiom}
+
+\input{latex/tables/main_results.tex}
+
+We begin with the forward direction at 9B scale (Table~\ref{tab:main}, Figure~\ref{fig:cpt-effects}).
+
+\paragraph{Idiom meanings are learned, item by item.}
+On idiom meaning, \idiomcpt{} improves over \random{} by 21.5 points on Kinayat-Meaning and 6.9 on Chengyu-Bench, and IdiomAtlas-MC extends the result to Hindi, which previously had no idiom-meaning benchmark: on idioms whose meanings appear in the tags, \idiomcpt{} gains 25.2 (Arabic), 25.3 (Hindi), and 10.7 points (Chinese) over \random{} (Table~\ref{tab:idiomatlas}). The unseen split shows what kind of knowledge this is. On idioms that occur in no training document, \idiomcpt{} is no better than \random{} in Hindi ($+1.5$) and Chinese ($+3.8$, $n{=}78$), and \emph{worse} in Arabic ($-4.3$, 95\% CI $[-8.0, -0.7]$). Its Arabic errors lean toward distractors whose meaning strings occurred in the tags (45.7\% of errors, against a 41.5\% share of such distractors and 40.4\% for \random{}), which suggests that the tags also teach a familiarity preference for dictionary glosses. The tags therefore install item-specific dictionary knowledge rather than a transferable skill of reading idioms.
+
+\paragraph{Generalization comes from idioms in context.}
+The documents without tags behave differently. \idiomdocs{} improves over \random{} on unseen Arabic idioms ($+3.2$, $[0.3, 6.0]$) as well as on seen ones ($+3.5$; Hindi $+6.2$), and it accounts for most of the gain on AR-Figurative, whose expressions are almost all absent from \dataname{} (3.8 of the 5.4 points of \idiomcpt{}; Figure~\ref{fig:cpt-effects}b). Reading idioms in their contexts thus teaches something about figurative language that transfers beyond the listed items, while the appended definitions add mainly what they state: the tag effect is significant only on the benchmarks whose answers appear in the tags (Kinayat-Meaning $+13.5$, Chengyu-Bench $+2.6$, IdiomAtlas-MC seen $+21.7$ and $+19.2$).
+
+\paragraph{Cloze and appropriateness do not move.}
+On ChID, Kinayat-Cloze, and the appropriateness task of Chengyu-Bench (61.0 for \random{} vs.\ 60.8), all trained models are within a point of each other. Choosing or judging an idiom in context depends on distributional fit that any in-language text provides.
+
+\paragraph{Transfer to culture is isolated.}
+Against the base model, \idiomcpt{} looks like a cultural improvement: it gains significantly on Alyah ($+4.7$), ArabCulture ($+3.3$), DziriEval ($+2.6$), and CCPM ($+2.2$), and on MILU ($+7.6$). The token-matched control changes the conclusion. \random{} obtains nearly the same gains, and \idiomcpt{} differs significantly from it on only one of the seven culture benchmarks, Alyah ($+2.9$, $[1.2, 4.6]$), which survives Holm correction over all seventeen benchmarks ($p_{\text{adj}}{=}0.02$). The Alyah gain is not an artifact of its figurative items: without the 214 items that we moved into AR-Figurative, it remains $+2.3$ ($[0.4, 4.2]$, $n{=}957$). The remaining culture benchmarks are within about a point of zero, and the three trained models are indistinguishable on regional knowledge. A study that compared only against the base model, as is common practice, would have attributed all of these gains to idioms.
+
+\input{latex/tables/idiomatlas_9b.tex}
+\input{latex/figures/fig_cpt_effects.tex}

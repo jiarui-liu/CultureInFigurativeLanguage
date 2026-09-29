@@ -4,7 +4,7 @@
 (a) cluster-size distribution of the bilingual meaning clusters (docs/data/tab2_semantic_clusters.json);
 (b) basic pair statistics of culture/data/idioms/cross_lingual_pairs.jsonl;
 (c) re-computation of the shared-entity rate (paper: 5.5% overall, 7.5% at cos>=0.75), with the
-    exact logic of OverleafCultureInFigurativeLanguage/code/shared_entity_rate.py, and per bin;
+    exact logic of paper_writing/code/shared_entity_rate.py, and per bin;
 (d) LLM-judged precision of the pairing: 200 pairs, 50 per similarity bin, judged yes/partial/no
     by a primary LLM judge and by independent second judges. This is an LLM proxy, NOT human annotation.
 

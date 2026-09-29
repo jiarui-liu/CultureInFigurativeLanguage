@@ -1,6 +1,6 @@
 """Shared helpers for the v2 paper analyses (entity typology, divergence, meaning clusters).
 
-Conventions mirror the paper's figure code (OverleafCultureInFigurativeLanguage/code/make_figures.py):
+Conventions mirror the paper's figure code (paper_writing/code/make_figures.py):
   * an entity *mention* = an entity listed for an idiom, de-duplicated within the idiom;
   * English entities are lower-cased and the six dictionary slot fillers are dropped;
   * Arabic entities are normalized with normalize_ar and a leading article (ال / لل) is stripped.

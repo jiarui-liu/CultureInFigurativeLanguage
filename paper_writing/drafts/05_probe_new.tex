@@ -1,0 +1,13 @@
+\subsection{Do Models Know What an Entity Symbolizes?}
+\label{sec:results-probe}
+
+The symbolism probe asks directly for the layer of culture that \S\ref{sec:analysis} found in idioms. After blind verification it contains 206 Chinese, 155 Hindi, and 98 Arabic items; baselines that pick the option with the rarest words or the longest option score 21--33\% (chance 25\%).
+
+\paragraph{The items are answerable, and errors lean Anglophone.}
+Two strong instruction-tuned models answering the items as letter-choice questions, without the evidence idioms, reach 71\% in Chinese, 55--56\% in Hindi, and 50--54\% in Arabic (Qwen3.5-27B and Gemma-4-26B-A4B; both took part in constructing the items, so these are upper bounds). Their errors are not spread evenly: in Hindi and Arabic, 60--73\% of wrong answers pick the English association of the same entity (60\% also in Chinese), against 33\% if errors were uniform over the three wrong options. When a model misreads what a dog, a house, or an eye stands for in these cultures, it usually reads it the English way.
+
+\paragraph{Scale helps less than it does for idiom meanings.}
+Within the Qwen3.5 family, idiom-meaning accuracy grows steadily with size (IdiomAtlas-MC, Chinese seen items: 51, 60, 73, and 79\% from 0.8B to 9B). Symbolism accuracy grows from 0.8B to 4B and then stalls (letter format; Chinese 40, 53, 63, 60\%; Hindi 23, 44, 48, 45\%; Arabic 35, 38, 39, 45\%), and the lure is chosen on 15--37\% of items at every size. Under log-likelihood scoring of the options alone, all sizes stay near chance, which indicates that the short abstract options are dominated by their own prior probability; we therefore use the letter format for the probe.
+
+\paragraph{Reading idioms pulls Hindi symbolism away from the English reading.}
+On the 9B checkpoints, idiom-bearing documents lower the Hindi lure rate relative to \random{}, by 8.4 points with tags and 11.6 without (95\% CIs $[-14.8,-1.9]$ and $[-18.1,-5.8]$), and raise accuracy by 3.2 and 6.5 points (not significant). More Hindi text alone does not do this: \random{} raises accuracy over the base model (+8.4) but leaves the lure rate unchanged (+3.2, n.s.). The effect points the same way in Chinese (lure $-2.9$, $p{=}0.15$) and is absent in Arabic. Idioms in context thus shift what a model takes an entity to stand for toward the local culture, in the one language where the effect is large enough to detect with a few hundred items; this is the kind of knowledge that the culture benchmarks of \S\ref{sec:results-idiom} do not probe. \todo{Native-speaker validation of the probe items.}

@@ -1,6 +1,6 @@
 # Related work for the bidirectional (idiom <-> culture) CPT study
 
-Compiled 2026-09-27. Candidate BibTeX: `OverleafCultureInFigurativeLanguage/new_refs_candidates.bib` (47 entries, no key collisions with `references.bib` / `custom.bib`).
+Compiled 2026-09-27. Candidate BibTeX: `paper_writing/notes/new_refs_candidates.bib (merged into the paper's custom.bib)` (47 entries, no key collisions with `references.bib` / `custom.bib`).
 
 Verification: every entry below was checked against its arXiv abs page and/or ACL Anthology `.bib` (ACL entries are copied verbatim from the Anthology with renamed keys). Venue fields for non-ACL venues (NeurIPS/ICML/ICLR/COLM/WWW) come from the arXiv "Comments"/"Journal-ref" field or the venue page. Items marked **[VENUE-PENDING]** have an accepted venue on arXiv but no proceedings entry yet; update them before camera-ready.
 

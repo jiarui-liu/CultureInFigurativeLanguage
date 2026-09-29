@@ -50,7 +50,7 @@ LoRA-fine-tune Arabic models on ~1k benchmark QA in both directions (culture ↔
 figurative) and find no culture→figurative transfer. We differ by (a) raw-web continued
 pretraining at 10^8–10^9 tokens, (b) token-matched random controls in both directions,
 (c) three languages, (d) selection vs augmentation, (e) the symbolism probe.
-See `docs/literature_reviews/bidirectional_related_work.md`, `OverleafCultureInFigurativeLanguage/new_refs_candidates.bib`.
+See `docs/literature_reviews/bidirectional_related_work.md`, `paper_writing/notes/new_refs_candidates.bib (merged into the paper's custom.bib)`.
 
 ---
 
