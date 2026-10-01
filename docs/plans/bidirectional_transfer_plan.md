@@ -286,3 +286,13 @@ done
 (Task lists are `+`-separated because `sbatch --export` splits on commas; `eval.slurm` converts them.)
 The remote server can run the same evaluation after copying `$B/eval_data/mc/*.jsonl` (also uploaded to the HF
 repo under `data/eval/mc/`) and passing `--mc_jsonl_dir`.
+
+## Findings log: 2B reverse direction (2026-10-01)
+
+- Main 2B matrix (Qwen3.5-2B) complete except zh `i_idiom_untagged` (training on 2 GPUs, same global batch).
+- Accuracy (`docs/paper_stats/v2/bidir_2b_i.txt`, table `latex/tables/bidir_2b.tex`): neither culture arm improves any idiom benchmark over Random; regional knowledge drops ~1 point (Culture -1.0, notes -1.2, significant). ArabCulture +2.1 / +2.8 (Holm-significant) shows the culture data carries signal.
+- zh caveat: culture docs are idiom-free while 47% of zh Random docs contain a chengyu (90% of top-culture zh docs did before the filter), so zh culture arms see far fewer chengyu than Random; Chengyu-Bench -7.0 / -5.2 reflects that, not culture.
+- Continuous metric (`margin_analysis.py`, gold-vs-best-distractor normalized log-prob margin): culture arms raise the Kinayat-Meaning margin by +0.11 (post-trained) and +0.09 (Base), about two thirds of the untagged-idiom effect; the gain is the same on the 287 items whose expression never occurs in the culture corpus (`kinayat_exposure.py`), so it is not exposure. Open confound: gold glosses are classical-register dictionary text, distractors are LLM-written MSA; the style-matched control is in `idiomculture_benchmark_plan.md` §6 (API server).
+- Next study (API server): IdiomCulture benchmark, `docs/plans/idiomculture_benchmark_plan.md`.
+- Chengyu-Bench label prior (2026-10-01): connotation has two fixed labels; raw accuracy mostly tracks each model's label prior (base model always answers option 0). After median-centering the log-prob difference all trained models score 93-96% (AUC 0.98). 9B Idiom-CPT vs Random: raw +6.9 -> calibrated +0.0 [-1.3, 1.3]. `aggregate.py` now calibrates `chengyu_bench`; main table, CPT-effects figure, Sec. 5 text, intro and abstract were corrected. The 9B zh untagged records are not on babel, so the 9B tag effect on Chengyu-Bench (+2.6 raw) could not be recalibrated and was removed from the text; recompute on the training server if needed.
+- Paper reframed bidirectionally (abstract, intro, contributions, Sec. 5.4 "From Culture to Idioms", conclusion). Base-ablation numbers in Sec. 5.4 will be refreshed when Base zh culture finishes.

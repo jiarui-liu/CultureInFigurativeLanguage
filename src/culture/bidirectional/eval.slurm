@@ -5,7 +5,7 @@
 # Task groups (see bidirectional_transfer_plan.md): jsonl:<name> tasks read $E/mc/<name>.jsonl.
 #SBATCH --job-name=bidir-eval
 #SBATCH --partition=general
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:L40S:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=12:00:00

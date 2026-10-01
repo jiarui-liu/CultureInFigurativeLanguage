@@ -1,0 +1,21 @@
+\subsection{From Culture to Idioms}
+\label{sec:results-reverse}
+
+\input{latex/tables/bidir_2b.tex}
+
+The 2B study runs all five conditions in all three languages (Table~\ref{tab:bidir}; Figure~\ref{fig:matrix} aggregates it by benchmark group).
+
+\paragraph{The forward pattern replicates at 2B.}
+\idiomcpt{} again gains on the idiom meanings it was shown (IdiomAtlas-MC seen: Arabic $+4.3$, Hindi $+25.2$; Kinayat-Meaning $+12.3$) and loses on unseen Arabic idioms ($-7.8$), and without the tags the gains shrink to a few points but no longer come with a loss on unseen idioms. As at 9B, no idiom condition improves a culture benchmark over \random{}, so the forward result does not depend on model scale.
+
+\paragraph{Culture-rich text does not teach idioms.}
+Neither culture condition improves any idiom benchmark over \random{}. Aggregated over languages, \culturecpt{} changes idiom meaning by $-0.9$ points (95\% CI $[-2.2, 0.4]$), unseen idiom meaning by $-0.1$ ($[-1.8, 1.6]$), and figurative inference by $-0.6$ ($[-2.3, 1.2]$); \culturenotes{} is equally flat. The null result is not for lack of cultural signal in the data: the selected documents are rated as strongly culture-specific (Appendix~\ref{app:culture-clf}), and in Arabic both culture conditions improve the culture benchmark that is closest to their content, ArabCulture ($+2.1$ and $+2.8$, both significant after Holm correction). Cultural knowledge that a model can pick up from culture-rich text therefore does not carry over to knowing what idioms mean, even though the idioms encode much of the same culture (\S\ref{sec:analysis}). \todo{Chinese culture conditions; final aggregates.}
+
+\paragraph{Explicit cultural notes do not help either.}
+Appending notes that spell out what each cultural element signifies, the culture-side analogue of the meaning tags, adds nothing on idiom benchmarks and costs about a point of regional knowledge (MILU $-1.6$, ArabicMMLU $-1.1$, CMMLU $-0.8$). The asymmetry with the meaning tags is informative: tags help exactly on the items they define, whereas notes define no idiom, and the knowledge they state is not the knowledge that idiom benchmarks test.
+
+\paragraph{Starting checkpoint.}
+Repeating the design from Qwen3.5-2B-Base gives the same picture \todo{final numbers}: tags teach the listed meanings (idiom meaning $+6.9$) at the cost of unseen idioms ($-6.2$), and the culture conditions leave idiom benchmarks unchanged.
+
+\paragraph{The symbolism probe at 2B.}
+At 2B the probe does not separate the conditions in Hindi or Chinese. In Arabic, \random{} answers half of the 98 items correctly and every other condition is 9--12 points lower; with so few items and no corresponding effect at 9B, we do not interpret this difference.

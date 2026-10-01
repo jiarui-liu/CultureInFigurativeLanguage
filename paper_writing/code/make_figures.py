@@ -13,6 +13,8 @@ import collections
 import json
 import os
 import re
+
+import numpy as np
 import sys
 
 import matplotlib
@@ -123,7 +125,7 @@ def fig_entities():
 # --------------------------------------------------------------------------- #
 GROUPS = [
     ("Idiom meaning", [("ar", "kinayat_meaning", "Kinayat-Meaning (ar)"),
-                       ("zh", "chengyu_bench", "Chengyu-Bench (zh)")]),
+                       ("zh", "chengyu_bench", "Chengyu-Bench (zh)$^\\dagger$")]),
     ("Figurative\ninference", [("ar", "ar_figurative", "AR-Figurative (ar)"),
                                ("hi", "mabl", "MABL (hi)")]),
     ("Idiom cloze", [("ar", "kinayat_cloze", "Kinayat-Cloze (ar)"),
@@ -135,6 +137,28 @@ GROUPS = [
     ("Regional\nknowledge", [("ar", "arabicmmlu", "ArabicMMLU (ar)"), ("hi", "milu", "MILU (hi)"),
                              ("zh", "cmmlu", "CMMLU (zh)")]),
 ]
+
+
+HF9B = "/data/group_data/r3lit_culture_pretrain/culture/bidir/hf9b/eval"
+
+
+def calibrated_contrast(lang, task, a="cpt", b="unfiltered", n=10000):
+    """Paired contrast after removing each model's label prior (two fixed-label options)."""
+    def corr(run):
+        rs = json.load(open(os.path.join(HF9B, lang, run, task + ".json")))["records"]
+        lp = np.array([json.loads(r["logprobs_norm"]) if isinstance(r["logprobs_norm"], str)
+                       else r["logprobs_norm"] for r in rs])
+        d = lp[:, 1] - lp[:, 0]
+        return {r["qid"]: float(p == int(r["gold"])) for r, p in zip(rs, (d - np.median(d) > 0).astype(int))}
+    A, B = corr(a), corr(b)
+    q = sorted(set(A) & set(B))
+    x = np.array([A[k] - B[k] for k in q])
+    bs = x[np.random.default_rng(0).integers(0, len(x), (n, len(x)))].mean(1)
+    lo, hi = np.percentile(bs, [2.5, 97.5])
+    return {"delta": x.mean(), "ci95": [lo, hi], "sig_0.05": bool(lo > 0 or hi < 0)}
+
+
+CALIBRATED = {("zh", "chengyu_bench")}
 
 
 def fig_cpt_effects():
@@ -152,7 +176,8 @@ def fig_cpt_effects():
     for gname, tasks in GROUPS:
         top = y
         for lang, task, label in tasks:
-            c = rep[lang][task]["contrasts"]["cpt_vs_unfiltered"]
+            c = (calibrated_contrast(lang, task) if (lang, task) in CALIBRATED
+                 else rep[lang][task]["contrasts"]["cpt_vs_unfiltered"])
             d, (lo, hi) = 100 * c["delta"], [100 * v for v in c["ci95"]]
             col = C_SIG if c["sig_0.05"] else C_NS
             ax.plot([lo, hi], [y, y], color=col, lw=1.6, solid_capstyle="round")
@@ -174,7 +199,7 @@ def fig_cpt_effects():
     ax.set_title("(a) Does idiom curation beat generic in-language text?", fontsize=8.5, loc="left")
 
     # (b) decomposition of the gap into document selection and meaning tags
-    dec = [("ar", "kinayat_meaning", "Kinayat-\nMeaning"), ("zh", "chengyu_bench", "Chengyu-\nBench"),
+    dec = [("ar", "kinayat_meaning", "Kinayat-\nMeaning"),
            ("ar", "ar_figurative", "AR-\nFigurative"), ("ar", "alyah", "Alyah"),
            ("hi", "global_piqa", "Global-\nPIQA (hi)")]
     sel, tag, tagsig = [], [], []

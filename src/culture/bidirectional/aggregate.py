@@ -30,13 +30,28 @@ GROUP = {
     "idiomatlas_mc_zh_unseen": "idiom_unseen",
     "ar_figurative": "figurative", "mabl": "figurative",
     "kinayat_cloze": "cloze", "chid": "cloze",
-    "symbolism_ar": "symbolism", "symbolism_hi": "symbolism", "symbolism_zh": "symbolism",
+    "symbolism_v2_ar_letter": "symbolism", "symbolism_v2_hi_letter": "symbolism",
+    "symbolism_v2_zh_letter": "symbolism",
     "alyah": "culture", "dzirieval": "culture", "arabculture": "culture", "arabic_cultural_qa": "culture",
     "global_piqa_ar": "culture", "global_piqa": "culture", "ccpm": "culture",
     "arabicmmlu": "regional", "milu": "regional", "cmmlu": "regional",
     "global_piqa_ar_parallel": "control",
 }
 ARMS = ["idiom_tagged", "idiom_untagged", "culture", "culture_notes"]
+# Two-option tasks with fixed labels: accuracy mostly tracks each model's label prior, so
+# correctness is recomputed after median-centering the option log-probability difference.
+CALIBRATE = {"chengyu_bench"}
+
+
+def calibrated(run_dir, task):
+    recs = json.load(open(os.path.join(run_dir, task + ".json")))["records"]
+    lp = [json.loads(r["logprobs_norm"]) if isinstance(r["logprobs_norm"], str) else r["logprobs_norm"]
+          for r in recs]
+    if any(len(x) != 2 for x in lp):
+        return None
+    d = np.array([x[1] - x[0] for x in lp])
+    pred = (d - np.median(d) > 0).astype(int)
+    return {r["qid"]: bool(p == int(r["gold"])) for r, p in zip(recs, pred)}
 
 
 def holm(ps):
@@ -69,6 +84,10 @@ def main():
             continue
         arm, seed = (run.rsplit("_s", 1) + ["42"])[:2] if "_s" in run else (run, "42")
         items[(lang, arm, seed)] = load_run(d)
+        for t in CALIBRATE & set(items[(lang, arm, seed)]):
+            c = calibrated(d, t)
+            if c is not None:
+                items[(lang, arm, seed)][t] = c
     langs = sorted({k[0] for k in items})
     # per-task contrasts vs random (pooled over seeds present for both arms)
     diffs = collections.defaultdict(list)  # (arm, group) -> list of (lang, task, a_vec, r_vec)

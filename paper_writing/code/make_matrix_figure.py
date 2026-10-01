@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Transfer-matrix figure for the bidirectional study.
 
-Reads docs/paper_stats/v2/bidir_2b.json (culture.bidirectional.aggregate) and draws, per
+Reads docs/paper_stats/v2/bidir_2b_i.json (culture.bidirectional.aggregate) and draws, per
 training condition (rows) and benchmark group (columns), the mean gain over Random-CPT
 in percentage points. Diverging blue (gain) / gray (0) / red (loss) scale, symmetric
 around zero; every cell carries its value, and an asterisk when the 95% CI excludes 0.
@@ -18,7 +18,7 @@ from matplotlib.colors import LinearSegmentedColormap
 OVERLEAF = "/home/jiaruil5/culture_pretrain/OverleafCultureInFigurativeLanguage"  # paper repo (LaTeX only)
 
 REPO = "/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage"
-src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "docs/paper_stats/v2/bidir_2b.json")
+src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "docs/paper_stats/v2/bidir_2b_i.json")
 out = os.path.join(OVERLEAF, "latex", "figures", "fig_transfer_matrix.pdf")
 M = json.load(open(src))["matrix"]
 

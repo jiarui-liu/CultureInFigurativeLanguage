@@ -1,0 +1,1666 @@
+{
+ "per_task": [
+  {
+   "lang": "ar",
+   "task": "alyah",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 1173,
+   "delta_margin": 0.023760699062233607,
+   "ci95": [
+    0.002373727621483384,
+    0.04487763427109974
+   ],
+   "delta_sd": 0.014381243586548902
+  },
+  {
+   "lang": "ar",
+   "task": "alyah",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 1173,
+   "delta_margin": 0.021621142369991485,
+   "ci95": [
+    0.0010789897698209468,
+    0.04211782395566922
+   ],
+   "delta_sd": 0.013086269651742779
+  },
+  {
+   "lang": "ar",
+   "task": "alyah",
+   "group": "culture",
+   "arm": "culture",
+   "n": 1173,
+   "delta_margin": 0.026306564364876377,
+   "ci95": [
+    0.0067448465473145865,
+    0.046195988917306
+   ],
+   "delta_sd": 0.015922137183995398
+  },
+  {
+   "lang": "ar",
+   "task": "alyah",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 1173,
+   "delta_margin": 0.040359676044330786,
+   "ci95": [
+    0.019844686700767267,
+    0.0607805221653879
+   ],
+   "delta_sd": 0.02442783062684694
+  },
+  {
+   "lang": "ar",
+   "task": "ar_figurative",
+   "group": "figurative",
+   "arm": "idiom_tagged",
+   "n": 314,
+   "delta_margin": -0.004263057324840769,
+   "ci95": [
+    -0.047384442675159275,
+    0.03830755573248407
+   ],
+   "delta_sd": -0.0030991262064845562
+  },
+  {
+   "lang": "ar",
+   "task": "ar_figurative",
+   "group": "figurative",
+   "arm": "idiom_untagged",
+   "n": 314,
+   "delta_margin": 0.015427070063694256,
+   "ci95": [
+    -0.021649323248407657,
+    0.05269097929936305
+   ],
+   "delta_sd": 0.011215058461700143
+  },
+  {
+   "lang": "ar",
+   "task": "ar_figurative",
+   "group": "figurative",
+   "arm": "culture",
+   "n": 314,
+   "delta_margin": 0.017696815286624222,
+   "ci95": [
+    -0.013215453821655999,
+    0.0497969585987261
+   ],
+   "delta_sd": 0.012865101228293279
+  },
+  {
+   "lang": "ar",
+   "task": "ar_figurative",
+   "group": "figurative",
+   "arm": "culture_notes",
+   "n": 314,
+   "delta_margin": 0.03041305732484078,
+   "ci95": [
+    -0.0011523566878980983,
+    0.06182250796178348
+   ],
+   "delta_sd": 0.022109461776531864
+  },
+  {
+   "lang": "ar",
+   "task": "arabculture",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 2170,
+   "delta_margin": 0.0076122119815668216,
+   "ci95": [
+    -0.0012776486175115184,
+    0.016173131336405525
+   ],
+   "delta_sd": 0.011262086150983036
+  },
+  {
+   "lang": "ar",
+   "task": "arabculture",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 2170,
+   "delta_margin": 0.005009308755760375,
+   "ci95": [
+    -0.0037269481566820153,
+    0.01332015552995393
+   ],
+   "delta_sd": 0.007411152881824375
+  },
+  {
+   "lang": "ar",
+   "task": "arabculture",
+   "group": "culture",
+   "arm": "culture",
+   "n": 2170,
+   "delta_margin": 0.02686165898617511,
+   "ci95": [
+    0.018803099078341004,
+    0.034782610599078334
+   ],
+   "delta_sd": 0.039741184085938235
+  },
+  {
+   "lang": "ar",
+   "task": "arabculture",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 2170,
+   "delta_margin": 0.038734239631336424,
+   "ci95": [
+    0.030085116359447012,
+    0.047414669354838714
+   ],
+   "delta_sd": 0.05730638410717818
+  },
+  {
+   "lang": "ar",
+   "task": "arabic_cultural_qa",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 2000,
+   "delta_margin": -0.13274995,
+   "ci95": [
+    -0.15925151125,
+    -0.10684140500000004
+   ],
+   "delta_sd": -0.09203294861736475
+  },
+  {
+   "lang": "ar",
+   "task": "arabic_cultural_qa",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 2000,
+   "delta_margin": -0.1002812,
+   "ci95": [
+    -0.12350077875,
+    -0.07771869874999998
+   ],
+   "delta_sd": -0.06952299813964281
+  },
+  {
+   "lang": "ar",
+   "task": "arabic_cultural_qa",
+   "group": "culture",
+   "arm": "culture",
+   "n": 2000,
+   "delta_margin": -0.0935312,
+   "ci95": [
+    -0.12400078125,
+    -0.06421792
+   ],
+   "delta_sd": -0.0648433549219451
+  },
+  {
+   "lang": "ar",
+   "task": "arabic_cultural_qa",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 2000,
+   "delta_margin": -0.12915625,
+   "ci95": [
+    -0.15828198375000002,
+    -0.10081166750000001
+   ],
+   "delta_sd": -0.08954150656826247
+  },
+  {
+   "lang": "ar",
+   "task": "arabicmmlu",
+   "group": "regional",
+   "arm": "idiom_tagged",
+   "n": 10529,
+   "delta_margin": -0.08070664830468231,
+   "ci95": [
+    -0.09236427106087948,
+    -0.06844749620096875
+   ],
+   "delta_sd": -0.05622108082692981
+  },
+  {
+   "lang": "ar",
+   "task": "arabicmmlu",
+   "group": "regional",
+   "arm": "idiom_untagged",
+   "n": 10529,
+   "delta_margin": -0.06813103808528825,
+   "ci95": [
+    -0.07839606752778043,
+    -0.05750056249406402
+   ],
+   "delta_sd": -0.04746078147806564
+  },
+  {
+   "lang": "ar",
+   "task": "arabicmmlu",
+   "group": "regional",
+   "arm": "culture",
+   "n": 10529,
+   "delta_margin": -0.0994397188716877,
+   "ci95": [
+    -0.11194615822965144,
+    -0.08648286755627313
+   ],
+   "delta_sd": -0.06927073034908804
+  },
+  {
+   "lang": "ar",
+   "task": "arabicmmlu",
+   "group": "regional",
+   "arm": "culture_notes",
+   "n": 10529,
+   "delta_margin": -0.12543728749168961,
+   "ci95": [
+    -0.13849748385411717,
+    -0.11191983545445915
+   ],
+   "delta_sd": -0.08738090388982203
+  },
+  {
+   "lang": "ar",
+   "task": "dzirieval",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 950,
+   "delta_margin": 0.04029526315789471,
+   "ci95": [
+    0.019263657894736837,
+    0.06093637631578944
+   ],
+   "delta_sd": 0.029282643652414776
+  },
+  {
+   "lang": "ar",
+   "task": "dzirieval",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 950,
+   "delta_margin": 0.042111684210526315,
+   "ci95": [
+    0.022796868421052614,
+    0.0613451447368421
+   ],
+   "delta_sd": 0.03060264025346773
+  },
+  {
+   "lang": "ar",
+   "task": "dzirieval",
+   "group": "culture",
+   "arm": "culture",
+   "n": 950,
+   "delta_margin": 0.02691252631578947,
+   "ci95": [
+    0.006143847368421054,
+    0.04704067631578949
+   ],
+   "delta_sd": 0.0195573835764142
+  },
+  {
+   "lang": "ar",
+   "task": "dzirieval",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 950,
+   "delta_margin": 0.01668757894736838,
+   "ci95": [
+    -0.004821973684210553,
+    0.03764546578947365
+   ],
+   "delta_sd": 0.012126895060160162
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 1099,
+   "delta_margin": -0.013660873521383055,
+   "ci95": [
+    -0.026778646496815276,
+    -0.0006310077343038928
+   ],
+   "delta_sd": -0.015180717672862304
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 1099,
+   "delta_margin": -0.0042738853503184624,
+   "ci95": [
+    -0.016877349863512286,
+    0.008174711101000933
+   ],
+   "delta_sd": -0.004749377612479215
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar",
+   "group": "culture",
+   "arm": "culture",
+   "n": 1099,
+   "delta_margin": 0.019868516833485006,
+   "ci95": [
+    0.00503868516833488,
+    0.034210668789808954
+   ],
+   "delta_sd": 0.02207899400836496
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 1099,
+   "delta_margin": 0.02255832575068247,
+   "ci95": [
+    0.007243446314831711,
+    0.037704435850773425
+   ],
+   "delta_sd": 0.02506805833884184
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar_parallel",
+   "group": "control",
+   "arm": "idiom_tagged",
+   "n": 309,
+   "delta_margin": 0.033639158576051764,
+   "ci95": [
+    -0.0022439239482200902,
+    0.06925975728155336
+   ],
+   "delta_sd": 0.0278581482126521
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar_parallel",
+   "group": "control",
+   "arm": "idiom_untagged",
+   "n": 309,
+   "delta_margin": 0.029636569579288022,
+   "ci95": [
+    -0.005512427184466045,
+    0.06478469255663429
+   ],
+   "delta_sd": 0.02454341852777952
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar_parallel",
+   "group": "control",
+   "arm": "culture",
+   "n": 309,
+   "delta_margin": 0.027736893203883492,
+   "ci95": [
+    -0.004315938511326872,
+    0.06177749190938511
+   ],
+   "delta_sd": 0.02297020836848116
+  },
+  {
+   "lang": "ar",
+   "task": "global_piqa_ar_parallel",
+   "group": "control",
+   "arm": "culture_notes",
+   "n": 309,
+   "delta_margin": 0.031087702265372174,
+   "ci95": [
+    -0.0019974676375404225,
+    0.06537906148867313
+   ],
+   "delta_sd": 0.025745168843672856
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 600,
+   "delta_margin": 0.16679266666666664,
+   "ci95": [
+    0.08643692083333333,
+    0.24608408749999994
+   ],
+   "delta_sd": 0.2096068118145728
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 600,
+   "delta_margin": 0.008211000000000013,
+   "ci95": [
+    -0.023088212499999983,
+    0.039129745833333375
+   ],
+   "delta_sd": 0.010318688262530289
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_seen",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 600,
+   "delta_margin": 0.002542166666666667,
+   "ci95": [
+    -0.01360084583333332,
+    0.018557425000000002
+   ],
+   "delta_sd": 0.003194717494182078
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_seen",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 600,
+   "delta_margin": -0.00018983333333334092,
+   "ci95": [
+    -0.016143370833333313,
+    0.01588097916666664
+   ],
+   "delta_sd": -0.00023856180593152376
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_tagged",
+   "n": 600,
+   "delta_margin": -0.29448816666666666,
+   "ci95": [
+    -0.3501916791666666,
+    -0.2365698125
+   ],
+   "delta_sd": -0.3309594604196716
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_untagged",
+   "n": 600,
+   "delta_margin": -0.06226716666666666,
+   "ci95": [
+    -0.09518291666666664,
+    -0.029673254166666663
+   ],
+   "delta_sd": -0.06997872992699229
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture",
+   "n": 600,
+   "delta_margin": -0.007791166666666672,
+   "ci95": [
+    -0.024606866666666675,
+    0.009011787499999983
+   ],
+   "delta_sd": -0.008756074463794753
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture_notes",
+   "n": 600,
+   "delta_margin": -0.0012468333333333355,
+   "ci95": [
+    -0.017773512499999988,
+    0.015274204166666692
+   ],
+   "delta_sd": -0.0014012491296478624
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_cloze",
+   "group": "cloze",
+   "arm": "idiom_tagged",
+   "n": 150,
+   "delta_margin": 0.04985133333333335,
+   "ci95": [
+    -0.03548918333333325,
+    0.13388908333333338
+   ],
+   "delta_sd": 0.03951392974242216
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_cloze",
+   "group": "cloze",
+   "arm": "idiom_untagged",
+   "n": 150,
+   "delta_margin": 0.02029800000000001,
+   "ci95": [
+    -0.022844816666666677,
+    0.06304491666666662
+   ],
+   "delta_sd": 0.016088912618419136
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_cloze",
+   "group": "cloze",
+   "arm": "culture",
+   "n": 150,
+   "delta_margin": -0.0006586666666666563,
+   "ci95": [
+    -0.03738473333333337,
+    0.0352687666666667
+   ],
+   "delta_sd": -0.000522082493086276
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_cloze",
+   "group": "cloze",
+   "arm": "culture_notes",
+   "n": 150,
+   "delta_margin": -0.0013340000000000647,
+   "ci95": [
+    -0.040023133333333384,
+    0.03811398333333323
+   ],
+   "delta_sd": -0.0010573755755725765
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_meaning",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 325,
+   "delta_margin": 0.30737046153846154,
+   "ci95": [
+    0.26642042307692304,
+    0.35005603846153843
+   ],
+   "delta_sd": 0.505918986539816
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_meaning",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 325,
+   "delta_margin": 0.16211415384615382,
+   "ci95": [
+    0.14265936153846148,
+    0.18194364615384612
+   ],
+   "delta_sd": 0.26683314983194356
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_meaning",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 325,
+   "delta_margin": 0.10816892307692307,
+   "ci95": [
+    0.09231055384615383,
+    0.12436634615384613
+   ],
+   "delta_sd": 0.17804154525542293
+  },
+  {
+   "lang": "ar",
+   "task": "kinayat_meaning",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 325,
+   "delta_margin": 0.10531107692307691,
+   "ci95": [
+    0.08836556923076916,
+    0.12305970769230769
+   ],
+   "delta_sd": 0.1733376494334113
+  },
+  {
+   "lang": "ar",
+   "task": "symbolism_v2_ar_letter",
+   "group": "symbolism",
+   "arm": "idiom_tagged",
+   "n": 98,
+   "delta_margin": -0.11862244897959184,
+   "ci95": [
+    -0.22704081632653061,
+    -0.012755102040816327
+   ],
+   "delta_sd": -0.12533917534647515
+  },
+  {
+   "lang": "ar",
+   "task": "symbolism_v2_ar_letter",
+   "group": "symbolism",
+   "arm": "idiom_untagged",
+   "n": 98,
+   "delta_margin": 0.03507653061224489,
+   "ci95": [
+    -0.0433673469387755,
+    0.11479591836734694
+   ],
+   "delta_sd": 0.037062659376645865
+  },
+  {
+   "lang": "ar",
+   "task": "symbolism_v2_ar_letter",
+   "group": "symbolism",
+   "arm": "culture",
+   "n": 98,
+   "delta_margin": -0.04974489795918367,
+   "ci95": [
+    -0.13903061224489796,
+    0.03762755102040814
+   ],
+   "delta_sd": -0.052561589661425066
+  },
+  {
+   "lang": "ar",
+   "task": "symbolism_v2_ar_letter",
+   "group": "symbolism",
+   "arm": "culture_notes",
+   "n": 98,
+   "delta_margin": -0.02232142857142857,
+   "ci95": [
+    -0.12181122448979592,
+    0.07461734693877552
+   ],
+   "delta_sd": -0.02358532869422919
+  },
+  {
+   "lang": "hi",
+   "task": "global_piqa",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 100,
+   "delta_margin": -0.022337,
+   "ci95": [
+    -0.04891172499999998,
+    0.0036959999999999806
+   ],
+   "delta_sd": -0.04508610337659353
+  },
+  {
+   "lang": "hi",
+   "task": "global_piqa",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 100,
+   "delta_margin": -0.024178999999999996,
+   "ci95": [
+    -0.053197,
+    0.0026868249999999973
+   ],
+   "delta_sd": -0.04880408709955029
+  },
+  {
+   "lang": "hi",
+   "task": "global_piqa",
+   "group": "culture",
+   "arm": "culture",
+   "n": 100,
+   "delta_margin": -0.023142999999999983,
+   "ci95": [
+    -0.061906249999999975,
+    0.013598675000000015
+   ],
+   "delta_sd": -0.0467129735615572
+  },
+  {
+   "lang": "hi",
+   "task": "global_piqa",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 100,
+   "delta_margin": -0.027657999999999988,
+   "ci95": [
+    -0.06936329999999996,
+    0.011754250000000004
+   ],
+   "delta_sd": -0.055826272426459385
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 600,
+   "delta_margin": 0.32288150000000004,
+   "ci95": [
+    0.2840003375,
+    0.362216425
+   ],
+   "delta_sd": 0.8750529048504343
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 600,
+   "delta_margin": 0.027907833333333337,
+   "ci95": [
+    0.016795333333333346,
+    0.03897967500000001
+   ],
+   "delta_sd": 0.07563403485927535
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_seen",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 600,
+   "delta_margin": -0.0009571666666666602,
+   "ci95": [
+    -0.012146558333333326,
+    0.010416454166666662
+   ],
+   "delta_sd": -0.002594052220683651
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_seen",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 600,
+   "delta_margin": -0.00040966666666666116,
+   "ci95": [
+    -0.011380591666666658,
+    0.010701308333333341
+   ],
+   "delta_sd": -0.0011102525436949976
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_tagged",
+   "n": 600,
+   "delta_margin": -0.022146166666666668,
+   "ci95": [
+    -0.043201058333333334,
+    -0.0016644916666666745
+   ],
+   "delta_sd": -0.061237981525125766
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_untagged",
+   "n": 600,
+   "delta_margin": 0.02017383333333333,
+   "ci95": [
+    0.010263900000000003,
+    0.030340716666666653
+   ],
+   "delta_sd": 0.055784138697786645
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture",
+   "n": 600,
+   "delta_margin": 0.002928333333333339,
+   "ci95": [
+    -0.007330554166666671,
+    0.013041079166666667
+   ],
+   "delta_sd": 0.00809734818965255
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture_notes",
+   "n": 600,
+   "delta_margin": 0.0049198333333333325,
+   "ci95": [
+    -0.0049757208333333375,
+    0.014739287499999991
+   ],
+   "delta_sd": 0.013604190165643317
+  },
+  {
+   "lang": "hi",
+   "task": "mabl",
+   "group": "figurative",
+   "arm": "idiom_tagged",
+   "n": 1000,
+   "delta_margin": 0.010329899999999998,
+   "ci95": [
+    0.002850359999999999,
+    0.017944114999999993
+   ],
+   "delta_sd": 0.029999104700105708
+  },
+  {
+   "lang": "hi",
+   "task": "mabl",
+   "group": "figurative",
+   "arm": "idiom_untagged",
+   "n": 1000,
+   "delta_margin": 0.0072472000000000005,
+   "ci95": [
+    0.0006811349999999973,
+    0.0137958425
+   ],
+   "delta_sd": 0.02104662306339908
+  },
+  {
+   "lang": "hi",
+   "task": "mabl",
+   "group": "figurative",
+   "arm": "culture",
+   "n": 1000,
+   "delta_margin": -0.00047190000000000133,
+   "ci95": [
+    -0.007622227499999999,
+    0.006849799999999996
+   ],
+   "delta_sd": -0.0013704467137126135
+  },
+  {
+   "lang": "hi",
+   "task": "mabl",
+   "group": "figurative",
+   "arm": "culture_notes",
+   "n": 1000,
+   "delta_margin": 0.0030137,
+   "ci95": [
+    -0.004392517499999999,
+    0.010608622499999996
+   ],
+   "delta_sd": 0.008752098455426344
+  },
+  {
+   "lang": "hi",
+   "task": "milu",
+   "group": "regional",
+   "arm": "idiom_tagged",
+   "n": 14831,
+   "delta_margin": 0.02520902164385409,
+   "ci95": [
+    0.01715158114759625,
+    0.03301383723282314
+   ],
+   "delta_sd": 0.030309467310956677
+  },
+  {
+   "lang": "hi",
+   "task": "milu",
+   "group": "regional",
+   "arm": "idiom_untagged",
+   "n": 14831,
+   "delta_margin": 0.010029667588159935,
+   "ci95": [
+    0.002309351864338211,
+    0.017762639403951185
+   ],
+   "delta_sd": 0.012058932163168988
+  },
+  {
+   "lang": "hi",
+   "task": "milu",
+   "group": "regional",
+   "arm": "culture",
+   "n": 14831,
+   "delta_margin": -0.04831518441103095,
+   "ci95": [
+    -0.06015703981525184,
+    -0.0364817502191356
+   ],
+   "delta_sd": -0.05809061229022372
+  },
+  {
+   "lang": "hi",
+   "task": "milu",
+   "group": "regional",
+   "arm": "culture_notes",
+   "n": 14831,
+   "delta_margin": -0.008466212662666037,
+   "ci95": [
+    -0.01962146551142876,
+    0.0026766345829680976
+   ],
+   "delta_sd": -0.010179149336771024
+  },
+  {
+   "lang": "hi",
+   "task": "symbolism_v2_hi_letter",
+   "group": "symbolism",
+   "arm": "idiom_tagged",
+   "n": 155,
+   "delta_margin": -0.0745967741935484,
+   "ci95": [
+    -0.1879032258064516,
+    0.04153225806451612
+   ],
+   "delta_sd": -0.06000987451892986
+  },
+  {
+   "lang": "hi",
+   "task": "symbolism_v2_hi_letter",
+   "group": "symbolism",
+   "arm": "idiom_untagged",
+   "n": 155,
+   "delta_margin": -0.03588709677419355,
+   "ci95": [
+    -0.15080645161290324,
+    0.07702620967741922
+   ],
+   "delta_sd": -0.028869615309106793
+  },
+  {
+   "lang": "hi",
+   "task": "symbolism_v2_hi_letter",
+   "group": "symbolism",
+   "arm": "culture",
+   "n": 155,
+   "delta_margin": -0.11975806451612903,
+   "ci95": [
+    -0.2443649193548387,
+    0.0060483870967742
+   ],
+   "delta_sd": -0.09634017693039007
+  },
+  {
+   "lang": "hi",
+   "task": "symbolism_v2_hi_letter",
+   "group": "symbolism",
+   "arm": "culture_notes",
+   "n": 155,
+   "delta_margin": -0.03870967741935483,
+   "ci95": [
+    -0.16008064516129034,
+    0.08306451612903225
+   ],
+   "delta_sd": -0.031140259209823048
+  },
+  {
+   "lang": "zh",
+   "task": "ccpm",
+   "group": "culture",
+   "arm": "idiom_tagged",
+   "n": 2720,
+   "delta_margin": 0.014640919117647054,
+   "ci95": [
+    0.0009902242647058667,
+    0.02811527297794119
+   ],
+   "delta_sd": 0.011503259094668861
+  },
+  {
+   "lang": "zh",
+   "task": "ccpm",
+   "group": "culture",
+   "arm": "idiom_untagged",
+   "n": 2720,
+   "delta_margin": -0.0014350000000000118,
+   "ci95": [
+    -0.012986707720588252,
+    0.009767615808823508
+   ],
+   "delta_sd": -0.001127468615064846
+  },
+  {
+   "lang": "zh",
+   "task": "ccpm",
+   "group": "culture",
+   "arm": "culture",
+   "n": 2720,
+   "delta_margin": -0.02669514705882354,
+   "ci95": [
+    -0.03774783731617648,
+    -0.0153450349264706
+   ],
+   "delta_sd": -0.020974174552866848
+  },
+  {
+   "lang": "zh",
+   "task": "ccpm",
+   "group": "culture",
+   "arm": "culture_notes",
+   "n": 2720,
+   "delta_margin": -0.011864044117647065,
+   "ci95": [
+    -0.023374660845588247,
+    -0.0005034411764705941
+   ],
+   "delta_sd": -0.009321489470656209
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 540,
+   "delta_margin": 0.45489,
+   "ci95": [
+    0.41092452314814815,
+    0.49963725462962955
+   ],
+   "delta_sd": 1.6155044689360223
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 540,
+   "delta_margin": 0.004514629629629634,
+   "ci95": [
+    -0.02470759722222222,
+    0.03372835185185185
+   ],
+   "delta_sd": 0.016033336284063514
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 540,
+   "delta_margin": 0.0037522222222222275,
+   "ci95": [
+    -0.01070826851851853,
+    0.01835292592592591
+   ],
+   "delta_sd": 0.013325709003145949
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 540,
+   "delta_margin": 0.03372555555555557,
+   "ci95": [
+    0.019913282407407414,
+    0.0478568703703704
+   ],
+   "delta_sd": 0.11977354023467238
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench_app",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 572,
+   "delta_margin": -0.06876188811188812,
+   "ci95": [
+    -0.09172791958041959,
+    -0.045444812062937094
+   ],
+   "delta_sd": -0.05494745190482253
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench_app",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 572,
+   "delta_margin": -0.044206818181818174,
+   "ci95": [
+    -0.05942758741258741,
+    -0.028341315559440562
+   ],
+   "delta_sd": -0.03532555726157749
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench_app",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 572,
+   "delta_margin": 0.0243201048951049,
+   "ci95": [
+    0.013503068181818182,
+    0.035386083916083895
+   ],
+   "delta_sd": 0.019434134674568077
+  },
+  {
+   "lang": "zh",
+   "task": "chengyu_bench_app",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 572,
+   "delta_margin": 0.02760734265734267,
+   "ci95": [
+    0.015016402972027968,
+    0.040457233391608415
+   ],
+   "delta_sd": 0.02206095810539601
+  },
+  {
+   "lang": "zh",
+   "task": "chid",
+   "group": "cloze",
+   "arm": "idiom_tagged",
+   "n": 3756,
+   "delta_margin": -0.00044392971246007084,
+   "ci95": [
+    -0.0027594781682641133,
+    0.001778501064962715
+   ],
+   "delta_sd": -0.0012440025471893484
+  },
+  {
+   "lang": "zh",
+   "task": "chid",
+   "group": "cloze",
+   "arm": "idiom_untagged",
+   "n": 3756,
+   "delta_margin": 0.0008885516506922235,
+   "ci95": [
+    -0.00130248668796593,
+    0.0029954219914802966
+   ],
+   "delta_sd": 0.002489944884844462
+  },
+  {
+   "lang": "zh",
+   "task": "chid",
+   "group": "cloze",
+   "arm": "culture",
+   "n": 3756,
+   "delta_margin": -0.004273402555910548,
+   "ci95": [
+    -0.008126315228966986,
+    -0.0005007175186368516
+   ],
+   "delta_sd": -0.011975147226029282
+  },
+  {
+   "lang": "zh",
+   "task": "chid",
+   "group": "cloze",
+   "arm": "culture_notes",
+   "n": 3756,
+   "delta_margin": -0.0053487220447284356,
+   "ci95": [
+    -0.009137070021299251,
+    -0.0016209065495207727
+   ],
+   "delta_sd": -0.014988462500014505
+  },
+  {
+   "lang": "zh",
+   "task": "cmmlu",
+   "group": "regional",
+   "arm": "idiom_tagged",
+   "n": 11582,
+   "delta_margin": -0.0430139440511138,
+   "ci95": [
+    -0.05456241452253496,
+    -0.03156767462441721
+   ],
+   "delta_sd": -0.020352330135787643
+  },
+  {
+   "lang": "zh",
+   "task": "cmmlu",
+   "group": "regional",
+   "arm": "idiom_untagged",
+   "n": 11582,
+   "delta_margin": -0.026425669141771715,
+   "ci95": [
+    -0.03714840528406147,
+    -0.016080387886375416
+   ],
+   "delta_sd": -0.01250347891356658
+  },
+  {
+   "lang": "zh",
+   "task": "cmmlu",
+   "group": "regional",
+   "arm": "culture",
+   "n": 11582,
+   "delta_margin": -0.040083793817993436,
+   "ci95": [
+    -0.052123109566568813,
+    -0.027752428768779154
+   ],
+   "delta_sd": -0.018965910308276462
+  },
+  {
+   "lang": "zh",
+   "task": "cmmlu",
+   "group": "regional",
+   "arm": "culture_notes",
+   "n": 11582,
+   "delta_margin": -0.06957457261267484,
+   "ci95": [
+    -0.08160861055948886,
+    -0.05751908457088586
+   ],
+   "delta_sd": -0.03291966598521723
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_tagged",
+   "n": 600,
+   "delta_margin": 0.490348,
+   "ci95": [
+    0.4031827208333333,
+    0.5804965333333333
+   ],
+   "delta_sd": 0.32124945698607543
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_seen",
+   "group": "idiom_meaning",
+   "arm": "idiom_untagged",
+   "n": 600,
+   "delta_margin": -0.04076233333333336,
+   "ci95": [
+    -0.059404112500000016,
+    -0.022602245833333322
+   ],
+   "delta_sd": -0.026705273497227976
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_seen",
+   "group": "idiom_meaning",
+   "arm": "culture",
+   "n": 600,
+   "delta_margin": -0.00424350000000001,
+   "ci95": [
+    -0.028545141666666673,
+    0.01973785
+   ],
+   "delta_sd": -0.0027801114121407946
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_seen",
+   "group": "idiom_meaning",
+   "arm": "culture_notes",
+   "n": 600,
+   "delta_margin": -0.03341350000000001,
+   "ci95": [
+    -0.058822004166666685,
+    -0.008518570833333353
+   ],
+   "delta_sd": -0.02189071584059532
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_tagged",
+   "n": 78,
+   "delta_margin": -0.014288461538461533,
+   "ci95": [
+    -0.19019342948717946,
+    0.17162980769230765
+   ],
+   "delta_sd": -0.010434960110317363
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_unseen",
+   "group": "idiom_unseen",
+   "arm": "idiom_untagged",
+   "n": 78,
+   "delta_margin": -0.06324230769230772,
+   "ci95": [
+    -0.11028749999999994,
+    -0.014593269230769347
+   ],
+   "delta_sd": -0.046186285085854255
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture",
+   "n": 78,
+   "delta_margin": 0.024752564102564094,
+   "ci95": [
+    -0.04173423076923084,
+    0.08966483974358978
+   ],
+   "delta_sd": 0.018076964993261314
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_unseen",
+   "group": "idiom_unseen",
+   "arm": "culture_notes",
+   "n": 78,
+   "delta_margin": -0.04597307692307695,
+   "ci95": [
+    -0.10752778846153856,
+    0.01443371794871791
+   ],
+   "delta_sd": -0.03357444904404403
+  },
+  {
+   "lang": "zh",
+   "task": "symbolism_v2_zh_letter",
+   "group": "symbolism",
+   "arm": "idiom_tagged",
+   "n": 206,
+   "delta_margin": 0.01972087378640777,
+   "ci95": [
+    -0.06553398058252427,
+    0.10649271844660194
+   ],
+   "delta_sd": 0.014594258971814806
+  },
+  {
+   "lang": "zh",
+   "task": "symbolism_v2_zh_letter",
+   "group": "symbolism",
+   "arm": "idiom_untagged",
+   "n": 206,
+   "delta_margin": 0.020934466019417477,
+   "ci95": [
+    -0.030946601941747552,
+    0.07129854368932038
+   ],
+   "delta_sd": 0.015492367216234178
+  },
+  {
+   "lang": "zh",
+   "task": "symbolism_v2_zh_letter",
+   "group": "symbolism",
+   "arm": "culture",
+   "n": 206,
+   "delta_margin": 0.025182038834951456,
+   "ci95": [
+    -0.035808555825242706,
+    0.08646844660194175
+   ],
+   "delta_sd": 0.018635746071701983
+  },
+  {
+   "lang": "zh",
+   "task": "symbolism_v2_zh_letter",
+   "group": "symbolism",
+   "arm": "culture_notes",
+   "n": 206,
+   "delta_margin": 0.09921116504854369,
+   "ci95": [
+    0.030946601941747587,
+    0.16565533980582525
+   ],
+   "delta_sd": 0.0734203489812837
+  }
+ ],
+ "pooled": {
+  "idiom_tagged|culture": {
+   "delta_sd": -0.012267219597457855,
+   "ci95": [
+    -0.02133649008297093,
+    -0.0035082146245953905
+   ],
+   "n_tasks": 7
+  },
+  "idiom_untagged|culture": {
+   "delta_sd": -0.010443409811386042,
+   "ci95": [
+    -0.019640217922748886,
+    -0.001225250279611318
+   ],
+   "n_tasks": 7
+  },
+  "culture|culture": {
+   "delta_sd": -0.005032972025950905,
+   "ci95": [
+    -0.017540745306289223,
+    0.006495288854003163
+   ],
+   "n_tasks": 7
+  },
+  "culture_notes|culture": {
+   "delta_sd": -0.005108585761764422,
+   "ci95": [
+    -0.0183442453624927,
+    0.00677575833090508
+   ],
+   "n_tasks": 7
+  },
+  "idiom_tagged|figurative": {
+   "delta_sd": 0.013449989246810576,
+   "ci95": [
+    -0.006640669256618119,
+    0.032153555604235905
+   ],
+   "n_tasks": 2
+  },
+  "idiom_untagged|figurative": {
+   "delta_sd": 0.016130840762549614,
+   "ci95": [
+    -0.001595587199320139,
+    0.03276946905646543
+   ],
+   "n_tasks": 2
+  },
+  "culture|figurative": {
+   "delta_sd": 0.005747327257290331,
+   "ci95": [
+    -0.009050083301060385,
+    0.02090193400427088
+   ],
+   "n_tasks": 2
+  },
+  "culture_notes|figurative": {
+   "delta_sd": 0.015430780115979103,
+   "ci95": [
+    -0.00042140583875792316,
+    0.03207066000921721
+   ],
+   "n_tasks": 2
+  },
+  "idiom_tagged|regional": {
+   "delta_sd": -0.015421314550586923,
+   "ci95": [
+    -0.01981912166458637,
+    -0.010706394446784579
+   ],
+   "n_tasks": 3
+  },
+  "idiom_untagged|regional": {
+   "delta_sd": -0.01596844274282108,
+   "ci95": [
+    -0.01990418530137739,
+    -0.011992634636183847
+   ],
+   "n_tasks": 3
+  },
+  "culture|regional": {
+   "delta_sd": -0.048775750982529405,
+   "ci95": [
+    -0.054816946199913764,
+    -0.043037150758622675
+   ],
+   "n_tasks": 3
+  },
+  "culture_notes|regional": {
+   "delta_sd": -0.043493239737270095,
+   "ci95": [
+    -0.049236270033607525,
+    -0.03794592465108138
+   ],
+   "n_tasks": 3
+  },
+  "idiom_tagged|control": {
+   "delta_sd": 0.027858148212652104,
+   "ci95": [
+    -0.0016361720667384572,
+    0.05732647166317517
+   ],
+   "n_tasks": 1
+  },
+  "idiom_untagged|control": {
+   "delta_sd": 0.024543418527779515,
+   "ci95": [
+    -0.003958124398487505,
+    0.05269597412714182
+   ],
+   "n_tasks": 1
+  },
+  "culture|control": {
+   "delta_sd": 0.02297020836848116,
+   "ci95": [
+    -0.0026526279748148858,
+    0.05100291054650821
+   ],
+   "n_tasks": 1
+  },
+  "culture_notes|control": {
+   "delta_sd": 0.025745168843672853,
+   "ci95": [
+    -0.0011356259076219768,
+    0.053490619463141834
+   ],
+   "n_tasks": 1
+  },
+  "idiom_tagged|idiom_meaning": {
+   "delta_sd": 0.5787308628703497,
+   "ci95": [
+    0.5399418600142223,
+    0.6184554803962955
+   ],
+   "n_tasks": 6
+  },
+  "idiom_untagged|idiom_meaning": {
+   "delta_sd": 0.05113139641316788,
+   "ci95": [
+    0.030661023704981864,
+    0.07154728654918825
+   ],
+   "n_tasks": 6
+  },
+  "culture|idiom_meaning": {
+   "delta_sd": 0.03477032379908244,
+   "ci95": [
+    0.022997237951744423,
+    0.046831964027827536
+   ],
+   "n_tasks": 6
+  },
+  "culture_notes|idiom_meaning": {
+   "delta_sd": 0.0486554362638763,
+   "ci95": [
+    0.036842195699299335,
+    0.0602688330808293
+   ],
+   "n_tasks": 6
+  },
+  "idiom_tagged|idiom_unseen": {
+   "delta_sd": -0.13421080068503827,
+   "ci95": [
+    -0.18548293894677534,
+    -0.07906910711417253
+   ],
+   "n_tasks": 3
+  },
+  "idiom_untagged|idiom_unseen": {
+   "delta_sd": -0.020126958771686635,
+   "ci95": [
+    -0.03977486363389359,
+    -0.0007046804193321375
+   ],
+   "n_tasks": 3
+  },
+  "culture|idiom_unseen": {
+   "delta_sd": 0.005806079573039702,
+   "ci95": [
+    -0.013218979216991918,
+    0.025684049246267285
+   ],
+   "n_tasks": 3
+  },
+  "culture_notes|idiom_unseen": {
+   "delta_sd": -0.007123836002682858,
+   "ci95": [
+    -0.024733686199295158,
+    0.01143429648369181
+   ],
+   "n_tasks": 3
+  },
+  "idiom_tagged|cloze": {
+   "delta_sd": 0.019134963597616402,
+   "ci95": [
+    -0.012155410391272844,
+    0.05265158543912778
+   ],
+   "n_tasks": 2
+  },
+  "idiom_untagged|cloze": {
+   "delta_sd": 0.009289428751631797,
+   "ci95": [
+    -0.007804340015717427,
+    0.026556798228674364
+   ],
+   "n_tasks": 2
+  },
+  "culture|cloze": {
+   "delta_sd": -0.006248614859557781,
+   "ci95": [
+    -0.021613980059054187,
+    0.009654595523963336
+   ],
+   "n_tasks": 2
+  },
+  "culture_notes|cloze": {
+   "delta_sd": -0.008022919037793537,
+   "ci95": [
+    -0.02381336178128807,
+    0.008691754348759236
+   ],
+   "n_tasks": 2
+  },
+  "idiom_tagged|symbolism": {
+   "delta_sd": -0.05691826363119674,
+   "ci95": [
+    -0.10989696955616989,
+    -0.004037581742660976
+   ],
+   "n_tasks": 3
+  },
+  "idiom_untagged|symbolism": {
+   "delta_sd": 0.007895137094591094,
+   "ci95": [
+    -0.037127873219604715,
+    0.05017627960936547
+   ],
+   "n_tasks": 3
+  },
+  "culture|symbolism": {
+   "delta_sd": -0.04342200684003772,
+   "ci95": [
+    -0.09005039123118665,
+    0.005007302071464237
+   ],
+   "n_tasks": 3
+  },
+  "culture_notes|symbolism": {
+   "delta_sd": 0.006231587025743823,
+   "ci95": [
+    -0.045394544052598525,
+    0.059248427984675674
+   ],
+   "n_tasks": 3
+  }
+ }
+}

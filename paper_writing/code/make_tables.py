@@ -13,7 +13,7 @@ for _t, _r in _v1["zh"].items():
         rep["zh"][_t]["contrasts"]["cpt_vs_untagged"] = _r["contrasts"]["cpt_vs_untagged"]
 OUT = os.path.join(OVERLEAF, "latex", "tables", "main_results.tex")
 GROUPS = [
-    ("Idiom meaning", [("ar", "kinayat_meaning", "Kinayat-Meaning"), ("zh", "chengyu_bench", "Chengyu-Bench")]),
+    ("Idiom meaning", [("ar", "kinayat_meaning", "Kinayat-Meaning"), ("zh", "chengyu_bench", "Chengyu-Bench$^{\\dagger}$")]),
     ("Figurative inference", [("ar", "ar_figurative", "AR-Figurative"), ("hi", "mabl", "MABL")]),
     ("Idiom cloze", [("ar", "kinayat_cloze", "Kinayat-Cloze"), ("zh", "chid", "ChID")]),
     ("Culture", [("ar", "alyah", "Alyah"), ("ar", "dzirieval", "DziriEval"), ("ar", "arabculture", "ArabCulture"),
@@ -42,7 +42,7 @@ rows = rows[:-1]
 tex = r"""\begin{table*}[t]
 \centering
 \small
-\caption{Accuracy (\%) of the four training conditions. \random{}: token-matched random documents from the same sources. \idiomdocs{}: idiom-bearing documents with the meaning tags removed. \idiomcpt{}: idiom-bearing documents with meaning tags (ours, \colorsquare{ourrow}). The last three columns give the gain of \idiomcpt{} over each reference; \textbf{bold}$^{*}$ marks gains whose paired-bootstrap 95\% confidence interval excludes zero and McNemar $p<0.05$. $n$ is the number of paired test items. The comparison with \random{} isolates the effect of idioms from in-language exposure.}
+\caption{Accuracy (\%) of the four training conditions. \random{}: token-matched random documents from the same sources. \idiomdocs{}: idiom-bearing documents with the meaning tags removed. \idiomcpt{}: idiom-bearing documents with meaning tags (ours, \colorsquare{ourrow}). The last three columns give the gain of \idiomcpt{} over each reference; \textbf{bold}$^{*}$ marks gains whose paired-bootstrap 95\% confidence interval excludes zero and McNemar $p<0.05$. $n$ is the number of paired test items. The comparison with \random{} isolates the effect of idioms from in-language exposure. $^{\dagger}$Chengyu-Bench (connotation) has two fixed labels, so its accuracy mostly tracks each model's label prior: after removing that prior (median-centering the log-probability difference), \idiomcpt{} and \random{} both score 95.6 ($\Delta$ $+0.0$, $[-1.3, 1.3]$; AUC 0.986 vs.\ 0.987).}
 \label{tab:main}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}llrcccccccc@{}}

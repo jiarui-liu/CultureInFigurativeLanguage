@@ -50,7 +50,7 @@ while true; do
             log "submit train $l $run ($MODEL) $PART"; sbatch $PART --job-name=t-$l-$run --export=ALL,MODEL=$MODEL,DATA=$B/packed/$l/$arm,OUT=$B/ckpt/$l/$run,SEED=$s train_cpt.slurm
           fi
           if [ -f $B/ckpt/$l/$run/train_manifest.json ] && once eval_${l}_$run; then
-            T=TASKS_$l; log "submit eval $l $run"; sbatch --partition=general --qos=normal --export=ALL,MODEL=$B/ckpt/$l/$run,OUT=$B/eval2b/$l/$run,TASKS=${!T},BS=4 eval.slurm
+            T=TASKS_$l; log "submit eval $l $run"; sbatch $PRE --export=ALL,MODEL=$B/ckpt/$l/$run,OUT=$B/eval2b/$l/$run,TASKS=${!T},BS=4 eval.slurm
           fi
         done
       done

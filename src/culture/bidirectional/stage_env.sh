@@ -10,6 +10,11 @@ ENV_TAR=/data/group_data/r3lit_culture_pretrain/envs/bidir_env.tar
 EXTRA=/data/group_data/r3lit_culture_pretrain/envs/extra
 LOCAL_ROOT=/scratch/jiaruil5/envs
 mkdir -p "$LOCAL_ROOT"
+# keep all caches off the 100 GB NFS home
+export XDG_CACHE_HOME=/scratch/jiaruil5/cache UV_CACHE_DIR=/scratch/jiaruil5/uvcache
+export VLLM_CACHE_ROOT=/scratch/jiaruil5/cache/vllm TRITON_CACHE_DIR=${TRITON_CACHE_DIR:-/scratch/jiaruil5/cache/triton}
+export FLASHINFER_WORKSPACE_BASE=/scratch/jiaruil5/cache PIP_CACHE_DIR=/scratch/jiaruil5/cache/pip
+mkdir -p /scratch/jiaruil5/cache
 (
   flock -w 5400 9
   if [ ! -f "$LOCAL_ROOT/.complete" ]; then
