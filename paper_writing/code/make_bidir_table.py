@@ -12,8 +12,15 @@ import sys
 
 OVERLEAF = "/home/jiaruil5/culture_pretrain/OverleafCultureInFigurativeLanguage"
 REPO = "/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage"
-src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "docs/paper_stats/v2/bidir_2b_i.json")
-out = os.path.join(OVERLEAF, "latex", "tables", "bidir_2b.tex")
+VARIANTS = {
+    "main": ("docs/paper_stats/v2/bidir_2b_i.json", "bidir_2b.tex", "tab:bidir", "Qwen3.5-2B", "table*"),
+    "base": ("docs/paper_stats/v2/bidir_2b_base.json", "bidir_2b_base.tex", "tab:bidir-base",
+             "Qwen3.5-2B-Base, pretrained only", "table*"),
+}
+variant = sys.argv[1] if len(sys.argv) > 1 else "main"
+src_rel, out_name, label, model_name, env = VARIANTS[variant]
+src = os.path.join(REPO, src_rel)
+out = os.path.join(OVERLEAF, "latex", "tables", out_name)
 rows = json.load(open(src))["per_task"]
 
 ARMS = ["idiom_tagged", "idiom_untagged", "culture", "culture_notes"]
@@ -54,8 +61,8 @@ def cell(r):
 
 
 lines = [r"\begin{table*}[t]", r"\centering", r"\small",
-         r"\caption{Bidirectional transfer at 2B (Qwen3.5-2B). Accuracy of \random{} and gain of each condition over it (points); bold: Holm-adjusted $p<0.05$ within the benchmark group (paired bootstrap). Chengyu-Bench is scored after removing each model's label prior (median-centered log-probability difference).}",
-         r"\label{tab:bidir}",
+         r"\caption{Bidirectional transfer at 2B (" + model_name + r"). Accuracy of \random{} and gain of each condition over it (points); bold: Holm-adjusted $p<0.05$ within the benchmark group (paired bootstrap). Chengyu-Bench is scored after removing each model's label prior (median-centered log-probability difference).}",
+         r"\label{" + label + "}",
          r"\begin{tabular}{@{}lllrrrrr@{}}", r"\toprule",
          r"Lang. & Group & Benchmark & \random{} & \idiomcpt{} & $-$tags & \culturecpt{} & \culturenotes{} \\",
          r"\midrule"]
