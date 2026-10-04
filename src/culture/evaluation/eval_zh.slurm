@@ -22,9 +22,10 @@ export TRITON_CACHE_DIR="/tmp/triton_${SLURM_JOB_ID}"
 
 BASE_MODEL=/lustre-storage/fsx_2/user/jiaruiliu/models/Qwen3.5-9B
 CPT_MODEL=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt
-case "$RUN" in base) M="$BASE_MODEL";; cpt) M="$CPT_MODEL";; unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-unfiltered";; untagged) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-untagged";; *) echo bad RUN; exit 1;; esac
+case "$RUN" in base) M="$BASE_MODEL";; cpt) M="$CPT_MODEL";; unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-unfiltered";; untagged) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-untagged";; culture) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-culture";; culturenotes) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-zh-cpt-culturenotes";; *) echo bad RUN; exit 1;; esac
 
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/zh
+MC=/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/eval/mc
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/zh/$RUN
 mkdir -p "$OUT"
 
@@ -32,11 +33,12 @@ mkdir -p "$OUT"
 # --limit caps ChID's 520K rows (and any oversized task) for a fast, stable estimate.
 python -m culture.evaluation.run_eval \
   --model_path "$M" --run_name "$RUN" \
-  --tasks chid,chengyu_bench,cmmlu,ccpm \
+  --tasks chid,chengyu_bench,cmmlu,ccpm,chengyu_bench_app,jsonl:idiomatlas_mc_zh_seen,jsonl:idiomatlas_mc_zh_unseen,jsonl:symbolism_zh \
   --chid_path "$DATA/chid_eval3000.jsonl" --chid_answer_path "" \
   --chengyu_bench_dir "$DATA/ChengyuBench" --chengyu_bench_subtask connotation \
   --ccpm_path "$DATA/CCPM/valid.jsonl" \
   --cmmlu_dir "$DATA/cmmlu" --cmmlu_subjects all \
+  --mc_jsonl_dir "$MC" \
   --num_fewshot 0 --cmmlu_num_fewshot 5 \
   --batch_size 8 \
   --output_dir "$OUT"

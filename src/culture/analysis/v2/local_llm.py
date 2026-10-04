@@ -14,9 +14,9 @@ import json
 import os
 
 CACHE_DIR = os.environ.get("LLM_CACHE_DIR", "/data/group_data/r3lit_culture_pretrain/culture/bidir/llm_cache")
-PRIMARY = "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-27B-FP8"
-SECOND = "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-9B"
-THIRD = "/data/group_data/r3lit_culture_pretrain/models/CohereLabs/aya-expanse-8b"
+PRIMARY = os.environ.get("CULTURE_LLM_PRIMARY", "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-27B-FP8")
+SECOND = os.environ.get("CULTURE_LLM_SECOND", "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-9B")
+THIRD = os.environ.get("CULTURE_LLM_THIRD", "/data/group_data/r3lit_culture_pretrain/models/CohereLabs/aya-expanse-8b")
 NAMES = {PRIMARY: "Qwen3.5-27B-FP8", SECOND: "Qwen3.5-9B", THIRD: "aya-expanse-8b"}
 _llm = {}
 

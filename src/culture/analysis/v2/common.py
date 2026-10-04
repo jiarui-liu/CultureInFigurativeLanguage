@@ -13,17 +13,19 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-REPO = "/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage"
+REPO = os.environ.get("CULTURE_REPO", "/home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage")
 DATA = os.path.join(REPO, "culture/data/idioms")
 OUT = os.path.join(REPO, "docs/paper_stats/analysis_v2")
-EMB_MODEL = "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3-Embedding-0.6B"
+EMB_MODEL = os.environ.get("CULTURE_EMB_MODEL", "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3-Embedding-0.6B")
 # gemini-3.8-flash was requested, but its free-tier quota (20 requests/day/project) was exhausted
 # (a concurrent pipeline uses it); gemini-3.7-flash is the closest available model.
 LLM = "gemini-3.7-flash"
 
 # Arabic KB with entities: the enriched release on HF (Jerry9999/CultureInFigurativeLanguage,
 # data/idioms/ar/), identical record count (10,386) to the local un-enriched file.
-AR_KB = os.path.join(OUT, "ar_hf/data/idioms/ar/idioms_merged_llm_formatted.jsonl")
+AR_KB = os.environ.get("CULTURE_AR_KB", os.path.join(OUT, "ar_hf/data/idioms/ar/idioms_merged_llm_formatted.jsonl"))
+if not os.path.exists(AR_KB):
+    AR_KB = os.path.join(DATA, "ar/idioms_merged_llm_formatted.jsonl")
 KB = {
     "en": os.path.join(DATA, "en/idioms_merged_llm_formatted_figurative_only.jsonl"),
     "zh": os.path.join(DATA, "zh/idioms_merged_llm_formatted_figurative_only.jsonl"),

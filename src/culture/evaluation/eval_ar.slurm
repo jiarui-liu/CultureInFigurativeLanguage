@@ -27,6 +27,8 @@ case "$RUN" in
   cpt)  M="$CPT_MODEL";;
   unfiltered) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-unfiltered";;
   untagged) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-untagged";;
+  culture) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-culture";;
+  culturenotes) M="/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts/qwen3p5-9b-ar-cpt-culturenotes";;
   *) echo bad RUN; exit 1;;
 esac
 
@@ -34,6 +36,7 @@ esac
 # (HF_HUB_OFFLINE=1 here, so nothing may hit the network at eval time).
 DATA=/storage/home/jiaruiliu/local/git-repos/culture-pretraining/data/eval/ar
 KB=/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/ar-kb/data/idioms/ar/idioms_merged_llm_formatted.jsonl
+MC=/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/eval/mc
 OUT=/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/ar/$RUN
 mkdir -p "$OUT"
 
@@ -54,9 +57,10 @@ done
 echo "### [Dim3+4] Arabic MC benchmarks"
 python -m culture.evaluation.run_eval \
   --model_path "$M" --run_name "$RUN" \
-  --tasks kinayat_cloze,kinayat_meaning,ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel \
+  --tasks kinayat_cloze,kinayat_meaning,ar_figurative,arabculture,arabic_cultural_qa,arabicmmlu,global_piqa_ar,alyah,dzirieval,global_piqa_ar_parallel,jsonl:idiomatlas_mc_ar_seen,jsonl:idiomatlas_mc_ar_unseen,jsonl:symbolism_ar \
   --ar_data_dir "$DATA/raw" \
   --ar_kb_path "$KB" \
+  --mc_jsonl_dir "$MC" \
   --acqa_dialects msa \
   --ar_num_fewshot 0 \
   --batch_size 8 \
