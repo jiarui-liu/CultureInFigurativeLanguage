@@ -161,6 +161,34 @@ data root `/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data`, check
 `/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/ckpts`, venv
 `/storage/home/jiaruiliu/local/git-repos/monitorability-prertaining/.venv`, 4 nodes × 8 H100).
 
+### 3.00 Where every artifact lives (updated 2026-10-04)
+
+Everything the two servers exchange goes through the **private** HF dataset repo `Jerry9999/culture-bidir-private`
+(needs `HF_TOKEN` with read access). The public repo `Jerry9999/CultureInFigurativeLanguage` must not receive new data
+(it already re-hosts licence-restricted text; see `docs/plans/release_licence_checklist.md`).
+
+| Artifact | Built on | Location | Download on the other server |
+|---|---|---|---|
+| Culture classifier (ridge on Qwen3-Embedding-0.6B) + eval | babel | private `clf/{ar,hi,zh}.{pkl,eval.json}` | `--include "clf/*"` |
+| hi 9B culture corpus (637,495 docs, 1.37B tokens), training jsonl | babel | private `data/train_hi_culture/` | `--include "data/train_hi_culture/*"` |
+| **hi 9B ranked culture docs** (input for hi Culture+notes) | babel | private `full/hi/culture_docs_ranked.jsonl.gz` (1.16 GB) | `--include "full/hi/*"` — this file *is* available; hi Culture+notes is not blocked by it, only by the cost of generating notes for 637K docs |
+| ar / zh 9B culture corpora | other server (§3.1b) | lustre `.../culture-pretraining-data/bidir/full/{ar,zh}` | — |
+| MC benchmark files: IdiomAtlas-MC (`idiomatlas_mc_{L}{,_seen,_unseen}`), symbolism probe v1 and **v2** (`symbolism_v2_{L}{,_letter}`) | babel | private `data/eval/mc/` (all 21 files) | `--include "data/eval/mc/*"`, then `run_eval --mc_jsonl_dir <dir>` |
+| 9B checkpoints: idiom arms (cpt, unfiltered, untagged) | other server | public `models/qwen3p5-9b-{L}-cpt{,-unfiltered,-untagged}` (zh untagged: private) | — |
+| 9B checkpoints: culture arms | other server | private `models/qwen3p5-9b-{ar,hi,zh}-cpt-culture` | — |
+| **9B eval records from babel** (new benchmarks for the idiom arms: IdiomAtlas-MC seen/unseen, symbolism v1/v2, Chengyu-Bench app) | babel | private `eval/9b_babel/{ar,hi,zh}/{base,cpt,unfiltered,untagged}/` (zh untagged was evaluated remotely) | `--include "eval/9b_babel/*"`; merge with the remote `eval/{L}/{arm}/` folders before building the unified forward-vs-reverse table |
+| 2B study eval records (42 models: `i_*` = Qwen3.5-2B, no prefix = Qwen3.5-2B-Base) | babel | private `eval/2b/{L}/{run}/` | `--include "eval/2b/*"` |
+| 2B aggregates, margins, Kinayat exposure, CIs | babel | git: `docs/paper_stats/v2/*.json` | `git pull` |
+| 2B checkpoints, packed 2B arms, 2B cultural notes | babel only | `/data/group_data/r3lit_culture_pretrain/culture/bidir/{ckpt,packed,arms}` | not uploaded (2B only; the 2B notes cover the 2B subsets, not the 9B ranked docs) |
+
+Arm names: `cpt` = Idiom-CPT, `untagged` = Idiom-CPT − tags, `unfiltered` = Random-CPT, `base` = Qwen3.5-9B
+(`base_hfBase_wrong` on babel is the mistaken Qwen3.5-9B-Base run and is not uploaded).
+Scoring note: Chengyu-Bench (connotation) must be scored after removing the label prior
+(`aggregate.py` `CALIBRATE`, or `paper_writing/code/make_figures.py::calibrated_contrast`).
+
+Still missing on the other server: evaluation of `hi-cpt-unfiltered-matched` (R4) and of the 9B culture checkpoints on
+the full suite (§4 task lists); both can run on either server once the files above are downloaded.
+
 ### 3.0 Sync code (once)
 The new/changed files live in the babel checkout (uncommitted; nothing was committed or pushed):
 - `src/culture/bidirectional/` (new package), `docs/plans/bidirectional_transfer_plan.md`
@@ -208,7 +236,7 @@ Babel evaluates them on the full suite with one command per checkpoint (`src/cul
 
 
 #### 3.1b Build the ar / zh culture corpora (and all Culture+notes corpora) on the remote server
-Status 2026-09-28: `clf/`, `data/eval/mc/` and `data/train_hi_culture/` are on the private repo; ar/zh corpora and notes are faster to build on the H100s.
+Status 2026-10-04: `clf/`, `data/eval/mc/`, `data/train_hi_culture/` and `full/hi/culture_docs_ranked.jsonl.gz` are on the private repo (see §3.00); ar/zh corpora and notes are faster to build on the H100s.
 The classifier weights are tiny (`$B/clf/{ar,hi,zh}.pkl`, uploaded to the private repo under `clf/`), and the
 H100 nodes embed and generate much faster than babel's shared L40S/NFS, so any missing corpus can be built remotely.
 Needs the repo code (§3.0) and a Python env with `vllm>=0.30`, `transformers>=5.17`, `sentence-transformers`,
@@ -274,9 +302,9 @@ Hindi Random processed 4.09B tokens vs 4.40B for Idiom-CPT. To remove the 7% gap
 ```bash
 cd /home/jiaruil5/culture_pretrain/CultureInFigurativeLanguage/src/culture/bidirectional
 B=/data/group_data/r3lit_culture_pretrain/culture/bidir; HFD=dataset:Jerry9999/culture-bidir-private:models
-AR=kinayat_meaning+kinayat_cloze+ar_figurative+alyah+dzirieval+arabculture+arabic_cultural_qa+global_piqa_ar+global_piqa_ar_parallel+arabicmmlu+jsonl:idiomatlas_mc_ar_seen+jsonl:idiomatlas_mc_ar_unseen+jsonl:symbolism_ar
-HI=mabl+global_piqa+milu+jsonl:idiomatlas_mc_hi_seen+jsonl:idiomatlas_mc_hi_unseen+jsonl:symbolism_hi
-ZH=chengyu_bench+chengyu_bench_app+chid+ccpm+cmmlu+jsonl:idiomatlas_mc_zh_seen+jsonl:idiomatlas_mc_zh_unseen+jsonl:symbolism_zh
+AR=kinayat_meaning+kinayat_cloze+ar_figurative+alyah+dzirieval+arabculture+arabic_cultural_qa+global_piqa_ar+global_piqa_ar_parallel+arabicmmlu+jsonl:idiomatlas_mc_ar_seen+jsonl:idiomatlas_mc_ar_unseen+jsonl:symbolism_v2_ar_letter
+HI=mabl+global_piqa+milu+jsonl:idiomatlas_mc_hi_seen+jsonl:idiomatlas_mc_hi_unseen+jsonl:symbolism_v2_hi_letter
+ZH=chengyu_bench+chengyu_bench_app+chid+ccpm+cmmlu+jsonl:idiomatlas_mc_zh_seen+jsonl:idiomatlas_mc_zh_unseen+jsonl:symbolism_v2_zh_letter
 for arm in culture culturenotes; do
   sbatch --export=ALL,MODEL=$HFD/qwen3p5-9b-ar-cpt-$arm,OUT=$B/eval9b/ar/$arm,TASKS=$AR eval.slurm
   sbatch --export=ALL,MODEL=$HFD/qwen3p5-9b-hi-cpt-$arm,OUT=$B/eval9b/hi/$arm,TASKS=$HI eval.slurm
@@ -284,8 +312,7 @@ for arm in culture culturenotes; do
 done
 ```
 (Task lists are `+`-separated because `sbatch --export` splits on commas; `eval.slurm` converts them.)
-The remote server can run the same evaluation after copying `$B/eval_data/mc/*.jsonl` (also uploaded to the HF
-repo under `data/eval/mc/`) and passing `--mc_jsonl_dir`.
+The remote server can run the same evaluation after downloading `data/eval/mc/` from the private repo (§3.00) and passing `--mc_jsonl_dir`.
 
 ## Findings log: 2B reverse direction (2026-10-01)
 
