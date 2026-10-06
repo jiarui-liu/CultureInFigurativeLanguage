@@ -1,0 +1,49 @@
+{
+  "lang": "zh",
+  "control": "unfiltered",
+  "mode": "subject",
+  "n_a": 2761,
+  "n_b": 8821,
+  "arms": {
+    "base": {
+      "delta_china": -0.22,
+      "delta_world": 0.83,
+      "interaction": -1.04,
+      "interaction_ci": [
+        -2.44,
+        0.33
+      ],
+      "p": 0.1384
+    },
+    "cpt": {
+      "delta_china": -0.25,
+      "delta_world": 0.14,
+      "interaction": -0.39,
+      "interaction_ci": [
+        -1.51,
+        0.76
+      ],
+      "p": 0.5126
+    },
+    "untagged": {
+      "delta_china": -0.8,
+      "delta_world": -0.18,
+      "interaction": -0.62,
+      "interaction_ci": [
+        -1.78,
+        0.52
+      ],
+      "p": 0.2962
+    },
+    "culture": {
+      "delta_china": -2.28,
+      "delta_world": -1.64,
+      "interaction": -0.64,
+      "interaction_ci": [
+        -2.01,
+        0.78
+      ],
+      "p": 0.3762
+    }
+  }
+}

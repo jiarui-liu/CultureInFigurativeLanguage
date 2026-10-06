@@ -1,0 +1,108 @@
+{
+  "lang": "hi",
+  "ngram": 40,
+  "max_docs": 1500000,
+  "sources": {
+    "sft:indic-align": {
+      "docs_scanned": 239738,
+      "hits": {
+        "global_piqa_hi": 4,
+        "global_piqa_hi_cultural": 0,
+        "global_piqa_hi_parallel4": 1,
+        "parambench_hi_culture": 0,
+        "parambench_hi_other": 2
+      },
+      "rate": {
+        "global_piqa_hi": 0.004381161007667032,
+        "global_piqa_hi_cultural": 0.0,
+        "global_piqa_hi_parallel4": 0.010101010101010102,
+        "parambench_hi_culture": 0.0,
+        "parambench_hi_other": 0.00042762454564892024
+      },
+      "example_qids": {
+        "global_piqa_hi": [
+          "group0082_ex000401_hin_deva_4",
+          "group0082_ex000416_hin_deva_4",
+          "group0082_ex000459_hin_deva_4",
+          "group0082_ex000567_hin_deva_4"
+        ],
+        "global_piqa_hi_cultural": [],
+        "global_piqa_hi_parallel4": [
+          "parallel_ex000074_hin_deva"
+        ],
+        "parambench_hi_culture": [],
+        "parambench_hi_other": [
+          "249141a9054a5d6f360479b279b15542",
+          "fb9b312e6dd3879d829cef0f541674fb"
+        ]
+      }
+    },
+    "cpt:train_hi_culture": {
+      "docs_scanned": 637495,
+      "hits": {
+        "global_piqa_hi": 0,
+        "global_piqa_hi_cultural": 0,
+        "global_piqa_hi_parallel4": 0,
+        "parambench_hi_culture": 2,
+        "parambench_hi_other": 4
+      },
+      "rate": {
+        "global_piqa_hi": 0.0,
+        "global_piqa_hi_cultural": 0.0,
+        "global_piqa_hi_parallel4": 0.0,
+        "parambench_hi_culture": 0.00047938638542665386,
+        "parambench_hi_other": 0.0008552490912978405
+      },
+      "example_qids": {
+        "global_piqa_hi": [],
+        "global_piqa_hi_cultural": [],
+        "global_piqa_hi_parallel4": [],
+        "parambench_hi_culture": [
+          "24380a436ce755c19d5cba38ed89bc9e",
+          "773cbeee3b2481f96dfb459590a3b90d"
+        ],
+        "parambench_hi_other": [
+          "249141a9054a5d6f360479b279b15542",
+          "8b933446ad6e2f372ffe29d4a8d17f87",
+          "fb9b312e6dd3879d829cef0f541674fb",
+          "fd489310528eeba5967d2a203b4864be"
+        ]
+      }
+    },
+    "cpt:train_hi_unfiltered": {
+      "docs_scanned": 1097827,
+      "hits": {
+        "global_piqa_hi": 1,
+        "global_piqa_hi_cultural": 0,
+        "global_piqa_hi_parallel4": 0,
+        "parambench_hi_culture": 4,
+        "parambench_hi_other": 3
+      },
+      "rate": {
+        "global_piqa_hi": 0.001095290251916758,
+        "global_piqa_hi_cultural": 0.0,
+        "global_piqa_hi_parallel4": 0.0,
+        "parambench_hi_culture": 0.0009587727708533077,
+        "parambench_hi_other": 0.0006414368184733803
+      },
+      "example_qids": {
+        "global_piqa_hi": [
+          "group0082_ex000401_hin_deva_4"
+        ],
+        "global_piqa_hi_cultural": [],
+        "global_piqa_hi_parallel4": [],
+        "parambench_hi_culture": [
+          "24380a436ce755c19d5cba38ed89bc9e",
+          "773cbeee3b2481f96dfb459590a3b90d",
+          "a2d0c00483e4400e57fa1b48d42ae75b",
+          "c5963221002d55b53a02c3316dac9212"
+        ],
+        "parambench_hi_other": [
+          "249141a9054a5d6f360479b279b15542",
+          "7f71dae4b4f5371c6390bf3dc3088255",
+          "fb9b312e6dd3879d829cef0f541674fb"
+        ]
+      }
+    }
+  }
+}

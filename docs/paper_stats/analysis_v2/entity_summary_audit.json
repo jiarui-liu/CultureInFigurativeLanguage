@@ -1,0 +1,2549 @@
+{
+  "method": "Are the Section-4 entity summaries supported by the idioms they were written from?\n\nThe dog and dragon rows of Table~\\ref{tab:entity-cases} claimed things no idiom in the\nknowledge base says -- English \"loyalty\" for the dog, a mythical destroyer for the dragon --\nbecause the summarising model reached for what it already believed about the culture despite\nbeing told to use only the evidence shown. Those two were caught by hand. This checks the\nother several hundred the same way, automatically.\n\nFor every claim in a summary (each English and Chinese primary meaning, and each\nlanguage-unique aspect) we show a judge the claim and the idioms of that entity in that\nlanguage, and ask whether at least one idiom supports it. The judge is a different model\nfamily from the one that wrote the summaries, and is told to answer \"no\" when unsure, so the\nunsupported rate is a lower bound on agreement rather than on error.\n\n    PYTHONPATH=src:src/culture/analysis/v2 python entity_summary_audit.py [--max_entities N]\n",
+  "source": "cultural_analysis_results.jsonl",
+  "judge": "gemma-4-26B-A4B-it",
+  "n_entities": 317,
+  "n_claims": 4703,
+  "supported_overall": 0.8235,
+  "supported_by_field": {
+    "english_primary_meanings": 0.857,
+    "english_unique_aspects": 0.8393,
+    "chinese_primary_meanings": 0.797,
+    "chinese_unique_aspects": 0.8013
+  },
+  "n_claims_by_field": {
+    "english_primary_meanings": 1287,
+    "english_unique_aspects": 1014,
+    "chinese_primary_meanings": 1320,
+    "chinese_unique_aspects": 1082
+  },
+  "worst_entities": [
+    {
+      "entity": "fox",
+      "supported": 5,
+      "claims": 14
+    },
+    {
+      "entity": "touch",
+      "supported": 5,
+      "claims": 13
+    },
+    {
+      "entity": "clock",
+      "supported": 5,
+      "claims": 12
+    },
+    {
+      "entity": "law",
+      "supported": 5,
+      "claims": 12
+    },
+    {
+      "entity": "generation",
+      "supported": 5,
+      "claims": 12
+    },
+    {
+      "entity": "master",
+      "supported": 5,
+      "claims": 12
+    },
+    {
+      "entity": "nerve",
+      "supported": 4,
+      "claims": 9
+    },
+    {
+      "entity": "point",
+      "supported": 5,
+      "claims": 11
+    },
+    {
+      "entity": "piece",
+      "supported": 10,
+      "claims": 22
+    },
+    {
+      "entity": "table",
+      "supported": 5,
+      "claims": 11
+    },
+    {
+      "entity": "hair",
+      "supported": 6,
+      "claims": 13
+    },
+    {
+      "entity": "heat",
+      "supported": 6,
+      "claims": 13
+    },
+    {
+      "entity": "side",
+      "supported": 7,
+      "claims": 15
+    },
+    {
+      "entity": "top",
+      "supported": 7,
+      "claims": 15
+    },
+    {
+      "entity": "fly",
+      "supported": 7,
+      "claims": 15
+    },
+    {
+      "entity": "woman",
+      "supported": 7,
+      "claims": 15
+    },
+    {
+      "entity": "ice",
+      "supported": 13,
+      "claims": 27
+    },
+    {
+      "entity": "something",
+      "supported": 6,
+      "claims": 12
+    },
+    {
+      "entity": "fire",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "bone",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "ground",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "fish",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "air",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "business",
+      "supported": 7,
+      "claims": 14
+    },
+    {
+      "entity": "game",
+      "supported": 7,
+      "claims": 14
+    }
+  ],
+  "unsupported_claims": [
+    {
+      "entity_en": "something",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A concrete or quasi-concrete entity closely tied to material objects, possessions, or observable phenomena"
+    },
+    {
+      "entity_en": "something",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An evaluative notion of 'things' as reflections of human character, social order, or moral stance"
+    },
+    {
+      "entity_en": "something",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A worldview category opposing or complementing '人' (people), often used to comment on change, harmony, or social conditions"
+    },
+    {
+      "entity_en": "something",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong moral and philosophical overtones, especially in contrast between 人 (people) and 物 (things)"
+    },
+    {
+      "entity_en": "something",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent use in set idioms to express social harmony, historical change, or ethical attitudes"
+    },
+    {
+      "entity_en": "something",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Tendency to encode evaluation (e.g., worth, order, harmony) rather than mere reference"
+    },
+    {
+      "entity_en": "someone",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Use of 'someone' as a neutral grammatical placeholder with minimal moral judgment"
+    },
+    {
+      "entity_en": "thing",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Concrete or semi-concrete entities embedded in moral, social, or cosmic order (物 as part of the world)"
+    },
+    {
+      "entity_en": "person",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "High moral and aesthetic evaluation of people, including praise, blame, or ridicule"
+    },
+    {
+      "entity_en": "place",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Concrete ground or territory as the foundation of action and consequence (地 as land, ground, terrain)"
+    },
+    {
+      "entity_en": "place",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Existential or situational predicament, especially being trapped or without recourse (e.g., 上天无路，入地无门)"
+    },
+    {
+      "entity_en": "place",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Heavy grounding in physical land (地) as moral, emotional, and cosmic foundation"
+    },
+    {
+      "entity_en": "time",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Deep metaphorical and moral valuation of time, often linked to cultivation, history, and life stages"
+    },
+    {
+      "entity_en": "head",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Position, sequence, and totality: '头' often marks beginnings, ends, or the whole process (e.g., 从头到尾, 从头至尾)."
+    },
+    {
+      "entity_en": "head",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Frequency and repetition: '头' can function as a temporal marker indicating recurrence or regularity (e.g., 三天两头)."
+    },
+    {
+      "entity_en": "head",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on relational and social contexts, using '头' to describe interpersonal closeness, coordination, or divided positions."
+    },
+    {
+      "entity_en": "head",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent use of '头' as a structural or temporal marker, highlighting process, cycles, and holistic views rather than inner mental states."
+    },
+    {
+      "entity_en": "hand",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "philosophical reflection on the necessity of cooperation and balance (一手独拍，虽疾无声)"
+    },
+    {
+      "entity_en": "eye",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral order, rules, and correctness (things done \"by the book\")"
+    },
+    {
+      "entity_en": "eye",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association of eyes with orderliness, ritual correctness, and disciplined behavior (一板一眼)"
+    },
+    {
+      "entity_en": "foot",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "propriety and correct alignment between form and function"
+    },
+    {
+      "entity_en": "day",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A moral–cosmic contrast between light and darkness, order and chaos (\"云开见日\", \"以夜继日\")"
+    },
+    {
+      "entity_en": "back",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Physical closeness and crowding, emphasizing bodies pressed together (e.g., 亚肩叠背, 压肩迭背)"
+    },
+    {
+      "entity_en": "back",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Psychological unease or threat perceived from behind (e.g., 如芒在背, 如芒刺背)"
+    },
+    {
+      "entity_en": "back",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Structural strength or expressive force, especially in aesthetics and writing (e.g., 力透纸背)"
+    },
+    {
+      "entity_en": "back",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Control of vital points or strategic dominance (e.g., 扼亢拊背)"
+    },
+    {
+      "entity_en": "back",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong bodily and spatial imagery reflecting collective physical experience (crowding, pressure)"
+    },
+    {
+      "entity_en": "mind",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "Personal autonomy of thought and opinion, often detached from moral judgment"
+    },
+    {
+      "entity_en": "mind",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Strong emphasis on rational cognition and mental processes over moral or emotional evaluation"
+    },
+    {
+      "entity_en": "man",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Human beings as a collective or social unit, often emphasizing number, distribution, or mass effect (e.g., 三人为众, 三五成群, 三三两两)"
+    },
+    {
+      "entity_en": "man",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An individual defined by social perception or impact rather than inner traits (e.g., 一鸣惊人, 三人成虎)"
+    },
+    {
+      "entity_en": "man",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on collectivism, quantity, and social influence (e.g., how many people are involved and their cumulative effect)"
+    },
+    {
+      "entity_en": "man",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on reputation, appearance, and how a person is perceived or talked about by others"
+    },
+    {
+      "entity_en": "money",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A concrete, countable substance emphasizing frugality or scarcity (e.g. 一钱不落虚空地, 一钱不名)"
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life as destiny or mandate (命): life is closely bound to fate, lifespan, and heaven-ordained outcomes (e.g., 一命呜呼, 三命而俯)."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life as a quantifiable, expendable value: life can be lost, traded, or risked, often expressed in units of 'one life' (一命) and strongly tied to death."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life as moral or social worth: life is evaluated through ethics, loyalty, or profit (e.g., 惟利是命, 戕身伐命)."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life as a bestowed gift or恩惠: life can be granted or renewed through external grace rather than self-driven renewal (恩若再生)."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong linkage between life (命) and fate, destiny, or social order."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent idiomatic focus on death as the defining boundary of life."
+    },
+    {
+      "entity_en": "life",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of life with moral character, hierarchy, and conduct."
+    },
+    {
+      "entity_en": "nose",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "individual perspective and personal agency"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Improper methods leading to failure or harm (using fire wrongly brings counterproductive results)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Escalation and amplification of trouble (fire as something that spreads, fuels chaos, or worsens conflict)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Extreme danger and hardship (fire as a trial to be endured or faced bravely)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Social disruption or agitation (fire as incitement, stirring others into action, often negatively)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Fire as a metaphor for flawed strategy or misguided problem-solving (以火救火, 以火止沸)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Fire as social and moral commentary on agitation, incitement, and disorder (传风扇火)"
+    },
+    {
+      "entity_en": "fire",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Fire embedded in ethical judgment about methods, harmony, and consequences rather than individual emotion"
+    },
+    {
+      "entity_en": "water",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral purity and integrity, especially in governance (e.g., 一清如水, 一廉如水)"
+    },
+    {
+      "entity_en": "water",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Close association between water, nature, and cosmic harmony (influenced by Daoism)"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A family unit and lineage-based social unit tied to kinship, status, and continuity ('家')"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A moral and political extension of family to state and society (家—国 continuum)"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A marker of fortune or misfortune affecting collective survival (prosperity vs. ruin)"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A spatial-social origin point, often rural or ancestral, rather than a private interior ('乡', '家')"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on collective prosperity or disaster affecting the household ('家破', '家足')"
+    },
+    {
+      "entity_en": "home",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of '家' as a classificatory or evaluative suffix indicating schools, styles, or groups"
+    },
+    {
+      "entity_en": "horse",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Horse as a neutral, everyday reference point in colloquial speech"
+    },
+    {
+      "entity_en": "horse",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Control, restraint, and moral awakening (stopping at the brink, knowing when to turn back)"
+    },
+    {
+      "entity_en": "horse",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Power and authority in social or political contexts (intimidation, governance, order)"
+    },
+    {
+      "entity_en": "horse",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral didacticism emphasizing self-restraint and timely correction (临崖勒马)"
+    },
+    {
+      "entity_en": "cat",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Cunning, hypocrisy, or false benevolence (especially in relation to power or morality)"
+    },
+    {
+      "entity_en": "cat",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Complicity between opposing forces, particularly corruption or dereliction of duty"
+    },
+    {
+      "entity_en": "cat",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Imitation without true understanding or originality"
+    },
+    {
+      "entity_en": "cat",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Triviality or insignificance when used to belittle people"
+    },
+    {
+      "entity_en": "world",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Totality of human society or civilization (the world as 天下 / 人世)"
+    },
+    {
+      "entity_en": "world",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Cosmic–moral order or ideal state (the world as 大千世界、清平世界、极乐世界)"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Physical force, violence, or corporal punishment, often concrete and vivid (e.g., 当头一棒, 十拷九棒)"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Verbal aggression or sharp, biting speech (e.g., 夹枪带棍, 夹枪带棒)"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral warning, discipline, or corrective shock (e.g., 当头一棒)"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Social interference or disruption of relationships (e.g., 棒打鸳鸯)"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strongly physical and action-oriented imagery rooted in bodily experience"
+    },
+    {
+      "entity_en": "stick",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on social relations, hierarchy, and moral order (e.g., discipline, propriety, interference in relationships)"
+    },
+    {
+      "entity_en": "end",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Peripheral, minor, or non-essential aspects contrasted with the fundamental or root (末 vs 本)"
+    },
+    {
+      "entity_en": "end",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Derivation or consequence, emphasizing outcomes that stray from origins or principles"
+    },
+    {
+      "entity_en": "end",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Systematic moral and philosophical contrast between 本 (root/fundamental) and 末 (branch/minor), with 末 often devalued"
+    },
+    {
+      "entity_en": "end",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of '末' in classical idioms to reflect Confucian priorities such as agriculture over commerce and principle over expediency"
+    },
+    {
+      "entity_en": "ball",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "smooth movement and momentum, especially following or resisting a trend (e.g. 下坂走丸, 逆坂走丸)"
+    },
+    {
+      "entity_en": "ball",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "compactness and unity, physical or social (e.g. 成团打块, 抱成一团)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Spatial proximity or adjacency, often emphasizing what is beside, around, or bordering something (侧、边、岸)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Boundary or limit, especially territorial or abstract extent (边 as border, 无边无际)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Social or perceptual closeness based on limited interaction or appearance (面 as in 一面之交)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Inner psychological or emotional state expressed through bodily position (反侧 as restlessness)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on harmony, proximity, and relative positioning rather than explicit choice"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent use of boundary imagery to convey vastness, stability, or order (边疆、无边无际)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of aesthetic and moral judgment through spatial metaphors (珠玉在侧)"
+    },
+    {
+      "entity_en": "side",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of bodily movement and position to express inner emotional states"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Minimal unit or small quantity that accumulates into a whole (点: 一点一滴, 以点带面)"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Beginning, end, or segment of complex affairs or emotions (端: 千端万绪, 千绪万端)"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Act of marking, judging, or indicating (点: 指指点点, 文不加点)"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on accumulation from small elements to holistic outcomes (一点一滴, 以点带面)"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of 点/端 to express complexity, multiplicity, and emotional or situational entanglement"
+    },
+    {
+      "entity_en": "point",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Aesthetic and moral judgment embedded in language use (文不加点, 指指点点)"
+    },
+    {
+      "entity_en": "tooth",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Hatred, anger, or emotional extremity (e.g., 咬牙切齿, 咬牙恨齿)"
+    },
+    {
+      "entity_en": "tooth",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Verbal ability or speech quality, both positive and negative (e.g., 俐齿伶牙, 佶屈聱牙, 嗑牙料嘴)"
+    },
+    {
+      "entity_en": "tooth",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Direct retaliation or tit-for-tat response (e.g., 以牙还牙, 以眼还眼，以牙还牙)"
+    },
+    {
+      "entity_en": "tooth",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent metaphorical use of teeth to evaluate speech, rhetoric, and eloquence"
+    },
+    {
+      "entity_en": "door",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral character and social status associated with one’s household or gate (门楣)"
+    },
+    {
+      "entity_en": "wall",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on foundations and structural integrity as metaphors for legitimacy and stability."
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Imminent danger or critical instability (hair/发 as something on the verge of breaking or exploding)"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Sudden release of power or emotion (发 meaning to erupt, explode, or express intensely)"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral or emotional extremity, especially anger (hair standing or reacting to righteous or overwhelming emotion)"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Identity, ritual, and social status (hair as something to be cut or preserved according to moral or religious values)"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Hair as a symbol of life, loyalty, and moral integrity rooted in Confucian values"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Hair as an index of explosive political, military, or cosmic tension (一触即发, 一发千钧)"
+    },
+    {
+      "entity_en": "hair",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Ritualized meaning of hair removal as renunciation of secular identity (削发披缁)"
+    },
+    {
+      "entity_en": "blood",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Decisiveness and precision, where blood marks the vital point or essence (e.g., 一针见血)"
+    },
+    {
+      "entity_en": "wind",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Favorable conditions and smooth progress (e.g., 一帆风顺, 一路顺风)"
+    },
+    {
+      "entity_en": "wind",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Heroic aspiration and overcoming obstacles (e.g., 乘风破浪)"
+    },
+    {
+      "entity_en": "wind",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Atmosphere that inspires emotion or reflection (e.g., 临风对月)"
+    },
+    {
+      "entity_en": "wind",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Wind as a moral, political, or social force reflecting harmony or disorder"
+    },
+    {
+      "entity_en": "wind",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Close linkage between wind (风) and destiny, governance, and collective fortune"
+    },
+    {
+      "entity_en": "bone",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "Persistence or toughness (enduring discomfort, holding on stubbornly)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Inner essence or structural core of a person or thing (骨 as essence, integrity, substance)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Depth and intensity of emotion or experience (hatred, longing, pain reaching the bones)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral weight and seriousness (harm, wrongdoing, slander that penetrates to the bone)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Aesthetic refinement and vitality (骨 as elegance, poise, or refined structure in beauty)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Bone as an aesthetic principle reflecting inner refinement (丰肌秀骨, 冰肌玉骨)"
+    },
+    {
+      "entity_en": "bone",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Bone imagery tied to classical literature and ethical judgment rather than daily sensation"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Physical or metaphorical pressure from above, often overwhelming (e.g., 泰山压顶, 灭顶之灾)"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "The head/crown as the site of fate, sacrifice, or total commitment (e.g., 顶踵尽捐, 顶踵捐糜)"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Transmission of wisdom or moral awakening from above (e.g., 醍醐灌顶)"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Hierarchical order and social structure (e.g., 上下一心, 上勤下顺)"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong sense of moral, physical, or existential burden imposed from above"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of ‘顶’ to express total sacrifice, endurance, or catastrophic fate"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of hierarchy, duty, and collective order into ‘top/bottom’ metaphors"
+    },
+    {
+      "entity_en": "top",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Influence of religious (Buddhist) imagery where ‘top’ is a channel for enlightenment"
+    },
+    {
+      "entity_en": "ground",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Neutral or technical tone even in metaphorical usage"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Physical or metaphorical space/place that one occupies or relies on (e.g., 一席之地, 一隅之地)"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "State or condition of success, failure, or chaos reaching an extreme (e.g., 一败涂地, 一乱涂地)"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Existential security or lack of refuge, often framed cosmologically between heaven and earth (e.g., 上不着天，下不着地; 上天无路，入地无门)"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Spatial extent or proximity used metaphorically to describe degree or scope (e.g., 一箭之地, 一硼地)"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of cosmology (heaven–earth axis) to express human fate and predicament"
+    },
+    {
+      "entity_en": "ground",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral–existential evaluation of success and failure as total states"
+    },
+    {
+      "entity_en": "bed",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Shared space symbolizing relationships, unity, or emotional closeness (同床共枕, 夜雨对床)"
+    },
+    {
+      "entity_en": "bed",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Physical suffering, crisis, or immobility (剥床及肤, 卧床不起)"
+    },
+    {
+      "entity_en": "bed",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Rich emotional symbolism tied to harmony, betrayal, reunion, and resentment"
+    },
+    {
+      "entity_en": "bed",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of bed imagery for abstract critique (bureaucratic redundancy, layered excess)"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Objects of desire or benefit symbolizing goals, gains, or livelihoods (e.g., 临渊羡鱼)"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "People as resources whose movement reflects quality of governance or leadership (e.g., 为渊驱鱼)"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Targets of action highlighting the importance of method over mere desire (e.g., 以筌为鱼)"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Symbols in moral-political allegory rather than individual personality"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Heavy use of fish imagery in moral, political, and philosophical instruction"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on governance, collective outcomes, and social responsibility"
+    },
+    {
+      "entity_en": "fish",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of fish metaphors into didactic proverbs stressing action, strategy, and long-term effort"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A concrete, visually graspable fragment or block emphasizing physical shape or materiality (块, 片, 段)"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A small, often humble portion used to evaluate merit, value, or completeness (寸长片善, 零光片羽)"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An element within an organic whole, stressing accumulation and assemblage rather than division"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A metaphor for grouping, clustering, or structural composition (成团打块, 片接寸附)"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on physical imagery and tangible segmentation rooted in agrarian and craft traditions"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and evaluative use of small 'pieces' to judge character, merit, or worth"
+    },
+    {
+      "entity_en": "piece",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on harmony or disorder through how pieces cluster, attach, or accumulate rather than clash"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Vital force or life energy connecting body, emotion, and morality (气 as breath, strength, temperament)"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Shared origin, alignment, or collusion expressed through common 'qi' (e.g. 一脉同气, 串通一气)"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Momentum, resolve, and continuity of effort (e.g. 一鼓作气)"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Social attitude and moral bearing reflected through气 (e.g. 下气怡声, 严气正性)"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Deep integration of 气 with cosmology, traditional medicine, and moral philosophy"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of 气 to encode social relationships, hierarchy, and ethical stance"
+    },
+    {
+      "entity_en": "air",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on collective alignment or shared origin rather than individual experience"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Commercial exchange and transactional fairness (买卖, 交易; e.g., 公买公卖, 公平交易)"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Long-term achievement, moral weight, and historical legacy (业, 事业; e.g., 业峻鸿绩, 名山事业)"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Diligence, caution, and responsibility in one’s role or duty (业业兢兢, 业业矜矜)"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Entrepreneurial risk and hardship in founding undertakings (筚路褴褛)"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and historical elevation of 'business' as 功业 or 事业 tied to legacy"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association with virtue, diligence, and cautious self-discipline"
+    },
+    {
+      "entity_en": "business",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of commerce with social order, fairness, and collective evaluation"
+    },
+    {
+      "entity_en": "death",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life‑and‑death extremity emphasizing endurance, suffering, and survival against overwhelming odds (e.g., 万死一生, 七死八活)"
+    },
+    {
+      "entity_en": "skin",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Everyday, colloquial use with relatively mild emotional intensity"
+    },
+    {
+      "entity_en": "skin",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of skin to symbolize core利益 (vital interests) and irreversible conflict"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A detached, playful, or ironic attitude toward life or human affairs (e.g., 游戏人间, 游戏人世)"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Life or events as a staged process or situational setup (e.g., 逢场游戏, 局)"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Strategic or intellectual engagement as mental cultivation rather than pure competition (e.g., 博弈犹贤)"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Artistic or literary playfulness and spontaneity (e.g., 游戏笔墨, 游戏翰墨)"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Philosophical and moral reflection on life as play, often with Daoist or Confucian undertones"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Greater association with detachment, irony, or transcendence rather than winning"
+    },
+    {
+      "entity_en": "game",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of the concept into aesthetics, literature, and cultivated leisure"
+    },
+    {
+      "entity_en": "heel",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "social or moral evaluation, often negative or diminished status (down-at-the-heels; heel as a bad person)"
+    },
+    {
+      "entity_en": "heel",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "moral judgment of character through the metaphor of the heel (heel meaning a bad or contemptible person)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Impersonal cosmic force or higher order governing the universe (天)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Supernatural or transcendent power symbolizing excellence, inspiration, or uncanny ability (神)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moralized heaven that reflects collective justice or popular will (人神共愤)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Aesthetic or spiritual vitality animating art, writing, or expression (传神, 下笔如神)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Ambiguous supernatural realm encompassing gods, spirits, and ghosts rather than a single deity"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Largely impersonal and pluralistic supernatural framework (天、神、鬼共存)"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of the divine with human emotion, public opinion, and aesthetics"
+    },
+    {
+      "entity_en": "God",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent metaphorical use to describe artistic inspiration, talent, or expressive vividness"
+    },
+    {
+      "entity_en": "road",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Emphasis on pragmatism and personal scheduling rather than moral evaluation"
+    },
+    {
+      "entity_en": "nail",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Painful obstruction or hated presence (e.g., 眼中钉)"
+    },
+    {
+      "entity_en": "nail",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent use in evaluative judgments about correctness and moral stance"
+    },
+    {
+      "entity_en": "nail",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Historical-literary and bureaucratic undertones (classical texts, official decisions)"
+    },
+    {
+      "entity_en": "case",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A concrete container or physical repository associated with storage, accumulation, or thorough searching (箱 in idioms like 翻箱倒柜, 积案盈箱)."
+    },
+    {
+      "entity_en": "case",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An official desk, document, or judicial setting symbolizing authority, order, ritual, and social relationships (案 in 三曹对案, 举案齐眉)."
+    },
+    {
+      "entity_en": "case",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on physical space, objects, and visible accumulation as metaphors for knowledge, bureaucracy, or effort (箱, 案)."
+    },
+    {
+      "entity_en": "case",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Embedding of moral and relational values, such as marital respect and ritual propriety (举案齐眉)."
+    },
+    {
+      "entity_en": "year",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A cyclical and cosmological concept tied to fortune, agriculture, and harmony between humans and time (e.g., 丰年稔岁, 人寿年丰, 流年)"
+    },
+    {
+      "entity_en": "year",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of time with moral judgment, virtue, and character formation"
+    },
+    {
+      "entity_en": "year",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association of 'year' with cosmic order, fate, and cyclical fortune (e.g., 流年, 太岁)"
+    },
+    {
+      "entity_en": "house",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A household or lineage-based living unit tied to family order, population, and survival"
+    },
+    {
+      "entity_en": "house",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A moralized domestic space where excess, display, or concealment leads to fortune or disaster"
+    },
+    {
+      "entity_en": "house",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong moral causality linking the physical structure of the house to familial or political fortune"
+    },
+    {
+      "entity_en": "house",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on household management, hierarchy, and survival under socioeconomic pressure (e.g., famine, withdrawal from office)"
+    },
+    {
+      "entity_en": "clock",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Modern, secular, and pragmatic orientation toward time"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Ritual, social order, and moral symbolism rather than precise timekeeping"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Hierarchy of knowledge and ability (the weak vs. the strong, the ignorant vs. the learned)"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Resignation, duty, or passive perseverance in life and work"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Clock/bell as a cultural and ritual object tied to temples, aristocracy, and ceremony"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of 钟 imagery to express moral judgment, self-deception, or social hierarchy"
+    },
+    {
+      "entity_en": "clock",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on attitude toward duty and fate rather than efficiency"
+    },
+    {
+      "entity_en": "track",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Positive valuation of deviation and exploration (off the beaten track)"
+    },
+    {
+      "entity_en": "act",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Attention to self-discipline and caution in conduct, reflecting concern for social harmony (轻举妄动、一举一动)"
+    },
+    {
+      "entity_en": "card",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Evidence, proof, or certification used to establish truth or legitimacy (证)"
+    },
+    {
+      "entity_en": "card",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Assured advantage or guaranteed success, often in formal or strategic contexts (券)"
+    },
+    {
+      "entity_en": "card",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on evidential reasoning and moral-legitimate proof rather than chance"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "The root, foundation, or underlying truth of a matter (e.g. 刨根问底, 归根到底)"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Thoroughness and completeness in investigation or clarification (e.g. 澈底澄清, 盘根究底)"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "The hidden depth or ultimate interior of things, often metaphorical (e.g. 海枯见底)"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral or intellectual grounding and reliability (e.g. 有根有底)"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on moral, logical, and causal roots rather than external outcomes"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association with epistemic depth—knowing, probing, and understanding truth"
+    },
+    {
+      "entity_en": "bottom",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Preference for organic metaphors (roots, depth, clarity) over mechanical or economic ones"
+    },
+    {
+      "entity_en": "rain",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Gathering, diffusion, or large-scale movement, often metaphorical for people, influence, or events (e.g., '云屯雨集', '云布雨施')"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral baseness or greed, especially attraction to profit, power, or corruption"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Blindness, lack of direction, or reckless behavior leading to self-destruction"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Futility or self-contradiction in actions and intentions"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Parasitic dependence or ignoble attachment to others for personal gain"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong moral judgment and ethical evaluation of character"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Explicit linkage between inner moral decay and external consequences"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of flies as didactic symbols in political, social, and ethical criticism"
+    },
+    {
+      "entity_en": "fly",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent metaphorical pairing with other animals to reinforce moral hierarchy"
+    },
+    {
+      "entity_en": "hole",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Penetrating insight or deep understanding (seeing through hidden depths)"
+    },
+    {
+      "entity_en": "hole",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Rich linkage to classical texts, moral judgment, and evaluative insight"
+    },
+    {
+      "entity_en": "love",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Emotional attitude toward people or things that requires regulation and moderation"
+    },
+    {
+      "entity_en": "love",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Conceptual blending of love with '心' and '情', highlighting inner moral state rather than private emotion"
+    },
+    {
+      "entity_en": "love",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Clear moral evaluation of fidelity, constancy, and social responsibility in love"
+    },
+    {
+      "entity_en": "it",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Immediacy and conversational flexibility, allowing ‘it’ to function as a dynamic discourse anchor"
+    },
+    {
+      "entity_en": "night",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Unbroken continuity of time, especially relentless effort or activity across day and night (e.g., 以夜继日, 以日继夜)"
+    },
+    {
+      "entity_en": "night",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong moral evaluation of nighttime activity, especially when it disrupts natural rhythms or social order"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "human fate and survival instincts (e.g., 人为财死，鸟为食亡)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "psychological state shaped by experience or trauma (e.g., 伤弓之鸟)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "social aggregation and dispersion (e.g., 云屯鸟散, 兽聚鸟散)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "return, belonging, and moral choice (e.g., 倦鸟知还)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "gain and loss, success and failure (e.g., 一石二鸟, 卵覆鸟飞)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "strong moral and existential framing tied to survival and fate"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "collective and social-order metaphors (crowds, chaos, loyalty, return)"
+    },
+    {
+      "entity_en": "bird",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "frequent evaluative tone (warning, admonition, or reflection on life experience)"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Sudden, powerful, and large-scale change in circumstances or momentum (暴风骤雨, 风云变幻)"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "External pressure, hardship, or adverse environment testing character or resolve (风雨不改, 风雨无阻)"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Widespread social impact or public reaction (满城风雨, 八方风雨)"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Turbulence as part of a broader cyclical or contextual process rather than a single episode"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Collective and societal framing of turbulence (public opinion, historical moments)"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and ethical dimension: adversity as a test of integrity and perseverance"
+    },
+    {
+      "entity_en": "storm",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Preference for compound imagery (wind + rain, thunder + lightning) to express complexity and scale"
+    },
+    {
+      "entity_en": "breath",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of breath (气) with cosmology and traditional medicine as vital energy"
+    },
+    {
+      "entity_en": "law",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "An external, impersonal system of rules that applies equally to all members of society"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A normative standard or model (法) used to regulate behavior and maintain order"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A moral–political instrument of governance closely tied to state authority"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A test of personal conduct, where violating the law implies moral fault or self-inflicted harm"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Law as a moralized standard where violating it reflects ethical failure (以身试法)"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Close linkage between lawmaking and self-consequence (作法自毙, 作法自弊)"
+    },
+    {
+      "entity_en": "law",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Law contrasted with custom, ritual, or textual authority (不法常可, 以文乱法)"
+    },
+    {
+      "entity_en": "stone",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "integration of stone into collective wisdom and classical allusions rather than casual speech"
+    },
+    {
+      "entity_en": "something else",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An external or irrelevant object compared to what truly matters"
+    },
+    {
+      "entity_en": "something else",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Normative or evaluative tone implying non-essential or lesser importance"
+    },
+    {
+      "entity_en": "account",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Settlement and reckoning: 账/帐 as calculation, settling scores, or delayed retribution (e.g., 秋后算账)"
+    },
+    {
+      "entity_en": "account",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on delayed moral reckoning and social retaliation (秋后算账)"
+    },
+    {
+      "entity_en": "duck",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "crowd behavior and eager pursuit (趋之若鹜)"
+    },
+    {
+      "entity_en": "duck",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "speed and alertness when threatened (兔死凫举)"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Time as cyclical or accumulative duration (years passing, long spans of time)"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Age as a symbolic marker of life stages with moral or philosophical significance (e.g., 不惑之年)"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Prosperity, harmony, and historical continuity expressed through years or eras"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Emotional perception of time (time felt as long or short depending on circumstance)"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of age with cosmology, morality, and historical time"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of age/years to express collective prosperity or decline rather than individual behavior"
+    },
+    {
+      "entity_en": "age",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Symbolic numerology of age (e.g., 40 as 不惑) rooted in classical philosophy"
+    },
+    {
+      "entity_en": "boy",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Rich lexical differentiation for age, status, and moral bearing (童子, 少年, 男儿, 公子)"
+    },
+    {
+      "entity_en": "trouble",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Serious misfortune, calamity, or disaster often with grave consequences (祸、灾祸、不测之祸)"
+    },
+    {
+      "entity_en": "trouble",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Chains of adversity tied to historical, political, or moral causes (兵连祸结、兴亡祸福)"
+    },
+    {
+      "entity_en": "trouble",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Stronger association with catastrophe, fate, and irreversible consequences"
+    },
+    {
+      "entity_en": "trouble",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent linkage to moral judgment, political order, and historical cycles"
+    },
+    {
+      "entity_en": "trouble",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Collective and transpersonal scope, where '祸' often affects families, states, or society rather than just individuals"
+    },
+    {
+      "entity_en": "tune",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "change or adjustment of strategy, policy, or attitude (改张易调, 改弦易调)"
+    },
+    {
+      "entity_en": "tune",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "manner, style, or affectation in speech and behavior (拿腔作调)"
+    },
+    {
+      "entity_en": "hook",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Traps and bait: 钩 frequently symbolizes deliberate traps,诱饵, and schemes that lure others into loss or punishment (e.g., 太公钓鱼，愿者上钩)."
+    },
+    {
+      "entity_en": "hook",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral judgment and social critique: 钩 is used metaphorically to comment on injustice, hypocrisy, or imbalance in law and power (e.g., 窃钩者诛，窃国者侯)."
+    },
+    {
+      "entity_en": "hook",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Intellectual probing and precision: 钩 also conveys the act of carefully extracting deep or hidden meanings, especially in scholarship (e.g., 钩深索隐, 钩玄提要)."
+    },
+    {
+      "entity_en": "minute",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Pragmatic, situational focus rather than moral judgment"
+    },
+    {
+      "entity_en": "tree",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "A tendency to treat the tree as an object external to society, used to illustrate abstract reasoning"
+    },
+    {
+      "entity_en": "gut",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Rich metaphorical system mapping emotions onto multiple internal organs (heart, intestines, gallbladder, stomach)"
+    },
+    {
+      "entity_en": "object",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "An impersonal target of action rather than a morally charged presence"
+    },
+    {
+      "entity_en": "object",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Idioms emphasize individual agency and utility rather than moral relationship to things"
+    },
+    {
+      "entity_en": "object",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "All things in the world as part of an interconnected moral and cosmic order (物)"
+    },
+    {
+      "entity_en": "object",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Objects as extensions of ethical stance, emotional resonance, or life philosophy"
+    },
+    {
+      "entity_en": "object",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Idioms integrate objects into views of harmony, non-contention, and ethical self-cultivation"
+    },
+    {
+      "entity_en": "feather",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Explicit moral critique of self-enrichment tied to social roles (feather one’s nest)"
+    },
+    {
+      "entity_en": "oneself",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of self with social order and harmony rather than isolation"
+    },
+    {
+      "entity_en": "moment",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "An objective segment within the continuous flow of time, often linked to historical change, cycles, or destiny (时 in 世异时移, 与时推移)"
+    },
+    {
+      "entity_en": "moment",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A critical or opportune timing aligned with circumstances, trends, or strategy (时势, 时机; e.g., 乘时乘势, 养兵千日，用兵一时)"
+    },
+    {
+      "entity_en": "moment",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Urgency and irreversibility, stressing that time does not wait and action must align with the right moment (e.g., 刻不待时, 决不待时)"
+    },
+    {
+      "entity_en": "moment",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of time with broader cosmic, historical, and social order, where ‘时’ reflects alignment with the Dao, trends, or mandate of the age"
+    },
+    {
+      "entity_en": "fool",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "intellectual limitation or lack of wisdom, often contrasted with the ideal of the wise or cultivated person"
+    },
+    {
+      "entity_en": "fool",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "delusional thinking or unrealistic speech divorced from reality"
+    },
+    {
+      "entity_en": "fool",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "petty, disruptive, or morally dubious figures who lack stature or legitimacy"
+    },
+    {
+      "entity_en": "fool",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "use as a rhetorical device for humility or self-deprecation (愚者千虑，亦有一得)"
+    },
+    {
+      "entity_en": "edge",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Spatial boundary or border: physical edges, frontiers, or margins, often large-scale or geopolitical (e.g., 边境, 无边无际, 边尘不惊)"
+    },
+    {
+      "entity_en": "edge",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Relational or fated connection through homophonous extension (缘): destiny, chance encounters, and interpersonal bonds (e.g., 一面之缘, 不解之缘)"
+    },
+    {
+      "entity_en": "edge",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Stability and order at boundaries: peace or security at the edges of a state or system (e.g., 边尘不惊)"
+    },
+    {
+      "entity_en": "edge",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of boundary concepts with cosmological and moral order (e.g., stable borders reflecting good governance)"
+    },
+    {
+      "entity_en": "edge",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Extension from physical 'edge/border' (边) to metaphysical and social destiny (缘), emphasizing fate and relational ties"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "military conflict or preparedness (e.g., 刀枪入库, 弹雨枪林)"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "verbal conflict and rhetorical aggression (e.g., 唇枪舌剑, 夹枪带棒)"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "individual isolation or lone struggle (e.g., 单枪匹马, 单枪独马)"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "improvised or last-minute preparation (e.g., 临阵磨枪)"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "strong linkage to classical warfare and traditional weapons imagery"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "frequent metaphorical use for speech and rhetoric rather than machinery"
+    },
+    {
+      "entity_en": "gun",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "moral and strategic evaluation of preparedness, caution, and social interaction"
+    },
+    {
+      "entity_en": "check",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "Control, restraint, or limitation (e.g., checks and balances, check up on)"
+    },
+    {
+      "entity_en": "check",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Unreliable or empty promises when using 支票 metaphorically (空头支票)"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A fortified political and military space symbolizing the state, power, and survival (城)"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A collective or territorial unit representing the people or the nation as a whole"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A metaphor for extreme value, beauty, or consequence (e.g., 倾城倾国, 价值连城)"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "A symbol of crisis, conflict, or honor in wartime contexts (e.g., 兵临城下, 城下之辱)"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong association with political authority, warfare, and national fate"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of '城' as a hyperbolic unit of value or beauty, linking place to moral or aesthetic judgment"
+    },
+    {
+      "entity_en": "town",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Collective and historical orientation, where the city embodies state power and social order"
+    },
+    {
+      "entity_en": "earth",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Extent or totality of space, often implying completeness or chaos (e.g., '一天一地', '一败涂地')"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Plan, intention, or scheme (图 as 谋图、企图, e.g., 图作不轨)"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Process leading to revelation of truth or outcome (e.g., 图穷匕见)"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Reference, model, or fixed standard (e.g., 按图索骥)"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Learning, record, or accumulated knowledge (图 as 图史, 左图右史)"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on intention, strategy, and hidden motives behind actions"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Picture (图) linked to moral judgment, outcomes, and ethical evaluation"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association with classical learning, historical records, and prescribed methods"
+    },
+    {
+      "entity_en": "picture",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent cautionary sense: rigidity, scheming, or truth being exposed"
+    },
+    {
+      "entity_en": "deal",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Commercial exchange and market behavior: buying and selling activities governed by fairness, frequency, or profit-seeking (交易, 买卖)."
+    },
+    {
+      "entity_en": "deal",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral character and personal capacity: one’s tolerance, generosity, or ability to shoulder responsibility (量); symbolic or structural elements rather than negotiated processes (牌, 木)."
+    },
+    {
+      "entity_en": "deal",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and relational emphasis: idioms focus on personal virtue, tolerance, and social harmony rather than the mechanics of negotiation (宽宏大量, 量如江海)."
+    },
+    {
+      "entity_en": "deal",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Metaphorical concreteness: reliance on vivid physical or symbolic imagery (一锤子买卖, 一木难支, 牌) rather than abstract procedural terms."
+    },
+    {
+      "entity_en": "self",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Selfhood framed as something to be cultivated for collective harmony rather than individual expression"
+    },
+    {
+      "entity_en": "number",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Fate, order, or patterned regularity underlying events (implicit in classical usages of 数)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Use of ‘touch’ as a polite or socially softening metaphor (e.g., Keep in touch)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Agency and action through physical effort (手 as the executor of deeds and labor)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Power, control, or authority exercised through one’s hands (一手遮天, 一手包办)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Collective or chaotic action involving many people (七手八脚, 七脚八手)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Limited individual capacity versus cooperation (一手独拍，虽疾无声)"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Strong focus on hands as instruments of power, responsibility, and control"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent contrast between individual effort and collective action"
+    },
+    {
+      "entity_en": "touch",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and political overtones, where ‘hand’ symbolizes authority, manipulation, or dominance"
+    },
+    {
+      "entity_en": "trick",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Cunning, scheming, or manipulative tactics, frequently carrying a negative or morally cautious connotation"
+    },
+    {
+      "entity_en": "job",
+      "field": "english_unique_aspects",
+      "lang": "en",
+      "claim": "Focus on individual performance, efficiency, and outcome rather than social harmony"
+    },
+    {
+      "entity_en": "job",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Socially embedded work or duty, emphasizing stability, responsibility, and proper role fulfillment (e.g., 安居乐业, 例行差事)"
+    },
+    {
+      "entity_en": "job",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Assigned affairs or matters that carry moral judgment about character and competence (e.g., 胆小怕事, 败事有余，成事不足)"
+    },
+    {
+      "entity_en": "job",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Craftsmanship, effort, and moral attitude toward labor and skill (e.g., 偷工减料, 刻意求工)"
+    },
+    {
+      "entity_en": "job",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of work with moral character, social order, and life stability (安居乐业)"
+    },
+    {
+      "entity_en": "race",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Metaphorical extension of human effort or contribution across time (via 人种 in moral-historical idioms)"
+    },
+    {
+      "entity_en": "race",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Long-term, intergenerational perspective when linked with 人种, highlighting legacy and continuity"
+    },
+    {
+      "entity_en": "war",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Concrete military action emphasizing tactics, outcomes, and historical precedent"
+    },
+    {
+      "entity_en": "war",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Moral and strategic evaluation of war as dangerous, costly, and requiring restraint"
+    },
+    {
+      "entity_en": "war",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Collective survival, discipline, and preparedness, often tied to state stability"
+    },
+    {
+      "entity_en": "war",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Focus on outcomes over repeated engagements (victory, defeat, preparedness)"
+    },
+    {
+      "entity_en": "war",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Deep rooting in historical texts and statecraft philosophy rather than daily personal life"
+    },
+    {
+      "entity_en": "story",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Shift from narrative to concrete affairs or actions, where ‘事’ emphasizes practical outcomes rather than narration itself"
+    },
+    {
+      "entity_en": "story",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Clear hierarchy between official history and unofficial narrative, with stories occupying a marginal yet culturally meaningful space"
+    },
+    {
+      "entity_en": "story",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Use of ‘故事’ metaphorically to criticize bureaucratic formalism or empty compliance (虚应故事)"
+    },
+    {
+      "entity_en": "story",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of story-related terms with moral evaluation and historical consciousness rather than everyday conversational pragmatics"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Circular motion or cyclical process, often symbolized by 轮 (wheel) as an image of continuity and totality"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Mechanical or structural control points (the wheel as a key component that governs movement or power)"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Experience and craftsmanship accumulated over time (轮 as mastery gained through repetition)"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Scale, magnitude, or completeness (轮 used to imply entirety, abundance, or total annihilation)"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Heavy reliance on concrete imagery (wheel, axle, chariot) to convey abstract ideas"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association of turn/轮 with cosmic order, authority, and systemic control"
+    },
+    {
+      "entity_en": "turn",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Emphasis on accumulated skill, historical continuity, and total outcomes rather than momentary choice"
+    },
+    {
+      "entity_en": "roll",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Texts, learning, and cultural cultivation, symbolized by scrolls and books (卷)"
+    },
+    {
+      "entity_en": "roll",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Political power, central authority, and governance, symbolized by the axle or pivot (轴)"
+    },
+    {
+      "entity_en": "roll",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Totality and sweeping force, often in military or dramatic contexts (席卷)"
+    },
+    {
+      "entity_en": "roll",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Deep linkage to scholarship, moral cultivation, and respect for learning"
+    },
+    {
+      "entity_en": "roll",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Metaphorical use tied to hierarchical power structures and bureaucratic centrality"
+    },
+    {
+      "entity_en": "inch",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "将‘寸/尺’系统性地纳入哲学思维，用于表达辩证平衡与整体观"
+    },
+    {
+      "entity_en": "ring",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "circular form as a symbol of completeness, harmony, or balance (圆, 环)"
+    },
+    {
+      "entity_en": "load",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Transporting or being filled with something, leading to ideas of abundance or achievement (载, 满载而归)"
+    },
+    {
+      "entity_en": "load",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Time accumulation or duration measured metaphorically as a carried span (载 in 三年五载)"
+    },
+    {
+      "entity_en": "load",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Goods, wealth, or material value as objects of moral judgment (货 in 声色货利, 货真价实)"
+    },
+    {
+      "entity_en": "load",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association with time, endurance, and historical continuity"
+    },
+    {
+      "entity_en": "load",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Clear linkage between ‘load’ and material goods, wealth, and ethical evaluation of desire"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Concrete spatial ground or territory as a measure of scope, distance, or position (e.g., 一箭之地, 一隅之地)"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "The ground as the final state or consequence of success or failure (e.g., 一败涂地, 一乱涂地)"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Cosmic vertical contrast between heaven and earth expressing destiny or extremity (e.g., 上天入地, 上天无路，入地无门)"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent use of ‘地’ as an abstract grammatical-morphemic unit indicating degree, extent, or result"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral and existential weight attached to ‘ground’ as the ultimate consequence of action (often negative)"
+    },
+    {
+      "entity_en": "land",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Integration of land into a heaven–earth cosmology reflecting traditional worldview"
+    },
+    {
+      "entity_en": "call",
+      "field": "english_primary_meanings",
+      "lang": "en",
+      "claim": "judgment or decision-making under uncertainty (e.g., a close call, a tough call)"
+    },
+    {
+      "entity_en": "call",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "natural or aesthetic sound imagery when mapped via 鸟鸣 (e.g., 百啭千声), emphasizing harmony rather than command"
+    },
+    {
+      "entity_en": "call",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "aesthetic and poetic extension via nature imagery (birdsong) that is not command-based"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Measurement, cosmic order, or structural units when using 斗 (dipper, ladle, or constellation)"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Formality and abstraction, often detached from everyday domestic life"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_primary_meanings",
+      "lang": "zh",
+      "claim": "Futility or emptiness when the container is used improperly (e.g., 挹斗扬箕, 斗挹箕扬)"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Association with political legitimacy, cosmic order, and state stability"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Frequent linkage to classical cosmology, astronomy, and ritual measurement systems"
+    },
+    {
+      "entity_en": "bucket",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Moral or philosophical judgment embedded in idiomatic meaning"
+    },
+    {
+      "entity_en": "hammer",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Greater emotional and bodily expressiveness in figurative usage"
+    },
+    {
+      "entity_en": "hammer",
+      "field": "chinese_unique_aspects",
+      "lang": "zh",
+      "claim": "Conceptual blending of hammer-like tools (锤/槌) with axe (斧) to express moral critique"
+    }
+  ]
+}

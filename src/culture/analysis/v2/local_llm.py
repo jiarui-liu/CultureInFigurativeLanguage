@@ -17,7 +17,12 @@ CACHE_DIR = os.environ.get("LLM_CACHE_DIR", "/data/group_data/r3lit_culture_pret
 PRIMARY = os.environ.get("CULTURE_LLM_PRIMARY", "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-27B-FP8")
 SECOND = os.environ.get("CULTURE_LLM_SECOND", "/data/group_data/r3lit_culture_pretrain/models/Qwen/Qwen3.5-9B")
 THIRD = os.environ.get("CULTURE_LLM_THIRD", "/data/group_data/r3lit_culture_pretrain/models/CohereLabs/aya-expanse-8b")
-NAMES = {PRIMARY: "Qwen3.5-27B-FP8", SECOND: "Qwen3.5-9B", THIRD: "aya-expanse-8b"}
+# A fourth annotator that is both a different family from PRIMARY and of comparable
+# size, which THIRD (8B) is not: it separates "the categories are ambiguous" from
+# "the second annotator is simply weaker".
+FOURTH = os.environ.get("CULTURE_LLM_FOURTH", "google/gemma-4-26B-A4B-it")
+NAMES = {PRIMARY: "Qwen3.5-27B-FP8", SECOND: "Qwen3.5-9B", THIRD: "aya-expanse-8b",
+         FOURTH: "gemma-4-26B-A4B-it"}
 _llm = {}
 
 

@@ -1,0 +1,219 @@
+{
+  "method": "What layer of culture do idioms encode, and what layer do culture benchmarks test?\n\nThe paper argues that transfer between idioms and culture benchmarks is narrow because the two\nprobe different things: idioms carry a *symbolic and evaluative* layer (what an entity stands\nfor, who is admired or despised), while culture benchmarks mostly test *facts and practices*\n(what is eaten at a festival, which film a line comes from). That claim is currently asserted,\nnot measured. This script measures it.\n\nEvery item -- an idiom's figurative meaning, or a culture-benchmark question -- is classified by\nan LLM into one shared taxonomy, with a second model from a different family on a subsample for\nagreement. The output is a source x category distribution plus agreement stats.\n\n    PYTHONPATH=src:src/culture/analysis/v2 python culture_layer_taxonomy.py [--per_source N]\n",
+  "categories": {
+    "symbolic_evaluative": "What something stands for, connotes, or symbolizes; praise, blame, or moral judgement of a person, trait, or behaviour; whether a quality is admired or despised.",
+    "social_norm_relation": "How people are expected to behave toward one another: obligations, etiquette, hierarchy, kinship and social roles, politeness formulas.",
+    "material_practice": "Concrete customs and daily life: food, dress, festivals, rituals, ceremonies, household routines, games, occupations as practised.",
+    "factual_knowledge": "Facts about named things: history, geography, institutions, religious doctrine, named people, books, films, songs, places.",
+    "language_form": "Properties of language itself: spelling, grammar, dialect vocabulary, register, which wording is correct or idiomatic.",
+    "generic_pragmatic": "General life advice, physical or psychological common sense that is not specific to any one culture."
+  },
+  "per_source": 400,
+  "primary_model": "Qwen3.5-27B-FP8",
+  "second_model": "aya-expanse-8b",
+  "agreement_n": 0,
+  "agreement_raw": null,
+  "unparsed": {},
+  "by_source": {
+    "Idioms (en)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.2375,
+        "social_norm_relation": 0.0225,
+        "material_practice": 0.025,
+        "factual_knowledge": 0.0475,
+        "language_form": 0.6325,
+        "generic_pragmatic": 0.035
+      },
+      "counts": {
+        "symbolic_evaluative": 95,
+        "social_norm_relation": 9,
+        "material_practice": 10,
+        "factual_knowledge": 19,
+        "language_form": 253,
+        "generic_pragmatic": 14
+      },
+      "symbolic_or_normative": 0.26
+    },
+    "Idioms (zh)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.625,
+        "social_norm_relation": 0.0075,
+        "material_practice": 0.01,
+        "factual_knowledge": 0.2125,
+        "language_form": 0.1425,
+        "generic_pragmatic": 0.0025
+      },
+      "counts": {
+        "symbolic_evaluative": 250,
+        "social_norm_relation": 3,
+        "material_practice": 4,
+        "factual_knowledge": 85,
+        "language_form": 57,
+        "generic_pragmatic": 1
+      },
+      "symbolic_or_normative": 0.6325
+    },
+    "Idioms (hi)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.8425,
+        "social_norm_relation": 0.0425,
+        "material_practice": 0.06,
+        "factual_knowledge": 0.0375,
+        "language_form": 0.005,
+        "generic_pragmatic": 0.0125
+      },
+      "counts": {
+        "symbolic_evaluative": 337,
+        "social_norm_relation": 17,
+        "material_practice": 24,
+        "factual_knowledge": 15,
+        "language_form": 2,
+        "generic_pragmatic": 5
+      },
+      "symbolic_or_normative": 0.885
+    },
+    "Idioms (ar)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.74,
+        "social_norm_relation": 0.055,
+        "material_practice": 0.0425,
+        "factual_knowledge": 0.085,
+        "language_form": 0.075,
+        "generic_pragmatic": 0.0025
+      },
+      "counts": {
+        "symbolic_evaluative": 296,
+        "social_norm_relation": 22,
+        "material_practice": 17,
+        "factual_knowledge": 34,
+        "language_form": 30,
+        "generic_pragmatic": 1
+      },
+      "symbolic_or_normative": 0.795
+    },
+    "ArabCulture": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.03,
+        "social_norm_relation": 0.1025,
+        "material_practice": 0.795,
+        "factual_knowledge": 0.05,
+        "language_form": 0.0125,
+        "generic_pragmatic": 0.01
+      },
+      "counts": {
+        "symbolic_evaluative": 12,
+        "social_norm_relation": 41,
+        "material_practice": 318,
+        "factual_knowledge": 20,
+        "language_form": 5,
+        "generic_pragmatic": 4
+      },
+      "symbolic_or_normative": 0.1325
+    },
+    "Alyah": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.2775,
+        "social_norm_relation": 0.1925,
+        "material_practice": 0.2625,
+        "factual_knowledge": 0.0875,
+        "language_form": 0.18,
+        "generic_pragmatic": 0.0
+      },
+      "counts": {
+        "symbolic_evaluative": 111,
+        "social_norm_relation": 77,
+        "material_practice": 105,
+        "factual_knowledge": 35,
+        "language_form": 72,
+        "generic_pragmatic": 0
+      },
+      "symbolic_or_normative": 0.47
+    },
+    "DziriEval": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.21,
+        "social_norm_relation": 0.0075,
+        "material_practice": 0.1675,
+        "factual_knowledge": 0.53,
+        "language_form": 0.0825,
+        "generic_pragmatic": 0.0025
+      },
+      "counts": {
+        "symbolic_evaluative": 84,
+        "social_norm_relation": 3,
+        "material_practice": 67,
+        "factual_knowledge": 212,
+        "language_form": 33,
+        "generic_pragmatic": 1
+      },
+      "symbolic_or_normative": 0.2175
+    },
+    "ArabicCulturalQA": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.0125,
+        "social_norm_relation": 0.0575,
+        "material_practice": 0.1375,
+        "factual_knowledge": 0.79,
+        "language_form": 0.0025,
+        "generic_pragmatic": 0.0
+      },
+      "counts": {
+        "symbolic_evaluative": 5,
+        "social_norm_relation": 23,
+        "material_practice": 55,
+        "factual_knowledge": 316,
+        "language_form": 1,
+        "generic_pragmatic": 0
+      },
+      "symbolic_or_normative": 0.07
+    },
+    "MILU (hi)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.005,
+        "social_norm_relation": 0.0275,
+        "material_practice": 0.025,
+        "factual_knowledge": 0.8075,
+        "language_form": 0.105,
+        "generic_pragmatic": 0.03
+      },
+      "counts": {
+        "symbolic_evaluative": 2,
+        "social_norm_relation": 11,
+        "material_practice": 10,
+        "factual_knowledge": 323,
+        "language_form": 42,
+        "generic_pragmatic": 12
+      },
+      "symbolic_or_normative": 0.0325
+    },
+    "CCPM (zh)": {
+      "n": 400,
+      "shares": {
+        "symbolic_evaluative": 0.03,
+        "social_norm_relation": 0.0025,
+        "material_practice": 0.01,
+        "factual_knowledge": 0.53,
+        "language_form": 0.4275,
+        "generic_pragmatic": 0.0
+      },
+      "counts": {
+        "symbolic_evaluative": 12,
+        "social_norm_relation": 1,
+        "material_practice": 4,
+        "factual_knowledge": 212,
+        "language_form": 171,
+        "generic_pragmatic": 0
+      },
+      "symbolic_or_normative": 0.0325
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "method": "Does the Section-4 analysis predict the Section-5 training outcome?\n\nSections 4 and 5 of the paper currently stand side by side without touching: Section 4 measures\nhow far apart two languages place the same entity, Section 5 measures what continued pretraining\nchanges, and nothing links them. This script links them, entity by entity.\n\nThe symbolism probe stores, for every item, the entity it is about and whether the model chose\nthe English-associated distractor (the \"lure\"). Section 4 gives, for many of the same entities, a\nprompt-independent cross-language divergence and an LLM count of shared vs culture-specific\naspects. Joining the two answers three questions:\n\n  1. Are entities that diverge more across languages the ones on which a model defaults to the\n     English association?\n  2. Does idiom-centered training help more on exactly those entities?\n  3. Which semantic types (animals, body parts, ...) drive both effects?\n\nEverything here reads already-computed artefacts; no LLM or GPU is needed.\n\n    PYTHONPATH=src:src/culture/analysis/v2 python analysis_to_training_bridge.py\n",
+  "n_entities_with_divergence": 327,
+  "n_entities_typed": 4745,
+  "languages": {
+    "zh": {
+      "arms_present": [
+        "base",
+        "culture",
+        "idiom_untagged",
+        "random"
+      ],
+      "divergence_vs_lure_margin": {
+        "n": 90,
+        "spearman": -0.0467,
+        "p_perm": 0.66413,
+        "note": "negative rho = more divergent entities are harder (smaller gold-lure margin)"
+      },
+      "divergence_vs_lure_pick": {
+        "n": 90,
+        "spearman": 0.1006,
+        "p_perm": 0.34607
+      },
+      "divergence_vs_accuracy": {
+        "n": 90,
+        "spearman": -0.0133,
+        "p_perm": 0.89601
+      },
+      "lure_margin_by_divergence_tertile": {
+        "low": {
+          "n": 30,
+          "margin": 0.9407,
+          "ci95": [
+            0.5442,
+            1.3533
+          ]
+        },
+        "mid": {
+          "n": 30,
+          "margin": 0.8908,
+          "ci95": [
+            0.5191,
+            1.2778
+          ]
+        },
+        "high": {
+          "n": 30,
+          "margin": 0.6968,
+          "ci95": [
+            0.2989,
+            1.0673
+          ]
+        }
+      },
+      "divergence_vs_margin_change_idiom_untagged": {
+        "n": 90,
+        "spearman": 0.1434,
+        "p_perm": 0.17598,
+        "mean_margin_change": 0.0072,
+        "ci95": [
+          -0.0305,
+          0.0432
+        ]
+      },
+      "divergence_vs_margin_change_culture": {
+        "n": 90,
+        "spearman": -0.001,
+        "p_perm": 0.9915,
+        "mean_margin_change": 0.024,
+        "ci95": [
+          -0.0293,
+          0.0769
+        ]
+      },
+      "by_semantic_type": {
+        "abstract_other": {
+          "n_entities": 28,
+          "lure_margin": 0.8137,
+          "lure_margin_ci95": [
+            0.5125,
+            1.1381
+          ],
+          "lure_rate": 0.0357,
+          "accuracy": 0.4643,
+          "divergence": 0.1522,
+          "n_with_divergence": 23
+        },
+        "animal": {
+          "n_entities": 17,
+          "lure_margin": 0.4511,
+          "lure_margin_ci95": [
+            -0.204,
+            1.0835
+          ],
+          "lure_rate": 0.2353,
+          "accuracy": 0.4118,
+          "divergence": 0.1421,
+          "n_with_divergence": 12
+        },
+        "artefact_household": {
+          "n_entities": 23,
+          "lure_margin": 1.3787,
+          "lure_margin_ci95": [
+            0.8012,
+            1.9342
+          ],
+          "lure_rate": 0.0435,
+          "accuracy": 0.4783,
+          "divergence": 0.1358,
+          "n_with_divergence": 17
+        },
+        "body_mind": {
+          "n_entities": 18,
+          "lure_margin": 0.4281,
+          "lure_margin_ci95": [
+            -0.0614,
+            0.9831
+          ],
+          "lure_rate": 0.1111,
+          "accuracy": 0.2222,
+          "divergence": 0.1295,
+          "n_with_divergence": 16
+        },
+        "food_drink": {
+          "n_entities": 6,
+          "lure_margin": 0.4932,
+          "lure_margin_ci95": [
+            -0.1455,
+            1.0459
+          ],
+          "lure_rate": 0.3333,
+          "accuracy": 0.3333,
+          "divergence": 0.1443,
+          "n_with_divergence": 6
+        },
+        "kinship_social": {
+          "n_entities": 3,
+          "lure_margin": 1.4422,
+          "lure_margin_ci95": [
+            0.8196,
+            2.5128
+          ],
+          "lure_rate": 0.0,
+          "accuracy": 1.0,
+          "divergence": 0.1286,
+          "n_with_divergence": 3
+        },
+        "nature_cosmos": {
+          "n_entities": 13,
+          "lure_margin": 1.3295,
+          "lure_margin_ci95": [
+            0.892,
+            1.7738
+          ],
+          "lure_rate": 0.0,
+          "accuracy": 0.7692,
+          "divergence": 0.1552,
+          "n_with_divergence": 12
+        }
+      }
+    },
+    "ar": {
+      "arms_present": [
+        "base",
+        "culture",
+        "random"
+      ],
+      "divergence_vs_lure_margin": {
+        "n": 20,
+        "spearman": -0.2858,
+        "p_perm": 0.22318,
+        "note": "negative rho = more divergent entities are harder (smaller gold-lure margin)"
+      },
+      "divergence_vs_lure_pick": {
+        "n": 20,
+        "spearman": 0.0,
+        "p_perm": 1.0
+      },
+      "divergence_vs_accuracy": {
+        "n": 20,
+        "spearman": -0.0663,
+        "p_perm": 0.79712
+      },
+      "lure_margin_by_divergence_tertile": {
+        "low": {
+          "n": 7,
+          "margin": 0.7908,
+          "ci95": [
+            0.1023,
+            1.2192
+          ]
+        },
+        "mid": {
+          "n": 6,
+          "margin": -0.1519,
+          "ci95": [
+            -1.2648,
+            0.9343
+          ]
+        },
+        "high": {
+          "n": 7,
+          "margin": 0.1102,
+          "ci95": [
+            -0.564,
+            0.6166
+          ]
+        }
+      },
+      "divergence_vs_margin_change_culture": {
+        "n": 20,
+        "spearman": -0.2866,
+        "p_perm": 0.21638,
+        "mean_margin_change": -0.0519,
+        "ci95": [
+          -0.1368,
+          0.0295
+        ]
+      },
+      "by_semantic_type": {
+        "abstract_other": {
+          "n_entities": 11,
+          "lure_margin": 0.217,
+          "lure_margin_ci95": [
+            -0.4146,
+            0.8374
+          ],
+          "lure_rate": 0.2727,
+          "accuracy": 0.3636,
+          "divergence": 0.164,
+          "n_with_divergence": 3
+        },
+        "animal": {
+          "n_entities": 5,
+          "lure_margin": 1.4295,
+          "lure_margin_ci95": [
+            0.111,
+            2.7721
+          ],
+          "lure_rate": 0.0,
+          "accuracy": 0.4,
+          "divergence": 0.0904,
+          "n_with_divergence": 1
+        },
+        "artefact_household": {
+          "n_entities": 3,
+          "lure_margin": -0.0106,
+          "lure_margin_ci95": [
+            -0.7892,
+            1.0553
+          ],
+          "lure_rate": 0.3333,
+          "accuracy": 0.0,
+          "divergence": 0.1111,
+          "n_with_divergence": 2
+        },
+        "body_mind": {
+          "n_entities": 7,
+          "lure_margin": 0.0381,
+          "lure_margin_ci95": [
+            -0.4767,
+            0.5454
+          ],
+          "lure_rate": 0.1429,
+          "accuracy": 0.0,
+          "divergence": 0.1333,
+          "n_with_divergence": 4
+        },
+        "kinship_social": {
+          "n_entities": 5,
+          "lure_margin": 0.7515,
+          "lure_margin_ci95": [
+            0.1179,
+            1.3852
+          ],
+          "lure_rate": 0.0,
+          "accuracy": 0.4,
+          "divergence": 0.1573,
+          "n_with_divergence": 2
+        },
+        "nature_cosmos": {
+          "n_entities": 12,
+          "lure_margin": 0.0005,
+          "lure_margin_ci95": [
+            -0.6616,
+            0.6354
+          ],
+          "lure_rate": 0.1667,
+          "accuracy": 0.3333,
+          "divergence": 0.1136,
+          "n_with_divergence": 7
+        }
+      }
+    }
+  },
+  "zh_unique_aspects_vs_lure_margin": {
+    "n": 110,
+    "spearman": 0.0174,
+    "p_perm": 0.85081
+  }
+}

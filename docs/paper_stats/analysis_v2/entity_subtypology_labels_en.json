@@ -1,0 +1,6342 @@
+{
+  "time": {
+    "subtype": "time_change",
+    "mentions": 185
+  },
+  "word": {
+    "subtype": "speech_name",
+    "mentions": 118
+  },
+  "life": {
+    "subtype": "life_death_fate",
+    "mentions": 82
+  },
+  "line": {
+    "subtype": "quantity_space",
+    "mentions": 81
+  },
+  "end": {
+    "subtype": "time_change",
+    "mentions": 56
+  },
+  "side": {
+    "subtype": "quantity_space",
+    "mentions": 53
+  },
+  "point": {
+    "subtype": "quantity_space",
+    "mentions": 47
+  },
+  "shit": {
+    "subtype": "residual_other",
+    "mentions": 47
+  },
+  "death": {
+    "subtype": "life_death_fate",
+    "mentions": 42
+  },
+  "top": {
+    "subtype": "quantity_space",
+    "mentions": 41
+  },
+  "chance": {
+    "subtype": "life_death_fate",
+    "mentions": 39
+  },
+  "game": {
+    "subtype": "action_conflict",
+    "mentions": 38
+  },
+  "step": {
+    "subtype": "quantity_space",
+    "mentions": 34
+  },
+  "piece": {
+    "subtype": "residual_other",
+    "mentions": 32
+  },
+  "act": {
+    "subtype": "action_conflict",
+    "mentions": 32
+  },
+  "love": {
+    "subtype": "residual_other",
+    "mentions": 32
+  },
+  "luck": {
+    "subtype": "life_death_fate",
+    "mentions": 30
+  },
+  "shot": {
+    "subtype": "action_conflict",
+    "mentions": 29
+  },
+  "case": {
+    "subtype": "action_conflict",
+    "mentions": 29
+  },
+  "it": {
+    "subtype": "residual_other",
+    "mentions": 29
+  },
+  "year": {
+    "subtype": "time_change",
+    "mentions": 28
+  },
+  "name": {
+    "subtype": "speech_name",
+    "mentions": 28
+  },
+  "tune": {
+    "subtype": "residual_other",
+    "mentions": 28
+  },
+  "law": {
+    "subtype": "morality_truth",
+    "mentions": 27
+  },
+  "trouble": {
+    "subtype": "action_conflict",
+    "mentions": 26
+  },
+  "story": {
+    "subtype": "speech_name",
+    "mentions": 25
+  },
+  "minute": {
+    "subtype": "time_change",
+    "mentions": 24
+  },
+  "account": {
+    "subtype": "speech_name",
+    "mentions": 24
+  },
+  "war": {
+    "subtype": "action_conflict",
+    "mentions": 24
+  },
+  "weight": {
+    "subtype": "quantity_space",
+    "mentions": 23
+  },
+  "number": {
+    "subtype": "quantity_space",
+    "mentions": 22
+  },
+  "edge": {
+    "subtype": "quantity_space",
+    "mentions": 22
+  },
+  "trick": {
+    "subtype": "action_conflict",
+    "mentions": 22
+  },
+  "moment": {
+    "subtype": "time_change",
+    "mentions": 22
+  },
+  "nothing": {
+    "subtype": "residual_other",
+    "mentions": 21
+  },
+  "matter": {
+    "subtype": "residual_other",
+    "mentions": 21
+  },
+  "dream": {
+    "subtype": "residual_other",
+    "mentions": 21
+  },
+  "mark": {
+    "subtype": "speech_name",
+    "mentions": 20
+  },
+  "crack": {
+    "subtype": "action_conflict",
+    "mentions": 20
+  },
+  "age": {
+    "subtype": "time_change",
+    "mentions": 20
+  },
+  "hope": {
+    "subtype": "residual_other",
+    "mentions": 20
+  },
+  "one": {
+    "subtype": "residual_other",
+    "mentions": 20
+  },
+  "mile": {
+    "subtype": "quantity_space",
+    "mentions": 19
+  },
+  "truth": {
+    "subtype": "morality_truth",
+    "mentions": 19
+  },
+  "walk": {
+    "subtype": "action_conflict",
+    "mentions": 19
+  },
+  "sake": {
+    "subtype": "residual_other",
+    "mentions": 19
+  },
+  "turn": {
+    "subtype": "time_change",
+    "mentions": 19
+  },
+  "break": {
+    "subtype": "life_death_fate",
+    "mentions": 18
+  },
+  "call": {
+    "subtype": "life_death_fate",
+    "mentions": 18
+  },
+  "fact": {
+    "subtype": "morality_truth",
+    "mentions": 17
+  },
+  "question": {
+    "subtype": "speech_name",
+    "mentions": 17
+  },
+  "power": {
+    "subtype": "action_conflict",
+    "mentions": 17
+  },
+  "corner": {
+    "subtype": "quantity_space",
+    "mentions": 17
+  },
+  "doubt": {
+    "subtype": "morality_truth",
+    "mentions": 15
+  },
+  "bit": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "load": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "lot": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "mess": {
+    "subtype": "residual_other",
+    "mentions": 15
+  },
+  "show": {
+    "subtype": "action_conflict",
+    "mentions": 15
+  },
+  "attention": {
+    "subtype": "residual_other",
+    "mentions": 15
+  },
+  "inch": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "part": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "shadow": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "self": {
+    "subtype": "residual_other",
+    "mentions": 14
+  },
+  "figure": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "course": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "good": {
+    "subtype": "morality_truth",
+    "mentions": 14
+  },
+  "battle": {
+    "subtype": "action_conflict",
+    "mentions": 14
+  },
+  "note": {
+    "subtype": "speech_name",
+    "mentions": 14
+  },
+  "joke": {
+    "subtype": "speech_name",
+    "mentions": 14
+  },
+  "purpose": {
+    "subtype": "action_conflict",
+    "mentions": 14
+  },
+  "run": {
+    "subtype": "action_conflict",
+    "mentions": 13
+  },
+  "spot": {
+    "subtype": "quantity_space",
+    "mentions": 13
+  },
+  "bundle": {
+    "subtype": "quantity_space",
+    "mentions": 13
+  },
+  "term": {
+    "subtype": "speech_name",
+    "mentions": 13
+  },
+  "dozen": {
+    "subtype": "quantity_space",
+    "mentions": 13
+  },
+  "shape": {
+    "subtype": "quantity_space",
+    "mentions": 13
+  },
+  "hour": {
+    "subtype": "time_change",
+    "mentions": 12
+  },
+  "balance": {
+    "subtype": "quantity_space",
+    "mentions": 12
+  },
+  "action": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "loss": {
+    "subtype": "life_death_fate",
+    "mentions": 12
+  },
+  "color": {
+    "subtype": "residual_other",
+    "mentions": 12
+  },
+  "wonder": {
+    "subtype": "time_change",
+    "mentions": 12
+  },
+  "lie": {
+    "subtype": "morality_truth",
+    "mentions": 12
+  },
+  "state": {
+    "subtype": "residual_other",
+    "mentions": 12
+  },
+  "peace": {
+    "subtype": "life_death_fate",
+    "mentions": 12
+  },
+  "cover": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "spirit": {
+    "subtype": "life_death_fate",
+    "mentions": 12
+  },
+  "stuff": {
+    "subtype": "residual_other",
+    "mentions": 12
+  },
+  "difference": {
+    "subtype": "residual_other",
+    "mentions": 11
+  },
+  "right": {
+    "subtype": "morality_truth",
+    "mentions": 11
+  },
+  "ride": {
+    "subtype": "action_conflict",
+    "mentions": 11
+  },
+  "opinion": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "stroke": {
+    "subtype": "action_conflict",
+    "mentions": 11
+  },
+  "tale": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "talk": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "guess": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "something else": {
+    "subtype": "residual_other",
+    "mentions": 11
+  },
+  "view": {
+    "subtype": "quantity_space",
+    "mentions": 11
+  },
+  "habit": {
+    "subtype": "action_conflict",
+    "mentions": 11
+  },
+  "fight": {
+    "subtype": "action_conflict",
+    "mentions": 11
+  },
+  "circle": {
+    "subtype": "quantity_space",
+    "mentions": 11
+  },
+  "shake": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "length": {
+    "subtype": "quantity_space",
+    "mentions": 10
+  },
+  "song": {
+    "subtype": "speech_name",
+    "mentions": 10
+  },
+  "play": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "flash": {
+    "subtype": "time_change",
+    "mentions": 10
+  },
+  "move": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "row": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "miss": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "pack": {
+    "subtype": "speech_name",
+    "mentions": 10
+  },
+  "opportunity": {
+    "subtype": "time_change",
+    "mentions": 10
+  },
+  "rank": {
+    "subtype": "quantity_space",
+    "mentions": 10
+  },
+  "bump": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "race": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "front": {
+    "subtype": "quantity_space",
+    "mentions": 10
+  },
+  "change": {
+    "subtype": "time_change",
+    "mentions": 9
+  },
+  "sign": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "justice": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "scene": {
+    "subtype": "quantity_space",
+    "mentions": 9
+  },
+  "stage": {
+    "subtype": "time_change",
+    "mentions": 9
+  },
+  "buzz": {
+    "subtype": "action_conflict",
+    "mentions": 9
+  },
+  "crap": {
+    "subtype": "residual_other",
+    "mentions": 9
+  },
+  "reason": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "goodness": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "rest": {
+    "subtype": "action_conflict",
+    "mentions": 9
+  },
+  "stock": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "pride": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "idea": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "go": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "streak": {
+    "subtype": "time_change",
+    "mentions": 8
+  },
+  "force": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "store": {
+    "subtype": "time_change",
+    "mentions": 8
+  },
+  "favor": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "rule": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "compliment": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "silence": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "leap": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "circumstance": {
+    "subtype": "life_death_fate",
+    "mentions": 8
+  },
+  "courage": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "murder": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "best": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "hoot": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "evil": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "dance": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "form": {
+    "subtype": "quantity_space",
+    "mentions": 8
+  },
+  "language": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "pardon": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "problem": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "hold": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "pair": {
+    "subtype": "quantity_space",
+    "mentions": 7
+  },
+  "stab": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "grace": {
+    "subtype": "morality_truth",
+    "mentions": 7
+  },
+  "stink": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "start": {
+    "subtype": "time_change",
+    "mentions": 7
+  },
+  "practice": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "jump": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "laugh": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "date": {
+    "subtype": "time_change",
+    "mentions": 7
+  },
+  "pace": {
+    "subtype": "time_change",
+    "mentions": 7
+  },
+  "cry": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "test": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "secret": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "rate": {
+    "subtype": "quantity_space",
+    "mentions": 7
+  },
+  "sex": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "blast": {
+    "subtype": "time_change",
+    "mentions": 7
+  },
+  "drain": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "record": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "half": {
+    "subtype": "quantity_space",
+    "mentions": 7
+  },
+  "fit": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "music": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "blow": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "cop": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "pitch": {
+    "subtype": "quantity_space",
+    "mentions": 7
+  },
+  "charge": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "order": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "hit": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "trial": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "down": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "kind": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "advantage": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "risk": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "scratch": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "base": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "dot": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "degree": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "pressure": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "bang": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "shame": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "conclusion": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "heap": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "stop": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "slice": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "amount": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "distance": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "notice": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "event": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "news": {
+    "subtype": "speech_name",
+    "mentions": 6
+  },
+  "size": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "plan": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "bubble": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "joy": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "bound": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "middle": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "charm": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "trump": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "crime": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "praise": {
+    "subtype": "speech_name",
+    "mentions": 6
+  },
+  "duty": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "object": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "noise": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "fuck": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "rise": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "loop": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "cool": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "beat": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "bend": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "condition": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "health": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "limit": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "good thing": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "control": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "element": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "patience": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "sort": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "cut": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "fate": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "sport": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "week": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "par": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "curve": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "ounce": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "tomorrow": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "worst": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "stand": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "last": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "trot": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "ballpark": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "band": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "grudge": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "draw": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "rap": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "blank": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "plot": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "motion": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "list": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "character": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "league": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "choice": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "subject": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "clutch": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "pass": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "position": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "style": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "detail": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "experience": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "glow": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "level": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "impression": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "slip": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "benefit": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "revenge": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "well": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "history": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "effect": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "fall": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "going": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "regard": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "honor": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "strength": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "claim": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "blame": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "necessity": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "verge": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "parade": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "month": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "hard time": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "promise": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "perspective": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "whack": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "effort": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "loose end": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "count": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "file": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "huff": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "swing": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "stretch": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "red": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "ton": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "stir": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "speed": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "proof": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "blot": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "bunch": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "bushel": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "holiday": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "victory": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "lifetime": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "cause": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "study": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "wedding": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "token": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "fray": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "jazz": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "art": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "dead end": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "mercy": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "service": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "hundred": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "retreat": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "surface": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "jig": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "reel": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "measure": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "demand": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "anger": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "gosh": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "virtue": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "message": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "kill": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "territory": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "zone": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "burn": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "slack": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "drunk": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "disease": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "medium": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "hint": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "example": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "my french": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "wisdom": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "fault": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "pity": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "fun": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "time of day": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "ruin": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "haste": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "waste": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "ignorance": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "accord": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "cahoot": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "respect": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "mum": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "turd": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "lecture": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "number one": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "reality": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "misery": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "poverty": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "squeeze": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "skim": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "space": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "liberty": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "wear": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "square": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "tango": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "present": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "crush": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "dose": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "fix": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "try": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "suspicion": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "clip": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "dump": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "groove": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "swim": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "trust": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "method": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "kilter": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "good side": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "drove": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "depth": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "blues": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "say": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "hang": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "runaround": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "image": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "strike": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "skidoo": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "ball game": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "beauty": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "description": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "burning question": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "shave": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "information": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "breadth": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "legend": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "playing field": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "meeting": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "genius": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "damage": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "accident": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "birth": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "insult": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "rodeo": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "discretion": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "prevention": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "cure": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "toss": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "decision": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "disposal": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "fair": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "thousand": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "illusion": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "brunt": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "odds": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "past": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "science": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "prize": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "purple": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "relief": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "boil": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "close": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "brood": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "pick": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "syndrome": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "comfort": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "contact": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "wash": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "task": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "comedy": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "attitude": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "strain": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "set": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "care": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "manner": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "homework": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "i": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "t": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "chat": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "fiction": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "share": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "goal": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "lust": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "intent": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "giggle": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "want": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "issue": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "tilt": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "variety": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "clue": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "mileage": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "first base": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "heed": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "pause": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "dig": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "tat": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "flow": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "defeat": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "direction": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "traffic": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "pleasure": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "factor": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "all": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "hem": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "haw": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "hindsight": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "second": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "pattern": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "leisure": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "bliss": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "ease": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "snap": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "agreement": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "odor": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "jeopardy": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "jest": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "swoop": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "prime": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "spite": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "luxury": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "leak": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "dark side": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "nonsense": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "waterloo": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "gain": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "dixie": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "success": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "avail": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "stripe": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "occasion": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "consideration": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "affair": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "riot act": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "march": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "dimension": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "caution": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "need": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "brand": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "up": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "ringer": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "licking": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "turning point": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "about-face": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "inkling": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "offer": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "quantity": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "circulation": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "someone’s time": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "repair": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "carte blanche": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "envy": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "mood": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "bind": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "family way": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "lather": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "focus": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "limbo": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "orbit": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "topic": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "first-name basis": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "errand": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "wrong side": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "fill": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "second wind": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "context": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "harm": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "heave-ho": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "brush-off": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "creep": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "disguise": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "five": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "catch": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "chunk": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "giveaway": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "disaster": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "drag": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "drawing card": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "freeze": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "punishment": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "hop": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "skip": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "hue": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "hush": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "knowledge": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "learning": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "relationship": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "marriage": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "mite": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "lease": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "scream": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "riot": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "rush": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "absence": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "value": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "fashion": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "hollow": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "sweetness": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "theory": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "appearance": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "polish": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "resort": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "hazard": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "odd": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "beck": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "forefront": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "height": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "outset": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "zenith": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "square one": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "grind": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "beauty contest": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "dignity": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "energy": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "happiness": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "scrape": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "gap": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "prominence": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "climax": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "fruition": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "rage": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "burden": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "plunge": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "dint": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "bluff": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "culture": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "whit": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "aspersion": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "fade": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "charity": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "phrase": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "treatment": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "sticky end": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "impasse": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "understanding": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "grief": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "error": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "lift": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ten": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "conviction": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "courtesy": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "uproar": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "appeal": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "z": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "dive": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "desire": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "remedy": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "dibs": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "flip-flop": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "utmost": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "vengeance": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "continental": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "second thought": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "ceremony": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "doozy": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "fine art": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "sometime": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "sorrow": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "echo": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "surprise": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "eleventh hour": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "little bit": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "alarm": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "finishing touch": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "instance": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "heck": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "being": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "substance": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "freak": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "friendship": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "a": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "sublime": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ridiculous": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "union": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "nitty-gritty": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "pluck": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "spunk": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "dander": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "drift": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "go-by": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "damn": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "whirl": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "quarter": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "berth": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "gloss": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "hollywood": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "pledge": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "nosedive": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "riddance": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "trip": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "some place": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "landing": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "command": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "rough time": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "impact": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "tow": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "hot": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "making": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "happy medium": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "sour note": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "activity": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "reserve": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "honesty": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "policy": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "breach": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "puff": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "hum": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "sound": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "excuse": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "flux": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "addition": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "white": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "concert": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "creation": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "denial": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "essence": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "fear": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "analysis": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "haul": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "wrong": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "syllable": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "in": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "out": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "scoop": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "quarrel": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "toss-up": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "jot": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "tittle": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "option": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "good work": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "fuss": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "killing": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "angle": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "shinola": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "hurrah": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "roundup": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "libel": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "bright side": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "train of thought": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "headway": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "comeback": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "laughingstock": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "mockery": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "splash": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "advance": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "amend": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "mission": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "mount": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ado": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "vacuum": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "invention": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "but": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "comment": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "foul": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "answer": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "snuff": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "shoot": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "average": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "behalf": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "cue": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "target": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "cusp": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "cutting edge": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "fringe": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "make": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "uptake": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "bond": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "criticism": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "reach": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "running": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "pad": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "pep": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "sailing": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "role": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "havoc": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "possession": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "grab": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "progress": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "kibosh": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "delight": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "rhyme": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "challenge": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "tumble": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "knock": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "coventry": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "campaign": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "hunt": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "snoop": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "denmark": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "stead": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "fancy": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "swipe": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "dim view": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "aim": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "exception": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "leave": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "offense": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "meaning": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "face value": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "bitter": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "sweet": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "initiative": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "rough": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "smooth": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "scenario": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "true love": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "shebang": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "shooting match": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "wish": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "accounting": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "wobbly": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "extent": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "content": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "tug": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "influence": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "period": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "woe": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "while": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "x": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "good time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "nice time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "nevermind": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "beauty sleep": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "foolishness": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "neighborhood": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "household word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "low profile": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "lucky streak": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "shellacking": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "streak of luck": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "tall order": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "whiff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "schedule": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "all-out effort": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "even break": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "help": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "quandary": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tizzy": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "vicious circle": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "interesting condition": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "earnest": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "harmony": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "mint condition": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "plain english": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "plain language": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "nick": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "mainstream": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "nude": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "vogue": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "power trip": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "large number": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "proportion": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "wack": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "small blessing": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "benefit of the doubt": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "best of both worlds": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "best of someone": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "better of someone": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "big picture": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "bum’s rush": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "crux of the matter": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "driving force": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "lowdown": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "race card": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "good behavior": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "deadline": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "breakdown": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "bad excuse": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ballpark figure": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "bevy": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ask": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "fluff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "boon": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "bane": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "contradiction": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "dirty word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "whammy": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dressing-down": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dust bunny": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "dust kitten": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "far cry": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "fast one": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "feeding frenzy": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "fighting chance": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "final fling": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "state of affairs": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "fishing expedition": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "golden opportunity": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "gray area": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "growth experience": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "growth opportunity": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "harbinger": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "agenda": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "hotbed": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "percent": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "learning experience": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "column a": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "column b": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "white lie": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "give-and-take": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "marvel": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "mell": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "hess": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "trifle": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "middle ground": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "someone’s life": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "miscarriage": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "operation": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "multitude": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "parting": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "portent": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "power play": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "prelude": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "fixture": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "excitement": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "protest": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "rounding error": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "royal pain": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "seven-day wonder": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "shady deal": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "smash hit": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "smear campaign": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "sure thing": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "gesture": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "toss up": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "travesty of justice": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "turn of fate": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "twist of fate": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "vote of confidence": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "vote of thanks": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "waste of space": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "week from next tuesday": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "politics": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "reproach": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "injury": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "title": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "attribute": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "airheadedness": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "excursion": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "smash": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "alpha": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "omega": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "alphabet": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "also-ran": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ancient history": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "a fact": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "eating": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "discord": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "argument": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "room temperature": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "canter": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "gallop": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "most": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "earliest convenience": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "outside": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "variance": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "autumn romance": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "avant-garde": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "escape": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "estimate": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "banbury": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "barnet": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "item": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "banaghan": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "beauty parade": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "contempt": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "splice": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "project": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "emotional response": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "pale": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "big talk": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "passage": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "desguise": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "googly": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "cycle": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "brevity": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "brightness": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "disrepute": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "standstill": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "successful conclusion": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "a game": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "indignation": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "session": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "bungle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "lede": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "flush": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "big one": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "buzzkill": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "coincidence": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "vice": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "audible": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "quit": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "callout": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "carbon footprint": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "diem": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "some time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "meow": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "nap": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "catch-22": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "caucus": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "time warp": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "crossfire": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "commotion": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "cave-in": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "accomplishment": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "assassination": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "charm offensive": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "charmed life": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "that": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "rugby": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "warning": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "torture": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "civility": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "cleanliness": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "publication": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "click bait": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "clusterfuck": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "cropper": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "good place": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "one's own": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "one’s or its own": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "second best": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "blue": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "mention": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "naught": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "nought": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "expectation": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "standard": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "performance": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "plea": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "instruction": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "examination": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "crapshoot": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "crash": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "crux": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "swath": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "dash": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wide swath": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "class": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "funny stuff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "association": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "judgement": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "destiny": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "yore": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "leveler": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "deathbed conversion": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "debate": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "deep cut": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "deep dive": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "deep six": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "delay": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "hindmost": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "digital courage": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "diligence": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "good luck": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "din": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "flu": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "valor": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "valour": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "uganda": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "tunbridge wells": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "enchantment": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "dirty work": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "bunk": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "double take": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "one-eighty": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "slow burn": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "takeoff": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "three-sixty": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "cartwheel": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "favour": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wrath": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "bidding": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "excess": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "decent thing": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "math": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "short stroke": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "down-and-out": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "dream ticket": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "despair": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "distraction": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "f-bomb": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "picking": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "eleventh-hour": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "embarrassment": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "esprit": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "corps": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "triangle": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "walk of life": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "precept": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "sympathy": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "fairytale ending": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "the crack": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "far-off look": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "faraway look": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "frenzy": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "contentment": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "peacefulness": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "satisfaction": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "fencepost problem": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "one's place": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "firing line": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "disadvantage": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "expedition": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "eagerness": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "recognition": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "flattery": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "flight": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "flop": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dub": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "danger": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "visit": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "voting": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "better": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "worse": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "particular": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "year’s growth": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "git-go": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "izzard": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "missouri": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "next tuesday": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "point of view": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "finish": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "get-go": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "old school": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "rooter": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "tooter": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "fudge factor": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "monty": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "boogie": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "gallows humor": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "game plan": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "garbage": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "gender bender": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "genderfuck": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "genderfucker": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "capacity": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "inspiration": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "hurry": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wiggle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wriggle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dodge": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "getting": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "kink": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "wrinkle": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "program": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "good account": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "a little": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "rip": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "credence": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "bawling out": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "shout": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "speaking to": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "static": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "struggle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "vent": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "glaze": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "gag": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "downtown": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "huddle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tailspin": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tangent": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "spare": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "straight": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "extra mile": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "rough patch": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "prestwich": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "extreme": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wrack": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "honest truth": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "hello": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "rubbish": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "good-bye": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "good riddance": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "gravity's pull": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "calend": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "old age": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "area": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "halt": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ground rule": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "twosome": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "harbor": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "has-been": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "bearing": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "bad effect": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "bash": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "blowout": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "conniption": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "death wish": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "drinking problem": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "fable": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "flair": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "talent": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "boiling point": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "near miss": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "passion": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "penchant": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "run-in": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "set-to": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "spaz": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "thin time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "tough time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "weakness": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "confidence": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "design": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ways": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "staying power": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "right place": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "druther": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "the right place": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "one’s luck": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "one’s name": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "rather": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "mullygrub": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "peep": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "fury": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "strangeness": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "home run": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "six": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "headline": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "high note": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "high spot": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "hocus pocus": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "scorn": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ridicule": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "abeyance": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "terror": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "crud": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "doodle": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "holler": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "hopium": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "jog": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "mambo": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "every little thing": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "violence": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "welcome": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "idleness": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "expression": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "funk": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "bake": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "dither": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "haze": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "jiffy": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "mad rush": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "major key": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "pique": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "snit": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "split second": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "stage whisper": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "trice": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "twit": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "twitter": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "accordance": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "modesty": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "probability": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "black": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "brief": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "capital letter": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "consequence": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "defiance": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "drib": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "drab": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "trim": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "dudgeon": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "horror": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "jig time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "lieu": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "altitude": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "second childhood": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "record time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "relation": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "retrospect": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "supply": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "split": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ascendant": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "youth": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "here and now": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "know": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "pink": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "reign": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "thick": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "thunderation": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "inner circle": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "baseball": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "invasion": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "privacy": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "saying": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "cinch": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "shouting": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "use": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "jeer": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "jerkoff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "queue": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "profile": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "roar": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "right side": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "counsel": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "state of suspense": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "minimum": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "scramble": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "a loop": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "bejeebers": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "abc": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "l": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "l-bomb": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "assumption": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "lapse": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "burst": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "full measure": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "guilt trip": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "emphasis": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "stress": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "groundwork": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "merry chase": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "hard way": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "rote": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "learning curve": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "resource": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "left": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "jeu": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "her": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "emotion": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "let-out": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "rock and roll": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "liquid": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "shuffle": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dip": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "japan": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "sterner stuff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "asterisk": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "voyage": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "awkwardness": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "beeline": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "dent": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "federal case": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "nuisance": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "spectacle": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "statement": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "exhibition": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "hard work": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "inroad": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "light work": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "mistake": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "overture": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "grade": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "lost time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "mental gymnast": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "milieu": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "misfortune": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "moderation": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "proposal": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "moral": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "morning dream": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "evidence": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "mumbo jumbo": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "boo-boo": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "squeak": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "twain": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "hotness": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "normal": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "inning": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "nitty gritty": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "big deal": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "biggie": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "contest": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "if": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "and": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "kidding": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "shortage": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "siree": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "glimmer": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "pretty sight": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "care in the world": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "first thing": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "iota": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "the unforeseen": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "advice": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "the kind": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "nuclear option": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "number game": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "nuremberg defense": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "persuasion": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "affordance": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "thirty": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "moment’s notice": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "regular basis": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "whim": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dead center": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "eternal patrol": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "good term": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "impulse": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "merit": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "moral ground": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "best behavior": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "probation": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "say-so": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "spec": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "steroid": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "stun": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "sufferance": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "alert": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "bleeding edge": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "borderline": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "bounce": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "lam": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "leading edge": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "mend": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "plus side": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "rebound": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "receiving end": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "recovery": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "wavelength": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "up-and-up": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "warpath": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tod": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "once-over": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "palookaville": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "future": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "resting place": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "stamping ground": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "invitation": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "warfare": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "gambit": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "nightmare": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "central casting": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "commission": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "keeping": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "nowhere": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "win": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "outside world": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "hump": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "long haul": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "short haul": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "wallop": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "rosy picture": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "judgment": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "muster": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "sentence": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "caring": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "old score": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "backhanded compliment": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "left-handed compliment": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "penalty": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "tribute": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "clutching": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "clutchy": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "pep talk": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "hate": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "peeve": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "woo": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "curveball": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "awkward position": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "dealing": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "booty": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "hookey": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "hooky": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "license": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "poetry": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "doom": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "stunt": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "slight": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "spin": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "good word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "dib": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "scent": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "hard word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "quake": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "quantum tunnel": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "qwerty syndrome": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "puck": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "compromise": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "filth": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "distortion": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "potential": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "belief": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "fencing": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "shred": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ripsnorter": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "romp": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tint": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "sledding": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "wrong way": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "gamut": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "sage advice": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "goodbye": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "quiet part": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "year's growth": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "tuesday": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "childhood": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "self-praise": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "recommendation": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "self-preservation": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "birthright": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "sellout": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "precedent": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "sexual tension": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "illness": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "shelf life": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "bristol fashion": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "stain": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "good faith": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "side issue": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "consent": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "simmer": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "simplicity": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "dunk": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "old way": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "slip-up": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "sluff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "crackle": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "pop": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "sneck": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "sniff test": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "custom": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "stance": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "claim to fame": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "word of honor": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "same language": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "delivery": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "speech": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "bother": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "stage of the game": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "reputation": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "awe": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "conversation": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ego": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "surgical strike": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "disbelief": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "beating": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "gamble": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "hard line": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "hike": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "jab": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "liking": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "potshot": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "raincheck": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "significance": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "refuge": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "one side": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "easy way": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "fifth": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "offensive": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "umbrage": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "lesson": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "immensity": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "small favor": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "thanks": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "how-do-you-do": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "aye": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "beginning": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "defense": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "scheme": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "breaking point": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "difficult": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "impossible": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "eternal triangle": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "fact of life": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "species": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "finest": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "heebie-jeebie": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "inside story": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "unpleasantness": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "like": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "resistance": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "living end": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "lull": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "real thing": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "right stuff": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "good intention": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "long": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "type": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "upshot": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "fighting word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "rub": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "thought bubble": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "tantrum": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "amount of light": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "thud": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "blunder": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "dictatorship": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tip-off": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "fare-thee-well": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "nicety": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "max": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "tour": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "track record": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tribulation": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "light fantastic": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "strife": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "mania": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "setback": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "turn-off": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "turnabout": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "twelve-ounce curl": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "construction": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "erasure": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "oath": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "siege": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "aegis": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "auspice": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "assignment": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "university of life": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "unknown quantity": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "boohai": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "eleven": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "urban legend": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "strong language": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "vibe": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "vim": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "vigor": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "virtual reality": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "wild side": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "sumpin’": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "wayback": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "a lovely time": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "frazzle": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "situation": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "weep": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "magic word": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "his name": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "a name": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "scam": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "folly": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "jingle": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "quickness": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "impunity": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "relish": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "hitch": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "fail": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "remix": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "o": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "bippy": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "quart": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "new trick": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "tolerance": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  }
+}

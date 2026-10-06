@@ -96,6 +96,13 @@ def main():
                 "frac_true_pair_top1_a2b": round(float(np.mean([cal[i]["rank_a2b"] == 1 for i in q])), 4),
                 "mean_centroid_div_true": round(float(np.mean([cal[i]["centroid_div"] for i in q])), 4),
                 "mean_centroid_div_random": round(float(np.mean([cal[i]["mean_div_random"] for i in q])), 4)}
+            # Per-entity percentiles, for the ECDF in fig_divergence.
+            summ["per_entity"] = [
+                {"entity_en": recs[i]["entity_en"],
+                 "percentile": round(float(cal[i]["percentile"]), 4),
+                 "rank_a2b": int(cal[i]["rank_a2b"])}
+                for i in q
+            ]
             out[name] = summ
             out["n_qualifying_ge5"] = len(q)
         print(key, json.dumps(out, ensure_ascii=False)[:1500])

@@ -1,0 +1,61 @@
+{
+  "lang": "zh",
+  "ngram": 20,
+  "max_docs": 1500000,
+  "sources": {
+    "sft:infinity-instruct-zh": {
+      "docs_scanned": 751313,
+      "hits": {
+        "global_piqa_zh": 0,
+        "global_piqa_zh_cultural": 0,
+        "global_piqa_zh_parallel4": 0
+      },
+      "rate": {
+        "global_piqa_zh": 0.0,
+        "global_piqa_zh_cultural": 0.0,
+        "global_piqa_zh_parallel4": 0.0
+      },
+      "example_qids": {
+        "global_piqa_zh": [],
+        "global_piqa_zh_cultural": [],
+        "global_piqa_zh_parallel4": []
+      }
+    },
+    "cpt:train_zh_culture": {
+      "docs_scanned": 1500000,
+      "hits": {
+        "global_piqa_zh": 0,
+        "global_piqa_zh_cultural": 0,
+        "global_piqa_zh_parallel4": 0
+      },
+      "rate": {
+        "global_piqa_zh": 0.0,
+        "global_piqa_zh_cultural": 0.0,
+        "global_piqa_zh_parallel4": 0.0
+      },
+      "example_qids": {
+        "global_piqa_zh": [],
+        "global_piqa_zh_cultural": [],
+        "global_piqa_zh_parallel4": []
+      }
+    },
+    "cpt:train_zh_unfiltered": {
+      "docs_scanned": 1500000,
+      "hits": {
+        "global_piqa_zh": 0,
+        "global_piqa_zh_cultural": 0,
+        "global_piqa_zh_parallel4": 0
+      },
+      "rate": {
+        "global_piqa_zh": 0.0,
+        "global_piqa_zh_cultural": 0.0,
+        "global_piqa_zh_parallel4": 0.0
+      },
+      "example_qids": {
+        "global_piqa_zh": [],
+        "global_piqa_zh_cultural": [],
+        "global_piqa_zh_parallel4": []
+      }
+    }
+  }
+}

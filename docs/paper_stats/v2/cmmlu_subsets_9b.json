@@ -1,0 +1,449 @@
+{
+  "scale": "9b",
+  "root": "/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval/zh",
+  "control": "unfiltered",
+  "subsets": {
+    "cmmlu_culture": {
+      "n": 271,
+      "subjects": [
+        "chinese_food_culture",
+        "ethnology"
+      ],
+      "arms": {
+        "base": {
+          "acc": 76.75,
+          "ci": [
+            71.59,
+            81.55
+          ],
+          "delta_vs_control": -2.21,
+          "delta_ci": [
+            -5.54,
+            0.74
+          ],
+          "mcnemar_p": 0.26318,
+          "n_win": 7,
+          "n_loss": 13
+        },
+        "cpt": {
+          "acc": 78.23,
+          "ci": [
+            73.43,
+            83.03
+          ],
+          "delta_vs_control": -0.74,
+          "delta_ci": [
+            -3.69,
+            2.21
+          ],
+          "mcnemar_p": 0.80362,
+          "n_win": 7,
+          "n_loss": 9
+        },
+        "culture": {
+          "acc": 73.8,
+          "ci": [
+            68.63,
+            78.97
+          ],
+          "delta_vs_control": -5.17,
+          "delta_ci": [
+            -9.59,
+            -0.74
+          ],
+          "mcnemar_p": 0.03355,
+          "n_win": 12,
+          "n_loss": 26
+        },
+        "unfiltered": {
+          "acc": 78.97,
+          "ci": [
+            74.17,
+            83.76
+          ]
+        },
+        "untagged": {
+          "acc": 79.7,
+          "ci": [
+            74.91,
+            84.5
+          ],
+          "delta_vs_control": 0.74,
+          "delta_ci": [
+            -2.21,
+            3.69
+          ],
+          "mcnemar_p": 0.81453,
+          "n_win": 10,
+          "n_loss": 8
+        },
+        "zh-base-sft": {
+          "acc": 76.01,
+          "ci": [
+            70.85,
+            80.82
+          ],
+          "delta_vs_control": -2.95,
+          "delta_ci": [
+            -6.64,
+            0.74
+          ],
+          "mcnemar_p": 0.18493,
+          "n_win": 10,
+          "n_loss": 18
+        },
+        "zh-cpt-sft": {
+          "acc": 78.6,
+          "ci": [
+            73.8,
+            83.39
+          ],
+          "delta_vs_control": -0.37,
+          "delta_ci": [
+            -3.32,
+            2.58
+          ],
+          "mcnemar_p": 1.0,
+          "n_win": 8,
+          "n_loss": 9
+        },
+        "zh-unfiltered-sft": {
+          "acc": 78.23,
+          "ci": [
+            73.06,
+            83.03
+          ],
+          "delta_vs_control": -0.74,
+          "delta_ci": [
+            -4.43,
+            2.95
+          ],
+          "mcnemar_p": 0.85055,
+          "n_win": 13,
+          "n_loss": 15
+        }
+      }
+    },
+    "cmmlu_china_specific": {
+      "n": 2761,
+      "subjects": [
+        "ancient_chinese",
+        "chinese_civil_service_exam",
+        "chinese_driving_rule",
+        "chinese_food_culture",
+        "chinese_foreign_policy",
+        "chinese_history",
+        "chinese_literature",
+        "chinese_teacher_qualification",
+        "construction_project_management",
+        "elementary_chinese",
+        "elementary_commonsense",
+        "ethnology",
+        "high_school_politics",
+        "marxist_theory",
+        "modern_chinese",
+        "traditional_chinese_medicine"
+      ],
+      "arms": {
+        "base": {
+          "acc": 79.97,
+          "ci": [
+            78.41,
+            81.42
+          ],
+          "delta_vs_control": -0.22,
+          "delta_ci": [
+            -1.45,
+            1.01
+          ],
+          "mcnemar_p": 0.76988,
+          "n_win": 143,
+          "n_loss": 149
+        },
+        "cpt": {
+          "acc": 79.93,
+          "ci": [
+            78.45,
+            81.42
+          ],
+          "delta_vs_control": -0.25,
+          "delta_ci": [
+            -1.23,
+            0.76
+          ],
+          "mcnemar_p": 0.67225,
+          "n_win": 97,
+          "n_loss": 104
+        },
+        "culture": {
+          "acc": 77.91,
+          "ci": [
+            76.28,
+            79.43
+          ],
+          "delta_vs_control": -2.28,
+          "delta_ci": [
+            -3.51,
+            -1.05
+          ],
+          "mcnemar_p": 0.00034,
+          "n_win": 119,
+          "n_loss": 182
+        },
+        "unfiltered": {
+          "acc": 80.19,
+          "ci": [
+            78.67,
+            81.71
+          ]
+        },
+        "untagged": {
+          "acc": 79.39,
+          "ci": [
+            77.91,
+            80.91
+          ],
+          "delta_vs_control": -0.8,
+          "delta_ci": [
+            -1.81,
+            0.25
+          ],
+          "mcnemar_p": 0.14129,
+          "n_win": 91,
+          "n_loss": 113
+        },
+        "zh-base-sft": {
+          "acc": 78.88,
+          "ci": [
+            77.36,
+            80.41
+          ],
+          "delta_vs_control": -1.3,
+          "delta_ci": [
+            -2.61,
+            0.0
+          ],
+          "mcnemar_p": 0.05752,
+          "n_win": 152,
+          "n_loss": 188
+        },
+        "zh-cpt-sft": {
+          "acc": 78.81,
+          "ci": [
+            77.33,
+            80.33
+          ],
+          "delta_vs_control": -1.38,
+          "delta_ci": [
+            -2.61,
+            -0.14
+          ],
+          "mcnemar_p": 0.03425,
+          "n_win": 134,
+          "n_loss": 172
+        },
+        "zh-unfiltered-sft": {
+          "acc": 78.09,
+          "ci": [
+            76.57,
+            79.61
+          ],
+          "delta_vs_control": -2.1,
+          "delta_ci": [
+            -3.33,
+            -0.91
+          ],
+          "mcnemar_p": 0.00093,
+          "n_win": 120,
+          "n_loss": 178
+        }
+      }
+    },
+    "cmmlu_full": {
+      "n": 11582,
+      "subjects": [
+        "agronomy",
+        "anatomy",
+        "ancient_chinese",
+        "arts",
+        "astronomy",
+        "business_ethics",
+        "chinese_civil_service_exam",
+        "chinese_driving_rule",
+        "chinese_food_culture",
+        "chinese_foreign_policy",
+        "chinese_history",
+        "chinese_literature",
+        "chinese_teacher_qualification",
+        "clinical_knowledge",
+        "college_actuarial_science",
+        "college_education",
+        "college_engineering_hydrology",
+        "college_law",
+        "college_mathematics",
+        "college_medical_statistics",
+        "college_medicine",
+        "computer_science",
+        "computer_security",
+        "conceptual_physics",
+        "construction_project_management",
+        "economics",
+        "education",
+        "electrical_engineering",
+        "elementary_chinese",
+        "elementary_commonsense",
+        "elementary_information_and_technology",
+        "elementary_mathematics",
+        "ethnology",
+        "food_science",
+        "genetics",
+        "global_facts",
+        "high_school_biology",
+        "high_school_chemistry",
+        "high_school_geography",
+        "high_school_mathematics",
+        "high_school_physics",
+        "high_school_politics",
+        "human_sexuality",
+        "international_law",
+        "journalism",
+        "jurisprudence",
+        "legal_and_moral_basis",
+        "logical",
+        "machine_learning",
+        "management",
+        "marketing",
+        "marxist_theory",
+        "modern_chinese",
+        "nutrition",
+        "philosophy",
+        "professional_accounting",
+        "professional_law",
+        "professional_medicine",
+        "professional_psychology",
+        "public_relations",
+        "security_study",
+        "sociology",
+        "sports_science",
+        "traditional_chinese_medicine",
+        "virology",
+        "world_history",
+        "world_religions"
+      ],
+      "arms": {
+        "base": {
+          "acc": 80.93,
+          "ci": [
+            80.2,
+            81.64
+          ],
+          "delta_vs_control": 0.58,
+          "delta_ci": [
+            0.0,
+            1.15
+          ],
+          "mcnemar_p": 0.05148,
+          "n_win": 608,
+          "n_loss": 541
+        },
+        "cpt": {
+          "acc": 80.39,
+          "ci": [
+            79.67,
+            81.12
+          ],
+          "delta_vs_control": 0.04,
+          "delta_ci": [
+            -0.43,
+            0.54
+          ],
+          "mcnemar_p": 0.88952,
+          "n_win": 417,
+          "n_loss": 412
+        },
+        "culture": {
+          "acc": 78.55,
+          "ci": [
+            77.8,
+            79.29
+          ],
+          "delta_vs_control": -1.8,
+          "delta_ci": [
+            -2.38,
+            -1.21
+          ],
+          "mcnemar_p": 0.0,
+          "n_win": 498,
+          "n_loss": 706
+        },
+        "unfiltered": {
+          "acc": 80.35,
+          "ci": [
+            79.61,
+            81.07
+          ]
+        },
+        "untagged": {
+          "acc": 80.02,
+          "ci": [
+            79.3,
+            80.76
+          ],
+          "delta_vs_control": -0.33,
+          "delta_ci": [
+            -0.81,
+            0.15
+          ],
+          "mcnemar_p": 0.19738,
+          "n_win": 393,
+          "n_loss": 431
+        },
+        "zh-base-sft": {
+          "acc": 79.92,
+          "ci": [
+            79.17,
+            80.66
+          ],
+          "delta_vs_control": -0.43,
+          "delta_ci": [
+            -1.04,
+            0.19
+          ],
+          "mcnemar_p": 0.17971,
+          "n_win": 642,
+          "n_loss": 692
+        },
+        "zh-cpt-sft": {
+          "acc": 79.2,
+          "ci": [
+            78.46,
+            79.95
+          ],
+          "delta_vs_control": -1.15,
+          "delta_ci": [
+            -1.76,
+            -0.54
+          ],
+          "mcnemar_p": 0.00021,
+          "n_win": 570,
+          "n_loss": 703
+        },
+        "zh-unfiltered-sft": {
+          "acc": 78.67,
+          "ci": [
+            77.93,
+            79.42
+          ],
+          "delta_vs_control": -1.68,
+          "delta_ci": [
+            -2.26,
+            -1.11
+          ],
+          "mcnemar_p": 0.0,
+          "n_win": 480,
+          "n_loss": 674
+        }
+      }
+    }
+  }
+}

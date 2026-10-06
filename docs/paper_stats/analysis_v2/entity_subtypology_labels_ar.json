@@ -1,0 +1,5578 @@
+{
+  "دنيا": {
+    "subtype": "life_death_fate",
+    "mentions": 46
+  },
+  "خير": {
+    "subtype": "morality_truth",
+    "mentions": 39
+  },
+  "شر": {
+    "subtype": "morality_truth",
+    "mentions": 37
+  },
+  "حق": {
+    "subtype": "morality_truth",
+    "mentions": 34
+  },
+  "امر": {
+    "subtype": "residual_other",
+    "mentions": 32
+  },
+  "شيء": {
+    "subtype": "residual_other",
+    "mentions": 32
+  },
+  "دهر": {
+    "subtype": "time_change",
+    "mentions": 28
+  },
+  "عيش": {
+    "subtype": "life_death_fate",
+    "mentions": 27
+  },
+  "كلام": {
+    "subtype": "speech_name",
+    "mentions": 27
+  },
+  "خبر": {
+    "subtype": "speech_name",
+    "mentions": 25
+  },
+  "موت": {
+    "subtype": "life_death_fate",
+    "mentions": 25
+  },
+  "عمر": {
+    "subtype": "time_change",
+    "mentions": 22
+  },
+  "زمان": {
+    "subtype": "time_change",
+    "mentions": 19
+  },
+  "جمال": {
+    "subtype": "residual_other",
+    "mentions": 16
+  },
+  "فرح": {
+    "subtype": "residual_other",
+    "mentions": 16
+  },
+  "كلمه": {
+    "subtype": "speech_name",
+    "mentions": 14
+  },
+  "علم": {
+    "subtype": "morality_truth",
+    "mentions": 13
+  },
+  "اكل": {
+    "subtype": "residual_other",
+    "mentions": 13
+  },
+  "باطل": {
+    "subtype": "morality_truth",
+    "mentions": 13
+  },
+  "صبر": {
+    "subtype": "morality_truth",
+    "mentions": 13
+  },
+  "عيشه": {
+    "subtype": "life_death_fate",
+    "mentions": 13
+  },
+  "عشره": {
+    "subtype": "quantity_space",
+    "mentions": 13
+  },
+  "حاجه": {
+    "subtype": "residual_other",
+    "mentions": 12
+  },
+  "سبع": {
+    "subtype": "quantity_space",
+    "mentions": 12
+  },
+  "بر": {
+    "subtype": "morality_truth",
+    "mentions": 11
+  },
+  "صوت": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "عرس": {
+    "subtype": "residual_other",
+    "mentions": 11
+  },
+  "مطرح": {
+    "subtype": "quantity_space",
+    "mentions": 11
+  },
+  "لي": {
+    "subtype": "residual_other",
+    "mentions": 11
+  },
+  "حديث": {
+    "subtype": "speech_name",
+    "mentions": 10
+  },
+  "حد": {
+    "subtype": "quantity_space",
+    "mentions": 10
+  },
+  "بركه": {
+    "subtype": "life_death_fate",
+    "mentions": 10
+  },
+  "صيد": {
+    "subtype": "action_conflict",
+    "mentions": 9
+  },
+  "ما": {
+    "subtype": "residual_other",
+    "mentions": 9
+  },
+  "حلم": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "معروف": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "حرب": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "قدره": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "سر": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "جواب": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "حرام": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "عويل": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "حاله": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "غسيل": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "سلامه": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "سوء": {
+    "subtype": "morality_truth",
+    "mentions": 7
+  },
+  "قول": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "حال": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "جوع": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "ساعه": {
+    "subtype": "time_change",
+    "mentions": 7
+  },
+  "عار": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "عز": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "بلا": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "خساره": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "عافيه": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "صمت": {
+    "subtype": "speech_name",
+    "mentions": 6
+  },
+  "امور": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "نعمه": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "عجب": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "صدق": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "كذب": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "شعر": {
+    "subtype": "speech_name",
+    "mentions": 6
+  },
+  "داهيه": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "سنين": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "عيب": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "قنطار": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "طبعه": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "دواء": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "غزو": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "حمد": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "اكله": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "سواد": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "حذر": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "كلامك": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "عجله": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "زياده": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "سفر": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "حكمه": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "جري": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "طمع": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "غرض": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "سرك": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "محبه": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "غربه": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "ندامه": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "حمره": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "زور": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "حيله": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "جد": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "واحد": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "عله": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "غرق": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "خراب": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "نيه": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "اسم": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "رقص": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "خمسه": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "جعان": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "اتنين": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "جوازه": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "برا": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "رطل": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "صغير": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "احسان": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "مقداره": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "اثنين": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "ظنه": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "هوي": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "دواهي": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "نصيحه": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "قضاء": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "عقد": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "حسن": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "قله": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "طلب": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "مقام": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "حقك": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "حمل": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "غيره": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "مكان": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "امل": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "شرف": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "حظ": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "امره": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "شي": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "غراره": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "اشاره": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "محل": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "شرط": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "جهل": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "ذات": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "احمر": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "عشر": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "ضرب": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "حزن": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "جرب": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "خيبه": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "عاده": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "سعاده": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "خيره": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "بوك": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "اذي": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "عداوه": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "وعد": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "وقت": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "نصه": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "سلام": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "طلق": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "عمل": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "حرت": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "حزينه": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "رحمه": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "داخل": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "بكا": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "وسط": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "كبير": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "ادب": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "اصله": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "حالك": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "راص": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "غضب": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "هوان": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "حين": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "سقي": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "نصر": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "عون": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "كل": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "نسب": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "خوف": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "احاديث": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "عثار": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "بياض": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "طعن": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "مرخ": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "ناصل": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "رميه": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "مريشا": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "فاقه": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "بؤس": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "سليم": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "شباب": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "عقوق": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "عذر": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "طعم": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "صحبه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "هيبه": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "عرض": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "عقوبه": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "قوي": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "كي": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "شفاء": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "نصيب": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "شره": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "لطاته": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "نقم": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "جديد": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "صرمه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "مصائب": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "حقي": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "بارح": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "حياه": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "نخس": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "هواه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "فوق": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "علقه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "ابيض": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "عطا": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "ضحك": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "طيب": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "فضيحه": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "همه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "سعده": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "عرسه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "جوعه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "طاعون": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "خص": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "كدب": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "شبر": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "قديمه": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "زفه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "غلط": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "وسخ": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "زغاريط": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "عنوانه": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "عمره": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "مصيبه": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "عتبه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "ف": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "عوم": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "همك": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "عرج": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "طبيع": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "زينه": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "متاع": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "فوت": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "ثنيه": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "حقوق": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "مذاله": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "هيجاء": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "سري": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "عذره": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "كريم": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "منفعه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "مشوره": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "زلق": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "افه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "موعد": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "بغي": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "كثره": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "اعراض": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "هدم": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "الف": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "صريح": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "قتل": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "مائه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "مجهوله": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "غي": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "اثرا": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "حاجات": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "نكاح": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "عفو": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "هموم": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "تجارب": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "مقت": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "غدر": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "جعجعه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "حسك": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ضلال": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "صفير": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "خرافه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "اجل": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "اجله": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "مني": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ظعن": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "خطب": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "خنق": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "خباه": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "حظك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "خطا": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "مشوار": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "مهلك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "عشواء": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ثالثه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "خيرك": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "سماح": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "منيه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "فرحه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "رشده": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "عيوبي": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "صوتا": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "فوتا": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "عذاب": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "حجه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "بين": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "امرك": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "وزعه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "وعيد": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "مصارع": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "صوره": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "ضربه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ابد": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "نشرا": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "لوح": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "ظلم": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "قطعه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "عتاب": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "حقد": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "عدل": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "فقره": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "عده": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "عاريه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "يمن": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "حظي": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "فرصه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "مقر": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "شهرين": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "فعل": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "لسع": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "مذله": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "عواقب": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "قراره": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "مخض": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "صعب": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "حظه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "زمن": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "نداء": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "طول": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "دس": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اسار": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "سلب": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "نصرا": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "صعبه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اسفل": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "اثره": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "قص": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "اقذ": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "لو": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ستر": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "صنيعه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "مهابه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "سره": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "عمله": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "سلم": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ترهات": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "نجاح": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "مرته": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "وحده": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "قدري": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "خياره": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "هذه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "نصيبك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "دعه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "كرب": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اسر": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اخبار": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "مشقه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "همي": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "غيب": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "حاجتي": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "مقدارها": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "لك": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "مساحه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "فعله": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "حمله": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "يومك": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "دوره": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "رك": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "بختك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "شيله": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "بختي": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "جوا": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "لمه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "عركه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "عيطه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "عتب": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "سبب": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "سو": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "احزان": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اسود": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اربعه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "حالي": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "تفتيش": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "شبه": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "غداك": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "عادتها": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "عتمه": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "هروب": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "بعلقه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "عيوب الناس": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "كلامه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "فارغ": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "ترواح": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "علو": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "زمانه": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "مقال": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "عمري": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "زرقه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "سرقه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "غالي": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "حجته": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "رضا": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "اربع": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "لاقطه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "حركه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "سدق": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "نوبه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "طيطه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "راحته": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "نجاسه": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "ندك": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "بلوه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "نوايه": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "رجا": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "جهد": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "علا": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "اشكالها": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "صحه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "شيفه": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "معاني": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "فايده": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "كيف": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ثالث": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "فين": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "سكات": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "بره": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "خط": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "سعدك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "زواج": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "شفا": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "غدوه": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "عيذ": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "دنيته": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "حقها": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "شبعه": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "كيفك": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "عذوك": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "كربه": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "تسبدي": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "وراك": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "رزك": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "ايكاون": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "بيان": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "افات": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مقدره": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سوادها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بلاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "هانئا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عملها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "توالي": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "حقيقه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "وديقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وسيقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اهتار": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "مبكياتك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مضحكاتك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بجانب": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اكثري": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ايسري": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عزاز": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "خيبته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حزم": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عراك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "موضع": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عزاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حز": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مروءه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بزلاء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ذقته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اكلته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خدعه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جناه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "حفرا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جلاء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "احاره": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قضاءه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سهرا": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "ذكورا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "قبضه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سامه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مخلط": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مزيل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تاويل": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فضل": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "حلوم": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "سلاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "سفرك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "شربك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "امري": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "كديها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "كدائها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "زائده": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مقرونا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بواقع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قائبه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قوب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "احمره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ردف": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اشده": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ابرما": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قرونا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بقبقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "زقزقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "رعاؤها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وقعه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اثار": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خشناء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ظلله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خداع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "خبره": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عامين": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "حمقاء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "سلجما": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نقيق": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خلابه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "صدودا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مطامع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مساوي": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ودهم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قذع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عوفا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نهايه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "نجح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جبن": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "جثل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كلامي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "بسك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هئ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جئ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اوشال": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مرحب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نكرا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حطبت": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جباب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ابرا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "صعاب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مشبع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سبلات": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "صاي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دهرا": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "احراف": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شطره": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اشطره": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شجون": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فوقه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اقدار": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ركض": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "معار": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "احقاد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "معن": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ظن": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ارسال": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حكمك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "وانس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ضر": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "افتاء": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مذمه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مظنه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فقه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "خلال": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "يفعه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دنياك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "وزن": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مضطجعا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خبب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سوادا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قربي": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "نبحا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سربك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هيف": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تيه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "خلوته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مفر": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خمسمائه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "صول": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "صلف": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ريثا": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "ادراجي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اياب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فوقي": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حفاء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عذرتي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "قفوتي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "خبري": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عذري": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "غايه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اجلي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تعليق": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "امنيه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عطب": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ترحه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حباءه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قتلي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "سمينا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وسما": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "زويله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "زواله": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "محدود": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "فا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "خلفا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "امانه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عوز": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عدم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "استمساك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "صرعه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جعله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اكتساب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "انتساب": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "افراط": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عزل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عدوي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "صماء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سفل": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مخافه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جدواي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دبري": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "سير": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "رمد": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خسف": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "رمق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "شبهه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "شقشقه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "سلاءه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تذبيح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خنابه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قاب": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "صغاره": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "صيدك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "محضه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شامه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لقطه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "خطوب": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حطمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حادثات": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ود": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وقوف": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "موده": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اخماسا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اسداس": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ناجزا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بناجز": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ذلك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ثمانيا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "باست": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فزعه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذكرك": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حوص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فراسخ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ثواب": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ظلمات": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "هزيمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عش": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "مقولا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "معقولا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عاقول": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ذما": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ذنبي": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بدء": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "قيلا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فاقره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذمم": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "نصابه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حالات": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عجزه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "شواكل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اعتوبه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ظماء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "رفاغها": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "قنوع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "احدي وعشرين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "جلتها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حواشيها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "تنقيح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "غل": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "اماني": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "كناه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "طلاقها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جريره": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مس": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قيض": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "منقاض": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذم": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "اقعس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اخلاق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "قضم": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "دغلا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "حرمان": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حياء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "فتك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "معوج": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "سيرتي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عثراتهم": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نادره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غير": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ندائي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "شيئا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دعوه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "شربها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حلما": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بدلين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "سهو": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "احدوثه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عويت": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "وئام": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "اسمائه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عائنه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "لمحا": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "فاكرش": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "صيح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نفر": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "معاينه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "سلامان": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عهدان": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "خلاه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "نجاه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "هنء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "محزا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "كيسك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ثناء": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "كيه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عذرا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "اقورين": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فتكرين": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "برحين": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بريشاء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عمشاء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عذل": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فرط": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "زعم": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مجالاه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حمق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مصرع": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مكروهه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اشهب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قدامي": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "قصد": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جرائيم": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بخير": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صوك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ماثم": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "لفظ": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حتفه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بجرزه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ثله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سخط": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "رضاه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "جور": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "جردبانا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كرامه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فوز": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مانع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حينه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "زناء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "انباض": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "لباه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ضاله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اعلاها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "يه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غيله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قرواها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تعريض": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "وصلات": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عرضك": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مقعدا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مصعدا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "رفق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "محمودا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صر": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "تعقيب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حياتي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اغفاءه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "غليل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نسوله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هرا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "رواء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بقاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ضرمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خضاض": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حربا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خواطئ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "فراض": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "طحربه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "يذيب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سوداء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذبح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ثاغيه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "راغيه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وذم": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حو": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "منه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مزاحه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مدارج": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قاعدا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "باردا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عزه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "منكبا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عناء": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "رياضه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سرحه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "رائحه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سانح": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "سوايا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "لجاجه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مامنه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "تواني": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "رماق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اثام": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ويل": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مودته": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "نصيبا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بعرضه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "الاء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عاجل": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "فرار": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مرامي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حبائل": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اعمالهم": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حقاق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "نجاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "محقب": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "نميمه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "بطيء": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "رخمته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ورطه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اذابه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وحقنا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ولغ": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "انجاز": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "وقس": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "فجاءه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "رياء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "نكبه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بانها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذانك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عتابا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حاذف": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قاذف": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "كرم": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "قعيقعان": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "منزعه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مقدمات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "افاعيك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سائرها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "وعوعه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ادني": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اقصي": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قرقر": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تلك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بتلك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اشفاق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "نافجه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تشريع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "دحندح": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بعضي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بعضا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ثمانين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ضراء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "امثال": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ذله": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ذلول": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "محثي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "صواب": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عونا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ممعول": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قابا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شقاء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "شبعا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جوعا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هزال": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "دوي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "محروق": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ثلل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كباث": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خدمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "طيط": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "يومين": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "تلاته": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "بوش": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "زارود": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خايب الرجا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مطلب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ديق": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "اخد": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "الوان": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اسمك": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "اسمي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "لامشير": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اصل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ادبه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "حاجتك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "موال": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "اصوله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وداع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مرجونته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "محبته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تطبل": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "يرقص": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اخبارها": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "بلرزاق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "طرحه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هلاك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ست ايام": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "شويه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ممات": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "طربته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "طربه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مرقي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ياكل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مشي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بلاش": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حلوتها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مرتها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لقرص": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "درسه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صاري": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ذكره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مقاتته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "سقيم": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ميطه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عذابه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "دوس": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قدامك": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ايه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حرق": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اسماك": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حداك": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "محاياه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بياضي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حصده": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "زيارته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "شغلك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قوله كشكش": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "غسيله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قصيده": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "شطح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نطح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ترقيع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حزق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مزق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بختها": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بخت": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بخمسه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "وطرحه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عرسها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "دروسك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "علوه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "جمايل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عوضه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خمستين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اربعين يوم": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "رزقك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عاقبه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "شفعه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خارج": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حديتكم": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عملته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "وداد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لحظه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "قطع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عافيته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "تليس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نجس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بلغي": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "شطاره": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "خطوط": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شكله": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عيبك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "غايبه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "بالف": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حسبه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "افعاله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "له": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هايله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مايله": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "رشل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قشل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نقاوه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تاره": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "بياته": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "بالسوده": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جمعيه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كاك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عيوبه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "كسر": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مشاق": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "خمسين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "روايح": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "منافع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بديله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لورا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "الفات": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "نشوه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قرصتها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "تحت": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "خياله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مليان": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "زعيرب": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مخيطه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تالت": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مسانده": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شكيه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "شوطه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "سورتك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "صبا": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "حاجتها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قتال": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "موافقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شنق": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ايامه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "تلاتين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شهير": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "مسامح": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صلح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قضيه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فساد": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صيت": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "صيفه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "حقا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صفعا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "طاب": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "يدوقه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عوار": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "طوال": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شدايد": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "غيبه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "اشكال": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عادتك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عادتي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عايبه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "نايبه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نقاشه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فايت": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "امان": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عزوبيه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "قليل الاصل": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "نصيبها": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "لطالون": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سلوك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "امتحان": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سفه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "رد": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ذل": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "دناوه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جانا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "تمنه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نعسان": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مرض": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "غضبان": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نص": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "فضله": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "جلالها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شرع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "افراحكم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "احزانكم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فرحكم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غمكم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تلات": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "بكايه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سؤاله": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "اوانه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "يومي": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "قهر": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عوايد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نحته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "غش": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "تكرار": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "تقميص": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "دلع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "معرفه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "قيمه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فروش": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "رفس": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هرش": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هزار": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "كتره": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "شجاعه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "فراق": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بتكتيفه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ساقطه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دواه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حبني": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حرف": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ميعاد": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "رقصه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قصه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "برصه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قنايه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بميتها": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "مرد": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "غيرها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مصه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "شغته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شكل": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "كلمه الحق": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "امراضي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حلاوتك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فراقكم": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "بطاله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "طهي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نهي": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "مقصص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حساب": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "رخيص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حريص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "معطوبه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مصايب": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اعماركم": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "طق": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فضايح": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "كمال": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ورا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عرضه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "غربتنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ضبتنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "تزويقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تحفيفي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "شروط": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ضراير": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "بحسره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بكاها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "احكام": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "معيشه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "فاش": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ستين": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "بلوته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "طقطق": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "نقصان": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "روايحه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مقامه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "دلايل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نسبته": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جفا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "شهره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "وقعات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سعدت": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عليمه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "طويله": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قايمقام": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حسب": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "سلخ": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "نفخ": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "وسخه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بتاع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "طبع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "زحمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "سنتين": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "دفقه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تبات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هايفه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "رزاله": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "فاحت": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هم الناس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سلامات": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حطه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "غصص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كتاكت": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عماص": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "قضايا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مسخره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "يجرح": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ويداوي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "طرطره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "عاوزه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اموره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مصيبتهم": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "تعب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "هدد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "جوابا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "سكوت": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حتفي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عسر": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "يسرا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اعمال": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مضره": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "يومك الاسود": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "محاسن": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "جميلا": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تواضع": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "اختراع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ضيق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "نظافه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "هدوء": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وقايه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "علاج": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "وسيله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حادث": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "فوائد": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "امورك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عزا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "سرعه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عويه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اهواله": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "فضول": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "شينه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "غيبات": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ساعته": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "فعايلك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اعمالك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مكنت": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حواش": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تغزاز": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "شح": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "صكاطه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بياضك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سواد الحيط": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اسباب": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "محال": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "نصها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "كلامو": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مظاهر": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هدره": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "زمانو": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "غيظ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سبع ايام": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "واق": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "نصين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "وره": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "كدام": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ارقد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دافي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "متعافي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "افعالك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فقبر": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "نصو": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "اخبارك": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "خطاها": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ثنتين": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "حده": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ضده": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "رقيص": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بوطبيع": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دق": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ندم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "هزيله": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "بجمه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غلفه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "سح": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بلواها": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "للو": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حرويده": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "نجيح": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "كسكسلو": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اصلو": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لقياسك": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قياس": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "جود": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "شونه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "امله": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "درس": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "واحده": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قافيه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "حوصلته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حقه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عوافي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "دارجه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "دمتها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "غسل": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "صريخ": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "نفخه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "تسعه شهور": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "عشق": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "لوعه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "خزين": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "كرادغ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "خلاصك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "برتبه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ظليمه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "زله": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "مصيبته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "طلقه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حنتك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "لقدام": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "تدبير": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عامها": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "عرسنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "برنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عقرنا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "كلمه السويا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "كلاله": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "اكدار": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "وقته": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "خنؤوس": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "حبوك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "شطر الدنيا": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "عطشان": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "دبات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حبات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عطش": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حوائج": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ايامك": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "ديمه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "حلمك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "يتم": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "نداب": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ضحكه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "خيرات": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "عرد": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "بسئنه": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "قصتها": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "بوسنبعه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دنيتهم": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عزي": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خبرته": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "محاضر": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "هراوه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ساعات": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "دعاوي": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عيشته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عمارته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "وعده": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "خطوه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "عكروت": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حسا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "عارنا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "مكمن": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "وباء": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "لمم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دار الدنيا": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "حرجونا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عرونا": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "دز": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مضيق": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "صحتي": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "منجوسء": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "داهم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "كسل": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ظلك": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ظليء": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "كدمه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "يكرموني": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "يحبك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "يبكيك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "يكرهك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "يضحك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لاطاحت": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "دزوها": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "حسنات": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "احسانك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "دنيتك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "سابع": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "غبينه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "وجوعه": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "شبع": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "كول": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "عاطل": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اربعين": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "بطاده": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اشغالك": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "بغداد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غزلنا": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "اصفر": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "حيل": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "شيلته": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "موتك": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "قطيعه": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "جمع": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "علومك": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "سالفه": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "هياط": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ملازيم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خاتمه": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "مقيد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "مفكوك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "نيم": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لونك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غاره": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لغل": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لغليظ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لكراد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "خبطات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "فجدر": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اخروفت": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "فيرك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ادكيك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لين": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غاليه": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "وفاته": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ريك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "غفله": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "طرش": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "تجربه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "كذبه": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "خلاك": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "لمره": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "تلفات": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "قليل": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ادرس": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ارد": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "اخبارنا": {
+    "subtype": "speech_name",
+    "mentions": 1
+  }
+}

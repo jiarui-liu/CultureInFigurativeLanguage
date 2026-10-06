@@ -1,0 +1,450 @@
+{
+  "method": "Is the 15-way scheme separable, or only each level of it?\n\nentity_typology_validate.py measures the 9-way choice and entity_subtypology_validate.py\nmeasures the 7-way choice *given that the entity is already known to be abstract* -- its\nprompt says so outright. Neither measures the flat 15-way scheme the figures actually show,\nand by construction neither can see a cross-level confusion: an entity the first pass wrongly\nrouted to abstract_other is told, in the second pass, that it is \"not an animal, body part,\nnatural feature, food, person, deity, artefact or sum of money\", so it can never be sent back.\n\nThat matters because the two codebooks overlap in writing. occupation_economy claims \"work and\nlabour\" while action_conflict claims \"work and effort as abstractions\"; nature_cosmos claims\n\"seasons and the day-night cycle\" while time_change claims \"day as a unit, year\"; body_mind\nclaims mental faculties while morality_truth claims \"wisdom and folly, knowledge\".\n\nHere we put all fifteen labels in one flat codebook, with no hint of the two-level structure,\nre-annotate a stratified sample, and report kappa plus the full confusion -- separating\nwithin-level disagreement from cross-level leakage.\n\n    PYTHONPATH=src:src/culture/analysis/v2 python typology_flat_validate.py [--per_lang 90]\n",
+  "annotator": "gemma-4-26B-A4B-it",
+  "labels": [
+    "animal",
+    "body_mind",
+    "nature_cosmos",
+    "food_drink",
+    "kinship_social",
+    "religion_supernatural",
+    "occupation_economy",
+    "artefact_household",
+    "time_change",
+    "speech_name",
+    "life_death_fate",
+    "morality_truth",
+    "action_conflict",
+    "quantity_space",
+    "residual_other"
+  ],
+  "n": 360,
+  "raw_agreement": 0.689,
+  "cohen_kappa": 0.667,
+  "per_language": {
+    "en": {
+      "n": 90,
+      "agreement": 0.667,
+      "kappa": 0.643
+    },
+    "zh": {
+      "n": 90,
+      "agreement": 0.722,
+      "kappa": 0.702
+    },
+    "hi": {
+      "n": 90,
+      "agreement": 0.733,
+      "kappa": 0.714
+    },
+    "ar": {
+      "n": 90,
+      "agreement": 0.633,
+      "kappa": 0.607
+    }
+  },
+  "disagreements": {
+    "total": 112,
+    "within_level": 58,
+    "cross_level": 54,
+    "cross_level_share": 0.482
+  },
+  "top_confusions": [
+    {
+      "composed": "life_death_fate",
+      "flat": "action_conflict",
+      "n": 6,
+      "cross_level": false
+    },
+    {
+      "composed": "religion_supernatural",
+      "flat": "kinship_social",
+      "n": 4,
+      "cross_level": false
+    },
+    {
+      "composed": "quantity_space",
+      "flat": "residual_other",
+      "n": 4,
+      "cross_level": false
+    },
+    {
+      "composed": "residual_other",
+      "flat": "action_conflict",
+      "n": 4,
+      "cross_level": false
+    },
+    {
+      "composed": "kinship_social",
+      "flat": "occupation_economy",
+      "n": 3,
+      "cross_level": false
+    },
+    {
+      "composed": "morality_truth",
+      "flat": "body_mind",
+      "n": 3,
+      "cross_level": true
+    },
+    {
+      "composed": "residual_other",
+      "flat": "body_mind",
+      "n": 3,
+      "cross_level": true
+    },
+    {
+      "composed": "residual_other",
+      "flat": "morality_truth",
+      "n": 3,
+      "cross_level": false
+    },
+    {
+      "composed": "residual_other",
+      "flat": "speech_name",
+      "n": 3,
+      "cross_level": false
+    },
+    {
+      "composed": "nature_cosmos",
+      "flat": "time_change",
+      "n": 2,
+      "cross_level": true
+    },
+    {
+      "composed": "nature_cosmos",
+      "flat": "action_conflict",
+      "n": 2,
+      "cross_level": true
+    },
+    {
+      "composed": "food_drink",
+      "flat": "occupation_economy",
+      "n": 2,
+      "cross_level": false
+    },
+    {
+      "composed": "religion_supernatural",
+      "flat": "occupation_economy",
+      "n": 2,
+      "cross_level": false
+    },
+    {
+      "composed": "artefact_household",
+      "flat": "action_conflict",
+      "n": 2,
+      "cross_level": true
+    },
+    {
+      "composed": "time_change",
+      "flat": "action_conflict",
+      "n": 2,
+      "cross_level": false
+    },
+    {
+      "composed": "life_death_fate",
+      "flat": "kinship_social",
+      "n": 2,
+      "cross_level": true
+    },
+    {
+      "composed": "morality_truth",
+      "flat": "action_conflict",
+      "n": 2,
+      "cross_level": false
+    },
+    {
+      "composed": "morality_truth",
+      "flat": "kinship_social",
+      "n": 2,
+      "cross_level": true
+    },
+    {
+      "composed": "speech_name",
+      "flat": "residual_other",
+      "n": 2,
+      "cross_level": false
+    },
+    {
+      "composed": "life_death_fate",
+      "flat": "nature_cosmos",
+      "n": 2,
+      "cross_level": true
+    }
+  ],
+  "confusion_rows_composed_cols_flat": {
+    "labels": [
+      "animal",
+      "body_mind",
+      "nature_cosmos",
+      "food_drink",
+      "kinship_social",
+      "religion_supernatural",
+      "occupation_economy",
+      "artefact_household",
+      "time_change",
+      "speech_name",
+      "life_death_fate",
+      "morality_truth",
+      "action_conflict",
+      "quantity_space",
+      "residual_other"
+    ],
+    "matrix": [
+      [
+        20,
+        0,
+        0,
+        1,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        17,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        19,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        18,
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        4,
+        15,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        18,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        18,
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        11,
+        0,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        19,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        17,
+        4
+      ],
+      [
+        0,
+        3,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        3,
+        0,
+        3,
+        4,
+        0,
+        4
+      ]
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "method": "Where does a model fall back on the English reading of an entity?\n\nThe symbolism probe asks what an entity stands for in a given culture and records, per item,\nwhether the model chose the option carrying the English association (the \"lure\"). Section 4\nassigns every entity a semantic type. Crossing the two asks a question neither answers alone:\nis the English default spread evenly over the inventory, or concentrated in particular kinds of\nentity?\n\nWe pool the three languages and read the *base* checkpoint, so the result describes the\npretrained model rather than anything our training did. Significance is a permutation test on\ntype labels; intervals are item bootstraps.\n\n    PYTHONPATH=src:src/culture/analysis/v2 python lure_by_type.py\n",
+  "arm": "base",
+  "languages": [
+    "zh",
+    "hi",
+    "ar"
+  ],
+  "n_items": 224,
+  "overall_lure_rate": 0.0938,
+  "spread_across_types_p_perm": 0.968,
+  "by_type": {
+    "Animal": {
+      "n_items": 29,
+      "lure_rate": 0.1724,
+      "ci95": [
+        0.0345,
+        0.3103
+      ]
+    },
+    "Money & work": {
+      "n_items": 8,
+      "lure_rate": 0.125,
+      "ci95": [
+        0.0,
+        0.375
+      ]
+    },
+    "Artefact/household": {
+      "n_items": 35,
+      "lure_rate": 0.0857,
+      "ci95": [
+        0.0,
+        0.2
+      ]
+    },
+    "Abstract/other": {
+      "n_items": 47,
+      "lure_rate": 0.0851,
+      "ci95": [
+        0.0213,
+        0.1702
+      ]
+    },
+    "Nature & cosmos": {
+      "n_items": 48,
+      "lure_rate": 0.0833,
+      "ci95": [
+        0.0208,
+        0.1667
+      ]
+    },
+    "Kinship/social": {
+      "n_items": 12,
+      "lure_rate": 0.0833,
+      "ci95": [
+        0.0,
+        0.25
+      ]
+    },
+    "Food & drink": {
+      "n_items": 12,
+      "lure_rate": 0.0833,
+      "ci95": [
+        0.0,
+        0.25
+      ]
+    },
+    "Body & mind": {
+      "n_items": 30,
+      "lure_rate": 0.0667,
+      "ci95": [
+        0.0,
+        0.1667
+      ]
+    }
+  }
+}

@@ -398,3 +398,262 @@ to be extended to the three *direct* pairs. Resolved entirely on this server, no
   `docs/paper_stats/analysis_v2/entity_divergence_cross.json`; next step is to
   job **392922** then RAN successfully past model loading (31 min, confirming the fsx_it_0 HF_HOME/TMPDIR fix works) but FAILED at the embedding step: `ModuleNotFoundError: No module named 'sentence_transformers'` (`common.py:128`) — the `monitorability/.venv` we switched to for vllm lacks this package (the old, vllm-less `monitorability-prertaining/.venv` happens to have it). **Needs user action**: install it into the venv we're actually using, then we'll resubmit. fold the three new numbers into `latex/tables/pair_divergence.tex` (or a new table) and replace the
   `\todo{}` in `latex/04_analysis.tex`, committed locally in `OverleafCultureInFigurativeLanguage/` (not pushed).
+
+---
+
+## 6. Deep-analysis pass (2026-10-04, user directive: "conduct whatever deep analyses you can")
+
+The earlier §5.2 Track-2 pass delivered one table and some prose trimming, not the deeper
+analysis it promised (no new figures, no new large-scale annotation). This section is the real
+pass. Five new analyses, four new scripts, three new figures; all statistics are permutation
+tests or item bootstraps, and the negative results are reported as negative.
+
+### 6.1 New artefacts
+
+| Script (`src/culture/analysis/v2/`) | Output (`docs/paper_stats/analysis_v2/`) | Needs GPU |
+|---|---|---|
+| `make_figures.py` | `fig_typology.pdf`, `fig_divergence.pdf`, `fig_learning.pdf` (written into the Overleaf checkout) | no |
+| `analysis_to_training_bridge.py` | `analysis_to_training_bridge.json` | no |
+| `selective_learning.py` | `selective_learning.json` | no |
+| `exposure_dose_response.py` | `exposure_dose_response.json` | no |
+| `lure_by_type.py` | `lure_by_type.json` | no |
+| `culture_layer_taxonomy.py` | `culture_layer_taxonomy.json` | yes (job 397644) |
+| `entity_valence.py` | `entity_valence.json` | yes (job 397644) |
+
+`deep_analysis_remote.slurm` runs the two GPU ones (Qwen3.5-27B-FP8 primary, aya-expanse-8b as
+the second annotator, both pulled from the Hub on the compute node).
+
+### 6.2 Findings
+
+1. **The Chinese seen/unseen gap is mostly item difficulty, not memorisation.** The *base*
+   checkpoint, which never saw the corpus, already separates the IdiomAtlas-MC splits by 26.4
+   points in Chinese; \idiomcpt{} widens that to only 29.0 (difference-in-differences $+2.6$).
+   In Arabic and Hindi the base gaps are $+4.2$ and $-2.6$, so the \idiomcpt{} gaps are
+   genuinely training-made ($+31.6$, $+24.6$). The paper's claim survives in the
+   *gain-over-control* framing it actually uses, but the raw gap must not be read as
+   memorisation. Written into `05_exp.tex` as a new paragraph + `fig_learning.pdf`.
+2. **Corpus exposure does not modulate the gain.** Every Chinese seen item joins to a corpus
+   occurrence count and no unseen item does (independent confirmation of the split). Accuracy
+   rises with the count for *every* arm including the untrained base ($\rho=0.14$–$0.21$,
+   $p<0.001$), so that trend is idiom frequency, not training; the gain over the control is flat
+   in exposure ($\rho=-0.06$, $p=0.15$). Lesson for corpus construction: breadth over repetition.
+3. **NULL — the §4 divergence does not predict §5 behaviour.** Joining per-entity embedding
+   divergence to the symbolism probe (90 shared entities, continuous gold-minus-lure logprob
+   margin) gives $\rho=-0.05$, $p=0.66$ in Chinese. An earlier $\rho=0.47$ was an artefact of
+   ranking ties with `argsort`; fixed to average ranks. Consistent with the paper's own note
+   that the embedding is insensitive to evaluative polarity.
+4. **NULL — the English-default rate does not vary by semantic type.** Pooled over the three
+   languages on the base checkpoint (n=224), the spread across nine types is indistinguishable
+   from chance (permutation $p=0.97$). An apparent animals/food effect in a single Chinese arm
+   was small-$n$ noise and is *not* reported.
+5. **Section 4 rewritten around figures.** `fig_typology.pdf` (9 types × 4 languages, coloured by
+   $\chi^2$ adjusted residual) replaces the paragraph that listed those percentages;
+   `fig_divergence.pdf` replaces `tables/pair_divergence.tex`, which is no longer `\input` (the
+   file is left on disk, now orphaned). A factual check also resolved the 515-vs-516 entity
+   discrepancy: the 516th row is an empty analysis, so "all but one of the 515" is correct.
+
+### 6.3 Still running / next
+
+- Job **397644** (`deep-analysis`): the culture-layer taxonomy and the entity-valence analyses.
+  The taxonomy is the one that matters most — it measures the paper's central but so far
+  *asserted* claim that idioms carry a symbolic/evaluative layer while culture benchmarks test
+  facts and practices, by classifying 4,000 items (4 idiom sets + 6 culture benchmarks) into one
+  shared taxonomy. The valence analysis measures the axis the embedding divergence explicitly
+  misses. Both feed `05_exp.tex` ("Which layer of culture do idioms carry?") and `04_analysis.tex`.
+
+### 6.4 Results of the GPU analyses (jobs 397690, 397825) — 2026-10-04
+
+**Job history.** 397644 FAILED: `local_llm` loads the primary and the second-annotator model in
+one process, and vLLM cannot initialise a second engine after the first shuts down. Fixed with a
+`--skip_second` flag so each model gets its own invocation (the on-disk cache makes the completed
+pass free on rerun); 397690 then ran all four passes. 397825 was a follow-up that raises the
+second-annotator sample from 10 to 50 items per source, which turned out to matter a lot.
+
+**1. Culture-layer taxonomy — the paper's central claim, now measured.** Idioms and culture
+benchmarks occupy almost disjoint categories, and the contrast survives the second annotator:
+hi/zh/ar idioms are 58–86% symbolic-evaluative under Qwen3.5-27B and 80–96% under aya-expanse-8b,
+while ArabCulture / ArabicCulturalQA / MILU / DziriEval / Alyah are 0–30% and 4–40%, with per-item
+agreement 0.52–0.82 on all eight. The benchmarks are instead material practice (ArabCulture 80%)
+or facts about named things (MILU 81%, ArabicCulturalQA 79%). Written into the abstract, intro,
+`05_exp.tex`, and `fig_layer.pdf`.
+
+**2. Three rows we had to withdraw.** With 50 relabelled items per source, the annotators agree on
+only 12% of CCPM, 28% of English idioms and **34% of the cultural notes**. The notes result is the
+painful one: the primary annotator puts 5% of them in the symbolic category (which would have
+explained the \culturenotes{} null exactly), the second puts 64%. The claim is retracted in the
+paper; only the notes' *form* (encyclopedia-style definitions) is asserted. The figure marks all
+three rows with a dagger and prints per-row agreement.
+
+**3. Entity valence — failed as a measurement, succeeded as a screen.** Two model families rank
+entities similarly (r=0.69, n=172) but differ by 1.02 on a four-point scale, which is *larger* than
+the 0.50–0.64 cross-language gaps it would need to resolve. The sign-flip statistics (1.9–4.1%) are
+therefore not reported. What the screen did do was flag the dog, which led to finding 4.
+
+**4. The paper's flagship example was wrong.** The first-pass LLM summary credited the English
+*dog* with "loyalty and diligence" and the English *dragon* with "destructive force". Manual
+inspection of all 80 English dog idioms shows the inventory is *dog eat dog*, *a dog's life*,
+*dirty dog*, *dog's breakfast*, *work like a dog* — "man's best friend" is not an idiom and is
+absent from the KB — and English *dragon* has exactly two idioms, *chase the dragon* (drug use)
+and *feed the dragon* (offshoring), with no mythical sense. Both languages hold the dog in
+contempt and differ only in their grounds. Corrected in the intro hook, `04_analysis.tex`, the
+`entity_cases.tex` dog and dragon rows, and flagged in Limitations as stereotype leakage from
+LLM-written cultural summaries. **Other summaries in §4 have not been spot-checked this way and
+may carry the same problem — this is the highest-value remaining manual-verification task.**
+
+### 6.5 State of the paper
+
+Uncommitted (git identity is not configured on this box and I do not run `git config`):
+modified `latex/{01_intro,04_analysis,05_exp}.tex`, `latex/tables/entity_cases.tex`, `main.tex`;
+new and untracked `latex/figures/fig_{typology,divergence,learning,layer}.{pdf,tex}`.
+`latex/tables/pair_divergence.tex` is now orphaned (superseded by `fig_divergence.pdf`) but left
+on disk. Four `\todo{}`s remain, all needing a native speaker or appendix prose, none blocked on
+compute.
+
+---
+
+## 7. Benchmark-breadth pass and interaction tests (2026-10-05)
+
+Trigger: the paper measured Chinese culture with CCPM alone and Hindi culture with a
+100-item Global-PIQA slice, against five Arabic benchmarks. The zh/hi "no transfer"
+conclusions therefore rested on one benchmark each, and the Chinese one is classical-poetry
+matching. This pass fixes the breadth and then tests the nulls harder.
+
+### 7.1 Evaluation gaps closed first
+Audited every (language x arm x task) cell by merging the local `eval/` tree with
+`from_babel/eval/9b_babel/`: 11 of 154 were empty. All now filled.
+- `hi-cpt-unfiltered-matched` (R4) had **zero** eval records; ran the full Hindi suite
+  (`eval_hi_matched.slurm`). MABL 58.4 / Global-PIQA 66.0 / MILU 61.4 / IdiomAtlas seen 50.5 /
+  unseen 51.7 / symbolism-v2 51.0.
+- Five checkpoints lacked `symbolism_v2_*_letter` (they predate the v1->v2 task-list switch):
+  ar/culture, ar/culturenotes, hi/culture, zh/untagged, zh/culture (`eval_symv2.slurm`).
+  Both scripts stage to a temp dir and merge into the arm's `summary.json`, because
+  `run_eval` rewrites that file with only the tasks of the invocation.
+
+### 7.2 New culture benchmarks (zh 1 -> 3, hi 1 -> 3)
+Built with `culture.evaluation.build_culture_mc` into the `jsonl:` MC format, so `run_eval`
+needed no change; evaluated on all 5 zh and 6 hi 9B arms (`eval_newculture.slurm`).
+
+| task | n | source |
+|---|---|---|
+| `global_piqa_zh` / `_cultural` | 648 / 237 | the `unsampled_nonparallel_cmn_hans` pool the release ships; never used before |
+| `global_piqa_hi` / `_cultural` | 1,406 / 447 | same pool for Hindi; the paper used the 100-item sample (overlap 93) |
+| `global_piqa_{zh,hi}_parallel4` | 103 | item-matched across zh/hi/ar (verified: identical `eng_prompt` set, row-aligned; option order is shuffled per language, and the qid carries a language suffix, so cross-language *item-level* joins need the suffix stripped -- not yet implemented) |
+| `parambench_hi_culture` / `_other` | 5,449 / 5,219 | ParamBench, 100% Devanagari, Normal MCQ only, split by the dataset's own `subject` |
+| `cmmlu_culture` / `cmmlu_china_specific` | 271 / 2,761 | re-aggregated from existing CMMLU records (`cmmlu_subsets.py`), no new eval |
+
+**Rejected after inspecting the downloaded data** (all were on the recommended list):
+DRISHTIKON (4,286 Hindi rows but 4,019 = 93.8% textually reference their image);
+CulturalBench (59 China / 46 India items, questions in English); WenMind (917 of 4,875 rows
+are MCQ, 117 in the relevant domain); SANSKRITI (released file is
+`Merged_Dataset_english_SANSKRITI.csv`). CHARM still has no verifiable HF release.
+
+### 7.3 Results: the nulls hold, and get stronger
+Against the token-matched `unfiltered` control (`contrast_tasks.py`):
+- Global-PIQA-zh: every arm null (culture $+0.5$ [$-1.7$, $+2.6$]).
+- Global-PIQA-hi: every arm null (culture $-1.1$ [$-2.9$, $+0.7$]); the interval is now
+  informative where the 100-item version's was +-8.
+- ParamBench-culture: every arm null; ParamBench-**other**: cpt $-1.6$*, untagged $-1.8$*,
+  culture $-2.1$* -- domain CPT costs general exam knowledge and buys no culture.
+- R4 validated: `unfiltered-matched` sits 0.5-1.3 above `unfiltered` on all five new tasks,
+  none significant, so the 7% token-budget gap never changed a conclusion.
+
+### 7.4 Interaction tests (`culture.evaluation.interaction`)
+A null on a culture subset cannot separate "no culture installed" from "nothing happened",
+so each arm's effect was compared *between* culture-bearing and non-culture items, grouped
+only by fields the dataset authors wrote. **Of twelve interactions, one survives Holm**
+(culture on ParamBench, $+2.7$, $p_{adj}=0.012$) **and it is confounded**: the untrained base
+shows a larger interaction in the same direction ($+3.3$), i.e. ParamBench's culture subjects
+are simply less movable by any Hindi pretraining. CMMLU shows no interaction at all
+($-0.6$, $p=0.38$), which **corrects an earlier over-reading**: the apparent monotone
+"damage grows as the subset gets more cultural" (full $-1.8$ -> china $-2.3$ -> culture $-5.2$)
+does not survive, because `culture` loses on world subjects too. Conclusion: no selective
+culture effect in the reverse direction, under the most favourable test available.
+
+### 7.5 Contamination
+`contamination_check.py` (Aho-Corasick over tail shingles; 20 chars for zh, 40 for hi --
+a 40-char floor would discard 545 of 648 Chinese items). Scanned 1.5M zh CPT docs + 751K zh
+SFT rows, 1.7M hi CPT docs + 240K hi SFT rows. **All rates <= 0.11%**, single-digit items.
+One row trips the crude >1% flag at 1/99 (Global-PIQA parallel in IndicAlign); IndicAlign is
+an SFT mixture the CPT arms never see. IndicAlign stores one column per language (`hin_Deva`),
+not `text` -- the first run silently scanned zero rows because of it.
+
+### 7.6 Taxonomy: a circularity found and disclosed
+The converged run reports two second annotators, and they differ a lot:
+gemma-4-26B-A4B-it $\kappa=0.78$ (84% raw, 800 items, nothing below 62%) vs aya-expanse-8b
+$\kappa=0.53$ (64% raw, 544 items, below 45% on CCPM 9% and English idioms 38%).
+**gemma-4-26B-A4B-it generated the Arabic cultural notes** (`notes_remote.slurm:33`, job
+392945), so on the cultural-notes row it is grading its own output -- which is exactly the
+row where the paper had leaned on its 94% agreement as "the highest of any source". The
+independent annotator there is the 8B one: 56% agreement, symbolic share 56% against the
+primary's 12%. The notes claim is therefore reported as primary-only and explicitly not
+corroborated. The *core* claim is unaffected and in fact stronger: idioms are 62-88% symbolic
+under every annotator, culture benchmarks 0-12%.
+`05_exp.tex` and `fig_layer.tex` updated accordingly.
+
+### 7.7 Not done
+- **2B (42 models)**: the checkpoints are babel-only (S3.00), unreachable from this server.
+  The benchmark files and `eval_newculture.slurm` are ready to run there.
+- `fig_layer.pdf` has not been regenerated; only its caption was corrected.
+- Cross-language item-level joins on the `parallel4` sets (needs the language-suffix strip).
+- Per-item taxonomy labels: the cache keys on prompt hash and never stores `qid`, so
+  interaction tests driven by *our* labels (rather than dataset fields) still need
+  `culture_layer_taxonomy.py` to emit `qid -> category`.
+
+### 6.6 Second deep pass (2026-10-05): completing the 9B grid and three corrections
+
+**Six missing 9B evaluations run (jobs 399424-399429, all COMPLETED).** The checkpoints were
+on this cluster all along; only the IdiomAtlas-MC evaluations were missing. `eval_hi.slurm`
+accepted only `base|culture`, so it was extended to the full arm set. Coverage is now ar 6 arms,
+hi 5, zh 5 (hi/zh have no culturenotes checkpoint by design).
+
+**Correction 1 — the exposure claim was wrong, and the corrected version is stronger.**
+With no \idiomcpt{} arm in the data, the gain over the control looked flat in exposure, and
+§5 said repetition bought nothing. With \idiomcpt{} included the arms separate sharply: the
+gain grows with corpus occurrences for \idiomcpt{} in Arabic ($\rho=0.25$, $p=0.0001$) and
+Hindi ($\rho=0.16$, $p=0.0003$) — Arabic climbs 54% to 100% across the exposure range — while
+\idiomdocs{}, \culturecpt{} and \culturenotes{} are flat everywhere ($|\rho|\leq0.08$, n.s.).
+**Repetition pays only when the meaning is stated alongside the idiom.** Chinese \idiomcpt{} is
+flat too, consistent with a base model that already knows its chengyu.
+
+**Correction 2 — the seen/unseen difference-in-differences now has intervals and one source.**
+Previously the \idiomcpt{} bars came from the other cluster's point estimates. All four arms
+are now evaluated here with the same harness: ar $+30.5$ $[24.3, 36.7]$, hi $+23.0$
+$[16.3, 29.7]$, zh $+4.0$ $[-4.6, 12.1]$ (interval includes zero). The local numbers track the
+published ones to within 1.6 points, which cross-validates the two clusters.
+
+**Correction 3 — the cultural-notes claim is restored.** It had been retracted because the
+8B second annotator split 0.08 vs 0.50 on the notes' symbolic share. A same-size different-family
+annotator (gemma-4-26B-A4B-it) agrees with the primary on **94%** of notes and puts the symbolic
+share at 4%, the best agreement of any source. Overall taxonomy agreement rose from $\kappa=0.53$
+(aya-8b) to $\kappa=0.78$ (gemma), and no source now falls below 0.62 — including CCPM, which
+the weak annotator had put at 0.18.
+
+**Annotator ladder.** The same pattern holds at every level: agreement tracks annotator strength,
+not category ambiguity. Nine types: aya-8b 0.537 < Qwen3.5-9B 0.695 < nemotron-550B 0.805.
+Seven subtypes: aya-8b 0.432 < Qwen3.5-9B 0.601 < gemma-26B 0.669. Taxonomy: aya-8b 0.53 <
+gemma-26B 0.78. Low $\kappa$ from a small annotator is evidence about the annotator.
+
+**A validation gap found and under test.** The 9-way and 7-way validations are both *within
+level*: the subtypology prompt tells the annotator the entity is "already judged abstract...
+not an animal, body part, natural feature, food, person, deity, artefact or sum of money", so a
+first-level error can never be routed back and cross-level confusion is invisible by
+construction. The two codebooks overlap in writing (`occupation_economy` "work and labour" vs
+`action_conflict` "work and effort as abstractions"; `nature_cosmos` "seasons and the day-night
+cycle" vs `time_change` "day as a unit, year"). `typology_flat_validate.py` (job 399489) puts
+all fifteen labels in one flat codebook with no hint of the two levels and reports $\kappa$ plus
+the share of disagreement that is cross-level.
+
+**vLLM operational note.** gemma-4-26B-A4B-it **hangs indefinitely at TP=2** on this cluster:
+49GB in 2 shards, zero progress for 42 minutes, no error, both log files frozen. At **TP=1** the
+same weights load in 2m49s. All gemma jobs now use `VLLM_TP=1`.
+
+### 6.7 What remains
+
+| Item | Status |
+|---|---|
+| 2B models on the new benchmarks | **Hard-blocked.** No 2B checkpoint exists on this cluster (confirmed by listing `ckpts/`); plan §3.00 records them as babel-only. Needs either a 2B upload to HF or a babel run. The benchmark files (`global_piqa_zh*`, `parambench_hi_*`) *are* present here. |
+| HF upload of the 9 new 9B checkpoints | **Needs the user** — sandbox cannot reach huggingface.co (§5.3). |
+| Flat 15-way validation | job 399489 queued |
+| Native-speaker validation (3 `\todo{}`) | Needs a native speaker; sheet prepared |
+| Appendix additions (1 `\todo{}`) | Writing, not compute |
+| Spot-check of the remaining §4 entity summaries | **Highest-value unverified risk.** The dog and dragon summaries both carried stereotype leakage; the other 513 have not been checked the same way. |

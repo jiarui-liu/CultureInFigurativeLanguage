@@ -1,0 +1,5402 @@
+{
+  "काम": {
+    "subtype": "action_conflict",
+    "mentions": 188
+  },
+  "बात": {
+    "subtype": "speech_name",
+    "mentions": 121
+  },
+  "संसार": {
+    "subtype": "life_death_fate",
+    "mentions": 103
+  },
+  "वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 92
+  },
+  "दुनिया": {
+    "subtype": "life_death_fate",
+    "mentions": 71
+  },
+  "भाग्य": {
+    "subtype": "life_death_fate",
+    "mentions": 69
+  },
+  "सुख": {
+    "subtype": "life_death_fate",
+    "mentions": 63
+  },
+  "समय": {
+    "subtype": "time_change",
+    "mentions": 58
+  },
+  "गाँठ": {
+    "subtype": "residual_other",
+    "mentions": 49
+  },
+  "मौत": {
+    "subtype": "life_death_fate",
+    "mentions": 49
+  },
+  "विपत्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 46
+  },
+  "विद्या": {
+    "subtype": "morality_truth",
+    "mentions": 46
+  },
+  "झूठ": {
+    "subtype": "morality_truth",
+    "mentions": 46
+  },
+  "दुख": {
+    "subtype": "life_death_fate",
+    "mentions": 45
+  },
+  "काल": {
+    "subtype": "time_change",
+    "mentions": 41
+  },
+  "दुःख": {
+    "subtype": "life_death_fate",
+    "mentions": 38
+  },
+  "जीवन": {
+    "subtype": "life_death_fate",
+    "mentions": 34
+  },
+  "गीत": {
+    "subtype": "speech_name",
+    "mentions": 32
+  },
+  "माया": {
+    "subtype": "life_death_fate",
+    "mentions": 32
+  },
+  "कार्य": {
+    "subtype": "action_conflict",
+    "mentions": 31
+  },
+  "कर्म": {
+    "subtype": "action_conflict",
+    "mentions": 30
+  },
+  "प्रेम": {
+    "subtype": "life_death_fate",
+    "mentions": 30
+  },
+  "इज्जत": {
+    "subtype": "speech_name",
+    "mentions": 29
+  },
+  "मृत्यु": {
+    "subtype": "life_death_fate",
+    "mentions": 28
+  },
+  "चोरी": {
+    "subtype": "action_conflict",
+    "mentions": 28
+  },
+  "वक्त": {
+    "subtype": "time_change",
+    "mentions": 27
+  },
+  "बल": {
+    "subtype": "action_conflict",
+    "mentions": 27
+  },
+  "देश": {
+    "subtype": "quantity_space",
+    "mentions": 27
+  },
+  "ज्ञान": {
+    "subtype": "morality_truth",
+    "mentions": 26
+  },
+  "शादी": {
+    "subtype": "action_conflict",
+    "mentions": 26
+  },
+  "रंग": {
+    "subtype": "residual_other",
+    "mentions": 25
+  },
+  "विवाह": {
+    "subtype": "action_conflict",
+    "mentions": 25
+  },
+  "जवानी": {
+    "subtype": "time_change",
+    "mentions": 25
+  },
+  "लड़ाई": {
+    "subtype": "action_conflict",
+    "mentions": 25
+  },
+  "सेर": {
+    "subtype": "quantity_space",
+    "mentions": 24
+  },
+  "चीज़": {
+    "subtype": "residual_other",
+    "mentions": 23
+  },
+  "झगड़ा": {
+    "subtype": "action_conflict",
+    "mentions": 23
+  },
+  "मार": {
+    "subtype": "action_conflict",
+    "mentions": 22
+  },
+  "बुढ़ापा": {
+    "subtype": "time_change",
+    "mentions": 22
+  },
+  "सामान": {
+    "subtype": "residual_other",
+    "mentions": 21
+  },
+  "मान": {
+    "subtype": "speech_name",
+    "mentions": 21
+  },
+  "लाज": {
+    "subtype": "speech_name",
+    "mentions": 21
+  },
+  "बातें": {
+    "subtype": "speech_name",
+    "mentions": 20
+  },
+  "जीव": {
+    "subtype": "life_death_fate",
+    "mentions": 20
+  },
+  "घड़ी": {
+    "subtype": "time_change",
+    "mentions": 19
+  },
+  "गठरी": {
+    "subtype": "residual_other",
+    "mentions": 19
+  },
+  "अँधेरा": {
+    "subtype": "residual_other",
+    "mentions": 18
+  },
+  "लोभ": {
+    "subtype": "morality_truth",
+    "mentions": 18
+  },
+  "कल": {
+    "subtype": "time_change",
+    "mentions": 18
+  },
+  "शिकार": {
+    "subtype": "action_conflict",
+    "mentions": 17
+  },
+  "वचन": {
+    "subtype": "speech_name",
+    "mentions": 17
+  },
+  "गाली": {
+    "subtype": "speech_name",
+    "mentions": 17
+  },
+  "गुण": {
+    "subtype": "morality_truth",
+    "mentions": 16
+  },
+  "कोस": {
+    "subtype": "quantity_space",
+    "mentions": 16
+  },
+  "बाहर": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "दुष्ट": {
+    "subtype": "morality_truth",
+    "mentions": 15
+  },
+  "परिश्रम": {
+    "subtype": "action_conflict",
+    "mentions": 15
+  },
+  "खेल": {
+    "subtype": "action_conflict",
+    "mentions": 15
+  },
+  "बोझ": {
+    "subtype": "quantity_space",
+    "mentions": 15
+  },
+  "फ़ारसी": {
+    "subtype": "speech_name",
+    "mentions": 14
+  },
+  "न्याय": {
+    "subtype": "morality_truth",
+    "mentions": 14
+  },
+  "जगह": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "पश्चिम": {
+    "subtype": "quantity_space",
+    "mentions": 14
+  },
+  "काया": {
+    "subtype": "life_death_fate",
+    "mentions": 14
+  },
+  "आफ़त": {
+    "subtype": "life_death_fate",
+    "mentions": 13
+  },
+  "भेद": {
+    "subtype": "morality_truth",
+    "mentions": 13
+  },
+  "दोस्ती": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "दोष": {
+    "subtype": "morality_truth",
+    "mentions": 12
+  },
+  "सपना": {
+    "subtype": "life_death_fate",
+    "mentions": 12
+  },
+  "प्रीति": {
+    "subtype": "morality_truth",
+    "mentions": 12
+  },
+  "मेला": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "बुराई": {
+    "subtype": "morality_truth",
+    "mentions": 12
+  },
+  "चाल": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "कष्ट": {
+    "subtype": "life_death_fate",
+    "mentions": 12
+  },
+  "स्नान": {
+    "subtype": "action_conflict",
+    "mentions": 12
+  },
+  "मीठा": {
+    "subtype": "residual_other",
+    "mentions": 11
+  },
+  "राग": {
+    "subtype": "speech_name",
+    "mentions": 11
+  },
+  "मित्रता": {
+    "subtype": "action_conflict",
+    "mentions": 11
+  },
+  "छेद": {
+    "subtype": "quantity_space",
+    "mentions": 11
+  },
+  "जन्म": {
+    "subtype": "life_death_fate",
+    "mentions": 11
+  },
+  "बला": {
+    "subtype": "life_death_fate",
+    "mentions": 11
+  },
+  "स्थान": {
+    "subtype": "quantity_space",
+    "mentions": 11
+  },
+  "सत्य": {
+    "subtype": "morality_truth",
+    "mentions": 11
+  },
+  "शक्ति": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "भोग": {
+    "subtype": "life_death_fate",
+    "mentions": 10
+  },
+  "रण": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "सम्मान": {
+    "subtype": "speech_name",
+    "mentions": 10
+  },
+  "दरिद्रता": {
+    "subtype": "life_death_fate",
+    "mentions": 10
+  },
+  "आशा": {
+    "subtype": "life_death_fate",
+    "mentions": 10
+  },
+  "यात्रा": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "बोली": {
+    "subtype": "speech_name",
+    "mentions": 10
+  },
+  "निर्बल": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "सेवा": {
+    "subtype": "action_conflict",
+    "mentions": 10
+  },
+  "तीन": {
+    "subtype": "quantity_space",
+    "mentions": 10
+  },
+  "कहानी": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "भाग": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "इज्ज़त": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "प्यार": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "लालच": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "अपने": {
+    "subtype": "residual_other",
+    "mentions": 9
+  },
+  "हिस्सा": {
+    "subtype": "residual_other",
+    "mentions": 9
+  },
+  "यौवन": {
+    "subtype": "time_change",
+    "mentions": 9
+  },
+  "साख": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "पीड़ा": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "ग़म": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "खटाई": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "आबरू": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "आराम": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "इश्क़": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "भलाई": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "नेकी": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "बाजा": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "किस्मत": {
+    "subtype": "life_death_fate",
+    "mentions": 9
+  },
+  "यश": {
+    "subtype": "speech_name",
+    "mentions": 9
+  },
+  "सच": {
+    "subtype": "morality_truth",
+    "mentions": 9
+  },
+  "सभा": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "अदालत": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "अपना": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "अवसर": {
+    "subtype": "time_change",
+    "mentions": 8
+  },
+  "व्यवहार": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "साधन": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "आदर": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "काज": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "मर्यादा": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "श्रम": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "गाना": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "दाँव": {
+    "subtype": "action_conflict",
+    "mentions": 8
+  },
+  "पल": {
+    "subtype": "time_change",
+    "mentions": 8
+  },
+  "भय": {
+    "subtype": "life_death_fate",
+    "mentions": 8
+  },
+  "नीच": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "दया": {
+    "subtype": "morality_truth",
+    "mentions": 8
+  },
+  "टुकड़े": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "खुशामद": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "अपमान": {
+    "subtype": "speech_name",
+    "mentions": 8
+  },
+  "बीघा": {
+    "subtype": "quantity_space",
+    "mentions": 8
+  },
+  "तुम": {
+    "subtype": "residual_other",
+    "mentions": 8
+  },
+  "प्रतिष्ठा": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "बैर": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "गरीबी": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "पद": {
+    "subtype": "speech_name",
+    "mentions": 7
+  },
+  "मरना": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "संतोष": {
+    "subtype": "morality_truth",
+    "mentions": 7
+  },
+  "स्वभाव": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "श्रृंगार": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "अपराध": {
+    "subtype": "morality_truth",
+    "mentions": 7
+  },
+  "झूठा": {
+    "subtype": "morality_truth",
+    "mentions": 7
+  },
+  "हानि": {
+    "subtype": "action_conflict",
+    "mentions": 7
+  },
+  "पीना": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "प्रीत": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "सुगंध": {
+    "subtype": "residual_other",
+    "mentions": 7
+  },
+  "पाँच": {
+    "subtype": "quantity_space",
+    "mentions": 7
+  },
+  "स्वप्न": {
+    "subtype": "life_death_fate",
+    "mentions": 7
+  },
+  "महीना": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "उत्सव": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "गरज": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "अभागा": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "नेवला": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "आगरा": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "दो व्यक्ति": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "विचार": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "पार": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "विश्वास": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "एक": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "सौ": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "बदी": {
+    "subtype": "morality_truth",
+    "mentions": 6
+  },
+  "भविष्य": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "मुसीबत": {
+    "subtype": "life_death_fate",
+    "mentions": 6
+  },
+  "नाच": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "मेहनत": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "तौल": {
+    "subtype": "quantity_space",
+    "mentions": 6
+  },
+  "युद्ध": {
+    "subtype": "action_conflict",
+    "mentions": 6
+  },
+  "साल": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "तमाशा": {
+    "subtype": "residual_other",
+    "mentions": 6
+  },
+  "आयु": {
+    "subtype": "time_change",
+    "mentions": 6
+  },
+  "सपने": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "कसरत": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "नीयत": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "उपकार": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "सफलता": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "सबल": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "हिम्मत": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "खुशी": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "आस": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "बुद्धिमान": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "स्वास्थ्य": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "आलस": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "भार": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "धक्का": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "कलंक": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "प्राणी": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "बोझा": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "काला": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "भीतर": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "दो": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "जनम": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "फूहड़": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "प्रतिज्ञा": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "डर": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "ओछा": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "फाँसी": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "टोटा": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "मौका": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "फूट": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "क़ानून": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "सहारा": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "तक़दीर": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "चतुराई": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "सलाम": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "गोह": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "आज्ञा": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "कुश्ती": {
+    "subtype": "action_conflict",
+    "mentions": 5
+  },
+  "चुगली": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "मरण": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "तेरह": {
+    "subtype": "quantity_space",
+    "mentions": 5
+  },
+  "संग": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "सीरत": {
+    "subtype": "morality_truth",
+    "mentions": 5
+  },
+  "वैभव": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "फरिया": {
+    "subtype": "speech_name",
+    "mentions": 5
+  },
+  "दुर्बल": {
+    "subtype": "residual_other",
+    "mentions": 5
+  },
+  "साठ वर्ष": {
+    "subtype": "time_change",
+    "mentions": 5
+  },
+  "होनी": {
+    "subtype": "life_death_fate",
+    "mentions": 5
+  },
+  "नकल": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "इशारा": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "तमाचा": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "अच्छे दिन": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "आसा": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "मुक्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "बारी": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "ऐब": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "गवाही": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "कमज़ोर": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "अभ्यास": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "आगे": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "चुटकी": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "अक्षर": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "सभी": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "गोता": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "जोबन": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "बातचीत": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "आवाज़": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "शर्म": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "उपाय": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "झंझट": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "बदनामी": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "आदत": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "जिंदगी": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "मत": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "वस्तुएँ": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "दुश्मनी": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "उपदेश": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "शान": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "भाषा": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "बीमारी": {
+    "subtype": "life_death_fate",
+    "mentions": 4
+  },
+  "ऐंठन": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "लगन": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "ताना": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "सूली": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "दाग": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "बोल": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "प्रमाण": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "मद": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "इज़्ज़त": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "मल्हार": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "गंदगी": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "ज़माना": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "रोना": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "कर": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "चिंता": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "हत्या": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "चक्कर": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "मुहब्बत": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "तैरना": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "स्वार्थ": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "जीत": {
+    "subtype": "action_conflict",
+    "mentions": 4
+  },
+  "रीति": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "आनंद": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "शौक़": {
+    "subtype": "residual_other",
+    "mentions": 4
+  },
+  "धैर्य": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "सच्चा": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "बचपन": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "बारह बरस": {
+    "subtype": "time_change",
+    "mentions": 4
+  },
+  "अभिमान": {
+    "subtype": "morality_truth",
+    "mentions": 4
+  },
+  "हज़ार": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "सीख": {
+    "subtype": "speech_name",
+    "mentions": 4
+  },
+  "तोला": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "रत्ती": {
+    "subtype": "quantity_space",
+    "mentions": 4
+  },
+  "गति": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "न्योता": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "लक्ष्य": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "जंजाल": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "अकेला": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "बरकत": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "सार": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "अधिकार": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "अधेली": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "अनाड़ी": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "बलाय": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "साध": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "चीज": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "चित्र": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "शृंगार": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "पीछे": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "डोर": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "फ़सलें": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "बेइज्जती": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "इल्म": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "इधर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "उधर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "वासना": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "सहायता": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "उद्यम": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "बरेली": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "ग्यारह": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "तम": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "निशाना": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "पढ़ाई": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "परहेज": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "चालीस सेर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "हँसना": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "नक़ल": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "कंगाली": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "मुक़दमा": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "तकलीफ़": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "बास": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "शब्द": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "काटना": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "मारना": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "लज्जा": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "काली": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "पहरा": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "तेरस": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "खुशबू": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "रार": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "लूट": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "शरम": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "घमंड": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "जीना": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "जबरा": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "पयार": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "सवा सेर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "भावना": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "नहाना": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "ज़िन्दगी": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "सोहबत": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "संग्राम": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "साठ": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "उन्नति": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "साँच": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "कपट": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "ऊपर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "तीन कोस": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "दस": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "दुबला": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "मोटा": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "नई वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "पुरानी वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 3
+  },
+  "उम्र": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "हठ": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "पाठ": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "लकीर": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "रिस": {
+    "subtype": "action_conflict",
+    "mentions": 3
+  },
+  "सनेह": {
+    "subtype": "life_death_fate",
+    "mentions": 3
+  },
+  "फ़िक्र": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "सुगन्ध": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "बचन": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "मौन": {
+    "subtype": "speech_name",
+    "mentions": 3
+  },
+  "बीस": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "भ्रम": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "साथ": {
+    "subtype": "quantity_space",
+    "mentions": 3
+  },
+  "शराफ़त": {
+    "subtype": "morality_truth",
+    "mentions": 3
+  },
+  "अवस्था": {
+    "subtype": "time_change",
+    "mentions": 3
+  },
+  "संगीत": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "चीज़ें": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "झुंड": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "पिछला": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "आगे वाला": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "पीछे वाला": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "अक्षत": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "क्षमा": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "नहीं": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "निर्दोष": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "अधेला": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "करनी": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "आसरा": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "गिरह": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "स्वयं": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "सुभागा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "अरबी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "अलिफ़": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "बे": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "खैर": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सच्चाई": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "परिचय": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "कनागत": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "आखर": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "कारण": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "लाहौर": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "पत": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "फ़रुख़ाबादी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "मर्म": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "नियम": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "अवगुण": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "तृष्णा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "निरादर": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "आना-जाना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "निमंत्रण": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "निर्लज्ज व्यक्ति": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "आल्हा": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "आवश्यकता": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "निराशा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "आशिक़ी": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "अहसान": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "चुप्पी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "इक्का": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "मज़ाक": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "जवाब": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "गुनाह": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "बजाना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "उद्योग": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "मामला": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "दो पक्ष": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "वजन": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "नखरा": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "एकता": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "व्यथा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "महफ़िल": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "गिरना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "गांठ": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "कोर": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "क ख ग": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "कचरा": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "कड़वा": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "फाँक": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "गंधी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "अन्याय": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "मनसूबे": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "आशिकी": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "अब": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "कलह": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "शोक": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "क़िस्मत": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "मनोरथ": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "आबादी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "खिलाना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "मनुष्य-जीवन": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "हाल": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "क्रोधी": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "दगा": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "डाँट": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "स्नेह": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सुविधाएँ": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "खामोशी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "रज़ा": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "मार-पीट": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ग़मी": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "दबाव": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "बिरहा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "बुरी आदत": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "आवाज": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "बुरे दिन": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "उजाड़": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "हिन्दुस्तान": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "गम": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "चालीस वर्ष": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "आह": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "घाटा": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ख्वाब": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "विद्याएँ": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "छः": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "छज्जू": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "समर": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "छिद्र": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "रहस्य": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "बेहयाई": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "वृद्धावस्था": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "सबर": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "ज़रूरत": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "जल्दी": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "देर": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "धोखा": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "कुमति": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "पासंग": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "सोग": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "इलाज": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "तेज": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "नसीबा": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "देग": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ममता": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "मेल": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "योजना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "बोलना": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "बुनाई": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "परिणाम": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "रीत": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "मजरी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "पचास": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "बिस्वा": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "जागना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "डूबना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "पतन": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "बुखारा": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "परीक्षा": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "शोर": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "टहल": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "ठाट-बाट": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "तंगी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "तदबीर": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "तकदीर": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "बाज़ी": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "तड़का": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "बतंगड़": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "ज़िंदगी": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "बावन": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "एतबार": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "निहाली": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "टक्कर": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "दारिद्र्य": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "अढ़ाई कोस": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "बारह वर्ष": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "फहड़": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "उम्मीद": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "सवाब": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "रंग-रूप": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "लेख": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "नीति": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "ठौर": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "ठसक": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "मार्ग": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "नइहर": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "हक़": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "व्यभिचार": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सोलह": {
+    "subtype": "quantity_space",
+    "mentions": 2
+  },
+  "अपनी चीज़": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "गुजरात": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "बड़ाई": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "वहम": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सुर": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "असल": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "वसीला": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "लड़कपन": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "बेशर्म": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "जमाना": {
+    "subtype": "time_change",
+    "mentions": 2
+  },
+  "भरम": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "शंका": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "हिन्दी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "भूल": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "चूक": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "बाणी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "संकट": {
+    "subtype": "life_death_fate",
+    "mentions": 2
+  },
+  "गालियाँ": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "रोशनी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "साया": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "वार": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "सामना": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "हरजाई": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "रिवाज": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "होड़": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सरहज": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "रागिनी": {
+    "subtype": "speech_name",
+    "mentions": 2
+  },
+  "भला": {
+    "subtype": "morality_truth",
+    "mentions": 2
+  },
+  "सफेदी": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "परिस्थिति": {
+    "subtype": "residual_other",
+    "mentions": 2
+  },
+  "सिफ़ारिश": {
+    "subtype": "action_conflict",
+    "mentions": 2
+  },
+  "अंग्रेज़ी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "गायन-बादन": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "अंदर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चहुँदिसि": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अकड़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "हेत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अकाल मृत्यु": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "वयस": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "अगला": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "आगे का हिस्सा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पीछे का हिस्सा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अच्छा काम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अच्छा फल": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "गलती": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "शक": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "रोक": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "रुकावट": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आतिथ्य": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अदृष्ट": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "प्रतिषेध": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दुःख-दर्द": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "शब्दार्थ": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "लरिकाई": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तीन सेर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अपकार": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "पीओ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दुखड़ा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कायदा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "फटा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तीता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बाक़ी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "टेक": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ब्याहता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "भगई": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पोई": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विशेष नियम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "साधारण नियम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मूल प्रवृत्ति": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सात भाँवर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अमानत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अनर्थ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "समुदाय": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कसीदा": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मुझको": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तुझको": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पंक्ति": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "हर्फ": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नुक्ता": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "वात्सल्य": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आगा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पीछा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "गुप्त बातें": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "दौड़": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आचार": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "भला-बुरा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आश": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "शासन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "वह": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दशा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "आज़ादी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "विनम्रता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अतिथि-सत्कार": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आढ़त": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आतुर": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आदतें": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दो दल": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आदमियत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मानवता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "कुजात": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सुजात": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आध सेर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "छोटी जगह": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बड़ी चीज़": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "संपर्क": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "छानना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आपस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "आपा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जापा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "सतीत्व": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "उछाह": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आफ़ताब": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "बेआबरू": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मोह": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "लालसा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मालभोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "झारसो": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आरा जिला": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "आलस्य": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "आविष्कार": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "गान": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मंज़िल": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बीच": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "नुकसान": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कुचन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दुक्का": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "तिक्का": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "इत्तफ़ाक़": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कृपा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "परहेज़": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ग़रूर": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "वेग": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "युवावस्था": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "मानस-जगत": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "अभिलषित वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "अभिलाषा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जिज्ञासा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ईर्ष्या": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "टीस": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सिद्धांत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "किशोरावस्था": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "तत्त्व": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अफ़वाह": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मार-पीटाई": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "भूखा रहना": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "दृष्टान्त": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "उदाहरण": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "जंग": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "उर्दी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ऊँचाई": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बुरे कर्म": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चातुरी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अपशब्द": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "रुतबा": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "उपचार": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "मातम": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "चुप": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "क़ालिब": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अरमान": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जुर्म": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सज़ा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "हज़ार नियामत": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "आर्थिक दशा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "निशाने": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चरित्र": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बुरी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "उड़ना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आशाएँ": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "हजार आफतें": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "वंशवृद्धि": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "परेशानी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "एकांत": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "विषय": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "बुड़बक": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "संयोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सलाह": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ह": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "शिक्षा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चरना": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विजय": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "क़दर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "संतानोत्पत्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "तीन दिन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "सिधाई": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "छल-कपट": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बाजी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "कमजोर": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सुख-सुविधाएँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "जड़मति": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दरिद्री": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कर्महीन": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "भाग्यहीन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कुचालि": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "पछितानी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "जतन": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "उमर": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "अच्छे कर्म": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "वर्तमान": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "अड़ंगा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विषबाण": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कसम": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कहना": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "करना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "हाय-हाय": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "डूबे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "खीलें": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "कसक": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "तोल": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "सत्संगति": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "वाक्य": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "आयुष्य योग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "उतानी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "सत्रह बाधाएं": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "क़ायदा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "हज़ूरी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "खुशामदी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "काफ़िया": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कामकाज": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "रूप-लावण्य": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पराई पीरा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कारज": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "कहावत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "हाँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "काली खाने": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "सेत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "काव्य": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नाटक": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "औरंगाबाद": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गौरा नगर": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "धौंस": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गुन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "खलल": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दुर्घटना": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "जलावन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मदोन्मत्त": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "रहन-सहन": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "धक्का-मुक्की": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जनम-भर": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "जोश": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लला": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ज़ोर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "फरुखाबाद": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "भली संगति": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "औसर": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "पहनना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "खिदमत": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "फ़जीहत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नसीहत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मर्जी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बुरा कर्म": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "खेप": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "राम राम": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गद्य": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नौ मन": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "जोखों": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बित्ता": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "गप्पी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "खुर्राट": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ग़रज़": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "गरज़बंत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "हाय": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गर्व": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "गवना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "चाल-ढाल": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "व्याह": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "गाऊँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कलावंत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ववाणा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गठकट": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बुरा वक्त": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बसेरा": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "मनुष्य का जीवन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "गुण-ग्राहक": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "हुरमत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "गुनी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "निगुनी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "गेहई रोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "गोरा रंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पखवाड़ा": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बलाएँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "दुर्गंध": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "असाध्य रोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "शादी-विवाह": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "नेह": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चमत्कार": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "नमस्कार": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "उलड़ी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चलती": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "पौबारह": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दो पाट": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पद-प्रतिष्ठा": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मील": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पैदल चलना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "मजबूत खान": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "माँगना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "गोड़ापाई": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "चसका": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "व्यक्तित्व": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चापलूसी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "व्यारी": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "चार": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चार कोस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चारों कोने": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चार पाए": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चार साल": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "चालाकी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "रेजा": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "सुंदरता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चिकनी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चौथाई हिस्सा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चीरफाड़": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "चमकोन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चुग़ली": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बिनती": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "चुपड़ी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दो-दो": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चेतन प्राणी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "बुद्धिजीवी प्राणी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "अर्थसंकट": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मेरा हाल": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ऐरे-गैरे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चौदह कलाएँ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चौदह वर्ष": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बनवास": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "छब्बे": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "नौ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "छः महीने": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "छत्तीस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "परछाँव": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "छटाँक": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "छटांक": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "लिखा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "छल-छंद": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "रंज": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "अलगहा": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "फटका": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "दुर्गुण": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नाटे व्यक्ति": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "अधीन": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चेतन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कर्मपत्री": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "मरन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "क़ाबू": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जबर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जबरदस्त": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तेवर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "रोब": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "अबरा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अफ़साना": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "विकार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "जला": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "जल्दबाज़ी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ताक़त": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जोवन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "नाचा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "सबका ठिकाना": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "सफेद रंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "राज-रीति": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "विपति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "यहाँ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "वहाँ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कलि-काल": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "दूषण": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सत्य सनेहू": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मृत्यु-दंड": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "गमी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "जीवित": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सब कुछ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उमस": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नाच-कूद": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "वार-फेर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "दूसरों का सत्कार": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जिद": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "दग़ा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "लाड़": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "कड़ियाँ": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "विषया": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "प्यांर": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चिकना": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मान-सम्मान": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "ठिकाना": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "रहम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मेहरबान": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "हया": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बैराग": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मेल-मिलाप": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "व्याधि": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "हुलास": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "जुल्म": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "लोहाई रोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "दुर्भिक्ष": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "पर भनिति": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "पक्षवाले": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कोटि युग": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "सत्य सनेह": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "राज्य-तिलक": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "आव-भाव": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आवभगत": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "नियत": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "चौदह साल": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "वनवास": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "तीन बीसी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अवनति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "घमंडी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "जुगत": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "जुग": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "उच्च पद": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "जौवन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "निचोड़ना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "समस्या": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "जोर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "चारों ओर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कुसंग": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ज्ञान-पंथ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "माया-जाल": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "क़ब्ज़ा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "सफ़ाई": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "झूठ बोलना": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कछु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ठहर": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "इलाका": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "जिम्मेदारी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ठेस": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बीमारियाँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "दस सेर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "डगर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कमाल": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "डेढ़ पहोली": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "स्वर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कनात": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सबूत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ढाई": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "फ़राखी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "फ़राख़": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कार्यक्षेत्र": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "दूसरों के कष्ट": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "एहसान": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नृत्य": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तीन चीजें": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "मधुर बानी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बहत्तर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बल खिसारी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आचरण": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मीठे वचन": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "राज सुख": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "तेरह दिन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "लड़ाई-झगड़ा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "मकसूद": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "थोड़े दाम की वस्तु": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कविता": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "घड़ियाँ": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "उपलब्धि": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दमासा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "विदाई": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "सवा मन": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "खबर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "दरे-तौबा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बहुमत": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "गुफ़्तार": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सुख-सुविधा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ख़ामोशी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "क्षण": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "क़सूर": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दिलेरी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दिल्लगी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ग़दर": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सीधा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "संपन्न": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "दूसरों की प्रसन्नता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "झगड़े": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तड़क-भड़क": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उत्साह": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "दोनोें दिशा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "उफान": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पाँचों पोर": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "काले-काले": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कालपी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बावनपुरा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "देना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "अत्याचार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ढंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "अकर्मण्य": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आदेश": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "निर्धनता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "धप्पा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "धमधूसड़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "धरना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "ताँव": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "काम-वासना": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नई बातें": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "पुरानी बातें": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नई चीज़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पुरानी चीज़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तरीका": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तहमत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "गंदा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नक़्श": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नक्काशी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कलाबाज़ी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "नरकट": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "खींचातानी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "माँद": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नम्रता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नया": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "पुराना": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "निन्दा": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "असत्यता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "प्रकाश्य वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "छबीली": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गंध": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दरसन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कीर्ति": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "आत्मसम्मान": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "स्वाधीनता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दर्शन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उलिया-कुलिया": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दायें": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बीस बरस": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बदबू": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "निन्यानवे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "स्वतंत्रता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "इश्क": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "खाद्य-अखाद्य": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "शृंगार रस": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नेक": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बद": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नौ कोस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "सौ कोस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "अपयश": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नौ दिन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "यंत्र": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पढ़ना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "लिखना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "अनुभव": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "औगुन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "परचा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "परबस": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "उपासा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पीड़": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "लाज-शरम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अधीनता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मौज": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पराई वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पहला": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "भँझंगड़ा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बोना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "योग्यता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "पाँच साल": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "पचास साल": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "पाँच महीने": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "भाँत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "न्याँव": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बुदबुदा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लिखावट": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कारनामा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "पीला रंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "संभोग": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "मौज-मजे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "प्रत्यक्ष": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अनुमान": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "विघ्न": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सत्त्व": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "रज": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "प्रभुता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उद्देश्य": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "साहित्य": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "विभाव": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "अनुभाव": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आपदा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "ख़शबू": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "सवाल": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बुझना": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "फलवान् वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "फलहीन वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "फ़ाके": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ज़िक्र": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "फ़ाक़ा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उचक्के": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "जस": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "दुलार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "फरमाइश": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "महफ़िलें": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "काम-धाम": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "आठ": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "योजनाएँ": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बदनाम": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बदायूँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तीस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पुत्र-उत्पत्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "बहस": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "करतूतें": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "तीन पहर": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "ब्याहूँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "गुरवाई": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सफर": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बारह": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बालेपन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बसावन": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "छोटी आयु": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "त्याग": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बिद": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विजया": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बिदा": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "विवाद": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "गुण-दोष": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बैठना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बिलायत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मथन": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "मौक़ा": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "उन्नीस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "पच्चीस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ऊँचा स्थान": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "तीन टिकली": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "संकेत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बुधई": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "निमन्त्रण": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "अस्तबल": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बेअदब": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बेनसीब": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बाअदब": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "बानसीब": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बेकार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बेज़बान": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "उदार": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "फ़र्ज़ी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "देशाटन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बोलचाल": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "एकान्त": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "भयहु": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "आपत्तियाँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सुख-चैन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "विपद": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "संस्कृत": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "आपत्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सांझा काम": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "चार मास": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "पन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "स्वाभिमान": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "राग-रंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दल-दल": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विषय-भोग": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "आधा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "गंदी वस्तु": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मजबूरी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "विलास": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "मजे": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सजा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बचन्": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "भिक्षाटन": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कसर": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आकांक्षाएँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "गलतियाँ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "शरण": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "प्रिय": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मंजार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मोटाय": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "क़ौल": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "पन्था": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "महान्": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "विक्रम": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "शारीरिक सुख": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "चार महीना": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "प्रमेय": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "दीनता": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "क्षय": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "मारपीट": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "रुआब": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "कायदे": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नाप": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "चाह": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मीठी बाणी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मीठी बातें": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "मीठी बानी": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "विचारधारा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सत्तर बला": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "दिलजला": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "घूँसा": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "बट-बंठ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "न्यायशास्त्र": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नैयायिक": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मिर्गी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "पतला": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "हयात": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "कठिनाई": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "यक़ीन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "जय": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "प्रयत्न": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "एनी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "ओनी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "जान-माल": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तुम्हारी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "किसी का पक्ष": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बेईमानी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "यारी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "नखरे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पीत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पलीत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दृश्य जगत": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "फतह": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "छोटी वस्तुएँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "इच्छाएँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दुराशीष": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बेराग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "अरे": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चाटुकारिता": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बुरा काम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "स्वाँग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मध्य बिंदु": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कुमत": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "तलाक़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "सियासत": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "रीति-रिवाज": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "इंसाफ़": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मैल": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बाँत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "रोज़": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "ख़बर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "रौताई": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "कुसल क्षेम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बावन गज": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "लक्षण": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "गन्धवत्त्व": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "विद्यार्जन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "चरित": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मसला": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लड़कोरी": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "गाँठी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लड़ना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "हँसी-दिल्लगी": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "लाचार": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लाचारी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ढोंठ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "खयाल": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "चमकना": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मुड़िया अक्षर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "उर्दू लिपि": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सुधाकर": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "लिहाज़": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "लुटना": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "दूसरों की चीज़": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बुलंदी": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "वक़्त": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "तीन मन": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "विपदा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "शील": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "वृद्धि": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "कुटिल": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "शब्द-भेद": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "रौशनी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मान-अपमान": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "नादिर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "शोभा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आरंभ": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "सहवास": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "संडसी": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पूर्व पदार्थ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उत्तर पदार्थ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मध्यस्थित पदार्थ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "संदेश": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सत्तर-बहत्तर वर्ष": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "कल्पनाएँ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तेरा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मेरा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "ठाठ": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "उन्माद": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "अकेले": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "एक मत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "बलवन्": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "सर्वनाश": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "साँचो बात": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मतलब": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "ताव": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "अस्सी वर्ष": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "बारह कोस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "साठ कोस": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "बीस वर्ष": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "सात": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "सात दिन": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "आख़िरत": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "आधा हिस्सा": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "हरा रंग": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "सफ़ेद": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "पापों का भांडा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सभागी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सुमिरन": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "औदसा": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सुख-संपत्ति": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "इच्छा": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "परामर्श": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "सुस्ती": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "मुफलसी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "बायाँ स्वर": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "चोपड़ा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "मोहमाया": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "माया-मोह": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "समान": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "नादारी": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सौकन": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "सहस्र": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "जीवों": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "संयम": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "सदी": {
+    "subtype": "time_change",
+    "mentions": 1
+  },
+  "विष्ठा": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "तर्क": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "स्वारथ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "परमारथ": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "स्वार्थी": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "निर्लज्ज": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "हस्ती": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  },
+  "हुक्म": {
+    "subtype": "speech_name",
+    "mentions": 1
+  },
+  "चिन्ता": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "नौ गज": {
+    "subtype": "quantity_space",
+    "mentions": 1
+  },
+  "साहस": {
+    "subtype": "morality_truth",
+    "mentions": 1
+  },
+  "कठिन कार्य": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "वास": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "हुनर": {
+    "subtype": "action_conflict",
+    "mentions": 1
+  },
+  "है": {
+    "subtype": "residual_other",
+    "mentions": 1
+  },
+  "दुर्घटनाएँ": {
+    "subtype": "life_death_fate",
+    "mentions": 1
+  }
+}

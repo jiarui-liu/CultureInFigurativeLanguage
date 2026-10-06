@@ -1,0 +1,49 @@
+{
+  "lang": "zh",
+  "control": "unfiltered",
+  "mode": "field",
+  "n_a": 237,
+  "n_b": 411,
+  "arms": {
+    "base": {
+      "delta_culture": 1.69,
+      "delta_other": 0.0,
+      "interaction": 1.69,
+      "interaction_ci": [
+        -3.21,
+        6.54
+      ],
+      "p": 0.5092
+    },
+    "cpt": {
+      "delta_culture": 0.42,
+      "delta_other": 1.7,
+      "interaction": -1.28,
+      "interaction_ci": [
+        -5.05,
+        2.65
+      ],
+      "p": 0.5212
+    },
+    "untagged": {
+      "delta_culture": 1.27,
+      "delta_other": 0.73,
+      "interaction": 0.54,
+      "interaction_ci": [
+        -2.92,
+        4.16
+      ],
+      "p": 0.7802
+    },
+    "culture": {
+      "delta_culture": -0.42,
+      "delta_other": 0.97,
+      "interaction": -1.4,
+      "interaction_ci": [
+        -5.69,
+        2.95
+      ],
+      "p": 0.5358
+    }
+  }
+}

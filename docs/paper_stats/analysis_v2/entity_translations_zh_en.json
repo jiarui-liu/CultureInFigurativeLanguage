@@ -80,7 +80,7 @@
     "en": "tiger",
     "syn": [
       "beast",
-      "cat"
+      "predator"
     ]
   },
   "口": {
@@ -101,7 +101,7 @@
     "en": "dragon",
     "syn": [
       "serpent",
-      "beast"
+      "myth"
     ]
   },
   "手": {
@@ -121,8 +121,8 @@
   "头": {
     "en": "head",
     "syn": [
-      "skull",
-      "top"
+      "top",
+      "cap"
     ]
   },
   "火": {
@@ -171,7 +171,7 @@
     "en": "body",
     "syn": [
       "form",
-      "self"
+      "physique"
     ]
   },
   "花": {
@@ -182,10 +182,10 @@
     ]
   },
   "神": {
-    "en": "spirit",
+    "en": "god",
     "syn": [
-      "god",
-      "genius"
+      "spirit",
+      "deity"
     ]
   },
   "声": {
@@ -213,7 +213,7 @@
     "en": "matter",
     "syn": [
       "affair",
-      "thing"
+      "issue"
     ]
   },
   "凤": {
@@ -262,7 +262,7 @@
     "en": "food",
     "syn": [
       "meal",
-      "sustenance"
+      "diet"
     ]
   },
   "舌": {
@@ -304,7 +304,7 @@
     "en": "soldier",
     "syn": [
       "troop",
-      "army"
+      "warrior"
     ]
   },
   "义": {
@@ -324,8 +324,8 @@
   "名": {
     "en": "name",
     "syn": [
-      "reputation",
-      "title"
+      "fame",
+      "reputation"
     ]
   },
   "骨": {
@@ -339,7 +339,7 @@
     "en": "merit",
     "syn": [
       "achievement",
-      "deed"
+      "feat"
     ]
   },
   "文": {
@@ -388,14 +388,14 @@
     "en": "east",
     "syn": [
       "eastern",
-      "orient"
+      "right"
     ]
   },
   "西": {
     "en": "west",
     "syn": [
       "western",
-      "occident"
+      "left"
     ]
   },
   "魂": {
@@ -521,21 +521,21 @@
     "en": "pearl",
     "syn": [
       "gem",
-      "jewel"
+      "bead"
     ]
   },
   "今": {
     "en": "present",
     "syn": [
       "now",
-      "current"
+      "today"
     ]
   },
   "齿": {
     "en": "tooth",
     "syn": [
       "teeth",
-      "fang"
+      "molar"
     ]
   },
   "首": {
@@ -581,10 +581,10 @@
     ]
   },
   "本": {
-    "en": "root",
+    "en": "capital",
     "syn": [
-      "basis",
-      "foundation"
+      "fund",
+      "principal"
     ]
   },
   "脚": {
@@ -891,8 +891,8 @@
   "乐": {
     "en": "joy",
     "syn": [
-      "happiness",
-      "pleasure"
+      "pleasure",
+      "happiness"
     ]
   },
   "毛": {
@@ -962,7 +962,7 @@
     "en": "light",
     "syn": [
       "glow",
-      "radiance"
+      "ray"
     ]
   },
   "土": {
@@ -976,7 +976,7 @@
     "en": "snake",
     "syn": [
       "serpent",
-      "reptile"
+      "viper"
     ]
   },
   "鸟": {
@@ -1052,8 +1052,8 @@
   "电": {
     "en": "lightning",
     "syn": [
-      "bolt",
-      "flash"
+      "flash",
+      "bolt"
     ]
   },
   "星": {
@@ -1115,8 +1115,8 @@
   "财": {
     "en": "wealth",
     "syn": [
-      "money",
-      "fortune"
+      "fortune",
+      "money"
     ]
   },
   "暮": {
@@ -1193,14 +1193,14 @@
     "en": "sage",
     "syn": [
       "virtuous",
-      "worthy"
+      "wise"
     ]
   },
   "梦": {
     "en": "dream",
     "syn": [
       "vision",
-      "reverie"
+      "slumber"
     ]
   },
   "蜂": {
@@ -1375,7 +1375,7 @@
     "en": "wall",
     "syn": [
       "barrier",
-      "fence"
+      "partition"
     ]
   },
   "隙": {
@@ -1717,8 +1717,8 @@
   "经": {
     "en": "classic",
     "syn": [
-      "scripture",
-      "text"
+      "text",
+      "scripture"
     ]
   },
   "针": {
@@ -1739,7 +1739,7 @@
     "en": "official",
     "syn": [
       "magistrate",
-      "authority"
+      "bureaucrat"
     ]
   },
   "船": {
@@ -1752,8 +1752,8 @@
   "景": {
     "en": "scene",
     "syn": [
-      "scenery",
-      "view"
+      "view",
+      "sight"
     ]
   },
   "香": {
@@ -1921,14 +1921,14 @@
     "en": "soup",
     "syn": [
       "broth",
-      "stock"
+      "hot water"
     ]
   },
   "紫": {
     "en": "purple",
     "syn": [
       "violet",
-      "mauve"
+      "color"
     ]
   },
   "体": {
@@ -1941,8 +1941,8 @@
   "瓦": {
     "en": "tile",
     "syn": [
-      "shard",
-      "pottery"
+      "pottery",
+      "shard"
     ]
   },
   "途": {
@@ -1955,8 +1955,8 @@
   "矩": {
     "en": "square",
     "syn": [
-      "standard",
-      "measure"
+      "rule",
+      "standard"
     ]
   },
   "正": {
@@ -1976,7 +1976,7 @@
   "莺": {
     "en": "oriole",
     "syn": [
-      "yellow bird",
+      "bird",
       "warbler"
     ]
   },
@@ -2095,8 +2095,8 @@
   "三": {
     "en": "three",
     "syn": [
-      "trio",
-      "triad"
+      "number",
+      "digit"
     ]
   }
 }

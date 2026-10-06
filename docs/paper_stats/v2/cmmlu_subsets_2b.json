@@ -1,0 +1,629 @@
+{
+  "scale": "2b",
+  "root": "/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/from_babel/eval/2b/zh",
+  "control": "i_random",
+  "subsets": {
+    "cmmlu_culture": {
+      "n": 271,
+      "subjects": [
+        "chinese_food_culture",
+        "ethnology"
+      ],
+      "arms": {
+        "base": {
+          "acc": 57.56,
+          "ci": [
+            51.66,
+            63.47
+          ],
+          "delta_vs_control": 4.06,
+          "delta_ci": [
+            -1.11,
+            8.86
+          ],
+          "mcnemar_p": 0.13516,
+          "n_win": 28,
+          "n_loss": 17
+        },
+        "culture": {
+          "acc": 57.2,
+          "ci": [
+            51.29,
+            63.1
+          ],
+          "delta_vs_control": 3.69,
+          "delta_ci": [
+            -0.74,
+            8.49
+          ],
+          "mcnemar_p": 0.16415,
+          "n_win": 26,
+          "n_loss": 16
+        },
+        "culture_notes": {
+          "acc": 55.72,
+          "ci": [
+            49.82,
+            61.62
+          ],
+          "delta_vs_control": 2.21,
+          "delta_ci": [
+            -2.58,
+            7.01
+          ],
+          "mcnemar_p": 0.45138,
+          "n_win": 25,
+          "n_loss": 19
+        },
+        "i_base": {
+          "acc": 54.24,
+          "ci": [
+            48.34,
+            60.15
+          ],
+          "delta_vs_control": 0.74,
+          "delta_ci": [
+            -3.69,
+            5.17
+          ],
+          "mcnemar_p": 0.87141,
+          "n_win": 20,
+          "n_loss": 18
+        },
+        "i_culture": {
+          "acc": 54.24,
+          "ci": [
+            48.34,
+            60.15
+          ],
+          "delta_vs_control": 0.74,
+          "delta_ci": [
+            -3.69,
+            4.8
+          ],
+          "mcnemar_p": 0.86417,
+          "n_win": 18,
+          "n_loss": 16
+        },
+        "i_culture_notes": {
+          "acc": 53.87,
+          "ci": [
+            47.97,
+            59.78
+          ],
+          "delta_vs_control": 0.37,
+          "delta_ci": [
+            -4.43,
+            5.17
+          ],
+          "mcnemar_p": 1.0,
+          "n_win": 21,
+          "n_loss": 20
+        },
+        "i_idiom_tagged": {
+          "acc": 54.98,
+          "ci": [
+            49.08,
+            60.89
+          ],
+          "delta_vs_control": 1.48,
+          "delta_ci": [
+            -2.58,
+            5.54
+          ],
+          "mcnemar_p": 0.60759,
+          "n_win": 19,
+          "n_loss": 15
+        },
+        "i_idiom_untagged": {
+          "acc": 56.46,
+          "ci": [
+            50.55,
+            62.36
+          ],
+          "delta_vs_control": 2.95,
+          "delta_ci": [
+            -0.74,
+            6.64
+          ],
+          "mcnemar_p": 0.16864,
+          "n_win": 17,
+          "n_loss": 9
+        },
+        "i_random": {
+          "acc": 53.51,
+          "ci": [
+            47.6,
+            59.41
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 57.56,
+          "ci": [
+            51.66,
+            63.47
+          ],
+          "delta_vs_control": 4.06,
+          "delta_ci": [
+            -0.74,
+            8.86
+          ],
+          "mcnemar_p": 0.12629,
+          "n_win": 27,
+          "n_loss": 16
+        },
+        "idiom_untagged": {
+          "acc": 58.67,
+          "ci": [
+            52.77,
+            64.58
+          ],
+          "delta_vs_control": 5.17,
+          "delta_ci": [
+            1.11,
+            9.23
+          ],
+          "mcnemar_p": 0.02431,
+          "n_win": 24,
+          "n_loss": 10
+        },
+        "random": {
+          "acc": 56.83,
+          "ci": [
+            50.92,
+            62.73
+          ],
+          "delta_vs_control": 3.32,
+          "delta_ci": [
+            -0.74,
+            7.38
+          ],
+          "mcnemar_p": 0.16276,
+          "n_win": 21,
+          "n_loss": 12
+        }
+      }
+    },
+    "cmmlu_china_specific": {
+      "n": 2761,
+      "subjects": [
+        "ancient_chinese",
+        "chinese_civil_service_exam",
+        "chinese_driving_rule",
+        "chinese_food_culture",
+        "chinese_foreign_policy",
+        "chinese_history",
+        "chinese_literature",
+        "chinese_teacher_qualification",
+        "construction_project_management",
+        "elementary_chinese",
+        "elementary_commonsense",
+        "ethnology",
+        "high_school_politics",
+        "marxist_theory",
+        "modern_chinese",
+        "traditional_chinese_medicine"
+      ],
+      "arms": {
+        "base": {
+          "acc": 64.61,
+          "ci": [
+            62.8,
+            66.43
+          ],
+          "delta_vs_control": 2.93,
+          "delta_ci": [
+            1.56,
+            4.31
+          ],
+          "mcnemar_p": 4e-05,
+          "n_win": 230,
+          "n_loss": 149
+        },
+        "culture": {
+          "acc": 62.4,
+          "ci": [
+            60.59,
+            64.18
+          ],
+          "delta_vs_control": 0.72,
+          "delta_ci": [
+            -0.69,
+            2.14
+          ],
+          "mcnemar_p": 0.33226,
+          "n_win": 202,
+          "n_loss": 182
+        },
+        "culture_notes": {
+          "acc": 62.08,
+          "ci": [
+            60.23,
+            63.93
+          ],
+          "delta_vs_control": 0.4,
+          "delta_ci": [
+            -0.98,
+            1.81
+          ],
+          "mcnemar_p": 0.6037,
+          "n_win": 191,
+          "n_loss": 180
+        },
+        "i_base": {
+          "acc": 60.74,
+          "ci": [
+            58.93,
+            62.51
+          ],
+          "delta_vs_control": -0.94,
+          "delta_ci": [
+            -2.28,
+            0.4
+          ],
+          "mcnemar_p": 0.18756,
+          "n_win": 167,
+          "n_loss": 193
+        },
+        "i_culture": {
+          "acc": 60.59,
+          "ci": [
+            58.78,
+            62.4
+          ],
+          "delta_vs_control": -1.09,
+          "delta_ci": [
+            -2.32,
+            0.14
+          ],
+          "mcnemar_p": 0.0961,
+          "n_win": 137,
+          "n_loss": 167
+        },
+        "i_culture_notes": {
+          "acc": 60.41,
+          "ci": [
+            58.6,
+            62.19
+          ],
+          "delta_vs_control": -1.27,
+          "delta_ci": [
+            -2.46,
+            -0.07
+          ],
+          "mcnemar_p": 0.04833,
+          "n_win": 131,
+          "n_loss": 166
+        },
+        "i_idiom_tagged": {
+          "acc": 61.5,
+          "ci": [
+            59.65,
+            63.31
+          ],
+          "delta_vs_control": -0.18,
+          "delta_ci": [
+            -1.38,
+            0.94
+          ],
+          "mcnemar_p": 0.80667,
+          "n_win": 131,
+          "n_loss": 136
+        },
+        "i_idiom_untagged": {
+          "acc": 62.37,
+          "ci": [
+            60.52,
+            64.18
+          ],
+          "delta_vs_control": 0.69,
+          "delta_ci": [
+            -0.43,
+            1.85
+          ],
+          "mcnemar_p": 0.25585,
+          "n_win": 135,
+          "n_loss": 116
+        },
+        "i_random": {
+          "acc": 61.68,
+          "ci": [
+            59.87,
+            63.46
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 63.42,
+          "ci": [
+            61.64,
+            65.19
+          ],
+          "delta_vs_control": 1.74,
+          "delta_ci": [
+            0.4,
+            3.11
+          ],
+          "mcnemar_p": 0.01339,
+          "n_win": 205,
+          "n_loss": 157
+        },
+        "idiom_untagged": {
+          "acc": 63.31,
+          "ci": [
+            61.46,
+            65.09
+          ],
+          "delta_vs_control": 1.63,
+          "delta_ci": [
+            0.36,
+            2.93
+          ],
+          "mcnemar_p": 0.01393,
+          "n_win": 183,
+          "n_loss": 138
+        },
+        "random": {
+          "acc": 63.06,
+          "ci": [
+            61.28,
+            64.87
+          ],
+          "delta_vs_control": 1.38,
+          "delta_ci": [
+            0.22,
+            2.61
+          ],
+          "mcnemar_p": 0.02522,
+          "n_win": 156,
+          "n_loss": 118
+        }
+      }
+    },
+    "cmmlu_full": {
+      "n": 11582,
+      "subjects": [
+        "agronomy",
+        "anatomy",
+        "ancient_chinese",
+        "arts",
+        "astronomy",
+        "business_ethics",
+        "chinese_civil_service_exam",
+        "chinese_driving_rule",
+        "chinese_food_culture",
+        "chinese_foreign_policy",
+        "chinese_history",
+        "chinese_literature",
+        "chinese_teacher_qualification",
+        "clinical_knowledge",
+        "college_actuarial_science",
+        "college_education",
+        "college_engineering_hydrology",
+        "college_law",
+        "college_mathematics",
+        "college_medical_statistics",
+        "college_medicine",
+        "computer_science",
+        "computer_security",
+        "conceptual_physics",
+        "construction_project_management",
+        "economics",
+        "education",
+        "electrical_engineering",
+        "elementary_chinese",
+        "elementary_commonsense",
+        "elementary_information_and_technology",
+        "elementary_mathematics",
+        "ethnology",
+        "food_science",
+        "genetics",
+        "global_facts",
+        "high_school_biology",
+        "high_school_chemistry",
+        "high_school_geography",
+        "high_school_mathematics",
+        "high_school_physics",
+        "high_school_politics",
+        "human_sexuality",
+        "international_law",
+        "journalism",
+        "jurisprudence",
+        "legal_and_moral_basis",
+        "logical",
+        "machine_learning",
+        "management",
+        "marketing",
+        "marxist_theory",
+        "modern_chinese",
+        "nutrition",
+        "philosophy",
+        "professional_accounting",
+        "professional_law",
+        "professional_medicine",
+        "professional_psychology",
+        "public_relations",
+        "security_study",
+        "sociology",
+        "sports_science",
+        "traditional_chinese_medicine",
+        "virology",
+        "world_history",
+        "world_religions"
+      ],
+      "arms": {
+        "base": {
+          "acc": 65.04,
+          "ci": [
+            64.19,
+            65.9
+          ],
+          "delta_vs_control": 1.61,
+          "delta_ci": [
+            0.95,
+            2.26
+          ],
+          "mcnemar_p": 0.0,
+          "n_win": 848,
+          "n_loss": 661
+        },
+        "culture": {
+          "acc": 64.19,
+          "ci": [
+            63.32,
+            65.07
+          ],
+          "delta_vs_control": 0.76,
+          "delta_ci": [
+            0.1,
+            1.42
+          ],
+          "mcnemar_p": 0.02494,
+          "n_win": 797,
+          "n_loss": 709
+        },
+        "culture_notes": {
+          "acc": 63.94,
+          "ci": [
+            63.07,
+            64.81
+          ],
+          "delta_vs_control": 0.51,
+          "delta_ci": [
+            -0.14,
+            1.16
+          ],
+          "mcnemar_p": 0.13201,
+          "n_win": 771,
+          "n_loss": 712
+        },
+        "i_base": {
+          "acc": 62.41,
+          "ci": [
+            61.51,
+            63.3
+          ],
+          "delta_vs_control": -1.02,
+          "delta_ci": [
+            -1.67,
+            -0.37
+          ],
+          "mcnemar_p": 0.00241,
+          "n_win": 685,
+          "n_loss": 803
+        },
+        "i_culture": {
+          "acc": 62.57,
+          "ci": [
+            61.69,
+            63.44
+          ],
+          "delta_vs_control": -0.85,
+          "delta_ci": [
+            -1.44,
+            -0.26
+          ],
+          "mcnemar_p": 0.00481,
+          "n_win": 555,
+          "n_loss": 654
+        },
+        "i_culture_notes": {
+          "acc": 62.66,
+          "ci": [
+            61.78,
+            63.54
+          ],
+          "delta_vs_control": -0.77,
+          "delta_ci": [
+            -1.37,
+            -0.17
+          ],
+          "mcnemar_p": 0.0119,
+          "n_win": 568,
+          "n_loss": 657
+        },
+        "i_idiom_tagged": {
+          "acc": 63.1,
+          "ci": [
+            62.21,
+            63.98
+          ],
+          "delta_vs_control": -0.33,
+          "delta_ci": [
+            -0.9,
+            0.25
+          ],
+          "mcnemar_p": 0.27565,
+          "n_win": 557,
+          "n_loss": 595
+        },
+        "i_idiom_untagged": {
+          "acc": 63.22,
+          "ci": [
+            62.34,
+            64.09
+          ],
+          "delta_vs_control": -0.21,
+          "delta_ci": [
+            -0.75,
+            0.34
+          ],
+          "mcnemar_p": 0.47231,
+          "n_win": 500,
+          "n_loss": 524
+        },
+        "i_random": {
+          "acc": 63.43,
+          "ci": [
+            62.55,
+            64.27
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 64.7,
+          "ci": [
+            63.81,
+            65.58
+          ],
+          "delta_vs_control": 1.28,
+          "delta_ci": [
+            0.66,
+            1.91
+          ],
+          "mcnemar_p": 8e-05,
+          "n_win": 766,
+          "n_loss": 618
+        },
+        "idiom_untagged": {
+          "acc": 64.46,
+          "ci": [
+            63.57,
+            65.34
+          ],
+          "delta_vs_control": 1.04,
+          "delta_ci": [
+            0.41,
+            1.63
+          ],
+          "mcnemar_p": 0.00092,
+          "n_win": 705,
+          "n_loss": 585
+        },
+        "random": {
+          "acc": 64.27,
+          "ci": [
+            63.39,
+            65.14
+          ],
+          "delta_vs_control": 0.85,
+          "delta_ci": [
+            0.28,
+            1.4
+          ],
+          "mcnemar_p": 0.00314,
+          "n_win": 589,
+          "n_loss": 491
+        }
+      }
+    }
+  }
+}

@@ -66,14 +66,14 @@
     "en": "water",
     "syn": [
       "liquid",
-      "stream"
+      "fluid"
     ]
   },
   "راس": {
     "en": "head",
     "syn": [
       "skull",
-      "brain"
+      "top"
     ]
   },
   "مال": {
@@ -101,7 +101,7 @@
     "en": "house",
     "syn": [
       "home",
-      "hut"
+      "abode"
     ]
   },
   "دنيا": {
@@ -115,7 +115,7 @@
     "en": "water",
     "syn": [
       "liquid",
-      "stream"
+      "fluid"
     ]
   },
   "ليل": {
@@ -290,7 +290,7 @@
     "en": "head",
     "syn": [
       "skull",
-      "brain"
+      "top"
     ]
   },
   "بنت": {
@@ -360,7 +360,7 @@
     "en": "wind",
     "syn": [
       "breeze",
-      "gust"
+      "gale"
     ]
   },
   "خبر": {
@@ -525,10 +525,10 @@
     ]
   },
   "لقمه": {
-    "en": "mouthful",
+    "en": "bite",
     "syn": [
-      "bite",
-      "bit"
+      "mouthful",
+      "morsel"
     ]
   },
   "عنب": {
@@ -689,7 +689,7 @@
     "en": "man",
     "syn": [
       "person",
-      "individual"
+      "human"
     ]
   },
   "وجه": {
@@ -924,10 +924,10 @@
     ]
   },
   "جنه": {
-    "en": "genie",
+    "en": "garden",
     "syn": [
-      "spirit",
-      "demon"
+      "orchard",
+      "paradise"
     ]
   },
   "لحمه": {
@@ -980,10 +980,10 @@
     ]
   },
   "جحا": {
-    "en": "juhha",
+    "en": "fool",
     "syn": [
-      "fool",
-      "jester"
+      "jester",
+      "simpleton"
     ]
   },
   "فار": {
@@ -1015,10 +1015,10 @@
     ]
   },
   "علم": {
-    "en": "flag",
+    "en": "knowledge",
     "syn": [
-      "banner",
-      "standard"
+      "science",
+      "learning"
     ]
   },
   "اكل": {
@@ -1045,22 +1045,22 @@
   "وادي": {
     "en": "valley",
     "syn": [
-      "gully",
-      "ravine"
+      "glen",
+      "dale"
     ]
   },
   "صاحب": {
     "en": "owner",
     "syn": [
-      "possessor",
-      "master"
+      "master",
+      "possessor"
     ]
   },
   "مالك": {
     "en": "owner",
     "syn": [
-      "possessor",
-      "master"
+      "master",
+      "possessor"
     ]
   },
   "بيض": {
@@ -1130,7 +1130,7 @@
     "en": "tongue",
     "syn": [
       "speech",
-      "language"
+      "voice"
     ]
   },
   "عشره": {
@@ -1200,7 +1200,7 @@
     "en": "smoke",
     "syn": [
       "fume",
-      "vapor"
+      "haze"
     ]
   },
   "حمام": {
@@ -1283,8 +1283,8 @@
   "عقله": {
     "en": "mind",
     "syn": [
-      "intellect",
-      "reason"
+      "reason",
+      "intellect"
     ]
   },
   "يدي": {
@@ -1302,17 +1302,17 @@
     ]
   },
   "سبع": {
-    "en": "lion",
+    "en": "seven",
     "syn": [
-      "beast",
-      "predator"
+      "septet",
+      "heptad"
     ]
   },
   "صبي": {
-    "en": "child",
+    "en": "boy",
     "syn": [
-      "boy",
-      "kid"
+      "child",
+      "lad"
     ]
   },
   "بر": {
@@ -1361,7 +1361,7 @@
     "en": "mule",
     "syn": [
       "beast",
-      "pack-animal"
+      "packanimal"
     ]
   },
   "تراب": {
@@ -1388,8 +1388,8 @@
   "عرس": {
     "en": "wedding",
     "syn": [
-      "celebration",
-      "feast"
+      "nuptials",
+      "celebration"
     ]
   },
   "حيطه": {
@@ -1473,7 +1473,7 @@
     "en": "youth",
     "syn": [
       "lad",
-      "youngster"
+      "man"
     ]
   },
   "عنز": {
@@ -1582,10 +1582,10 @@
     ]
   },
   "دره": {
-    "en": "grain",
+    "en": "pearl",
     "syn": [
-      "kernel",
-      "seed"
+      "gem",
+      "jewel"
     ]
   },
   "حد": {
@@ -1626,8 +1626,8 @@
   "حبه": {
     "en": "grain",
     "syn": [
-      "kernel",
-      "seed"
+      "seed",
+      "kernel"
     ]
   },
   "غزال": {
@@ -1764,10 +1764,10 @@
     ]
   },
   "اهلها": {
-    "en": "people",
+    "en": "owner",
     "syn": [
-      "inhabitants",
-      "owners"
+      "master",
+      "inhabitant"
     ]
   },
   "ماله": {
@@ -1983,8 +1983,8 @@
   "تعبان": {
     "en": "scorpion",
     "syn": [
-      "insect",
-      "creature"
+      "stinger",
+      "insect"
     ]
   },
   "روحه": {

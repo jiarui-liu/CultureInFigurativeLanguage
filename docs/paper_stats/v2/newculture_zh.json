@@ -1,0 +1,198 @@
+{
+  "lang": "zh",
+  "control": "unfiltered",
+  "tasks": {
+    "global_piqa_zh": {
+      "n": 648,
+      "arms": {
+        "base": {
+          "acc": 70.68,
+          "ci": [
+            67.13,
+            74.07
+          ],
+          "delta": 0.62,
+          "delta_ci": [
+            -1.85,
+            3.09
+          ],
+          "mcnemar_p": 0.71223
+        },
+        "unfiltered": {
+          "acc": 70.06,
+          "ci": [
+            66.51,
+            73.61
+          ]
+        },
+        "cpt": {
+          "acc": 71.3,
+          "ci": [
+            67.75,
+            74.69
+          ],
+          "delta": 1.23,
+          "delta_ci": [
+            -0.62,
+            3.09
+          ],
+          "mcnemar_p": 0.26819
+        },
+        "untagged": {
+          "acc": 70.99,
+          "ci": [
+            67.44,
+            74.54
+          ],
+          "delta": 0.93,
+          "delta_ci": [
+            -0.93,
+            2.78
+          ],
+          "mcnemar_p": 0.40503
+        },
+        "culture": {
+          "acc": 70.52,
+          "ci": [
+            66.98,
+            74.07
+          ],
+          "delta": 0.46,
+          "delta_ci": [
+            -1.7,
+            2.62
+          ],
+          "mcnemar_p": 0.77977
+        }
+      }
+    },
+    "global_piqa_zh_cultural": {
+      "n": 237,
+      "arms": {
+        "base": {
+          "acc": 69.62,
+          "ci": [
+            63.71,
+            75.53
+          ],
+          "delta": 2.11,
+          "delta_ci": [
+            -1.69,
+            5.91
+          ],
+          "mcnemar_p": 0.38331
+        },
+        "unfiltered": {
+          "acc": 67.51,
+          "ci": [
+            61.6,
+            73.42
+          ]
+        },
+        "cpt": {
+          "acc": 67.93,
+          "ci": [
+            62.03,
+            73.84
+          ],
+          "delta": 0.42,
+          "delta_ci": [
+            -2.53,
+            3.38
+          ],
+          "mcnemar_p": 1.0
+        },
+        "untagged": {
+          "acc": 67.93,
+          "ci": [
+            62.03,
+            73.84
+          ],
+          "delta": 0.42,
+          "delta_ci": [
+            -2.11,
+            2.95
+          ],
+          "mcnemar_p": 1.0
+        },
+        "culture": {
+          "acc": 67.09,
+          "ci": [
+            61.18,
+            73.0
+          ],
+          "delta": -0.42,
+          "delta_ci": [
+            -3.8,
+            2.53
+          ],
+          "mcnemar_p": 1.0
+        }
+      }
+    },
+    "global_piqa_zh_parallel4": {
+      "n": 103,
+      "arms": {
+        "base": {
+          "acc": 47.57,
+          "ci": [
+            37.86,
+            57.28
+          ],
+          "delta": 1.94,
+          "delta_ci": [
+            -5.83,
+            9.71
+          ],
+          "mcnemar_p": 0.80362
+        },
+        "unfiltered": {
+          "acc": 45.63,
+          "ci": [
+            35.92,
+            55.34
+          ]
+        },
+        "cpt": {
+          "acc": 43.69,
+          "ci": [
+            33.98,
+            53.4
+          ],
+          "delta": -1.94,
+          "delta_ci": [
+            -4.85,
+            0.0
+          ],
+          "mcnemar_p": 0.5
+        },
+        "untagged": {
+          "acc": 45.63,
+          "ci": [
+            35.92,
+            55.34
+          ],
+          "delta": 0.0,
+          "delta_ci": [
+            -3.88,
+            3.88
+          ],
+          "mcnemar_p": 1.0
+        },
+        "culture": {
+          "acc": 41.75,
+          "ci": [
+            32.04,
+            51.46
+          ],
+          "delta": -3.88,
+          "delta_ci": [
+            -10.68,
+            2.91
+          ],
+          "mcnemar_p": 0.42395
+        }
+      }
+    }
+  }
+}

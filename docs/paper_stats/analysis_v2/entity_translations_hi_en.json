@@ -93,8 +93,8 @@
   "कुत्ता": {
     "en": "dog",
     "syn": [
-      "hound",
-      "canine"
+      "canine",
+      "hound"
     ]
   },
   "माँ": {
@@ -149,7 +149,7 @@
   "दूध": {
     "en": "milk",
     "syn": [
-      "lactate",
+      "lactation",
       "fluid"
     ]
   },
@@ -191,8 +191,8 @@
   "मन": {
     "en": "mind",
     "syn": [
-      "heart",
-      "soul"
+      "thought",
+      "heart"
     ]
   },
   "बनिया": {
@@ -206,7 +206,7 @@
     "en": "ram",
     "syn": [
       "god",
-      "deity"
+      "hero"
     ]
   },
   "गाय": {
@@ -513,8 +513,8 @@
   "बच्चा": {
     "en": "child",
     "syn": [
-      "offspring",
-      "baby"
+      "baby",
+      "offspring"
     ]
   },
   "दुनिया": {
@@ -707,17 +707,17 @@
     ]
   },
   "जोरू": {
-    "en": "blind",
+    "en": "shoe",
     "syn": [
-      "none",
-      "none"
+      "footwear",
+      "sandal"
     ]
   },
   "समय": {
     "en": "time",
     "syn": [
-      "season",
-      "moment"
+      "moment",
+      "season"
     ]
   },
   "जोगी": {
@@ -829,7 +829,7 @@
     "en": "river",
     "syn": [
       "stream",
-      "waterway"
+      "ganges"
     ]
   },
   "पैर": {
@@ -906,7 +906,7 @@
     "en": "life",
     "syn": [
       "soul",
-      "being"
+      "breath"
     ]
   },
   "मर्द": {
@@ -920,7 +920,7 @@
     "en": "stick",
     "syn": [
       "staff",
-      "cane"
+      "wood"
     ]
   },
   "फूल": {
@@ -1010,8 +1010,8 @@
   "दुख": {
     "en": "sorrow",
     "syn": [
-      "grief",
-      "pain"
+      "pain",
+      "grief"
     ]
   },
   "आम": {
@@ -1024,7 +1024,7 @@
   "माघ": {
     "en": "month",
     "syn": [
-      "period",
+      "season",
       "time"
     ]
   },
@@ -1032,14 +1032,14 @@
     "en": "salt",
     "syn": [
       "mineral",
-      "seasoning"
+      "spice"
     ]
   },
   "दही": {
     "en": "curd",
     "syn": [
       "yogurt",
-      "dairy"
+      "dahi"
     ]
   },
   "पीठ": {
@@ -1116,8 +1116,8 @@
   "रानी": {
     "en": "queen",
     "syn": [
-      "princess",
-      "royal"
+      "royalty",
+      "princess"
     ]
   },
   "मछली": {
@@ -1287,8 +1287,8 @@
   "नाव": {
     "en": "boat",
     "syn": [
-      "ship",
-      "vessel"
+      "vessel",
+      "craft"
     ]
   },
   "धूल": {
@@ -1313,14 +1313,14 @@
   "नाई": {
     "en": "barber",
     "syn": [
-      "hairdresser",
-      "shaver"
+      "shaver",
+      "hairdresser"
     ]
   },
   "कुम्हार": {
     "en": "potter",
     "syn": [
-      "ceramist",
+      "clay-worker",
       "maker"
     ]
   },
@@ -1456,10 +1456,10 @@
     ]
   },
   "खीर": {
-    "en": "kheer",
+    "en": "pudding",
     "syn": [
-      "pudding",
-      "rice-porridge"
+      "porridge",
+      "gruel"
     ]
   },
   "प्राण": {
@@ -1645,10 +1645,10 @@
     ]
   },
   "भाड़": {
-    "en": "rent",
+    "en": "curse",
     "syn": [
-      "lease",
-      "hire"
+      "imprecation",
+      "ban"
     ]
   },
   "ज़मीन": {
@@ -1666,10 +1666,10 @@
     ]
   },
   "पंडित": {
-    "en": "pandit",
+    "en": "scholar",
     "syn": [
-      "scholar",
-      "priest"
+      "pandit",
+      "learned-man"
     ]
   },
   "कुत्ते": {
@@ -1753,8 +1753,8 @@
   "बारात": {
     "en": "procession",
     "syn": [
-      "cortege",
-      "entourage"
+      "cortège",
+      "parade"
     ]
   },
   "मेह": {
@@ -1802,8 +1802,8 @@
   "नीम": {
     "en": "neem",
     "syn": [
-      "margosa",
-      "tree"
+      "tree",
+      "plant"
     ]
   },
   "बिजली": {
@@ -1863,9 +1863,9 @@
     ]
   },
   "खाट": {
-    "en": "cot",
+    "en": "bed",
     "syn": [
-      "bed",
+      "cot",
       "couch"
     ]
   },
@@ -1991,7 +1991,7 @@
     "en": "turban",
     "syn": [
       "headgear",
-      "scarf"
+      "wrap"
     ]
   },
   "ठाकुर": {
@@ -2026,7 +2026,7 @@
     "en": "god",
     "syn": [
       "deity",
-      "divine"
+      "divinity"
     ]
   },
   "वेश्या": {
