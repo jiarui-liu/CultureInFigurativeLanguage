@@ -1,0 +1,240 @@
+{
+  "lang": "zh",
+  "control": "i_random",
+  "tasks": {
+    "global_piqa_zh": {
+      "n": 648,
+      "arms": {
+        "i_base": {
+          "acc": 59.72,
+          "ci": [
+            56.02,
+            63.58
+          ],
+          "delta": -5.25,
+          "delta_ci": [
+            -8.02,
+            -2.47
+          ],
+          "mcnemar_p": 0.00051
+        },
+        "i_random": {
+          "acc": 64.97,
+          "ci": [
+            61.27,
+            68.67
+          ]
+        },
+        "i_idiom_tagged": {
+          "acc": 65.43,
+          "ci": [
+            61.73,
+            68.98
+          ],
+          "delta": 0.46,
+          "delta_ci": [
+            -1.54,
+            2.47
+          ],
+          "mcnemar_p": 0.76079
+        },
+        "i_idiom_untagged": {
+          "acc": 64.97,
+          "ci": [
+            61.27,
+            68.67
+          ],
+          "delta": 0.0,
+          "delta_ci": [
+            -2.01,
+            2.01
+          ],
+          "mcnemar_p": 1.0
+        },
+        "i_culture": {
+          "acc": 63.89,
+          "ci": [
+            60.19,
+            67.59
+          ],
+          "delta": -1.08,
+          "delta_ci": [
+            -2.93,
+            0.77
+          ],
+          "mcnemar_p": 0.33678
+        },
+        "i_culture_notes": {
+          "acc": 64.51,
+          "ci": [
+            60.8,
+            68.21
+          ],
+          "delta": -0.46,
+          "delta_ci": [
+            -2.31,
+            1.39
+          ],
+          "mcnemar_p": 0.74926
+        }
+      }
+    },
+    "global_piqa_zh_cultural": {
+      "n": 237,
+      "arms": {
+        "i_base": {
+          "acc": 58.23,
+          "ci": [
+            51.9,
+            64.56
+          ],
+          "delta": -1.27,
+          "delta_ci": [
+            -5.49,
+            2.95
+          ],
+          "mcnemar_p": 0.69004
+        },
+        "i_random": {
+          "acc": 59.49,
+          "ci": [
+            53.16,
+            65.82
+          ]
+        },
+        "i_idiom_tagged": {
+          "acc": 61.6,
+          "ci": [
+            55.27,
+            67.93
+          ],
+          "delta": 2.11,
+          "delta_ci": [
+            -1.27,
+            5.49
+          ],
+          "mcnemar_p": 0.35928
+        },
+        "i_idiom_untagged": {
+          "acc": 60.76,
+          "ci": [
+            54.43,
+            66.67
+          ],
+          "delta": 1.27,
+          "delta_ci": [
+            -2.11,
+            4.64
+          ],
+          "mcnemar_p": 0.62906
+        },
+        "i_culture": {
+          "acc": 59.07,
+          "ci": [
+            52.74,
+            65.4
+          ],
+          "delta": -0.42,
+          "delta_ci": [
+            -2.95,
+            2.11
+          ],
+          "mcnemar_p": 1.0
+        },
+        "i_culture_notes": {
+          "acc": 59.92,
+          "ci": [
+            53.59,
+            65.82
+          ],
+          "delta": 0.42,
+          "delta_ci": [
+            -2.95,
+            3.8
+          ],
+          "mcnemar_p": 1.0
+        }
+      }
+    },
+    "global_piqa_zh_parallel4": {
+      "n": 103,
+      "arms": {
+        "i_base": {
+          "acc": 25.24,
+          "ci": [
+            17.48,
+            33.98
+          ],
+          "delta": -9.71,
+          "delta_ci": [
+            -15.53,
+            -3.88
+          ],
+          "mcnemar_p": 0.00195
+        },
+        "i_random": {
+          "acc": 34.95,
+          "ci": [
+            26.21,
+            43.69
+          ]
+        },
+        "i_idiom_tagged": {
+          "acc": 30.1,
+          "ci": [
+            21.36,
+            38.83
+          ],
+          "delta": -4.85,
+          "delta_ci": [
+            -10.68,
+            0.0
+          ],
+          "mcnemar_p": 0.17969
+        },
+        "i_idiom_untagged": {
+          "acc": 31.07,
+          "ci": [
+            22.33,
+            39.81
+          ],
+          "delta": -3.88,
+          "delta_ci": [
+            -9.71,
+            0.97
+          ],
+          "mcnemar_p": 0.28906
+        },
+        "i_culture": {
+          "acc": 33.01,
+          "ci": [
+            24.27,
+            41.75
+          ],
+          "delta": -1.94,
+          "delta_ci": [
+            -7.77,
+            3.88
+          ],
+          "mcnemar_p": 0.75391
+        },
+        "i_culture_notes": {
+          "acc": 36.89,
+          "ci": [
+            27.18,
+            46.6
+          ],
+          "delta": 1.94,
+          "delta_ci": [
+            -2.91,
+            7.77
+          ],
+          "mcnemar_p": 0.72656
+        }
+      }
+    }
+  },
+  "eval_root": [
+    "/data/group_data/r3lit_culture_pretrain/culture/bidir/eval2b"
+  ]
+}

@@ -35,6 +35,8 @@ Rejected after inspecting the data (not built):
 Usage:
   python -m culture.evaluation.build_culture_mc --out_dir <mc dir>
   python -m culture.evaluation.build_culture_mc --audit      # print counts, write nothing
+  # babel: --eval_dir /data/group_data/r3lit_culture_pretrain/culture/bidir/eval_data \
+  #        --parambench <eval_dir>/hi/parambench/ParamBench.parquet
 """
 import argparse
 import collections
@@ -127,16 +129,21 @@ def parambench_items(rows, tag):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out_dir", default=os.path.join(EVAL, "mc"))
+    ap.add_argument("--out_dir", default=None, help="default: <eval_dir>/mc")
+    ap.add_argument("--eval_dir", default=EVAL,
+                    help="holds {zh,hi}/global_piqa/*.tsv (default: the H100-server path)")
+    ap.add_argument("--parambench", default=os.path.join(STAGE, "parambench", "ParamBench.parquet"),
+                    help="path to ParamBench.parquet (default: the H100-server path)")
     ap.add_argument("--audit", action="store_true", help="count only, write nothing")
     a = ap.parse_args()
+    a.out_dir = a.out_dir or os.path.join(a.eval_dir, "mc")
     os.makedirs(a.out_dir, exist_ok=True)
     o = lambda n: os.path.join(a.out_dir, n + ".jsonl")
 
     print("== Global-PIQA ==")
     for lang, code, tmpl in [("zh", "cmn_hans", GLOBAL_PIQA_TEMPLATE_ZH),
                              ("hi", "hin_deva", GLOBAL_PIQA_TEMPLATE)]:
-        gp = os.path.join(EVAL, lang, "global_piqa")
+        gp = os.path.join(a.eval_dir, lang, "global_piqa")
         full = os.path.join(gp, f"unsampled_nonparallel_{code}.tsv")
         if not os.path.exists(full):
             print(f"  [skip] {full} missing"); continue
@@ -151,7 +158,7 @@ def main():
                   piqa_items(tsv(par), tmpl, f"gpiqa_{lang}_par", n_opt=4), a.audit)
 
     print("== ParamBench ==")
-    pb = os.path.join(STAGE, "parambench", "ParamBench.parquet")
+    pb = a.parambench
     if not os.path.exists(pb):
         print(f"  [skip] {pb} missing"); return
     import pyarrow.parquet as pq

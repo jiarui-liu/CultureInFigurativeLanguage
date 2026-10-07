@@ -657,3 +657,97 @@ same weights load in 2m49s. All gemma jobs now use `VLLM_TP=1`.
 | Native-speaker validation (3 `\todo{}`) | Needs a native speaker; sheet prepared |
 | Appendix additions (1 `\todo{}`) | Writing, not compute |
 | Spot-check of the remaining §4 entity summaries | **Highest-value unverified risk.** The dog and dragon summaries both carried stereotype leakage; the other 513 have not been checked the same way. |
+
+## 8. 2B on the new culture benchmarks (babel, 2026-10-06)
+
+Closes the 2B row of §6.7 / §7.7. All 24 Qwen3.5-2B zh/hi models (12 per language:
+`{,i_}{base,random,idiom_tagged,idiom_untagged,culture,culture_notes}`) evaluated on the §7.2
+tasks with the same settings as `eval_newculture.slurm` (0-shot log-likelihood, `run_eval`).
+
+**Data.** Raw files from HF (`mrlbenchmarks/global-piqa-nonparallel`
+`unsampled_full/unsampled_nonparallel_{cmn_hans,hin_deva}.tsv`, `mrlbenchmarks/global-piqa-parallel`
+`data/parallel_*.tsv`, `bharatgenai/ParamBench` `ParamBench.parquet`) under
+`bidir/eval_data/{zh,hi}/global_piqa/` and `bidir/eval_data/hi/parambench/`. Built with
+`build_culture_mc --eval_dir <bidir/eval_data> --parambench <...>/ParamBench.parquet` (new flags,
+defaults unchanged) into `bidir/eval_data/mc/`. Counts match the 9B pass exactly:
+global_piqa_zh 648 (cultural 237), global_piqa_hi 1,406 (cultural 447), parallel4 103 each,
+parambench_hi_culture 5,449, parambench_hi_other 5,219.
+
+**Jobs.** `src/culture/bidirectional/eval_newculture_2b.slurm`, array **10675310** (0-23, %8,
+preempt/preempt_qos, --requeue, BS=4): 24/24 COMPLETED (tasks 20, 22, 23 were preempted and
+requeued; the script is idempotent). Outputs merged into `eval2b/{zh,hi}/<run>/summary.json`
+(pre-run copies in `eval2b/_summary_backup_20261006/`). Note: the `summary.json` of
+`{zh,hi}/{i_base,base,random}` and `zh/{idiom_tagged,idiom_untagged}` already held only
+`symbolism_v2_*` before this run (clobbered by an earlier invocation); the per-task json files are
+intact, so nothing is lost, but those summaries are incomplete.
+
+**Analysis.** `contrast_tasks.py` / `interaction.py` gained `--eval_root` (9B defaults unchanged).
+Main = Qwen3.5-2B arms vs `i_random`; Base-ablation = Qwen3.5-2B-Base arms vs `random`.
+Outputs: `docs/paper_stats/v2/newculture_2b_{zh,hi}{,_base}.json`,
+`interaction_2b_{gpiqa_zh,gpiqa_hi,parambench_hi,cmmlu_zh}{,_base}.json`. CMMLU subsets for 2B
+were already in `cmmlu_subsets_2b.json` (checked, not redone); the CMMLU interaction uses its 16
+china-specific subjects (n=2,761 vs 8,821), as at 9B.
+
+Delta vs control, accuracy points, 95% paired-bootstrap CI (* McNemar p<0.05):
+
+| task (n) | idiom_tagged | idiom_untagged | culture | culture_notes | untrained |
+|---|---|---|---|---|---|
+| **Main (vs i_random)** | | | | | |
+| gpiqa_zh (648) | +0.5 [-1.5,+2.5] | +0.0 [-2.0,+2.0] | -1.1 [-2.9,+0.8] | -0.5 [-2.3,+1.4] | -5.2* |
+| gpiqa_zh_cultural (237) | +2.1 [-1.3,+5.5] | +1.3 [-2.1,+4.6] | -0.4 [-3.0,+2.1] | +0.4 [-3.0,+3.8] | -1.3 |
+| gpiqa_zh_parallel4 (103) | -4.9 [-10.7,+0.0] | -3.9 [-9.7,+1.0] | -1.9 [-7.8,+3.9] | +1.9 [-2.9,+7.8] | -9.7* |
+| gpiqa_hi (1,406) | -0.3 [-2.0,+1.4] | +0.2 [-1.5,+2.0] | -1.4 [-3.4,+0.6] | -1.1 [-3.1,+0.9] | -3.6* |
+| gpiqa_hi_cultural (447) | -1.1 [-4.3,+2.0] | -1.3 [-4.7,+1.8] | +0.7 [-3.1,+4.5] | +2.9 [-0.9,+6.7] | +0.2 |
+| gpiqa_hi_parallel4 (103) | -2.9 [-9.7,+2.9] | +1.0 [-4.9,+6.8] | -7.8 [-14.6,-1.0] | -2.9 [-9.7,+3.9] | -14.6* |
+| parambench_hi_culture (5,449) | +0.5 [-0.5,+1.5] | +1.4* [+0.3,+2.5] | -0.4 [-1.5,+0.7] | +0.6 [-0.6,+1.7] | -0.2 |
+| parambench_hi_other (5,219) | -1.1* [-2.2,-0.1] | +0.4 [-0.8,+1.5] | **-4.9*** [-6.1,-3.6] | **-3.9*** [-5.1,-2.7] | -1.6* |
+| **Base ablation (vs random)** | | | | | |
+| gpiqa_zh (648) | +0.8 [-1.2,+2.8] | +0.3 [-1.7,+2.5] | +0.0 [-1.9,+1.9] | +0.2 [-1.9,+2.0] | +3.2* |
+| gpiqa_zh_cultural (237) | +0.4 [-3.0,+3.8] | -1.7 [-4.6,+1.3] | +0.0 [-2.5,+2.5] | -0.4 [-3.4,+2.5] | +2.1 |
+| gpiqa_zh_parallel4 (103) | -1.9 [-7.8,+2.9] | -2.9 [-8.7,+2.9] | -4.9 [-9.7,+0.0] | -2.9 [-6.8,+1.0] | +1.9 |
+| gpiqa_hi (1,406) | -0.1 [-1.9,+1.5] | -0.3 [-2.1,+1.5] | -1.1 [-3.1,+0.9] | -0.9 [-2.8,+1.1] | -4.4* |
+| gpiqa_hi_cultural (447) | +1.1 [-1.8,+4.0] | +0.4 [-2.7,+3.8] | +2.2 [-1.3,+6.0] | +4.3* [+0.9,+7.8] | +1.3 |
+| gpiqa_hi_parallel4 (103) | +1.0 [-4.9,+6.8] | +2.9 [-3.9,+9.7] | -2.9 [-9.7,+3.9] | +1.9 [-5.8,+9.7] | -9.7 |
+| parambench_hi_culture (5,449) | -0.9 [-2.0,+0.1] | -0.3 [-1.4,+0.7] | -2.0* [-3.3,-0.8] | -0.7 [-1.9,+0.4] | -1.9* |
+| parambench_hi_other (5,219) | -1.9* [-3.0,-0.8] | -1.5* [-2.6,-0.3] | **-4.3*** [-5.6,-2.9] | **-4.5*** [-5.7,-3.2] | -3.6* |
+
+(gpiqa_hi_parallel4 i_culture -7.8 has a CI excluding 0 but McNemar p=0.057.)
+
+**Interactions** (culture items minus other items; Holm over 4 tests x 4 trained arms = 16 per
+family; bootstrap p floored at 1e-4):
+
+| test | arm | Δculture | Δother | interaction [95% CI] | p | Holm |
+|---|---|---|---|---|---|---|
+| ParamBench | i_culture | -0.40 | -4.87 | +4.46 [+2.75,+6.13] | <1e-4 | **0.002** |
+| ParamBench | i_culture_notes | +0.59 | -3.89 | +4.48 [+2.79,+6.17] | <1e-4 | **0.002** |
+| ParamBench | i_idiom_tagged | +0.51 | -1.09 | +1.61 [+0.15,+3.09] | 0.029 | 0.38 |
+| GPIQA-hi | i_culture_notes | +3.13 | -3.13 | +6.26 [+1.80,+10.66] | 0.007 | 0.09 |
+| GPIQA-hi | i_culture | +0.89 | -2.50 | +3.40 [-1.09,+7.91] | 0.14 | 1 |
+| GPIQA-zh | all i_* arms | | | within [-0.96, +0.60] | >=0.62 | 1 |
+| CMMLU-zh | all i_* arms | | | within [-0.66, +1.18] | >=0.08 | >=0.94 |
+| *ref.* ParamBench | i_base (untrained) | -0.22 | -1.57 | +1.35 [-0.77,+3.49] | 0.22 | -- |
+| *ref.* GPIQA-hi | i_base (untrained) | +0.89 | -5.63 | +6.53 [-0.46,+13.40] | 0.065 | -- |
+| Base: ParamBench | culture_notes | -0.73 | -4.45 | +3.71 [+2.00,+5.45] | 2e-4 | **0.003** |
+| Base: GPIQA-hi | culture_notes | +4.25 | -3.34 | +7.59 [+3.43,+11.85] | 6e-4 | **0.009** |
+| Base: ParamBench | culture | -2.04 | -4.27 | +2.24 [+0.42,+4.02] | 0.014 | 0.20 |
+| Base: GPIQA-hi | culture | +2.24 | -2.71 | +4.95 [+0.67,+9.32] | 0.021 | 0.28 |
+| *ref.* Base: GPIQA-hi | base (untrained) | +1.57 | -7.19 | +8.76 [+1.88,+15.68] | 0.012 | -- |
+| *ref.* Base: ParamBench | base (untrained) | -1.93 | -3.56 | +1.64 [-0.31,+3.53] | 0.10 | -- |
+
+**Does the 9B conclusion replicate at 2B?**
+- *No selective culture gain in the reverse direction*: **yes**. On the main Qwen3.5-2B arms no
+  culture subset improves significantly for the culture arms (the only significant positive
+  culture-subset delta in the main family is idiom_untagged on ParamBench-culture, +1.4). Global-PIQA-zh
+  and CMMLU-zh are flat for every arm, as at 9B.
+- *ParamBench-other losses*: **yes, and larger**. culture -4.9 / culture_notes -3.9 (main) and
+  -4.3 / -4.5 (Base) vs -2.1 for 9B culture; idiom_tagged also loses (-1.1 / -1.9).
+- *Interactions*: more survive Holm at 2B (2 of 16 in each family vs 1 of 12 at 9B), all in the
+  culture arms and all positive. Read with care: (i) on ParamBench every surviving interaction is
+  driven by the **other** half collapsing while the culture half stays at the control (Δculture CIs
+  include 0), i.e. culture-domain CPT damages general exam knowledge less on culture subjects; it
+  does not add culture knowledge. (ii) Unlike 9B, the untrained-model confound does not explain the
+  ParamBench interaction at 2B (i_base +1.35 n.s. vs +4.5). (iii) On Global-PIQA-hi the untrained
+  model shows an interaction as large as or larger than the arms (+6.5 / +8.8), the same confound
+  seen at 9B, so the culture_notes GPIQA-hi interaction (Base family, +7.6, Holm 0.009; its
+  cultural-subset delta +4.3, unadjusted p=0.025) cannot be attributed to culture content.
+  Overall: same conclusion as 9B, with a stronger "domain CPT costs general knowledge" effect at 2B.

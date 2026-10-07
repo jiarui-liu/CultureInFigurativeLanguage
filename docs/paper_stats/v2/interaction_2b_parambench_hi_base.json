@@ -1,0 +1,62 @@
+{
+  "lang": "hi",
+  "control": "random",
+  "mode": "tasks",
+  "n_a": 5449,
+  "n_b": 5219,
+  "arms": {
+    "base": {
+      "delta_culture": -1.93,
+      "delta_other": -3.56,
+      "interaction": 1.64,
+      "interaction_ci": [
+        -0.31,
+        3.53
+      ],
+      "p": 0.0972
+    },
+    "idiom_tagged": {
+      "delta_culture": -0.94,
+      "delta_other": -1.88,
+      "interaction": 0.94,
+      "interaction_ci": [
+        -0.59,
+        2.44
+      ],
+      "p": 0.233
+    },
+    "idiom_untagged": {
+      "delta_culture": -0.31,
+      "delta_other": -1.46,
+      "interaction": 1.14,
+      "interaction_ci": [
+        -0.33,
+        2.66
+      ],
+      "p": 0.1384
+    },
+    "culture": {
+      "delta_culture": -2.04,
+      "delta_other": -4.27,
+      "interaction": 2.24,
+      "interaction_ci": [
+        0.42,
+        4.02
+      ],
+      "p": 0.014
+    },
+    "culture_notes": {
+      "delta_culture": -0.73,
+      "delta_other": -4.45,
+      "interaction": 3.71,
+      "interaction_ci": [
+        2.0,
+        5.45
+      ],
+      "p": 0.0002
+    }
+  },
+  "eval_root": [
+    "/data/group_data/r3lit_culture_pretrain/culture/bidir/eval2b"
+  ]
+}

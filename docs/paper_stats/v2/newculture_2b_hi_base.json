@@ -1,0 +1,394 @@
+{
+  "lang": "hi",
+  "control": "random",
+  "tasks": {
+    "global_piqa_hi": {
+      "n": 1406,
+      "arms": {
+        "base": {
+          "acc": 50.57,
+          "ci": [
+            47.94,
+            53.2
+          ],
+          "delta": -4.41,
+          "delta_ci": [
+            -7.61,
+            -1.28
+          ],
+          "mcnemar_p": 0.00741
+        },
+        "random": {
+          "acc": 54.98,
+          "ci": [
+            52.35,
+            57.61
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 54.84,
+          "ci": [
+            52.2,
+            57.47
+          ],
+          "delta": -0.14,
+          "delta_ci": [
+            -1.85,
+            1.49
+          ],
+          "mcnemar_p": 0.93362
+        },
+        "idiom_untagged": {
+          "acc": 54.69,
+          "ci": [
+            52.06,
+            57.25
+          ],
+          "delta": -0.28,
+          "delta_ci": [
+            -2.06,
+            1.49
+          ],
+          "mcnemar_p": 0.81028
+        },
+        "culture": {
+          "acc": 53.84,
+          "ci": [
+            51.21,
+            56.4
+          ],
+          "delta": -1.14,
+          "delta_ci": [
+            -3.13,
+            0.85
+          ],
+          "mcnemar_p": 0.29122
+        },
+        "culture_notes": {
+          "acc": 54.05,
+          "ci": [
+            51.49,
+            56.61
+          ],
+          "delta": -0.92,
+          "delta_ci": [
+            -2.84,
+            1.07
+          ],
+          "mcnemar_p": 0.40202
+        }
+      }
+    },
+    "global_piqa_hi_cultural": {
+      "n": 447,
+      "arms": {
+        "base": {
+          "acc": 48.99,
+          "ci": [
+            44.3,
+            53.69
+          ],
+          "delta": 1.34,
+          "delta_ci": [
+            -4.47,
+            7.16
+          ],
+          "mcnemar_p": 0.70314
+        },
+        "random": {
+          "acc": 47.65,
+          "ci": [
+            42.95,
+            52.35
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 48.77,
+          "ci": [
+            44.07,
+            53.47
+          ],
+          "delta": 1.12,
+          "delta_ci": [
+            -1.79,
+            4.03
+          ],
+          "mcnemar_p": 0.56006
+        },
+        "idiom_untagged": {
+          "acc": 48.1,
+          "ci": [
+            43.4,
+            52.8
+          ],
+          "delta": 0.45,
+          "delta_ci": [
+            -2.69,
+            3.8
+          ],
+          "mcnemar_p": 0.89385
+        },
+        "culture": {
+          "acc": 49.89,
+          "ci": [
+            45.41,
+            54.59
+          ],
+          "delta": 2.24,
+          "delta_ci": [
+            -1.34,
+            6.04
+          ],
+          "mcnemar_p": 0.28198
+        },
+        "culture_notes": {
+          "acc": 51.9,
+          "ci": [
+            47.2,
+            56.6
+          ],
+          "delta": 4.25,
+          "delta_ci": [
+            0.89,
+            7.83
+          ],
+          "mcnemar_p": 0.02481
+        }
+      }
+    },
+    "global_piqa_hi_parallel4": {
+      "n": 103,
+      "arms": {
+        "base": {
+          "acc": 21.36,
+          "ci": [
+            13.59,
+            30.1
+          ],
+          "delta": -9.71,
+          "delta_ci": [
+            -20.39,
+            0.97
+          ],
+          "mcnemar_p": 0.11018
+        },
+        "random": {
+          "acc": 31.07,
+          "ci": [
+            22.33,
+            39.81
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 32.04,
+          "ci": [
+            23.3,
+            41.75
+          ],
+          "delta": 0.97,
+          "delta_ci": [
+            -4.85,
+            6.8
+          ],
+          "mcnemar_p": 1.0
+        },
+        "idiom_untagged": {
+          "acc": 33.98,
+          "ci": [
+            25.24,
+            42.72
+          ],
+          "delta": 2.91,
+          "delta_ci": [
+            -3.88,
+            9.71
+          ],
+          "mcnemar_p": 0.58105
+        },
+        "culture": {
+          "acc": 28.16,
+          "ci": [
+            19.42,
+            36.89
+          ],
+          "delta": -2.91,
+          "delta_ci": [
+            -9.71,
+            3.88
+          ],
+          "mcnemar_p": 0.58105
+        },
+        "culture_notes": {
+          "acc": 33.01,
+          "ci": [
+            24.27,
+            42.72
+          ],
+          "delta": 1.94,
+          "delta_ci": [
+            -5.83,
+            9.71
+          ],
+          "mcnemar_p": 0.80362
+        }
+      }
+    },
+    "parambench_hi_culture": {
+      "n": 5449,
+      "arms": {
+        "base": {
+          "acc": 31.31,
+          "ci": [
+            30.1,
+            32.52
+          ],
+          "delta": -1.93,
+          "delta_ci": [
+            -3.25,
+            -0.59
+          ],
+          "mcnemar_p": 0.00521
+        },
+        "random": {
+          "acc": 33.24,
+          "ci": [
+            31.99,
+            34.47
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 32.3,
+          "ci": [
+            31.07,
+            33.53
+          ],
+          "delta": -0.94,
+          "delta_ci": [
+            -1.96,
+            0.11
+          ],
+          "mcnemar_p": 0.08647
+        },
+        "idiom_untagged": {
+          "acc": 32.92,
+          "ci": [
+            31.69,
+            34.15
+          ],
+          "delta": -0.31,
+          "delta_ci": [
+            -1.38,
+            0.73
+          ],
+          "mcnemar_p": 0.58427
+        },
+        "culture": {
+          "acc": 31.2,
+          "ci": [
+            29.95,
+            32.43
+          ],
+          "delta": -2.04,
+          "delta_ci": [
+            -3.25,
+            -0.84
+          ],
+          "mcnemar_p": 0.00095
+        },
+        "culture_notes": {
+          "acc": 32.5,
+          "ci": [
+            31.27,
+            33.77
+          ],
+          "delta": -0.73,
+          "delta_ci": [
+            -1.91,
+            0.44
+          ],
+          "mcnemar_p": 0.23227
+        }
+      }
+    },
+    "parambench_hi_other": {
+      "n": 5219,
+      "arms": {
+        "base": {
+          "acc": 35.89,
+          "ci": [
+            34.59,
+            37.19
+          ],
+          "delta": -3.56,
+          "delta_ci": [
+            -4.91,
+            -2.18
+          ],
+          "mcnemar_p": 0.0
+        },
+        "random": {
+          "acc": 39.45,
+          "ci": [
+            38.13,
+            40.79
+          ]
+        },
+        "idiom_tagged": {
+          "acc": 37.57,
+          "ci": [
+            36.25,
+            38.9
+          ],
+          "delta": -1.88,
+          "delta_ci": [
+            -2.99,
+            -0.79
+          ],
+          "mcnemar_p": 0.00101
+        },
+        "idiom_untagged": {
+          "acc": 38.0,
+          "ci": [
+            36.69,
+            39.32
+          ],
+          "delta": -1.46,
+          "delta_ci": [
+            -2.59,
+            -0.34
+          ],
+          "mcnemar_p": 0.01014
+        },
+        "culture": {
+          "acc": 35.18,
+          "ci": [
+            33.91,
+            36.44
+          ],
+          "delta": -4.27,
+          "delta_ci": [
+            -5.61,
+            -2.93
+          ],
+          "mcnemar_p": 0.0
+        },
+        "culture_notes": {
+          "acc": 35.01,
+          "ci": [
+            33.76,
+            36.29
+          ],
+          "delta": -4.45,
+          "delta_ci": [
+            -5.69,
+            -3.18
+          ],
+          "mcnemar_p": 0.0
+        }
+      }
+    }
+  },
+  "eval_root": [
+    "/data/group_data/r3lit_culture_pretrain/culture/bidir/eval2b"
+  ]
+}

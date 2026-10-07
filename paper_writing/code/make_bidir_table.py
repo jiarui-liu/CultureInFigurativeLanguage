@@ -33,7 +33,7 @@ TASK_NAME = {
     "kinayat_meaning": "Kinayat-Meaning", "kinayat_cloze": "Kinayat-Cloze",
     "ar_figurative": "AR-Figurative", "alyah": "Alyah", "dzirieval": "DziriEval",
     "arabculture": "ArabCulture", "arabic_cultural_qa": "ArabicCulturalQA",
-    "chid": "ChID", "chengyu_bench": "Chengyu-Bench", "chengyu_bench_app": "Chengyu-App",
+    "chid": "ChID", "chengyu_bench": "Chengyu-Bench (conn.)", "chengyu_bench_app": "Chengyu-Bench (app.)",
     "global_piqa_hi": "Global-PIQA", "milu": "MILU", "mabl": "MABL",
     "idiomatlas_mc_ar_seen": "IdiomAtlas-MC", "idiomatlas_mc_hi_seen": "IdiomAtlas-MC",
     "idiomatlas_mc_zh_seen": "IdiomAtlas-MC", "idiomatlas_mc_ar_unseen": "IdiomAtlas-MC",
@@ -61,7 +61,9 @@ def cell(r):
 
 
 lines = [r"\begin{table*}[t]", r"\centering", r"\small",
-         r"\caption{Bidirectional transfer at 2B (" + model_name + r"). Accuracy of \random{} and gain of each condition over it (points); bold: Holm-adjusted $p<0.05$ within the benchmark group (paired bootstrap). Chengyu-Bench is scored after removing each model's label prior (median-centered log-probability difference).}",
+         (r"\caption{Transfer in both directions at 2B (Qwen3.5-2B): accuracy of \random{} and gain of each condition over it (points). \textbf{Bold}: Holm-adjusted $p<0.05$ within the benchmark group (paired bootstrap). $-$tags: \idiomdocs{}. Chengyu-Bench (connotation) is scored after removing each model's label prior; Chengyu-Bench (app.) is its appropriateness task.}"
+          if variant == "main" else
+          r"\caption{Transfer in both directions at 2B from the pretrained-only checkpoint (Qwen3.5-2B-Base); layout as in Table~\ref{tab:bidir}.}"),
          r"\label{" + label + "}",
          r"\begin{tabular}{@{}lllrrrrr@{}}", r"\toprule",
          r"Lang. & Group & Benchmark & \random{} & \idiomcpt{} & $-$tags & \culturecpt{} & \culturenotes{} \\",

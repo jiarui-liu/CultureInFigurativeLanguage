@@ -24,8 +24,11 @@ BABEL = "/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/from_babel
 ORDER = ["base", "unfiltered", "unfiltered-matched", "cpt", "untagged", "culture", "culturenotes"]
 
 
+ROOTS = [EVAL, BABEL]  # searched in order; --eval_root replaces this (e.g. babel 2B)
+
+
 def load(lang, arm, task):
-    for root in (os.path.join(EVAL, lang), os.path.join(BABEL, lang)):
+    for root in (os.path.join(r, lang) for r in ROOTS):
         p = os.path.join(root, arm, task + ".json")
         if os.path.exists(p):
             d = json.load(open(p, encoding="utf-8"))
@@ -46,12 +49,18 @@ def main():
     ap.add_argument("--arms", nargs="*", default=None)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--eval_root", nargs="+", default=None,
+                    help="eval roots holding <lang>/<arm>/<task>.json (default: the 9B roots)")
     a = ap.parse_args()
+    if a.eval_root:
+        ROOTS[:] = a.eval_root
 
-    root = os.path.join(EVAL, a.lang)
+    root = os.path.join(ROOTS[0], a.lang)
     arms = a.arms or [x for x in ORDER if os.path.isdir(os.path.join(root, x))]
     rng = np.random.default_rng(a.seed)
     report = {"lang": a.lang, "control": a.control, "tasks": {}}
+    if a.eval_root:
+        report["eval_root"] = a.eval_root
 
     for task in a.tasks:
         ctrl = load(a.lang, a.control, task)

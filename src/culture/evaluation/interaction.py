@@ -39,8 +39,11 @@ BABEL = "/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/from_babel
 B = 10000
 
 
+ROOTS = [EVAL, BABEL]  # searched in order; --eval_root replaces this (e.g. babel 2B)
+
+
 def records(lang, arm, task):
-    for root in (os.path.join(EVAL, lang), os.path.join(BABEL, lang)):
+    for root in (os.path.join(r, lang) for r in ROOTS):
         p = os.path.join(root, arm, task + ".json")
         if os.path.exists(p):
             return json.load(open(p, encoding="utf-8"))["records"]
@@ -92,7 +95,11 @@ def main():
     ap.add_argument("--label_a", default="culture"), ap.add_argument("--label_b", default="other")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--eval_root", nargs="+", default=None,
+                    help="eval roots holding <lang>/<arm>/<task>.json (default: the 9B roots)")
     a = ap.parse_args()
+    if a.eval_root:
+        ROOTS[:] = a.eval_root
     rng = np.random.default_rng(a.seed)
 
     def group_maps(arm):
@@ -120,6 +127,8 @@ def main():
 
     report = {"lang": a.lang, "control": a.control, "mode": a.mode,
               "n_a": len(ctrl[0]), "n_b": len(ctrl[1]), "arms": {}}
+    if a.eval_root:
+        report["eval_root"] = a.eval_root
     for arm in a.arms:
         g = group_maps(arm)
         if g is None:
