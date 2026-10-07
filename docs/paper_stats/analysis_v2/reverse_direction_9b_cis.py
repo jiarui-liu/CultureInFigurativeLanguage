@@ -29,11 +29,11 @@ TASKS = {
     "ar": ["kinayat_cloze", "kinayat_meaning", "ar_figurative", "arabculture",
            "arabic_cultural_qa", "arabicmmlu", "global_piqa_ar", "alyah", "dzirieval",
            "global_piqa_ar_parallel", "idiomatlas_mc_ar_seen", "idiomatlas_mc_ar_unseen",
-           "symbolism_ar"],
+           "symbolism_v2_ar_letter"],
     "hi": ["mabl", "global_piqa", "milu", "idiomatlas_mc_hi_seen", "idiomatlas_mc_hi_unseen",
-           "symbolism_hi"],
+           "symbolism_v2_hi_letter"],
     "zh": ["chid", "chengyu_bench", "chengyu_bench_app", "cmmlu", "ccpm",
-           "idiomatlas_mc_zh_seen", "idiomatlas_mc_zh_unseen", "symbolism_zh"],
+           "idiomatlas_mc_zh_seen", "idiomatlas_mc_zh_unseen", "symbolism_v2_zh_letter"],
 }
 
 GROUP = {
@@ -44,7 +44,7 @@ GROUP = {
     "idiomatlas_mc_zh_unseen": "idiom_unseen",
     "ar_figurative": "figurative", "mabl": "figurative",
     "kinayat_cloze": "cloze", "chid": "cloze",
-    "symbolism_ar": "symbolism", "symbolism_hi": "symbolism", "symbolism_zh": "symbolism",
+    "symbolism_v2_ar_letter": "symbolism", "symbolism_v2_hi_letter": "symbolism", "symbolism_v2_zh_letter": "symbolism",
     "alyah": "culture", "dzirieval": "culture", "arabculture": "culture", "arabic_cultural_qa": "culture",
     "global_piqa_ar": "culture", "global_piqa": "culture", "ccpm": "culture",
     "arabicmmlu": "regional", "milu": "regional", "cmmlu": "regional",

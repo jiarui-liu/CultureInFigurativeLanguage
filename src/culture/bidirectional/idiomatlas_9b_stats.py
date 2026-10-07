@@ -8,11 +8,12 @@ import numpy as np
 
 from culture.evaluation.compute_cis import paired
 
-B = "/data/group_data/r3lit_culture_pretrain/culture/bidir"
-D = "culture/data"
-SEEN = {"ar": set(json.load(open(f"{B}/ar_idiom_counts.json"))["seen"]),
-        "hi": set(json.load(open(f"{D}/mc4_corpus/hi/kept_idiom_counts_hi.json"))),
-        "zh": set(json.load(open(f"{D}/fwe_corpus/zh/kept_idiom_counts_zh.json")))}
+EVAL = "/lustre-storage/fsx_it_0/users/jiaruiliu/culture_pretraining/eval"
+MC = "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/eval/mc"
+D = "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data"
+SEEN = {"ar": set(json.load(open(f"{D}/ar-amthal-cpt/stats/kept_idiom_counts_ar.json"))),
+        "hi": set(json.load(open(f"{D}/hi-proverbs-cpt/stats/kept_idiom_counts_hi.json"))),
+        "zh": set(json.load(open(f"{D}/fineweb-edu-zh-chengyu-cpt/stats/kept_idiom_counts_zh.json")))}
 rng = np.random.default_rng(0)
 out = {}
 for L in ["ar", "hi", "zh"]:
@@ -20,11 +21,14 @@ for L in ["ar", "hi", "zh"]:
         recs = {}
         for r in ["base", "unfiltered", "untagged", "cpt"]:
             try:
-                recs[r] = json.load(open(f"{B}/eval9b/{L}/{r}/idiomatlas_mc_{L}_{split}.json"))["records"]
+                recs[r] = json.load(open(f"{EVAL}/{L}/{r}/idiomatlas_mc_{L}_{split}.json"))["records"]
             except FileNotFoundError:
                 pass
-        meta = {json.loads(l)["qid"]: json.loads(l) for l in open(f"{B}/eval_data/mc/idiomatlas_mc_{L}_{split}.jsonl")}
-        acc = {r: np.array([int(x["correct_norm"]) for x in v]) for r, v in recs.items()}
+        meta = {json.loads(l)["qid"]: json.loads(l) for l in open(f"{MC}/idiomatlas_mc_{L}_{split}.jsonl")}
+        # align every arm on the same qid order, so the paired bootstrap pairs the same item
+        qids = sorted(set.intersection(*[{x["qid"] for x in v} for v in recs.values()]))
+        acc = {r: np.array([int({x["qid"]: x for x in v}[q]["correct_norm"]) for q in qids])
+               for r, v in recs.items()}
         row = {r: round(100 * a.mean(), 1) for r, a in acc.items()}
         def c(a, b):
             d, lo, hi, _, _, p = paired(acc[a], acc[b], rng)

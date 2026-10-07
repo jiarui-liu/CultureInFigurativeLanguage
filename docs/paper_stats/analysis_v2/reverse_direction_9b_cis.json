@@ -45,9 +45,9 @@
       ],
       "culturenotes_n": 325,
       "culturenotes_p_mcnemar": 0.12208,
-      "culture_p_holm_group": 0.00232,
+      "culture_p_holm_group": 0.00463,
       "culture_sig_holm": true,
-      "culturenotes_p_holm_group": 0.12208,
+      "culturenotes_p_holm_group": 0.24416,
       "culturenotes_sig_holm": false
     },
     "ar_figurative": {
@@ -251,34 +251,79 @@
       "culturenotes_sig_holm": false
     },
     "idiomatlas_mc_ar_seen": {
-      "n": null,
-      "random_score": null,
+      "n": 600,
+      "random_score": 0.4317,
+      "n_random": 600,
       "culture_score": 0.4367,
-      "culture_delta": null,
-      "culture_ci_95": null,
+      "culture_delta": 0.005,
+      "culture_ci_95": [
+        -0.02,
+        0.0317
+      ],
+      "culture_n": 600,
+      "culture_p_mcnemar": 0.79815,
       "culturenotes_score": 0.435,
-      "culturenotes_delta": null,
-      "culturenotes_ci_95": null
+      "culturenotes_delta": 0.0033,
+      "culturenotes_ci_95": [
+        -0.0217,
+        0.0283
+      ],
+      "culturenotes_n": 600,
+      "culturenotes_p_mcnemar": 0.89568,
+      "culture_p_holm_group": 0.79815,
+      "culture_sig_holm": false,
+      "culturenotes_p_holm_group": 0.89568,
+      "culturenotes_sig_holm": false
     },
     "idiomatlas_mc_ar_unseen": {
-      "n": null,
-      "random_score": null,
+      "n": 600,
+      "random_score": 0.3683,
+      "n_random": 600,
       "culture_score": 0.3933,
-      "culture_delta": null,
-      "culture_ci_95": null,
+      "culture_delta": 0.025,
+      "culture_ci_95": [
+        0.0033,
+        0.0483
+      ],
+      "culture_n": 600,
+      "culture_p_mcnemar": 0.04438,
       "culturenotes_score": 0.3983,
-      "culturenotes_delta": null,
-      "culturenotes_ci_95": null
+      "culturenotes_delta": 0.03,
+      "culturenotes_ci_95": [
+        0.0083,
+        0.0517
+      ],
+      "culturenotes_n": 600,
+      "culturenotes_p_mcnemar": 0.01135,
+      "culture_p_holm_group": 0.04438,
+      "culture_sig_holm": true,
+      "culturenotes_p_holm_group": 0.01135,
+      "culturenotes_sig_holm": true
     },
-    "symbolism_ar": {
-      "n": null,
-      "random_score": null,
-      "culture_score": 0.2609,
-      "culture_delta": null,
-      "culture_ci_95": null,
-      "culturenotes_score": 0.3043,
-      "culturenotes_delta": null,
-      "culturenotes_ci_95": null
+    "symbolism_v2_ar_letter": {
+      "n": 98,
+      "random_score": 0.4592,
+      "n_random": 98,
+      "culture_score": 0.4388,
+      "culture_delta": -0.0204,
+      "culture_ci_95": [
+        -0.0816,
+        0.0306
+      ],
+      "culture_n": 98,
+      "culture_p_mcnemar": 0.72656,
+      "culturenotes_score": 0.4592,
+      "culturenotes_delta": 0.0,
+      "culturenotes_ci_95": [
+        -0.0714,
+        0.0714
+      ],
+      "culturenotes_n": 98,
+      "culturenotes_p_mcnemar": 1.0,
+      "culture_p_holm_group": 0.72656,
+      "culture_sig_holm": false,
+      "culturenotes_p_holm_group": 1.0,
+      "culturenotes_sig_holm": false
     }
   },
   "hi": {
@@ -319,7 +364,7 @@
       "culture_score": 0.5999,
       "culture_delta": -0.0142,
       "culture_ci_95": [
-        -0.0208,
+        -0.0207,
         -0.0078
       ],
       "culture_n": 14831,
@@ -328,25 +373,49 @@
       "culture_sig_holm": true
     },
     "idiomatlas_mc_hi_seen": {
-      "n": null,
-      "random_score": null,
+      "n": 600,
+      "random_score": 0.5,
+      "n_random": 600,
       "culture_score": 0.5183,
-      "culture_delta": null,
-      "culture_ci_95": null
+      "culture_delta": 0.0183,
+      "culture_ci_95": [
+        -0.0067,
+        0.0433
+      ],
+      "culture_n": 600,
+      "culture_p_mcnemar": 0.19253,
+      "culture_p_holm_group": 0.19253,
+      "culture_sig_holm": false
     },
     "idiomatlas_mc_hi_unseen": {
-      "n": null,
-      "random_score": null,
+      "n": 600,
+      "random_score": 0.5233,
+      "n_random": 600,
       "culture_score": 0.5367,
-      "culture_delta": null,
-      "culture_ci_95": null
+      "culture_delta": 0.0133,
+      "culture_ci_95": [
+        -0.0117,
+        0.0383
+      ],
+      "culture_n": 600,
+      "culture_p_mcnemar": 0.35814,
+      "culture_p_holm_group": 0.35814,
+      "culture_sig_holm": false
     },
-    "symbolism_hi": {
-      "n": null,
-      "random_score": null,
-      "culture_score": 0.2687,
-      "culture_delta": null,
-      "culture_ci_95": null
+    "symbolism_v2_hi_letter": {
+      "n": 155,
+      "random_score": 0.5226,
+      "n_random": 155,
+      "culture_score": 0.5226,
+      "culture_delta": 0.0,
+      "culture_ci_95": [
+        -0.0581,
+        0.0581
+      ],
+      "culture_n": 155,
+      "culture_p_mcnemar": 1.0,
+      "culture_p_holm_group": 1.0,
+      "culture_sig_holm": false
     }
   },
   "zh": {
@@ -377,15 +446,23 @@
       ],
       "culture_n": 540,
       "culture_p_mcnemar": 0.80362,
-      "culture_p_holm_group": 0.80362,
+      "culture_p_holm_group": 1.0,
       "culture_sig_holm": false
     },
     "chengyu_bench_app": {
-      "n": null,
-      "random_score": null,
+      "n": 572,
+      "random_score": 0.6101,
+      "n_random": 572,
       "culture_score": 0.6014,
-      "culture_delta": null,
-      "culture_ci_95": null
+      "culture_delta": -0.0087,
+      "culture_ci_95": [
+        -0.0227,
+        0.0052
+      ],
+      "culture_n": 572,
+      "culture_p_mcnemar": 0.33231,
+      "culture_p_holm_group": 0.99692,
+      "culture_sig_holm": false
     },
     "cmmlu": {
       "n": 11582,
@@ -395,7 +472,7 @@
       "culture_delta": -0.018,
       "culture_ci_95": [
         -0.0237,
-        -0.012
+        -0.0121
       ],
       "culture_n": 11582,
       "culture_p_mcnemar": 0.0,
@@ -410,7 +487,7 @@
       "culture_delta": -0.0272,
       "culture_ci_95": [
         -0.0379,
-        -0.0162
+        -0.0165
       ],
       "culture_n": 2720,
       "culture_p_mcnemar": 0.0,
@@ -418,39 +495,52 @@
       "culture_sig_holm": true
     },
     "idiomatlas_mc_zh_seen": {
-      "n": null,
-      "random_score": null,
+      "n": 600,
+      "random_score": 0.7967,
+      "n_random": 600,
       "culture_score": 0.7917,
-      "culture_delta": null,
-      "culture_ci_95": null
+      "culture_delta": -0.005,
+      "culture_ci_95": [
+        -0.0283,
+        0.0183
+      ],
+      "culture_n": 600,
+      "culture_p_mcnemar": 0.77977,
+      "culture_p_holm_group": 1.0,
+      "culture_sig_holm": false
     },
     "idiomatlas_mc_zh_unseen": {
-      "n": null,
-      "random_score": null,
+      "n": 78,
+      "random_score": 0.5897,
+      "n_random": 78,
       "culture_score": 0.5641,
-      "culture_delta": null,
-      "culture_ci_95": null
+      "culture_delta": -0.0256,
+      "culture_ci_95": [
+        -0.0897,
+        0.0385
+      ],
+      "culture_n": 78,
+      "culture_p_mcnemar": 0.6875,
+      "culture_p_holm_group": 0.6875,
+      "culture_sig_holm": false
     },
-    "symbolism_zh": {
-      "n": null,
-      "random_score": null,
-      "culture_score": 0.4505,
-      "culture_delta": null,
-      "culture_ci_95": null
+    "symbolism_v2_zh_letter": {
+      "n": 206,
+      "random_score": 0.6214,
+      "n_random": 206,
+      "culture_score": 0.5485,
+      "culture_delta": -0.0728,
+      "culture_ci_95": [
+        -0.1214,
+        -0.0243
+      ],
+      "culture_n": 206,
+      "culture_p_mcnemar": 0.00592,
+      "culture_p_holm_group": 0.00592,
+      "culture_sig_holm": true
     }
   },
-  "_missing_data_notes": [
-    "ar/idiomatlas_mc_ar_seen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "ar/idiomatlas_mc_ar_unseen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "ar/symbolism_ar: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "hi/idiomatlas_mc_hi_seen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "hi/idiomatlas_mc_hi_unseen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "hi/symbolism_hi: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "zh/chengyu_bench_app: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "zh/idiomatlas_mc_zh_seen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "zh/idiomatlas_mc_zh_unseen: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)",
-    "zh/symbolism_zh: unfiltered/control has no per-item data for this task (it was never evaluated on the Random checkpoint)"
-  ],
+  "_missing_data_notes": [],
   "_meta": {
     "bootstrap_resamples": 10000,
     "seed": 20260824,

@@ -1,0 +1,2107 @@
+{
+  "method": "Table 2 (same entity, different meaning) for the five language pairs beyond en-zh.\n\nThe paper's Table~\\ref{tab:entity-cases} covers English-Chinese only. This builds the\nsame table for en-hi, en-ar, zh-hi, zh-ar and hi-ar.\n\nMethod, following the en-zh original: entities are matched across a pair through their\nshared English anchor (the translations already computed in\nentity_translations_{zh,hi,ar}_en.json, so no new translation calls); for each entity we\nretrieve its idioms in both languages and ask an LLM to summarise, *from those idioms\nonly*, the primary meanings each side carries and the meaning they share.\n\nTwo departures, both forced by what we learned since:\n\n1. An audit found 17.6% of the original summaries' claims unsupported by the idioms they\n   were written from, so every claim here is re-checked against the evidence by a second\n   pass and unsupported ones are dropped before the table is written.\n2. The document is pdfLaTeX + CJKutf8, which can typeset Chinese via \\zh{} but not\n   Devanagari or Arabic, and no existing table contains either script. Hindi and Arabic\n   idioms are therefore romanised with a literal English gloss, as the entity figure\n   already does.\n\n    LLAMA_API_KEY=... PYTHONPATH=src:src/culture/analysis/v2 python entity_cases_pairs.py\n",
+  "pairs": [
+    "en-hi",
+    "en-ar",
+    "zh-hi",
+    "zh-ar",
+    "hi-ar"
+  ],
+  "min_idioms": 8,
+  "rows_per_pair": 5,
+  "model": "gpt-5-4-mini-genai-responses",
+  "verified_drop_rate": 0.0132,
+  "rows": [
+    {
+      "pair": "en-hi",
+      "a": "en",
+      "b": "hi",
+      "anchor": "medicine",
+      "n_a": 10,
+      "n_b": 38,
+      "div": 0.7656,
+      "a_ids": [
+        277,
+        350,
+        1473,
+        2888,
+        7381,
+        11367,
+        18203,
+        18212,
+        18491,
+        18492
+      ],
+      "b_ids": [
+        419,
+        921,
+        1279,
+        1318,
+        1639,
+        2094,
+        2274,
+        2322,
+        2636,
+        3631,
+        5193,
+        6850,
+        7092,
+        7764,
+        8691,
+        8692,
+        8814,
+        8956
+      ],
+      "a_meanings": "unpleasant treatment or consequences one deserves or inflicts on others; a necessary but unpleasant truth, duty, or experience; healing, relief, or emotional benefit",
+      "a_examples": [
+        "a dose of one’s own medicine",
+        "bitter medicine",
+        "laughter is the best medicine",
+        "take one's medicine"
+      ],
+      "b_meanings": "a remedy or treatment for illness; a necessary but unpleasant cure or hardship; advice or practice that should be followed for benefit",
+      "b_examples": [
+        "मौत को दवा नहीं",
+        "कड़वी औषधि बिन पिए, मिठे न तन की ताप",
+        "दवा से परहेज बड़ा",
+        "दुआ और दवा नित करनी चाहिए"
+      ],
+      "shared": "necessary but unpleasant remedy",
+      "a_examples_roman": [
+        "a dose of one’s own medicine",
+        "bitter medicine",
+        "laughter is the best medicine",
+        "take one's medicine"
+      ],
+      "a_examples_gloss": [
+        "unpleasant treatment one deserves",
+        "unpleasant but necessary truth",
+        "humor helps healing well-being",
+        "accept an unpleasant punishment"
+      ],
+      "b_examples_roman": [
+        "maut ko dava nahin",
+        "kadii aushadhi bin piye, mithe na tan ki taap",
+        "dava se parhej bada",
+        "dua aur dava nit karni chahiye"
+      ],
+      "b_examples_gloss": [
+        "no medicine for death",
+        "without bitter medicine, no relief",
+        "avoidance is greater than medicine",
+        "prayer and medicine should be regular"
+      ],
+      "a_meanings_verified": "unpleasant treatment or consequences one deserves or inflicts on others; a necessary but unpleasant truth, duty, or experience; healing, relief, or emotional benefit",
+      "b_meanings_verified": "a remedy or treatment for illness; a necessary but unpleasant cure or hardship; advice or practice that should be followed for benefit"
+    },
+    {
+      "pair": "en-hi",
+      "a": "en",
+      "b": "hi",
+      "anchor": "grain",
+      "n_a": 8,
+      "n_b": 152,
+      "div": 0.6602,
+      "a_ids": [
+        368,
+        1212,
+        1668,
+        1694,
+        7981,
+        8386,
+        18314,
+        20812
+      ],
+      "b_ids": [
+        79,
+        90,
+        176,
+        236,
+        242,
+        379,
+        380,
+        381,
+        895,
+        1054,
+        1180,
+        1665,
+        2031,
+        2131,
+        2241,
+        2407,
+        2672,
+        2981
+      ],
+      "a_meanings": "small amount or trace; something to be skeptical about; a natural standard or inclination",
+      "a_examples": [
+        "a grain of truth",
+        "grain of truth",
+        "take something with a grain of salt",
+        "against the grain"
+      ],
+      "b_meanings": "food or sustenance; agricultural produce or crop yield; something valuable to store, use, or protect",
+      "b_examples": [
+        "अकाल या सुकाल, अनाज निकाल",
+        "अनाज खाओ पर बीज बचाओ",
+        "आदमी अनाज का कीड़ा है",
+        "अगहन में छः भी सात जोरू रखते हैं"
+      ],
+      "shared": "food or sustenance",
+      "a_examples_roman": [
+        "a grain of truth",
+        "grain of truth",
+        "take something with a grain of salt",
+        "against the grain"
+      ],
+      "a_examples_gloss": [
+        "a tiny amount of truth",
+        "tiny amount of truth",
+        "accept with skepticism",
+        "contrary to the grain"
+      ],
+      "b_examples_roman": [
+        "akal ya sukāl, anāj nikāl",
+        "anāj khāo par bīj bachāo",
+        "ādmī anāj kā kīḍā hai",
+        "agahan meṃ chhah bhī sāt jorū rakhte haiṃ"
+      ],
+      "b_examples_gloss": [
+        "whether famine or plenty, take out grain",
+        "eat grain but save seed",
+        "man is a grain-eater",
+        "in agahan even six become seven wives"
+      ],
+      "a_meanings_verified": "small amount or trace; something to be skeptical about; a natural standard or inclination",
+      "b_meanings_verified": "food or sustenance; agricultural produce or crop yield; something valuable to store, use, or protect"
+    },
+    {
+      "pair": "en-hi",
+      "a": "en",
+      "b": "hi",
+      "anchor": "kick",
+      "n_a": 15,
+      "n_b": 35,
+      "div": 0.6172,
+      "a_ids": [
+        1253,
+        1254,
+        1255,
+        1256,
+        1257,
+        7023,
+        7369,
+        7370,
+        7524,
+        7549,
+        7843,
+        8813,
+        11092,
+        11093,
+        13486
+      ],
+      "b_ids": [
+        454,
+        1161,
+        1777,
+        3039,
+        3571,
+        3644,
+        3907,
+        4198,
+        4499,
+        4500,
+        4501,
+        4782,
+        5031,
+        5341,
+        5342,
+        5344,
+        5348,
+        5509
+      ],
+      "a_meanings": "a forceful push or blow; amusement or pleasure; a period of enthusiasm or preference",
+      "a_examples": [
+        "a kick in the pants",
+        "get a kick out of",
+        "for kicks",
+        "on a kick"
+      ],
+      "b_meanings": "a blow or act of kicking; harm, insult, or rejection; forceful correction or punishment",
+      "b_examples": [
+        "उठते लात बैठते घूंसा",
+        "गिरे में सब चार लात मारते हैं",
+        "घोड़े को लात, आदमी को बात",
+        "कुत्ते के सिर पर लात हो तो ठीक रहता है"
+      ],
+      "shared": "blow or kick",
+      "a_examples_roman": [
+        "a kick in the pants",
+        "get a kick out of",
+        "for kicks",
+        "on a kick"
+      ],
+      "a_examples_gloss": [
+        "a strong push in pants",
+        "be amused by something",
+        "for fun only",
+        "having a period of enthusiasm"
+      ],
+      "b_examples_roman": [
+        "uthte laat baithte ghunsa",
+        "gire mein sab chaar laat maarte hain",
+        "ghode ko laat, aadmi ko baat",
+        "kutte ke sir par laat ho to ठीक रहता है"
+      ],
+      "b_examples_gloss": [
+        "standing kick, sitting punch",
+        "the fallen get four kicks",
+        "horse with kick, man with words",
+        "kick on dog's head is fine"
+      ],
+      "a_meanings_verified": "a forceful push or blow; amusement or pleasure; a period of enthusiasm or preference",
+      "b_meanings_verified": "a blow or act of kicking; harm, insult, or rejection; forceful correction or punishment"
+    },
+    {
+      "pair": "en-hi",
+      "a": "en",
+      "b": "hi",
+      "anchor": "plate",
+      "n_a": 11,
+      "n_b": 27,
+      "div": 0.6016,
+      "a_ids": [
+        1195,
+        1290,
+        1291,
+        4234,
+        8818,
+        8820,
+        9146,
+        9147,
+        13490,
+        17570,
+        17572
+      ],
+      "b_ids": [
+        554,
+        717,
+        3379,
+        4198,
+        6869,
+        6979,
+        7005,
+        8535,
+        8536,
+        8537,
+        8538,
+        8539,
+        8540,
+        8541,
+        8542,
+        8543,
+        9044,
+        9116
+      ],
+      "a_meanings": "a load of tasks or responsibilities; a busy schedule or burden; something easily obtained or within reach",
+      "a_examples": [
+        "a full plate — a full schedule; a lot to do.",
+        "have too much on one's plate — to have too many tasks or responsibilities to deal with",
+        "on a plate — Within easy reach; easily achieved",
+        "step up to the plate — To initiate action; to assume or take a responsibility"
+      ],
+      "b_meanings": "a serving dish or meal portion; a person's share of food or sustenance; a symbol of fortune, status, or conduct in life",
+      "b_examples": [
+        "अपनी भरी थाली छोड़ै, दूसरे की जूठी पत्तल निहारै — (क) लालची व्यक्ति के लिए कहा जाता है, जिसे अपनी अच्छी चीज़ भी अच्छी नहीं लगती, पर दूसरे की बुरी चीज़ को भी देखकर लालच करता है।",
+        "अभागे की थाली में छेद — अभागे व्यक्ति की थाली में छेद होता है; अर्थात् उसे जो कुछ मिलता है, वह भी टिकता नहीं और उसका खाना-पीना तक नष्ट हो जाता है। आशय यह है कि दुःख",
+        "थाली फूटने पर ठीकरा हाथ आता है — भाग्यरूपी थाली के फूट जाने पर भीख माँगने की नौबत आ जाती है। जीवन-यापन के लिए मूलभूत साधन समाप्त हो जाने पर यह कहा जाता है।",
+        "थाली पर की भूख सही नहीं जाती — भोजन करने के स्थान पर बैठकर भोजन का इंतज़ार करना बहुत बुरा लगता है।"
+      ],
+      "shared": "food or sustenance",
+      "a_examples_roman": [
+        "a full plate",
+        "have too much on one's plate",
+        "on a plate",
+        "step up to the plate"
+      ],
+      "a_examples_gloss": [
+        "a full schedule; much to do",
+        "have too many tasks or responsibilities",
+        "within easy reach; easily achieved",
+        "take on a responsibility"
+      ],
+      "b_examples_roman": [
+        "apni bhari thali chhode, doosre ki jhooti pattal nihare",
+        "abhage ki thali mein chhed",
+        "thali phootne par thikara hath aata hai",
+        "thali par ki bhookh sahi nahin jati"
+      ],
+      "b_examples_gloss": [
+        "leave full plate; covet others' leftovers",
+        "unlucky person's plate has a hole",
+        "when the plate breaks, shards remain",
+        "cannot bear hunger at the plate"
+      ],
+      "a_meanings_verified": "a load of tasks or responsibilities; a busy schedule or burden; something easily obtained or within reach",
+      "b_meanings_verified": "a serving dish or meal portion; a person's share of food or sustenance; a symbol of fortune, status, or conduct in life"
+    },
+    {
+      "pair": "en-hi",
+      "a": "en",
+      "b": "hi",
+      "anchor": "shadow",
+      "n_a": 14,
+      "n_b": 28,
+      "div": 0.4805,
+      "a_ids": [
+        333,
+        334,
+        335,
+        1655,
+        1656,
+        2774,
+        2775,
+        2787,
+        3980,
+        4663,
+        11884,
+        18372,
+        20077,
+        20874
+      ],
+      "b_ids": [
+        675,
+        771,
+        1194,
+        1610,
+        1721,
+        3301,
+        3491,
+        5004,
+        6032,
+        6049,
+        6050,
+        7363,
+        9586,
+        10065,
+        10503,
+        10755,
+        10988,
+        11055
+      ],
+      "a_meanings": "weakness or diminished vitality; fearfulness or timidity; certainty or lack of doubt",
+      "a_examples": [
+        "a shadow of itself",
+        "afraid of one's own shadow",
+        "beyond a shadow of a doubt"
+      ],
+      "b_meanings": "shelter or shade; changing fortune or alternating pleasure and pain; hiddenness or secrecy",
+      "b_examples": [
+        "छाया बड़ी माया है",
+        "इधर की छाया उधर जाती है",
+        "कुएँ की छाया कुएँ में रहती है"
+      ],
+      "shared": "shelter or shade",
+      "a_examples_roman": [
+        "a shadow of itself",
+        "afraid of one's own shadow",
+        "beyond a shadow of a doubt"
+      ],
+      "a_examples_gloss": [
+        "not as strong as before",
+        "easily frightened and timid",
+        "without any doubt at all"
+      ],
+      "b_examples_roman": [
+        "chhaya badi maya hai",
+        "idhar ki chhaya udhar jati hai",
+        "kuen ki chhaya kuen mein rehti hai"
+      ],
+      "b_examples_gloss": [
+        "shade or shelter is very important",
+        "shade changes from here to there",
+        "the well's shade stays in the well"
+      ],
+      "a_meanings_verified": "weakness or diminished vitality; fearfulness or timidity; certainty or lack of doubt",
+      "b_meanings_verified": "shelter or shade; changing fortune or alternating pleasure and pain"
+    },
+    {
+      "pair": "en-ar",
+      "a": "en",
+      "b": "ar",
+      "anchor": "bear",
+      "n_a": 13,
+      "n_b": 9,
+      "div": 0.813,
+      "a_ids": [
+        442,
+        528,
+        543,
+        2256,
+        2522,
+        2523,
+        2541,
+        3420,
+        8750,
+        10492,
+        11745,
+        11922,
+        14647
+      ],
+      "b_ids": [
+        4556,
+        5011,
+        5450,
+        6631,
+        6947,
+        7174,
+        7354,
+        7916,
+        7956
+      ],
+      "a_meanings": "very strong or powerful; irritable or bad-tempered; difficult or troublesome",
+      "a_examples": [
+        "gruff as a bear — gruff; curt and unsociable. (*Also: as ~.)",
+        "hungry as a bear — Cliché very hungry. (*Also: as ~.)",
+        "like a bear with a sore head — to be in a very bad mood or irritable",
+        "loaded for bear — Thoroughly equipped, as for a demanding task or confrontation"
+      ],
+      "b_meanings": "dangerous and predatory; a hard-to-control bad influence; a feared enemy or threat",
+      "b_examples": [
+        "اِبْنِ الدِّيبْ ما يِتْرَبَّاشْ — أي: ابن الذئب لا يُرَبَّى ولا يُقْتَنَى؛ لأن طباعه تغلِب عليه فيُؤذِي من رَبَّاه وأحسن إليه. والمراد ابنُ مَنْ تَعَوَّد الأذى؛ لأنه في الغال",
+        "لَا يِضْرَبِ الدِّيبْ وَلَا يْجَوَّعِ الْغَنَمْ — يُضرَب لمن يُصَانِعُ عَدُوَّيْنِ لمصلحة له في ذلك؛ أي في بقائهما وبقاء العداوة بينهما، فهو كمن لا يضرب الذئب ولا يقتله حتى يكف شَرَّه ويريح ",
+        "اِلنَّعْجَه الْعَيَّاطَهْ مَا يَاكُلْشِ ابْنَهَا الدِّيبْ — ويُروَى: «ما يسرقوش ولادها.» وبعضهم يروي فيه: «المعزة» بدل النعجة، والمقصود بالعياطة: التي تصيح؛ أي: تحوط أولادها وتدفع عنهم، ولعله قريب من:",
+        "المرا تخاف من الشيب كيف النعجة تخاف من الديب — يعبر عن أن المرأة تخاف من الشيب (الشعر الأبيض) كما تخاف النعجة من الذئب."
+      ],
+      "shared": "dangerous, threatening creature",
+      "a_examples_roman": [
+        "gruff as a bear — gruff; curt and unsociable. (*Also: as ~.)",
+        "hungry as a bear — Cliché very hungry. (*Also: as ~.)",
+        "like a bear with a sore head — to be in a very bad mood or irritable",
+        "loaded for bear — Thoroughly equipped, as for a demanding task or confrontation"
+      ],
+      "a_examples_gloss": [
+        "gruff as a bear",
+        "hungry as a bear",
+        "like a bear with a sore head",
+        "loaded for bear"
+      ],
+      "b_examples_roman": [
+        "ibn al-dhib ma yitrabbash",
+        "la yidrab al-dhib wa la yjuwwa' al-ghanam",
+        "al-naghjah al-ayyatah ma yakulsh ibnha al-dhib",
+        "al-mara takhaf min al-shayb kif al-naghjah takhaf min al-dhib"
+      ],
+      "b_examples_gloss": [
+        "son of wolf not raised",
+        "neither beat wolf nor starve sheep",
+        "the bleating ewe's son wolf",
+        "woman fears gray hair like ewe fears wolf"
+      ],
+      "a_meanings_verified": "very strong or powerful; irritable or bad-tempered; difficult or troublesome",
+      "b_meanings_verified": "dangerous and predatory; a hard-to-control bad influence; a feared enemy or threat"
+    },
+    {
+      "pair": "en-ar",
+      "a": "en",
+      "b": "ar",
+      "anchor": "heat",
+      "n_a": 16,
+      "n_b": 9,
+      "div": 0.7443,
+      "a_ids": [
+        2584,
+        4039,
+        5218,
+        9250,
+        9251,
+        9950,
+        10019,
+        10297,
+        15241,
+        15242,
+        18239,
+        18343,
+        18344,
+        19808,
+        19831,
+        19835
+      ],
+      "b_ids": [
+        5217,
+        5385,
+        6026,
+        6130,
+        6798,
+        6968,
+        7520,
+        7547,
+        9638
+      ],
+      "a_meanings": "pressure or trouble; anger or conflict; intensity or heightened activity",
+      "a_examples": [
+        "catch heat",
+        "put the heat on",
+        "take the heat",
+        "turn up the heat"
+      ],
+      "b_meanings": "a neighborhood or local quarter; people of the neighborhood; a rough local street setting",
+      "b_examples": [
+        "إِيشْ إِنْتَ فِي الْحَارَهْ يَا مَنْخُلْ بِلَا طَارَهْ",
+        "تِخَانِقْنِي فِي زَفَّهْ وِتِصْطِلِحْ مَعَايَا فِي حَارَهْ",
+        "زَيِّ وْلَادِ الْحَارَهْ زُمَّارَهْ تِجْمَعْهُمْ وِعَصَايَهْ تْفَرَّقْهُمْ",
+        "ولد حاره يفهم بالإشاره"
+      ],
+      "shared": "none",
+      "a_examples_roman": [
+        "catch heat",
+        "put the heat on",
+        "take the heat",
+        "turn up the heat"
+      ],
+      "a_examples_gloss": [
+        "get into trouble",
+        "apply pressure on someone",
+        "receive criticism or blame",
+        "increase the pressure"
+      ],
+      "b_examples_roman": [
+        "ish inta fi al-hara ya mankhul bila tara",
+        "tikhanigni fi zaffah witishtilih maaya fi harah",
+        "zayy wlad al-harah zummarah tijmahum wi-asaayah tifarraqhum",
+        "walad harah yifham bil-isharah"
+      ],
+      "b_examples_gloss": [
+        "what are you in the neighborhood",
+        "you fight me openly, reconcile secretly",
+        "like neighborhood boys, whistle gathers them",
+        "a neighborhood boy understands by gesture"
+      ],
+      "a_meanings_verified": "pressure or trouble; anger or conflict; intensity or heightened activity",
+      "b_meanings_verified": "a neighborhood or local quarter; people of the neighborhood; a rough local street setting"
+    },
+    {
+      "pair": "en-ar",
+      "a": "en",
+      "b": "ar",
+      "anchor": "palm",
+      "n_a": 9,
+      "n_b": 16,
+      "div": 0.6527,
+      "a_ids": [
+        392,
+        393,
+        4953,
+        4956,
+        8413,
+        8414,
+        13454,
+        14110,
+        14111
+      ],
+      "b_ids": [
+        532,
+        663,
+        2367,
+        4650,
+        4693,
+        4861,
+        5454,
+        5678,
+        5964,
+        6016,
+        6029,
+        6275,
+        6787,
+        7402,
+        7856,
+        10159
+      ],
+      "a_meanings": "hand or palm as a place for money; bribery or payment; deception in passing something off",
+      "a_examples": [
+        "grease someone's palm",
+        "cross someone’s palm with silver",
+        "palm off"
+      ],
+      "b_meanings": "hand or palm as a measure of possession or small amount; ability or power to hold or obtain; a part of the body contrasted with other body parts",
+      "b_examples": [
+        "جَرَادَهْ فِي الْكَف وَلَا أَلْفْ فِي الْهَوَا",
+        "وِش بَشُوشْ وَلَا جُوهَرْ بِمَلْوِ الْكَف",
+        "اِلطُّولْ عَ النَّخْلْ وِالتُّخْنْ عَ الْجِمِّيزْ"
+      ],
+      "shared": "hand as a small holding place",
+      "a_examples_roman": [
+        "grease someone's palm",
+        "cross someone's palm with silver",
+        "palm off"
+      ],
+      "a_examples_gloss": [
+        "bribe someone with money",
+        "pay money into the hand",
+        "pass off as genuine"
+      ],
+      "b_examples_roman": [
+        "jarada fi al-kaf wa-la alf fi al-hawa",
+        "wish bashush wa-la jawhar bimlu al-kaf",
+        "al-tul 'a al-nakhl w-al-tukhn 'a al-gimmez"
+      ],
+      "b_examples_gloss": [
+        "a grasshopper in the hand",
+        "a smiling face is better",
+        "height is for palms"
+      ],
+      "a_meanings_verified": "hand or palm as a place for money; bribery or payment; deception in passing something off",
+      "b_meanings_verified": "hand or palm as a measure of possession or small amount; ability or power to hold or obtain; a part of the body contrasted with other body parts"
+    },
+    {
+      "pair": "en-ar",
+      "a": "en",
+      "b": "ar",
+      "anchor": "wool",
+      "n_a": 10,
+      "n_b": 22,
+      "div": 0.6221,
+      "a_ids": [
+        1830,
+        1831,
+        6012,
+        6013,
+        12766,
+        14851,
+        14929,
+        14930,
+        14931,
+        14932
+      ],
+      "b_ids": [
+        1218,
+        2093,
+        2384,
+        4622,
+        5789,
+        5930,
+        6862,
+        7039,
+        7381,
+        7798,
+        7910,
+        8280,
+        8898,
+        9032,
+        9088,
+        9539,
+        9542,
+        9543
+      ],
+      "a_meanings": "being genuine, solid, or of good quality; being firmly fixed in beliefs or character; being deceptive or misleading",
+      "a_examples": [
+        "all wool and a yard wide",
+        "dyed in the wool",
+        "pull the wool over someone's eyes"
+      ],
+      "b_meanings": "something of value or usefulness; something that returns to its original state; something soft, light, or easily stretched; something associated with deception or mistaken expectations",
+      "b_examples": [
+        "رِجِعِ الْغَزْلْ صُوفْ",
+        "اِلْكَلَامْ زَيِّ حَبْلِ الصُّوفْ، كُل مَا تْشِدُّهْ يِتْمَط",
+        "هُوَّ حِيلْةِ اللِّي يِجُزِّ الْكَلْبْ صُوفْ"
+      ],
+      "shared": "deception or misleading",
+      "a_examples_roman": [
+        "all wool and a yard wide",
+        "dyed in the wool",
+        "pull the wool over someone's eyes"
+      ],
+      "a_examples_gloss": [
+        "genuinely good and trustworthy",
+        "firmly established in beliefs",
+        "deceive someone by hiding truth"
+      ],
+      "b_examples_roman": [
+        "rigiʿi al-ghazl ṣūf",
+        "il-kalam zayy ḥabl il-ṣūf, kul ma tishidduh yitmaṭṭ",
+        "huwwa ḥīlit illi yijizz il-kalb ṣūf"
+      ],
+      "b_examples_gloss": [
+        "the spun thread returned wool",
+        "speech like a wool rope stretches",
+        "what can shear a dog wool"
+      ],
+      "a_meanings_verified": "being genuine, solid, or of good quality; being firmly fixed in beliefs or character; being deceptive or misleading",
+      "b_meanings_verified": "something of value or usefulness; something that returns to its original state; something soft, light, or easily stretched; something associated with deception or mistaken expectations"
+    },
+    {
+      "pair": "en-ar",
+      "a": "en",
+      "b": "ar",
+      "anchor": "milk",
+      "n_a": 9,
+      "n_b": 18,
+      "div": 0.5954,
+      "a_ids": [
+        5001,
+        5002,
+        5603,
+        10588,
+        12658,
+        17264,
+        18880,
+        20722,
+        20723
+      ],
+      "b_ids": [
+        1920,
+        2612,
+        3575,
+        3884,
+        5131,
+        5524,
+        6139,
+        7346,
+        8440,
+        8447,
+        8543,
+        8737,
+        9511,
+        9513,
+        9882,
+        10040,
+        10077,
+        10289
+      ],
+      "a_meanings": "something wasted or irrecoverable; kindness or generosity; something used up or exploited for gain",
+      "a_examples": [
+        "cry over spilled milk",
+        "spilt milk",
+        "the milk of human kindness",
+        "milk the clock"
+      ],
+      "b_meanings": "generosity and hospitality; something mixed or confused; a relationship or situation that is easily spoiled or fragile",
+      "b_examples": [
+        "شَرُّ اللَّبَنِ الَوالِجُ",
+        "سَمَكْ لَبَنْ تَمْرْ هنْدِي",
+        "اِلشِّرْكْ زَيِّ اللَّبَنْ أَقَلَّهَا حَاجَهْ تِعَكَّرُهْ",
+        "اِنَّسَبْ زَيِّ اللَّبَنْ أَقَل شِيءْ يِغَيَّرُهْ"
+      ],
+      "shared": "something easily spoiled",
+      "a_examples_roman": [
+        "cry over spilled milk",
+        "spilt milk",
+        "the milk of human kindness",
+        "milk the clock"
+      ],
+      "a_examples_gloss": [
+        "lament over what is undone",
+        "something that cannot be undone",
+        "natural kindness and sympathy",
+        "use time for benefit"
+      ],
+      "b_examples_roman": [
+        "sharru al-labani al-waliju",
+        "samak laban tamr hindi",
+        "al-shirk zayy al-laban aqallaha haja ti'akkuruh",
+        "al-nasab zayy al-laban aql shay yighayyiruh"
+      ],
+      "b_examples_gloss": [
+        "best milk is what enters",
+        "fish milk tamarind indian",
+        "company like milk, slightest spoils it",
+        "kinship like milk, least changes it"
+      ],
+      "a_meanings_verified": "something wasted or irrecoverable; kindness or generosity; something used up or exploited for gain",
+      "b_meanings_verified": "generosity and hospitality; something mixed or confused; a relationship or situation that is easily spoiled or fragile"
+    },
+    {
+      "pair": "zh-hi",
+      "a": "zh",
+      "b": "hi",
+      "anchor": "shadow",
+      "n_a": 79,
+      "n_b": 28,
+      "div": 0.84,
+      "a_ids": [
+        5121,
+        6203,
+        6234,
+        6284,
+        6974,
+        7761,
+        8034,
+        8504,
+        8521,
+        9333,
+        9574,
+        9575,
+        9576,
+        9577,
+        9578,
+        9579,
+        9580,
+        9602
+      ],
+      "b_ids": [
+        675,
+        771,
+        1194,
+        1610,
+        1721,
+        3301,
+        3491,
+        5004,
+        6032,
+        6049,
+        6050,
+        7363,
+        9586,
+        10065,
+        10503,
+        10755,
+        10988,
+        11055
+      ],
+      "a_meanings": "concealment or hiding; loneliness or being alone; close attachment or being inseparable",
+      "a_examples": [
+        "匿影藏形",
+        "孤形吊影",
+        "如影随形",
+        "形影相吊"
+      ],
+      "b_meanings": "shade as shelter or comfort; changing fortune or alternating conditions; hiddenness or privacy",
+      "b_examples": [
+        "छाया बड़ी माया है",
+        "इधर की छाया उधर जाती है",
+        "कुएँ की छाया कुएँ में रहती है",
+        "जो अति आतप ब्याकुल होई, तरु छाया सुख जाने सोई"
+      ],
+      "shared": "shade as shelter or comfort",
+      "a_examples_roman": [
+        "ni ying cang xing",
+        "gu xing diao ying",
+        "ru ying sui xing",
+        "xing ying xiang diao"
+      ],
+      "a_examples_gloss": [
+        "hide shadow and form",
+        "lonely form and shadow",
+        "like shadow following form",
+        "form and shadow pity each other"
+      ],
+      "b_examples_roman": [
+        "chhaya badi maya hai",
+        "idhar ki chhaya udhar jati hai",
+        "kuen ki chhaya kuen mein rehti hai",
+        "jo ati aatap byakul hoi, taru chhaya sukh jane soi"
+      ],
+      "b_examples_gloss": [
+        "shade is great illusion",
+        "shade moves this way there",
+        "well's shade stays in well",
+        "one troubled by heat knows shade"
+      ],
+      "a_meanings_verified": "concealment or hiding; loneliness or being alone; close attachment or being inseparable",
+      "b_meanings_verified": "shade as shelter or comfort; changing fortune or alternating conditions"
+    },
+    {
+      "pair": "zh-hi",
+      "a": "zh",
+      "b": "hi",
+      "anchor": "god",
+      "n_a": 145,
+      "n_b": 378,
+      "div": 0.8,
+      "a_ids": [
+        998,
+        1002,
+        2686,
+        2724,
+        2725,
+        2726,
+        2881,
+        3227,
+        3675,
+        3677,
+        3915,
+        3916,
+        4412,
+        4463,
+        8181,
+        8219,
+        8750,
+        9342
+      ],
+      "b_ids": [
+        30,
+        104,
+        112,
+        191,
+        218,
+        256,
+        267,
+        274,
+        275,
+        276,
+        278,
+        307,
+        370,
+        576,
+        777,
+        812,
+        991,
+        1052
+      ],
+      "a_meanings": "supernatural power or divine inspiration; a source of admiration or longing; a force associated with mental focus, calm, or mysterious change",
+      "a_examples": [
+        "下笔如神",
+        "令人神往",
+        "全神贯注",
+        "出鬼入神"
+      ],
+      "b_meanings": "god as protector of the helpless; god as provider and sustainer; god as the ultimate power behind fate and events",
+      "b_examples": [
+        "अंधे का ईश्वर सहायक",
+        "अकेले-दुकेले का अल्लाह बेली",
+        "अजगर के दाता राम",
+        "आगे खुदा का नाम"
+      ],
+      "shared": "divine power and protection",
+      "a_examples_roman": [
+        "xia bi ru shen",
+        "ling ren shen wang",
+        "quan shen guan zhu",
+        "chu gui ru shen"
+      ],
+      "a_examples_gloss": [
+        "write like with divine power",
+        "make one greatly yearn for",
+        "entire spirit fully focused",
+        "enter ghostly, emerge divine"
+      ],
+      "b_examples_roman": [
+        "andhe ka ishvar sahayak",
+        "akele-dukele ka allah beli",
+        "ajgar ke data ram",
+        "aage khuda ka naam"
+      ],
+      "b_examples_gloss": [
+        "god helps the blind",
+        "allah is companion of lone",
+        "ram gives to the python",
+        "first god's name ahead"
+      ],
+      "a_meanings_verified": "supernatural power or divine inspiration; a source of admiration or longing; a force associated with mental focus, calm, or mysterious change",
+      "b_meanings_verified": "god as protector of the helpless; god as provider and sustainer; god as the ultimate power behind fate and events"
+    },
+    {
+      "pair": "zh-hi",
+      "a": "zh",
+      "b": "hi",
+      "anchor": "ant",
+      "n_a": 33,
+      "n_b": 60,
+      "div": 0.74,
+      "a_ids": [
+        2386,
+        3038,
+        3080,
+        7822,
+        7823,
+        19864,
+        21065,
+        21066,
+        21067,
+        21071,
+        21072,
+        21073,
+        21074,
+        21075,
+        21076,
+        21114,
+        21118,
+        21119
+      ],
+      "b_ids": [
+        57,
+        235,
+        897,
+        898,
+        903,
+        1035,
+        1156,
+        1430,
+        1534,
+        2062,
+        2960,
+        3471,
+        3472,
+        3889,
+        3958,
+        4676,
+        5308,
+        5729
+      ],
+      "a_meanings": "crowded massing together; petty or insignificant struggle; people drawn together in large numbers",
+      "a_examples": [
+        "云屯蚁聚",
+        "蚁斗蜗争",
+        "蚁聚蜂屯",
+        "蜂屯蚁聚"
+      ],
+      "b_meanings": "smallness or insignificance; something that can be carried or received in tiny amount; a creature used in weather signs and comparisons",
+      "b_examples": [
+        "आता है हाथी के मुँह, जाता है चींटी के मुँह",
+        "कीटो को कण, हाथी को मन",
+        "चींटी ऊपर पहाड़",
+        "जल से पानी गरम है, चिड़ियाँ नहावें धर; अंडा ले चोंटो चढ़े तौ बरखा हो भरपूर"
+      ],
+      "shared": "smallness or insignificance",
+      "a_examples_roman": [
+        "yun tun yi ju",
+        "yi dou wo zheng",
+        "yi ju feng tun",
+        "feng tun yi ju"
+      ],
+      "a_examples_gloss": [
+        "cloud-gathered ant-assembled",
+        "ant fights snail争",
+        "ants gather, bees mass",
+        "bees mass, ants gather"
+      ],
+      "b_examples_roman": [
+        "aata hai hathi ke munh, jata hai chinti ke munh",
+        "kito ko kan, hathi ko man",
+        "chinti upar pahad",
+        "jal se pani garam hai, chidiyan nahaven dhar; anda le chonto chadhe tau barkha ho bharpur"
+      ],
+      "b_examples_gloss": [
+        "comes into elephant's mouth, goes into ant's mouth",
+        "ant gets a grain, elephant a maund",
+        "ant on top of mountain",
+        "water is hot; birds bathe; ant climbs with egg"
+      ],
+      "a_meanings_verified": "crowded massing together; petty or insignificant struggle; people drawn together in large numbers",
+      "b_meanings_verified": "smallness or insignificance; something that can be carried or received in tiny amount; a creature used in weather signs and comparisons"
+    },
+    {
+      "pair": "zh-hi",
+      "a": "zh",
+      "b": "hi",
+      "anchor": "hand",
+      "n_a": 169,
+      "n_b": 289,
+      "div": 0.6533,
+      "a_ids": [
+        24,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        322,
+        635,
+        674,
+        681,
+        682,
+        945,
+        1548,
+        1984,
+        1985,
+        1986,
+        1987
+      ],
+      "b_ids": [
+        43,
+        94,
+        109,
+        126,
+        346,
+        348,
+        415,
+        458,
+        475,
+        482,
+        483,
+        489,
+        490,
+        491,
+        504,
+        527,
+        540,
+        543
+      ],
+      "a_meanings": "ability to act or do something; control or authority over affairs; many people acting together",
+      "a_examples": [
+        "一举手之劳",
+        "一手包办",
+        "一手遮天",
+        "七手八脚"
+      ],
+      "b_meanings": "ability to do work oneself; control over one's own affairs or status; help or support from another person",
+      "b_examples": [
+        "अपना काम आप भला",
+        "अपना हाथ जगन्नाथ",
+        "अपनी इज्ज़त अपने हाथ",
+        "अंधे का हाथ कंधे पर"
+      ],
+      "shared": "ability to act or do",
+      "a_examples_roman": [
+        "yi ju shou zhi lao",
+        "yi shou bao ban",
+        "yi shou zhe tian",
+        "qi shou ba jiao"
+      ],
+      "a_examples_gloss": [
+        "one hand's effort",
+        "one hand handles all",
+        "one hand covers sky",
+        "seven hands eight feet"
+      ],
+      "b_examples_roman": [
+        "apna kaam aap bhala",
+        "apna haath jagannath",
+        "apni izzat apne haath",
+        "andhe ka haath kandhe par"
+      ],
+      "b_examples_gloss": [
+        "one's own work is good",
+        "one's own hand jagannath",
+        "one's honor in own hand",
+        "blind man's hand on shoulder"
+      ],
+      "a_meanings_verified": "ability to act or do something; control or authority over affairs; many people acting together",
+      "b_meanings_verified": "ability to do work oneself; control over one's own affairs or status; help or support from another person"
+    },
+    {
+      "pair": "zh-hi",
+      "a": "zh",
+      "b": "hi",
+      "anchor": "wind",
+      "n_a": 411,
+      "n_b": 32,
+      "div": 0.5267,
+      "a_ids": [
+        210,
+        211,
+        533,
+        544,
+        983,
+        1918,
+        2146,
+        2147,
+        2148,
+        2300,
+        2406,
+        2420,
+        2421,
+        2456,
+        2834,
+        2835,
+        2873,
+        3230
+      ],
+      "b_ids": [
+        54,
+        1297,
+        1831,
+        1834,
+        2540,
+        3840,
+        4424,
+        4659,
+        5510,
+        5562,
+        6299,
+        6647,
+        7404,
+        7589,
+        8420,
+        9733,
+        10422,
+        10424
+      ],
+      "a_meanings": "smooth progress without obstacles; changeable force or influence that can be followed or used; something that stirs up trouble or spreads things around",
+      "a_examples": [
+        "一帆顺风",
+        "乘风破浪",
+        "乘风转舵",
+        "传风扇火"
+      ],
+      "b_meanings": "wind as a natural force affecting weather and crops; wind as something that causes trouble, disturbance, or change; wind as an unavoidable hardship or pressure",
+      "b_examples": [
+        "उत्तर उपज बहु धन धान, खेत बात सुख करे किसान",
+        "कौन सा दरख्त है जिसे हवा नहीं लगी",
+        "तेज हवा से बचकर चलना पड़ता है",
+        "गई बातों को हवा भी पा नहीं सकती"
+      ],
+      "shared": "trouble or difficulty",
+      "a_examples_roman": [
+        "yi fan shun feng",
+        "cheng feng po lang",
+        "cheng feng zhuan duo",
+        "chuan feng shan huo"
+      ],
+      "a_examples_gloss": [
+        "sail with favorable wind",
+        "ride wind break waves",
+        "ride wind turn rudder",
+        "spread wind fan fire"
+      ],
+      "b_examples_roman": [
+        "uttar upaj bahu dhan dhan, khet baat sukh kare kisan",
+        "kaun sa darakht hai jise hawa nahin lagi",
+        "tez hawa se bachkar chalna padta hai",
+        "gai baton ko hawa bhi pa nahin sakti"
+      ],
+      "b_examples_gloss": [
+        "north wind brings rich crops",
+        "which tree has not wind",
+        "must walk avoiding strong wind",
+        "past words even wind cannot catch"
+      ],
+      "a_meanings_verified": "smooth progress without obstacles; changeable force or influence that can be followed or used; something that stirs up trouble or spreads things around",
+      "b_meanings_verified": "wind as a natural force affecting weather and crops; wind as something that causes trouble, disturbance, or change; wind as an unavoidable hardship or pressure"
+    },
+    {
+      "pair": "zh-ar",
+      "a": "zh",
+      "b": "ar",
+      "anchor": "smoke",
+      "n_a": 27,
+      "n_b": 12,
+      "div": 0.7133,
+      "a_ids": [
+        372,
+        2452,
+        4560,
+        4561,
+        11062,
+        13677,
+        15846,
+        16435,
+        16462,
+        16465,
+        16554,
+        16555,
+        16556,
+        16558,
+        16559,
+        16560,
+        16561,
+        16565
+      ],
+      "b_ids": [
+        128,
+        967,
+        2544,
+        5705,
+        5706,
+        5901,
+        6015,
+        6476,
+        6813,
+        6863,
+        7452,
+        7979
+      ],
+      "a_meanings": "disappearance or vanishing; something fleeting or passing quickly; abundance or multitude",
+      "a_examples": [
+        "云飞烟灭",
+        "烟云过眼",
+        "烟消云散",
+        "浩如烟海"
+      ],
+      "b_meanings": "a cause of harm or trouble; something used to force or pressure; a sign used in comparisons or proverbs",
+      "b_examples": [
+        "أيُّ فَتىً قَتَلَهُ الدُّخَانُ",
+        "الدُّخَّان الْقُرَيِّبْ يِعْمِي",
+        "زَيِّ النَّحْلْ مَا يْطَلَّعُوشْ إِلَّا الدُّخَانْ",
+        "ما في دخان بلا نار"
+      ],
+      "shared": "cause of disappearance or harm",
+      "a_examples_roman": [
+        "yun fei yan mie",
+        "yan yun guo yan",
+        "yan xiao yun san",
+        "hao ru yan hai"
+      ],
+      "a_examples_gloss": [
+        "clouds fly, smoke vanishes",
+        "smoke and clouds pass by",
+        "smoke disperses, clouds scatter",
+        "vast like smoke sea"
+      ],
+      "b_examples_roman": [
+        "ayyu fatan qatalahu ad-dukhan",
+        "ad-dukhan al-qurayyib ya'mi",
+        "zayyi an-nahl ma yitla'ush illa ad-dukhan",
+        "ma fi dukhan bila nar"
+      ],
+      "b_examples_gloss": [
+        "what youth killed by smoke",
+        "near smoke makes blind",
+        "bees emerge only with smoke",
+        "no smoke without fire"
+      ],
+      "a_meanings_verified": "disappearance or vanishing; something fleeting or passing quickly; abundance or multitude",
+      "b_meanings_verified": "a cause of harm or trouble; something used to force or pressure; a sign used in comparisons or proverbs"
+    },
+    {
+      "pair": "zh-ar",
+      "a": "zh",
+      "b": "ar",
+      "anchor": "pearl",
+      "n_a": 74,
+      "n_b": 10,
+      "div": 0.7067,
+      "a_ids": [
+        166,
+        2230,
+        2362,
+        2732,
+        3008,
+        4854,
+        4855,
+        4856,
+        5344,
+        5806,
+        5974,
+        5975,
+        6392,
+        6429,
+        6430,
+        6635,
+        7723,
+        7724
+      ],
+      "b_ids": [
+        1589,
+        2580,
+        3458,
+        3535,
+        4448,
+        4984,
+        5710,
+        5711,
+        5712,
+        6923
+      ],
+      "a_meanings": "something precious or valuable; elegant, polished speech or writing; something recovered or restored",
+      "a_examples": [
+        "买椟还珠",
+        "口吐珠玑",
+        "合浦珠还",
+        "和璧隋珠"
+      ],
+      "b_meanings": "milk or a milk flow; something promised or expected but not delivered; a burden or troublesome rival",
+      "b_examples": [
+        "رَزَمَةً وَلاَ دِرَّةً",
+        "لاَ خَيْرَ فِي رَزَمَةٍ لاَ دِرَّة مَعَهَا",
+        "يَمْنَعُ دَرَّهُ وَدَرَّ غَيْرِهِ",
+        "الدُّرَّهْ مُرَّهْ وَلَوْ كَانِتْ حَلْقِ جَرَّهْ"
+      ],
+      "shared": "none",
+      "a_examples_roman": [
+        "mai du huan zhu",
+        "kou tu zhu ji",
+        "he pu zhu huan",
+        "he bi sui zhu"
+      ],
+      "a_examples_gloss": [
+        "buy casket return pearl",
+        "mouth speak pearls and jades",
+        "hepu return pearl",
+        "he jade sui pearl"
+      ],
+      "b_examples_roman": [
+        "razamatan wa la dirrah",
+        "la khayra fi razamatin la dirra ma'aha",
+        "yamna'u darrahu wa darra ghayrihi",
+        "al-durrah murrah wa law kanat halq jarrah"
+      ],
+      "b_examples_gloss": [
+        "a bleat and no milk",
+        "no good in bleat without milk",
+        "he withholds his milk and others'",
+        "the rival is bitter even if jar throat"
+      ],
+      "a_meanings_verified": "something precious or valuable; elegant, polished speech or writing; something recovered or restored",
+      "b_meanings_verified": "milk or a milk flow; something promised or expected but not delivered; a burden or troublesome rival"
+    },
+    {
+      "pair": "zh-ar",
+      "a": "zh",
+      "b": "ar",
+      "anchor": "soul",
+      "n_a": 105,
+      "n_b": 26,
+      "div": 0.7,
+      "a_ids": [
+        1778,
+        1779,
+        1780,
+        1829,
+        1830,
+        1831,
+        1833,
+        1834,
+        2568,
+        2569,
+        3585,
+        3603,
+        4963,
+        4972,
+        5033,
+        7431,
+        7432,
+        7567
+      ],
+      "b_ids": [
+        611,
+        613,
+        1126,
+        2757,
+        2775,
+        2892,
+        3025,
+        3938,
+        4000,
+        4001,
+        4002,
+        4052,
+        4809,
+        5007,
+        5599,
+        6527,
+        6596,
+        6750
+      ],
+      "a_meanings": "fear, panic, and loss of composure; something that can be seized, driven out, or separated from the body; a force that can strongly attract or shock",
+      "a_examples": [
+        "丢魂丢魄",
+        "丧魂失魄",
+        "勾魂摄魄",
+        "借尸还魂"
+      ],
+      "b_meanings": "the self or inner person; a person’s feelings, desires, and resolve; something one can address, restrain, or blame",
+      "b_examples": [
+        "تَحَمَّدِي يا نَفْسُ لا حَامِدَ لَكِ",
+        "الحَكِيمُ يَقْدَعُ النَّفْسَ بِالكَفَافِ",
+        "النَّفْسُ مُولعةٌ بِحُبِّ العَاجِلِ",
+        "كُبْرِ النَّفْس قَطْعْ نَصِيبْ"
+      ],
+      "shared": "inner self or spirit",
+      "a_examples_roman": [
+        "diu hun diu po",
+        "sang hun shi po",
+        "gou hun she po",
+        "jie shi huan hun"
+      ],
+      "a_examples_gloss": [
+        "lose soul and spirit",
+        "lose soul and soul",
+        "hook soul and seize spirit",
+        "borrow corpse return soul"
+      ],
+      "b_examples_roman": [
+        "tahammadi ya nafsu la hamida laki",
+        "al-hakimu yaqda'u al-nafs bil-kafaf",
+        "al-nafsu mulawwa'atun bihubbi al-'ajil",
+        "kubri al-nafs qat' nasib"
+      ],
+      "b_examples_gloss": [
+        "praise yourself, no praiser",
+        "the wise restrains the self",
+        "the self loves the immediate",
+        "pride of self cuts share"
+      ],
+      "a_meanings_verified": "fear, panic, and loss of composure; something that can be seized, driven out, or separated from the body; a force that can strongly attract or shock",
+      "b_meanings_verified": "the self or inner person; a person’s feelings, desires, and resolve; something one can address, restrain, or blame"
+    },
+    {
+      "pair": "zh-ar",
+      "a": "zh",
+      "b": "ar",
+      "anchor": "god",
+      "n_a": 145,
+      "n_b": 126,
+      "div": 0.68,
+      "a_ids": [
+        998,
+        1002,
+        2686,
+        2724,
+        2725,
+        2726,
+        2881,
+        3227,
+        3675,
+        3677,
+        3915,
+        3916,
+        4412,
+        4463,
+        8181,
+        8219,
+        8750,
+        9342
+      ],
+      "b_ids": [
+        299,
+        315,
+        451,
+        495,
+        517,
+        548,
+        683,
+        858,
+        862,
+        903,
+        912,
+        1475,
+        1476,
+        1569,
+        1596,
+        1603,
+        1604,
+        1605
+      ],
+      "a_meanings": "divine or supernatural power; intense mental focus or vivid expression; trickery or deceptive behavior",
+      "a_examples": [
+        "下笔如神",
+        "全神贯注",
+        "做神做鬼",
+        "弄神弄鬼"
+      ],
+      "b_meanings": "god as the one who acts and decrees; divine power in blessing or punishment; invoking god in curses or prayers",
+      "b_examples": [
+        "أمْرُ اللهُ بَلْغٌ يَسْعَدُ بِهِ السُّعدَاءُ وَيَشْقَى بِهِ الأشْقِياءُ",
+        "بِحَمْدِ اللهِ لا ِبَحْمِدَك",
+        "أَبادَ اللهُ خَضْرَاءَهُمْ",
+        "رَمَاهُ اللهُ بِداءِ الذِّئْب"
+      ],
+      "shared": "supernatural power",
+      "a_examples_roman": [
+        "xia bi ru shen",
+        "quan shen guan zhu",
+        "zuo shen zuo gui",
+        "nong shen nong gui"
+      ],
+      "a_examples_gloss": [
+        "write like by divine aid",
+        "whole spirit concentrated",
+        "act like gods and ghosts",
+        "scheme with gods and ghosts"
+      ],
+      "b_examples_roman": [
+        "amru allahu balghun yasadu bihi al-suda'aa'u wa yashqa bihi al-ashqiya'u",
+        "bihamdi allahi la bihamdak",
+        "abada allahu khadra'ahum",
+        "ramahu allahu bidaa'i al-dhi'b"
+      ],
+      "b_examples_gloss": [
+        "god's command reaches the happy",
+        "by god's praise, not yours",
+        "may god destroy their prosperity",
+        "may god strike him with wolf disease"
+      ],
+      "a_meanings_verified": "divine or supernatural power; intense mental focus or vivid expression; trickery or deceptive behavior",
+      "b_meanings_verified": "god as the one who acts and decrees; divine power in blessing or punishment; invoking god in curses or prayers"
+    },
+    {
+      "pair": "zh-ar",
+      "a": "zh",
+      "b": "ar",
+      "anchor": "blessing",
+      "n_a": 47,
+      "n_b": 10,
+      "div": 0.6533,
+      "a_ids": [
+        3349,
+        3357,
+        4019,
+        5600,
+        6755,
+        6756,
+        7754,
+        7857,
+        12096,
+        12830,
+        13692,
+        13693,
+        13694,
+        15053,
+        15288,
+        18833,
+        18834,
+        18840
+      ],
+      "b_ids": [
+        5281,
+        5282,
+        5283,
+        5860,
+        5966,
+        6773,
+        6794,
+        7347,
+        7885,
+        9487
+      ],
+      "a_meanings": "good fortune or happiness; favorable outcome after misfortune; blessing as something to be shared or sought",
+      "a_examples": [
+        "有福同享",
+        "因祸得福",
+        "祸兮福所倚，福兮祸所伏"
+      ],
+      "b_meanings": "blessing or baraka as abundance; blessing through cooperation and gathering; blessing as increased benefit from many people",
+      "b_examples": [
+        "اِلْبَرَكَهْ فِي كُتْرِ الْأَيَادِي",
+        "اِلْبَرَكَهْ فِي اللَّمَّهْ",
+        "البركة في الكُثْرَة"
+      ],
+      "shared": "good fortune and benefit",
+      "a_examples_roman": [
+        "you fu tong xiang",
+        "yin huo de fu",
+        "huo xi fu suo yi, fu xi huo suo fu"
+      ],
+      "a_examples_gloss": [
+        "share good fortune",
+        "gain blessing from disaster",
+        "fortune hides in misfortune"
+      ],
+      "b_examples_roman": [
+        "al-barakah fi kutr al-ayadi",
+        "al-barakah fi al-lammah",
+        "al-barakah fi al-kuthrah"
+      ],
+      "b_examples_gloss": [
+        "blessing in many hands",
+        "blessing in the gathering",
+        "blessing in the multitude"
+      ],
+      "a_meanings_verified": "good fortune or happiness; favorable outcome after misfortune; blessing as something to be shared or sought",
+      "b_meanings_verified": "blessing or baraka as abundance; blessing through cooperation and gathering; blessing as increased benefit from many people"
+    },
+    {
+      "pair": "hi-ar",
+      "a": "hi",
+      "b": "ar",
+      "anchor": "wheat",
+      "n_a": 61,
+      "n_b": 10,
+      "div": 0.9341,
+      "a_ids": [
+        241,
+        976,
+        1054,
+        1098,
+        1135,
+        1178,
+        1698,
+        1811,
+        2316,
+        2431,
+        2521,
+        3425,
+        4024,
+        4025,
+        4304,
+        4406,
+        4921,
+        4922
+      ],
+      "b_ids": [
+        6040,
+        6151,
+        6726,
+        6727,
+        8901,
+        8992,
+        9300,
+        9303,
+        9305,
+        9310
+      ],
+      "a_meanings": "a staple crop tied to farming success and failure; something valuable, desirable, or the standard of quality; a basis for idioms about effort, planning, and deception",
+      "a_examples": [
+        "आगे गेहूँ पीछे धान, वाको कहिए बड़ा किसान",
+        "आटा नहीं तो दलिया हो ही जायेगा",
+        "गंदुमनुमा जौफ़रोश",
+        "गेहूँ और गोखरू साथ ही पनपते हैं"
+      ],
+      "b_meanings": "a preferred or valued grain; something one has versus what others have; the expected end or proper destination of a thing",
+      "b_examples": [
+        "زِيوَانْ بَلَدْنَا وَلَا الْقَمْحِ الصَّلِيبِي",
+        "شِعِيرْنَا وَلَا قَمْحْ غِيرْنَا",
+        "اِلْقَمْحِ يْدُورْ وِيِجِي الطَّاحُونْ",
+        "بنتخالتنا تستغنى عن قمح جارتنا"
+      ],
+      "shared": "valued grain and standard of preference",
+      "a_examples_roman": [
+        "aage gehun pichhe dhan, vaako kahiye bada kisan",
+        "aata nahin to dalia ho hi jayega",
+        "gandumnuma jaufarosh",
+        "gehun aur gokhru saath hi panapte hain"
+      ],
+      "a_examples_gloss": [
+        "front wheat, behind rice, great farmer",
+        "if no flour, porridge will happen",
+        "wheat-like barley seller",
+        "wheat and gokhru grow together"
+      ],
+      "b_examples_roman": [
+        "zīwān baladnā wa-lā al-qamḥ al-ṣalībī",
+        "shaʿīrnā wa-lā qamḥ ghīrnā",
+        "al-qamḥ yidūr w yījī al-ṭāḥūn",
+        "bintkhāltna تستغنى عن قمح جارتنا"
+      ],
+      "b_examples_gloss": [
+        "our darnel, not the foreign wheat",
+        "our barley, not others' wheat",
+        "the wheat turns and comes to mill",
+        "our aunt's daughter needs no neighbor's wheat"
+      ],
+      "a_meanings_verified": "a staple crop tied to farming success and failure; something valuable, desirable, or the standard of quality; a basis for idioms about effort, planning, and deception",
+      "b_meanings_verified": "a preferred or valued grain; something one has versus what others have; the expected end or proper destination of a thing"
+    },
+    {
+      "pair": "hi-ar",
+      "a": "hi",
+      "b": "ar",
+      "anchor": "fool",
+      "n_a": 53,
+      "n_b": 14,
+      "div": 0.8407,
+      "a_ids": [
+        214,
+        2515,
+        2715,
+        3262,
+        4480,
+        5377,
+        5422,
+        5425,
+        5586,
+        5587,
+        5947,
+        6470,
+        6851,
+        7650,
+        8698,
+        8921,
+        10015,
+        10287
+      ],
+      "b_ids": [
+        5448,
+        5449,
+        5867,
+        6621,
+        6644,
+        6645,
+        6646,
+        6647,
+        6648,
+        6649,
+        6650,
+        6651,
+        6899,
+        7747
+      ],
+      "a_meanings": "a person who is hard to teach or understand; someone whose actions or speech are useless or worthless; a person lacking wisdom or judgment",
+      "a_examples": [
+        "अक्लमंद को इशारा, मूर्ख को तमाचा — बुद्धिमान तो संकेत देने से ही समझ जाता है, किन्तु मूर्ख को समझ में कोई बात बड़ी कठिनाई से आती है या वह बिना मारे नहीं समझता।",
+        "आधे घड़े का पानी, मूर्ख की कही कहानी — आधे घड़े में पानी बिल्कुल नहीं रुकता। उसी तरह मूर्ख की कही हुई कहानी भी किसी काम की नहीं होती। निरर्थक बातों या वस्तुओं के लिए कहते हैं।",
+        "गधा खिलाए पाप न पुन्न — मूर्ख को खिलाना-पिलाना व्यर्थ है।",
+        "जवाबे-जाहिलाँ बाशद खामोशी — मूर्ख की बात का उत्तर चुप या मौन रहना है।"
+      ],
+      "b_meanings": "a foolish or laughable person; someone who is self-centered or unconcerned with others; a person whose behavior is awkward or absurd",
+      "b_examples": [
+        "قَالُوا: صَبَاحِ الْخِيرْ يَا جُحَا. قَالْ: دَنَا لِسَّهْ سَارِحْ — جُحَا: مضحك معروف. ودنا أصلها: دا أنا؛ أي: هذا أنا. لسه: أصلها للساعة؛ أي: للآن. وسارح معناها: خارج لأسيم ماشيتي المرعى. والمراد: انتظروا قل",
+        "قَالُوا: يَا جُحَا، إِمْتَى تْقُومِ الْقِيَامَهْ؟ قَالْ: لَمَّا أَمُوتْ أَنَا — جحا: مضحك معروف له نوادر، قيل له: متى تقوم القيامة؟ فقال: إذا مِتُّ أنا. يُضرَب لمن لا يُعْنَى بغيره.",
+        "قَالُوا: يَا جُحَا، إِيهْ أَحْسَنْ أَيَّامَكْ؟ قَالْ: لَمَّا كُنْتْ أَعَبِّي التُّرَابْ فِي الطَّاقِيَّهْ — جحا: مضحك معروف. والطاقية: قَلَنْسُوَة خفيفة من البَزِّ. والمراد: أحسن أيامي يوم كنت صَبِيًّا أحمل التراب في قلنسوتي، وألهو وألعب ولا أُلَام",
+        "قَالُوا: يَا جُحَا، عِد غَنَمَكْ. قَالْ: وَاحْدَهْ نَايْمَه وْوَاحْدَهْ قَايْمَهْ — يُضرَب للشيء القليل الذي لا يحتاج لعد."
+      ],
+      "shared": "foolishness and absurdity",
+      "a_examples_roman": [
+        "aklamand ko ishaara, moorkh ko tamaacha",
+        "aadhe ghade ka paani, moorkh ki kahi kahaani",
+        "gadha khilaaye paap na punn",
+        "javaabe-jaahilaan baashad khaamoshi"
+      ],
+      "a_examples_gloss": [
+        "wise person, fool a slap",
+        "half-pot water, fool's story",
+        "feeding a donkey brings no merit",
+        "answer to fools is silence"
+      ],
+      "b_examples_roman": [
+        "qaalu: sabaah al-khair ya juha. qaal: dana lissa sarih",
+        "qaalu: ya juha, imta tqum al-qiyamah? qaal: lamma amut ana",
+        "qaalu: ya juha, eih ahsan ayyak? qaal: lamma kunt a'abbi al-turab fi al-taqiyah",
+        "qaalu: ya juha, idd ghanamak. qaal: wahda naaymah w wahda qaymah"
+      ],
+      "b_examples_gloss": [
+        "they said good morning, juha said",
+        "when will judgment day, when i die",
+        "best days, when i filled cap",
+        "count your sheep, one asleep one awake"
+      ],
+      "a_meanings_verified": "a person who is hard to teach or understand; someone whose actions or speech are useless or worthless; a person lacking wisdom or judgment",
+      "b_meanings_verified": "a foolish or laughable person; someone who is self-centered or unconcerned with others; a person whose behavior is awkward or absurd"
+    },
+    {
+      "pair": "hi-ar",
+      "a": "hi",
+      "b": "ar",
+      "anchor": "lord",
+      "n_a": 25,
+      "n_b": 24,
+      "div": 0.7253,
+      "a_ids": [
+        574,
+        1058,
+        3036,
+        4527,
+        5184,
+        5244,
+        5568,
+        5569,
+        6886,
+        7888,
+        7894,
+        7895,
+        7896,
+        7898,
+        7900,
+        7911,
+        7912,
+        9806
+      ],
+      "b_ids": [
+        1640,
+        4552,
+        5375,
+        5776,
+        6001,
+        6611,
+        6612,
+        6837,
+        7077,
+        7137,
+        7487,
+        7506,
+        7700,
+        8172,
+        8659,
+        8698,
+        8881,
+        8893
+      ],
+      "a_meanings": "a powerful or high-status person; a master or owner; a local notable whose respect depends on place and power",
+      "a_examples": [
+        "अपने-अपने घर सभी ठाकुर — अपने घर सभी बड़े और शक्तिशाली होते हैं। आशय यह है कि अपने घर कोई नहीं दबता।",
+        "चाकर को ठाकुर बहुत — चाकर (नौकर) के लिए मालिक बहुत मिल जाते हैं। जो व्यक्ति परिश्रम करने वाला होता है, उसे मालिकों की कोई कमी नहीं रहती।",
+        "ठिकाने ठाकुर पूजा जाय — अपने इलाके में ही ठाकुर की पूजा होती है। जब कोई सबल या संपन्न व्यक्ति अपने क्षेत्र से बाहर कहीं जाए और उसका वहाँ सम्मान न हो, तब यह कहा जाता"
+      ],
+      "b_meanings": "god; a lord/master who controls and arranges events; a higher power invoked for protection, relief, or justice",
+      "b_examples": [
+        "اِبْنْ آدَمْ فِي التَّفْكِيرْ وِالرَّب في التَّدْبِيرْ — أي: بينما المرء يفكر في الأمر النازل به ولا يجد له مخرجًا منه يتولاه الله — عز وجل — بلطفه وتدبيره فيأتيه بالفرج من حيث لا يحتسب. يُضرَب لته",
+        "تِبَاتْ نَارْ تِصْبَحْ رَمَادْ، لَهَا رَب يدَبِّرْهَا — ويُرَوَى: «تكون نار …» إلخ. يُضرَب في تهوين المصائب والتذكير بلطفه — تعالى — وعنايته بخلقه فيها، فكم من مصيبة عظمت واشتعلت اشتعال النار، فلم",
+        "يَا هَارِبْ مِنْ قَضَايَا، مَا لَكْ رَب سِوَايَا — أي: يا محاول الهرب من القضاء. يُضرَب في الرضا بما قُدِّرَ وقُضِيَ. وبعضهم يرويه: «يا خارج …» إلخ، والأول أكثر."
+      ],
+      "shared": "power and control",
+      "a_examples_roman": [
+        "apne-apne ghar sabhi thakur — apne ghar sabhi bade aur shaktishali hote hain. aashay yah hai ki apne ghar koi nahin dabta.",
+        "chakar ko thakur bahut — chakar (naukar) ke liye malik bahut mil jaate hain. jo vyakti parishram karne wala hota hai, use malikoon ki koi kami nahin rehti.",
+        "thikane thakur pooja jaay — apne ilaqe mein hi thakur ki pooja hoti hai. jab koi sabal ya sampann vyakti apne kshetra se baahar kahin jaaye aur uska vahaan samman na ho, tab yah kaha jaata"
+      ],
+      "a_examples_gloss": [
+        "everyone is lord in own house",
+        "servants find many masters",
+        "lord is worshipped in place"
+      ],
+      "b_examples_roman": [
+        "ibn adam fi at-tafkir w-r-rabb fi at-tadbir",
+        "tibat nar tisbah ramad, laha rabb yudabbirha",
+        "ya harib min qadaya, ma lak rabb siwaya"
+      ],
+      "b_examples_gloss": [
+        "man thinks, lord arranges matters",
+        "fire becomes ashes; lord manages",
+        "you have no lord but me"
+      ],
+      "a_meanings_verified": "a powerful or high-status person; a master or owner; a local notable whose respect depends on place and power",
+      "b_meanings_verified": "god; a lord/master who controls and arranges events; a higher power invoked for protection, relief, or justice"
+    },
+    {
+      "pair": "hi-ar",
+      "a": "hi",
+      "b": "ar",
+      "anchor": "grain",
+      "n_a": 152,
+      "n_b": 29,
+      "div": 0.6593,
+      "a_ids": [
+        79,
+        90,
+        176,
+        236,
+        242,
+        379,
+        380,
+        381,
+        895,
+        1054,
+        1180,
+        1665,
+        2031,
+        2131,
+        2241,
+        2407,
+        2672,
+        2981
+      ],
+      "b_ids": [
+        1347,
+        1377,
+        1868,
+        2099,
+        2645,
+        2849,
+        3956,
+        5101,
+        5289,
+        5512,
+        5515,
+        6473,
+        7549,
+        7663,
+        7728,
+        7729,
+        7763,
+        7891
+      ],
+      "a_meanings": "food or sustenance; livelihood and economic value; something to be stored, saved, or used properly",
+      "a_examples": [
+        "अकाल या सुकाल, अनाज निकाल",
+        "अनाज खाओ पर बीज बचाओ",
+        "आदमी अनाज का कीड़ा है",
+        "एक के दाने से सौ का सवाया भले"
+      ],
+      "b_meanings": "grain or seed as a small physical thing; food or crop; something tiny that can still matter or grow",
+      "b_examples": [
+        "مِنَ الحَبَّةِ تَنْشَأ الشَّجَرَةُ",
+        "حَبَّهْ تِتَقَّلِ الْمِيزَانْ",
+        "الحب يطلع على بذره",
+        "متعملش من الحبة قبة"
+      ],
+      "shared": "food or crop",
+      "a_examples_roman": [
+        "akal ya sukal, anaj nikaal",
+        "anaj khao par beej bachao",
+        "aadmi anaj ka keeda hai",
+        "ek ke dane se sau ka savaya bhale"
+      ],
+      "a_examples_gloss": [
+        "whether famine or plenty, keep grain",
+        "eat grain but save seed",
+        "man depends on grain alone",
+        "small gain can bring bigger profit"
+      ],
+      "b_examples_roman": [
+        "min al-habbati tansha'u al-shajaratu",
+        "habbah tittaqall al-mizan",
+        "al-hubb yatla' 'ala bidhrih",
+        "mat'ammalsh min al-habba qubba"
+      ],
+      "b_examples_gloss": [
+        "from the grain grows the tree",
+        "a grain makes the scale heavier",
+        "the crop comes from its seed",
+        "do not make a dome from grain"
+      ],
+      "a_meanings_verified": "food or sustenance; livelihood and economic value; something to be stored, saved, or used properly",
+      "b_meanings_verified": "grain or seed as a small physical thing; food or crop; something tiny that can still matter or grow"
+    },
+    {
+      "pair": "hi-ar",
+      "a": "hi",
+      "b": "ar",
+      "anchor": "ox",
+      "n_a": 147,
+      "n_b": 8,
+      "div": 0.6593,
+      "a_ids": [
+        17,
+        137,
+        424,
+        460,
+        521,
+        639,
+        748,
+        1152,
+        1262,
+        1305,
+        1429,
+        1490,
+        1764,
+        1834,
+        1975,
+        2293,
+        2307,
+        2337
+      ],
+      "b_ids": [
+        753,
+        760,
+        2909,
+        8047,
+        8093,
+        8265,
+        8308,
+        10089
+      ],
+      "a_meanings": "stubbornness or obstinacy; a hardworking farm animal used for plowing; something one can exploit for selfish gain",
+      "a_examples": [
+        "आ बैल मुझे मार",
+        "आलसी का कुत्ता और मेहनती का बैल",
+        "अपना बैल कुल्हाड़ी नाथे",
+        "अपनी घानी उतर जाय, बैल मरे चाहे कोल्हू जाय"
+      ],
+      "b_meanings": "stubbornness or insistence; a farm animal used in practical work; a target of blame, mockery, or being made to bear others' actions",
+      "b_examples": [
+        "هو يقولّو ثور والاخر يقولو نحلبوه",
+        "نقول له ثور، يقول احلبه",
+        "غبر يا ثور على قرنك",
+        "كالثَّورِ يُضْرَبُ لمَّا عافَتِ البَقَرُ"
+      ],
+      "shared": "stubbornness or obstinacy",
+      "a_examples_roman": [
+        "aa bail mujhe maar",
+        "aalasi ka kutta aur mehnati ka bail",
+        "apna bail kulhaadi naathe",
+        "apni ghani utar jaay, bail mare chaahe kolhu jaay"
+      ],
+      "a_examples_gloss": [
+        "come ox, strike me",
+        "lazy man's dog and hardworking ox",
+        "one's own ox may be harnessed",
+        "my work done, ox may die"
+      ],
+      "b_examples_roman": [
+        "huwa yaqoolu thawr wa al-akharu yaqoolu nahlibuhu",
+        "naqool lahu thawr, yaqool ihlibhu",
+        "ghabar ya thawr 'ala qarnik",
+        "kal-thawri yudrabu lammaa 'aafat al-baqar"
+      ],
+      "b_examples_gloss": [
+        "he says ox, the other says milk it",
+        "we say ox, he says milk it",
+        "dust, ox, on your horn",
+        "like the ox is beaten"
+      ],
+      "a_meanings_verified": "stubbornness or obstinacy; a hardworking farm animal used for plowing; something one can exploit for selfish gain",
+      "b_meanings_verified": "stubbornness or insistence; a farm animal used in practical work; a target of blame, mockery, or being made to bear others' actions"
+    }
+  ]
+}

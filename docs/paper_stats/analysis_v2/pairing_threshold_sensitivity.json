@@ -1,0 +1,127 @@
+{
+  "pairing_threshold": {
+    "sweep": [
+      {
+        "n_pairs": 227151,
+        "n_both_entities": 144396,
+        "n_translatable": 122878,
+        "n_share_entity": 4991,
+        "share_pct": 4.1,
+        "threshold": 0.65,
+        "n_en_idioms": 15707,
+        "n_zh_idioms": 14524
+      },
+      {
+        "n_pairs": 37046,
+        "n_both_entities": 23601,
+        "n_translatable": 20068,
+        "n_share_entity": 1107,
+        "share_pct": 5.5,
+        "threshold": 0.7,
+        "n_en_idioms": 8227,
+        "n_zh_idioms": 6477
+      },
+      {
+        "n_pairs": 4548,
+        "n_both_entities": 2832,
+        "n_translatable": 2401,
+        "n_share_entity": 181,
+        "share_pct": 7.5,
+        "threshold": 0.75,
+        "n_en_idioms": 2195,
+        "n_zh_idioms": 1549
+      },
+      {
+        "n_pairs": 369,
+        "n_both_entities": 205,
+        "n_translatable": 172,
+        "n_share_entity": 21,
+        "share_pct": 12.2,
+        "threshold": 0.8,
+        "n_en_idioms": 243,
+        "n_zh_idioms": 207
+      },
+      {
+        "n_pairs": 11,
+        "n_both_entities": 5,
+        "n_translatable": 3,
+        "n_share_entity": 1,
+        "share_pct": 33.3,
+        "threshold": 0.85,
+        "n_en_idioms": 10,
+        "n_zh_idioms": 9
+      },
+      {
+        "n_pairs": 0,
+        "n_both_entities": 0,
+        "n_translatable": 0,
+        "n_share_entity": 0,
+        "share_pct": 0.0,
+        "threshold": 0.9,
+        "n_en_idioms": 0,
+        "n_zh_idioms": 0
+      }
+    ],
+    "stored_pair_file": {
+      "n_pairs": 37045,
+      "n_both_entities": 23600,
+      "n_translatable": 20068,
+      "n_share_entity": 1107,
+      "share_pct": 5.5,
+      "threshold": 0.7
+    },
+    "recompute_vs_stored_note": "recomputed 37046 pairs at 0.70 vs 37045 in cross_lingual_pairs.jsonl; the stored file was built with the same rule, so the two should agree up to float16 rounding of the released embeddings"
+  },
+  "attach_threshold": [
+    {
+      "attach_threshold": 0.9,
+      "n_clusters": 3217,
+      "pct_1en_1zh": 64.8,
+      "pct_ge5_idioms": 9.7,
+      "mean_en_per_cluster": 1.39,
+      "mean_zh_per_cluster": 1.44,
+      "n_en_idioms": 4457,
+      "n_zh_idioms": 4629
+    },
+    {
+      "attach_threshold": 0.93,
+      "n_clusters": 3420,
+      "pct_1en_1zh": 77.3,
+      "pct_ge5_idioms": 4.2,
+      "mean_en_per_cluster": 1.2,
+      "mean_zh_per_cluster": 1.22,
+      "n_en_idioms": 4102,
+      "n_zh_idioms": 4168
+    },
+    {
+      "attach_threshold": 0.95,
+      "n_clusters": 3494,
+      "pct_1en_1zh": 82.5,
+      "pct_ge5_idioms": 2.2,
+      "mean_en_per_cluster": 1.13,
+      "mean_zh_per_cluster": 1.14,
+      "n_en_idioms": 3963,
+      "n_zh_idioms": 3989
+    },
+    {
+      "attach_threshold": 0.97,
+      "n_clusters": 3538,
+      "pct_1en_1zh": 86.8,
+      "pct_ge5_idioms": 1.1,
+      "mean_en_per_cluster": 1.09,
+      "mean_zh_per_cluster": 1.09,
+      "n_en_idioms": 3874,
+      "n_zh_idioms": 3863
+    },
+    {
+      "attach_threshold": 0.98,
+      "n_clusters": 3553,
+      "pct_1en_1zh": 88.0,
+      "pct_ge5_idioms": 0.9,
+      "mean_en_per_cluster": 1.08,
+      "mean_zh_per_cluster": 1.08,
+      "n_en_idioms": 3855,
+      "n_zh_idioms": 3840
+    }
+  ]
+}

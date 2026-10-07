@@ -658,6 +658,42 @@ same weights load in 2m49s. All gemma jobs now use `VLLM_TP=1`.
 | Appendix additions (1 `\todo{}`) | Writing, not compute |
 | Spot-check of the remaining §4 entity summaries | **Highest-value unverified risk.** The dog and dragon summaries both carried stereotype leakage; the other 513 have not been checked the same way. |
 
+### 6.8 Entity-summary audit and the flat 15-way validation (2026-10-06)
+
+**The §4 entity summaries carry a 17.6% unsupported-claim rate.** `entity_summary_audit.py`
+(job 402050) takes all 4,703 claims the summaries make across 317 entities -- every primary
+meaning and every language-unique aspect -- shows each one to gemma-4-26B-A4B-it together with
+that entity's idioms in that language, and asks whether any idiom supports it, with instructions
+to answer no when unsure. Supported: English primary 85.7%, English unique 83.9%, Chinese
+primary 79.7%, Chinese unique 80.1%; **17.6% overall unsupported**. The judge resolves
+uncertainty against the summary, so that is an upper bound, but it is far too large for the dog
+and dragon cases to be isolated. Written into `04_analysis.tex` and Limitations; per-claim
+verdicts are in `entity_summary_audit.json`. (First submission failed in 12s: some
+`figurative_meanings` are nested one list deeper; fixed with `common.flatten`.)
+
+**The 15-way scheme is weaker than its per-level validations suggest.** `typology_flat_validate.py`
+(job 399489) puts all fifteen labels in one flat codebook with no hint of the two-level
+structure: **kappa=0.667** (raw 0.689, n=360; en .643 zh .702 hi .714 ar .607), against 0.805
+for the 9-way choice. **48% of disagreements are cross-level** (54 of 112) -- exactly the class
+of error both existing validations are blind to, since the subtypology prompt tells the
+annotator the entity is already known to be abstract. The leaks match what the two codebooks
+overlap on in writing: Morality->Body (3), Nature->Time (2), Nature->Action (2),
+Unclassified->Body (3). This is the reason `fig_typology_expanded` belongs in the appendix
+rather than the main text.
+
+**A circularity we introduced and then removed.** The cultural-notes finding was briefly
+restored on the strength of gemma-4-26B-A4B-it agreeing with the primary annotator on 94% of
+notes -- but gemma *wrote* those notes (`notes_remote.slurm`), so it was grading its own output.
+The only independent check is the 8B model, which agrees on 56% with a 44-point gap on the
+symbolic share. The paper now reports the notes' content as the primary annotator sees it and
+explicitly declines to claim corroboration; the circularity is flagged in Limitations.
+
+**Benchmark release script.** `scripts/upload_benchmarks_hf.sh` stages IdiomAtlas-MC (9 files)
+and the symbolism probe (12 files) with a generated dataset card and uploads them;
+`--push` to actually upload, dry run by default. It deliberately excludes `global_piqa_*` and
+`parambench_hi_*` (third-party, only reformatted here) and IdiomCulture (design + code only, no
+items generated yet).
+
 ## 8. 2B on the new culture benchmarks (babel, 2026-10-06)
 
 Closes the 2B row of §6.7 / §7.7. All 24 Qwen3.5-2B zh/hi models (12 per language:

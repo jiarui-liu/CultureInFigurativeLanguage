@@ -1,166 +1,167 @@
 {
  "ar_seen": {
-  "base": 42.0,
+  "base": 42.2,
   "unfiltered": 43.2,
-  "untagged": 46.7,
-  "cpt": 68.3,
+  "untagged": 46.8,
+  "cpt": 67.8,
   "cpt-unfiltered": [
-   25.2,
+   24.7,
    [
-    20.8,
-    29.5
-   ],
-   0.0
-  ],
-  "cpt-base": [
-   26.3,
-   [
-    22.0,
-    30.7
-   ],
-   0.0
-  ],
-  "cpt-untagged": [
-   21.7,
-   [
-    17.8,
-    25.3
-   ],
-   0.0
-  ],
-  "untagged-unf": [
-   3.5,
-   [
-    0.5,
-    6.5
-   ],
-   0.0314
-  ]
- },
- "ar_unseen": {
-  "base": 37.8,
-  "unfiltered": 36.8,
-  "untagged": 40.0,
-  "cpt": 32.5,
-  "cpt-unfiltered": [
-   -4.3,
-   [
-    -7.8,
-    -0.8
-   ],
-   0.0221
-  ],
-  "cpt-base": [
-   -5.3,
-   [
-    -9.5,
-    -1.2
-   ],
-   0.0159
-  ],
-  "cpt-untagged": [
-   -7.5,
-   [
-    -10.5,
-    -4.5
-   ],
-   0.0
-  ],
-  "untagged-unf": [
-   3.2,
-   [
-    0.3,
-    6.0
-   ],
-   0.0422
-  ],
-  "unfiltered_wrong_pick_seen_share": 0.404,
-  "seen_distractor_share": 0.415,
-  "cpt_wrong_pick_seen_share": 0.457
- },
- "hi_seen": {
-  "base": 36.2,
-  "unfiltered": 50.5,
-  "untagged": 56.7,
-  "cpt": 75.8,
-  "cpt-unfiltered": [
-   25.3,
-   [
-    21.7,
+    20.3,
     29.0
    ],
    0.0
   ],
   "cpt-base": [
-   39.7,
+   25.7,
    [
-    35.0,
-    44.3
+    21.3,
+    30.0
    ],
    0.0
   ],
   "cpt-untagged": [
-   19.2,
+   21.0,
    [
-    15.8,
-    22.5
+    17.3,
+    24.8
    ],
    0.0
   ],
   "untagged-unf": [
-   6.2,
+   3.7,
    [
-    3.3,
-    9.0
+    0.5,
+    6.8
+   ],
+   0.0246
+  ]
+ },
+ "ar_unseen": {
+  "base": 37.7,
+  "unfiltered": 36.8,
+  "untagged": 39.8,
+  "cpt": 32.8,
+  "cpt-unfiltered": [
+   -4.0,
+   [
+    -7.7,
+    -0.3
+   ],
+   0.0369
+  ],
+  "cpt-base": [
+   -4.8,
+   [
+    -9.2,
+    -0.5
+   ],
+   0.032
+  ],
+  "cpt-untagged": [
+   -7.0,
+   [
+    -10.0,
+    -4.2
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   3.0,
+   [
+    0.2,
+    5.8
+   ],
+   0.0598
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.398,
+  "seen_distractor_share": 0.415,
+  "cpt_wrong_pick_seen_share": 0.452
+ },
+ "hi_seen": {
+  "base": 36.8,
+  "unfiltered": 50.0,
+  "untagged": 56.5,
+  "cpt": 75.5,
+  "cpt-unfiltered": [
+   25.5,
+   [
+    21.8,
+    29.2
+   ],
+   0.0
+  ],
+  "cpt-base": [
+   38.7,
+   [
+    34.0,
+    43.5
+   ],
+   0.0
+  ],
+  "cpt-untagged": [
+   19.0,
+   [
+    15.8,
+    22.3
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   6.5,
+   [
+    3.7,
+    9.5
    ],
    0.0
   ]
  },
  "hi_unseen": {
-  "base": 38.8,
+  "base": 38.5,
   "unfiltered": 52.3,
-  "untagged": 53.3,
-  "cpt": 53.8,
+  "untagged": 53.0,
+  "cpt": 54.2,
   "cpt-unfiltered": [
-   1.5,
+   1.8,
    [
-    -2.0,
-    5.0
+    -1.7,
+    5.2
    ],
-   0.4437
+   0.3426
   ],
   "cpt-base": [
-   15.0,
+   15.7,
    [
-    10.2,
-    19.8
+    11.0,
+    20.5
    ],
    0.0
   ],
   "cpt-untagged": [
-   0.5,
-   [
-    -2.3,
-    3.3
-   ],
-   0.8199
-  ],
-  "untagged-unf": [
-   1.0,
+   1.2,
    [
     -1.7,
-    3.7
+    4.2
    ],
-   0.5386
+   0.4944
   ],
-  "unfiltered_wrong_pick_seen_share": 0.161,
+  "untagged-unf": [
+   0.7,
+   [
+    -2.0,
+    3.3
+   ],
+   0.7122
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.164,
   "seen_distractor_share": 0.135,
-  "cpt_wrong_pick_seen_share": 0.148
+  "cpt_wrong_pick_seen_share": 0.149
  },
  "zh_seen": {
-  "base": 79.0,
-  "unfiltered": 79.8,
-  "cpt": 90.5,
+  "base": 78.7,
+  "unfiltered": 79.7,
+  "untagged": 79.2,
+  "cpt": 90.3,
   "cpt-unfiltered": [
    10.7,
    [
@@ -170,35 +171,68 @@
    0.0
   ],
   "cpt-base": [
-   11.5,
+   11.7,
    [
-    8.7,
+    8.8,
     14.5
    ],
    0.0
+  ],
+  "cpt-untagged": [
+   11.2,
+   [
+    8.5,
+    13.8
+   ],
+   0.0
+  ],
+  "untagged-unf": [
+   -0.5,
+   [
+    -2.0,
+    1.0
+   ],
+   0.6776
   ]
  },
  "zh_unseen": {
-  "base": 52.6,
-  "unfiltered": 57.7,
+  "base": 53.8,
+  "unfiltered": 59.0,
+  "untagged": 57.7,
   "cpt": 61.5,
   "cpt-unfiltered": [
-   3.8,
+   2.6,
    [
-    -2.6,
-    10.3
+    -3.8,
+    9.0
    ],
-   0.4531
+   0.6875
   ],
   "cpt-base": [
-   9.0,
+   7.7,
    [
-    1.3,
-    16.7
+    0.0,
+    15.4
    ],
-   0.0654
+   0.1094
   ],
-  "unfiltered_wrong_pick_seen_share": 0.788,
+  "cpt-untagged": [
+   3.8,
+   [
+    -1.3,
+    9.0
+   ],
+   0.375
+  ],
+  "untagged-unf": [
+   -1.3,
+   [
+    -7.7,
+    5.1
+   ],
+   1.0
+  ],
+  "unfiltered_wrong_pick_seen_share": 0.781,
   "seen_distractor_share": 0.774,
   "cpt_wrong_pick_seen_share": 0.833
  }

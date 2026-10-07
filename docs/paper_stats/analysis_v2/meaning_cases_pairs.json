@@ -1,0 +1,3639 @@
+{
+  "method": "Render Table 3 (same meaning, different entity) for the five pairs beyond en-zh.\n\nmeaning_cases_pairs.py does the pairing on GPU and writes the candidate clusters; this\nturns them into the table. For each cluster an LLM is shown the idioms of both sides and\nasked, from those idioms only, for a short label for the meaning they share, which\nidioms actually carry it, and for each of those a literal gloss of the *image* with the\nentity words marked -- that image is what the table exists to contrast.\n\nAs in Table 2, every row is re-checked by a second pass before it is written: an audit\nfound 17.6% of our original entity summaries made claims the idioms did not support, so\na claim here is kept only if a verifier agrees the chosen idioms express the meaning.\n\npdfLaTeX + CJKutf8 can set Chinese via \\zh{} but not Devanagari or Arabic, so Hindi and\nArabic idioms are romanised with a literal gloss.\n\n    LLAMA_API_KEY=... PYTHONPATH=src:src/culture/analysis/v2 python meaning_cases_render.py\n",
+  "model": "gpt-5-4-mini-genai-responses",
+  "verified_drop_rate": 0.2798,
+  "n_pairs": {
+    "en-hi": 18504,
+    "en-ar": 16875,
+    "zh-hi": 31452,
+    "zh-ar": 29794,
+    "hi-ar": 26350
+  },
+  "rows": {
+    "en-hi": [
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8587,
+        "a_items": [
+          {
+            "idiom": "within an inch of one’s life",
+            "mean": "To be in a situation where one is extremely close to dying or almost loses one's life.",
+            "native": "very close to losing one’s life; almost to death.",
+            "ents": [
+              "inch",
+              "life"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "अब तब काल साँस पर नाचा",
+            "mean": "Death is unpredictable and can arrive at any moment.",
+            "native": "मृत्यु का कुछ पता नहीं। वह किसी भी क्षण आ सकती है।",
+            "ents": [
+              "काल",
+              "साँस"
+            ]
+          },
+          {
+            "idiom": "क़ब्र का मुँह झाँक कर आये हैं",
+            "mean": "Used to describe someone who has narrowly escaped death or returned from the brink of dying.",
+            "native": "मृत्यु के पंजे से निकलकर या मृत्यु से बाल-बाल बचकर आने पर कहते हैं।",
+            "ents": [
+              "क़ब्र",
+              "मुँह",
+              "मृत्यु"
+            ]
+          },
+          {
+            "idiom": "कोई दम का मेहमान है",
+            "mean": "It is said when a person is on the verge of death.",
+            "native": "जब कोई आदमी मर रहा हो, तब कहा जाता है।",
+            "ents": [
+              "दम",
+              "आदमी",
+              "मेहमान"
+            ]
+          },
+          {
+            "idiom": "दम नाक में आ गया",
+            "mean": "It is said when someone is in great distress or extremely worried.",
+            "native": "बहुत परेशान होने पर ऐसा कहते हैं।",
+            "ents": [
+              "दम",
+              "नाक"
+            ]
+          },
+          {
+            "idiom": "पाँव गोर में लटकाए बैठे हैं",
+            "mean": "To be on the verge of death; to mockingly describe an elderly person attempting something beyond their capability.",
+            "native": "मरने को तैयार हैं, मरणासन्न हैं। जब कोई बहुत बूढ़ा व्यक्ति ऐसी बात करे जिसकी उसमें सामर्थ्य न हो, तो व्यंग्य या उपहास से कहते हैं।",
+            "ents": [
+              "पाँव",
+              "क़ब्र"
+            ]
+          },
+          {
+            "idiom": "बीत गई सारी, रही थोड़ी सो भी जीवनहार",
+            "mean": "Most of one's life has passed, and the little remaining is also about to end; said of an elderly person.",
+            "native": "अधिक आयु व्यतीत हो चुकी है; जो थोड़ी सी बची है, वह भी जाने वाली है। वृद्ध व्यक्ति के प्रति कहते हैं।",
+            "ents": [
+              "आयु",
+              "जीवन"
+            ]
+          }
+        ],
+        "shared": "near death",
+        "a_pick": [
+          "within an inch of one’s life"
+        ],
+        "b_pick": [
+          "क़ब्र का मुँह झाँक कर आये हैं",
+          "कोई दम का मेहमान है",
+          "पाँव गोर में लटकाए बैठे हैं"
+        ],
+        "a_image": [
+          "almost an <e>inch</e> from one’s <e>life</e>"
+        ],
+        "b_image": [
+          "peeking into the <e>grave</e>'s <e>mouth</e>",
+          "a <e>guest</e> for a few <e>breaths</e>",
+          "feet dangling in the <e>grave</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "qabr ka munh jhaank kar aaye hain",
+          "koi dam ka mehmaan hai",
+          "paanv gor mein latkaaye baithe hain"
+        ],
+        "a_pick_v": [
+          "within an inch of one’s life"
+        ],
+        "a_image_v": [
+          "almost an <e>inch</e> from one’s <e>life</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "क़ब्र का मुँह झाँक कर आये हैं",
+          "कोई दम का मेहमान है",
+          "पाँव गोर में लटकाए बैठे हैं"
+        ],
+        "b_image_v": [
+          "peeking into the <e>grave</e>'s <e>mouth</e>",
+          "a <e>guest</e> for a few <e>breaths</e>",
+          "feet dangling in the <e>grave</e>"
+        ],
+        "b_roman_v": [
+          "qabr ka munh jhaank kar aaye hain",
+          "koi dam ka mehmaan hai",
+          "paanv gor mein latkaaye baithe hain"
+        ]
+      },
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.847,
+        "a_items": [
+          {
+            "idiom": "as clever as a cartload of monkeys",
+            "mean": "To be extremely clever, cunning, or mischievous.",
+            "native": "Very clever, cunning or mischievous",
+            "ents": [
+              "cartload",
+              "monkey"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "आधा बैल भीतर आधा बैल बाहर",
+            "mean": "Used ironically to mock the cunning of a deceitful person.",
+            "native": "किसी धूर्त की धूर्तता पर व्यंग्य में ऐसा कहते हैं।",
+            "ents": [
+              "बैल"
+            ]
+          },
+          {
+            "idiom": "कुत्ते भी तेरे दर पर नहीं आएँगे",
+            "mean": "A mischievous, wicked, or quarrelsome person who constantly causes trouble, evil, or fights.",
+            "native": "बदचलन, दुष्ट या झगड़ालू व्यक्ति के लिए कहते हैं, जो सदा कुछ न कुछ बुराई, उत्पात या झगड़ा करता रहता है।",
+            "ents": [
+              "कुत्ते",
+              "दरवाज़ा"
+            ]
+          },
+          {
+            "idiom": "गोनू ओझा की बिल्ली",
+            "mean": "A cunning person who uses their wit to accomplish a task and turns it to their own advantage.",
+            "native": "किसी चालाक व्यक्ति के लिए कही जाती है, जो अपनी सूझ-बूझ से काम निकाल ले और उलटा लाभ उठा ले।",
+            "ents": [
+              "गोनू ओझा",
+              "बिल्ली",
+              "राजा",
+              "दरबारी",
+              "भैंस",
+              "दूध"
+            ]
+          },
+          {
+            "idiom": "जन्मे थे या आसमान से टपके थे",
+            "mean": "Used ironically when someone says something foolish; also said of a mischievous person committing a tricky prank.",
+            "native": "जब कोई व्यक्ति कोई मूर्खतापूर्ण बात करता है तो व्यंग्य से कहते हैं।",
+            "ents": [
+              "आसमान"
+            ]
+          },
+          {
+            "idiom": "जितना ऊपर उतना नीचे",
+            "mean": "It describes a very cunning or clever person.",
+            "native": "यह जितना ज़मीन के ऊपर है उतना ही ज़मीन के नीचे भी; अर्थात् बहुत चालाक है। चतुर व्यक्ति के प्रति ऐसा कहते हैं।",
+            "ents": [
+              "ज़मीन"
+            ]
+          },
+          {
+            "idiom": "दिमाग है या शैतान का चरखा",
+            "mean": "A person who constantly comes up with mischievous ideas.",
+            "native": "जिसको सदा शैतानी सूझे, उसको कहते हैं।",
+            "ents": [
+              "दिमाग",
+              "शैतान",
+              "चरखा"
+            ]
+          }
+        ],
+        "shared": "very clever or cunning",
+        "a_pick": [
+          "as clever as a cartload of monkeys"
+        ],
+        "b_pick": [
+          "गोनू ओझा की बिल्ली",
+          "जितना ऊपर उतना नीचे"
+        ],
+        "a_image": [
+          "a <e>cartload</e> of <e>monkeys</e>"
+        ],
+        "b_image": [
+          "<e>Gonu Ojha</e>'s <e>cat</e>",
+          "as much <e>up</e> as <e>down</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "gonu ojha ki billi",
+          "jitna upar utna neeche"
+        ],
+        "a_pick_v": [
+          "as clever as a cartload of monkeys"
+        ],
+        "a_image_v": [
+          "a <e>cartload</e> of <e>monkeys</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "गोनू ओझा की बिल्ली"
+        ],
+        "b_image_v": [
+          "<e>Gonu Ojha</e>'s <e>cat</e>"
+        ],
+        "b_roman_v": [
+          "gonu ojha ki billi"
+        ]
+      },
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8093,
+        "a_items": [
+          {
+            "idiom": "crop up",
+            "mean": "To happen suddenly or unexpectedly.",
+            "native": "To occur, especially suddenly or unexpectedly",
+            "ents": [
+              "crop"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "अंधा मानुष ले गयो, जन देखत की जोय",
+            "mean": "Used when an impossible or astonishing event occurs.",
+            "native": "आँखवाले की पत्नी को अंधा भगा ले गया। जब कोई असंभव या आश्चर्यजनक घटना घटे तो कहते हैं।",
+            "ents": [
+              "अंधा मानुष",
+              "आँखवाला",
+              "पत्नी"
+            ]
+          },
+          {
+            "idiom": "अजा-कृपाणीय न्याय",
+            "mean": "It refers to a sudden misfortune befalling someone unexpectedly.",
+            "native": "एक बार एक बकरा कहीं जा रहा था। रास्ते में कहीं एक कृपाण लटकी हुई थी। अचानक कृपाण गिरी और बकरे को गला कट गई। किसी पर अचानक ही कोई विपत्ति आ जाने पर ऐसा कहते हैं।",
+            "ents": [
+              "बकरा",
+              "कृपाण",
+              "गला"
+            ]
+          },
+          {
+            "idiom": "अब तब काल साँस पर नाचा",
+            "mean": "Death is unpredictable and can arrive at any moment.",
+            "native": "मृत्यु का कुछ पता नहीं। वह किसी भी क्षण आ सकती है।",
+            "ents": [
+              "काल",
+              "साँस"
+            ]
+          },
+          {
+            "idiom": "काकतालीय न्याय",
+            "mean": "Used to illustrate a purely accidental event where something happens by sheer chance.",
+            "native": "कोवा और तालवृक्ष के न्याय । प्रस्तुत न्याय के सम्बन्ध में एक कहानी है कि एक कौआ एक वृक्ष पर ज्योंही बैठा त्योंही कुछ फल उसके सिर पर गिर गए जिससे कौवे का प्राणान्त हो गया । इस प्रकार इस न्याय का प्रयोग विशुद्ध रूप से आकस्",
+            "ents": [
+              "कौआ",
+              "वृक्ष",
+              "फल",
+              "सिर"
+            ]
+          },
+          {
+            "idiom": "क्वार का सा झलल्ला, आया बरसा चलला",
+            "mean": "A person whose anger or passion arises suddenly but vanishes just as quickly.",
+            "native": "क्वार मास में वर्षा थोड़े समय तक होती है और देखते-देखते धूप भी निकल आती है। जिस मनुष्य की एकाएक क्रोध या जोश आए और तुरंत ही चल जाए, उसके प्रति यह कहा जाता है।",
+            "ents": [
+              "क्वार मास",
+              "वर्षा",
+              "धूप",
+              "मनुष्य",
+              "क्रोध",
+              "जोश"
+            ]
+          },
+          {
+            "idiom": "बिच्छू बन के आया, साँप बन के गया",
+            "mean": "A seemingly ordinary trouble that departs having transformed into a far more dangerous and critical situation.",
+            "native": "आया तो था बिच्छू जैसा साधारण बनकर और गया साँप जैसा खतरनाक बनकर। जब कोई साधारण-सा संकट जाते-जाते बहुत विकट रूप धारण कर ले, तो उसके प्रति यह कहा जाता है।",
+            "ents": [
+              "बिच्छू",
+              "साँप"
+            ]
+          }
+        ],
+        "shared": "sudden unexpected occurrence",
+        "a_pick": [
+          "crop up"
+        ],
+        "b_pick": [
+          "अजा-कृपाणीय न्याय",
+          "काकतालीय न्याय"
+        ],
+        "a_image": [
+          "no imagery"
+        ],
+        "b_image": [
+          "sudden <e>misfortune</e> befalls someone",
+          "pure <e>chance</e> event happens"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "aja-kṛpāṇīya nyāya",
+          "kākatālīya nyāya"
+        ],
+        "a_pick_v": [
+          "crop up"
+        ],
+        "a_image_v": [
+          "no imagery"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "अजा-कृपाणीय न्याय"
+        ],
+        "b_image_v": [
+          "sudden <e>misfortune</e> befalls someone"
+        ],
+        "b_roman_v": [
+          "aja-kṛpāṇīya nyāya"
+        ]
+      },
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8083,
+        "a_items": [
+          {
+            "idiom": "Needs must when the devil drives.",
+            "mean": "When desperate, one must do things they would normally avoid.",
+            "native": "Prov. When you are desperate, you must do things you ordinarily would not do.",
+            "ents": [
+              "devil"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "इधर कुआँ उधर खाई",
+            "mean": "When troubles arise from all sides with no apparent way to escape.",
+            "native": "जब किसी के सामने इधर-उधर से मुसीबतें हों और बचने का कोई उपाय न दिखे, तो ऐसा कहते हैं।",
+            "ents": [
+              "कुआँ",
+              "खाई"
+            ]
+          },
+          {
+            "idiom": "इधर खाईँ उधर कुआँ",
+            "mean": "When someone is surrounded by troubles on all sides with no apparent way to escape them.",
+            "native": "जब कोई हर तरफ़ से परेशानियों से घिर जाता है और उनसे मुक्ति पाने का कोई उपाय नहीं दिखता, तो उसके प्रति ऐसा कहते हैं।",
+            "ents": [
+              "खाई",
+              "कुआँ"
+            ]
+          },
+          {
+            "idiom": "इधर गिरूँ तो कुआँ उधर गिरूँ तो खाई",
+            "mean": "Used when facing difficulties on both sides with no apparent way of escape.",
+            "native": "दोनों ही ओर से मुश्किल में पड़ने और किसी तरह उद्धार दिखाई न देने पर कहा जाता है।",
+            "ents": [
+              "कुआँ",
+              "खाई"
+            ]
+          },
+          {
+            "idiom": "जा कारण हम मुँडायो सोई आगे",
+            "mean": "The very thing one tried to avoid by taking precautions has appeared anyway.",
+            "native": "जिस चीज़ से बचने के लिए मैंने बाल मुँडाए, वही चीज़ सामने आ गई। जब कोई किसी बात या झंझट से बचने का उपाय करे, फिर भी उससे न बच सके, तब यह कहा जाता है।",
+            "ents": [
+              "बाल",
+              "सिर"
+            ]
+          },
+          {
+            "idiom": "जेवड़ से नाड़ा घिसना पड़ता है",
+            "mean": "To endure any misfortune that befalls one; to be forced to do something out of necessity.",
+            "native": "गले में रस्सी पड़ने पर सिवा उससे गला घिसने के और कोई उपाय नहीं है। अर्थात् चाहे जैसी विपत्ति आ पड़े, झेलनी ही पड़ती है। जब कोई मनुष्य मजबूर होकर कोई काम करे, तब कहते हैं।",
+            "ents": [
+              "जेवड़",
+              "नाड़ा",
+              "गला",
+              "रस्सी"
+            ]
+          },
+          {
+            "idiom": "ढाल तलवार सिरहाने, और चूतड़ बंदीखाने",
+            "mean": "Lacking courage to fight despite having weapons at hand; an impossible situation.",
+            "native": "हथियार पास में होते हुए भी लड़ने की हिम्मत न होना; डरपोक व्यक्ति के बारे में कहा जाता है।",
+            "ents": [
+              "ढाल",
+              "तलवार",
+              "चूतड़",
+              "बंदीखाना",
+              "शेर"
+            ]
+          }
+        ],
+        "shared": "forced by necessity",
+        "a_pick": [
+          "Needs must when the devil drives."
+        ],
+        "b_pick": [
+          "जेवड़ से नाड़ा घिसना पड़ता है"
+        ],
+        "a_image": [
+          "<e>the devil</e> drives, so <e>needs</e> must"
+        ],
+        "b_image": [
+          "<e>waist cord</e> must be rubbed by <e>the rope</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "jevad se nada ghisna padta hai"
+        ],
+        "a_pick_v": [
+          "Needs must when the devil drives."
+        ],
+        "a_image_v": [
+          "<e>the devil</e> drives, so <e>needs</e> must"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "जेवड़ से नाड़ा घिसना पड़ता है"
+        ],
+        "b_image_v": [
+          "<e>waist cord</e> must be rubbed by <e>the rope</e>"
+        ],
+        "b_roman_v": [
+          "jevad se nada ghisna padta hai"
+        ]
+      },
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8063,
+        "a_items": [
+          {
+            "idiom": "a string of bad luck",
+            "mean": "A sequence of unfortunate events occurring one after another.",
+            "native": "a series of events that are only bad luck.",
+            "ents": [
+              "string",
+              "luck"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "अकाल भी आया और बाप भी मरा",
+            "mean": "Two misfortunes have struck at the same time; used when many calamities occur simultaneously.",
+            "native": "दोनों मुसीबतें एक साथ ही आईं। कई विपत्तियों के एक साथ आने पर कहते हैं।",
+            "ents": [
+              "अकाल",
+              "बाप"
+            ]
+          },
+          {
+            "idiom": "अजा-कृपाणीय न्याय",
+            "mean": "It refers to a sudden misfortune befalling someone unexpectedly.",
+            "native": "एक बार एक बकरा कहीं जा रहा था। रास्ते में कहीं एक कृपाण लटकी हुई थी। अचानक कृपाण गिरी और बकरे को गला कट गई। किसी पर अचानक ही कोई विपत्ति आ जाने पर ऐसा कहते हैं।",
+            "ents": [
+              "बकरा",
+              "कृपाण",
+              "गला"
+            ]
+          },
+          {
+            "idiom": "इधर कुआँ उधर खाई",
+            "mean": "When troubles arise from all sides with no apparent way to escape.",
+            "native": "जब किसी के सामने इधर-उधर से मुसीबतें हों और बचने का कोई उपाय न दिखे, तो ऐसा कहते हैं।",
+            "ents": [
+              "कुआँ",
+              "खाई"
+            ]
+          },
+          {
+            "idiom": "चूड़ियाँ लादीं सड़क पर फूटीं, खाँड लादी नदी में गिरी",
+            "mean": "It is said when a person is beset by misfortunes from all sides.",
+            "native": "जब किसी व्यक्ति पर चारों ओर से विपत्ति आती है, तो कहते हैं।",
+            "ents": [
+              "चूड़ियाँ",
+              "सड़क",
+              "खाँड",
+              "नदी"
+            ]
+          },
+          {
+            "idiom": "धक्के पर धक्का लगता है",
+            "mean": "Misfortunes come one after another; used when a person faces successive calamities.",
+            "native": "विपत्ति पर विपत्ति आती है। जब किसी व्यक्ति पर एक के बाद दूसरी विपत्तियाँ आती रहती हैं, तब कहते हैं।",
+            "ents": [
+              "धक्का",
+              "विपत्ति",
+              "व्यक्ति"
+            ]
+          },
+          {
+            "idiom": "पहले से निपटे नहीं, दूसरा सिर पर तैयार",
+            "mean": "When one trouble has not yet been resolved, another one arrives to compound the difficulty.",
+            "native": "पहले से तो छुटकारा मिला नहीं और दूसरा भी आ धमका। विपत्ति में फँसे व्यक्ति पर दूसरी विपत्ति आने पर कहते हैं।",
+            "ents": [
+              "सिर",
+              "विपत्ति"
+            ]
+          }
+        ],
+        "shared": "successive misfortunes",
+        "a_pick": [
+          "a string of bad luck"
+        ],
+        "b_pick": [
+          "धक्के पर धक्का लगता है",
+          "पहले से निपटे नहीं, दूसरा सिर पर तैयार"
+        ],
+        "a_image": [
+          "a <e>string</e> of <e>bad luck</e>"
+        ],
+        "b_image": [
+          "one <e>blow</e> after another lands",
+          "before one <e>trouble</e> ends, another arrives"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "dhakke par dhakka lagta hai",
+          "pehle se nipte nahin, doosra sir par taiyar"
+        ],
+        "a_pick_v": [
+          "a string of bad luck"
+        ],
+        "a_image_v": [
+          "a <e>string</e> of <e>bad luck</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "धक्के पर धक्का लगता है",
+          "पहले से निपटे नहीं, दूसरा सिर पर तैयार"
+        ],
+        "b_image_v": [
+          "one <e>blow</e> after another lands",
+          "before one <e>trouble</e> ends, another arrives"
+        ],
+        "b_roman_v": [
+          "dhakke par dhakka lagta hai",
+          "pehle se nipte nahin, doosra sir par taiyar"
+        ]
+      },
+      {
+        "pair": "en-hi",
+        "a": "en",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.7992,
+        "a_items": [
+          {
+            "idiom": "bridge over troubled waters",
+            "mean": "A person or thing offering support, comfort, and a way to get through hard times.",
+            "native": "Someone or something that provides support, comfort, and a means to overcome difficult times",
+            "ents": [
+              "bridge",
+              "water"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "काम पड़े बाँका, गधे को कहें काका",
+            "mean": "In bad times, one must accept help from anyone to get work done.",
+            "native": "बुरा वक्त आने पर काम निकालने के लिए किसी को भी मान देना पड़ता है।",
+            "ents": [
+              "गधा"
+            ]
+          },
+          {
+            "idiom": "जेवड़ से नाड़ा घिसना पड़ता है",
+            "mean": "To endure any misfortune that befalls one; to be forced to do something out of necessity.",
+            "native": "गले में रस्सी पड़ने पर सिवा उससे गला घिसने के और कोई उपाय नहीं है। अर्थात् चाहे जैसी विपत्ति आ पड़े, झेलनी ही पड़ती है। जब कोई मनुष्य मजबूर होकर कोई काम करे, तब कहते हैं।",
+            "ents": [
+              "जेवड़",
+              "नाड़ा",
+              "गला",
+              "रस्सी"
+            ]
+          },
+          {
+            "idiom": "तुम्हारी आँख मेरी टाँग, चलो घूम आवे",
+            "mean": "It is said when two people are ready to help each other during a time of trouble.",
+            "native": "मुसीबत के समय जब दो व्यक्ति एक-दूसरे की सहायता करने को तैयार होते हैं, तब ऐसा कहते हैं।",
+            "ents": [
+              "आँख",
+              "टाँग"
+            ]
+          },
+          {
+            "idiom": "तेली खसम करे और पानी से नहाय",
+            "mean": "This phrase is used when someone endures hardship despite possessing ample resources.",
+            "native": "जब कोई साधन-संपन्न होकर भी कष्ट सहे, तब यह कहा जाता है।",
+            "ents": [
+              "तेली",
+              "खसम",
+              "पानी"
+            ]
+          },
+          {
+            "idiom": "थोड़े से बहुत होता है",
+            "mean": "It is said to encourage or console someone who is not satisfied with a small amount of work or money.",
+            "native": "जब कोई थोड़े काम या धन से संतुष्ट नहीं होता, तो उसे धीरज बँधाने अथवा बढ़ावा देने के लिए कहा जाता है।",
+            "ents": [
+              "काम",
+              "धन"
+            ]
+          },
+          {
+            "idiom": "भाई वही जो विपद सहाय",
+            "mean": "A true brother is one who proves helpful during times of distress.",
+            "native": "असली भाई वही है जो दुख में काम आवे।",
+            "ents": [
+              "भाई",
+              "विपद"
+            ]
+          }
+        ],
+        "shared": "support during hard times",
+        "a_pick": [
+          "bridge over troubled waters"
+        ],
+        "b_pick": [
+          "तुम्हारी आँख मेरी टाँग, चलो घूम आवे",
+          "भाई वही जो विपद सहाय"
+        ],
+        "a_image": [
+          "a <e>bridge</e> over <e>troubled waters</e>"
+        ],
+        "b_image": [
+          "your <e>eye</e> my <e>leg</e>, let’s go around",
+          "a <e>brother</e> is one who helps in <e>distress</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "tumhari aankh meri taang, chalo ghoom aave",
+          "bhai vahi jo vipad sahay"
+        ],
+        "a_pick_v": [
+          "bridge over troubled waters"
+        ],
+        "a_image_v": [
+          "a <e>bridge</e> over <e>troubled waters</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "तुम्हारी आँख मेरी टाँग, चलो घूम आवे",
+          "भाई वही जो विपद सहाय"
+        ],
+        "b_image_v": [
+          "your <e>eye</e> my <e>leg</e>, let’s go around",
+          "a <e>brother</e> is one who helps in <e>distress</e>"
+        ],
+        "b_roman_v": [
+          "tumhari aankh meri taang, chalo ghoom aave",
+          "bhai vahi jo vipad sahay"
+        ]
+      }
+    ],
+    "en-ar": [
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8759,
+        "a_items": [
+          {
+            "idiom": "up sticks",
+            "mean": "To move or leave a place, often suddenly or unexpectedly.",
+            "native": "to move or leave a place, often suddenly or unexpectedly",
+            "ents": [
+              "stick"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "بَرِئ حَيٌّ مِنْ مَيِّتٍ",
+            "mean": "It signifies parting ways, similar to a guard declaring he is free of responsibility once he has delivered someone to a specific place.",
+            "native": "يضرب عند المفارقة، ومثله قول الخفير\"إذا بلغتُ بك مكانَ كذا(بَرِئْتُ)\".",
+            "ents": [
+              "حي",
+              "ميت"
+            ]
+          },
+          {
+            "idiom": "أَنْشَطُ مِنْ ذِئْبٍ، وَمِنْ عَيْرِ الفَلاَةِ",
+            "mean": "To depart from one place to another; to be a bull that has this characteristic of leaving.",
+            "native": "هذا من قولهم\"نشِطَ من بلد إلى آخر، ومن أرض إلى أخرى\"إذا ذهب، ومنه\" ثَوْرُ ناشط\"إذا كان بهذه الصفة.",
+            "ents": [
+              "ذئب",
+              "عير",
+              "فلاه"
+            ]
+          },
+          {
+            "idiom": "آدِي وِشِّ الضِّيفْ",
+            "mean": "To depart from a group with no intention of returning, signaling that the unwanted guest has finally left.",
+            "native": "كناية عمن يرتحل عن قوم ولا ينوي العودة إليهم. يقولون: خرجت، وقلت لهم: آدي وش الضيف؛ أي: هذا وجه الضيف الذي تبغضونه قد ذهب عنكم ولن يعود.",
+            "ents": [
+              "وش",
+              "ضيف"
+            ]
+          },
+          {
+            "idiom": "تُمُوتِ الْحَدَادِي وِعِينْهَا فِي الصِّيدْ",
+            "mean": "It signifies the impossibility of a person returning from what they have become accustomed to and familiar with.",
+            "native": "الحدادي عندهم جمع حدَّاية (بكسر الأول وتشديد الثاني) وهي الحدأة. ومن تعبيراتهم قولهم: «عينه في كذا» أي: يشتهيه. المثل قديم في العامية، أورده الأبشيهي في «المستطرف» بلفظه. ٦ وفي معناه عند العامة قولهم: «يموت الفروج وعينه ",
+            "ents": [
+              "حدادي",
+              "عينها",
+              "صيد"
+            ]
+          },
+          {
+            "idiom": "زَيِّ الدُّخَّانْ يُخْرُجْ مَا يِرْجَعْ",
+            "mean": "It describes someone whose habit is to escape from a place and never return.",
+            "native": "أي: إذا خرج الدخان من نافذة ونحوها لا يعود. يُضرَب لمن ديدنه الإفلات من المكان الذي يكون به وعدم العود إليه.",
+            "ents": [
+              "دخان"
+            ]
+          },
+          {
+            "idiom": "اِلسِّكَّه تْفَوِّتِ الْجَمَلْ",
+            "mean": "To indicate that something is very spacious; to imply that there is no obstacle preventing someone from leaving.",
+            "native": "تفوت؛ أي تجعله يمر منها. يُضرَب لِاتِّسَاعِ الشيء. ويرويه بعضهم: «الباب يفوت الجمل.» ويضربونه للتعريض بشخص يريدون أن يفارق المكان كأنهم يقولون له: ليس أمامك عائق يمنعك، فالباب واسع يمر منه الجمل.",
+            "ents": [
+              "سكه",
+              "جمل"
+            ]
+          }
+        ],
+        "shared": "to leave a place",
+        "a_pick": [
+          "up sticks"
+        ],
+        "b_pick": [
+          "أَنْشَطُ مِنْ ذِئْبٍ، وَمِنْ عَيْرِ الفَلاَةِ",
+          "زَيِّ الدُّخَّانْ يُخْرُجْ مَا يِرْجَعْ"
+        ],
+        "a_image": [
+          "no imagery"
+        ],
+        "b_image": [
+          "more active than an <e>wolf</e> and a <e>wild ass</e>",
+          "like <e>smoke</e> comes out and does not return"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "anshatu min dhi'b, wa min 'ayri al-falaah",
+          "zayyi ad-dukhaan yukhruj ma yirja'"
+        ],
+        "a_pick_v": [
+          "up sticks"
+        ],
+        "a_image_v": [
+          "no imagery"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "أَنْشَطُ مِنْ ذِئْبٍ، وَمِنْ عَيْرِ الفَلاَةِ"
+        ],
+        "b_image_v": [
+          "more active than an <e>wolf</e> and a <e>wild ass</e>"
+        ],
+        "b_roman_v": [
+          "anshatu min dhi'b, wa min 'ayri al-falaah"
+        ]
+      },
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8637,
+        "a_items": [
+          {
+            "idiom": "out of the frying pan, into the fire",
+            "mean": "To move from a bad situation to a worse one, or to end up worse when trying to escape a difficult one.",
+            "native": "Move or get from an already bad situation to a worse one; end up in a worse situation when trying to escape from a bad or difficult one",
+            "ents": [
+              "frying pan",
+              "fire"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "بَلَغَ السَّيْلُ الزُّبَى",
+            "mean": "It signifies exceeding the limit or reaching the utmost degree of deterioration where the situation becomes unbearable.",
+            "native": "هي جمع زُبْيَة. وهي حُفْرة تُحْفَر للأسد إذا أرادوا صَيْده، وأصلُها الرابية لا يَعْلُوها الماء، فإذا بلغها السيلُ كان جارفا مُجْحفاً. يضرب لما جاوز الحد. قال المؤرج:حدثني سعيد بن سماك بن حَرْب عن أبيه عن ابن النعتنر قال:",
+            "ents": [
+              "سيل",
+              "زبي"
+            ]
+          },
+          {
+            "idiom": "كالمُسْتَغِيثِ مِنَ الرَّمْضَاءِ بِالنَّار",
+            "mean": "It describes someone fleeing a bad situation only to fall into a worse one.",
+            "native": "يضرب في الخلتين من الإساءة تجمعان على الرجل(١)(لا يفيد هذا الكلام هذا المعنى، بل يفيد أنه يضرب لمن هرب من خلة مكروهة فوقع في أِشد منها،وقَال الشاعر: المستجير بعمرو عند كربته ... كالمستجير من الرمضاء بالنار.)",
+            "ents": [
+              "رمضاء",
+              "نار"
+            ]
+          },
+          {
+            "idiom": "نَشِبَ في حَبْلِ غَىٍّ",
+            "mean": "To fall into a distress from which there is no escape.",
+            "native": "ويروى\"في حِبَالة غي\"إذا وقّعَ في مكروه لا مخلصَ له منه",
+            "ents": [
+              "حبل"
+            ]
+          },
+          {
+            "idiom": "وَقَعُوا فِي وَادي جَدَبَاتٍ",
+            "mean": "To fall into a dire calamity; to stray from the right path.",
+            "native": "قد كثرت الرواية في هذا المثل، فبعضهم قَالَ\"جدبات\"جمع جَدْبة، وبعضهم روى بالذال المعجمة من قولهم\"جذب الصبي\"إذا فَطَمه وذلك يصعب عليه ويشتد، وربما يكون فيه هلاَكه، والصواب ما أورده الأَزهَري رحمه الله في التهذيب عن الأصمعي",
+            "ents": [
+              "وادي",
+              "جدبات"
+            ]
+          },
+          {
+            "idiom": "بَخْتِي لَقَانِي فِي الطَّرِيقْ يُعْرُجْ، قَالِّي: ارْجَعِي يَا خَايْبَهْ لَارْقُدْ",
+            "mean": "A person of bad luck who tries to improve their situation only worsens their misery through stubbornness.",
+            "native": "أي: لقيت حظي السيئ يعرج في الطريق، فأرجعني عن قصدي؛ لئلا يزيد سوءًا فيرقد. يُضرَب للسيئ الحظ يحاول إسعاد نفسه فيزيد تعاسةً بعناده.",
+            "ents": [
+              "طريق"
+            ]
+          },
+          {
+            "idiom": "خَارِجْ مِنِ الْحَرِيقَهْ قَابْلُهْ الْغُرَابْ زَغَطُهْ",
+            "mean": "Escaping one danger only to fall into another; the inevitable occurrence of a destined outcome through any cause.",
+            "native": "الزغط: البلع، والمراد بالمثل: عصفور نجا من النار فوقع في مخالب الغراب؛ أي: ما وَقَتْه نجاته من الحريق من الهلاك بسبب آخر. يُضرَب في نفاذ المقدور بأي سبب.",
+            "ents": [
+              "حريقه",
+              "غراب"
+            ]
+          }
+        ],
+        "shared": "falling into a worse situation",
+        "a_pick": [
+          "out of the frying pan, into the fire"
+        ],
+        "b_pick": [
+          "كالمُسْتَغِيثِ مِنَ الرَّمْضَاءِ بِالنَّار",
+          "خَارِجْ مِنِ الْحَرِيقَهْ قَابْلُهْ الْغُرَابْ زَغَطُهْ"
+        ],
+        "a_image": [
+          "leaving the <e>frying pan</e> and entering the <e>fire</e>"
+        ],
+        "b_image": [
+          "like one seeking help from the <e>burning ground</e> with <e>fire</e>",
+          "out of the <e>fire</e>, then met by the <e>crow</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "kal-mustaghithi mina r-ramda'i bin-nar",
+          "kharij min il-hariqah qabluh il-ghurab zaghutuh"
+        ],
+        "a_pick_v": [
+          "out of the frying pan, into the fire"
+        ],
+        "a_image_v": [
+          "leaving the <e>frying pan</e> and entering the <e>fire</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "كالمُسْتَغِيثِ مِنَ الرَّمْضَاءِ بِالنَّار",
+          "خَارِجْ مِنِ الْحَرِيقَهْ قَابْلُهْ الْغُرَابْ زَغَطُهْ"
+        ],
+        "b_image_v": [
+          "like one seeking help from the <e>burning ground</e> with <e>fire</e>",
+          "out of the <e>fire</e>, then met by the <e>crow</e>"
+        ],
+        "b_roman_v": [
+          "kal-mustaghithi mina r-ramda'i bin-nar",
+          "kharij min il-hariqah qabluh il-ghurab zaghutuh"
+        ]
+      },
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8569,
+        "a_items": [
+          {
+            "idiom": "That’ll be the day!",
+            "mean": "It expresses that a specific event will never happen or is extremely unlikely to occur.",
+            "native": "Inf. It will be an unusually amazing day when that happens!",
+            "ents": [
+              "day"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "بَيْضَةُ العُقْرِ",
+            "mean": "Something that happens only once; a final act of giving after which none follows; or something that never occurs.",
+            "native": "قيل:إنها بيضة الديك، وإنها مما يُخْتبر به عُذْرَة الجارية، وهي بَيْضَة إلى الطول. يضرب للشيء يكون موة واحدة، لأن الديك يبيض في عمره مرة واحدة فيما يقال،قال بشار بن برد: قد زُرْتِنِي زورةً في الدهر واحدةً ... ثَنِّي ولا ت",
+            "ents": [
+              "بيضه"
+            ]
+          },
+          {
+            "idiom": "حَتَّى يَرْجِعَ السَّهْمُ عَلَى فُوقِهِ",
+            "mean": "It is used to describe something that is impossible to happen, as an arrow never returns to its bow.",
+            "native": "وهذا لا يكون، لأن السهم لا يَرْجع على فُوقه أبدا، إنما يمضي قُدُماً. يضرب لما يستحيل كونُه،ومثلُه:",
+            "ents": [
+              "سهم",
+              "فوقه"
+            ]
+          },
+          {
+            "idiom": "دُونَهُ بَيْضُ الأَنُوقِ",
+            "mean": "It refers to something whose existence is impossible to achieve.",
+            "native": "الأنوق:الرَّخَمة، وهي تضعُ بيضَها حيث لا يوصَلُ إليه بُعْداً وخَفَاء. يضرب للشيء يتعذر وجوده.ويُقَال أيضاً:",
+            "ents": [
+              "بيض",
+              "انوق"
+            ]
+          },
+          {
+            "idiom": "أَعَزُّ مِنَ الغُرَابِ الأعْصَمِ",
+            "mean": "Something that is extremely rare or does not exist at all.",
+            "native": "قَال حمزة:هذا أيضاً في طريقَ الأبلقَ العقوقَ في أنه لا يُوجَد، وذلك أن الأعصم الذي تكون إحدى رجليه بيضاء، والغراب لا يكون كذلك، وفي الحديث\"أن عائشة في النساء كالغُرَابِ الأعصم\"",
+            "ents": [
+              "غراب"
+            ]
+          },
+          {
+            "idiom": "انْقَطَعَ السَّلَى فِى البَطْنِ",
+            "mean": "It signifies the loss of an opportunity and the finality of a matter.",
+            "native": "السَّلَى:جِلْدة رقيقة يكون فيها الولد من المَوَاشى إن نزعت عن وَجْه الفصيل ساعَةَ يولدُ وإلاَّ قتلته، وكذلك إذا انقطع السلى في البطن، فإذا خرج السَّلّى سلمت الناقة وسلم الولد، وإلا هلكت وهلك الولد،يُقَال:ناقة سَليَاء، إذ",
+            "ents": [
+              "سلي",
+              "بطن"
+            ]
+          },
+          {
+            "idiom": "لاَ أَفْعَلُ كَذَا ما بَلَّ البَحْرُ صُوفَةً، ومَا أَنَّ فِي الفُرَاتِ قَطْرَةً",
+            "mean": "It means never.",
+            "native": "أي أبدا",
+            "ents": [
+              "بحر",
+              "صوفه",
+              "فرات",
+              "قطره"
+            ]
+          }
+        ],
+        "shared": "never happen",
+        "a_pick": [
+          "That’ll be the day!"
+        ],
+        "b_pick": [
+          "حَتَّى يَرْجِعَ السَّهْمُ عَلَى فُوقِهِ",
+          "لاَ أَفْعَلُ كَذَا ما بَلَّ البَحْرُ صُوفَةً، ومَا أَنَّ فِي الفُرَاتِ قَطْرَةً"
+        ],
+        "a_image": [
+          "no imagery"
+        ],
+        "b_image": [
+          "until the <e>arrow</e> returns to its <e>bow</e>",
+          "until the <e>sea</e> wets a <e>wool tuft</e>; until the <e>Euphrates</e> has a <e>drop</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "hatta yarji'a al-sahmu 'ala fawqihi",
+          "la af'alu kadhā mā balla al-bahru ṣūfatan, wa-mā anna fi al-furāti qaṭratan"
+        ],
+        "a_pick_v": [
+          "That’ll be the day!"
+        ],
+        "a_image_v": [
+          "no imagery"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "حَتَّى يَرْجِعَ السَّهْمُ عَلَى فُوقِهِ",
+          "لاَ أَفْعَلُ كَذَا ما بَلَّ البَحْرُ صُوفَةً، ومَا أَنَّ فِي الفُرَاتِ قَطْرَةً"
+        ],
+        "b_image_v": [
+          "until the <e>arrow</e> returns to its <e>bow</e>",
+          "until the <e>sea</e> wets a <e>wool tuft</e>; until the <e>Euphrates</e> has a <e>drop</e>"
+        ],
+        "b_roman_v": [
+          "hatta yarji'a al-sahmu 'ala fawqihi",
+          "la af'alu kadhā mā balla al-bahru ṣūfatan, wa-mā anna fi al-furāti qaṭratan"
+        ]
+      },
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8249,
+        "a_items": [
+          {
+            "idiom": "give someone their flowers",
+            "mean": "To praise someone or to acknowledge their work or accomplishments.",
+            "native": "To praise someone or to acknowledge their work or accomplishments",
+            "ents": [
+              "flower"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "بِحَمْدِ اللهِ لا ِبَحْمِدَك",
+            "mean": "Used for someone who boasts of a favor in which they had no part, while acknowledging that the praise belongs to God.",
+            "native": "هذا من كلام عائشة رضي الله عنها حين بَشَّرَها النبي صلى الله عليه وسلم بنزول آية الإفْك. يضرب لمن يَمُنُّ بما لا أثر له فيه. والباء في\" بحمد الله\"من صلة الإقرار، أي أقر بأن الحمد في هذا لله تعالى.",
+            "ents": [
+              "الله"
+            ]
+          },
+          {
+            "idiom": "أَبْأَي مِمَّنْ جاءَ بِرَأْسِ خَاقَان",
+            "mean": "To boast of a great achievement or to claim a significant victory.",
+            "native": "قال حمزة:هذا مَثَل مولَّد حكاه المفضل بن سلَمة في كتابه المترجم بالكتاب الفاخر في الأمثال،قال:والعامة تقول\"كأنه جاء برأس خَاقَان\"وخاقان هذا كان ملكا من ملوك الترك خرج من ناحية باب الأبواب، وظهر على أرمينية، وقتل الْجَرَّ",
+            "ents": [
+              "راس",
+              "خاقان"
+            ]
+          },
+          {
+            "idiom": "التّمْرُ بالسَّوِيقِ",
+            "mean": "It is used to signify a reward.",
+            "native": "مثل حكاه أبو الحسن اللحيانيّ. يضرب في المكافأة.",
+            "ents": [
+              "تمر",
+              "سويق"
+            ]
+          },
+          {
+            "idiom": "عَلَيْهِ مِنَ اللهِ لِسَانٌ صَالِحَةٌ",
+            "mean": "It is used to praise someone who speaks well of others.",
+            "native": "يعني الثناء يضرب لمن يُثْنَى عليه بالخير",
+            "ents": [
+              "الله",
+              "لسان"
+            ]
+          },
+          {
+            "idiom": "ما الإنْسَانُ لَوْلا اللَّسَانُ إِلاَّ صُورَةٌ مُمَثَّلَةٌ أَوْ بَهِيمَةٌ مُهْمَلَة",
+            "mean": "It is used to praise the power of speech.",
+            "native": "يضرب في مَدْحِ القًدْرة على الكلام.",
+            "ents": [
+              "انسان",
+              "لسان",
+              "صوره",
+              "بهيمه"
+            ]
+          },
+          {
+            "idiom": "النَّفْسُ أَعْلَمُ مَنْ أخُوهَا النَّافِعُ",
+            "mean": "It is used for someone you praise or blame only when you need them.",
+            "native": "يضرب فيمن تحمدُه أو تذُمُّه عند الحاجة.",
+            "ents": [
+              "نفس",
+              "اخوها"
+            ]
+          }
+        ],
+        "shared": "praise or acknowledge someone",
+        "a_pick": [
+          "give someone their flowers"
+        ],
+        "b_pick": [
+          "عَلَيْهِ مِنَ اللهِ لِسَانٌ صَالِحَةٌ"
+        ],
+        "a_image": [
+          "present <e>flowers</e> to <e>someone</e>"
+        ],
+        "b_image": [
+          "a <e>good tongue</e> from <e>God</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "alayhi mina allahi lisanun salihah"
+        ],
+        "a_pick_v": [
+          "give someone their flowers"
+        ],
+        "a_image_v": [
+          "present <e>flowers</e> to <e>someone</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "عَلَيْهِ مِنَ اللهِ لِسَانٌ صَالِحَةٌ"
+        ],
+        "b_image_v": [
+          "a <e>good tongue</e> from <e>God</e>"
+        ],
+        "b_roman_v": [
+          "alayhi mina allahi lisanun salihah"
+        ]
+      },
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8239,
+        "a_items": [
+          {
+            "idiom": "fingers crossed",
+            "mean": "To express a hope for good fortune or a desire for someone to succeed.",
+            "native": "to wish for good luck or success",
+            "ents": [
+              "finger"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "تَضْرِبُ فِي حَدِيدٍ بارِدٍ",
+            "mean": "To desire something that is not attainable.",
+            "native": "يضرب لمن طَمِعَ في غير مَطْمَع.",
+            "ents": [
+              "حديد"
+            ]
+          },
+          {
+            "idiom": "شَهدْتُ بأَنَّ الخُبْزَ باللّحَمْ طَيِّب وَأَنَّ الْحُبَارَى خاَلَة الكَرَوَانِ",
+            "mean": "It is used for something one wishes for but cannot obtain.",
+            "native": "ويروى\"بأن الزبد بالتمر طيب\" قال أبو عمرو:يضرب عند الشيء يتمنَّى ولا يُقْدَرُ عليه.",
+            "ents": [
+              "خبز",
+              "لحم",
+              "حباري",
+              "كروان"
+            ]
+          },
+          {
+            "idiom": "وَابِطَينَا بَطَّنْ",
+            "mean": "It signifies good understanding and success in achieving one's goal.",
+            "native": "أصله أن رَجُلاً من العرب كانت له ابنة فخطبها قوم، فدفع أبوها إليهم ذِرَاعاً مع العضد،وقَالَ:مَنْ فَصَلَ بينهما فهي له، فعالجوا فلم يَصِلُو إليها،حتى وقعت في يد غلام كان يعجب الجارية يسمى بطينا فَقَالَت:وَابِطَيناً بَطِّن",
+            "ents": [
+              "بطن"
+            ]
+          },
+          {
+            "idiom": "شْحَال مَا طَالْ اللِّيلْ كَيْطْلَعْ النّهار",
+            "mean": "A proverb expressing optimism and hope.",
+            "native": "مثل للتفاؤل والأمل.",
+            "ents": [
+              "ليل",
+              "نهار"
+            ]
+          },
+          {
+            "idiom": "الغيم يحوم والرب رحوم",
+            "mean": "It is used to express hope for a blessing to arrive after a time of need.",
+            "native": "ويُضرَب أملا بنعمة تحصل بعد حاجة",
+            "ents": [
+              "غيم",
+              "رب"
+            ]
+          },
+          {
+            "idiom": "سَبِّقْ الخِير تَلْقى الخِير",
+            "mean": "It is said to express optimism that good things will happen.",
+            "native": "(يقال في التفاؤل خيرا بما قد يحدث).",
+            "ents": [
+              "خير"
+            ]
+          }
+        ],
+        "shared": "hope for good fortune",
+        "a_pick": [
+          "fingers crossed"
+        ],
+        "b_pick": [
+          "شْحَال مَا طَالْ اللِّيلْ كَيْطْلَعْ النّهار",
+          "الغيم يحوم والرب رحوم",
+          "سَبِّقْ الخِير تَلْقى الخِير"
+        ],
+        "a_image": [
+          "<e>fingers</e> <e>crossed</e>"
+        ],
+        "b_image": [
+          "no imagery",
+          "the <e>clouds</e> circle and the <e>lord</e> is merciful",
+          "precede <e>good</e> and find <e>good</e>"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "shhal ma tal el-lil kaytlaa en-nhar",
+          "al-ghaym yahum wa-r-rabb rahum",
+          "sabbiq al-khayr talqa al-khayr"
+        ],
+        "a_pick_v": [
+          "fingers crossed"
+        ],
+        "a_image_v": [
+          "<e>fingers</e> <e>crossed</e>"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "شْحَال مَا طَالْ اللِّيلْ كَيْطْلَعْ النّهار",
+          "الغيم يحوم والرب رحوم",
+          "سَبِّقْ الخِير تَلْقى الخِير"
+        ],
+        "b_image_v": [
+          "no imagery",
+          "the <e>clouds</e> circle and the <e>lord</e> is merciful",
+          "precede <e>good</e> and find <e>good</e>"
+        ],
+        "b_roman_v": [
+          "shhal ma tal el-lil kaytlaa en-nhar",
+          "al-ghaym yahum wa-r-rabb rahum",
+          "sabbiq al-khayr talqa al-khayr"
+        ]
+      },
+      {
+        "pair": "en-ar",
+        "a": "en",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8069,
+        "a_items": [
+          {
+            "idiom": "lightning-quick",
+            "mean": "The term describes something that is incredibly fast.",
+            "native": "Incredibly fast",
+            "ents": [
+              "lightning"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "الأَوْبُ أوْبُ نَعَامَةٍ",
+            "mean": "It is used for someone who hastens to return and rushes in doing so.",
+            "native": "الأوْبُ:الرجوع. يضرب لمن يعجل الرجوع ويُسْرع فيه.",
+            "ents": [
+              "نعامه"
+            ]
+          },
+          {
+            "idiom": "سَحَابَةُ صَيْفٍ عَنْ قَلِيلٍ تَقَشَّعُ",
+            "mean": "It is used to describe something that ends or disappears very quickly.",
+            "native": "يضرب في انقضاء الشيء بسرعة.",
+            "ents": [
+              "سحابه",
+              "صيف"
+            ]
+          },
+          {
+            "idiom": "أَسْرَعُ مِنَ الرّيحِ، وَمِنَ البَرْقِ، وَمِنَ الإِشَارةِ، وَمِنَ الَجْوَابِ، وَمِنَ البَيْنِ، وَمِنَ اللَّمْحِ، وَمِنَ الطَّرْفِ، وَمِنْ لَمْح البَصَرِ، وَمِنْ طَرْفِ العَيْنِ، وَمِنْ رَجْعِ الصَّدَى",
+            "mean": "Extremely fast, like an echo, a sneeze, milking, chewing, a glance, a dog drinking, or a spark in dry grass.",
+            "native": "وهو الذي يُجِيُكَ بمثل صوتك من الجبل وغيره. و\"مِنْ رَجْعِ العُطَاس \"و\"مِنْ حَلْبِ شَاةٍ\"و\"مِنْ مَضْغِ تَمْرَة\"و\"مِنْ لَمْعِ الكَفِّ\". اللَّمْع:التحريك،ومنه: كلَمْع اليَدَيْنِ في حَبِيٍّ مُكَلَّلِ ... وأَلْمَعْتُ بالشيء،و",
+            "ents": [
+              "ريح",
+              "برق",
+              "اشاره",
+              "جواب",
+              "بين",
+              "لمح",
+              "طرف",
+              "بصر",
+              "عين",
+              "رجع الصدي"
+            ]
+          },
+          {
+            "idiom": "أَشَدُّ مِنْ فَرسٍ",
+            "mean": "Extremely severe or intense; also, extremely fast or galloping.",
+            "native": "هذا يجوز أن يكون من الشدة ومن الشَّدِّ أيضاً وهو العَدْو.",
+            "ents": [
+              "فرس"
+            ]
+          },
+          {
+            "idiom": "أمْخَطُ مِنَ السَّهْم",
+            "mean": "To be extremely swift, like an arrow that has already escaped from the shot.",
+            "native": "قَالَ حمزة:إمخاطه: خُرُوجه من الرمية. قلت:الصوابُ\"مَخْطه خُروجُه\"يُقَال مَخَطَ السهمُ يَمْخُطُ إذا مَرَقَ، وأفعل يبني من الثلاَثي.",
+            "ents": [
+              "سهم"
+            ]
+          },
+          {
+            "idiom": "بَنِي آدَمْ طِيرْ مَاهُوشْ طِيرْ",
+            "mean": "It refers to a human being, used to express amazement at someone's speed in moving from one place to another.",
+            "native": "المراد المفرد؛ أي: ابن آدم. يُضرَب في التعجب من سرعة الانتقال من مكان إلى مكان؛ أي: هو كالطائر في ذلك.",
+            "ents": [
+              "بني ادم",
+              "طير"
+            ]
+          }
+        ],
+        "shared": "extremely fast",
+        "a_pick": [
+          "lightning-quick"
+        ],
+        "b_pick": [
+          "أَسْرَعُ مِنَ الرّيحِ، وَمِنَ البَرْقِ، وَمِنَ الإِشَارةِ، وَمِنَ الَجْوَابِ، وَمِنَ البَيْنِ، وَمِنَ اللَّمْحِ، وَمِنَ الطَّرْفِ، وَمِنْ لَمْح البَصَرِ، وَمِنْ طَرْفِ العَيْنِ، وَمِنْ رَجْعِ الصَّدَى",
+          "أمْخَطُ مِنَ السَّهْم",
+          "بَنِي آدَمْ طِيرْ مَاهُوشْ طِيرْ"
+        ],
+        "a_image": [
+          "like <e>lightning</e>, very fast"
+        ],
+        "b_image": [
+          "faster than <e>wind</e>, <e>lightning</e>, and a <e>glance</e>",
+          "swifter than an <e>arrow</e>",
+          "a <e>human</e> moving amazingly fast"
+        ],
+        "a_roman": [
+          ""
+        ],
+        "b_roman": [
+          "asra'u mina al-rihi, wa mina al-barqi, wa mina al-isharati, wa mina al-jawabi, wa mina al-bayni, wa mina al-lamhi, wa mina al-tarfi, wa min lamh al-basari, wa min tarfi al-'ayni, wa min raj'i al-sada",
+          "amkhat min al-sahm",
+          "bani adam tir ma-hush tir"
+        ],
+        "a_pick_v": [
+          "lightning-quick"
+        ],
+        "a_image_v": [
+          "like <e>lightning</e>, very fast"
+        ],
+        "a_roman_v": [
+          ""
+        ],
+        "b_pick_v": [
+          "أَسْرَعُ مِنَ الرّيحِ، وَمِنَ البَرْقِ، وَمِنَ الإِشَارةِ، وَمِنَ الَجْوَابِ، وَمِنَ البَيْنِ، وَمِنَ اللَّمْحِ، وَمِنَ الطَّرْفِ، وَمِنْ لَمْح البَصَرِ، وَمِنْ طَرْفِ العَيْنِ، وَمِنْ رَجْعِ الصَّدَى",
+          "أمْخَطُ مِنَ السَّهْم"
+        ],
+        "b_image_v": [
+          "faster than <e>wind</e>, <e>lightning</e>, and a <e>glance</e>",
+          "swifter than an <e>arrow</e>"
+        ],
+        "b_roman_v": [
+          "asra'u mina al-rihi, wa mina al-barqi, wa mina al-isharati, wa mina al-jawabi, wa mina al-bayni, wa mina al-lamhi, wa mina al-tarfi, wa min lamh al-basari, wa min tarfi al-'ayni, wa min raj'i al-sada",
+          "amkhat min al-sahm"
+        ]
+      }
+    ],
+    "zh-hi": [
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.9264,
+        "a_items": [
+          {
+            "idiom": "树倒根摧",
+            "mean": "It metaphorically describes a person who is old and physically declining.",
+            "native": "比喻人年迈体衰。",
+            "ents": [
+              "树",
+              "根"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "कोई दम का मेहमान है",
+            "mean": "It is said when a person is on the verge of death.",
+            "native": "जब कोई आदमी मर रहा हो, तब कहा जाता है।",
+            "ents": [
+              "दम",
+              "आदमी",
+              "मेहमान"
+            ]
+          },
+          {
+            "idiom": "कौनसी चक्की का पीसा खाया है",
+            "mean": "It is a phrase used to describe a very fat person.",
+            "native": "बहुत मोटे आदमी को कहते हैं।",
+            "ents": [
+              "चक्की",
+              "पीसा",
+              "आदमी"
+            ]
+          },
+          {
+            "idiom": "घर में भूनी भाँग नहीं है",
+            "mean": "This phrase describes a person who is extremely poor.",
+            "native": "अत्यंत निर्धन व्यक्ति को कहते हैं।",
+            "ents": [
+              "घर",
+              "भाँग"
+            ]
+          },
+          {
+            "idiom": "ढलती फिरती छाँह है",
+            "mean": "It is said to describe the changing nature of a human's condition.",
+            "native": "मनुष्य की अवस्था की परिवर्तनशीलता पर कहते हैं।",
+            "ents": [
+              "छाँह",
+              "मनुष्य"
+            ]
+          },
+          {
+            "idiom": "न मुँह में दाँत न पेट में आँत",
+            "mean": "It figuratively describes someone who is extremely old and weak.",
+            "native": "अर्थात् बहुत वृद्धा और कमजोर।",
+            "ents": [
+              "दाँत",
+              "पेट",
+              "आँत"
+            ]
+          },
+          {
+            "idiom": "पाँव गोर में लटकाए बैठे हैं",
+            "mean": "To be on the verge of death; to mockingly describe an elderly person attempting something beyond their capability.",
+            "native": "मरने को तैयार हैं, मरणासन्न हैं। जब कोई बहुत बूढ़ा व्यक्ति ऐसी बात करे जिसकी उसमें सामर्थ्य न हो, तो व्यंग्य या उपहास से कहते हैं।",
+            "ents": [
+              "पाँव",
+              "क़ब्र"
+            ]
+          }
+        ],
+        "shared": "extremely old and weak",
+        "a_pick": [
+          "树倒根摧"
+        ],
+        "b_pick": [
+          "न मुँह में दाँत न पेट में आँत"
+        ],
+        "a_image": [
+          "<e>tree</e> falls, <e>roots</e> crushed"
+        ],
+        "b_image": [
+          "no <e>teeth</e> in <e>mouth</e>, no <e>intestines</e> in <e>belly</e>"
+        ],
+        "a_roman": [
+          "shu dao gen cui"
+        ],
+        "b_roman": [
+          "na munh men daant na pet men aant"
+        ],
+        "a_pick_v": [
+          "树倒根摧"
+        ],
+        "a_image_v": [
+          "<e>tree</e> falls, <e>roots</e> crushed"
+        ],
+        "a_roman_v": [
+          "shu dao gen cui"
+        ],
+        "b_pick_v": [
+          "न मुँह में दाँत न पेट में आँत"
+        ],
+        "b_image_v": [
+          "no <e>teeth</e> in <e>mouth</e>, no <e>intestines</e> in <e>belly</e>"
+        ],
+        "b_roman_v": [
+          "na munh men daant na pet men aant"
+        ]
+      },
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8986,
+        "a_items": [
+          {
+            "idiom": "见之不取，思之千里",
+            "mean": "If you fail to seize an opportunity when it arises, it will be much harder to obtain later.",
+            "native": "见到时不拿过来，以后再想要就更难办了。",
+            "ents": [
+              "千里"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "आँख झपी और अवसर बीता",
+            "mean": "An opportunity slips away with even slight carelessness; this serves as a lesson for those who do not value time.",
+            "native": "अवसर थोड़ी-सी असावधानी से भी निकल जाता है। समय का मूल्य न जानने वाले व्यक्तियों के प्रति शिक्षार्थ ऐसा कहते हैं।",
+            "ents": [
+              "आँख",
+              "अवसर",
+              "समय"
+            ]
+          },
+          {
+            "idiom": "उठी पेंठ आठवें दिन",
+            "mean": "Seize the opportunity now before it is lost, as a favorable situation may not return for a long time.",
+            "native": "आज का उठा हुआ बाज़ार फिर आठवें दिन ही लगेगा, इसलिए जो कुछ लेना हो आज ही ले लो; अवसर हाथ से नहीं जाने देना चाहिए।",
+            "ents": [
+              "पेंठ",
+              "बाज़ार",
+              "दिन",
+              "अवसर"
+            ]
+          },
+          {
+            "idiom": "औसर का चूका आदमी और डाल का चूका बंदर भी कभी नहीं संभलता",
+            "mean": "If one fails to seize an opportunity, it never returns; missing a chance can lead to fatal consequences.",
+            "native": "यदि कोई मनुष्य अवसर का सदुपयोग नहीं कर सकता तो वह अवसर फिर नहीं मिलता; जिस प्रकार बंदर यदि डाल पकड़ने में चूक जाए तो उसे मृत्यु का ही सामना करना पड़ता है।",
+            "ents": [
+              "आदमी",
+              "बंदर",
+              "डाल"
+            ]
+          },
+          {
+            "idiom": "खोजने से संभालना भला",
+            "mean": "It is better to take care of something beforehand than to waste time searching for it later.",
+            "native": "किसी वस्तु को खोजने में समय खराब करने से अच्छा है कि उसे पहले ही संभाल कर रखा जाय।",
+            "ents": [
+              "वस्तु"
+            ]
+          },
+          {
+            "idiom": "छींके को उठना और बिल्ली का लपकना",
+            "mean": "It is said of those who seize an opportunity immediately.",
+            "native": "अवसर का तुरन्त लाभ उठाने वाले के लिए कहते हैं।",
+            "ents": [
+              "छींका",
+              "बिल्ली"
+            ]
+          },
+          {
+            "idiom": "डाल का चूका बंदर और असाढ़ का चूका किसान",
+            "mean": "Both fail to recover; the meaning is that missing an opportunity results in loss.",
+            "native": "ये दोनों सँभल नहीं पाते। आशय यह है कि अवसर चूक देने पर हानि उठानी पड़ती है।",
+            "ents": [
+              "डाल",
+              "बंदर",
+              "असाढ़",
+              "किसान"
+            ]
+          }
+        ],
+        "shared": "seize opportunity promptly",
+        "a_pick": [
+          "见之不取，思之千里"
+        ],
+        "b_pick": [
+          "आँख झपी और अवसर बीता",
+          "उठी पेंठ आठवें दिन",
+          "छींके को उठना और बिल्ली का लपकना"
+        ],
+        "a_image": [
+          "seeing it but not taking it, then thinking of <e>thousands of miles</e> later"
+        ],
+        "b_image": [
+          "the <e>eye</e> closes and the <e>opportunity</e> passes",
+          "the <e>market</e> rises only on the <e>eighth day</e>",
+          "the <e>hanging shelf</e> rises and the <e>cat</e> pounces"
+        ],
+        "a_roman": [
+          "jian zhi bu qu, si zhi qian li"
+        ],
+        "b_roman": [
+          "aankh jhapi aur avsar beeta",
+          "uthi penth aathven din",
+          "chheenke ko uthna aur billi ka lapakna"
+        ],
+        "a_pick_v": [
+          "见之不取，思之千里"
+        ],
+        "a_image_v": [
+          "seeing it but not taking it, then thinking of <e>thousands of miles</e> later"
+        ],
+        "a_roman_v": [
+          "jian zhi bu qu, si zhi qian li"
+        ],
+        "b_pick_v": [
+          "उठी पेंठ आठवें दिन",
+          "छींके को उठना और बिल्ली का लपकना"
+        ],
+        "b_image_v": [
+          "the <e>market</e> rises only on the <e>eighth day</e>",
+          "the <e>hanging shelf</e> rises and the <e>cat</e> pounces"
+        ],
+        "b_roman_v": [
+          "uthi penth aathven din",
+          "chheenke ko uthna aur billi ka lapakna"
+        ]
+      },
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8857,
+        "a_items": [
+          {
+            "idiom": "风烛草露",
+            "mean": "It metaphorically describes a person who is old and nearing death.",
+            "native": "明·杨慎《洞天玄记》四折人生一世，犹如石火电光，寿算百年，恍若风烛草露。”风中之烛易灭，草上之露易干。比喻人已衰老，临近死亡。",
+            "ents": [
+              "烛",
+              "草",
+              "露"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "क़ब्र का मुँह झाँक कर आये हैं",
+            "mean": "Used to describe someone who has narrowly escaped death or returned from the brink of dying.",
+            "native": "मृत्यु के पंजे से निकलकर या मृत्यु से बाल-बाल बचकर आने पर कहते हैं।",
+            "ents": [
+              "क़ब्र",
+              "मुँह",
+              "मृत्यु"
+            ]
+          },
+          {
+            "idiom": "कोई दम का मेहमान है",
+            "mean": "It is said when a person is on the verge of death.",
+            "native": "जब कोई आदमी मर रहा हो, तब कहा जाता है।",
+            "ents": [
+              "दम",
+              "आदमी",
+              "मेहमान"
+            ]
+          },
+          {
+            "idiom": "कौनसी चक्की का पीसा खाया है",
+            "mean": "It is a phrase used to describe a very fat person.",
+            "native": "बहुत मोटे आदमी को कहते हैं।",
+            "ents": [
+              "चक्की",
+              "पीसा",
+              "आदमी"
+            ]
+          },
+          {
+            "idiom": "धोला बाल मौत को निज्ञानी",
+            "mean": "White hair indicates old age, which signifies that death is near.",
+            "native": "सफ़ेद बाल मृत्यु के सूचक हैं। सफ़ेद बाल बुढ़ापे का द्योतक है और बूढ़ा होना मृत्यु के समीप जाना है।",
+            "ents": [
+              "बाल",
+              "मौत"
+            ]
+          },
+          {
+            "idiom": "न मुँह में दाँत न पेट में आँत",
+            "mean": "It figuratively describes someone who is extremely old and weak.",
+            "native": "अर्थात् बहुत वृद्धा और कमजोर।",
+            "ents": [
+              "दाँत",
+              "पेट",
+              "आँत"
+            ]
+          },
+          {
+            "idiom": "पाँव गोर में लटकाए बैठे हैं",
+            "mean": "To be on the verge of death; to mockingly describe an elderly person attempting something beyond their capability.",
+            "native": "मरने को तैयार हैं, मरणासन्न हैं। जब कोई बहुत बूढ़ा व्यक्ति ऐसी बात करे जिसकी उसमें सामर्थ्य न हो, तो व्यंग्य या उपहास से कहते हैं।",
+            "ents": [
+              "पाँव",
+              "क़ब्र"
+            ]
+          }
+        ],
+        "shared": "near death / old age",
+        "a_pick": [
+          "风烛草露"
+        ],
+        "b_pick": [
+          "कोई दम का मेहमान है",
+          "धोला बाल मौत को निज्ञानी",
+          "न मुँह में दाँत न पेट में आँत"
+        ],
+        "a_image": [
+          "<e>wind</e>-blown <e>candle</e> and <e>grass dew</e>"
+        ],
+        "b_image": [
+          "a <e>guest</e> of a few <e>breaths</e>",
+          "<e>white hair</e> means <e>death</e> is near",
+          "no <e>teeth</e> in the <e>mouth</e>, no <e>intestines</e> in the <e>belly</e>"
+        ],
+        "a_roman": [
+          "feng zhu cao lu"
+        ],
+        "b_roman": [
+          "koi dam ka mehman hai",
+          "dhola bal maut ko nijnani",
+          "na munh mein daant na pet mein aant"
+        ],
+        "a_pick_v": [
+          "风烛草露"
+        ],
+        "a_image_v": [
+          "<e>wind</e>-blown <e>candle</e> and <e>grass dew</e>"
+        ],
+        "a_roman_v": [
+          "feng zhu cao lu"
+        ],
+        "b_pick_v": [
+          "कोई दम का मेहमान है",
+          "धोला बाल मौत को निज्ञानी",
+          "न मुँह में दाँत न पेट में आँत"
+        ],
+        "b_image_v": [
+          "a <e>guest</e> of a few <e>breaths</e>",
+          "<e>white hair</e> means <e>death</e> is near",
+          "no <e>teeth</e> in the <e>mouth</e>, no <e>intestines</e> in the <e>belly</e>"
+        ],
+        "b_roman_v": [
+          "koi dam ka mehman hai",
+          "dhola bal maut ko nijnani",
+          "na munh mein daant na pet mein aant"
+        ]
+      },
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8826,
+        "a_items": [
+          {
+            "idiom": "力不从心",
+            "mean": "To wish to do something but lack the strength; for one's desires or plans to exceed actual ability.",
+            "native": "心里想做，可是力量够不上。",
+            "ents": [
+              "力",
+              "心"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "ईंट की पाँत दम मदार",
+            "mean": "To undertake a task beyond one's own strength without considering one's capabilities.",
+            "native": "जब कोई व्यक्ति अपनी शक्ति का विचार न करके किसी कार्य को करने को तैयार हो जाए, जो उसकी शक्ति के बाहर हो, तब ऐसा कहते हैं।",
+            "ents": [
+              "ईंट",
+              "पाँत",
+              "शाह मदार",
+              "मकनपुर",
+              "कब्र",
+              "पत्थर"
+            ]
+          },
+          {
+            "idiom": "छाती पर बाल नहीं, भालू से लड़ाई",
+            "mean": "Used ironically to describe someone who claims or attempts to do something beyond their strength.",
+            "native": "शक्ति से बाहर काम करने का दावा या प्रयत्न करने वाले के प्रति व्यंग्य में कहा जाता है।",
+            "ents": [
+              "छाती",
+              "बाल",
+              "भालू"
+            ]
+          },
+          {
+            "idiom": "टेढ़ी खीर है",
+            "mean": "A difficult task; undertaking something for which one is not considered capable.",
+            "native": "मुश्किल काम है। जब कोई आदमी ऐसा काम करने जाय, जिसके करने लायक़ वह न समझा जाय, तब कहते हैं। इस पर एक कहानी यूँ है : किसी जन्म के अंधे फ़क़ीर से एक मनुष्य ने कहा, खीर खाओगे? सूरदास ने कहा, \"खीर कैसी होती है?\" उत्तर मिला, \"",
+            "ents": [
+              "खीर",
+              "सूरदास",
+              "बगुला",
+              "हाथ",
+              "गला"
+            ]
+          },
+          {
+            "idiom": "तन पर चीर न घर में नाज, दद-ससुरे का रोपा काज",
+            "mean": "It describes someone attempting a task beyond their means despite having no resources.",
+            "native": "तन पर न तो वस्त्र हैं और न घर में अनाज है, फिर भी ददिया-ससुर का श्राद्ध करने जा रहे हैं। जब कोई अपनी सामर्थ्य से बाहर का काम करता है तब उसके प्रति कहते हैं।",
+            "ents": [
+              "वस्त्र",
+              "अनाज",
+              "ससुर"
+            ]
+          },
+          {
+            "idiom": "ताँत-सी देह, पाँव न हाथ, लड़न चलो सूरन के साथ",
+            "mean": "It is said mockingly when someone attempts to do something beyond their own strength.",
+            "native": "जब कोई अपनी शक्ति से बाहर काम करने चलता है तो व्यंग्य में कहते हैं।",
+            "ents": [
+              "देह",
+              "पाँव",
+              "हाथ",
+              "सूरन"
+            ]
+          },
+          {
+            "idiom": "पैसा ले न गए हाटे, ककड़ी देख के जिया फाटे",
+            "mean": "To desire something while having no money to buy it; to covet goods at a market without the means to purchase them.",
+            "native": "खाली हाथ बाज़ार गए हैं और ककड़ी देखकर ललचाते हैं।",
+            "ents": [
+              "पैसा",
+              "हाट",
+              "ककड़ी"
+            ]
+          }
+        ],
+        "shared": "attempting beyond one's strength",
+        "a_pick": [
+          "力不从心"
+        ],
+        "b_pick": [
+          "ईंट की पाँत दम मदार",
+          "छाती पर बाल नहीं, भालू से लड़ाई",
+          "ताँत-सी देह, पाँव न हाथ, लड़न चलो सूरन के साथ"
+        ],
+        "a_image": [
+          "<e>strength</e> does not follow <e>heart</e>"
+        ],
+        "b_image": [
+          "<e>brick row</e> and <e>strength</e> for a task",
+          "<e>chest hair</e> gone, fighting a <e>bear</e>",
+          "<e>thread-thin body</e>, no <e>feet</e> or <e>hands</e>, go fight <e>heroes</e>"
+        ],
+        "a_roman": [
+          "li bu cong xin"
+        ],
+        "b_roman": [
+          "eent ki paant dam madar",
+          "chhati par bal nahin, bhalu se ladai",
+          "tant-si deh, paon na hath, larn chalo suran ke sath"
+        ],
+        "a_pick_v": [
+          "力不从心"
+        ],
+        "a_image_v": [
+          "<e>strength</e> does not follow <e>heart</e>"
+        ],
+        "a_roman_v": [
+          "li bu cong xin"
+        ],
+        "b_pick_v": [
+          "ईंट की पाँत दम मदार",
+          "छाती पर बाल नहीं, भालू से लड़ाई",
+          "ताँत-सी देह, पाँव न हाथ, लड़न चलो सूरन के साथ"
+        ],
+        "b_image_v": [
+          "<e>brick row</e> and <e>strength</e> for a task",
+          "<e>chest hair</e> gone, fighting a <e>bear</e>",
+          "<e>thread-thin body</e>, no <e>feet</e> or <e>hands</e>, go fight <e>heroes</e>"
+        ],
+        "b_roman_v": [
+          "eent ki paant dam madar",
+          "chhati par bal nahin, bhalu se ladai",
+          "tant-si deh, paon na hath, larn chalo suran ke sath"
+        ]
+      },
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8729,
+        "a_items": [
+          {
+            "idiom": "行将就木",
+            "mean": "To be on the verge of death, specifically referring to an elderly person whose life is nearly over.",
+            "native": "指人寿命已经不长，快要进棺材了。",
+            "ents": [
+              "木"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "क़ब्र का मुँह झाँक कर आये हैं",
+            "mean": "Used to describe someone who has narrowly escaped death or returned from the brink of dying.",
+            "native": "मृत्यु के पंजे से निकलकर या मृत्यु से बाल-बाल बचकर आने पर कहते हैं।",
+            "ents": [
+              "क़ब्र",
+              "मुँह",
+              "मृत्यु"
+            ]
+          },
+          {
+            "idiom": "कोई दम का मेहमान है",
+            "mean": "It is said when a person is on the verge of death.",
+            "native": "जब कोई आदमी मर रहा हो, तब कहा जाता है।",
+            "ents": [
+              "दम",
+              "आदमी",
+              "मेहमान"
+            ]
+          },
+          {
+            "idiom": "धोला बाल मौत को निज्ञानी",
+            "mean": "White hair indicates old age, which signifies that death is near.",
+            "native": "सफ़ेद बाल मृत्यु के सूचक हैं। सफ़ेद बाल बुढ़ापे का द्योतक है और बूढ़ा होना मृत्यु के समीप जाना है।",
+            "ents": [
+              "बाल",
+              "मौत"
+            ]
+          },
+          {
+            "idiom": "न मुँह में दाँत न पेट में आँत",
+            "mean": "It figuratively describes someone who is extremely old and weak.",
+            "native": "अर्थात् बहुत वृद्धा और कमजोर।",
+            "ents": [
+              "दाँत",
+              "पेट",
+              "आँत"
+            ]
+          },
+          {
+            "idiom": "पाँव गोर में लटकाए बैठे हैं",
+            "mean": "To be on the verge of death; to mockingly describe an elderly person attempting something beyond their capability.",
+            "native": "मरने को तैयार हैं, मरणासन्न हैं। जब कोई बहुत बूढ़ा व्यक्ति ऐसी बात करे जिसकी उसमें सामर्थ्य न हो, तो व्यंग्य या उपहास से कहते हैं।",
+            "ents": [
+              "पाँव",
+              "क़ब्र"
+            ]
+          },
+          {
+            "idiom": "पेट में आँत, न मुँह में दाँत",
+            "mean": "This phrase is used to describe someone who is extremely old.",
+            "native": "अति बूढ़े को कहते हैं।",
+            "ents": [
+              "पेट",
+              "आँत",
+              "मुँह",
+              "दाँत"
+            ]
+          }
+        ],
+        "shared": "on the verge of death",
+        "a_pick": [
+          "行将就木"
+        ],
+        "b_pick": [
+          "कोई दम का मेहमान है",
+          "पाँव गोर में लटकाए बैठे हैं"
+        ],
+        "a_image": [
+          "about to enter <e>wood</e>"
+        ],
+        "b_image": [
+          "a <e>guest</e> of one breath",
+          "sitting with <e>feet</e> dangling in the <e>grave</e>"
+        ],
+        "a_roman": [
+          "xing jiang jiu mu"
+        ],
+        "b_roman": [
+          "koi dam ka mehmaan hai",
+          "paanv gor mein latkaae baithe hain"
+        ],
+        "a_pick_v": [
+          "行将就木"
+        ],
+        "a_image_v": [
+          "about to enter <e>wood</e>"
+        ],
+        "a_roman_v": [
+          "xing jiang jiu mu"
+        ],
+        "b_pick_v": [
+          "कोई दम का मेहमान है",
+          "पाँव गोर में लटकाए बैठे हैं"
+        ],
+        "b_image_v": [
+          "a <e>guest</e> of one breath",
+          "sitting with <e>feet</e> dangling in the <e>grave</e>"
+        ],
+        "b_roman_v": [
+          "koi dam ka mehmaan hai",
+          "paanv gor mein latkaae baithe hain"
+        ]
+      },
+      {
+        "pair": "zh-hi",
+        "a": "zh",
+        "b": "hi",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8667,
+        "a_items": [
+          {
+            "idiom": "金无足赤，人无完人",
+            "mean": "Nothing is perfect; one should not expect a person to be without any faults or errors.",
+            "native": "比喻没有十全十美的事物。也比喻不能要求一个人没有一点缺点错误。",
+            "ents": [
+              "金",
+              "人"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "अंधा हँसे काना राजा",
+            "mean": "A flawed person mocks another's defects; or, a slightly less incompetent person is better than a completely incompetent one.",
+            "native": "काने राजा पर अंधा हँस रहा है। अवगुणी व्यक्ति ही दूसरे के अवगुणों पर हँसता है।",
+            "ents": [
+              "अंधा",
+              "काना",
+              "राजा"
+            ]
+          },
+          {
+            "idiom": "अपनी लड़की भली होती तो दूसरा क्यों गाली देता",
+            "mean": "If we are good, others cannot view us badly; we should look for faults within ourselves.",
+            "native": "यदि हम स्वयं अच्छे होंगे तो दूसरे हमें बुरी निगाह से नहीं देख सकते; दोष अपने ही अंदर देखना चाहिए।",
+            "ents": [
+              "लड़की"
+            ]
+          },
+          {
+            "idiom": "अमृत पीते दाँत कीट",
+            "mean": "It is said of those who find fault even while accepting a good thing.",
+            "native": "अच्छी वस्तु ग्रहण करने में भी आना-कानी करने पर कहते हैं।",
+            "ents": [
+              "अमृत",
+              "दाँत"
+            ]
+          },
+          {
+            "idiom": "ऊँट लंबा पूँछ छोटी",
+            "mean": "When most of a great task succeeds but a small part fails; or, no object is perfect as every thing has some flaw.",
+            "native": "जब किसी बहुत बड़े काम का अधिकांश भाग ठीक हो जाय और थोड़ा-सा बिगड़ जाय या अच्छा न हो, तो यह कहा जाता है।",
+            "ents": [
+              "ऊँट",
+              "पूँछ"
+            ]
+          },
+          {
+            "idiom": "कच्चा दूध सबने पिया है",
+            "mean": "Everyone makes mistakes.",
+            "native": "ग़लती सभी से होती है।",
+            "ents": [
+              "दूध"
+            ]
+          },
+          {
+            "idiom": "किसी की नाक टेढ़ी, किसी की आँख टेढ़ी",
+            "mean": "Everyone has some flaw; or, all members of a family or village are bad.",
+            "native": "(क) प्रत्येक व्यक्ति में कोई-न-कोई कमी होती है।",
+            "ents": [
+              "नाक",
+              "आँख",
+              "व्यक्ति",
+              "परिवार",
+              "गाँव"
+            ]
+          }
+        ],
+        "shared": "everyone has flaws",
+        "a_pick": [
+          "金无足赤，人无完人"
+        ],
+        "b_pick": [
+          "कच्चा दूध सबने पिया है",
+          "किसी की नाक टेढ़ी, किसी की आँख टेढ़ी"
+        ],
+        "a_image": [
+          "<e>gold</e> is never <e>pure red</e>; <e>people</e> are not <e>perfect</e>"
+        ],
+        "b_image": [
+          "everyone has drunk <e>raw milk</e>",
+          "someone's <e>nose</e> is crooked, someone's <e>eye</e> is crooked"
+        ],
+        "a_roman": [
+          "jin wu zu chi, ren wu wan ren"
+        ],
+        "b_roman": [
+          "kaccha doodh sabne piya hai",
+          "kisi ki naak tedhi, kisi ki aankh tedhi"
+        ],
+        "a_pick_v": [
+          "金无足赤，人无完人"
+        ],
+        "a_image_v": [
+          "<e>gold</e> is never <e>pure red</e>; <e>people</e> are not <e>perfect</e>"
+        ],
+        "a_roman_v": [
+          "jin wu zu chi, ren wu wan ren"
+        ],
+        "b_pick_v": [
+          "किसी की नाक टेढ़ी, किसी की आँख टेढ़ी"
+        ],
+        "b_image_v": [
+          "someone's <e>nose</e> is crooked, someone's <e>eye</e> is crooked"
+        ],
+        "b_roman_v": [
+          "kisi ki naak tedhi, kisi ki aankh tedhi"
+        ]
+      }
+    ],
+    "zh-ar": [
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.9256,
+        "a_items": [
+          {
+            "idiom": "趁热打铁",
+            "mean": "To seize a favorable opportunity and act immediately while conditions are right, ensuring no chance is missed.",
+            "native": "老舍《四世同堂》十九他觉得老大实在有可爱的地方，于是，他决定趁热打铁，把话都说净。”",
+            "ents": [
+              "热",
+              "铁"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أَحْذَرُ مِنْ غُرابٍ",
+            "mean": "Being so cautious that one takes evasive action before any danger or attack actually occurs.",
+            "native": "وذلك أنهم يَحْكُون في رُمُوزهم أن الغراب قال لابنه:يا بني إذا رُمِيتَ فَتَلَوّصْ، أي تَلَوَّ،فقال:يا أبتِ إني أتَلَوَّصُ قبل أن أُرْمَى.",
+            "ents": [
+              "غراب"
+            ]
+          },
+          {
+            "idiom": "سِرْ وَقَمرٌ لَكَ",
+            "mean": "Seize the opportunity while it is available; make the most of the favorable moment.",
+            "native": "أي اغتنم العمَلَ ما دام القمر لك طالعا يضرب في اغتنام الفُرْصة. ويروى\"أسْرُ وقمرلك\"من السُّرَى،والواو في الروايتين للحال:أي سر مُقْمِراً.",
+            "ents": [
+              "قمر"
+            ]
+          },
+          {
+            "idiom": "أفْيلً مِنَ الرأي الدَّبَرِىَّ",
+            "mean": "Offering advice after the opportunity has passed; neglecting to act while the matter is still approachable.",
+            "native": "هو الرأي الذي يُحَاضر به بعد فَوْت الأمر،قَال الشاعر: تتَبَّعُ الأمْرش بَعْدَ الفَوْتِ تَغْرِيرُ ... وَتَرْكُهُ مُقْبِلاً عَجْزٌ وَتَقْصيرُ",
+            "ents": [
+              "راي"
+            ]
+          },
+          {
+            "idiom": "لاَ تُطِلِ الذَّيْلَ فَقَدْ أَجَدَّ الحَضِرُ",
+            "mean": "Do not delay when the situation has become urgent and requires immediate action.",
+            "native": "يضرب للمتأني وقد جدَّ الأمر واحتاج إلى العَجَلَة.",
+            "ents": [
+              "ذيل",
+              "حضر"
+            ]
+          },
+          {
+            "idiom": "إِنْ زَعَقِتِ الْكَرْكِيَّهْ اِرْمِ الْحَب وِعَلَيَّ",
+            "mean": "When a clear sign of the right time appears, act immediately and leave the consequences to fate.",
+            "native": "الكركي: طائر معروف؛ أي: إن ظهر هذا الطائر وصاح فهو أوانُ زرع الحَبِّ فَارْمِ حبَّك وابذره وعليَّ التبعة. وفي خطط المقريزي: ٨٥ «إِن مجيء الكراكي إلى أرض مصر يكون في شهر «بابة» من الشهور القبطية، وفيه تزرع الحبوب.»",
+            "ents": [
+              "كركيه",
+              "حب"
+            ]
+          },
+          {
+            "idiom": "إِنْ كَانْ لِقَلْعَكْ رِيحْ اُنْفُضُهْ",
+            "mean": "You know your own best interests, so when an opportunity arises to advance your goals, seize it.",
+            "native": "أي: أنت أبصر بمصلحتك وأعرف بأمورك، فإن صادفت ريحًا تُسَيِّرُ سفينتك فانشر قلعك لها وافعل ما فيه مصلحتك.",
+            "ents": [
+              "قلعك",
+              "ريح"
+            ]
+          }
+        ],
+        "shared": "seize the favorable moment",
+        "a_pick": [
+          "趁热打铁"
+        ],
+        "b_pick": [
+          "سِرْ وَقَمرٌ لَكَ",
+          "إِنْ كَانْ لِقَلْعَكْ رِيحْ اُنْفُضُهْ"
+        ],
+        "a_image": [
+          "while <e>the iron</e> is <e>hot</e>, strike it"
+        ],
+        "b_image": [
+          "walk while <e>the moon</e> is yours",
+          "if <e>your pulling</e> has <e>wind</e>, shake it off"
+        ],
+        "a_roman": [
+          "chen re da tie"
+        ],
+        "b_roman": [
+          "sir wa qamarun laka",
+          "in kan liqal'ik rih unfudhuh"
+        ],
+        "a_pick_v": [
+          "趁热打铁"
+        ],
+        "a_image_v": [
+          "while <e>the iron</e> is <e>hot</e>, strike it"
+        ],
+        "a_roman_v": [
+          "chen re da tie"
+        ],
+        "b_pick_v": [
+          "سِرْ وَقَمرٌ لَكَ",
+          "إِنْ كَانْ لِقَلْعَكْ رِيحْ اُنْفُضُهْ"
+        ],
+        "b_image_v": [
+          "walk while <e>the moon</e> is yours",
+          "if <e>your pulling</e> has <e>wind</e>, shake it off"
+        ],
+        "b_roman_v": [
+          "sir wa qamarun laka",
+          "in kan liqal'ik rih unfudhuh"
+        ]
+      },
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8687,
+        "a_items": [
+          {
+            "idiom": "巧言令色",
+            "mean": "Using flowery words and a pleasing demeanor to flatter insincerely; employing skillful speech and expression to deceive or trick others.",
+            "native": "形容花言巧语，虚伪讨好。",
+            "ents": [
+              "言",
+              "色"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أَنا عُذَلَةٌ وَأَخِي خُذَلَة ... وكلاَنا لَيْسَ بِابْنِ أمَةٍ",
+            "mean": "It is used for someone who deceives you and then blames you for the deception.",
+            "native": "يضرب لمن يَخْذُلك وتَعْذِله.",
+            "ents": [
+              "اخي",
+              "ابن",
+              "امه"
+            ]
+          },
+          {
+            "idiom": "إِنَّما هُوَ ذَنَبُ الثَّعْلَبِ",
+            "mean": "To mislead others by feigning a false trail, causing them to follow a deceptive path.",
+            "native": "أصحاب الصيد يقولون:رَوَاغ الثعلب بذَنَبه يميله فتتبع الكلاب ذَنَبه،يقال:أروغ من ذَنَبِ الثعلب.",
+            "ents": [
+              "ذنب",
+              "ثعلب"
+            ]
+          },
+          {
+            "idiom": "تَحْت جِلْدِ الضَّأْنِ قَلْبُ الاَذْؤُبِ",
+            "mean": "It is used for someone who is hypocritical and deceives people.",
+            "native": "يقال:ذِئْب وأذْؤُبٌ وذِئَاب وذُؤْبان، وضَاِئن في الواحد وضَأْن وضَئِنين في الجَمْع، مثل ماعِزٍ ومَعْز ومَعِيز. يضرب لمن ينافق ويخادع الناس.",
+            "ents": [
+              "جلد",
+              "ضان",
+              "قلب",
+              "اذؤب"
+            ]
+          },
+          {
+            "idiom": "جَاءَ بِالشُّقَرِ وَالبُقَرِ وَبِبَنَاتِ غَيْرٍ",
+            "mean": "To come with altered speech contrary to truth, meaning to tell blatant lies.",
+            "native": "ويروى\"بالصُّقَر\"والغَيرْ: الاسم من قولك\"غَيَّرْتُ الشيء فتغير\"ويراد ههنا جاء بالكلام المغيَّرِ عن وَجْه الصدق،والشُّقَر والبُقَر:اسم لا يُعْرف، أي جاء بالكذب الصريح.",
+            "ents": [
+              "شقر",
+              "بقر",
+              "بنات"
+            ]
+          },
+          {
+            "idiom": "أُرِيَها اسْتَهَا وَتُرِينِي القَمَرَ",
+            "mean": "Used for someone who tries to deceive regarding something that is obvious and cannot be hidden.",
+            "native": "قال الشَرْقي بن القطامي:كانت في الجاهلية امرأة أكملت خَلَقا وجمالا، وكانت تزعم أن أحداً لا يقدر على جِماعها لقوتها، وكانت بكراً، فخاطرها ابنُ ألْغَزَ الإيادي - وكان واثقاً بما عنده - على أنه إن غلبها أعطته مائة من الإبل ",
+            "ents": [
+              "استها",
+              "قمر"
+            ]
+          },
+          {
+            "idiom": "أَكْذَبُ مِنَ الشَّيخ الغَرِيبِ",
+            "mean": "To be extremely deceitful, like an old man who lies about his age to marry while traveling.",
+            "native": "لأنه يتزوج في غُرْبته وهو ابن سبعين فيزعم أنه ابنُ أربعين سنةً",
+            "ents": [
+              "شيخ",
+              "غريب"
+            ]
+          }
+        ],
+        "shared": "deceptive speech and appearance",
+        "a_pick": [
+          "巧言令色"
+        ],
+        "b_pick": [
+          "تَحْت جِلْدِ الضَّأْنِ قَلْبُ الاَذْؤُبِ",
+          "جَاءَ بِالشُّقَرِ وَالبُقَرِ وَبِبَنَاتِ غَيْرٍ"
+        ],
+        "a_image": [
+          "skillful words and pleasing face"
+        ],
+        "b_image": [
+          "under the <e>sheep's</e> skin is the <e>wolf's</e> heart",
+          "came with <e>shuqur</e> and <e>buqar</e> and <e>banat</e> of another"
+        ],
+        "a_roman": [
+          "qiao yan ling se"
+        ],
+        "b_roman": [
+          "tahta jildi al-da'n qalbu al-adh'ub",
+          "jaa'a bi-sh-shuqur wa-l-buqar wa-bi-banaat ghayr"
+        ],
+        "a_pick_v": [
+          "巧言令色"
+        ],
+        "a_image_v": [
+          "skillful words and pleasing face"
+        ],
+        "a_roman_v": [
+          "qiao yan ling se"
+        ],
+        "b_pick_v": [
+          "تَحْت جِلْدِ الضَّأْنِ قَلْبُ الاَذْؤُبِ"
+        ],
+        "b_image_v": [
+          "under the <e>sheep's</e> skin is the <e>wolf's</e> heart"
+        ],
+        "b_roman_v": [
+          "tahta jildi al-da'n qalbu al-adh'ub"
+        ]
+      },
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8414,
+        "a_items": [
+          {
+            "idiom": "水落石出",
+            "mean": "To reveal the truth of a matter completely; to expose the facts so they are no longer hidden or obscure.",
+            "native": "比喻事情的真相完全显露出来。",
+            "ents": [
+              "水",
+              "石"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "صَدَقَنِي سِنَّ بَكْرِهِ",
+            "mean": "To tell the truth about something; to reveal what is hidden in one's heart.",
+            "native": "البَكْرُ:الفَتِىُّ من الإبل،ويقال:صَدَقْتُهُ الحديثَ، وفي الحديث يضرب مثلا في الصدق وأصله أن رجلا ساوَمَ رجلا في بَكْرٍ فقال:ما سنُّه؟فقال صاحبه:هِدَعْ هِدَعْ، وهذه لفظة يُسَكَّن بها الصِّغار من الإبل، فلما سمع المشتري ه",
+            "ents": [
+              "سن",
+              "بكره"
+            ]
+          },
+          {
+            "idiom": "عِنْدَ جُهَيْنَةَ الْخَبَرُ اليقِينُ",
+            "mean": "To know the truth of a matter; to possess certain knowledge of a fact.",
+            "native": "وكم من ضَيْغم وَْردٍ هَمُوسٍ ... أبي شِبْلَيْن مَسْكَنُهُ العَرِينُ عَلَوْتُ بًيَاضَ مَفْرِقِهِ بِعَضْبٍ ... فأضْحى في الفَلاة له سُكونُ وَضْحَتْ عِرْسُه ولَهاَ عليه ... بُعَيْدَ هُدُوءٍ ليلتها رَنِينُ وكَمْ من فارسٍ لا ",
+            "ents": [
+              "جهينه",
+              "خبر"
+            ]
+          },
+          {
+            "idiom": "قَدْ بَيَّنَ الصُّبْحُ لِذِى عَيْنَينِ",
+            "mean": "It is used for a matter that becomes completely evident.",
+            "native": "بَيَّنَ هنا:بمعنى تَبَيَّنَ يضرب للأمر يظهر كلَّ الظهور.",
+            "ents": [
+              "صبح",
+              "عينين"
+            ]
+          },
+          {
+            "idiom": "يَأتِيكَ بِالأمر منْ فَصِّهِ",
+            "mean": "To present a matter from its very core; to address the essential truth of a situation.",
+            "native": "أي يأتيك بالأمر من مَفْصله، مأخوذ من فصوص العظام وهي مَفَاصلها وأحدها فَصّ،قَالَ عبد الله بن جعفر: وَرُبَّ امْرِئ تَزدَرِيهِ العُيُونُ ... وَيَأتِيكَ بالأمر منْ فَصِّهِ يضرب للواقف على الحقائق",
+            "ents": [
+              "امر",
+              "فصه"
+            ]
+          },
+          {
+            "idiom": "يُطَيِّنُ عَيْنَ الشَّمْسِ",
+            "mean": "It describes someone who conceals a clear and obvious truth.",
+            "native": "يضرب لمن يَسْتُر الحقَّ الجلىَّ الواضحَ",
+            "ents": [
+              "عين",
+              "شمس"
+            ]
+          },
+          {
+            "idiom": "اِللِّي تِحْبَل بِاللِّيلْ تِوْلِدْ بِالنَّهَارْ",
+            "mean": "There is no way to conceal what is bound to be revealed.",
+            "native": "أي: لا سبيل إلى إخفاء ما لا بد من ظهوره.",
+            "ents": [
+              "ليل",
+              "نهار"
+            ]
+          }
+        ],
+        "shared": "truth becomes evident",
+        "a_pick": [
+          "水落石出"
+        ],
+        "b_pick": [
+          "قَدْ بَيَّنَ الصُّبْحُ لِذِى عَيْنَينِ",
+          "اِللِّي تِحْبَل بِاللِّيلْ تِوْلِدْ بِالنَّهَارْ"
+        ],
+        "a_image": [
+          "<e>water</e> recedes, <e>stones</e> appear"
+        ],
+        "b_image": [
+          "the <e>morning</e> makes it clear to <e>two-eyed person</e>",
+          "what is conceived in the <e>night</e> is born in the <e>day</e>"
+        ],
+        "a_roman": [
+          "shui luo shi chu"
+        ],
+        "b_roman": [
+          "qad bayyana as-subhu lidhi aynayn",
+          "illi tihbal billil twild binnahar"
+        ],
+        "a_pick_v": [
+          "水落石出"
+        ],
+        "a_image_v": [
+          "<e>water</e> recedes, <e>stones</e> appear"
+        ],
+        "a_roman_v": [
+          "shui luo shi chu"
+        ],
+        "b_pick_v": [
+          "قَدْ بَيَّنَ الصُّبْحُ لِذِى عَيْنَينِ",
+          "اِللِّي تِحْبَل بِاللِّيلْ تِوْلِدْ بِالنَّهَارْ"
+        ],
+        "b_image_v": [
+          "the <e>morning</e> makes it clear to <e>two-eyed person</e>",
+          "what is conceived in the <e>night</e> is born in the <e>day</e>"
+        ],
+        "b_roman_v": [
+          "qad bayyana as-subhu lidhi aynayn",
+          "illi tihbal billil twild binnahar"
+        ]
+      },
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8399,
+        "a_items": [
+          {
+            "idiom": "张大其事",
+            "mean": "To exaggerate a matter; to speak beyond the truth; to magnify an event.",
+            "native": "张夸张。",
+            "ents": [
+              "事"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "جَاءَ بِالشُّقَرِ وَالبُقَرِ وَبِبَنَاتِ غَيْرٍ",
+            "mean": "To come with altered speech contrary to truth, meaning to tell blatant lies.",
+            "native": "ويروى\"بالصُّقَر\"والغَيرْ: الاسم من قولك\"غَيَّرْتُ الشيء فتغير\"ويراد ههنا جاء بالكلام المغيَّرِ عن وَجْه الصدق،والشُّقَر والبُقَر:اسم لا يُعْرف، أي جاء بالكذب الصريح.",
+            "ents": [
+              "شقر",
+              "بقر",
+              "بنات"
+            ]
+          },
+          {
+            "idiom": "زَيِّ السَّفَافِيرْ عُقْلَه وْغَلَبَهْ",
+            "mean": "It describes someone whose shouting and claims are far greater than their actual capacity.",
+            "native": "السفافير عندهم جمع سُفَّارة (بضم الأول وتشديد الفاء)، وهي الصفارة التي ينفخ فيها. ومعنى العقلة (بضم فسكون): الأنبوب من القصب. والغلبة (بفتحتين): كثرة الصياح والجلبة؛ أي: هي أنبوب صغير وصوتها كبير وعالٍ. يُضرَب لمن صياحه ",
+            "ents": [
+              "سفافير",
+              "عقله"
+            ]
+          },
+          {
+            "idiom": "عَشَرِةِ اللِّيلْ تِسْعِينْ",
+            "mean": "The night exaggerates the true nature of things, making them appear greater than they actually are.",
+            "native": "أي: الليل لا تُكْشَف فيه حقيقة الشيء فَيُرَى أعظم مما هو عليه.",
+            "ents": [
+              "ليل"
+            ]
+          },
+          {
+            "idiom": "قُطُّهُمْ جَمَلْ وِبَرَاغِيتْهُمْ رِجَّالَهْ",
+            "mean": "It is used for someone who exaggerates things by making the small seem large.",
+            "native": "يُضْرَب لمن يبالغ في الأشياء ويُكَبِّر الصغير، فيجعل الهِرَّ جملًا والبراغيث رجالًا.",
+            "ents": [
+              "جمل",
+              "براغيتهم",
+              "رجاله"
+            ]
+          },
+          {
+            "idiom": "يِعْمِلِ الْحَبَّهْ قُبَّهْ",
+            "mean": "To exaggerate a trivial matter to make it seem significant, using it as a pretext for hostility or similar actions.",
+            "native": "أي: يعظِّم الشيءَ الصغير فيعده كبيرًا؛ ليستند عليه في مغاضبة سواه أو نحو ذلك. وانظر: «يطلع من الزبيبه خماره.»",
+            "ents": [
+              "حبه",
+              "قبه"
+            ]
+          },
+          {
+            "idiom": "العزا حارة (ساخنة) والميت كلب",
+            "mean": "It is used when something is announced with exaggerated fanfare while its reality is actually very small.",
+            "native": "العزاء حار، بينما الميت مجرد كلب. يقال المثل عندما يعلن عن شيء بشكل مبالغ فيه بينما في حقيقته صغير جدًا.",
+            "ents": [
+              "عزا",
+              "ميت",
+              "كلب"
+            ]
+          }
+        ],
+        "shared": "exaggerate a matter",
+        "a_pick": [
+          "张大其事"
+        ],
+        "b_pick": [
+          "زَيِّ السَّفَافِيرْ عُقْلَه وْغَلَبَهْ",
+          "يِعْمِلِ الْحَبَّهْ قُبَّهْ",
+          "العزا حارة (ساخنة) والميت كلب"
+        ],
+        "a_image": [
+          "make <e>the matter</e> big"
+        ],
+        "b_image": [
+          "<e>shouting</e> and <e>claims</e> exceed <e>capacity</e>",
+          "make a <e>grain</e> into a <e>dome</e>",
+          "the <e>funeral</e> is hot, but the <e>dead man</e> is a dog"
+        ],
+        "a_roman": [
+          "zhang da qi shi"
+        ],
+        "b_roman": [
+          "zayy al-safafir ʿaqlah w-ghalabah",
+          "yaʿmal al-habbah qubbah",
+          "al-ʿaza hara (sakhana) wal-mayyit kalb"
+        ],
+        "a_pick_v": [
+          "张大其事"
+        ],
+        "a_image_v": [
+          "make <e>the matter</e> big"
+        ],
+        "a_roman_v": [
+          "zhang da qi shi"
+        ],
+        "b_pick_v": [
+          "زَيِّ السَّفَافِيرْ عُقْلَه وْغَلَبَهْ",
+          "يِعْمِلِ الْحَبَّهْ قُبَّهْ",
+          "العزا حارة (ساخنة) والميت كلب"
+        ],
+        "b_image_v": [
+          "<e>shouting</e> and <e>claims</e> exceed <e>capacity</e>",
+          "make a <e>grain</e> into a <e>dome</e>",
+          "the <e>funeral</e> is hot, but the <e>dead man</e> is a dog"
+        ],
+        "b_roman_v": [
+          "zayy al-safafir ʿaqlah w-ghalabah",
+          "yaʿmal al-habbah qubbah",
+          "al-ʿaza hara (sakhana) wal-mayyit kalb"
+        ]
+      },
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8313,
+        "a_items": [
+          {
+            "idiom": "雪鬓霜毛",
+            "mean": "Refers to an elderly person.",
+            "native": "无指老年人。同雪鬓霜鬟”。",
+            "ents": [
+              "雪",
+              "鬓",
+              "霜",
+              "毛"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أكَلَ عَلَيْه الدَّهْرُ وَشَرِبَ",
+            "mean": "It refers to someone who has lived a long time; or to an old matter that has become outdated.",
+            "native": "يضرب لمن طال عمره، يريدون أكلَ وشرب دهرا طويلا،وقال: كم رأينا من أناسٍ قَبْلَنَا ... شربَ الدهْرُ عَلَيْهِمْ وأَكَلْ",
+            "ents": [
+              "دهر"
+            ]
+          },
+          {
+            "idiom": "أشْجَعُ مِنْ دِيكٍ",
+            "mean": "It refers to a man.",
+            "native": "وهو رجل.",
+            "ents": [
+              "ديك",
+              "صبي",
+              "اسامه",
+              "ليث",
+              "عريسه",
+              "هني"
+            ]
+          },
+          {
+            "idiom": "مالَكَ لاَ تَنْبَحُ يا كلبَ الدَّوْمِ قَدْ كُنْتَ نَبَّاحاً فَمَا لَكَ اليَوْمْ",
+            "mean": "It is used for someone who has grown old and become weak.",
+            "native": "يضرب لمن كَبُرَ وضَعُفَ. أصل المثل أن رجلاً كان له كلب، وكان له عِيْرٌ، فكان كلبه كلما جاءت نَبِحَ،فأبطأت العِيرُ فَقَالَ:مالَكَ لاَ تَنْبح يا كلب الدوم؟ أي ماللعِير لاَ تأتى؟",
+            "ents": [
+              "كلب",
+              "دوم"
+            ]
+          },
+          {
+            "idiom": "يَوْمَ النَّازِلينَ بُنَيتْ سُوقُ ثَمَانينَ",
+            "mean": "Used for one who is very old and has experienced many people and days, or for something ancient and long-forgotten.",
+            "native": "يعني بالنازلين نوحاً على نبينا وعليه الصلاَة والسلام ومَنْ معه حين خرجوا من السفينة، وكانوا ثمانين إنسانا مع ولده وكَنَائِنِهِ، وبَنُوا قريةً بالجزيرة يُقَال لها ثمانين بقرب الموصل. يضرب لمن قد أسَنَّ ولقي الناس والأَيام",
+            "ents": [
+              "نازلين",
+              "سوق",
+              "ثمانين"
+            ]
+          },
+          {
+            "idiom": "اِلْكَبَرْ كِبِرْنَا وِالْعَقْلْ مَا كْمِلْنَا",
+            "mean": "We have reached old age, yet our wisdom remains incomplete.",
+            "native": "أي: أما السن فقد بلغنا منه عتيًّا، ولكنا لم نكمل بالعقل، فهو في معنى قولهم: «شابت لحاهم والعقل لسه ما جاهم.» وتقدم في الشين المعجمة.",
+            "ents": [
+              "عقل"
+            ]
+          },
+          {
+            "idiom": "فَحْتِ الْبَحْرْ",
+            "mean": "A metaphor for old age and the passage of time.",
+            "native": "كناية عن القدم وتقدم الزمن.",
+            "ents": [
+              "بحر"
+            ]
+          }
+        ],
+        "shared": "old age",
+        "a_pick": [
+          "雪鬓霜毛"
+        ],
+        "b_pick": [
+          "أكَلَ عَلَيْه الدَّهْرُ وَشَرِبَ",
+          "مالَكَ لاَ تَنْبَحُ يا كلبَ الدَّوْمِ قَدْ كُنْتَ نَبَّاحاً فَمَا لَكَ اليَوْمْ",
+          "فَحْتِ الْبَحْرْ"
+        ],
+        "a_image": [
+          "<e>snow</e>-white <e>temples</e> and <e>frost</e>-like <e>hair</e>"
+        ],
+        "b_image": [
+          "<e>time</e> has eaten and drunk on him",
+          "why do you not bark, <e>dog</e> of <e>eternity</e>; you were once barking",
+          "<e>sea</e> breath, <e>old age</e> and passing time"
+        ],
+        "a_roman": [
+          "xue bin shuang mao"
+        ],
+        "b_roman": [
+          "akala alayhi al-dahru wa shariba",
+          "malaka la tanbahu ya kalba al-dawm qad kunta nabban fama laka al-yawm",
+          "faht al-bahr"
+        ],
+        "a_pick_v": [
+          "雪鬓霜毛"
+        ],
+        "a_image_v": [
+          "<e>snow</e>-white <e>temples</e> and <e>frost</e>-like <e>hair</e>"
+        ],
+        "a_roman_v": [
+          "xue bin shuang mao"
+        ],
+        "b_pick_v": [
+          "أكَلَ عَلَيْه الدَّهْرُ وَشَرِبَ",
+          "مالَكَ لاَ تَنْبَحُ يا كلبَ الدَّوْمِ قَدْ كُنْتَ نَبَّاحاً فَمَا لَكَ اليَوْمْ",
+          "فَحْتِ الْبَحْرْ"
+        ],
+        "b_image_v": [
+          "<e>time</e> has eaten and drunk on him",
+          "why do you not bark, <e>dog</e> of <e>eternity</e>; you were once barking",
+          "<e>sea</e> breath, <e>old age</e> and passing time"
+        ],
+        "b_roman_v": [
+          "akala alayhi al-dahru wa shariba",
+          "malaka la tanbahu ya kalba al-dawm qad kunta nabban fama laka al-yawm",
+          "faht al-bahr"
+        ]
+      },
+      {
+        "pair": "zh-ar",
+        "a": "zh",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.83,
+        "a_items": [
+          {
+            "idiom": "惊弦之鸟",
+            "mean": "A person who, having been frightened, becomes terrified by the slightest movement.",
+            "native": "无比喻经过惊吓的人碰到一点动静就非肠怕。同惊弓之鸟”。",
+            "ents": [
+              "弦",
+              "鸟"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أَجْبَنُ مِنْ نَعَامَة",
+            "mean": "One who, once frightened by something, never returns to it again.",
+            "native": "وذلك أنها إذا خافت من شيء لا ترجع إليه بعد ذلك الخوف.",
+            "ents": [
+              "نعامه"
+            ]
+          },
+          {
+            "idiom": "ما اسْتَبقَاكَ مَنْ عَرَّضَكَ لِلأسَدِ",
+            "mean": "It describes someone who forces you into a situation where you dread the consequences.",
+            "native": "يضرب لمن يحملك على ما تُكْرَهُ عاقبتُه",
+            "ents": [
+              "اسد"
+            ]
+          },
+          {
+            "idiom": "مَنْ بَعُدَ قَلْبُهُ لَمْ يَقْرُبْ لِسَانُهُ وَيَدُهُ",
+            "mean": "It is used to describe a person who is terrified or filled with fear.",
+            "native": "يضرب للخائف الفزع.",
+            "ents": [
+              "قلبه",
+              "لسانه",
+              "يده"
+            ]
+          },
+          {
+            "idiom": "اِللِّي يْخَافْ مِنِ الْقِرْدْ يِرْكَبُهْ",
+            "mean": "Showing fear invites others to despise you and act boldly against you.",
+            "native": "أي: من خاف وجَبُنَ من القرد استضعفه وتجرَّأَ على ركوب كتفيه. يُضرَب في أن إظهار الخوف مجلبةٌ للاستخفاف بالشخص والجراءة عليه.",
+            "ents": [
+              "قرد"
+            ]
+          },
+          {
+            "idiom": "زَيِّ بُهْرُجَانِ التَّرْبِيعَهْ؛ شَعْرِةْ رِيحْ تِهِزُّهْ",
+            "mean": "It describes a coward who is frightened by the slightest thing.",
+            "native": "البُهْرُجَان (بضم فسكون فضم): شريط مُذَهَّب رقيق جدًّا يُتْخَذ من المعدن يتحرك بأقل ريح تُزَيَّن به رءوس العرائس في القرى ورءوس الصبيان في مواكب ختانهم. والتربيعة: محلة بالقاهرة يباع فيها العطر، ومن عادة العطارين تعليق ا",
+            "ents": [
+              "بهرجان",
+              "تربيعه",
+              "شعره",
+              "ريح"
+            ]
+          },
+          {
+            "idiom": "زَيِّ السَّمَكْ يِنْزِلْ عَ السَّنَانِيرْ بِدِيلُهْ",
+            "mean": "It describes a person who is extremely alert and cautious, approaching danger only with the very tip of their tail to avoid being caught.",
+            "native": "أي: مثل السمك الذي يفعل ذلك، ولو كان جميعه يفعله ما اصطاد أحد منه شيئًا. والسنانير: جمع سِنَّارة (بكسر الأول وتشديد النون)، وهي الشصُّ يُعَلَّق بخيط ويُصَاد به. والدِّيل: الذَّنَب. يُضرَب للمتيقظ الكثير الحذر، فهو كالسمك",
+            "ents": [
+              "سمك",
+              "سنانير",
+              "بديله"
+            ]
+          }
+        ],
+        "shared": "terrified by slightest thing",
+        "a_pick": [
+          "惊弦之鸟"
+        ],
+        "b_pick": [
+          "زَيِّ بُهْرُجَانِ التَّرْبِيعَهْ؛ شَعْرِةْ رِيحْ تِهِزُّهْ"
+        ],
+        "a_image": [
+          "a <e>bird</e> startled by a <e>string</e>"
+        ],
+        "b_image": [
+          "like a <e>bird</e> in <e>spring</e>; a <e>hair</e> of <e>wind</e> shakes it"
+        ],
+        "a_roman": [
+          "jing xian zhi niao"
+        ],
+        "b_roman": [
+          "zayyi buhrjaan al-tarbi'ah; sha'rat riih tihizzuh"
+        ],
+        "a_pick_v": [
+          "惊弦之鸟"
+        ],
+        "a_image_v": [
+          "a <e>bird</e> startled by a <e>string</e>"
+        ],
+        "a_roman_v": [
+          "jing xian zhi niao"
+        ],
+        "b_pick_v": [
+          "زَيِّ بُهْرُجَانِ التَّرْبِيعَهْ؛ شَعْرِةْ رِيحْ تِهِزُّهْ"
+        ],
+        "b_image_v": [
+          "like a <e>bird</e> in <e>spring</e>; a <e>hair</e> of <e>wind</e> shakes it"
+        ],
+        "b_roman_v": [
+          "zayyi buhrjaan al-tarbi'ah; sha'rat riih tihizzuh"
+        ]
+      }
+    ],
+    "hi-ar": [
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8704,
+        "a_items": [
+          {
+            "idiom": "अपनी काई दूसरे के सिर",
+            "mean": "To blame one's own faults on others; to attribute the cause of one's own shortcomings to someone else.",
+            "native": "अपना अवगुण दूसरे के ऊपर थोपने पर कहते हैं। जब कोई व्यक्ति अपनी कमी का कारण दूसरे को बतलाता है तब ऐसा कहते हैं।",
+            "ents": [
+              "सिर"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "جَعَلَتْ مَا بِهَا بِيَ وَانْطَلَقَتْ تَلْمِزُ",
+            "mean": "It is used for someone who commits the very fault they criticize in others.",
+            "native": "أصله أن رجلا أشْرَفَ على سَوْأة من امرأة، فوقع بها وعابها،فقالت:إنما عِبْتَني بما صنعت وأنت أولى به مني، ثم انصرفَتْ عنه،فقال الرجل:جعلت ما بها بي وانطلقت تلمز، فأرسلها مثلا. يضرب للواقع فيما عَيَّرَ به غيره.",
+            "ents": [
+              "ما"
+            ]
+          },
+          {
+            "idiom": "كُلُّ كّلْبِ بِبَابِهِ نَبَّاحٌ",
+            "mean": "It is used for someone who boasts about their own specific wrongdoing or misfortune.",
+            "native": "يضرب لمن يضرب له\"كُلُّ مُجْرٍ في الخلا يُسَرُّ\".",
+            "ents": [
+              "كلب",
+              "بابه"
+            ]
+          },
+          {
+            "idiom": "كالثَّورِ يُضْرَبُ لمَّا عافَتِ البَقَرُ",
+            "mean": "Punishing someone for another's fault; being held responsible for a crime one did not commit.",
+            "native": "عَافَ يَعَافُ عِيَافاً، إذا كره، كانت العرب إذا أوردوا البقرَ فلم تشرب لكَدَر الماء أو لأنه لا عَطَشَ بها ضربوا الثَّوْرَ ليقتحم البقرُ الماء،قَال نَهْشَل بن حَرِّيٍّ: أَتُتْرَكُ دَارِمٌ وَبَنُو عَدِيِّ ... وتَغْرَمُ عَا",
+            "ents": [
+              "ثور",
+              "بقر"
+            ]
+          },
+          {
+            "idiom": "كَيْفَ تُبْصِرُ القَذَى فِي عَيْنِ أخِيْكَ وَتَدَعُ الجِذْعَ المُعْتَرِضَ في عَيْنَكَ",
+            "mean": "It means blaming others for a fault that is only a part of the greater faults you possess yourself.",
+            "native": "يعني تعييرك غيرَكَ داءٌ هو جزء من جملة مافيك من الأدواء، يعني العيوب",
+            "ents": [
+              "قذي",
+              "عين",
+              "اخيك",
+              "جذع",
+              "عينك"
+            ]
+          },
+          {
+            "idiom": "يَوْمٌ بِيَوْمِ الحَفَضِ المُجَوِّرِ",
+            "mean": "To gloat at another's misfortune as retribution for one's own past actions; or to suffer the same fate one inflicted on others.",
+            "native": "الحَفَضُ:الخباء بأسره مع ما فيه من كساء وعَمُود، ويُقَال للبعير الذي يحمل هذه الأمتعة\"حفَض\"أيضاً،والمجَوَّر:الساقط،يُقَال:طعنه فَجَوَّرُهُ. يضرب عند الشماتة بالنكبة تصيب ولما بلغ أهلَ المدينة قتلُ الحسين بن علي رضي الله ",
+            "ents": [
+              "يوم",
+              "حفض"
+            ]
+          },
+          {
+            "idiom": "يَعْقِدُ في مِثْلِ الصَّوابِ وَفِي عَيْنَيهِ مِثْلُ الجَرَّةِ",
+            "mean": "It is used for someone who criticizes you for a minor fault while ignoring their own many greater defects.",
+            "native": "يضرب لمن يلومُكَ في القليل ما كثر منه من العيوب. أنشد الرياشي: ألاَ أيُّهذَا اللاَئِمِي في خَليقَتي ... هَلْ النفس فيمَا كَانَ مِنْكَ تَلُومُ فكيف تَرَى فِي عَيْنِ صَاحِبِكِ القَذَى ... وَتَنْسَى قَذَى عَيْنَيْكَ وَهُوَ ",
+            "ents": [
+              "صواب",
+              "عينيه",
+              "جره"
+            ]
+          }
+        ],
+        "shared": "blaming others for own faults",
+        "a_pick": [
+          "अपनी काई दूसरे के सिर"
+        ],
+        "b_pick": [
+          "جَعَلَتْ مَا بِهَا بِيَ وَانْطَلَقَتْ تَلْمِزُ",
+          "كَيْفَ تُبْصِرُ القَذَى فِي عَيْنِ أخِيْكَ وَتَدَعُ الجِذْعَ المُعْتَرِضَ في عَيْنَكَ",
+          "يَعْقِدُ في مِثْلِ الصَّوابِ وَفِي عَيْنَيهِ مِثْلُ الجَرَّةِ"
+        ],
+        "a_image": [
+          "one's own <e>kाई</e> on another's <e>head</e>"
+        ],
+        "b_image": [
+          "she made what is in <e>her</e> be in <e>me</e>, then went off blaming",
+          "how do you see the <e>speck</e> in your brother's <e>eye</e> and leave the <e>beam</e> in your own eye",
+          "he ties up in the likeness of <e>right</e>, while in his two <e>eyes</e> is like a <e>jar</e>"
+        ],
+        "a_roman": [
+          "apni kai doosre ke sir"
+        ],
+        "b_roman": [
+          "ja‘alat ma biha biya wa-intalakat talmiz",
+          "kayfa tubsiru al-qadha fi ‘ayni akhika wa tadharu al-jidh‘a al-mu‘tarida fi ‘aynika",
+          "ya‘qidu fi mithli al-sawab wa fi ‘aynayhi mithlu al-jarra"
+        ],
+        "a_pick_v": [
+          "अपनी काई दूसरे के सिर"
+        ],
+        "a_image_v": [
+          "one's own <e>kाई</e> on another's <e>head</e>"
+        ],
+        "a_roman_v": [
+          "apni kai doosre ke sir"
+        ],
+        "b_pick_v": [
+          "جَعَلَتْ مَا بِهَا بِيَ وَانْطَلَقَتْ تَلْمِزُ",
+          "كَيْفَ تُبْصِرُ القَذَى فِي عَيْنِ أخِيْكَ وَتَدَعُ الجِذْعَ المُعْتَرِضَ في عَيْنَكَ",
+          "يَعْقِدُ في مِثْلِ الصَّوابِ وَفِي عَيْنَيهِ مِثْلُ الجَرَّةِ"
+        ],
+        "b_image_v": [
+          "she made what is in <e>her</e> be in <e>me</e>, then went off blaming",
+          "how do you see the <e>speck</e> in your brother's <e>eye</e> and leave the <e>beam</e> in your own eye",
+          "he ties up in the likeness of <e>right</e>, while in his two <e>eyes</e> is like a <e>jar</e>"
+        ],
+        "b_roman_v": [
+          "ja‘alat ma biha biya wa-intalakat talmiz",
+          "kayfa tubsiru al-qadha fi ‘ayni akhika wa tadharu al-jidh‘a al-mu‘tarida fi ‘aynika",
+          "ya‘qidu fi mithli al-sawab wa fi ‘aynayhi mithlu al-jarra"
+        ]
+      },
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8446,
+        "a_items": [
+          {
+            "idiom": "दोनों हाथ मिलकर काम करते हैं",
+            "mean": "Any task is difficult to accomplish without the cooperation of others.",
+            "native": "दोनों हाथों से ही कोई काम किया जा सकता है। आशय यह है कि बिना दूसरों के सहयोग से कोई काम करना कठिन होता है।",
+            "ents": [
+              "हाथ",
+              "काम"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "اِللِّي يِعْمِلْ إِيدُهْ مَغْرَفَهْ يُصْبُرْ عَلَى ضَرْبِ الْحِلَلْ",
+            "mean": "One who undertakes a task must endure the hardships that come with it.",
+            "native": "يعمل إيده؛ أي: يجعل يده. والحِلَل (بكسر ففتح): جمع حَلَّة (بفتح الحاء واللام المشددة) ويريدون بها القدور من النحاس؛ أي: من يتعرض لأمر فليصبرْ على ما يصيبه منه. وقد نَظَمَهُ بعض العصرِيِّين في زجل فقال: ٦٨ من يعملْ إيدَه ",
+            "ents": [
+              "ايده",
+              "مغرفه",
+              "حلل"
+            ]
+          },
+          {
+            "idiom": "إِنْ كَانِتِ الْبِيضَهْ لَهَا وِدْنِينْ يِشِيلُوهَا اتْنِينْ",
+            "mean": "Even the smallest task deserves cooperation, as two people should work together to lift it.",
+            "native": "الودن عندهم (بكسر فسكون): الأذن. يُضرَب في مدح التعاون وكونه أحكمَ للأمور؛ أي: لو كانت البيضة على صغرها وخفة حجمها لها أذنان كأذني الجوالق، لَحَقَّ أن يرفعها اثنان ويتعاونا على حملها. ويرويه بعضهم: «لو كان للبيضة ودنين ك",
+            "ents": [
+              "بيضه",
+              "ودنين",
+              "اتنين"
+            ]
+          },
+          {
+            "idiom": "إِيدْ عَلَى إِيدْ تِسَاعِدْ",
+            "mean": "It encourages cooperation in work, as people do not fail when they help one another.",
+            "native": "يُضرَب في الحثِّ على التكاتف في العمل. وانظر قولهم: «البركة في كتر الأيادي.» ومن أمثال العرب التي أوردها الهمذاني في كتابه قولهم: «لَا يَعْجزُ الْقَوْمُ إِذَا تَعَاوَنُوا.» ١٠٣",
+            "ents": [
+              "ايد"
+            ]
+          },
+          {
+            "idiom": "إِيدْ وَاحْدَهْ مَا تْسَقَّفْشْ",
+            "mean": "A single person cannot succeed alone; people must cooperate to achieve success.",
+            "native": "التسقيف عندهم: التصفيق، وهو محرَّف عنه؛ أي: يَدٌ واحدة لا تُصَفِّق، وإنما تصفِّق اليدان. يُضرَب للأمر لا يستطيع الشخص القيام به وحده.",
+            "ents": [
+              "ايد"
+            ]
+          },
+          {
+            "idiom": "اِلْبَرَكَهْ فِي كُتْرِ الْأَيَادِي",
+            "mean": "Cooperation makes tasks easier; it praises mutual assistance and unity.",
+            "native": "لأن الناس إذا تعاونوا على أمر تَيَسَّرَ إتمامه. يُضرَب في مدح المعاونة والتكاتف. وانظر: «إيد على إيد تساعد.» والعرب تقول في أمثالها: «لا يَعجزُ القومُ إذا تعاونُوا.» وهو من الأمثال التي أوردها الهمذاني في كتابه. ٥",
+            "ents": [
+              "بركه",
+              "كتر",
+              "ايادي"
+            ]
+          },
+          {
+            "idiom": "ايد لوحدها ماتسقفش",
+            "mean": "One hand cannot clap alone; this proverb illustrates the necessity of cooperation and mutual assistance.",
+            "native": "أي أن يدًا واحدة لا تستطيع أن تصفق؛ فيلزم اشتراك اليد الأخرى معها، ويضرب هذا المثل على فائدة التعاون.",
+            "ents": [
+              "ايد"
+            ]
+          }
+        ],
+        "shared": "cooperation in work",
+        "a_pick": [
+          "दोनों हाथ मिलकर काम करते हैं"
+        ],
+        "b_pick": [
+          "إِيدْ وَاحْدَهْ مَا تْسَقَّفْشْ",
+          "ايد لوحدها ماتسقفش",
+          "إِيدْ عَلَى إِيدْ تِسَاعِدْ"
+        ],
+        "a_image": [
+          "<e>two hands</e> work together"
+        ],
+        "b_image": [
+          "a single <e>hand</e> cannot clap",
+          "a single <e>hand</e> cannot clap",
+          "<e>hand</e> on <e>hand</e> helps"
+        ],
+        "a_roman": [
+          "donon haath milkar kaam karte hain"
+        ],
+        "b_roman": [
+          "id wahda ma tsaffafsh",
+          "id lohda mattsaffafsh",
+          "id ala id tisaad"
+        ],
+        "a_pick_v": [
+          "दोनों हाथ मिलकर काम करते हैं"
+        ],
+        "a_image_v": [
+          "<e>two hands</e> work together"
+        ],
+        "a_roman_v": [
+          "donon haath milkar kaam karte hain"
+        ],
+        "b_pick_v": [
+          "إِيدْ وَاحْدَهْ مَا تْسَقَّفْشْ",
+          "ايد لوحدها ماتسقفش",
+          "إِيدْ عَلَى إِيدْ تِسَاعِدْ"
+        ],
+        "b_image_v": [
+          "a single <e>hand</e> cannot clap",
+          "a single <e>hand</e> cannot clap",
+          "<e>hand</e> on <e>hand</e> helps"
+        ],
+        "b_roman_v": [
+          "id wahda ma tsaffafsh",
+          "id lohda mattsaffafsh",
+          "id ala id tisaad"
+        ]
+      },
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8429,
+        "a_items": [
+          {
+            "idiom": "सब की दवा है आदत की दवा नहीं",
+            "mean": "This phrase describes those who refuse to abandon a bad habit despite repeated admonitions.",
+            "native": "जो बार-बार समझाने पर भी किसी बुराई को नहीं छोड़ते, उनके प्रति कहा जाता है।",
+            "ents": [
+              "दवा",
+              "आदत"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "رَأْسٌ لِشَوْرٍ ما يُطارُ نُعرَتُهُ",
+            "mean": "It is used for one who persists in ignorance and cannot be deterred by the admonition of an advisor.",
+            "native": "شَوْر:اسم رجل،والنُّعَرة:ذباب يتعرض للحمير وسائر الدواب فيدخل أنفها. يضرب لمن أصَرَّ على جَهْله فلا يزجره زجر ناصح.",
+            "ents": [
+              "راس",
+              "لشور",
+              "نعرته"
+            ]
+          },
+          {
+            "idiom": "اُسْقِ أخَاكَ النَّمَرِيَّ",
+            "mean": "It describes a person who persistently demands one need after another until resources are exhausted.",
+            "native": "قال أبو عبيد:أصله أن رجلا من النمر ابن قاسطٍ صحب كَعْبَ بن مَامَةَ وفي الماء قلة، فكانوا يشربون بالْحَصَاة،وكان كلما أراد كعب أن يشرب نظر إليه النمري فيقول كعب للساقي:اسْقِ أخاك النمري، فيسقيه، حتى نفذ الماء ومات كعب عطش",
+            "ents": [
+              "اخاك",
+              "نمري"
+            ]
+          },
+          {
+            "idiom": "سَوْفَ تَرَىَ وَيَنْجَلِي الغُبَارُ ... أَفَرَسٌ تَحْتَكَ أَمْ حِمَارُ",
+            "mean": "It is used for someone who is forbidden from doing something but refuses to obey.",
+            "native": "يضرب لمن يُنْهَى عن شيء فيأبى.",
+            "ents": [
+              "غبار",
+              "افرس",
+              "حمار"
+            ]
+          },
+          {
+            "idiom": "غَرِيَتْ بالسُّودِ، وَفي البِيْضِ الكُثْرُ",
+            "mean": "It is used for one who is excessively attached to something and refuses to leave it due to strong inclination.",
+            "native": "يُقَال:غَرِىَ بالشَيء يَغْرَى غَراً، إذا أولِعَ به،والكُثر:الكثْرة،يُقَال:الحمد لله على القُلِّ والكُثْر. يضرب لمن لزم شَيئَاً لا يفارقه مَيْلاً منه إليه.",
+            "ents": [
+              "سود",
+              "بيض"
+            ]
+          },
+          {
+            "idiom": "لاَ ذَنْبَ لي قَدْ قُلْتُ لِلْقَوْمِ اسْتَقُوا",
+            "mean": "It is used for someone who refuses to accept advice despite being clearly guided.",
+            "native": "ويُنشد معه: أنْ تَرِدَ المَاءَ بِمَا أرْفَقُ ... لاَ ذَنْبَ لي قَدْ قُلْتُ لِلْقَوْمِ اسْتَقُوا ثم قَال: وَهُمْ إلىَ جَنْبِ غَدِيرٍ يَفْهَقُ ... يضرب لمن لا يقبل الموعظة",
+            "ents": [
+              "ذنب"
+            ]
+          },
+          {
+            "idiom": "هُوَ مَكَانُ القُرَادِ مِنَ اسْتِ الجَمَلِ",
+            "mean": "It describes someone who constantly clings to something and never leaves it.",
+            "native": "يضرب لمن يلاَزم شيئاً لاَ يفارقه البتة",
+            "ents": [
+              "قراد",
+              "است",
+              "جمل"
+            ]
+          }
+        ],
+        "shared": "refuses advice and persists",
+        "a_pick": [
+          "सब की दवा है आदत की दवा नहीं"
+        ],
+        "b_pick": [
+          "رَأْسٌ لِشَوْرٍ ما يُطارُ نُعرَتُهُ",
+          "لاَ ذَنْبَ لي قَدْ قُلْتُ لِلْقَوْمِ اسْتَقُوا",
+          "سَوْفَ تَرَىَ وَيَنْجَلِي الغُبَارُ ... أَفَرَسٌ تَحْتَكَ أَمْ حِمَارُ"
+        ],
+        "a_image": [
+          "no imagery"
+        ],
+        "b_image": [
+          "<e>head</e> for <e>consultation</e>; its <e>call</e> is not driven away",
+          "no imagery",
+          "you will see when the <e>dust</e> clears ... is it a <e>horse</e> under you or a <e>donkey</e>?"
+        ],
+        "a_roman": [
+          "sab ki dava hai aadat ki dava nahin"
+        ],
+        "b_roman": [
+          "ra'sun lishawrin ma yutaru nu'ratuhu",
+          "la dhanba li qad qultu lilqawmi istaqu",
+          "sawfa tara wa yanjali al-ghubaru ... afarasun tahtaka am himaru"
+        ],
+        "a_pick_v": [
+          "सब की दवा है आदत की दवा नहीं"
+        ],
+        "a_image_v": [
+          "no imagery"
+        ],
+        "a_roman_v": [
+          "sab ki dava hai aadat ki dava nahin"
+        ],
+        "b_pick_v": [
+          "رَأْسٌ لِشَوْرٍ ما يُطارُ نُعرَتُهُ",
+          "لاَ ذَنْبَ لي قَدْ قُلْتُ لِلْقَوْمِ اسْتَقُوا"
+        ],
+        "b_image_v": [
+          "<e>head</e> for <e>consultation</e>; its <e>call</e> is not driven away",
+          "no imagery"
+        ],
+        "b_roman_v": [
+          "ra'sun lishawrin ma yutaru nu'ratuhu",
+          "la dhanba li qad qultu lilqawmi istaqu"
+        ]
+      },
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.842,
+        "a_items": [
+          {
+            "idiom": "अनाज बिखरे मुर्गों खुश",
+            "mean": "One's loss becomes another's gain.",
+            "native": "अनाज बिखरने से मुर्गी प्रसन्न हो जाती है। एक की हानि दूसरे के लाभ का कारण बन जाती है।",
+            "ents": [
+              "अनाज",
+              "मुर्गी"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أَبُوكْ خَلِّفْ لَكْ إِيهْ؟ قَالْ: جِدْيْ وِمَاتْ",
+            "mean": "It describes someone who gains a little but then loses it, ending up with nothing.",
+            "native": "أي قيل: ما الذي ورثته من أبيك؟ فقال: جَدْيٌ واحد وقد مات. يُضرَب فيمن يصيب القليل ثم يذهب منه؛ فيكون كمن لم يُصِبْ شيئًا.",
+            "ents": [
+              "ابوك",
+              "جدي"
+            ]
+          },
+          {
+            "idiom": "اِللِّي يَاكُلْ عِيشْ النَّاسْ بَارِدْ يِقَمَّرُهْ لهُمْ",
+            "mean": "One who easily takes from others will eventually return it to them with great hardship and toil.",
+            "native": "يقرأ: يقمرو لهم، الهاء غير موجودة. والتقمير مُحَرَّف عن التجمير؛ أي: تسخين الخبز على الجمر؛ أي: من ناله شيء من الناس بسهولة قضى عليه الحال أن يرده لهم بتعب ومشقة.",
+            "ents": [
+              "عيش",
+              "ناس"
+            ]
+          },
+          {
+            "idiom": "إِيدْ فَرَّغِتْ فِي اخْتَهَا",
+            "mean": "It is used for something lost to one owner but gained by another, so its loss is not regretted as it remains in existence.",
+            "native": "يُضرَب للشيء الذاهب يحوزه الصاحب من صاحبه، فلا يُؤْسَف على فقده؛ أي: هو في حكم الباقي المنتقل من اليمين إلى الشمال.",
+            "ents": [
+              "ايد"
+            ]
+          },
+          {
+            "idiom": "تُكُونْ فِي إِيدَكْ تِقْسِمْ لِغِيرَكْ",
+            "mean": "Something you possess or hold may be destined for another, who will ultimately obtain it instead of you.",
+            "native": "ويُروَى: «في إيدك و…» والإيد (بكسر الأول): اليد. ويُروَى: تكون في «حنكك»؛ أي: في فمك. والمراد: تكون الحاجة، وهي عندهم بمعنى الشيء أضمر لها وإن لم يجر لها ذكر، والمعنى: قد يكون في يدك أو في فيك وهو مقسوم لغيرك؛ فيفوز به د",
+            "ents": [
+              "ايدك"
+            ]
+          },
+          {
+            "idiom": "اِلرِّغِيفِ اللَّامِعْ لِلصَّاحِبِ النَّافِعْ",
+            "mean": "The person who benefits you is the one most deserving of your benefit; similarly, the one who helps you deserves your help.",
+            "native": "أي: أولى الناس بالانتفاع منك الذي ينفعك، ومثله قولهم: «الرغيف المقمر للصاحب اِللِّي يدور.»",
+            "ents": [
+              "رغيف"
+            ]
+          },
+          {
+            "idiom": "مَا بِالْمَيِّتْ مُوتُّهْ وِمَا بُهْ زَنْقِةِ الْقَبْرْ",
+            "mean": "A misfortune is accompanied by another; one calamity is not enough before another strikes.",
+            "native": "يُضرَب للمصيبة تحيط بها أخرى (في «الكنز المدفون» أوائل ص١٤٥: «ما كفى الميت ميته حتى حذقه القبر»).",
+            "ents": [
+              "ميت",
+              "زنقه",
+              "قبر"
+            ]
+          }
+        ],
+        "shared": "one's loss becomes another's gain",
+        "a_pick": [
+          "अनाज बिखरे मुर्गों खुश"
+        ],
+        "b_pick": [
+          "إِيدْ فَرَّغِتْ فِي اخْتَهَا",
+          "تُكُونْ فِي إِيدَكْ تِقْسِمْ لِغِيرَكْ"
+        ],
+        "a_image": [
+          "<e>grain</e> scattered, <e>chickens</e> happy"
+        ],
+        "b_image": [
+          "a <e>hand</e> emptied into its <e>sister</e>",
+          "what is in your <e>hand</e> is divided for <e>another</e>"
+        ],
+        "a_roman": [
+          "anaaj bikhre murghon khush"
+        ],
+        "b_roman": [
+          "id faraghet fi ukhta-ha",
+          "tukoon fi idak tiksim lighayrak"
+        ],
+        "a_pick_v": [
+          "अनाज बिखरे मुर्गों खुश"
+        ],
+        "a_image_v": [
+          "<e>grain</e> scattered, <e>chickens</e> happy"
+        ],
+        "a_roman_v": [
+          "anaaj bikhre murghon khush"
+        ],
+        "b_pick_v": [
+          "إِيدْ فَرَّغِتْ فِي اخْتَهَا",
+          "تُكُونْ فِي إِيدَكْ تِقْسِمْ لِغِيرَكْ"
+        ],
+        "b_image_v": [
+          "a <e>hand</e> emptied into its <e>sister</e>",
+          "what is in your <e>hand</e> is divided for <e>another</e>"
+        ],
+        "b_roman_v": [
+          "id faraghet fi ukhta-ha",
+          "tukoon fi idak tiksim lighayrak"
+        ]
+      },
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8394,
+        "a_items": [
+          {
+            "idiom": "अपनी भूमि पर घास जमे, दूसरे को करें गोड़ाई",
+            "mean": "One fails to manage their own affairs yet goes to take care of others'.",
+            "native": "अपनी चीज़ तो संभलती नहीं और दूसरे की सँभालने चले हैं।",
+            "ents": [
+              "भूमि",
+              "घास",
+              "गोड़ाई"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "أَحْمَقً مِنْ نَعَامَةٍ",
+            "mean": "Foolish enough to neglect one's own duties while tending to others, or so stupid that one loses track of one's own possessions.",
+            "native": "وذلك أنها تنتشر للطعم، فربما رأت بيضَ نعامةٍ أخرى قد انتشرت هي له، فتَحْضُنُ بيضَها وتنسى بيض نفسها، ثم تجيء الأخرى فتَرَى غيرَها على بيض نفسها فتَمر لِطِيَّتِهَا،وإياها عَنَى ابنُ هَرْمَةَ بقوله: كتاركَةٍ بَيْضَها بالعَ",
+            "ents": [
+              "نعامه"
+            ]
+          },
+          {
+            "idiom": "شَغَلَ اَلْحْليُ أَهْلَهُ أَنْ يُعاَرا",
+            "mean": "One is too needy of something to lend it to others; similar to being too occupied with one's own needs to help.",
+            "native": "أي أهلَ الحلي، احتاجوا أن يُعَلِّقوه على أنفسهم، فلذلك لا يعيرون، وهذا قريب من قولهم\"شَغَلَتْ شِعَابِي جَدْوَاىَ \"يضربه المسؤل شيئا هو أحْوَجُ إليه من السائل.",
+            "ents": [
+              "حلي",
+              "اهله"
+            ]
+          },
+          {
+            "idiom": "٣٣٩٧ لَكِنْ عَدَّاءٌ لا أُّمَّ له",
+            "mean": "It is used for someone who has no one to care for their affairs.",
+            "native": "عدَّاء:اسم غلام، ويروى\"عدى\"يضرب لمن لا يكون له مَنْ يهتمُ بأمره.",
+            "ents": [
+              "عداء",
+              "ام"
+            ]
+          },
+          {
+            "idiom": "أمْوَقُ مَنْ نَعَامةٍ",
+            "mean": "Neglecting one's own interests while mistakenly caring for those of others.",
+            "native": "وذلك أنها تخرج للطعم فربما رأتْ بيضَ نَعَامةٍ أخرى قد خرجت لمثل ما خرجت هي فَتَحْضُنُ بيضَها وتَدَعُ بيضَ نفسها،وإياها أراد ابنُ هَرْمَةَ بقوله: كَتَارِكَةٍ بَيْضَهَا بِالعَرَاء ... وَمُلْبِسَةٍ بَيْضَ أخْرَى جَنَاحاً",
+            "ents": [
+              "نعامه"
+            ]
+          },
+          {
+            "idiom": "اِللِّي يْمِد رِجْلُهْ مَا يْمِدِّشْ إِيدُهْ",
+            "mean": "One who acts independently and ignores others cannot later ask them for help, as they have already shown self-sufficiency.",
+            "native": "أي: من مَدَّ رجلَه ولم يعبأ بالناس لا يحق له مَدُّ يَدِه لسؤالهم؛ لأنه بذلك ظهر بمظهر المُسْتَغْنِي عنهم فكيف يصح له استجداؤهم بعد ذلك؟! ومن طريف ما يروى في زيارة السلطان عبد العزيز العثماني لمصر سنة ١٢٧٩ﻫ أنه كان بها رج",
+            "ents": [
+              "رجله",
+              "ايده"
+            ]
+          },
+          {
+            "idiom": "جِينَا نْسَاعْدُهْ فِي دَفْنَ ابُوهْ فَاتْ لِنَا الْفَاسْ وِمِشِي",
+            "mean": "It describes someone who neglects their own duties while others help them, refusing to share the burden of labor.",
+            "native": "أي: جئنا نساعده في حفر قبر أبيه لمواراته فترك لنا الفأس ومضى. يُضرَب فيمن يهتم الناس بمساعدته في أموره، ويهملها هو، ولا يشترك معهم في التعب.",
+            "ents": [
+              "دفن",
+              "ابوه",
+              "فاس"
+            ]
+          }
+        ],
+        "shared": "neglecting own duties for others",
+        "a_pick": [
+          "अपनी भूमि पर घास जमे, दूसरे को करें गोड़ाई"
+        ],
+        "b_pick": [
+          "أَمْوَقُ مَنْ نَعَامةٍ",
+          "جِينَا نْسَاعْدُهْ فِي دَفْنَ ابُوهْ فَاتْ لِنَا الْفَاسْ وِمِشِي"
+        ],
+        "a_image": [
+          "<e>own land</e> grows <e>grass</e>, yet one does <e>weeding</e> for others"
+        ],
+        "b_image": [
+          "more foolish than a <e>ostrich</e>",
+          "we came to help him bury his <e>father</e>, then the <e>axe</e> was left and gone"
+        ],
+        "a_roman": [
+          "apni bhumi par ghas jame, doosre ko karen godai"
+        ],
+        "b_roman": [
+          "amwaq min naama",
+          "gina nsa'udhu fi dafni abuh fat lina al-fas wimishi"
+        ],
+        "a_pick_v": [
+          "अपनी भूमि पर घास जमे, दूसरे को करें गोड़ाई"
+        ],
+        "a_image_v": [
+          "<e>own land</e> grows <e>grass</e>, yet one does <e>weeding</e> for others"
+        ],
+        "a_roman_v": [
+          "apni bhumi par ghas jame, doosre ko karen godai"
+        ],
+        "b_pick_v": [
+          "جِينَا نْسَاعْدُهْ فِي دَفْنَ ابُوهْ فَاتْ لِنَا الْفَاسْ وِمِشِي"
+        ],
+        "b_image_v": [
+          "we came to help him bury his <e>father</e>, then the <e>axe</e> was left and gone"
+        ],
+        "b_roman_v": [
+          "gina nsa'udhu fi dafni abuh fat lina al-fas wimishi"
+        ]
+      },
+      {
+        "pair": "hi-ar",
+        "a": "hi",
+        "b": "ar",
+        "n_a": 1,
+        "n_b": 12,
+        "sim": 0.8324,
+        "a_items": [
+          {
+            "idiom": "आग खाएगा सो अंगार हगेगा",
+            "mean": "One who does evil will also receive an evil result.",
+            "native": "बुरा करने वाला बुरा फल भी पाता है।",
+            "ents": [
+              "आग",
+              "अंगार"
+            ]
+          }
+        ],
+        "b_items": [
+          {
+            "idiom": "البَطْنُ شَرُّ وعاءٍ صِفْراً، وَشَر وِعاءٍ مَلآنَ",
+            "mean": "A wicked person harms you if you do good to them, and becomes your enemy if you do evil to them.",
+            "native": "يعني إن أخْلَيته جُعت وإن مَلأَته آذاك يضرب للرجل الشرير إن أحسنت إليه آذاك، وإن أسأت إليه عاداك.",
+            "ents": [
+              "بطن",
+              "وعاء"
+            ]
+          },
+          {
+            "idiom": "اتَّقِ شَرَّ منْ أحْسَنْتَ إِلَيْهِ",
+            "mean": "Beware of the evil of those you have done good to, for they may turn against you.",
+            "native": "هذا قريب من قولهم\"سَمِّنْ كَلْبَكَ يأكُلْكَ\".",
+            "ents": [
+              "شر"
+            ]
+          },
+          {
+            "idiom": "عَلَى أََهْلِهاَ تَجْنىِ بَرَاقشُ",
+            "mean": "One's own actions bring harm to oneself; a deed done to others eventually returns to injure the doer.",
+            "native": "كانت بَرَاقشُ كلبةً لقومٍ من العرب، فأغير عليهم، فهَرَبُوا ومعهم بَرَاقش، فاتبع القومُ آثارَهُم بنُبَاح بَرَاقش، فهجموا عليهم فاصطلموهم،قَال حمزة بن بيض: لم تكن عن جناية لَحِقَتْنِي ... لا يَساري ولا يَمينِي رَمَتْنِي بل",
+            "ents": [
+              "اهلها",
+              "براقش"
+            ]
+          },
+          {
+            "idiom": "مَنْ يزرَعِ الشَّوْكَ لاَ يَحْصُدْ بِهِ العِنَبَا",
+            "mean": "One who harms another should expect to receive the same treatment in return.",
+            "native": "لاَ يُقَال:حَصَدتُ العنبَ،وإنما يُقَال:قَطَفْتُ، ولكنه وضع الحصد بإزاء الزرع، وقوله\"به\"أراد ببدَله (في أصول هذا الكتاب\"بيذله\"تصحيف) ويجوز أن يريد بزَرْعه، أي لاَ يحصد العنب بزَرْعِهِ الشوكَ، والمعنى من أساء إلى إنسان فلي",
+            "ents": [
+              "شوك",
+              "عنبا"
+            ]
+          },
+          {
+            "idiom": "الحُمَارِ النِّجِسْ يِقَعْ فِي أَنْجَسِ التَّلَالِيسْ",
+            "mean": "A deceitful person is punished by their own bad intentions, receiving the heaviest burden despite their schemes.",
+            "native": "ويُروَى: «المكَّار» بدل النجس؛ ويُروَى: «الخبيس» أي: الخبيث، وهو المراد؛ أي: يُجَازَى بسوء نيته، فيكون نصيبه أثقل الأحمال، ولا يغنيه مَكْرُه وتحايله، ويُروَى: «الحمار المكير يقع في أظرط التلاليس.» أي: في أضرطها، والمراد:",
+            "ents": [
+              "حمار",
+              "تلاليس"
+            ]
+          },
+          {
+            "idiom": "رَبِّيتْ كَلْبْ وِانْدَارْ عَقَرْنِي",
+            "mean": "To be repaid with evil for good.",
+            "native": "اندار؛ أي: الْتَفَتَ. يُضرَب في المكافأة على الخير بالشر.",
+            "ents": [
+              "كلب"
+            ]
+          }
+        ],
+        "shared": "evil returns to doer",
+        "a_pick": [
+          "आग खाएगा सो अंगार हगेगा"
+        ],
+        "b_pick": [
+          "مَنْ يزرَعِ الشَّوْكَ لاَ يَحْصُدْ بِهِ العِنَبَا",
+          "عَلَى أََهْلِهاَ تَجْنىِ بَرَاقشُ",
+          "رَبِّيتْ كَلْبْ وِانْدَارْ عَقَرْنِي"
+        ],
+        "a_image": [
+          "one who <e>fire</e> eats will <e>embers</e> defecate"
+        ],
+        "b_image": [
+          "one who <e>thorns</e> sows will not reap <e>grapes</e>",
+          "<e>Baraqish</e> brought harm upon <e>its people</e>",
+          "I raised a <e>dog</e>, and it bit <e>me</e>"
+        ],
+        "a_roman": [
+          "aag khaayega so angaar hagega"
+        ],
+        "b_roman": [
+          "man yazra'i ash-shawk la yahsud bihi al-'inaba",
+          "ala ahliha tajni baraqishu",
+          "rabbayt kalb wi-ndar aqarni"
+        ],
+        "a_pick_v": [
+          "आग खाएगा सो अंगार हगेगा"
+        ],
+        "a_image_v": [
+          "one who <e>fire</e> eats will <e>embers</e> defecate"
+        ],
+        "a_roman_v": [
+          "aag khaayega so angaar hagega"
+        ],
+        "b_pick_v": [
+          "مَنْ يزرَعِ الشَّوْكَ لاَ يَحْصُدْ بِهِ العِنَبَا",
+          "عَلَى أََهْلِهاَ تَجْنىِ بَرَاقشُ"
+        ],
+        "b_image_v": [
+          "one who <e>thorns</e> sows will not reap <e>grapes</e>",
+          "<e>Baraqish</e> brought harm upon <e>its people</e>"
+        ],
+        "b_roman_v": [
+          "man yazra'i ash-shawk la yahsud bihi al-'inaba",
+          "ala ahliha tajni baraqishu"
+        ]
+      }
+    ]
+  }
+}
