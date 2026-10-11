@@ -101,6 +101,17 @@ def ascii_fold(s):
     return s.encode("ascii", "ignore").decode("ascii")
 
 
+# Glosses are supposed to be English, but the model occasionally leaves a character of
+# the source script inside one ("ant fights snail\u4e89"). Raw CJK, Devanagari or Arabic
+# outside \zh{} does not compile under T1, so strip it from anything set as Latin text.
+NON_LATIN = re.compile(r"[\u0590-\u08ff\u0900-\u097f\u3000-\u303f"
+                       r"\u3400-\u9fff\uf900-\ufaff\ufb50-\ufdff\ufe70-\ufeff]+")
+
+
+def latin_safe(s):
+    return re.sub(r"\s{2,}", " ", NON_LATIN.sub("", str(s or ""))).strip()
+
+
 def tex_escape(s):
     s = str(s or "")
     for a, b in [("\\", r"\textbackslash{}"), ("&", r"\&"), ("%", r"\%"),
@@ -258,11 +269,11 @@ def fmt_side(lang, examples, romans, glosses):
         if lang == "en":
             bits.append(f"\\textit{{{tex_escape(ex)}}}")
         elif lang == "zh":
-            g = tex_escape(glosses[i]) if i < len(glosses) else ""
+            g = tex_escape(latin_safe(glosses[i])) if i < len(glosses) else ""
             bits.append(f"\\zh{{{ex}}}" + (f" ``{g}''" if g else ""))
         else:  # hi, ar -> romanisation + gloss, no native script
             r = tex_escape(ascii_fold(romans[i] if i < len(romans) else ex))
-            g = tex_escape(ascii_fold(glosses[i])) if i < len(glosses) else ""
+            g = tex_escape(ascii_fold(latin_safe(glosses[i]))) if i < len(glosses) else ""
             bits.append(f"\\textit{{{r}}}" + (f" ``{g}''" if g else ""))
     return "; ".join(bits)
 

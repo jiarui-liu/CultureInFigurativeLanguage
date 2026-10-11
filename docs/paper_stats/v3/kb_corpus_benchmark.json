@@ -1,0 +1,1604 @@
+{
+ "selection_bias": {
+  "ar": {
+   "n_kb": 10386,
+   "n_attested": 4944,
+   "n_unattested": 5442,
+   "coverage": 0.4760254188330445,
+   "type_share_attested": {
+    "abstract_other": 0.16985583224115333,
+    "animal": 0.1347313237221494,
+    "artefact_household": 0.10406290956749673,
+    "body_mind": 0.145478374836173,
+    "food_drink": 0.06028833551769332,
+    "kinship_social": 0.18990825688073396,
+    "nature_cosmos": 0.1343381389252949,
+    "occupation_economy": 0.03564875491480996,
+    "religion_supernatural": 0.025688073394495414
+   },
+   "type_share_unattested": {
+    "abstract_other": 0.16795838199384222,
+    "animal": 0.10903492939802527,
+    "artefact_household": 0.12039494638496656,
+    "body_mind": 0.1474678840641257,
+    "food_drink": 0.0806879711221998,
+    "kinship_social": 0.18345896591994904,
+    "nature_cosmos": 0.12549102877163182,
+    "occupation_economy": 0.03832678628304491,
+    "religion_supernatural": 0.027179106062214672
+   },
+   "type_share_exposure_weighted": {
+    "abstract_other": 0.24170651847835328,
+    "animal": 0.06606711146689426,
+    "artefact_household": 0.11803462254813099,
+    "body_mind": 0.16971337176005172,
+    "food_drink": 0.02601263172754997,
+    "kinship_social": 0.10229870490301612,
+    "nature_cosmos": 0.17878530715439617,
+    "occupation_economy": 0.028327539379899926,
+    "religion_supernatural": 0.06905419258170757
+   },
+   "chi2": 62.40980720435727,
+   "dof": 8,
+   "cramers_v": 0.060503007762322994,
+   "mean_entities_attested": 1.543284789644013,
+   "mean_entities_unattested": 1.73079750091878,
+   "mean_len_attested": 31.48806634304207,
+   "mean_len_unattested": 35.55567805953694,
+   "mean_fig_attested": 1.0224514563106797,
+   "mean_fig_unattested": 1.0047776552737964
+  },
+  "hi": {
+   "n_kb": 16617,
+   "n_attested": 2142,
+   "n_unattested": 14475,
+   "coverage": 0.12890413432027442,
+   "type_share_attested": {
+    "abstract_other": 0.1880484747179273,
+    "animal": 0.07124947764312578,
+    "artefact_household": 0.09486000835770998,
+    "body_mind": 0.12076890931884664,
+    "food_drink": 0.06790639364814041,
+    "kinship_social": 0.18992895946510657,
+    "nature_cosmos": 0.13058921855411618,
+    "occupation_economy": 0.05077308817384037,
+    "religion_supernatural": 0.08587547012118679
+   },
+   "type_share_unattested": {
+    "abstract_other": 0.11025538173552614,
+    "animal": 0.08217676159914428,
+    "artefact_household": 0.12121941436020858,
+    "body_mind": 0.10137718946383206,
+    "food_drink": 0.08383473726434015,
+    "kinship_social": 0.23438962428132104,
+    "nature_cosmos": 0.14066051611177965,
+    "occupation_economy": 0.06717475598342024,
+    "religion_supernatural": 0.05891161920042787
+   },
+   "type_share_exposure_weighted": {
+    "abstract_other": 0.1684354371802852,
+    "animal": 0.05370755953667314,
+    "artefact_household": 0.10442971223887396,
+    "body_mind": 0.14398538224724655,
+    "food_drink": 0.09005136142057227,
+    "kinship_social": 0.14981773101316193,
+    "nature_cosmos": 0.14726454172646322,
+    "occupation_economy": 0.03838583568745236,
+    "religion_supernatural": 0.10392243894927138
+   },
+   "chi2": 382.2607996557833,
+   "dof": 8,
+   "cramers_v": 0.09519660189520322,
+   "mean_entities_attested": 2.234360410830999,
+   "mean_entities_unattested": 2.583419689119171,
+   "mean_len_attested": 24.217086834733895,
+   "mean_len_unattested": 31.427288428324697,
+   "mean_fig_attested": 1.2007469654528478,
+   "mean_fig_unattested": 1.1606908462867012
+  },
+  "zh": {
+   "n_kb": 27297,
+   "n_attested": 26877,
+   "n_unattested": 420,
+   "coverage": 0.9846136938125069,
+   "type_share_attested": {
+    "abstract_other": 0.32753289403535707,
+    "animal": 0.08406371953169983,
+    "artefact_household": 0.12148934809033331,
+    "body_mind": 0.15535367752116522,
+    "food_drink": 0.02266862857995863,
+    "kinship_social": 0.08252830912929435,
+    "nature_cosmos": 0.17356535090525238,
+    "occupation_economy": 0.017038790437805217,
+    "religion_supernatural": 0.015759281769133986
+   },
+   "type_share_unattested": {
+    "abstract_other": 0.23522316043425814,
+    "animal": 0.1471652593486128,
+    "artefact_household": 0.11338962605548854,
+    "body_mind": 0.1037394451145959,
+    "food_drink": 0.05066344993968637,
+    "kinship_social": 0.12907117008443908,
+    "nature_cosmos": 0.17852834740651388,
+    "occupation_economy": 0.015681544028950542,
+    "religion_supernatural": 0.026537997587454766
+   },
+   "type_share_exposure_weighted": {
+    "abstract_other": 0.4439379854449323,
+    "animal": 0.030216382470837577,
+    "artefact_household": 0.08445348891557247,
+    "body_mind": 0.1639332106456504,
+    "food_drink": 0.011415724624547782,
+    "kinship_social": 0.08300295869428742,
+    "nature_cosmos": 0.15735585065907362,
+    "occupation_economy": 0.013237465227187975,
+    "religion_supernatural": 0.012446933317910507
+   },
+   "chi2": 128.75958155504642,
+   "dof": 8,
+   "cramers_v": 0.051943410378945405,
+   "mean_entities_attested": 1.7447259738810135,
+   "mean_entities_unattested": 1.973809523809524,
+   "mean_len_attested": 4.123525691111359,
+   "mean_len_unattested": 6.021428571428571,
+   "mean_fig_attested": 1.6889905867470327,
+   "mean_fig_unattested": 1.4595238095238094
+  }
+ },
+ "entity_coverage": {
+  "ar/arabculture": {
+   "n_items": 3463,
+   "share_items_with_kb_entity": 0.749639041293676,
+   "n_distinct_entities": 496,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.29423277896656763,
+   "top_entities": [
+    [
+     "عيد",
+     306
+    ],
+    [
+     "يوم",
+     270
+    ],
+    [
+     "ناس",
+     171
+    ],
+    [
+     "عاده",
+     145
+    ],
+    [
+     "صلاه",
+     116
+    ],
+    [
+     "خبز",
+     98
+    ],
+    [
+     "نساء",
+     97
+    ],
+    [
+     "رمضان",
+     92
+    ],
+    [
+     "وقت",
+     90
+    ],
+    [
+     "ميت",
+     90
+    ],
+    [
+     "رجال",
+     86
+    ],
+    [
+     "ذهب",
+     83
+    ]
+   ]
+  },
+  "ar/alyah": {
+   "n_items": 1171,
+   "share_items_with_kb_entity": 0.8830059777967549,
+   "n_distinct_entities": 366,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.2664085254942921,
+   "top_entities": [
+    [
+     "يوم",
+     455
+    ],
+    [
+     "اهل",
+     163
+    ],
+    [
+     "كلام",
+     150
+    ],
+    [
+     "ناس",
+     98
+    ],
+    [
+     "بيت",
+     88
+    ],
+    [
+     "واحد",
+     86
+    ],
+    [
+     "الله",
+     74
+    ],
+    [
+     "فيه",
+     64
+    ],
+    [
+     "ضيف",
+     51
+    ],
+    [
+     "وقت",
+     48
+    ],
+    [
+     "مكان",
+     47
+    ],
+    [
+     "بحر",
+     44
+    ]
+   ]
+  },
+  "ar/dzirieval": {
+   "n_items": 950,
+   "share_items_with_kb_entity": 0.8231578947368421,
+   "n_distinct_entities": 374,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.2616578063829334,
+   "top_entities": [
+    [
+     "واحد",
+     98
+    ],
+    [
+     "ناس",
+     66
+    ],
+    [
+     "دار",
+     54
+    ],
+    [
+     "فيه",
+     50
+    ],
+    [
+     "كبير",
+     48
+    ],
+    [
+     "عبد",
+     46
+    ],
+    [
+     "بلا",
+     42
+    ],
+    [
+     "فوق",
+     28
+    ],
+    [
+     "برك",
+     26
+    ],
+    [
+     "وقت",
+     25
+    ],
+    [
+     "واد",
+     24
+    ],
+    [
+     "بحر",
+     24
+    ]
+   ]
+  },
+  "ar/arabic_cultural_qa": {
+   "n_items": 1996,
+   "share_items_with_kb_entity": 0.6412825651302605,
+   "n_distinct_entities": 375,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.22759273322198895,
+   "top_entities": [
+    [
+     "عام",
+     198
+    ],
+    [
+     "عبد",
+     85
+    ],
+    [
+     "اسم",
+     76
+    ],
+    [
+     "الله",
+     61
+    ],
+    [
+     "عربي",
+     58
+    ],
+    [
+     "بحر",
+     46
+    ],
+    [
+     "دين",
+     40
+    ],
+    [
+     "ابو",
+     36
+    ],
+    [
+     "صحراء",
+     35
+    ],
+    [
+     "عشر",
+     35
+    ],
+    [
+     "حكم",
+     33
+    ],
+    [
+     "نساء",
+     31
+    ]
+   ]
+  },
+  "ar/global_piqa_ar": {
+   "n_items": 1098,
+   "share_items_with_kb_entity": 0.7495446265938069,
+   "n_distinct_entities": 259,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.22794863267424115,
+   "top_entities": [
+    [
+     "يوم",
+     73
+    ],
+    [
+     "فوق",
+     66
+    ],
+    [
+     "ناس",
+     58
+    ],
+    [
+     "بيت",
+     52
+    ],
+    [
+     "وقت",
+     46
+    ],
+    [
+     "عرس",
+     31
+    ],
+    [
+     "فيه",
+     30
+    ],
+    [
+     "ضيف",
+     29
+    ],
+    [
+     "عروس",
+     26
+    ],
+    [
+     "رجال",
+     25
+    ],
+    [
+     "عيد",
+     25
+    ],
+    [
+     "خبز",
+     24
+    ]
+   ]
+  },
+  "ar/arabicmmlu": {
+   "n_items": 10471,
+   "share_items_with_kb_entity": 0.6005157100563461,
+   "n_distinct_entities": 627,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.3178433401125979,
+   "top_entities": [
+    [
+     "الله",
+     861
+    ],
+    [
+     "عام",
+     445
+    ],
+    [
+     "اسم",
+     305
+    ],
+    [
+     "فيه",
+     277
+    ],
+    [
+     "رسول",
+     241
+    ],
+    [
+     "نبي",
+     233
+    ],
+    [
+     "ابو",
+     223
+    ],
+    [
+     "صلاه",
+     210
+    ],
+    [
+     "نعم",
+     209
+    ],
+    [
+     "ابن",
+     193
+    ],
+    [
+     "رياح",
+     189
+    ],
+    [
+     "عربي",
+     185
+    ]
+   ]
+  },
+  "ar/kinayat_meaning": {
+   "n_items": 325,
+   "share_items_with_kb_entity": 0.8892307692307693,
+   "n_distinct_entities": 302,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.2626826006347823,
+   "top_entities": [
+    [
+     "ناس",
+     32
+    ],
+    [
+     "فيه",
+     31
+    ],
+    [
+     "شيء",
+     21
+    ],
+    [
+     "كلام",
+     17
+    ],
+    [
+     "بلا",
+     14
+    ],
+    [
+     "امور",
+     13
+    ],
+    [
+     "امر",
+     12
+    ],
+    [
+     "عمل",
+     12
+    ],
+    [
+     "مكان",
+     11
+    ],
+    [
+     "راجل",
+     11
+    ],
+    [
+     "فلان",
+     10
+    ],
+    [
+     "نفسه",
+     10
+    ]
+   ]
+  },
+  "ar/ar_figurative": {
+   "n_items": 314,
+   "share_items_with_kb_entity": 0.9490445859872612,
+   "n_distinct_entities": 253,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.25453662290902346,
+   "top_entities": [
+    [
+     "يوم",
+     113
+    ],
+    [
+     "ناس",
+     58
+    ],
+    [
+     "واحد",
+     56
+    ],
+    [
+     "الله",
+     39
+    ],
+    [
+     "كلام",
+     33
+    ],
+    [
+     "بيت",
+     27
+    ],
+    [
+     "خير",
+     25
+    ],
+    [
+     "اهل",
+     23
+    ],
+    [
+     "فيه",
+     19
+    ],
+    [
+     "فلوس",
+     16
+    ],
+    [
+     "دار",
+     16
+    ],
+    [
+     "كبير",
+     15
+    ]
+   ]
+  },
+  "ar/idiomatlas_mc_ar_seen": {
+   "n_items": 600,
+   "share_items_with_kb_entity": 0.8816666666666667,
+   "n_distinct_entities": 473,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.3402438611720749,
+   "top_entities": [
+    [
+     "فيه",
+     81
+    ],
+    [
+     "الله",
+     70
+    ],
+    [
+     "ناس",
+     68
+    ],
+    [
+     "شيء",
+     52
+    ],
+    [
+     "ابو",
+     52
+    ],
+    [
+     "امر",
+     38
+    ],
+    [
+     "ابن",
+     38
+    ],
+    [
+     "نفسه",
+     32
+    ],
+    [
+     "قول",
+     30
+    ],
+    [
+     "خير",
+     29
+    ],
+    [
+     "طلب",
+     25
+    ],
+    [
+     "امور",
+     25
+    ]
+   ]
+  },
+  "ar/idiomatlas_mc_ar_unseen": {
+   "n_items": 600,
+   "share_items_with_kb_entity": 0.9,
+   "n_distinct_entities": 452,
+   "n_candidate_entities": 1291,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.38688004730760694,
+   "top_entities": [
+    [
+     "فيه",
+     68
+    ],
+    [
+     "شيء",
+     62
+    ],
+    [
+     "ناس",
+     50
+    ],
+    [
+     "امر",
+     43
+    ],
+    [
+     "نفسه",
+     31
+    ],
+    [
+     "كلام",
+     28
+    ],
+    [
+     "خير",
+     28
+    ],
+    [
+     "مال",
+     27
+    ],
+    [
+     "امور",
+     25
+    ],
+    [
+     "حاجه",
+     25
+    ],
+    [
+     "ابو",
+     25
+    ],
+    [
+     "الله",
+     23
+    ]
+   ]
+  },
+  "hi/milu": {
+   "n_items": 14831,
+   "share_items_with_kb_entity": 0.8048007551749713,
+   "n_distinct_entities": 1274,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.30700599029664727,
+   "top_entities": [
+    [
+     "रूप",
+     1507
+    ],
+    [
+     "गया",
+     1247
+    ],
+    [
+     "राज्य",
+     721
+    ],
+    [
+     "उत्तर",
+     718
+    ],
+    [
+     "कोई",
+     653
+    ],
+    [
+     "वर्ष",
+     641
+    ],
+    [
+     "साथ",
+     512
+    ],
+    [
+     "सभी",
+     475
+    ],
+    [
+     "किसी",
+     443
+    ],
+    [
+     "देश",
+     379
+    ],
+    [
+     "शब्द",
+     377
+    ],
+    [
+     "विचार",
+     335
+    ]
+   ]
+  },
+  "hi/global_piqa_hi": {
+   "n_items": 1406,
+   "share_items_with_kb_entity": 0.9423897581792319,
+   "n_distinct_entities": 612,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.2264371055161758,
+   "top_entities": [
+    [
+     "पानी",
+     257
+    ],
+    [
+     "समय",
+     139
+    ],
+    [
+     "रूप",
+     108
+    ],
+    [
+     "हवा",
+     105
+    ],
+    [
+     "अपने",
+     102
+    ],
+    [
+     "मैं",
+     101
+    ],
+    [
+     "तेल",
+     91
+    ],
+    [
+     "कपड़े",
+     90
+    ],
+    [
+     "बाहर",
+     72
+    ],
+    [
+     "धूप",
+     72
+    ],
+    [
+     "साथ",
+     69
+    ],
+    [
+     "किसी",
+     66
+    ]
+   ]
+  },
+  "hi/global_piqa_hi_cultural": {
+   "n_items": 447,
+   "share_items_with_kb_entity": 0.9686800894854586,
+   "n_distinct_entities": 457,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.21220796458914226,
+   "top_entities": [
+    [
+     "पानी",
+     84
+    ],
+    [
+     "समय",
+     62
+    ],
+    [
+     "दिल्ली",
+     50
+    ],
+    [
+     "तेल",
+     47
+    ],
+    [
+     "कपड़े",
+     36
+    ],
+    [
+     "साथ",
+     36
+    ],
+    [
+     "रूप",
+     35
+    ],
+    [
+     "हवा",
+     34
+    ],
+    [
+     "अपने",
+     30
+    ],
+    [
+     "किसी",
+     29
+    ],
+    [
+     "गर्मी",
+     25
+    ],
+    [
+     "मिट्टी",
+     25
+    ]
+   ]
+  },
+  "hi/mabl": {
+   "n_items": 1000,
+   "share_items_with_kb_entity": 0.861,
+   "n_distinct_entities": 473,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.2648946433250297,
+   "top_entities": [
+    [
+     "काम",
+     64
+    ],
+    [
+     "प्यार",
+     50
+    ],
+    [
+     "अपने",
+     40
+    ],
+    [
+     "दिल",
+     39
+    ],
+    [
+     "कोई",
+     35
+    ],
+    [
+     "बात",
+     31
+    ],
+    [
+     "साथ",
+     28
+    ],
+    [
+     "गया",
+     27
+    ],
+    [
+     "पानी",
+     25
+    ],
+    [
+     "किसी",
+     21
+    ],
+    [
+     "जीवन",
+     19
+    ],
+    [
+     "मगर",
+     18
+    ]
+   ]
+  },
+  "hi/parambench_hi_culture": {
+   "n_items": 5449,
+   "share_items_with_kb_entity": 0.7827124242980363,
+   "n_distinct_entities": 939,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.24074506555555084,
+   "top_entities": [
+    [
+     "गया",
+     338
+    ],
+    [
+     "राग",
+     259
+    ],
+    [
+     "नाम",
+     248
+    ],
+    [
+     "रूप",
+     231
+    ],
+    [
+     "ताल",
+     199
+    ],
+    [
+     "गीत",
+     181
+    ],
+    [
+     "धर्म",
+     171
+    ],
+    [
+     "उत्तर",
+     147
+    ],
+    [
+     "पुस्तक",
+     142
+    ],
+    [
+     "कोई",
+     135
+    ],
+    [
+     "भाषा",
+     133
+    ],
+    [
+     "अपने",
+     122
+    ]
+   ]
+  },
+  "hi/parambench_hi_other": {
+   "n_items": 5219,
+   "share_items_with_kb_entity": 0.8200804751868174,
+   "n_distinct_entities": 759,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.22236848219994956,
+   "top_entities": [
+    [
+     "रूप",
+     655
+    ],
+    [
+     "कोई",
+     440
+    ],
+    [
+     "गया",
+     426
+    ],
+    [
+     "किसी",
+     375
+    ],
+    [
+     "सभी",
+     363
+    ],
+    [
+     "उत्तर",
+     325
+    ],
+    [
+     "साथ",
+     244
+    ],
+    [
+     "विचार",
+     233
+    ],
+    [
+     "दिया",
+     231
+    ],
+    [
+     "राज्य",
+     227
+    ],
+    [
+     "अपने",
+     225
+    ],
+    [
+     "कार्य",
+     195
+    ]
+   ]
+  },
+  "hi/idiomatlas_mc_hi_seen": {
+   "n_items": 600,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 1151,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.44901588657035396,
+   "top_entities": [
+    [
+     "कोई",
+     333
+    ],
+    [
+     "किसी",
+     329
+    ],
+    [
+     "व्यक्ति",
+     310
+    ],
+    [
+     "काम",
+     255
+    ],
+    [
+     "बात",
+     130
+    ],
+    [
+     "अपने",
+     124
+    ],
+    [
+     "लोग",
+     113
+    ],
+    [
+     "वस्तु",
+     103
+    ],
+    [
+     "आदमी",
+     92
+    ],
+    [
+     "सभी",
+     87
+    ],
+    [
+     "चीज़",
+     80
+    ],
+    [
+     "लाभ",
+     79
+    ]
+   ]
+  },
+  "hi/idiomatlas_mc_hi_unseen": {
+   "n_items": 600,
+   "share_items_with_kb_entity": 0.9983333333333333,
+   "n_distinct_entities": 1231,
+   "n_candidate_entities": 2336,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.4656719822921978,
+   "top_entities": [
+    [
+     "कोई",
+     351
+    ],
+    [
+     "किसी",
+     347
+    ],
+    [
+     "व्यक्ति",
+     334
+    ],
+    [
+     "काम",
+     255
+    ],
+    [
+     "अपने",
+     167
+    ],
+    [
+     "वस्तु",
+     116
+    ],
+    [
+     "लोग",
+     111
+    ],
+    [
+     "दूसरे",
+     103
+    ],
+    [
+     "मनुष्य",
+     101
+    ],
+    [
+     "बात",
+     96
+    ],
+    [
+     "आदमी",
+     89
+    ],
+    [
+     "लाभ",
+     86
+    ]
+   ]
+  },
+  "zh/ccpm": {
+   "n_items": 2720,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 1980,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.5342565558923622,
+   "top_entities": [
+    [
+     "句",
+     2720
+    ],
+    [
+     "的",
+     2720
+    ],
+    [
+     "诗",
+     2720
+    ],
+    [
+     "应",
+     2720
+    ],
+    [
+     "是",
+     2720
+    ],
+    [
+     "文",
+     2720
+    ],
+    [
+     "代",
+     2720
+    ],
+    [
+     "一",
+     577
+    ],
+    [
+     "人",
+     567
+    ],
+    [
+     "上",
+     433
+    ],
+    [
+     "来",
+     428
+    ],
+    [
+     "有",
+     410
+    ]
+   ]
+  },
+  "zh/cmmlu": {
+   "n_items": 2735,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 1811,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.5177592922264017,
+   "top_entities": [
+    [
+     "案",
+     2735
+    ],
+    [
+     "题",
+     2735
+    ],
+    [
+     "是",
+     2735
+    ],
+    [
+     "目",
+     2735
+    ],
+    [
+     "的",
+     2735
+    ],
+    [
+     "中",
+     2592
+    ],
+    [
+     "下",
+     2283
+    ],
+    [
+     "一",
+     2116
+    ],
+    [
+     "有",
+     1931
+    ],
+    [
+     "国",
+     1883
+    ],
+    [
+     "人",
+     1754
+    ],
+    [
+     "和",
+     1680
+    ]
+   ]
+  },
+  "zh/chengyu_bench": {
+   "n_items": 540,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 686,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.3909537902199542,
+   "top_entities": [
+    [
+     "语",
+     540
+    ],
+    [
+     "感",
+     540
+    ],
+    [
+     "情",
+     540
+    ],
+    [
+     "的",
+     540
+    ],
+    [
+     "彩",
+     540
+    ],
+    [
+     "成",
+     540
+    ],
+    [
+     "感情",
+     540
+    ],
+    [
+     "色",
+     540
+    ],
+    [
+     "义",
+     540
+    ],
+    [
+     "是",
+     540
+    ],
+    [
+     "无",
+     30
+    ],
+    [
+     "心",
+     24
+    ]
+   ]
+  },
+  "zh/global_piqa_zh": {
+   "n_items": 648,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 925,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.41188001254512374,
+   "top_entities": [
+    [
+     "案",
+     648
+    ],
+    [
+     "题",
+     648
+    ],
+    [
+     "问",
+     648
+    ],
+    [
+     "的",
+     390
+    ],
+    [
+     "一",
+     254
+    ],
+    [
+     "时",
+     214
+    ],
+    [
+     "用",
+     195
+    ],
+    [
+     "是",
+     179
+    ],
+    [
+     "上",
+     175
+    ],
+    [
+     "中",
+     148
+    ],
+    [
+     "水",
+     138
+    ],
+    [
+     "后",
+     138
+    ]
+   ]
+  },
+  "zh/global_piqa_zh_cultural": {
+   "n_items": 237,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 703,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.37585474673037106,
+   "top_entities": [
+    [
+     "案",
+     237
+    ],
+    [
+     "题",
+     237
+    ],
+    [
+     "问",
+     237
+    ],
+    [
+     "的",
+     168
+    ],
+    [
+     "一",
+     121
+    ],
+    [
+     "是",
+     87
+    ],
+    [
+     "上",
+     86
+    ],
+    [
+     "中",
+     77
+    ],
+    [
+     "用",
+     67
+    ],
+    [
+     "会",
+     58
+    ],
+    [
+     "小",
+     56
+    ],
+    [
+     "后",
+     54
+    ]
+   ]
+  },
+  "zh/idiomatlas_mc_zh_seen": {
+   "n_items": 600,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 1581,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.4952748608074026,
+   "top_entities": [
+    [
+     "的",
+     600
+    ],
+    [
+     "是",
+     600
+    ],
+    [
+     "语",
+     600
+    ],
+    [
+     "成",
+     600
+    ],
+    [
+     "意",
+     600
+    ],
+    [
+     "思",
+     600
+    ],
+    [
+     "形",
+     395
+    ],
+    [
+     "容",
+     394
+    ],
+    [
+     "指",
+     387
+    ],
+    [
+     "人",
+     327
+    ],
+    [
+     "无",
+     308
+    ],
+    [
+     "事",
+     214
+    ]
+   ]
+  },
+  "zh/idiomatlas_mc_zh_unseen": {
+   "n_items": 78,
+   "share_items_with_kb_entity": 1.0,
+   "n_distinct_entities": 670,
+   "n_candidate_entities": 2865,
+   "spearman_idiom_freq_vs_benchmark_freq": 0.35009532487079337,
+   "top_entities": [
+    [
+     "的",
+     78
+    ],
+    [
+     "是",
+     78
+    ],
+    [
+     "语",
+     78
+    ],
+    [
+     "成",
+     78
+    ],
+    [
+     "意",
+     78
+    ],
+    [
+     "思",
+     78
+    ],
+    [
+     "指",
+     52
+    ],
+    [
+     "无",
+     48
+    ],
+    [
+     "容",
+     46
+    ],
+    [
+     "形",
+     45
+    ],
+    [
+     "人",
+     38
+    ],
+    [
+     "事",
+     27
+    ]
+   ]
+  }
+ },
+ "occurrence_concentration": {
+  "ar": {
+   "n_attested": 4944,
+   "total_occurrences": 492606,
+   "top1pct_share": 0.5486210074582932,
+   "top10pct_share": 0.9153867390977779,
+   "median": 5.0,
+   "gini": 0.9268095421960798,
+   "share_under_10_docs": 0.6446197411003236
+  },
+  "hi": {
+   "n_attested": 2124,
+   "total_occurrences": 365311,
+   "top1pct_share": 0.3587463832186822,
+   "top10pct_share": 0.8789059185187416,
+   "median": 5.5,
+   "gini": 0.9082672269528869,
+   "share_under_10_docs": 0.5833333333333334
+  },
+  "zh": {
+   "n_attested": 26877,
+   "total_occurrences": 50288344,
+   "top1pct_share": 0.23863645221644206,
+   "top10pct_share": 0.7996564173996265,
+   "median": 44.0,
+   "gini": 0.8747428812630605,
+   "share_under_10_docs": 0.03542061986084757
+  }
+ }
+}

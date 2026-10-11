@@ -1,0 +1,448 @@
+{
+ "lang": "ar",
+ "task": "symbolism_v2_ar_letter",
+ "n": 98,
+ "n_stated": 82,
+ "n_not_stated": 16,
+ "arms": [
+  "untagged",
+  "dict",
+  "sym",
+  "symall"
+ ],
+ "subsets": {
+  "all": {
+   "n": 98,
+   "acc": {
+    "untagged": 0.4489795918367347,
+    "dict": 0.42857142857142855,
+    "sym": 0.4489795918367347,
+    "symall": 0.46938775510204084
+   },
+   "margin": {
+    "untagged": -0.3163265306122449,
+    "dict": -0.3048469387755102,
+    "sym": -0.2059948979591837,
+    "symall": -0.15880102040816327
+   },
+   "lure": {
+    "untagged": 0.32653061224489793,
+    "dict": 0.35714285714285715,
+    "sym": 0.32653061224489793,
+    "symall": 0.3163265306122449
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": -0.02040816326530612,
+    "ci": [
+     -0.061224489795918366,
+     0.02040816326530612
+    ],
+    "sig": false
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     -0.07142857142857142,
+     0.07142857142857142
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_untagged": {
+    "delta": 0.02040816326530612,
+    "ci": [
+     -0.05102040816326531,
+     0.09183673469387756
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_sym": {
+    "delta": 0.02040816326530612,
+    "ci": [
+     0.0,
+     0.05102040816326531
+    ],
+    "sig": false
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": 0.011479591836734691,
+    "ci": [
+     -0.08609693877551021,
+     0.10331632653061225
+    ],
+    "sig": false
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": 0.11033163265306123,
+    "ci": [
+     -0.04209183673469389,
+     0.26084183673469385
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_untagged": {
+    "delta": 0.15752551020408162,
+    "ci": [
+     -0.029336734693877587,
+     0.3380102040816326
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_sym": {
+    "delta": 0.04719387755102042,
+    "ci": [
+     -0.03443877551020406,
+     0.125
+    ],
+    "sig": false
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": 0.030612244897959183,
+    "ci": [
+     -0.01020408163265306,
+     0.07142857142857142
+    ],
+    "sig": false
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     -0.07142857142857142,
+     0.07142857142857142
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_untagged": {
+    "delta": -0.01020408163265306,
+    "ci": [
+     -0.08163265306122448,
+     0.061224489795918366
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_sym": {
+    "delta": -0.01020408163265306,
+    "ci": [
+     -0.030612244897959183,
+     0.0
+    ],
+    "sig": false
+   }
+  },
+  "stated": {
+   "n": 82,
+   "acc": {
+    "untagged": 0.4634146341463415,
+    "dict": 0.43902439024390244,
+    "sym": 0.45121951219512196,
+    "symall": 0.47560975609756095
+   },
+   "margin": {
+    "untagged": -0.2942073170731707,
+    "dict": -0.27210365853658536,
+    "sym": -0.1836890243902439,
+    "symall": -0.13795731707317074
+   },
+   "lure": {
+    "untagged": 0.34146341463414637,
+    "dict": 0.3780487804878049,
+    "sym": 0.35365853658536583,
+    "symall": 0.34146341463414637
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": -0.024390243902439025,
+    "ci": [
+     -0.07317073170731707,
+     0.024390243902439025
+    ],
+    "sig": false
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": -0.012195121951219513,
+    "ci": [
+     -0.0975609756097561,
+     0.06097560975609756
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_untagged": {
+    "delta": 0.012195121951219513,
+    "ci": [
+     -0.06097560975609756,
+     0.08536585365853659
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_sym": {
+    "delta": 0.024390243902439025,
+    "ci": [
+     0.0,
+     0.06097560975609756
+    ],
+    "sig": false
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": 0.022103658536585365,
+    "ci": [
+     -0.0899390243902439,
+     0.125
+    ],
+    "sig": false
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": 0.11051829268292683,
+    "ci": [
+     -0.06173780487804877,
+     0.27896341463414637
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_untagged": {
+    "delta": 0.15624999999999997,
+    "ci": [
+     -0.05868902439024391,
+     0.3635861280487802
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_sym": {
+    "delta": 0.04573170731707317,
+    "ci": [
+     -0.041920731707317055,
+     0.1326219512195122
+    ],
+    "sig": false
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": 0.036585365853658534,
+    "ci": [
+     -0.012195121951219513,
+     0.0975609756097561
+    ],
+    "sig": false
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": 0.012195121951219513,
+    "ci": [
+     -0.07317073170731707,
+     0.0975609756097561
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     -0.08536585365853659,
+     0.08536585365853659
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_sym": {
+    "delta": -0.012195121951219513,
+    "ci": [
+     -0.036585365853658534,
+     0.0
+    ],
+    "sig": false
+   }
+  },
+  "not_stated": {
+   "n": 16,
+   "acc": {
+    "untagged": 0.375,
+    "dict": 0.375,
+    "sym": 0.4375,
+    "symall": 0.4375
+   },
+   "margin": {
+    "untagged": -0.4296875,
+    "dict": -0.47265625,
+    "sym": -0.3203125,
+    "symall": -0.265625
+   },
+   "lure": {
+    "untagged": 0.25,
+    "dict": 0.25,
+    "sym": 0.1875,
+    "symall": 0.1875
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "sig": false
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": 0.0625,
+    "ci": [
+     0.0,
+     0.1875
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_untagged": {
+    "delta": 0.0625,
+    "ci": [
+     0.0,
+     0.1875
+    ],
+    "sig": false
+   },
+   "d_acc_symall_minus_sym": {
+    "delta": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "sig": false
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": -0.042968749999999986,
+    "ci": [
+     -0.1953125,
+     0.10546875000000003
+    ],
+    "sig": false
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": 0.10937499999999996,
+    "ci": [
+     -0.203125,
+     0.4219726562499986
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_untagged": {
+    "delta": 0.1640625,
+    "ci": [
+     -0.17578125,
+     0.515625
+    ],
+    "sig": false
+   },
+   "d_margin_symall_minus_sym": {
+    "delta": 0.05468750000000004,
+    "ci": [
+     -0.14062499999999994,
+     0.23828125000000006
+    ],
+    "sig": false
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "sig": false
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": -0.0625,
+    "ci": [
+     -0.1875,
+     0.0
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_untagged": {
+    "delta": -0.0625,
+    "ci": [
+     -0.1875,
+     0.0
+    ],
+    "sig": false
+   },
+   "d_lure_symall_minus_sym": {
+    "delta": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "sig": false
+   }
+  }
+ },
+ "interaction": {
+  "acc_dict_minus_untagged": {
+   "stated": -0.024390243902439025,
+   "not_stated": 0.0,
+   "interaction": -0.024390243902439025,
+   "ci": [
+    -0.07317073170731707,
+    0.024390243902439025
+   ],
+   "p": 0.4466
+  },
+  "acc_sym_minus_untagged": {
+   "stated": -0.012195121951219513,
+   "not_stated": 0.0625,
+   "interaction": -0.07469512195121951,
+   "ci": [
+    -0.23628048780487804,
+    0.04878048780487805
+   ],
+   "p": 0.3324
+  },
+  "acc_symall_minus_untagged": {
+   "stated": 0.012195121951219513,
+   "not_stated": 0.0625,
+   "interaction": -0.05030487804878049,
+   "ci": [
+    -0.21189024390243902,
+    0.07317073170731707
+   ],
+   "p": 0.5508
+  },
+  "acc_symall_minus_sym": {
+   "stated": 0.024390243902439025,
+   "not_stated": 0.0,
+   "interaction": 0.024390243902439025,
+   "ci": [
+    0.0,
+    0.06097560975609756
+   ],
+   "p": 0.2672
+  },
+  "margin_dict_minus_untagged": {
+   "stated": 0.022103658536585365,
+   "not_stated": -0.042968749999999986,
+   "interaction": 0.06507240853658536,
+   "ci": [
+    -0.12433307926829268,
+    0.2511456745426829
+   ],
+   "p": 0.4796
+  },
+  "margin_sym_minus_untagged": {
+   "stated": 0.11051829268292683,
+   "not_stated": 0.10937499999999996,
+   "interaction": 0.001143292682926872,
+   "ci": [
+    -0.3544350228658536,
+    0.35651915015243896
+   ],
+   "p": 0.986
+  },
+  "margin_symall_minus_untagged": {
+   "stated": 0.15624999999999997,
+   "not_stated": 0.1640625,
+   "interaction": -0.007812500000000028,
+   "ci": [
+    -0.421046112804878,
+    0.38700933689024386
+   ],
+   "p": 0.9738
+  },
+  "margin_symall_minus_sym": {
+   "stated": 0.04573170731707317,
+   "not_stated": 0.05468750000000004,
+   "interaction": -0.008955792682926872,
+   "ci": [
+    -0.21027296112804889,
+    0.2106588224085364
+   ],
+   "p": 0.9162
+  }
+ }
+}

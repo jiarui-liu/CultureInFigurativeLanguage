@@ -1,0 +1,116 @@
+{
+ "ar": {
+  "n_items": 600,
+  "baseline_seen_distractor_share": 0.415,
+  "arms": {
+   "base": {
+    "n_errors": 374,
+    "share_tag_glossed": 0.3850267379679144,
+    "excess_over_baseline": -0.029973262032085557,
+    "p": 0.2485841534012222
+   },
+   "random": {
+    "n_errors": 379,
+    "share_tag_glossed": 0.39841688654353563,
+    "excess_over_baseline": -0.01658311345646435,
+    "p": 0.5318706431393108
+   },
+   "idiom_untagged": {
+    "n_errors": 361,
+    "share_tag_glossed": 0.3988919667590028,
+    "excess_over_baseline": -0.016108033240997188,
+    "p": 0.5570695134278507
+   },
+   "idiom_cpt": {
+    "n_errors": 403,
+    "share_tag_glossed": 0.45161290322580644,
+    "excess_over_baseline": 0.03661290322580646,
+    "p": 0.14265847850163488
+   },
+   "culture": {
+    "n_errors": 364,
+    "share_tag_glossed": 0.3873626373626374,
+    "excess_over_baseline": -0.027637362637362606,
+    "p": 0.28806624512137474
+   },
+   "culture_notes": {
+    "n_errors": 361,
+    "share_tag_glossed": 0.3850415512465374,
+    "excess_over_baseline": -0.029958448753462597,
+    "p": 0.26214299677640174
+   }
+  }
+ },
+ "hi": {
+  "n_items": 600,
+  "baseline_seen_distractor_share": 0.135,
+  "arms": {
+   "base": {
+    "n_errors": 369,
+    "share_tag_glossed": 0.14092140921409213,
+    "excess_over_baseline": 0.0059214092140921215,
+    "p": 0.7037867184988031
+   },
+   "random": {
+    "n_errors": 286,
+    "share_tag_glossed": 0.16433566433566432,
+    "excess_over_baseline": 0.029335664335664313,
+    "p": 0.16540553504289462
+   },
+   "idiom_untagged": {
+    "n_errors": 282,
+    "share_tag_glossed": 0.15602836879432624,
+    "excess_over_baseline": 0.021028368794326235,
+    "p": 0.29580936077386105
+   },
+   "idiom_cpt": {
+    "n_errors": 275,
+    "share_tag_glossed": 0.14909090909090908,
+    "excess_over_baseline": 0.01409090909090907,
+    "p": 0.48038126449483454
+   },
+   "culture": {
+    "n_errors": 278,
+    "share_tag_glossed": 0.16906474820143885,
+    "excess_over_baseline": 0.034064748201438844,
+    "p": 0.11333440621712423
+   }
+  }
+ },
+ "zh": {
+  "n_items": 78,
+  "baseline_seen_distractor_share": 0.9871794871794872,
+  "arms": {
+   "base": {
+    "n_errors": 36,
+    "share_tag_glossed": 0.9722222222222222,
+    "excess_over_baseline": -0.014957264957265015,
+    "p": 0.37156493523930845
+   },
+   "random": {
+    "n_errors": 32,
+    "share_tag_glossed": 0.96875,
+    "excess_over_baseline": -0.018429487179487225,
+    "p": 0.3382774732211468
+   },
+   "idiom_untagged": {
+    "n_errors": 33,
+    "share_tag_glossed": 0.9696969696969697,
+    "excess_over_baseline": -0.0174825174825175,
+    "p": 0.3467610953593372
+   },
+   "idiom_cpt": {
+    "n_errors": 30,
+    "share_tag_glossed": 0.9666666666666667,
+    "excess_over_baseline": -0.02051282051282055,
+    "p": 0.3209782673431367
+   },
+   "culture": {
+    "n_errors": 34,
+    "share_tag_glossed": 0.9705882352941176,
+    "excess_over_baseline": -0.016591251885369585,
+    "p": 0.35513595311114055
+   }
+  }
+ }
+}

@@ -1,0 +1,263 @@
+{
+ "group": [
+  "symbolic_evaluative"
+ ],
+ "annotator": "Qwen3.5-27B-FP8",
+ "per_task": {
+  "zh/idiomatlas_mc_zh_seen/idiom_untagged": {
+   "delta_in": -0.017467248908296942,
+   "delta_out": 0.0026954177897574125,
+   "interaction": -0.020162666698054353,
+   "ci": [
+    -0.050082981202697774,
+    0.009110276721712827
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.28434313137372524,
+   "task": "idiomatlas_mc_zh_seen",
+   "lang": "zh",
+   "arm": "idiom_untagged",
+   "p_holm": 0.5686862627474505
+  },
+  "zh/idiomatlas_mc_zh_seen/idiom_cpt": {
+   "delta_in": 0.048034934497816595,
+   "delta_out": 0.14285714285714285,
+   "interaction": -0.09482220835932625,
+   "ci": [
+    -0.14361986369896065,
+    -0.046681340411257204
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.0015996800639872025,
+   "task": "idiomatlas_mc_zh_seen",
+   "lang": "zh",
+   "arm": "idiom_cpt",
+   "p_holm": 0.004799040191961607
+  },
+  "zh/idiomatlas_mc_zh_seen/culture": {
+   "delta_in": -0.017467248908296942,
+   "delta_out": 0.0026954177897574125,
+   "interaction": -0.020162666698054353,
+   "ci": [
+    -0.06728627926411564,
+    0.026954177897574125
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.46870625874825034,
+   "task": "idiomatlas_mc_zh_seen",
+   "lang": "zh",
+   "arm": "culture",
+   "p_holm": 0.5686862627474505
+  }
+ },
+ "pooled": {
+  "zh/idiom_untagged": {
+   "delta_in": -0.017467248908296942,
+   "delta_out": 0.0026954177897574125,
+   "interaction": -0.020162666698054353,
+   "ci": [
+    -0.050082981202697774,
+    0.009110276721712827
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.28434313137372524
+  },
+  "zh/idiom_cpt": {
+   "delta_in": 0.048034934497816595,
+   "delta_out": 0.14285714285714285,
+   "interaction": -0.09482220835932625,
+   "ci": [
+    -0.14361986369896065,
+    -0.046681340411257204
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.0015996800639872025
+  },
+  "zh/culture": {
+   "delta_in": -0.017467248908296942,
+   "delta_out": 0.0026954177897574125,
+   "interaction": -0.020162666698054353,
+   "ci": [
+    -0.06728627926411564,
+    0.026954177897574125
+   ],
+   "n_in": 229,
+   "n_out": 371,
+   "p": 0.46870625874825034
+  }
+ },
+ "category_counts": {
+  "arabculture": {
+   "material_practice": 2665,
+   "social_norm_relation": 363,
+   "factual_knowledge": 241,
+   "symbolic_evaluative": 135,
+   "language_form": 30,
+   "generic_pragmatic": 29
+  },
+  "alyah": {
+   "language_form": 249,
+   "symbolic_evaluative": 299,
+   "material_practice": 284,
+   "social_norm_relation": 199,
+   "factual_knowledge": 140
+  },
+  "dzirieval": {
+   "factual_knowledge": 512,
+   "material_practice": 171,
+   "symbolic_evaluative": 177,
+   "language_form": 80,
+   "social_norm_relation": 8,
+   "generic_pragmatic": 2
+  },
+  "arabic_cultural_qa": {
+   "material_practice": 294,
+   "factual_knowledge": 1574,
+   "social_norm_relation": 68,
+   "symbolic_evaluative": 44,
+   "generic_pragmatic": 3,
+   "language_form": 13
+  },
+  "global_piqa_ar": {
+   "material_practice": 952,
+   "factual_knowledge": 57,
+   "social_norm_relation": 75,
+   "generic_pragmatic": 6,
+   "language_form": 4,
+   "symbolic_evaluative": 4
+  },
+  "ccpm": {
+   "factual_knowledge": 2672,
+   "symbolic_evaluative": 7,
+   "language_form": 41
+  },
+  "global_piqa_zh": {
+   "material_practice": 365,
+   "generic_pragmatic": 231,
+   "symbolic_evaluative": 2,
+   "factual_knowledge": 40,
+   "social_norm_relation": 10
+  },
+  "global_piqa_hi": {
+   "material_practice": 806,
+   "generic_pragmatic": 492,
+   "social_norm_relation": 44,
+   "factual_knowledge": 43,
+   "symbolic_evaluative": 16,
+   "language_form": 5
+  },
+  "global_piqa": {
+   "material_practice": 82,
+   "symbolic_evaluative": 4,
+   "generic_pragmatic": 12,
+   "factual_knowledge": 2
+  },
+  "arabicmmlu": {
+   "factual_knowledge": 2855,
+   "social_norm_relation": 219,
+   "symbolic_evaluative": 150,
+   "language_form": 405,
+   "generic_pragmatic": 165,
+   "material_practice": 206
+  },
+  "milu": {
+   "factual_knowledge": 3326,
+   "generic_pragmatic": 184,
+   "language_form": 290,
+   "symbolic_evaluative": 32,
+   "social_norm_relation": 82,
+   "material_practice": 86
+  },
+  "cmmlu": {
+   "factual_knowledge": 2320,
+   "language_form": 206,
+   "material_practice": 59,
+   "generic_pragmatic": 54,
+   "symbolic_evaluative": 21,
+   "social_norm_relation": 75
+  },
+  "parambench_hi_culture": {
+   "factual_knowledge": 3841,
+   "language_form": 54,
+   "material_practice": 75,
+   "social_norm_relation": 4,
+   "symbolic_evaluative": 26
+  },
+  "parambench_hi_other": {
+   "factual_knowledge": 3883,
+   "language_form": 30,
+   "symbolic_evaluative": 44,
+   "social_norm_relation": 23,
+   "generic_pragmatic": 14,
+   "material_practice": 6
+  },
+  "kinayat_meaning": {
+   "symbolic_evaluative": 243,
+   "language_form": 73,
+   "material_practice": 6,
+   "factual_knowledge": 3
+  },
+  "ar_figurative": {
+   "symbolic_evaluative": 210,
+   "social_norm_relation": 49,
+   "language_form": 18,
+   "material_practice": 10,
+   "factual_knowledge": 27
+  },
+  "mabl": {
+   "symbolic_evaluative": 625,
+   "language_form": 368,
+   "factual_knowledge": 5,
+   "social_norm_relation": 2
+  },
+  "chengyu_bench": {
+   "symbolic_evaluative": 540
+  },
+  "idiomatlas_mc_ar_seen": {
+   "symbolic_evaluative": 579,
+   "factual_knowledge": 20,
+   "language_form": 1
+  },
+  "idiomatlas_mc_ar_unseen": {
+   "symbolic_evaluative": 587,
+   "material_practice": 1,
+   "factual_knowledge": 7,
+   "language_form": 5
+  },
+  "idiomatlas_mc_hi_seen": {
+   "symbolic_evaluative": 584,
+   "factual_knowledge": 16
+  },
+  "idiomatlas_mc_hi_unseen": {
+   "symbolic_evaluative": 582,
+   "factual_knowledge": 15,
+   "material_practice": 2,
+   "language_form": 1
+  },
+  "idiomatlas_mc_zh_seen": {
+   "language_form": 50,
+   "factual_knowledge": 321,
+   "symbolic_evaluative": 229
+  },
+  "idiomatlas_mc_zh_unseen": {
+   "symbolic_evaluative": 18,
+   "factual_knowledge": 59,
+   "language_form": 1
+  },
+  "symbolism_v2_ar_letter": {
+   "symbolic_evaluative": 97,
+   "factual_knowledge": 1
+  },
+  "symbolism_v2_hi_letter": {
+   "symbolic_evaluative": 155
+  },
+  "symbolism_v2_zh_letter": {
+   "symbolic_evaluative": 206
+  }
+ }
+}

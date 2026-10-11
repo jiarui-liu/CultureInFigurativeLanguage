@@ -26,7 +26,8 @@ from collections import defaultdict
 
 import common
 import metagen_api
-from entity_cases_pairs import LANG_NAME, ascii_fold, tex_escape, _clean
+from entity_cases_pairs import (LANG_NAME, ascii_fold, latin_safe, tex_escape,
+                                _clean)
 
 N_ROWS = 6          # clusters per pair in the table
 MAX_SIDE = 3        # idioms shown per language per row
@@ -54,6 +55,13 @@ Return one JSON object:
   "b_roman": ["same, for each b_pick"]
 }}
 Return only the JSON object."""
+
+GLOSS_PROMPT = """{lang} idiom: {idiom}
+Proposed literal gloss of its wording: "{img}"
+
+Is this a fluent English rendering of what the idiom's own words say? Answer no if it
+leaves a word untranslated, is not English, or does not describe the idiom's wording.
+Answer with one word, yes or no."""
 
 VERIFY_PROMPT = """{lang} idiom: {idiom}
 Recorded meaning: {mean}
@@ -92,17 +100,24 @@ def underline_ents(text, ents):
     return out
 
 
+# "<e>someone</e>" is not imagery; the table underlines concrete things.
+GENERIC = {"someone", "something", "someone or something", "somebody", "anything",
+           "one", "people", "person", "it", "them", "him", "her", "thing", "things"}
+
+
 def mark(s, lang):
     """<e>x</e> -> \\underline{x}, after escaping and (for hi/ar) folding to ASCII."""
+    # The model sometimes writes <dirt> instead of <e>dirt</e>; treat any angle-bracket
+    # span as an entity marker so no raw tag reaches LaTeX.
     s = unsmart(_clean(s))
-    parts, out = re.split(r"(<e>.*?</e>)", s), []
+    parts, out = re.split(r"(<e>.*?</e>|<[^<>/]{1,40}>)", s), []
     for p in parts:
-        m = re.fullmatch(r"<e>(.*?)</e>", p, re.S)
-        t = m.group(1) if m else p
-        if lang in ("hi", "ar"):
-            t = ascii_fold(t)
+        m = re.fullmatch(r"<e>(.*?)</e>|<([^<>/]{1,40})>", p, re.S)
+        t = (m.group(1) if m.group(1) is not None else m.group(2)) if m else p
+        t = ascii_fold(t) if lang in ("hi", "ar") else latin_safe(t)
         t = tex_escape(t)
-        out.append(f"\\underline{{{t}}}" if m else t)
+        under = m and _clean(t).lower().strip(" .") not in GENERIC
+        out.append(f"\\underline{{{t}}}" if under else t)
     return "".join(out).strip()
 
 
@@ -113,7 +128,8 @@ def cell(lang, picks, images, romans, ents):
         if img.lower().replace("\\underline{", "").rstrip("}") == "no imagery":
             img = "\\textit{(no imagery)}"
         if lang == "en":
-            bits.append(underline_ents(idm, ents.get(idm, [])))
+            u = underline_ents(idm, ents.get(idm, []))
+            bits.append(u if "\\underline" in u else f"{u} \\textit{{(no imagery)}}")
         elif lang == "zh":
             bits.append(f"\\zh{{{idm}}} {img}".strip())
         else:
@@ -166,6 +182,10 @@ def main():
         for side in ("a", "b"):
             look = {it["idiom"]: it["mean"] for it in m[f"{side}_items"]}
             for idm in m.get(f"{side}_pick", [])[:MAX_SIDE]:
+                # a few KB rows carry no usable meaning; the verifier cannot judge
+                # those, and it waved one through, so screen them out here
+                if len(_clean(look.get(idm, "")).strip(" ?.")) < 8:
+                    continue
                 vp.append(VERIFY_PROMPT.format(
                     lang=LANG_NAME[m[side]], idiom=idm,
                     mean=_clean(look.get(idm, ""))[:200], shared=m["shared"]))
@@ -183,7 +203,22 @@ def main():
     print(f"[verify] dropped {bad}/{len(vmeta)} unsupported "
           f"({bad / max(1, len(vmeta)):.1%})")
 
-    kept = []
+    IMG_STOP = {"a", "an", "the", "of", "to", "in", "on", "at", "by", "for", "and",
+                "or", "is", "are", "its", "his", "her", "one", "ones", "s", "no",
+                "not", "into", "from", "with", "under", "over", "like", "as", "it",
+                "be", "do", "does", "than", "then", "that", "this", "but", "so"}
+
+    def img_words(xs):
+        w = set()
+        for x in xs:
+            w |= {t for t in re.findall(r"[a-z]+", _clean(x).lower())
+                  if t not in IMG_STOP and len(t) > 2}
+        return w
+
+    def has_image(xs):
+        return any(_clean(x).lower() not in ("", "no imagery") for x in xs)
+
+    kept, shared_img, no_image = [], 0, 0
     for m in rows:
         for side in ("a", "b"):
             keep = [(i, p) for i, p in enumerate(m.get(f"{side}_pick", [])[:MAX_SIDE])
@@ -192,24 +227,93 @@ def main():
             for f in ("image", "roman"):
                 src = m.get(f"{side}_{f}", [])
                 m[f"{side}_{f}_v"] = [src[i] if i < len(src) else "" for i, _ in keep]
-        # a row only makes the point if both sides survive
             m[f"{side}_ents"] = {it["idiom"]: it.get("ents", [])
                                  for it in m[f"{side}_items"]}
-        if m["a_pick_v"] and m["b_pick_v"]:
-            kept.append(m)
+        if not (m["a_pick_v"] and m["b_pick_v"]):
+            continue
+        # A row makes the point only if the two sides really picture different things.
+        # The entity-overlap filter upstream compares native strings, so English "fruit"
+        # against Hindi "phal", or a Chinese and an Arabic idiom that both strike hot
+        # iron, pass it as disjoint. The image glosses are both English, so the overlap
+        # is visible here.
+        if img_words(m["a_image_v"]) & img_words(m["b_image_v"]):
+            shared_img += 1
+            continue
+        # and at least one side has to supply an image to contrast
+        if not (has_image(m["a_image_v"]) or has_image(m["b_image_v"])):
+            no_image += 1
+            continue
+        kept.append(m)
+    print(f"[verify] dropped {shared_img} clusters whose two sides share imagery, "
+          f"{no_image} with no imagery on either side")
     print(f"[verify] {len(kept)}/{len(rows)} clusters survive with both sides")
 
-    final, seen = defaultdict(list), defaultdict(set)
+    # ---- the literal gloss itself must be readable English --------------------
+    gp, gmeta, badself = [], [], set()
     for m in kept:
-        if len(final[m["pair"]]) >= args.rows or m["shared"] in seen[m["pair"]]:
+        for side in ("a", "b"):
+            for i, idm in enumerate(m[f"{side}_pick_v"]):
+                img = m[f"{side}_image_v"][i]
+                plain = _clean(img).replace("<e>", "").replace("</e>", "")
+                if plain.lower() in ("", "no imagery"):
+                    continue
+                if plain.lower().strip(" .") == _clean(idm).lower().strip(" ."):
+                    badself.add((id(m), side, i))     # the gloss just repeats the idiom
+                    continue
+                gp.append(GLOSS_PROMPT.format(lang=LANG_NAME[m[side]], idiom=idm,
+                                              img=plain))
+                gmeta.append((id(m), side, i))
+    print(f"[gloss] checking {len(gp)} literal glosses", flush=True)
+    gouts = metagen_api.generate(gp, tag="meaning_cases_pairs_gloss", max_tokens=16)
+    badg = badself | {k for k, o in zip(gmeta, gouts)
+                      if not (o or "").strip().lower().startswith("y")}
+    print(f"[gloss] {len(badg)}/{len(gp)} glosses rejected as not fluent English")
+    kept = [m for m in kept
+            if not any(mid == id(m) for mid, _, _ in badg)]
+    print(f"[gloss] {len(kept)} clusters remain")
+
+    STOP = {"a", "an", "the", "to", "of", "or", "is", "be", "and", "in", "on", "at",
+            "for", "with", "by", "from", "that", "it", "its", "one", "ones", "s",
+            "someone", "something", "person", "people", "thing", "very", "extremely",
+            "who", "when", "without", "than", "then", "but", "not", "no"}
+
+    def stems(s):
+        """Crude suffix stripping: 'imitating others' and 'to imitate others' are the
+        same row, and so are 'seize opportunity promptly' and 'seize the opportunity'."""
+        out = set()
+        for w in re.findall(r"[a-z]+", s.lower()):
+            if w in STOP:
+                continue
+            for suf in ("ingly", "edly", "ing", "ity", "ies", "ed", "ly", "es", "s"):
+                if len(w) > len(suf) + 3 and w.endswith(suf):
+                    w = w[: -len(suf)]
+                    break
+            out.add(w)
+        return out
+
+    # Highest-similarity cluster wins a topic. Sharing even one content stem with an
+    # already-chosen row counts as a repeat, and the check runs across pairs as well as
+    # within them: "seize the opportunity" otherwise filled four of the five tables.
+    # This table is illustrative and 80+ clusters qualify, so there is no reason for it
+    # to turn on a sexual insult; such rows are skipped rather than printed.
+    SLUR = re.compile(r"\b(promiscuous|whore|slut|prostitut)", re.I)
+    kept = [m for m in kept if not SLUR.search(m["shared"])]
+    kept.sort(key=lambda m: -m["sim"])
+    final, used = defaultdict(list), []
+    for m in kept:
+        st = stems(m["shared"])
+        if len(final[m["pair"]]) >= args.rows or not st or any(st & u for u in used):
             continue
-        seen[m["pair"]].add(m["shared"])
+        used.append(st)
         final[m["pair"]].append(m)
+
     for p in cand:
         print(f"  {p}: {len(final[p])} rows")
 
     p = common.dump({"method": __doc__, "model": metagen_api.MODEL,
                      "verified_drop_rate": round(bad / max(1, len(vmeta)), 4),
+                     "shared_imagery_dropped": shared_img,
+                     "gloss_rejected": len(badg),
                      "n_pairs": {k: v["n_pairs"] for k, v in cand.items()},
                      "rows": {k: v for k, v in final.items()}}, args.out_json)
     print("wrote", p)
@@ -221,7 +325,7 @@ def main():
 
 
 def render(final):
-    COL = {"a": "encolor", "b": "zhcolor"}   # by column, so the two never collide
+    ca, cb = "encolor", "zhcolor"   # by column, so the two never collide
     out = []
     for pair, rs in final.items():
         if not rs:
@@ -235,17 +339,20 @@ def render(final):
         if a in ("hi", "ar") or b in ("hi", "ar"):
             note += "Hindi and Arabic idioms are romanised with a literal gloss. "
         out.append(
-            f"\\caption{{Same meaning, different entity in \\textcolor{{{COL[a]}}}{{{LANG_NAME[a]}}} "
-            f"and \\textcolor{{{COL[b]}}}{{{LANG_NAME[b]}}} idioms; entities are \\underline{{underlined}}. "
-            f"Cluster sizes (number of idioms, {a}/{b}) show asymmetric lexicalization. "
-            f"{note}Every idiom shown was re-checked against the shared meaning and unsupported "
-            f"ones removed (\\S\\ref{{sec:analysis-meaning}}).}}\n"
+            f"\\caption{{Same meaning, different entity in \\textcolor{{{ca}}}{{{LANG_NAME[a]}}} "
+            f"and \\textcolor{{{cb}}}{{{LANG_NAME[b]}}} idioms; entities are \\underline{{underlined}}. "
+            f"Counts in parentheses are the cluster size on each side ({a}/{b}): the idioms of "
+            f"that language whose meaning is nearly identical to the anchor "
+            f"(cosine $\\geq 0.95$). "
+            f"{note}Clusters are selected for disjoint imagery, and every idiom shown was "
+            f"re-checked against the shared meaning, with unsupported ones and unusable "
+            f"glosses removed (\\S\\ref{{sec:analysis-meaning}}).}}\n"
             f"\\label{{tab:meaning-cases-{a}{b}}}")
         out.append("\\begin{tabular}{@{}p{0.20\\textwidth}p{0.37\\textwidth}"
                    "p{0.37\\textwidth}@{}}\n\\toprule")
         out.append(f"Shared meaning\\newline ({a}/{b} idioms) & "
-                   f"\\textcolor{{{COL[a]}}}{{{LANG_NAME[a]} imagery}} & "
-                   f"\\textcolor{{{COL[b]}}}{{{LANG_NAME[b]} imagery}} \\\\\n\\midrule")
+                   f"\\textcolor{{{ca}}}{{{LANG_NAME[a]} imagery}} & "
+                   f"\\textcolor{{{cb}}}{{{LANG_NAME[b]} imagery}} \\\\\n\\midrule")
         for r in rs:
             out.append(
                 f"{tex_escape(r['shared'])} ({r['n_a']}/{r['n_b']})\n"

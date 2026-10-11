@@ -1,0 +1,254 @@
+{
+ "lang": "hi",
+ "task": "symbolism_v2_hi_letter",
+ "n": 155,
+ "n_stated": 0,
+ "n_not_stated": 155,
+ "arms": [
+  "untagged",
+  "dict",
+  "sym"
+ ],
+ "subsets": {
+  "all": {
+   "n": 155,
+   "acc": {
+    "untagged": 0.5290322580645161,
+    "dict": 0.5290322580645161,
+    "sym": 0.6193548387096774
+   },
+   "margin": {
+    "untagged": 0.1902464516129032,
+    "dict": 0.17698258064516129,
+    "sym": 0.47801419354838703
+   },
+   "lure": {
+    "untagged": 0.2709677419354839,
+    "dict": 0.23870967741935484,
+    "sym": 0.2129032258064516
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     -0.05161290322580645,
+     0.05161290322580645
+    ],
+    "sig": false
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": 0.09032258064516129,
+    "ci": [
+     0.025645161290322727,
+     0.15483870967741936
+    ],
+    "sig": true
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": -0.013263870967741943,
+    "ci": [
+     -0.08747370967741935,
+     0.06103093548387093
+    ],
+    "sig": false
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": 0.2877677419354839,
+    "ci": [
+     0.12690175806451617,
+     0.44444172580645164
+    ],
+    "sig": true
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": -0.03225806451612903,
+    "ci": [
+     -0.09032258064516129,
+     0.025806451612903226
+    ],
+    "sig": false
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": -0.05806451612903226,
+    "ci": [
+     -0.11612903225806452,
+     0.0
+    ],
+    "sig": false
+   }
+  },
+  "stated": {
+   "n": 0,
+   "acc": {
+    "untagged": NaN,
+    "dict": NaN,
+    "sym": NaN
+   },
+   "margin": {
+    "untagged": NaN,
+    "dict": NaN,
+    "sym": NaN
+   },
+   "lure": {
+    "untagged": NaN,
+    "dict": NaN,
+    "sym": NaN
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": NaN,
+    "ci": [
+     NaN,
+     NaN
+    ],
+    "sig": true
+   }
+  },
+  "not_stated": {
+   "n": 155,
+   "acc": {
+    "untagged": 0.5290322580645161,
+    "dict": 0.5290322580645161,
+    "sym": 0.6193548387096774
+   },
+   "margin": {
+    "untagged": 0.1902464516129032,
+    "dict": 0.17698258064516129,
+    "sym": 0.47801419354838703
+   },
+   "lure": {
+    "untagged": 0.2709677419354839,
+    "dict": 0.23870967741935484,
+    "sym": 0.2129032258064516
+   },
+   "d_acc_dict_minus_untagged": {
+    "delta": 0.0,
+    "ci": [
+     -0.05161290322580645,
+     0.05161290322580645
+    ],
+    "sig": false
+   },
+   "d_acc_sym_minus_untagged": {
+    "delta": 0.09032258064516129,
+    "ci": [
+     0.025645161290322727,
+     0.15483870967741936
+    ],
+    "sig": true
+   },
+   "d_margin_dict_minus_untagged": {
+    "delta": -0.013263870967741943,
+    "ci": [
+     -0.08747370967741935,
+     0.06103093548387093
+    ],
+    "sig": false
+   },
+   "d_margin_sym_minus_untagged": {
+    "delta": 0.2877677419354839,
+    "ci": [
+     0.12690175806451617,
+     0.44444172580645164
+    ],
+    "sig": true
+   },
+   "d_lure_dict_minus_untagged": {
+    "delta": -0.03225806451612903,
+    "ci": [
+     -0.09032258064516129,
+     0.025806451612903226
+    ],
+    "sig": false
+   },
+   "d_lure_sym_minus_untagged": {
+    "delta": -0.05806451612903226,
+    "ci": [
+     -0.11612903225806452,
+     0.0
+    ],
+    "sig": false
+   }
+  }
+ },
+ "interaction": {
+  "acc_dict_minus_untagged": {
+   "stated": NaN,
+   "not_stated": 0.0,
+   "interaction": NaN,
+   "ci": [
+    NaN,
+    NaN
+   ],
+   "p": 0.0
+  },
+  "acc_sym_minus_untagged": {
+   "stated": NaN,
+   "not_stated": 0.09032258064516129,
+   "interaction": NaN,
+   "ci": [
+    NaN,
+    NaN
+   ],
+   "p": 0.0
+  },
+  "margin_dict_minus_untagged": {
+   "stated": NaN,
+   "not_stated": -0.013263870967741943,
+   "interaction": NaN,
+   "ci": [
+    NaN,
+    NaN
+   ],
+   "p": 0.0
+  },
+  "margin_sym_minus_untagged": {
+   "stated": NaN,
+   "not_stated": 0.2877677419354839,
+   "interaction": NaN,
+   "ci": [
+    NaN,
+    NaN
+   ],
+   "p": 0.0
+  }
+ }
+}

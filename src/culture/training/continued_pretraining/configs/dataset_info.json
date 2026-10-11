@@ -1,144 +1,204 @@
 {
-  "hi_proverbs": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "hi_unfiltered": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_unfiltered_prepared",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "zh_chengyu": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "zh_unfiltered": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_unfiltered_prepared",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "ar_amthal": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "ar_unfiltered": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_unfiltered_prepared",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "hi_filtered_untagged": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_untagged",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "zh_filtered_untagged": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_untagged",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "ar_filtered_untagged": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_untagged",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "hi_sft_mix": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "conversations"
-    },
-    "tags": {
-      "role_tag": "from",
-      "content_tag": "value",
-      "user_tag": "human",
-      "assistant_tag": "gpt"
-    }
-  },
-  "ar_sft_mix": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "conversations"
-    },
-    "tags": {
-      "role_tag": "from",
-      "content_tag": "value",
-      "user_tag": "human",
-      "assistant_tag": "gpt"
-    }
-  },
-  "zh_sft_mix": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "conversations"
-    },
-    "tags": {
-      "role_tag": "from",
-      "content_tag": "value",
-      "user_tag": "human",
-      "assistant_tag": "gpt"
-    }
-  },
-  "ar_sft_mix_native": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar_native",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "conversations"
-    },
-    "tags": {
-      "role_tag": "from",
-      "content_tag": "value",
-      "user_tag": "human",
-      "assistant_tag": "gpt"
-    }
-  },
-  "ar_culture": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culture",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "ar_culturenotes": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culturenotes",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "hi_culture": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culture",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "hi_culturenotes": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culturenotes",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "zh_culture": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culture",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "zh_culturenotes": {
-    "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culturenotes",
-    "columns": {
-      "prompt": "text"
-    }
+ "hi_proverbs": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train",
+  "columns": {
+   "prompt": "text"
   }
+ },
+ "hi_unfiltered": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_unfiltered_prepared",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_chengyu": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_unfiltered": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_unfiltered_prepared",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_amthal": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_unfiltered": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_unfiltered_prepared",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_filtered_untagged": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_untagged",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_filtered_untagged": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_untagged",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_filtered_untagged": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_untagged",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_sft_mix": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_hi",
+  "formatting": "sharegpt",
+  "columns": {
+   "messages": "conversations"
+  },
+  "tags": {
+   "role_tag": "from",
+   "content_tag": "value",
+   "user_tag": "human",
+   "assistant_tag": "gpt"
+  }
+ },
+ "ar_sft_mix": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar",
+  "formatting": "sharegpt",
+  "columns": {
+   "messages": "conversations"
+  },
+  "tags": {
+   "role_tag": "from",
+   "content_tag": "value",
+   "user_tag": "human",
+   "assistant_tag": "gpt"
+  }
+ },
+ "zh_sft_mix": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_zh",
+  "formatting": "sharegpt",
+  "columns": {
+   "messages": "conversations"
+  },
+  "tags": {
+   "role_tag": "from",
+   "content_tag": "value",
+   "user_tag": "human",
+   "assistant_tag": "gpt"
+  }
+ },
+ "ar_sft_mix_native": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-sft-data/train_sft_ar_native",
+  "formatting": "sharegpt",
+  "columns": {
+   "messages": "conversations"
+  },
+  "tags": {
+   "role_tag": "from",
+   "content_tag": "value",
+   "user_tag": "human",
+   "assistant_tag": "gpt"
+  }
+ },
+ "ar_culture": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culture",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_culturenotes": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_ar_culturenotes",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_culture": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culture",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_culturenotes": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_hi_culturenotes",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_culture": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culture",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_culturenotes": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/train_zh_culturenotes",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_t1_random": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t1_zh/zh_t1_random",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_t1_culture_free": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t1_zh/zh_t1_culture_free",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "zh_t1_culture_all": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t1_zh/zh_t1_culture_all",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_t2_untagged": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_ar/ar_t2_untagged",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_t2_dict": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_ar/ar_t2_dict",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_t2_sym": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_ar/ar_t2_sym",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "ar_t2_symall": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_ar/ar_t2_symall",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_t2_untagged": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_hi/hi_t2_untagged",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_t2_dict": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_hi/hi_t2_dict",
+  "columns": {
+   "prompt": "text"
+  }
+ },
+ "hi_t2_sym": {
+  "file_name": "/lustre-storage/fsx_0/user/jiaruiliu/culture-pretraining-data/t2_hi/hi_t2_sym",
+  "columns": {
+   "prompt": "text"
+  }
+ }
 }

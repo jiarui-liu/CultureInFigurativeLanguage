@@ -1,0 +1,859 @@
+{
+ "group": [
+  "symbolic_evaluative"
+ ],
+ "annotator": "Qwen3.5-27B-FP8",
+ "per_task": {
+  "ar/arabculture/idiom_untagged": {
+   "delta_in": -0.05426356589147287,
+   "delta_out": 0.004499100179964007,
+   "interaction": -0.058762666071436875,
+   "ci": [
+    -0.11662551210688095,
+    -4.533976925546804e-05
+   ],
+   "n_in": 129,
+   "n_out": 3334,
+   "p": 0.02539492101579684,
+   "task": "arabculture",
+   "lang": "ar",
+   "arm": "idiom_untagged",
+   "p_holm": 0.8380323935212958
+  },
+  "ar/arabculture/idiom_cpt": {
+   "delta_in": -0.03875968992248062,
+   "delta_out": 0.005398920215956809,
+   "interaction": -0.04415861013843743,
+   "ci": [
+    -0.1086264723799426,
+    0.02205605390549797
+   ],
+   "n_in": 129,
+   "n_out": 3334,
+   "p": 0.09578084383123375,
+   "task": "arabculture",
+   "lang": "ar",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "ar/arabculture/culture": {
+   "delta_in": -0.06976744186046512,
+   "delta_out": 0.020695860827834433,
+   "interaction": -0.09046330268829955,
+   "ci": [
+    -0.1426737908232307,
+    -0.04455155480531801
+   ],
+   "n_in": 129,
+   "n_out": 3334,
+   "p": 0.0007998400319936012,
+   "task": "arabculture",
+   "lang": "ar",
+   "arm": "culture",
+   "p_holm": 0.027994401119776045
+  },
+  "ar/arabculture/culture_notes": {
+   "delta_in": -0.06201550387596899,
+   "delta_out": 0.023695260947810437,
+   "interaction": -0.08571076482377943,
+   "ci": [
+    -0.14537325093120912,
+    -0.029900996544877073
+   ],
+   "n_in": 129,
+   "n_out": 3334,
+   "p": 0.001799640071985603,
+   "task": "arabculture",
+   "lang": "ar",
+   "arm": "culture_notes",
+   "p_holm": 0.0611877624475105
+  },
+  "ar/alyah/idiom_untagged": {
+   "delta_in": 0.03678929765886288,
+   "delta_out": 0.01261467889908257,
+   "interaction": 0.02417461875978031,
+   "ci": [
+    -0.01319238823601608,
+    0.06364343300297624
+   ],
+   "n_in": 299,
+   "n_out": 872,
+   "p": 0.23815236952609478,
+   "task": "alyah",
+   "lang": "ar",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "ar/alyah/idiom_cpt": {
+   "delta_in": 0.043478260869565216,
+   "delta_out": 0.02408256880733945,
+   "interaction": 0.019395692062225765,
+   "ci": [
+    -0.022652917983492376,
+    0.061825446442269304
+   ],
+   "n_in": 299,
+   "n_out": 872,
+   "p": 0.3715256948610278,
+   "task": "alyah",
+   "lang": "ar",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "ar/alyah/culture": {
+   "delta_in": 0.033444816053511704,
+   "delta_out": 0.0022935779816513763,
+   "interaction": 0.031151238071860328,
+   "ci": [
+    -0.004397782363229111,
+    0.0664164378202571
+   ],
+   "n_in": 299,
+   "n_out": 872,
+   "p": 0.1227754449110178,
+   "task": "alyah",
+   "lang": "ar",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "ar/alyah/culture_notes": {
+   "delta_in": 0.04013377926421405,
+   "delta_out": 0.0022935779816513763,
+   "interaction": 0.03784020128256267,
+   "ci": [
+    0.004105331993495136,
+    0.0728320318492833
+   ],
+   "n_in": 299,
+   "n_out": 872,
+   "p": 0.04919016196760648,
+   "task": "alyah",
+   "lang": "ar",
+   "arm": "culture_notes",
+   "p_holm": 1.0
+  },
+  "ar/dzirieval/idiom_untagged": {
+   "delta_in": 0.05084745762711865,
+   "delta_out": 0.016817593790426907,
+   "interaction": 0.03402986383669174,
+   "ci": [
+    -0.016210961767564917,
+    0.08617098252461246
+   ],
+   "n_in": 177,
+   "n_out": 773,
+   "p": 0.17516496700659867,
+   "task": "dzirieval",
+   "lang": "ar",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "ar/dzirieval/idiom_cpt": {
+   "delta_in": 0.03954802259887006,
+   "delta_out": 0.0129366106080207,
+   "interaction": 0.026611411990849362,
+   "ci": [
+    -0.02730702889176369,
+    0.07910792202951285
+   ],
+   "n_in": 177,
+   "n_out": 773,
+   "p": 0.3147370525894821,
+   "task": "dzirieval",
+   "lang": "ar",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "ar/dzirieval/culture": {
+   "delta_in": 0.01694915254237288,
+   "delta_out": 0.009055627425614488,
+   "interaction": 0.007893525116758393,
+   "ci": [
+    -0.039416463846924085,
+    0.054393514153528943
+   ],
+   "n_in": 177,
+   "n_out": 773,
+   "p": 0.7774445110977805,
+   "task": "dzirieval",
+   "lang": "ar",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "ar/dzirieval/culture_notes": {
+   "delta_in": 0.03954802259887006,
+   "delta_out": 0.0129366106080207,
+   "interaction": 0.026611411990849362,
+   "ci": [
+    -0.0258732212160414,
+    0.0787611185417442
+   ],
+   "n_in": 177,
+   "n_out": 773,
+   "p": 0.3353329334133173,
+   "task": "dzirieval",
+   "lang": "ar",
+   "arm": "culture_notes",
+   "p_holm": 1.0
+  },
+  "ar/arabic_cultural_qa/idiom_untagged": {
+   "delta_in": -0.045454545454545456,
+   "delta_out": -0.01331967213114754,
+   "interaction": -0.032134873323397914,
+   "ci": [
+    -0.10442785953800297,
+    0.0194672131147541
+   ],
+   "n_in": 44,
+   "n_out": 1952,
+   "p": 0.6490701859628074,
+   "task": "arabic_cultural_qa",
+   "lang": "ar",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "ar/arabic_cultural_qa/idiom_cpt": {
+   "delta_in": -0.022727272727272728,
+   "delta_out": -0.010758196721311475,
+   "interaction": -0.011969076005961253,
+   "ci": [
+    -0.0661454452309985,
+    0.02151639344262295
+   ],
+   "n_in": 44,
+   "n_out": 1952,
+   "p": 0.8160367926414717,
+   "task": "arabic_cultural_qa",
+   "lang": "ar",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "ar/arabic_cultural_qa/culture": {
+   "delta_in": -0.022727272727272728,
+   "delta_out": -0.010245901639344262,
+   "interaction": -0.012481371087928466,
+   "ci": [
+    -0.06717003539493292,
+    0.021004098360655737
+   ],
+   "n_in": 44,
+   "n_out": 1952,
+   "p": 0.8116376724655069,
+   "task": "arabic_cultural_qa",
+   "lang": "ar",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "ar/arabic_cultural_qa/culture_notes": {
+   "delta_in": -0.045454545454545456,
+   "delta_out": 0.0030737704918032786,
+   "interaction": -0.04852831594634874,
+   "ci": [
+    -0.12082130216095378,
+    0.003586065573770492
+   ],
+   "n_in": 44,
+   "n_out": 1952,
+   "p": 0.356128774245151,
+   "task": "arabic_cultural_qa",
+   "lang": "ar",
+   "arm": "culture_notes",
+   "p_holm": 1.0
+  },
+  "hi/global_piqa_hi/idiom_untagged": {
+   "delta_in": 0.0,
+   "delta_out": 0.0014388489208633094,
+   "interaction": -0.0014388489208633094,
+   "ci": [
+    -0.017985611510791366,
+    0.015827338129496403
+   ],
+   "n_in": 16,
+   "n_out": 1390,
+   "p": 1.0,
+   "task": "global_piqa_hi",
+   "lang": "hi",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "hi/global_piqa_hi/idiom_cpt": {
+   "delta_in": 0.0,
+   "delta_out": 0.004316546762589928,
+   "interaction": -0.004316546762589928,
+   "ci": [
+    -0.02158273381294964,
+    0.012949640287769784
+   ],
+   "n_in": 16,
+   "n_out": 1390,
+   "p": 1.0,
+   "task": "global_piqa_hi",
+   "lang": "hi",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "hi/global_piqa_hi/culture": {
+   "delta_in": 0.0,
+   "delta_out": -0.01079136690647482,
+   "interaction": 0.01079136690647482,
+   "ci": [
+    -0.007194244604316547,
+    0.02877697841726619
+   ],
+   "n_in": 16,
+   "n_out": 1390,
+   "p": 1.0,
+   "task": "global_piqa_hi",
+   "lang": "hi",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "ar/arabicmmlu/idiom_untagged": {
+   "delta_in": 0.04666666666666667,
+   "delta_out": 0.01038961038961039,
+   "interaction": 0.03627705627705628,
+   "ci": [
+    -0.014114718614718613,
+    0.08926406926406927
+   ],
+   "n_in": 150,
+   "n_out": 3850,
+   "p": 0.21835632873425315,
+   "task": "arabicmmlu",
+   "lang": "ar",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "ar/arabicmmlu/idiom_cpt": {
+   "delta_in": 0.04,
+   "delta_out": 0.007792207792207792,
+   "interaction": 0.032207792207792206,
+   "ci": [
+    -0.02026190476190476,
+    0.08735930735930736
+   ],
+   "n_in": 150,
+   "n_out": 3850,
+   "p": 0.28234353129374123,
+   "task": "arabicmmlu",
+   "lang": "ar",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "ar/arabicmmlu/culture": {
+   "delta_in": -0.006666666666666667,
+   "delta_out": 0.005714285714285714,
+   "interaction": -0.012380952380952381,
+   "ci": [
+    -0.06761904761904762,
+    0.041991341991341996
+   ],
+   "n_in": 150,
+   "n_out": 3850,
+   "p": 0.7252549490101979,
+   "task": "arabicmmlu",
+   "lang": "ar",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "ar/arabicmmlu/culture_notes": {
+   "delta_in": 0.02666666666666667,
+   "delta_out": 0.006493506493506494,
+   "interaction": 0.020173160173160176,
+   "ci": [
+    -0.032902597402597406,
+    0.07298701298701299
+   ],
+   "n_in": 150,
+   "n_out": 3850,
+   "p": 0.5526894621075785,
+   "task": "arabicmmlu",
+   "lang": "ar",
+   "arm": "culture_notes",
+   "p_holm": 1.0
+  },
+  "hi/milu/idiom_untagged": {
+   "delta_in": -0.0625,
+   "delta_out": -0.005292338709677419,
+   "interaction": -0.05720766129032258,
+   "ci": [
+    -0.15196572580645162,
+    0.009828629032258064
+   ],
+   "n_in": 32,
+   "n_out": 3968,
+   "p": 0.4347130573885223,
+   "task": "milu",
+   "lang": "hi",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "hi/milu/idiom_cpt": {
+   "delta_in": -0.03125,
+   "delta_out": -0.002772177419354839,
+   "interaction": -0.02847782258064516,
+   "ci": [
+    -0.09627016129032258,
+    0.01109501008064507
+   ],
+   "n_in": 32,
+   "n_out": 3968,
+   "p": 0.8036392721455708,
+   "task": "milu",
+   "lang": "hi",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "hi/milu/culture": {
+   "delta_in": -0.0625,
+   "delta_out": -0.011592741935483871,
+   "interaction": -0.050907258064516125,
+   "ci": [
+    -0.17692162298387096,
+    0.0703125
+   ],
+   "n_in": 32,
+   "n_out": 3968,
+   "p": 0.5010997800439912,
+   "task": "milu",
+   "lang": "hi",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "zh/cmmlu/idiom_untagged": {
+   "delta_in": -0.047619047619047616,
+   "delta_out": -0.008106116433308769,
+   "interaction": -0.03951293118573885,
+   "ci": [
+    -0.13917254447836613,
+    0.015484524686809005
+   ],
+   "n_in": 21,
+   "n_out": 2714,
+   "p": 0.6556688662267547,
+   "task": "cmmlu",
+   "lang": "zh",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "zh/cmmlu/idiom_cpt": {
+   "delta_in": 0.0,
+   "delta_out": -0.0007369196757553427,
+   "interaction": 0.0007369196757553427,
+   "ci": [
+    -0.13990946415412148,
+    0.14139251500157898
+   ],
+   "n_in": 21,
+   "n_out": 2714,
+   "p": 1.0,
+   "task": "cmmlu",
+   "lang": "zh",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "zh/cmmlu/culture": {
+   "delta_in": -0.09523809523809523,
+   "delta_out": -0.026160648489314663,
+   "interaction": -0.06907744674878057,
+   "ci": [
+    -0.258448257711338,
+    0.11661797733094698
+   ],
+   "n_in": 21,
+   "n_out": 2714,
+   "p": 0.4783043391321736,
+   "task": "cmmlu",
+   "lang": "zh",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_culture/idiom_untagged": {
+   "delta_in": -0.038461538461538464,
+   "delta_out": 0.0032712632108706594,
+   "interaction": -0.04173280167240912,
+   "ci": [
+    -0.1257142580620185,
+    0.0055359838953195776
+   ],
+   "n_in": 26,
+   "n_out": 3974,
+   "p": 0.6116776644671066,
+   "task": "parambench_hi_culture",
+   "lang": "hi",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_culture/idiom_cpt": {
+   "delta_in": 0.038461538461538464,
+   "delta_out": 0.004277805737292401,
+   "interaction": 0.03418373272424606,
+   "ci": [
+    -0.013336688475088072,
+    0.11915914985869692
+   ],
+   "n_in": 26,
+   "n_out": 3974,
+   "p": 0.7950409918016397,
+   "task": "parambench_hi_culture",
+   "lang": "hi",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_culture/culture": {
+   "delta_in": 0.0,
+   "delta_out": 0.005787619526925012,
+   "interaction": -0.005787619526925012,
+   "ci": [
+    -0.11916544074948705,
+    0.1075839108048469
+   ],
+   "n_in": 26,
+   "n_out": 3974,
+   "p": 1.0,
+   "task": "parambench_hi_culture",
+   "lang": "hi",
+   "arm": "culture",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_other/idiom_untagged": {
+   "delta_in": -0.09090909090909091,
+   "delta_out": -0.020222446916076844,
+   "interaction": -0.07068664399301407,
+   "ci": [
+    -0.1815550602077397,
+    0.03033998988877645
+   ],
+   "n_in": 44,
+   "n_out": 3956,
+   "p": 0.2453509298140372,
+   "task": "parambench_hi_other",
+   "lang": "hi",
+   "arm": "idiom_untagged",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_other/idiom_cpt": {
+   "delta_in": -0.022727272727272728,
+   "delta_out": -0.015419615773508595,
+   "interaction": -0.007307656953764133,
+   "ci": [
+    -0.12448294880044121,
+    0.11240176027208373
+   ],
+   "n_in": 44,
+   "n_out": 3956,
+   "p": 1.0,
+   "task": "parambench_hi_other",
+   "lang": "hi",
+   "arm": "idiom_cpt",
+   "p_holm": 1.0
+  },
+  "hi/parambench_hi_other/culture": {
+   "delta_in": -0.045454545454545456,
+   "delta_out": -0.016430738119312435,
+   "interaction": -0.02902380733523302,
+   "ci": [
+    -0.13912756227594447,
+    0.07756974446180698
+   ],
+   "n_in": 44,
+   "n_out": 3956,
+   "p": 0.705258948210358,
+   "task": "parambench_hi_other",
+   "lang": "hi",
+   "arm": "culture",
+   "p_holm": 1.0
+  }
+ },
+ "pooled": {
+  "ar/idiom_untagged": {
+   "delta_in": 0.023661270236612703,
+   "delta_out": 0.0038736842105263156,
+   "interaction": 0.019787586026086386,
+   "ci": [
+    -0.002563631120141574,
+    0.04273038211968271
+   ],
+   "n_in": 803,
+   "n_out": 11875,
+   "p": 0.09698060387922415
+  },
+  "ar/idiom_cpt": {
+   "delta_in": 0.026151930261519303,
+   "delta_out": 0.0046315789473684215,
+   "interaction": 0.021520351314150882,
+   "ci": [
+    -0.002143792357606344,
+    0.045518586878154285
+   ],
+   "n_in": 803,
+   "n_out": 11875,
+   "p": 0.06418716256748651
+  },
+  "ar/culture": {
+   "delta_in": 0.0037359900373599006,
+   "delta_out": 0.007073684210526316,
+   "interaction": -0.0033376941731664157,
+   "ci": [
+    -0.02418961263682244,
+    0.017231311529134156
+   ],
+   "n_in": 803,
+   "n_out": 11875,
+   "p": 0.785242951409718
+  },
+  "ar/culture_notes": {
+   "delta_in": 0.0161892901618929,
+   "delta_out": 0.0112,
+   "interaction": 0.0049892901618929005,
+   "ci": [
+    -0.016604477944550042,
+    0.026315744903978495
+   ],
+   "n_in": 803,
+   "n_out": 11875,
+   "p": 0.6862627474505099
+  },
+  "zh/idiom_untagged": {
+   "delta_in": 0.0,
+   "delta_out": -0.006092540754157747,
+   "interaction": 0.006092540754157747,
+   "ci": [
+    -0.09324880619133871,
+    0.10510456117240244
+   ],
+   "n_in": 30,
+   "n_out": 6073,
+   "p": 1.0
+  },
+  "zh/idiom_cpt": {
+   "delta_in": -0.03333333333333333,
+   "delta_out": -0.0006586530545035403,
+   "interaction": -0.03267468027882979,
+   "ci": [
+    -0.1595861463307536,
+    0.07012459520281025
+   ],
+   "n_in": 30,
+   "n_out": 6073,
+   "p": 0.6822635472905418
+  },
+  "zh/culture": {
+   "delta_in": -0.06666666666666667,
+   "delta_out": -0.023382183434875678,
+   "interaction": -0.04328448323179099,
+   "ci": [
+    -0.17744113288325375,
+    0.08676381799220582
+   ],
+   "n_in": 30,
+   "n_out": 6073,
+   "p": 0.5404919016196761
+  },
+  "hi/idiom_untagged": {
+   "delta_in": -0.05737704918032787,
+   "delta_out": -0.006126718469814704,
+   "interaction": -0.051250330710513166,
+   "ci": [
+    -0.10082760305919473,
+    -0.006228320088581479
+   ],
+   "n_in": 122,
+   "n_out": 13384,
+   "p": 0.138372325534893
+  },
+  "hi/idiom_cpt": {
+   "delta_in": -0.00819672131147541,
+   "delta_out": -0.0031380753138075313,
+   "interaction": -0.005058645997667879,
+   "ci": [
+    -0.05379254529509177,
+    0.042479796037353114
+   ],
+   "n_in": 122,
+   "n_out": 13384,
+   "p": 0.906618676264747
+  },
+  "hi/culture": {
+   "delta_in": -0.03278688524590164,
+   "delta_out": -0.007621040047818291,
+   "interaction": -0.02516584519808335,
+   "ci": [
+    -0.08135117291995336,
+    0.029150263833498245
+   ],
+   "n_in": 122,
+   "n_out": 13384,
+   "p": 0.5050989802039592
+  }
+ },
+ "category_counts": {
+  "arabculture": {
+   "material_practice": 2665,
+   "social_norm_relation": 363,
+   "factual_knowledge": 241,
+   "symbolic_evaluative": 135,
+   "language_form": 30,
+   "generic_pragmatic": 29
+  },
+  "alyah": {
+   "language_form": 249,
+   "symbolic_evaluative": 299,
+   "material_practice": 284,
+   "social_norm_relation": 199,
+   "factual_knowledge": 140
+  },
+  "dzirieval": {
+   "factual_knowledge": 512,
+   "material_practice": 171,
+   "symbolic_evaluative": 177,
+   "language_form": 80,
+   "social_norm_relation": 8,
+   "generic_pragmatic": 2
+  },
+  "arabic_cultural_qa": {
+   "material_practice": 294,
+   "factual_knowledge": 1574,
+   "social_norm_relation": 68,
+   "symbolic_evaluative": 44,
+   "generic_pragmatic": 3,
+   "language_form": 13
+  },
+  "global_piqa_ar": {
+   "material_practice": 952,
+   "factual_knowledge": 57,
+   "social_norm_relation": 75,
+   "generic_pragmatic": 6,
+   "language_form": 4,
+   "symbolic_evaluative": 4
+  },
+  "ccpm": {
+   "factual_knowledge": 2672,
+   "symbolic_evaluative": 7,
+   "language_form": 41
+  },
+  "global_piqa_zh": {
+   "material_practice": 365,
+   "generic_pragmatic": 231,
+   "symbolic_evaluative": 2,
+   "factual_knowledge": 40,
+   "social_norm_relation": 10
+  },
+  "global_piqa_hi": {
+   "material_practice": 806,
+   "generic_pragmatic": 492,
+   "social_norm_relation": 44,
+   "factual_knowledge": 43,
+   "symbolic_evaluative": 16,
+   "language_form": 5
+  },
+  "global_piqa": {
+   "material_practice": 82,
+   "symbolic_evaluative": 4,
+   "generic_pragmatic": 12,
+   "factual_knowledge": 2
+  },
+  "arabicmmlu": {
+   "factual_knowledge": 2855,
+   "social_norm_relation": 219,
+   "symbolic_evaluative": 150,
+   "language_form": 405,
+   "generic_pragmatic": 165,
+   "material_practice": 206
+  },
+  "milu": {
+   "factual_knowledge": 3326,
+   "generic_pragmatic": 184,
+   "language_form": 290,
+   "symbolic_evaluative": 32,
+   "social_norm_relation": 82,
+   "material_practice": 86
+  },
+  "cmmlu": {
+   "factual_knowledge": 2320,
+   "language_form": 206,
+   "material_practice": 59,
+   "generic_pragmatic": 54,
+   "symbolic_evaluative": 21,
+   "social_norm_relation": 75
+  },
+  "parambench_hi_culture": {
+   "factual_knowledge": 3841,
+   "language_form": 54,
+   "material_practice": 75,
+   "social_norm_relation": 4,
+   "symbolic_evaluative": 26
+  },
+  "parambench_hi_other": {
+   "factual_knowledge": 3883,
+   "language_form": 30,
+   "symbolic_evaluative": 44,
+   "social_norm_relation": 23,
+   "generic_pragmatic": 14,
+   "material_practice": 6
+  },
+  "kinayat_meaning": {
+   "symbolic_evaluative": 243,
+   "language_form": 73,
+   "material_practice": 6,
+   "factual_knowledge": 3
+  },
+  "ar_figurative": {
+   "symbolic_evaluative": 210,
+   "social_norm_relation": 49,
+   "language_form": 18,
+   "material_practice": 10,
+   "factual_knowledge": 27
+  },
+  "mabl": {
+   "symbolic_evaluative": 625,
+   "language_form": 368,
+   "factual_knowledge": 5,
+   "social_norm_relation": 2
+  },
+  "chengyu_bench": {
+   "symbolic_evaluative": 540
+  },
+  "idiomatlas_mc_ar_seen": {
+   "symbolic_evaluative": 579,
+   "factual_knowledge": 20,
+   "language_form": 1
+  },
+  "idiomatlas_mc_ar_unseen": {
+   "symbolic_evaluative": 587,
+   "material_practice": 1,
+   "factual_knowledge": 7,
+   "language_form": 5
+  },
+  "idiomatlas_mc_hi_seen": {
+   "symbolic_evaluative": 584,
+   "factual_knowledge": 16
+  },
+  "idiomatlas_mc_hi_unseen": {
+   "symbolic_evaluative": 582,
+   "factual_knowledge": 15,
+   "material_practice": 2,
+   "language_form": 1
+  },
+  "idiomatlas_mc_zh_seen": {
+   "language_form": 50,
+   "factual_knowledge": 321,
+   "symbolic_evaluative": 229
+  },
+  "idiomatlas_mc_zh_unseen": {
+   "symbolic_evaluative": 18,
+   "factual_knowledge": 59,
+   "language_form": 1
+  },
+  "symbolism_v2_ar_letter": {
+   "symbolic_evaluative": 97,
+   "factual_knowledge": 1
+  },
+  "symbolism_v2_hi_letter": {
+   "symbolic_evaluative": 155
+  },
+  "symbolism_v2_zh_letter": {
+   "symbolic_evaluative": 206
+  }
+ }
+}

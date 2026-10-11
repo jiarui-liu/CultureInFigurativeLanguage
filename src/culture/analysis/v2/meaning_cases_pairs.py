@@ -33,6 +33,8 @@ PAIRS = [("en", "hi"), ("en", "ar"), ("zh", "hi"), ("zh", "ar"), ("hi", "ar")]
 LANG_NAME = {"en": "English", "zh": "Chinese", "hi": "Hindi", "ar": "Arabic"}
 SIM = 0.70          # the paper's pairing threshold
 MAX_PER_SIDE = 3    # idioms shown per language per row
+NEAR = 0.95         # same-language expansion, as in the en-zh original
+TOP_PAIRS = 4000    # highest-similarity cross-lingual pairs considered per language pair
 N_ROWS = 6
 
 
@@ -101,6 +103,23 @@ def load_meanings(lang, cap=None):
     return rows[:cap] if cap else rows
 
 
+def near_neighbours(V, thr=NEAR, step=2048):
+    """Same-language idioms whose meaning is nearly identical, as index lists.
+
+    The en-zh original builds a bilingual cluster from one cross-lingual pair by
+    attaching, on each side, the idioms of that same language whose meaning is nearly
+    identical to the anchor. Counting the b side by its cross-lingual matches instead
+    (which an earlier version did) makes every cluster look like 1-vs-many, because the
+    a side is then an anchor by construction and the b side is a 0.70 neighbourhood.
+    """
+    out = []
+    for i0 in range(0, len(V), step):
+        S = V[i0:i0 + step] @ V.T
+        for r in range(S.shape[0]):
+            out.append(np.flatnonzero(S[r] >= thr).tolist())
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", type=int, default=N_ROWS)
@@ -109,67 +128,60 @@ def main():
     args = ap.parse_args()
 
     langs = sorted({l for p in PAIRS for l in p})
-    data, vecs = {}, {}
+    data, vecs, near = {}, {}, {}
     for l in langs:
         data[l] = load_meanings(l)
         print(f"[embed] {l}: {len(data[l])} meanings", flush=True)
         vecs[l] = common.embed([r["mean"] for r in data[l]], batch_size=256)
+        near[l] = near_neighbours(vecs[l])
+        print(f"[near]  {l}: median cluster size "
+              f"{int(np.median([len(x) for x in near[l]]))}", flush=True)
 
-    out = {"method": __doc__, "sim_threshold": args.sim, "pairs": {}}
+    out = {"method": __doc__, "sim_threshold": args.sim, "near_threshold": NEAR,
+           "pairs": {}}
     for a, b in PAIRS:
         A, B = vecs[a], vecs[b]
         da, db = data[a], data[b]
         cands = []
-        # blocked matmul: the full matrix would be ~20k x 27k
         step = 2048
         for i0 in range(0, len(A), step):
             S = A[i0:i0 + step] @ B.T
-            idx = np.argwhere(S >= args.sim)
-            for i, j in idx:
+            for i, j in np.argwhere(S >= args.sim):
                 ia, jb = i0 + int(i), int(j)
-                ea, eb = set(da[ia]["ents"]), set(db[jb]["ents"])
-                if not ea or not eb:
-                    continue
-                cands.append({"sim": float(S[i, j]), "a": ia, "b": jb})
+                if da[ia]["ents"] and db[jb]["ents"]:
+                    cands.append((float(S[i, j]), ia, jb))
         print(f"[{a}-{b}] {len(cands)} cross-lingual meaning pairs at cos>={args.sim}",
               flush=True)
+        cands.sort(key=lambda t: -t[0])
 
-        # group by the English-side (or a-side) meaning, so one row = one meaning
-        groups = defaultdict(lambda: {"a": set(), "b": set(), "sim": 0.0})
-        for c in cands:
-            k = meaning_key(da[c["a"]]["mean"])[:70]
-            g = groups[k]
-            g["a"].add(c["a"])
-            g["b"].add(c["b"])
-            g["sim"] = max(g["sim"], c["sim"])
-
-        rows = []
-        for k, g in groups.items():
-            ai, bi = sorted(g["a"]), sorted(g["b"])
-            # Clusters of 20+ a side are an artefact of a vague gloss, not of one
-            # language elaborating a meaning; they read as noise in the table.
-            if not (1 <= len(ai) <= 12 and 1 <= len(bi) <= 12):
+        rows, seen = [], set()
+        for sim, ia, jb in cands[:TOP_PAIRS]:
+            ai, bi = near[a][ia], near[b][jb]
+            k = (min(ai), min(bi))
+            if k in seen:
                 continue
-            ea = set().union(*[set(da[i]["ents"]) for i in ai]) if ai else set()
-            eb = set().union(*[set(db[j]["ents"]) for j in bi]) if bi else set()
+            seen.add(k)
+            ea = set().union(*[set(da[i]["ents"]) for i in ai])
+            eb = set().union(*[set(db[j]["ents"]) for j in bi])
+            if ea & eb:            # shared imagery cannot illustrate the contrast
+                continue
+            # keep the anchor first: it is the idiom the similarity was measured on
+            ai = [ia] + [i for i in ai if i != ia]
+            bi = [jb] + [j for j in bi if j != jb]
             rows.append({
-                "key": k, "sim": round(g["sim"], 4),
+                "key": da[ia]["mean"][:70].lower(), "sim": round(sim, 4),
                 "n_a": len(ai), "n_b": len(bi),
                 "a": [{"idiom": da[i]["idiom"], "mean": da[i]["mean"],
                        "native": da[i]["native"], "ents": da[i]["ents"]} for i in ai[:8]],
                 "b": [{"idiom": db[j]["idiom"], "mean": db[j]["mean"],
                        "native": db[j]["native"], "ents": db[j]["ents"]} for j in bi[:8]],
-                # the point of the table: the two sides use different imagery
-                "entity_overlap": len(ea & eb),
+                "entity_overlap": 0,
                 "asymmetry": abs(len(ai) - len(bi)),
             })
-        # Only disjoint imagery can illustrate "same meaning, different entity"; among
-        # those, prefer the tightest meaning match, then the most asymmetric cluster.
-        rows = [r for r in rows if r["entity_overlap"] == 0]
-        # Ranking on asymmetry first pinned every row to the size cap, so the table read
-        # as six copies of one statistic; the tightest meaning match is the better order
-        # and leaves the cluster sizes free to vary.
         rows.sort(key=lambda r: (-r["sim"], -r["asymmetry"]))
+        sizes = [r["n_a"] + r["n_b"] for r in rows]
+        print(f"[{a}-{b}] {len(rows)} disjoint-imagery clusters, "
+              f"median size {int(np.median(sizes)) if sizes else 0}", flush=True)
         out["pairs"][f"{a}-{b}"] = {
             "n_pairs": len(cands), "n_clusters": len(rows),
             "candidates": rows[: args.rows * 8],
