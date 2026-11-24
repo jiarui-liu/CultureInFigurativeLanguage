@@ -62,6 +62,8 @@ def read(fn):
     wb = openpyxl.load_workbook(fn, data_only=True)
     out = {}
     for s in ["A_KB", "B_MC", "C_Symbolism"]:
+        if s not in wb.sheetnames:
+            continue
         ws = wb[s]
         head = [c.value for c in ws[1]]
         out[s] = [dict(zip(head, [c.value for c in r])) for r in ws.iter_rows(min_row=2)]
@@ -110,7 +112,9 @@ def main():
     a = ap.parse_args(); rng = np.random.default_rng(7)
     res = {}
     for lang in ["zh", "hi", "ar"]:
-        fns = sorted(glob.glob(os.path.join(a.ann_dir, "returned", f"IdiomAtlas_validation_{lang}_*.xlsx")))
+        allf = sorted(glob.glob(os.path.join(a.ann_dir, "returned", f"IdiomAtlas_validation_{lang}_*.xlsx")))
+        fns = [f for f in allf if "_C_v2" not in Path(f).stem]
+        cv2 = [f for f in allf if "_C_v2" in Path(f).stem]  # C_Symbolism v2 (with evidence idioms), if returned
         if not fns:
             continue
         key = json.load(open(os.path.join(a.ann_dir, f"KEY_DO_NOT_SHARE_{lang}.json")))
@@ -184,6 +188,40 @@ def main():
 
         # ---------- C_Symbolism
         Ck = {k["row"]: k for k in key["C_Symbolism"]}
+        if cv2:  # v2 supersedes v1: C2 = key fits the evidence idioms, C3 = conventional association
+            V = read(cv2[0])["C_Symbolism"]
+            V = [(r, Ck[r["row"]]) for r in V if r.get("C2_fits_idioms")]
+            validV, validConv = set(), set()
+            for r, k in V:
+                other = letters(r.get("C4_other_recognized")) - {k["gold"]}
+                ok = r.get("C1_gloss_ok") != "no" and r["C2_fits_idioms"] in ("yes", "partly") and k["english_lure"] not in other
+                if ok:
+                    validV.add(k["qid"])
+                    if r.get("C3_conventional") in ("yes", "partly"):
+                        validConv.add(k["qid"])
+            RV = {"version": "v2", "file": Path(cv2[0]).name, "n": len(V),
+                  "gloss_wrong": wilson(sum(r.get("C1_gloss_ok") == "no" for r, _ in V), len(V)),
+                  "fits_idioms": wilson(sum(r["C2_fits_idioms"] == "yes" for r, _ in V), len(V)),
+                  "fits_idioms_or_partly": wilson(sum(r["C2_fits_idioms"] in ("yes", "partly") for r, _ in V), len(V)),
+                  "conventional": wilson(sum(r.get("C3_conventional") == "yes" for r, _ in V), len(V)),
+                  "conventional_or_partly": wilson(sum(r.get("C3_conventional") in ("yes", "partly") for r, _ in V), len(V)),
+                  "lure_recognized_in_target": wilson(sum(k["english_lure"] in letters(r.get("C4_other_recognized")) for r, k in V), len(V)),
+                  "valid_items": wilson(len(validV), len(V)),
+                  "valid_and_conventional": wilson(len(validConv), len(V))}
+            cl = {json.loads(l)["qid"]: json.loads(l) for l in open(MANUAL / f"probe_manual_{lang}.jsonl")}
+            RV["human_valid_vs_claude_valid"] = kappa(
+                [k["qid"] in validV for _, k in V],
+                [(cl.get(k["qid"], {}).get("target_option") == k["gold"] and "entity_misread" not in cl.get(k["qid"], {}).get("issues", [])) for _, k in V])
+            RV["model_contrasts_valid_items"] = model_contrasts(lang, [f"symbolism_v2_{lang}_letter"], validV, rng)
+            RV["model_contrasts_valid_conventional"] = model_contrasts(lang, [f"symbolism_v2_{lang}_letter"], validConv, rng)
+            RV["model_contrasts_all_sampled"] = model_contrasts(lang, [f"symbolism_v2_{lang}_letter"], {k["qid"] for _, k in V}, rng)
+            R["C_Symbolism"] = RV
+            res[lang] = R
+            print(json.dumps({lang: R}, ensure_ascii=False, indent=1))
+            continue
+        if "C_Symbolism" not in P:
+            res[lang] = R
+            continue
         # key shown: C2 = is the keyed option recognized, C3 = other recognized options (lure not marked)
         C = [(r, Ck[r["row"]]) for r in P["C_Symbolism"] if r.get("C2_key_recognized")]
         judged = [(r, k) for r, k in C if r["C2_key_recognized"] != "dont_know"]

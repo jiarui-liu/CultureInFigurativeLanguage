@@ -265,9 +265,72 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--langs", nargs="+", default=["zh", "hi", "ar"])
+    ap.add_argument("--c_v2_only", action="store_true",
+                    help="only write the C_Symbolism v2 workbook (needs the existing KEY file)")
     a = ap.parse_args()
     for L in a.langs:
-        build(L, Path(a.out_dir))
+        if not a.c_v2_only:
+            build(L, Path(a.out_dir))
+        build_c_v2(L, Path(a.out_dir))
+
+
+
+# ---------------------------------------------------------------------------------------------
+# C_Symbolism v2: same 60 items and row order as the main workbook, plus the target-language
+# evidence idioms each item was built from. Annotators reported that the entity alone is often not
+# enough to judge an LLM-summarized association, so v2 asks two separate questions:
+# does the key fairly summarize these idioms, and is it a conventional association in the culture.
+C2_INSTR = """Native-speaker validation of the {lang} symbolism probe (sheet C, version 2)
+
+Each row names an entity, the {lang} idioms our probe was built from (with their dictionary meanings),
+and four candidate associations A-D. The question asked of the model is:
+  "In {lang} idioms and sayings, <entity> usually symbolizes ..."
+The option highlighted in GREEN is our answer key (column "key" repeats its letter).
+Every answer cell is PRE-FILLED with the default; change it with the drop-down only when you disagree.
+
+  C1 gloss_ok (default: yes): is the English gloss the right sense of the {lang} word in these idioms?
+  C2 fits_idioms (default: yes): reading the idioms shown, is the green option a fair description of
+       what the entity stands for in them? yes / partly / no
+  C3 conventional (default: yes): beyond these particular idioms, is this a conventional, widely
+       recognized association of the entity in {lang}? yes / partly / no
+       (choose no if the entity has no conventional symbolic meaning in {lang}, e.g. it is only used
+       literally, or its "meaning" exists only inside these few idioms)
+  C4 other_recognized (default: empty): any OTHER option that is ALSO a recognized association of this
+       entity in {lang}-speaking culture, e.g. "A" or "A,C".
+Estimated time: about 40 minutes for 60 rows.
+"""
+
+
+def build_c_v2(lang, out_dir, max_idioms=8, max_chars=140):
+    key = json.load(open(out_dir / f"KEY_DO_NOT_SHARE_{lang}.json"))
+    blind = {x["qid"]: x for x in rows(MANUAL / f"probe_blind_{lang}.jsonl")}
+    wb = Workbook()
+    ws0 = wb.active
+    ws0.title = "Instructions"
+    for line in C2_INSTR.format(lang=LANG[lang]).split("\n"):
+        ws0.append([line])
+    ws0.column_dimensions["A"].width = 110
+    head = ["row", "entity", "english_gloss", f"{LANG[lang]}_idioms_with_this_entity", "A", "B", "C", "D", "key",
+            "C1_gloss_ok", "C2_fits_idioms", "C3_conventional", "C4_other_recognized"]
+    data = []
+    for k in key["C_Symbolism"]:
+        b = blind[k["qid"]]
+        ev = [e if len(e) <= max_chars else e[:max_chars] + "…" for e in b["target_language_idioms"][:max_idioms]]
+        more = len(b["target_language_idioms"]) - len(ev)
+        evid = "\n".join(f"• {e}" for e in ev) + (f"\n(+{more} more)" if more > 0 else "")
+        data.append([k["row"], b["entity"], b["entity_en"], evid, *[b["options"][L] for L in LETTERS], k["gold"],
+                     "yes", "yes", "yes", ""])
+    ws = add_sheet(wb, "C_Symbolism", head, data, ["C1_gloss_ok", "C2_fits_idioms", "C3_conventional", "C4_other_recognized"],
+                   {"C1_gloss_ok": ["yes", "no"], "C2_fits_idioms": ["yes", "partly", "no"],
+                    "C3_conventional": ["yes", "partly", "no"]},
+                   [5, 12, 12, 60, 30, 30, 30, 30, 6, 10, 12, 13, 14])
+    for i, k in enumerate(key["C_Symbolism"], 2):
+        c = ws.cell(row=i, column=head.index(k["gold"]) + 1)
+        c.fill = KEY_FILL
+        c.font = Font(bold=True)
+    fn = out_dir / f"IdiomAtlas_validation_{lang}_C_v2.xlsx"
+    wb.save(fn)
+    print("wrote", fn, len(data))
 
 
 if __name__ == "__main__":
