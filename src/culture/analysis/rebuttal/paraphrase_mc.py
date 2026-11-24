@@ -81,7 +81,7 @@ def load(lang, split):
 def generate(a):
     from vllm import LLM, SamplingParams
     llm = LLM(model=a.model, tensor_parallel_size=1, max_model_len=4096, gpu_memory_utilization=0.92,
-              max_num_seqs=256, enable_prefix_caching=True)
+              max_num_seqs=128, enable_prefix_caching=True)
     PARA.mkdir(parents=True, exist_ok=True)
     log = open(PARA / f"paraphrase_log_{'_'.join(a.langs)}.jsonl", "w", encoding="utf-8")
     for lang in a.langs:

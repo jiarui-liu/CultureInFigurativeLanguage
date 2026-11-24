@@ -30,6 +30,9 @@ KB = {
     "hi": D / "hi/idioms_merged_llm_formatted_figurative_only.jsonl",
     "ar": Path("/data/group_data/r3lit_culture_pretrain/culture/bidir/hf9b/data/idioms/ar/idioms_merged_llm_formatted.jsonl"),
 }
+if os.environ.get("CULTURE_KB_DIR"):  # e.g. a copy of data/idioms from the HF dataset on another server
+    _k = Path(os.environ["CULTURE_KB_DIR"])
+    KB = {L: _k / L / p.name for L, p in KB.items()}
 LANG = {"en": "English", "zh": "Chinese", "hi": "Hindi", "ar": "Arabic"}
 
 PROMPT = """You are a native-speaker expert auditing one entry of a {lang} idiom and proverb dictionary that was processed automatically. Judge it from your knowledge of {lang}.
@@ -97,23 +100,32 @@ def judge(a):
     t0 = time.time()
     out = Path(a.out)
     items = [json.loads(l) for l in open(out / "entries.jsonl", encoding="utf-8") if json.loads(l)["lang"] == a.lang]
-    fn = out / f"judge_{a.name}_{a.lang}.jsonl"
+    fn = out / f"judge_{a.name}_{a.lang}{('.' + a.tag) if a.tag else ''}.jsonl"
+    import fcntl
+    lock = open(str(fn) + ".lock", "w")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        print("another process holds", fn, flush=True)
+        return
     done = set()
-    if fn.exists():
-        for l in open(fn, encoding="utf-8"):
+    for g in out.glob(f"judge_{a.name}_{a.lang}*.jsonl"):  # every shard file, from any server
+        for l in open(g, encoding="utf-8"):
             try:
                 done.add(json.loads(l)["id"])
             except Exception:
                 pass
     todo = [x for x in items if x["id"] not in done]
+    if a.reverse:
+        todo = todo[::-1]
     print(a.lang, a.name, "total", len(items), "todo", len(todo), flush=True)
     if not todo:
         open(out / f"DONE_{a.name}_{a.lang}", "w").close()
         return
     from vllm import LLM, SamplingParams
     extra = {"quantization": a.quant} if a.quant else {}
-    llm = LLM(model=a.model, tensor_parallel_size=1, max_model_len=4096, gpu_memory_utilization=0.92,
-              max_num_seqs=256, enable_prefix_caching=True, **extra)
+    llm = LLM(model=a.model, tensor_parallel_size=1, max_model_len=8192, gpu_memory_utilization=0.92,
+              max_num_seqs=a.max_num_seqs, enable_prefix_caching=True, **extra)
     sp = SamplingParams(temperature=0.0, max_tokens=200, seed=0)
     per_chunk = []
     for k in range(0, len(todo), a.chunk):
@@ -123,9 +135,9 @@ def judge(a):
         c0 = time.time()
         ch = todo[k:k + a.chunk]
         msgs = [[{"role": "user", "content": PROMPT.format(
-            lang=LANG[x["lang"]], idiom=x["idiom"], fig=json.dumps(x["fig"], ensure_ascii=False),
-            lit=json.dumps(x["lit"], ensure_ascii=False) if x["lit"] else "(none)",
-            ent=json.dumps(x["ent"], ensure_ascii=False))}] for x in ch]
+            lang=LANG[x["lang"]], idiom=x["idiom"][:300], fig=json.dumps([f[:600] for f in x["fig"]], ensure_ascii=False),
+            lit=json.dumps([t[:300] for t in x["lit"]], ensure_ascii=False) if x["lit"] else "(none)",
+            ent=json.dumps(x["ent"][:20], ensure_ascii=False))}] for x in ch]
         try:
             outs = llm.chat(msgs, sp, use_tqdm=False, chat_template_kwargs={"enable_thinking": False})
         except TypeError:
@@ -150,6 +162,9 @@ def main():
     ap.add_argument("--quant", default=None)
     ap.add_argument("--chunk", type=int, default=2000)
     ap.add_argument("--budget_min", type=float, default=50)
+    ap.add_argument("--reverse", action="store_true", help="work from the end, so two servers can split a shard")
+    ap.add_argument("--tag", default="", help="output-file suffix for a second server")
+    ap.add_argument("--max_num_seqs", type=int, default=128)
     a = ap.parse_args()
     if a.cmd == "prepare":
         prepare(Path(a.out))
