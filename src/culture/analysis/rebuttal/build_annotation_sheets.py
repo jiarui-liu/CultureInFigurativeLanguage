@@ -5,10 +5,11 @@ Three tasks per workbook, sized for ~3 h for one annotator:
   A_KB         100 IdiomAtlas entries, drawn from the 200-entry audit sample (so the earlier
                automatic audits can be scored against people). Meaning, figurativeness, entities,
                the annotator's own familiarity with the idiom, and (Arabic) regional spread.
-  B_MC         60 IdiomAtlas-MC items (30 seen, 30 unseen, mixed). The annotator answers blind,
-               then marks every option that is an acceptable meaning.
-  C_Symbolism  60 symbolism-probe items. The annotator answers blind, then marks every option
-               that is a recognized association of the entity in their culture.
+  B_MC         60 IdiomAtlas-MC items (30 seen, 30 unseen, mixed), keyed option highlighted. The annotator
+               judges whether the key is correct and lists any other acceptable option.
+  C_Symbolism  60 symbolism-probe items, keyed (target-culture) option highlighted; the English lure
+               is not marked. The annotator judges whether the key is a recognized association
+               and lists any other option that is also recognized.
 One native speaker per language (no overlap subset).
 
 Answer keys and provenance (split, gold, lure, earlier audit ids) go to a separate key file that
@@ -36,6 +37,7 @@ N_SYM, N_SYM_OVL = 60, 30
 SEED = 20261124
 FILL_IN = PatternFill("solid", fgColor="FFF4CC")
 HEAD = PatternFill("solid", fgColor="DDE7F3")
+KEY_FILL = PatternFill("solid", fgColor="B7E1B0")
 LETTERS = "ABCD"
 
 INSTRUCTIONS = """Native-speaker validation of IdiomAtlas ({lang})
@@ -72,11 +74,11 @@ Each row shows an idiom or proverb, the figurative meaning(s) we extracted from 
 ---------------------------------------------------------------------------------------------------
 Sheet B_MC: multiple-choice meaning questions (60 rows)
 Each row shows an idiom and four candidate meanings A-D (this is our benchmark IdiomAtlas-MC).
-  B1 best_option: which option gives the meaning of the idiom? A / B / C / D / none
-       Answer from your own knowledge first. If you don't know the idiom, give your best guess and
-       set B3 = 1.
-  B2 acceptable_options: list EVERY option that is an acceptable meaning, e.g. "B" or "B,D";
-       write "none" if no option is acceptable.
+The option highlighted in GREEN is our answer key (column "key" repeats its letter).
+  B1 key_correct: is the green option a correct meaning of the idiom?
+       yes / partly (right but incomplete or vague) / no / dont_know (I don't know this idiom)
+  B2 other_acceptable: list any OTHER option (not the green one) that is also an acceptable meaning
+       of the idiom, e.g. "C" or "A,D"; leave empty if none.
   B3 confidence: 1 = guess, 2 = fairly sure, 3 = certain.
 
 ---------------------------------------------------------------------------------------------------
@@ -84,12 +86,13 @@ Sheet C_Symbolism: what an entity symbolizes (60 rows)
 Each row names an entity (e.g. owl, dog, water) in {lang} with an English gloss, and four
 candidate associations A-D, all in {lang}. The question is:
   "In {lang} idioms and sayings, <entity> usually symbolizes ..."
+The option highlighted in GREEN is our answer key (column "key" repeats its letter).
   C1 gloss_ok: is the English gloss the right sense of the {lang} word as used here? yes / no
        (some words have several senses; mark no if the gloss picks the wrong one).
-  C2 best_option: which option best states what the entity usually symbolizes in {lang}
-       idioms and sayings? A / B / C / D / none
-  C3 recognized_options: list EVERY option that is a recognized association of this entity in
-       {lang}-speaking culture (e.g. "A" or "A,C"); write "none" if none is.
+  C2 key_recognized: is the green option a recognized association of this entity in {lang}
+       idioms and sayings? yes / partly / no / dont_know
+  C3 other_recognized: list any OTHER option (not the green one) that is ALSO a recognized
+       association of this entity in {lang}-speaking culture, e.g. "A" or "A,C"; leave empty if none.
   C4 confidence: 1 = guess, 2 = fairly sure, 3 = certain.
   C5 notes: optional, e.g. "in my region X means Y instead".
 """
@@ -220,37 +223,45 @@ def build(lang, out_dir):
     order = []
     for a, b in zip(seen_p, uns_p):
         order += [a, b] if rng.random() < 0.5 else [b, a]
-    head = ["row", "idiom", "A", "B", "C", "D", "B1_best_option", "B2_acceptable_options",
+    head = ["row", "idiom", "A", "B", "C", "D", "key", "B1_key_correct", "B2_other_acceptable",
             "B3_confidence", "notes"]
     data = []
     for i, (split, x) in enumerate(order, 1):
         opts = [o.strip() for o in x["options"]]
-        data.append([i, x["meta"]["idiom"], *opts, "", "", "", ""])
+        data.append([i, x["meta"]["idiom"], *opts, LETTERS[x["gold"]], "", "", "", ""])
         key["B_MC"].append({"row": i, "qid": x["qid"], "split": split, "gold": LETTERS[x["gold"]],
                             "idiom": x["meta"]["idiom"]})
-    add_sheet(wb, "B_MC", head, data, ["B1_best_option", "B2_acceptable_options", "B3_confidence", "notes"],
-              {"B1_best_option": ["A", "B", "C", "D", "none"], "B3_confidence": ["1", "2", "3"]},
-              [5, 28, 40, 40, 40, 40, 12, 16, 12, 30])
+    ws = add_sheet(wb, "B_MC", head, data, ["B1_key_correct", "B2_other_acceptable", "B3_confidence", "notes"],
+                   {"B1_key_correct": ["yes", "partly", "no", "dont_know"], "B3_confidence": ["1", "2", "3"]},
+                   [5, 28, 40, 40, 40, 40, 6, 14, 16, 12, 30])
+    for i, (split, x) in enumerate(order, 2):  # highlight the keyed option in each row
+        c = ws.cell(row=i, column=head.index(LETTERS[x["gold"]]) + 1)
+        c.fill = KEY_FILL
+        c.font = Font(bold=True)
 
     # ---- C: symbolism probe items
     blind = {x["qid"]: x for x in rows(MANUAL / f"probe_blind_{lang}.jsonl")}
     pkey = {x["qid"]: x for x in json.load(open(MANUAL / f"probe_key_{lang}.json"))}
     qids = sorted(blind, key=lambda q: int(q.split("/")[-1]))
     pick = rng.sample(qids, min(N_SYM, len(qids)))
-    head = ["row", "entity", "english_gloss", "question", "A", "B", "C", "D", "C1_gloss_ok",
-            "C2_best_option", "C3_recognized_options", "C4_confidence", "C5_notes"]
+    head = ["row", "entity", "english_gloss", "question", "A", "B", "C", "D", "key", "C1_gloss_ok",
+            "C2_key_recognized", "C3_other_recognized", "C4_confidence", "C5_notes"]
     data = []
     for i, q in enumerate(pick, 1):
         b = blind[q]
         data.append([i, b["entity"], b["entity_en"], b["question"],
-                     *[b["options"][L] for L in LETTERS], "", "", "", "", ""])
+                     *[b["options"][L] for L in LETTERS], pkey[q]["gold"], "", "", "", "", ""])
         key["C_Symbolism"].append({"row": i, "qid": q, "gold": pkey[q]["gold"], "english_lure": pkey[q]["english_lure"],
                                    "entity": b["entity"], "entity_en": b["entity_en"]})
-    add_sheet(wb, "C_Symbolism", head, data, ["C1_gloss_ok", "C2_best_option", "C3_recognized_options",
-                                              "C4_confidence", "C5_notes"],
-              {"C1_gloss_ok": ["yes", "no"], "C2_best_option": ["A", "B", "C", "D", "none"],
-               "C4_confidence": ["1", "2", "3"]},
-              [5, 14, 14, 36, 34, 34, 34, 34, 10, 12, 16, 12, 30])
+    ws = add_sheet(wb, "C_Symbolism", head, data, ["C1_gloss_ok", "C2_key_recognized", "C3_other_recognized",
+                                                   "C4_confidence", "C5_notes"],
+                   {"C1_gloss_ok": ["yes", "no"], "C2_key_recognized": ["yes", "partly", "no", "dont_know"],
+                    "C4_confidence": ["1", "2", "3"]},
+                   [5, 14, 14, 36, 34, 34, 34, 34, 6, 10, 14, 16, 12, 30])
+    for i, q in enumerate(pick, 2):  # highlight the keyed (target-culture) option; the English lure is not marked
+        c = ws.cell(row=i, column=head.index(pkey[q]["gold"]) + 1)
+        c.fill = KEY_FILL
+        c.font = Font(bold=True)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     fn = out_dir / f"IdiomAtlas_validation_{lang}.xlsx"

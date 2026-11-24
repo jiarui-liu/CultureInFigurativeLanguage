@@ -8,8 +8,8 @@ Reports per language:
   A_KB   meaning correct / noisy / partly / wrong, figurative rate, entity precision, familiarity,
          Arabic region spread, all with Wilson 95% CIs; Cohen's kappa between annotators and
          between people and each earlier automatic audit (Claude audit, Gemma, Qwen judges).
-  B_MC   human accuracy (seen / unseen), item validity (gold acceptable and no other option
-         acceptable), and model contrasts restricted to human-validated items.
+  B_MC   key shown: share of keys judged correct (seen / unseen), share with another acceptable
+         option, item validity, and model contrasts restricted to human-validated items.
   C_Sym  gloss errors, human agreement with the key, gold recognized, English lure recognized in
          the target culture, item validity, and probe contrasts on human-validated items.
 Usage: python -m culture.analysis.rebuttal.score_annotations --ann_dir docs/arr_oct_rebuttal/annotation \
@@ -167,44 +167,42 @@ def main():
 
         # ---------- B_MC
         Bk = {k["row"]: k for k in key["B_MC"]}
-        B = [(r, Bk[r["row"]]) for r in P["B_MC"] if r.get("B1_best_option")]
+        # key shown to the annotator: B1 = is the keyed option correct, B2 = other acceptable options
+        B = [(r, Bk[r["row"]]) for r in P["B_MC"] if r.get("B1_key_correct")]
+        judged = [(r, k) for r, k in B if r["B1_key_correct"] != "dont_know"]
         valid = set()
-        acc = {"seen": [], "unseen": []}
-        for r, k in B:
-            acc[k["split"]].append(str(r["B1_best_option"]).strip().upper() == k["gold"])
-            ok = letters(r.get("B2_acceptable_options"))
-            if k["gold"] in ok and len(ok) == 1:
+        for r, k in judged:
+            others = letters(r.get("B2_other_acceptable")) - {k["gold"]}
+            if r["B1_key_correct"] == "yes" and not others:
                 valid.add(k["qid"])
-        RB = {"n": len(B), "human_acc": {s: wilson(sum(v), len(v)) for s, v in acc.items()},
-              "gold_acceptable": wilson(sum(k["gold"] in letters(r.get("B2_acceptable_options")) for r, k in B), len(B)),
-              "valid_items": wilson(len(valid), len(B)),
-              "confident_acc": wilson(sum(str(r["B1_best_option"]).upper() == k["gold"] for r, k in B if str(r.get("B3_confidence")) == "3"),
-                                      sum(str(r.get("B3_confidence")) == "3" for r, k in B))}
-        if len(order) > 1:
-            S = {r["row"]: r for r in ann[order[1]]["B_MC"]}
-            RB["iaa_best_option"] = kappa([r.get("B1_best_option") for r, _ in B], [S.get(r["row"], {}).get("B1_best_option") for r, _ in B])
+        lab = Counter(r["B1_key_correct"] for r, _ in B)
+        RB = {"n": len(B), "n_judged": len(judged), "labels": dict(lab),
+              "key_correct": {s: wilson(sum(r["B1_key_correct"] == "yes" for r, k in judged if k["split"] == s),
+                                        sum(k["split"] == s for _, k in judged)) for s in ["seen", "unseen"]},
+              "key_correct_or_partly": wilson(sum(r["B1_key_correct"] in ("yes", "partly") for r, _ in judged), len(judged)),
+              "another_option_acceptable": wilson(sum(bool(letters(r.get("B2_other_acceptable")) - {k["gold"]}) for r, k in judged), len(judged)),
+              "valid_items": wilson(len(valid), len(judged))}
         RB["model_contrasts_valid_items"] = model_contrasts(lang, [f"idiomatlas_mc_{lang}_seen", f"idiomatlas_mc_{lang}_unseen"], valid, rng)
         RB["model_contrasts_all_sampled"] = model_contrasts(lang, [f"idiomatlas_mc_{lang}_seen", f"idiomatlas_mc_{lang}_unseen"], {k["qid"] for _, k in B}, rng)
         R["B_MC"] = RB
 
         # ---------- C_Symbolism
         Ck = {k["row"]: k for k in key["C_Symbolism"]}
-        C = [(r, Ck[r["row"]]) for r in P["C_Symbolism"] if r.get("C2_best_option")]
+        # key shown: C2 = is the keyed option recognized, C3 = other recognized options (lure not marked)
+        C = [(r, Ck[r["row"]]) for r in P["C_Symbolism"] if r.get("C2_key_recognized")]
+        judged = [(r, k) for r, k in C if r["C2_key_recognized"] != "dont_know"]
         validC = set()
-        for r, k in C:
-            rec = letters(r.get("C3_recognized_options"))
-            if r.get("C1_gloss_ok") != "no" and k["gold"] in rec and k["english_lure"] not in rec:
+        for r, k in judged:
+            other = letters(r.get("C3_other_recognized")) - {k["gold"]}
+            if r.get("C1_gloss_ok") != "no" and r["C2_key_recognized"] in ("yes", "partly") and k["english_lure"] not in other:
                 validC.add(k["qid"])
-        RC = {"n": len(C),
+        RC = {"n": len(C), "n_judged": len(judged), "labels": dict(Counter(r["C2_key_recognized"] for r, _ in C)),
               "gloss_wrong": wilson(sum(r.get("C1_gloss_ok") == "no" for r, _ in C), filled([r for r, _ in C], "C1_gloss_ok")),
-              "best_equals_key": wilson(sum(str(r["C2_best_option"]).upper() == k["gold"] for r, k in C), len(C)),
-              "best_equals_english_lure": wilson(sum(str(r["C2_best_option"]).upper() == k["english_lure"] for r, k in C), len(C)),
-              "gold_recognized": wilson(sum(k["gold"] in letters(r.get("C3_recognized_options")) for r, k in C), len(C)),
-              "lure_recognized_in_target": wilson(sum(k["english_lure"] in letters(r.get("C3_recognized_options")) for r, k in C), len(C)),
-              "valid_items": wilson(len(validC), len(C))}
-        if len(order) > 1:
-            S = {r["row"]: r for r in ann[order[1]]["C_Symbolism"]}
-            RC["iaa_best_option"] = kappa([r.get("C2_best_option") for r, _ in C], [S.get(r["row"], {}).get("C2_best_option") for r, _ in C])
+              "key_recognized": wilson(sum(r["C2_key_recognized"] == "yes" for r, _ in judged), len(judged)),
+              "key_recognized_or_partly": wilson(sum(r["C2_key_recognized"] in ("yes", "partly") for r, _ in judged), len(judged)),
+              "lure_recognized_in_target": wilson(sum(k["english_lure"] in letters(r.get("C3_other_recognized")) for r, k in judged), len(judged)),
+              "a_distractor_recognized": wilson(sum(bool(letters(r.get("C3_other_recognized")) - {k["gold"], k["english_lure"]}) for r, k in judged), len(judged)),
+              "valid_items": wilson(len(validC), len(judged))}
         cl = {json.loads(l)["qid"]: json.loads(l) for l in open(MANUAL / f"probe_manual_{lang}.jsonl")}
         RC["human_valid_vs_claude_valid"] = kappa(
             [k["qid"] in validC for _, k in C],
