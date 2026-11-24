@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path("/data/group_data/r3lit_culture_pretrain/culture/bidir")
-DIRS = ["eval9b", "eval9b_ext"]
+DIRS = ["eval9b", "eval9b_ext", "eval9b_main"]  # eval9b_main: original 9B main-suite records
 RUN = {"base": "Base", "unfiltered": "Random-CPT", "untagged": "Idiom-Text", "cpt": "Idiom+Meaning"}
 FAMILY = {  # unseen = idioms absent from training docs / KB
     "idiomatlas_mc_{L}_seen": "seen", "jawaher_ar": "seen", "absher_meaning": "seen",
@@ -25,6 +25,11 @@ FAMILY = {  # unseen = idioms absent from training docs / KB
     "midi_ar_UAE": "unseen_by_variety", "midi_ar_Morocco": "unseen_by_variety",
     "include_ar": "culture", "include_hi": "culture", "include_zh": "culture",
     "culturalbench_hi": "culture", "culturalbench_zh": "culture",
+    "kinayat_meaning": "seen", "ar_figurative": "unseen", "mabl": "unseen",
+    "kinayat_cloze": "cloze", "chid": "cloze",
+    "alyah": "culture", "dzirieval": "culture", "arabculture": "culture", "arabic_cultural_qa": "culture",
+    "global_piqa_ar": "culture", "global_piqa_ar_parallel": "culture", "global_piqa": "culture", "ccpm": "culture",
+    "milu": "regional", "arabicmmlu": "regional", "cmmlu": "regional",
 }
 B = 10000
 
