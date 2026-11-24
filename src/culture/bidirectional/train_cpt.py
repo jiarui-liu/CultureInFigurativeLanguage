@@ -120,6 +120,9 @@ def main():
     ap.add_argument("--epochs", type=float, default=1.0)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--deepspeed", default=None)
+    ap.add_argument("--load_dtype", default="bfloat16",
+                    help="dtype the weights are loaded in; use float32 without DeepSpeed so the "
+                         "optimizer keeps fp32 master weights (DeepSpeed bf16 does this itself)")
     ap.add_argument("--max_steps", type=int, default=-1)
     ap.add_argument("--save_steps", type=int, default=150)
     ap.add_argument("--ckpt_dir", default=None,
@@ -133,7 +136,7 @@ def main():
     accum = max(1, a.global_batch // (a.micro_batch * world))
     ds = PackedDataset(a.data)
     tok = AutoTokenizer.from_pretrained(a.model)
-    model = AutoModelForCausalLM.from_pretrained(a.model, dtype=torch.bfloat16,
+    model = AutoModelForCausalLM.from_pretrained(a.model, dtype=getattr(torch, a.load_dtype),
                                                  attn_implementation="sdpa")
     model.config.use_cache = False
     total = a.max_steps if a.max_steps > 0 else math.ceil(len(ds) * a.epochs / a.global_batch)
