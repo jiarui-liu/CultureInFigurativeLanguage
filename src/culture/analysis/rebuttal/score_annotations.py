@@ -7,7 +7,7 @@ Put returned files in <ann_dir>/returned/ named IdiomAtlas_validation_<lang>_<an
 Reports per language:
   A_KB   meaning correct / noisy / partly / wrong, figurative rate, entity precision, familiarity,
          Arabic region spread, all with Wilson 95% CIs; Cohen's kappa between annotators and
-         between people and each earlier automatic audit (Claude audit, Gemma, Qwen judges).
+         between the person and each earlier automatic audit (Claude audit, Gemma, Qwen judges).
   B_MC   key shown: share of keys judged correct (seen / unseen), share with another acceptable
          option, item validity, and model contrasts restricted to human-validated items.
   C_Sym  gloss errors, human agreement with the key, gold recognized, English lure recognized in
@@ -126,16 +126,12 @@ def main():
             listed = [e.strip() for e in str(r.get("entities") or "").split("|") if e.strip()]
             wrong = [e for e in re.split(r"[|,،;；，]", str(r.get("A3_wrong_entities") or "")) if e.strip()]
             ent_listed += len(listed); ent_wrong += min(len(wrong), len(listed))
-        fam = Counter(r.get("A5_familiarity") for r in A if r.get("A5_familiarity"))
-        nf = sum(fam.values())
         RA = {"n": n,
               "meaning_correct_incl_noise": wilson(m["correct"] + m["correct_with_noise"], n),
               "meaning_clean": wilson(m["correct"], n), "meaning_noise": wilson(m["correct_with_noise"], n),
               "meaning_partly": wilson(m["partly_correct"], n), "meaning_wrong": wilson(m["wrong"], n),
               "is_figurative": wilson(sum(r.get("A2_is_figurative") == "yes" for r in A), filled(A, "A2_is_figurative")),
-              "entity_precision": wilson(ent_listed - ent_wrong, ent_listed),
-              "familiarity": {k: wilson(v, nf) for k, v in fam.items()},
-              "known_and_matches_dictionary_among_known": wilson(fam["know_same"], fam["know_same"] + fam["know_different"])}
+              "entity_precision": wilson(ent_listed - ent_wrong, ent_listed)}
         if lang == "ar":
             reg = Counter(r.get("A7_region") for r in A if r.get("A7_region"))
             RA["region"] = {k: wilson(v, sum(reg.values())) for k, v in reg.items()}

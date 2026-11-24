@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Build native-speaker validation workbooks (one .xlsx per language: zh, hi, ar).
 
-Three tasks per workbook, sized for ~3 h for one annotator:
+Three tasks per workbook, sized for ~2 h for one annotator. Every answer cell is pre-filled with the
+default ("correct" / "yes" / empty); the annotator changes only what they disagree with:
   A_KB         100 IdiomAtlas entries, drawn from the 200-entry audit sample (so the earlier
                automatic audits can be scored against people). Meaning, figurativeness, entities,
-               the annotator's own familiarity with the idiom, and (Arabic) regional spread.
+               Hindi OCR spelling, and (Arabic) regional spread and literal reading.
   B_MC         60 IdiomAtlas-MC items (30 seen, 30 unseen, mixed), keyed option highlighted. The annotator
                judges whether the key is correct and lists any other acceptable option.
   C_Symbolism  60 symbolism-probe items, keyed (target-culture) option highlighted; the English lure
@@ -42,44 +43,39 @@ LETTERS = "ABCD"
 
 INSTRUCTIONS = """Native-speaker validation of IdiomAtlas ({lang})
 
-Thank you for helping. Please work in this file and fill only the yellow columns. Most cells have a
-drop-down list; free-text cells are optional unless stated. Please do not search the web or ask an AI
-system; we want your own judgment as a native speaker. "Don't know" / "unsure" is always a fine answer.
+Thank you for helping. Every yellow answer cell is PRE-FILLED with the default answer ("correct",
+"yes", or empty = nothing wrong). Please read every row and change a cell only when you disagree, using
+its drop-down list. Text cells (wrong/missing entities, other acceptable options) stay empty unless you
+find something. Please do not search the web or ask an AI system; we want your own judgment as a
+native speaker. "dont_know" / "unsure" is always a fine answer.
 
-Estimated time: A_KB ~80 min, B_MC ~30 min, C_Symbolism ~60 min (about 3 hours in total).
+Estimated time: A_KB ~60 min, B_MC ~25 min, C_Symbolism ~45 min (about 2 hours in total).
 You can stop and continue later; save the file and send it back when done.
 
 ---------------------------------------------------------------------------------------------------
 Sheet A_KB: dictionary entries (100 rows)
 Each row shows an idiom or proverb, the figurative meaning(s) we extracted from a dictionary,
 {lit_note}and the concrete entities (nouns such as animals, body parts, objects) we listed for it.
-  A1 meaning_correct: is the figurative meaning right?
+  A1 meaning_correct (default: correct): is the figurative meaning right?
        correct            = right and clean
        correct_with_noise = right, but the text also contains extra material (a quotation, a story,
                             a source citation, broken text)
        partly_correct     = captures only part of the meaning, or is vague/too general
        wrong              = not the meaning of this idiom
-  A2 is_figurative: is this a figurative expression (idiom, proverb, saying, metaphorical phrase)
+  A2 is_figurative (default: yes): is this a figurative expression (idiom, proverb, saying, metaphorical phrase)
        rather than a plain literal phrase? yes / no / unsure
   A3 wrong_entities: copy any listed entity that is NOT a concrete thing mentioned in the idiom
        (leave empty if all are fine).
   A4 missing_entities: concrete nouns in the idiom that are missing from the list (optional).
-  A5 familiarity:
-       know_same      = I know this idiom and understand it the way the dictionary meaning says
-       know_different = I know it, but I (or people around me) use/understand it differently
-       heard_unsure   = I may have heard it but am not sure what it means
-       unknown        = I don't know this idiom
-  A6 my_meaning: only if A5 = know_different, write in a few words how you understand it.
 {extra_a}
 ---------------------------------------------------------------------------------------------------
 Sheet B_MC: multiple-choice meaning questions (60 rows)
 Each row shows an idiom and four candidate meanings A-D (this is our benchmark IdiomAtlas-MC).
 The option highlighted in GREEN is our answer key (column "key" repeats its letter).
-  B1 key_correct: is the green option a correct meaning of the idiom?
+  B1 key_correct (default: yes): is the green option a correct meaning of the idiom?
        yes / partly (right but incomplete or vague) / no / dont_know (I don't know this idiom)
   B2 other_acceptable: list any OTHER option (not the green one) that is also an acceptable meaning
        of the idiom, e.g. "C" or "A,D"; leave empty if none.
-  B3 confidence: 1 = guess, 2 = fairly sure, 3 = certain.
 
 ---------------------------------------------------------------------------------------------------
 Sheet C_Symbolism: what an entity symbolizes (60 rows)
@@ -87,23 +83,20 @@ Each row names an entity (e.g. owl, dog, water) in {lang} with an English gloss,
 candidate associations A-D, all in {lang}. The question is:
   "In {lang} idioms and sayings, <entity> usually symbolizes ..."
 The option highlighted in GREEN is our answer key (column "key" repeats its letter).
-  C1 gloss_ok: is the English gloss the right sense of the {lang} word as used here? yes / no
+  C1 gloss_ok (default: yes): is the English gloss the right sense of the {lang} word as used here? yes / no
        (some words have several senses; mark no if the gloss picks the wrong one).
-  C2 key_recognized: is the green option a recognized association of this entity in {lang}
+  C2 key_recognized (default: yes): is the green option a recognized association of this entity in {lang}
        idioms and sayings? yes / partly / no / dont_know
   C3 other_recognized: list any OTHER option (not the green one) that is ALSO a recognized
        association of this entity in {lang}-speaking culture, e.g. "A" or "A,C"; leave empty if none.
-  C4 confidence: 1 = guess, 2 = fairly sure, 3 = certain.
-  C5 notes: optional, e.g. "in my region X means Y instead".
 """
 
 EXTRA_A = {
-    "hi": "  A7 spelling_ok: is the idiom text spelled correctly (the dictionary was digitized with OCR)?\n"
+    "hi": "  A7 spelling_ok (default: yes): is the idiom text spelled correctly (the dictionary was digitized with OCR)?\n"
           "       yes / minor_errors / unreadable\n",
-    "ar": "  A7 region: where is this expression used? pan_arab / classical_literary / regional /\n"
-          "       dont_know. If regional, name the region or dialect in A8 (e.g. Egyptian, Levantine,\n"
-          "       Gulf, Maghrebi, Hassaniya).\n"
-          "  A9 literal_ok: is the word-for-word literal reading correct? correct / partly / wrong\n",
+    "ar": "  A7 region (default: dont_know): where is this expression used? pan_arab /\n"
+          "       classical_literary / regional / dont_know. Change it only if you know.\n"
+          "  A8 literal_ok (default: correct): is the word-for-word literal reading correct? correct / partly / wrong\n",
     "zh": "",
 }
 LIT_NOTE = {"ar": "a word-for-word literal reading, ", "zh": "the literal meaning or source when available, ",
@@ -183,32 +176,33 @@ def build(lang, out_dir):
     if lang in ("ar", "zh"):
         head.append("literal_meaning_or_source")
     head += ["entities", "A1_meaning_correct", "A2_is_figurative", "A3_wrong_entities",
-             "A4_missing_entities", "A5_familiarity", "A6_my_meaning"]
+             "A4_missing_entities"]
     if lang == "hi":
         head.append("A7_spelling_ok")
     if lang == "ar":
-        head += ["A7_region", "A8_region_name", "A9_literal_ok"]
+        head += ["A7_region", "A8_literal_ok"]
     head.append("notes")
+    default = {"A1_meaning_correct": "correct", "A2_is_figurative": "yes", "A7_spelling_ok": "yes",
+               "A7_region": "dont_know", "A8_literal_ok": "correct"}
     data = []
     for i, x in enumerate(pick, 1):
         r = [i, x["idiom"], x.get("figurative_meanings", "")]
         if lang in ("ar", "zh"):
             r.append(x.get("literal_meanings", ""))
         r.append(x.get("entities", ""))
-        r += [""] * (len(head) - len(r))
+        r += [default.get(h, "") for h in head[len(r):]]
         data.append(r)
         key["A_KB"].append({"row": i, "audit_id": x["id"], "idiom": x["idiom"],
                             "register": reg.get(x["idiom"].strip(), ("", ""))[1] if lang == "ar" else "",
                             "source": reg.get(x["idiom"].strip(), ("", ""))[0] if lang == "ar" else ""})
-    fill = [h for h in head if h[:2] in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9")] + ["notes"]
+    fill = [h for h in head if h[:2] in ("A1", "A2", "A3", "A4", "A7", "A8")] + ["notes"]
     val = {"A1_meaning_correct": ["correct", "correct_with_noise", "partly_correct", "wrong"],
-           "A2_is_figurative": ["yes", "no", "unsure"],
-           "A5_familiarity": ["know_same", "know_different", "heard_unsure", "unknown"]}
+           "A2_is_figurative": ["yes", "no", "unsure"]}
     if lang == "hi":
         val["A7_spelling_ok"] = ["yes", "minor_errors", "unreadable"]
     if lang == "ar":
         val["A7_region"] = ["pan_arab", "classical_literary", "regional", "dont_know"]
-        val["A9_literal_ok"] = ["correct", "partly", "wrong"]
+        val["A8_literal_ok"] = ["correct", "partly", "wrong"]
     widths = [5, 30, 50] + ([40] if lang in ("ar", "zh") else []) + [20] + [16] * (len(head) - (5 if lang in ("ar", "zh") else 4))
     add_sheet(wb, "A_KB", head, data, fill, val, widths)
 
@@ -223,17 +217,16 @@ def build(lang, out_dir):
     order = []
     for a, b in zip(seen_p, uns_p):
         order += [a, b] if rng.random() < 0.5 else [b, a]
-    head = ["row", "idiom", "A", "B", "C", "D", "key", "B1_key_correct", "B2_other_acceptable",
-            "B3_confidence", "notes"]
+    head = ["row", "idiom", "A", "B", "C", "D", "key", "B1_key_correct", "B2_other_acceptable"]
     data = []
     for i, (split, x) in enumerate(order, 1):
         opts = [o.strip() for o in x["options"]]
-        data.append([i, x["meta"]["idiom"], *opts, LETTERS[x["gold"]], "", "", "", ""])
+        data.append([i, x["meta"]["idiom"], *opts, LETTERS[x["gold"]], "yes", ""])
         key["B_MC"].append({"row": i, "qid": x["qid"], "split": split, "gold": LETTERS[x["gold"]],
                             "idiom": x["meta"]["idiom"]})
-    ws = add_sheet(wb, "B_MC", head, data, ["B1_key_correct", "B2_other_acceptable", "B3_confidence", "notes"],
-                   {"B1_key_correct": ["yes", "partly", "no", "dont_know"], "B3_confidence": ["1", "2", "3"]},
-                   [5, 28, 40, 40, 40, 40, 6, 14, 16, 12, 30])
+    ws = add_sheet(wb, "B_MC", head, data, ["B1_key_correct", "B2_other_acceptable"],
+                   {"B1_key_correct": ["yes", "partly", "no", "dont_know"]},
+                   [5, 28, 40, 40, 40, 40, 6, 14, 16])
     for i, (split, x) in enumerate(order, 2):  # highlight the keyed option in each row
         c = ws.cell(row=i, column=head.index(LETTERS[x["gold"]]) + 1)
         c.fill = KEY_FILL
@@ -245,19 +238,17 @@ def build(lang, out_dir):
     qids = sorted(blind, key=lambda q: int(q.split("/")[-1]))
     pick = rng.sample(qids, min(N_SYM, len(qids)))
     head = ["row", "entity", "english_gloss", "question", "A", "B", "C", "D", "key", "C1_gloss_ok",
-            "C2_key_recognized", "C3_other_recognized", "C4_confidence", "C5_notes"]
+            "C2_key_recognized", "C3_other_recognized"]
     data = []
     for i, q in enumerate(pick, 1):
         b = blind[q]
         data.append([i, b["entity"], b["entity_en"], b["question"],
-                     *[b["options"][L] for L in LETTERS], pkey[q]["gold"], "", "", "", "", ""])
+                     *[b["options"][L] for L in LETTERS], pkey[q]["gold"], "yes", "yes", ""])
         key["C_Symbolism"].append({"row": i, "qid": q, "gold": pkey[q]["gold"], "english_lure": pkey[q]["english_lure"],
                                    "entity": b["entity"], "entity_en": b["entity_en"]})
-    ws = add_sheet(wb, "C_Symbolism", head, data, ["C1_gloss_ok", "C2_key_recognized", "C3_other_recognized",
-                                                   "C4_confidence", "C5_notes"],
-                   {"C1_gloss_ok": ["yes", "no"], "C2_key_recognized": ["yes", "partly", "no", "dont_know"],
-                    "C4_confidence": ["1", "2", "3"]},
-                   [5, 14, 14, 36, 34, 34, 34, 34, 6, 10, 14, 16, 12, 30])
+    ws = add_sheet(wb, "C_Symbolism", head, data, ["C1_gloss_ok", "C2_key_recognized", "C3_other_recognized"],
+                   {"C1_gloss_ok": ["yes", "no"], "C2_key_recognized": ["yes", "partly", "no", "dont_know"]},
+                   [5, 14, 14, 36, 34, 34, 34, 34, 6, 10, 14, 16])
     for i, q in enumerate(pick, 2):  # highlight the keyed (target-culture) option; the English lure is not marked
         c = ws.cell(row=i, column=head.index(pkey[q]["gold"]) + 1)
         c.fill = KEY_FILL
