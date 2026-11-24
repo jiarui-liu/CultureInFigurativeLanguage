@@ -1,0 +1,756 @@
+[
+ {
+  "init": "main",
+  "lang": "ar",
+  "task": "idiomatlas_mc_ar_seen",
+  "n": 600,
+  "acc": {
+   "random": 39.2,
+   "untagged": 40.5,
+   "cpt": 47.8
+  },
+  "untagged-random": [
+   1.3,
+   -1.5,
+   4.2,
+   0.4282
+  ],
+  "cpt-random": [
+   8.7,
+   4.3,
+   13.2,
+   0.0001
+  ],
+  "cpt-untagged": [
+   7.3,
+   3.3,
+   11.5,
+   0.0005
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "ar",
+  "task": "idiomatlas_mc_ar_unseen",
+  "n": 600,
+  "acc": {
+   "random": 32.8,
+   "untagged": 31.2,
+   "cpt": 25.7
+  },
+  "untagged-random": [
+   -1.7,
+   -4.8,
+   1.3,
+   0.3428
+  ],
+  "cpt-random": [
+   -7.2,
+   -11.0,
+   -3.3,
+   0.0003
+  ],
+  "cpt-untagged": [
+   -5.5,
+   -8.8,
+   -2.2,
+   0.0018
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "ar",
+  "task": "kinayat_meaning",
+  "n": 325,
+  "acc": {
+   "random": 14.2,
+   "untagged": 17.5,
+   "cpt": 28.6
+  },
+  "untagged-random": [
+   3.4,
+   0.9,
+   5.8,
+   0.0127
+  ],
+  "cpt-random": [
+   14.5,
+   10.2,
+   19.1,
+   0.0
+  ],
+  "cpt-untagged": [
+   11.1,
+   7.1,
+   15.1,
+   0.0
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "ar",
+  "task": "ar_figurative",
+  "n": 314,
+  "acc": {
+   "random": 26.8,
+   "untagged": 26.8,
+   "cpt": 27.1
+  },
+  "untagged-random": [
+   0.0,
+   -2.9,
+   2.9,
+   1.0
+  ],
+  "cpt-random": [
+   0.3,
+   -2.9,
+   3.5,
+   1.0
+  ],
+  "cpt-untagged": [
+   0.3,
+   -1.6,
+   2.2,
+   1.0
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "ar",
+  "task": "symbolism_v2_ar_letter",
+  "n": 98,
+  "acc": {
+   "random": 50.0,
+   "untagged": 46.9,
+   "cpt": 50.0
+  },
+  "untagged-random": [
+   -3.1,
+   -9.2,
+   3.1,
+   0.5488
+  ],
+  "cpt-random": [
+   0.0,
+   -8.2,
+   8.2,
+   1.0
+  ],
+  "cpt-untagged": [
+   3.1,
+   -5.1,
+   11.2,
+   0.6291
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "hi",
+  "task": "idiomatlas_mc_hi_seen",
+  "n": 600,
+  "acc": {
+   "random": 40.8,
+   "untagged": 45.3,
+   "cpt": 66.8
+  },
+  "untagged-random": [
+   4.5,
+   1.7,
+   7.3,
+   0.0018
+  ],
+  "cpt-random": [
+   26.0,
+   21.5,
+   30.5,
+   0.0
+  ],
+  "cpt-untagged": [
+   21.5,
+   17.0,
+   25.8,
+   0.0
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "hi",
+  "task": "idiomatlas_mc_hi_unseen",
+  "n": 600,
+  "acc": {
+   "random": 44.3,
+   "untagged": 46.3,
+   "cpt": 41.3
+  },
+  "untagged-random": [
+   2.0,
+   -0.5,
+   4.5,
+   0.148
+  ],
+  "cpt-random": [
+   -3.0,
+   -6.8,
+   0.7,
+   0.1417
+  ],
+  "cpt-untagged": [
+   -5.0,
+   -8.7,
+   -1.2,
+   0.012
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "hi",
+  "task": "symbolism_v2_hi_letter",
+  "n": 155,
+  "acc": {
+   "random": 47.7,
+   "untagged": 42.6,
+   "cpt": 41.3
+  },
+  "untagged-random": [
+   -5.2,
+   -11.6,
+   1.3,
+   0.1686
+  ],
+  "cpt-random": [
+   -6.5,
+   -13.5,
+   0.6,
+   0.0987
+  ],
+  "cpt-untagged": [
+   -1.3,
+   -7.1,
+   4.5,
+   0.8238
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "zh",
+  "task": "idiomatlas_mc_zh_seen",
+  "n": 600,
+  "acc": {
+   "random": 69.5,
+   "untagged": 68.5,
+   "cpt": 71.8
+  },
+  "untagged-random": [
+   -1.0,
+   -2.7,
+   0.7,
+   0.3269
+  ],
+  "cpt-random": [
+   2.3,
+   -0.7,
+   5.3,
+   0.1606
+  ],
+  "cpt-untagged": [
+   3.3,
+   0.3,
+   6.3,
+   0.0422
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "zh",
+  "task": "idiomatlas_mc_zh_unseen",
+  "n": 78,
+  "acc": {
+   "random": 51.3,
+   "untagged": 46.2,
+   "cpt": 46.2
+  },
+  "untagged-random": [
+   -5.1,
+   -11.5,
+   0.0,
+   0.2188
+  ],
+  "cpt-random": [
+   -5.1,
+   -14.1,
+   3.8,
+   0.424
+  ],
+  "cpt-untagged": [
+   0.0,
+   -10.3,
+   10.3,
+   1.0
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "zh",
+  "task": "symbolism_v2_zh_letter",
+  "n": 206,
+  "acc": {
+   "random": 50.0,
+   "untagged": 46.6,
+   "cpt": 54.4
+  },
+  "untagged-random": [
+   -3.4,
+   -7.8,
+   0.5,
+   0.1671
+  ],
+  "cpt-random": [
+   4.4,
+   -1.0,
+   9.2,
+   0.136
+  ],
+  "cpt-untagged": [
+   7.8,
+   2.9,
+   12.6,
+   0.0025
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "zh",
+  "task": "chid",
+  "n": 3756,
+  "acc": {
+   "random": 57.4,
+   "untagged": 57.5,
+   "cpt": 57.0
+  },
+  "untagged-random": [
+   0.1,
+   -0.7,
+   0.9,
+   0.9474
+  ],
+  "cpt-random": [
+   -0.5,
+   -1.4,
+   0.4,
+   0.3483
+  ],
+  "cpt-untagged": [
+   -0.5,
+   -1.3,
+   0.3,
+   0.252
+  ]
+ },
+ {
+  "init": "main",
+  "lang": "zh",
+  "task": "chengyu_bench_app",
+  "n": 572,
+  "acc": {
+   "random": 60.7,
+   "untagged": 60.7,
+   "cpt": 60.7
+  },
+  "untagged-random": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "cpt-random": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "cpt-untagged": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "ar",
+  "task": "idiomatlas_mc_ar_seen",
+  "n": 600,
+  "acc": {
+   "random": 41.0,
+   "untagged": 40.8,
+   "cpt": 45.3
+  },
+  "untagged-random": [
+   -0.2,
+   -3.2,
+   2.7,
+   1.0
+  ],
+  "cpt-random": [
+   4.3,
+   0.2,
+   8.5,
+   0.0478
+  ],
+  "cpt-untagged": [
+   4.5,
+   0.7,
+   8.3,
+   0.0271
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "ar",
+  "task": "idiomatlas_mc_ar_unseen",
+  "n": 600,
+  "acc": {
+   "random": 32.7,
+   "untagged": 31.7,
+   "cpt": 24.8
+  },
+  "untagged-random": [
+   -1.0,
+   -3.8,
+   1.8,
+   0.5764
+  ],
+  "cpt-random": [
+   -7.8,
+   -11.5,
+   -4.0,
+   0.0001
+  ],
+  "cpt-untagged": [
+   -6.8,
+   -10.2,
+   -3.5,
+   0.0001
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "ar",
+  "task": "kinayat_meaning",
+  "n": 325,
+  "acc": {
+   "random": 14.5,
+   "untagged": 17.5,
+   "cpt": 26.8
+  },
+  "untagged-random": [
+   3.1,
+   0.9,
+   5.5,
+   0.0213
+  ],
+  "cpt-random": [
+   12.3,
+   8.3,
+   16.3,
+   0.0
+  ],
+  "cpt-untagged": [
+   9.2,
+   5.5,
+   12.9,
+   0.0
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "ar",
+  "task": "ar_figurative",
+  "n": 314,
+  "acc": {
+   "random": 25.8,
+   "untagged": 28.7,
+   "cpt": 28.3
+  },
+  "untagged-random": [
+   2.9,
+   0.3,
+   5.7,
+   0.0636
+  ],
+  "cpt-random": [
+   2.5,
+   -0.6,
+   5.7,
+   0.1686
+  ],
+  "cpt-untagged": [
+   -0.3,
+   -2.9,
+   2.2,
+   1.0
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "ar",
+  "task": "symbolism_v2_ar_letter",
+  "n": 98,
+  "acc": {
+   "random": 50.0,
+   "untagged": 49.0,
+   "cpt": 37.8
+  },
+  "untagged-random": [
+   -1.0,
+   -9.2,
+   6.1,
+   1.0
+  ],
+  "cpt-random": [
+   -12.2,
+   -20.4,
+   -4.1,
+   0.0118
+  ],
+  "cpt-untagged": [
+   -11.2,
+   -19.4,
+   -3.1,
+   0.0192
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "hi",
+  "task": "idiomatlas_mc_hi_seen",
+  "n": 600,
+  "acc": {
+   "random": 41.8,
+   "untagged": 45.0,
+   "cpt": 67.0
+  },
+  "untagged-random": [
+   3.2,
+   0.7,
+   5.7,
+   0.0204
+  ],
+  "cpt-random": [
+   25.2,
+   20.8,
+   29.5,
+   0.0
+  ],
+  "cpt-untagged": [
+   22.0,
+   17.8,
+   26.2,
+   0.0
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "hi",
+  "task": "idiomatlas_mc_hi_unseen",
+  "n": 600,
+  "acc": {
+   "random": 44.2,
+   "untagged": 46.3,
+   "cpt": 41.7
+  },
+  "untagged-random": [
+   2.2,
+   -0.7,
+   4.8,
+   0.1539
+  ],
+  "cpt-random": [
+   -2.5,
+   -6.2,
+   1.3,
+   0.2246
+  ],
+  "cpt-untagged": [
+   -4.7,
+   -8.3,
+   -0.8,
+   0.0212
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "hi",
+  "task": "symbolism_v2_hi_letter",
+  "n": 155,
+  "acc": {
+   "random": 42.6,
+   "untagged": 43.9,
+   "cpt": 38.1
+  },
+  "untagged-random": [
+   1.3,
+   -5.2,
+   7.7,
+   0.8506
+  ],
+  "cpt-random": [
+   -4.5,
+   -11.0,
+   1.9,
+   0.2295
+  ],
+  "cpt-untagged": [
+   -5.8,
+   -11.0,
+   -0.6,
+   0.049
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "zh",
+  "task": "idiomatlas_mc_zh_seen",
+  "n": 600,
+  "acc": {
+   "random": 68.2,
+   "untagged": 67.8,
+   "cpt": 71.2
+  },
+  "untagged-random": [
+   -0.3,
+   -2.2,
+   1.5,
+   0.8555
+  ],
+  "cpt-random": [
+   3.0,
+   0.2,
+   5.8,
+   0.0567
+  ],
+  "cpt-untagged": [
+   3.3,
+   0.3,
+   6.3,
+   0.047
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "zh",
+  "task": "idiomatlas_mc_zh_unseen",
+  "n": 78,
+  "acc": {
+   "random": 48.7,
+   "untagged": 47.4,
+   "cpt": 47.4
+  },
+  "untagged-random": [
+   -1.3,
+   -6.4,
+   3.8,
+   1.0
+  ],
+  "cpt-random": [
+   -1.3,
+   -10.3,
+   7.7,
+   1.0
+  ],
+  "cpt-untagged": [
+   0.0,
+   -9.0,
+   9.0,
+   1.0
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "zh",
+  "task": "symbolism_v2_zh_letter",
+  "n": 206,
+  "acc": {
+   "random": 50.0,
+   "untagged": 49.0,
+   "cpt": 52.4
+  },
+  "untagged-random": [
+   -1.0,
+   -4.9,
+   2.9,
+   0.8145
+  ],
+  "cpt-random": [
+   2.4,
+   -3.4,
+   7.8,
+   0.4869
+  ],
+  "cpt-untagged": [
+   3.4,
+   -1.5,
+   8.3,
+   0.2478
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "zh",
+  "task": "chid",
+  "n": 3756,
+  "acc": {
+   "random": 56.4,
+   "untagged": 56.7,
+   "cpt": 56.3
+  },
+  "untagged-random": [
+   0.4,
+   -0.5,
+   1.2,
+   0.4053
+  ],
+  "cpt-random": [
+   -0.1,
+   -1.0,
+   0.8,
+   0.863
+  ],
+  "cpt-untagged": [
+   -0.5,
+   -1.3,
+   0.3,
+   0.288
+  ]
+ },
+ {
+  "init": "i_",
+  "lang": "zh",
+  "task": "chengyu_bench_app",
+  "n": 572,
+  "acc": {
+   "random": 60.7,
+   "untagged": 60.7,
+   "cpt": 60.7
+  },
+  "untagged-random": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "cpt-random": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "cpt-untagged": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ }
+]

@@ -1,0 +1,1374 @@
+{
+ "rows": [
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_seen",
+   "family": "seen",
+   "n": 600,
+   "acc": {
+    "Base": 42.0,
+    "Random-CPT": 43.2,
+    "Idiom-Text": 46.7,
+    "Idiom+Meaning": 68.3
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 3.5,
+    "ci95": [
+     0.5,
+     6.7
+    ],
+    "p_boot_two_sided": 0.0266,
+    "mcnemar_p": 0.03142,
+    "wins": 54,
+    "losses": 33,
+    "holm_p": 0.03142
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 25.2,
+    "ci95": [
+     20.8,
+     29.5
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 181,
+    "losses": 30,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 21.7,
+    "ci95": [
+     17.8,
+     25.5
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 144,
+    "losses": 14,
+    "holm_p": 0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "jawaher_ar",
+   "family": "seen",
+   "n": 1005,
+   "acc": {
+    "Base": 46.1,
+    "Random-CPT": 46.2,
+    "Idiom-Text": 49.4,
+    "Idiom+Meaning": 54.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 3.2,
+    "ci95": [
+     1.1,
+     5.4
+    ],
+    "p_boot_two_sided": 0.0046,
+    "mcnemar_p": 0.00554,
+    "wins": 79,
+    "losses": 47,
+    "holm_p": 0.01108
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 8.4,
+    "ci95": [
+     5.3,
+     11.4
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 168,
+    "losses": 84,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 5.2,
+    "ci95": [
+     2.3,
+     8.2
+    ],
+    "p_boot_two_sided": 0.0008,
+    "mcnemar_p": 0.00066,
+    "wins": 139,
+    "losses": 87,
+    "holm_p": 0.00198
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "absher_meaning",
+   "family": "seen",
+   "n": 531,
+   "acc": {
+    "Base": 35.4,
+    "Random-CPT": 36.7,
+    "Idiom-Text": 41.6,
+    "Idiom+Meaning": 42.4
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 4.9,
+    "ci95": [
+     2.4,
+     7.5
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.00022,
+    "wins": 37,
+    "losses": 11,
+    "holm_p": 0.00088
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 5.6,
+    "ci95": [
+     2.8,
+     8.5
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.00013,
+    "wins": 45,
+    "losses": 15,
+    "holm_p": 0.00026
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.8,
+    "ci95": [
+     -1.1,
+     2.6
+    ],
+    "p_boot_two_sided": 0.4682,
+    "mcnemar_p": 0.54126,
+    "wins": 14,
+    "losses": 10,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "absher_cultural_interpretation",
+   "family": "seen",
+   "n": 537,
+   "acc": {
+    "Base": 33.9,
+    "Random-CPT": 33.7,
+    "Idiom-Text": 38.5,
+    "Idiom+Meaning": 38.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 4.8,
+    "ci95": [
+     2.0,
+     7.6
+    ],
+    "p_boot_two_sided": 0.0008,
+    "mcnemar_p": 0.00107,
+    "wins": 43,
+    "losses": 17,
+    "holm_p": 0.00321
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 4.3,
+    "ci95": [
+     1.5,
+     7.3
+    ],
+    "p_boot_two_sided": 0.0048,
+    "mcnemar_p": 0.00592,
+    "wins": 44,
+    "losses": 21,
+    "holm_p": 0.00592
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -0.6,
+    "ci95": [
+     -2.6,
+     1.5
+    ],
+    "p_boot_two_sided": 0.6556,
+    "mcnemar_p": 0.7201,
+    "wins": 14,
+    "losses": 17,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "idiomatlas_mc_ar_unseen",
+   "family": "unseen",
+   "n": 600,
+   "acc": {
+    "Base": 37.8,
+    "Random-CPT": 36.8,
+    "Idiom-Text": 40.0,
+    "Idiom+Meaning": 32.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 3.2,
+    "ci95": [
+     0.3,
+     6.0
+    ],
+    "p_boot_two_sided": 0.0376,
+    "mcnemar_p": 0.04217,
+    "wins": 49,
+    "losses": 30,
+    "holm_p": 0.08434
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -4.3,
+    "ci95": [
+     -8.0,
+     -0.7
+    ],
+    "p_boot_two_sided": 0.0192,
+    "mcnemar_p": 0.02208,
+    "wins": 47,
+    "losses": 73,
+    "holm_p": 0.0289
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -7.5,
+    "ci95": [
+     -10.5,
+     -4.5
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 20,
+    "losses": 65,
+    "holm_p": 0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "midi_ar",
+   "family": "unseen",
+   "n": 399,
+   "acc": {
+    "Base": 35.3,
+    "Random-CPT": 39.8,
+    "Idiom-Text": 42.1,
+    "Idiom+Meaning": 44.6
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 2.3,
+    "ci95": [
+     -0.8,
+     5.3
+    ],
+    "p_boot_two_sided": 0.1696,
+    "mcnemar_p": 0.19959,
+    "wins": 24,
+    "losses": 15,
+    "holm_p": 0.19959
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 4.8,
+    "ci95": [
+     1.3,
+     8.3
+    ],
+    "p_boot_two_sided": 0.0116,
+    "mcnemar_p": 0.01445,
+    "wins": 37,
+    "losses": 18,
+    "holm_p": 0.0289
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 2.5,
+    "ci95": [
+     0.0,
+     5.0
+    ],
+    "p_boot_two_sided": 0.0606,
+    "mcnemar_p": 0.08716,
+    "wins": 19,
+    "losses": 9,
+    "holm_p": 0.08716
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "symbolism_v2_ar_letter",
+   "family": "symbolism",
+   "n": 98,
+   "acc": {
+    "Base": 44.9,
+    "Random-CPT": 43.9,
+    "Idiom-Text": 41.8,
+    "Idiom+Meaning": 44.9
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -2.0,
+    "ci95": [
+     -8.2,
+     4.1
+    ],
+    "p_boot_two_sided": 0.6254,
+    "mcnemar_p": 0.75391,
+    "wins": 4,
+    "losses": 6,
+    "holm_p": 0.75391
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.0,
+    "ci95": [
+     -4.1,
+     6.1
+    ],
+    "p_boot_two_sided": 0.8494,
+    "mcnemar_p": 1.0,
+    "wins": 4,
+    "losses": 3,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 3.1,
+    "ci95": [
+     -1.0,
+     8.2
+    ],
+    "p_boot_two_sided": 0.2388,
+    "mcnemar_p": 0.375,
+    "wins": 4,
+    "losses": 1,
+    "holm_p": 0.375
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "midi_ar_Egypt",
+   "family": "unseen_by_variety",
+   "n": 100,
+   "acc": {
+    "Base": 39.0,
+    "Random-CPT": 48.0,
+    "Idiom-Text": 54.0,
+    "Idiom+Meaning": 63.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 6.0,
+    "ci95": [
+     1.0,
+     12.0
+    ],
+    "p_boot_two_sided": 0.0342,
+    "mcnemar_p": 0.07031,
+    "wins": 7,
+    "losses": 1,
+    "holm_p": 0.28124
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 15.0,
+    "ci95": [
+     7.0,
+     23.0
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.00073,
+    "wins": 17,
+    "losses": 2,
+    "holm_p": 0.00292
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 9.0,
+    "ci95": [
+     2.0,
+     16.0
+    ],
+    "p_boot_two_sided": 0.0112,
+    "mcnemar_p": 0.02246,
+    "wins": 11,
+    "losses": 2,
+    "holm_p": 0.08984
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "midi_ar_Syrian",
+   "family": "unseen_by_variety",
+   "n": 100,
+   "acc": {
+    "Base": 31.0,
+    "Random-CPT": 29.0,
+    "Idiom-Text": 32.0,
+    "Idiom+Meaning": 34.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 3.0,
+    "ci95": [
+     -3.0,
+     9.0
+    ],
+    "p_boot_two_sided": 0.3962,
+    "mcnemar_p": 0.50781,
+    "wins": 6,
+    "losses": 3,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 5.0,
+    "ci95": [
+     -1.0,
+     11.0
+    ],
+    "p_boot_two_sided": 0.165,
+    "mcnemar_p": 0.22656,
+    "wins": 8,
+    "losses": 3,
+    "holm_p": 0.67968
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 2.0,
+    "ci95": [
+     -2.0,
+     6.0
+    ],
+    "p_boot_two_sided": 0.4606,
+    "mcnemar_p": 0.625,
+    "wins": 3,
+    "losses": 1,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "midi_ar_UAE",
+   "family": "unseen_by_variety",
+   "n": 100,
+   "acc": {
+    "Base": 31.0,
+    "Random-CPT": 39.0,
+    "Idiom-Text": 40.0,
+    "Idiom+Meaning": 38.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.0,
+    "ci95": [
+     -6.0,
+     7.0
+    ],
+    "p_boot_two_sided": 0.8634,
+    "mcnemar_p": 1.0,
+    "wins": 6,
+    "losses": 5,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -1.0,
+    "ci95": [
+     -9.0,
+     6.0
+    ],
+    "p_boot_two_sided": 0.9052,
+    "mcnemar_p": 1.0,
+    "wins": 7,
+    "losses": 8,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -2.0,
+    "ci95": [
+     -7.0,
+     3.0
+    ],
+    "p_boot_two_sided": 0.5424,
+    "mcnemar_p": 0.6875,
+    "wins": 2,
+    "losses": 4,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "midi_ar_Morocco",
+   "family": "unseen_by_variety",
+   "n": 99,
+   "acc": {
+    "Base": 40.4,
+    "Random-CPT": 43.4,
+    "Idiom-Text": 42.4,
+    "Idiom+Meaning": 43.4
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -1.0,
+    "ci95": [
+     -7.1,
+     5.1
+    ],
+    "p_boot_two_sided": 0.8902,
+    "mcnemar_p": 1.0,
+    "wins": 5,
+    "losses": 6,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 0.0,
+    "ci95": [
+     -6.1,
+     6.1
+    ],
+    "p_boot_two_sided": 1.0,
+    "mcnemar_p": 1.0,
+    "wins": 5,
+    "losses": 5,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 1.0,
+    "ci95": [
+     -3.0,
+     5.1
+    ],
+    "p_boot_two_sided": 0.8266,
+    "mcnemar_p": 1.0,
+    "wins": 3,
+    "losses": 2,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "ar",
+   "task": "include_ar",
+   "family": "culture",
+   "n": 552,
+   "acc": {
+    "Base": 31.0,
+    "Random-CPT": 33.2,
+    "Idiom-Text": 32.4,
+    "Idiom+Meaning": 31.2
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -0.7,
+    "ci95": [
+     -3.3,
+     1.6
+    ],
+    "p_boot_two_sided": 0.6028,
+    "mcnemar_p": 0.65874,
+    "wins": 21,
+    "losses": 25,
+    "holm_p": 0.65874
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -2.0,
+    "ci95": [
+     -4.5,
+     0.4
+    ],
+    "p_boot_two_sided": 0.1198,
+    "mcnemar_p": 0.14387,
+    "wins": 18,
+    "losses": 29,
+    "holm_p": 0.14387
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -1.3,
+    "ci95": [
+     -2.7,
+     0.2
+    ],
+    "p_boot_two_sided": 0.1036,
+    "mcnemar_p": 0.14346,
+    "wins": 5,
+    "losses": 12,
+    "holm_p": 0.14346
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_seen",
+   "family": "seen",
+   "n": 600,
+   "acc": {
+    "Base": 36.2,
+    "Random-CPT": 50.5,
+    "Idiom-Text": 56.7,
+    "Idiom+Meaning": 75.8
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 6.2,
+    "ci95": [
+     3.3,
+     9.0
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 4e-05,
+    "wins": 58,
+    "losses": 21,
+    "holm_p": 4e-05
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 25.3,
+    "ci95": [
+     21.7,
+     29.2
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 160,
+    "losses": 8,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 19.2,
+    "ci95": [
+     15.8,
+     22.7
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 120,
+    "losses": 5,
+    "holm_p": 0
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "idiomatlas_mc_hi_unseen",
+   "family": "unseen",
+   "n": 600,
+   "acc": {
+    "Base": 38.8,
+    "Random-CPT": 52.3,
+    "Idiom-Text": 53.3,
+    "Idiom+Meaning": 53.8
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.0,
+    "ci95": [
+     -1.7,
+     3.7
+    ],
+    "p_boot_two_sided": 0.5008,
+    "mcnemar_p": 0.53858,
+    "wins": 36,
+    "losses": 30,
+    "holm_p": 0.53858
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.5,
+    "ci95": [
+     -1.8,
+     4.8
+    ],
+    "p_boot_two_sided": 0.4186,
+    "mcnemar_p": 0.44367,
+    "wins": 59,
+    "losses": 50,
+    "holm_p": 0.44367
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.5,
+    "ci95": [
+     -2.3,
+     3.3
+    ],
+    "p_boot_two_sided": 0.783,
+    "mcnemar_p": 0.81989,
+    "wins": 40,
+    "losses": 37,
+    "holm_p": 0.81989
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "hindi_proverbs",
+   "family": "unseen",
+   "n": 2043,
+   "acc": {
+    "Base": 38.0,
+    "Random-CPT": 58.1,
+    "Idiom-Text": 73.1,
+    "Idiom+Meaning": 71.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 15.0,
+    "ci95": [
+     13.2,
+     16.9
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 368,
+    "losses": 61,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 13.4,
+    "ci95": [
+     11.6,
+     15.3
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 351,
+    "losses": 77,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -1.6,
+    "ci95": [
+     -2.7,
+     -0.6
+    ],
+    "p_boot_two_sided": 0.0024,
+    "mcnemar_p": 0.00373,
+    "wins": 45,
+    "losses": 78,
+    "holm_p": 0.00746
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "symbolism_v2_hi_letter",
+   "family": "symbolism",
+   "n": 155,
+   "acc": {
+    "Base": 43.9,
+    "Random-CPT": 52.3,
+    "Idiom-Text": 58.7,
+    "Idiom+Meaning": 55.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 6.5,
+    "ci95": [
+     -0.6,
+     13.5
+    ],
+    "p_boot_two_sided": 0.0902,
+    "mcnemar_p": 0.11018,
+    "wins": 21,
+    "losses": 11,
+    "holm_p": 0.11018
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.2,
+    "ci95": [
+     -3.9,
+     10.3
+    ],
+    "p_boot_two_sided": 0.4238,
+    "mcnemar_p": 0.48685,
+    "wins": 19,
+    "losses": 14,
+    "holm_p": 0.48685
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -3.2,
+    "ci95": [
+     -7.7,
+     0.6
+    ],
+    "p_boot_two_sided": 0.167,
+    "mcnemar_p": 0.22656,
+    "wins": 3,
+    "losses": 8,
+    "holm_p": 0.22656
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "include_hi",
+   "family": "culture",
+   "n": 547,
+   "acc": {
+    "Base": 28.5,
+    "Random-CPT": 32.4,
+    "Idiom-Text": 30.2,
+    "Idiom+Meaning": 30.7
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -2.2,
+    "ci95": [
+     -4.4,
+     0.0
+    ],
+    "p_boot_two_sided": 0.0586,
+    "mcnemar_p": 0.07295,
+    "wins": 13,
+    "losses": 25,
+    "holm_p": 0.07295
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -1.6,
+    "ci95": [
+     -4.0,
+     0.7
+    ],
+    "p_boot_two_sided": 0.1924,
+    "mcnemar_p": 0.23269,
+    "wins": 18,
+    "losses": 27,
+    "holm_p": 0.23269
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.5,
+    "ci95": [
+     -0.9,
+     2.2
+    ],
+    "p_boot_two_sided": 0.5632,
+    "mcnemar_p": 0.64761,
+    "wins": 11,
+    "losses": 8,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "hi",
+   "task": "culturalbench_hi",
+   "family": "culture",
+   "n": 787,
+   "acc": {
+    "Base": 24.5,
+    "Random-CPT": 24.8,
+    "Idiom-Text": 28.3,
+    "Idiom+Meaning": 28.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 3.6,
+    "ci95": [
+     1.4,
+     5.7
+    ],
+    "p_boot_two_sided": 0.0014,
+    "mcnemar_p": 0.00176,
+    "wins": 52,
+    "losses": 24,
+    "holm_p": 0.00352
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.7,
+    "ci95": [
+     1.7,
+     5.7
+    ],
+    "p_boot_two_sided": 0.0004,
+    "mcnemar_p": 0.00064,
+    "wins": 49,
+    "losses": 20,
+    "holm_p": 0.00128
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.1,
+    "ci95": [
+     -1.3,
+     1.5
+    ],
+    "p_boot_two_sided": 0.9246,
+    "mcnemar_p": 1.0,
+    "wins": 16,
+    "losses": 15,
+    "holm_p": 1.0
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_seen",
+   "family": "seen",
+   "n": 600,
+   "acc": {
+    "Base": 79.0,
+    "Random-CPT": 79.8,
+    "Idiom-Text": 79.2,
+    "Idiom+Meaning": 90.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -0.7,
+    "ci95": [
+     -2.2,
+     0.8
+    ],
+    "p_boot_two_sided": 0.4564,
+    "mcnemar_p": 0.52347,
+    "wins": 9,
+    "losses": 13,
+    "holm_p": 0.52347
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 10.7,
+    "ci95": [
+     8.2,
+     13.3
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 68,
+    "losses": 4,
+    "holm_p": 0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 11.3,
+    "ci95": [
+     8.7,
+     14.0
+    ],
+    "p_boot_two_sided": 0.0,
+    "mcnemar_p": 0.0,
+    "wins": 72,
+    "losses": 4,
+    "holm_p": 0
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "idiomatlas_mc_zh_unseen",
+   "family": "unseen",
+   "n": 78,
+   "acc": {
+    "Base": 52.6,
+    "Random-CPT": 57.7,
+    "Idiom-Text": 57.7,
+    "Idiom+Meaning": 61.5
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 0.0,
+    "ci95": [
+     -6.4,
+     6.4
+    ],
+    "p_boot_two_sided": 1.0,
+    "mcnemar_p": 1.0,
+    "wins": 3,
+    "losses": 3,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.8,
+    "ci95": [
+     -2.6,
+     10.3
+    ],
+    "p_boot_two_sided": 0.3334,
+    "mcnemar_p": 0.45312,
+    "wins": 5,
+    "losses": 2,
+    "holm_p": 0.90624
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 3.8,
+    "ci95": [
+     -1.3,
+     9.0
+    ],
+    "p_boot_two_sided": 0.2342,
+    "mcnemar_p": 0.375,
+    "wins": 4,
+    "losses": 1,
+    "holm_p": 0.45904
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "midi_zh",
+   "family": "unseen",
+   "n": 300,
+   "acc": {
+    "Base": 54.3,
+    "Random-CPT": 52.7,
+    "Idiom-Text": 55.3,
+    "Idiom+Meaning": 53.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 2.7,
+    "ci95": [
+     0.3,
+     5.0
+    ],
+    "p_boot_two_sided": 0.0342,
+    "mcnemar_p": 0.05737,
+    "wins": 11,
+    "losses": 3,
+    "holm_p": 0.17211
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 0.3,
+    "ci95": [
+     -3.0,
+     3.7
+    ],
+    "p_boot_two_sided": 0.9166,
+    "mcnemar_p": 1.0,
+    "wins": 14,
+    "losses": 13,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -2.3,
+    "ci95": [
+     -5.3,
+     1.0
+    ],
+    "p_boot_two_sided": 0.193,
+    "mcnemar_p": 0.22952,
+    "wins": 9,
+    "losses": 16,
+    "holm_p": 0.45904
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "xiehouyu_zh",
+   "family": "unseen",
+   "n": 2000,
+   "acc": {
+    "Base": 50.9,
+    "Random-CPT": 60.9,
+    "Idiom-Text": 60.6,
+    "Idiom+Meaning": 58.8
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -0.3,
+    "ci95": [
+     -1.4,
+     0.8
+    ],
+    "p_boot_two_sided": 0.6148,
+    "mcnemar_p": 0.63977,
+    "wins": 54,
+    "losses": 60,
+    "holm_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -2.1,
+    "ci95": [
+     -3.4,
+     -0.6
+    ],
+    "p_boot_two_sided": 0.0048,
+    "mcnemar_p": 0.00406,
+    "wins": 77,
+    "losses": 118,
+    "holm_p": 0.01218
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -1.8,
+    "ci95": [
+     -3.0,
+     -0.5
+    ],
+    "p_boot_two_sided": 0.0058,
+    "mcnemar_p": 0.00682,
+    "wins": 62,
+    "losses": 97,
+    "holm_p": 0.02046
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "symbolism_v2_zh_letter",
+   "family": "symbolism",
+   "n": 206,
+   "acc": {
+    "Base": 60.2,
+    "Random-CPT": 62.6,
+    "Idiom-Text": 61.7,
+    "Idiom+Meaning": 64.6
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": -1.0,
+    "ci95": [
+     -4.9,
+     2.9
+    ],
+    "p_boot_two_sided": 0.7084,
+    "mcnemar_p": 0.81453,
+    "wins": 8,
+    "losses": 10,
+    "holm_p": 0.81453
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.9,
+    "ci95": [
+     -1.9,
+     5.8
+    ],
+    "p_boot_two_sided": 0.3864,
+    "mcnemar_p": 0.4545,
+    "wins": 10,
+    "losses": 6,
+    "holm_p": 0.4545
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 2.9,
+    "ci95": [
+     -0.5,
+     6.8
+    ],
+    "p_boot_two_sided": 0.1336,
+    "mcnemar_p": 0.17957,
+    "wins": 10,
+    "losses": 4,
+    "holm_p": 0.17957
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "include_zh",
+   "family": "culture",
+   "n": 545,
+   "acc": {
+    "Base": 40.0,
+    "Random-CPT": 45.9,
+    "Idiom-Text": 47.3,
+    "Idiom+Meaning": 47.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.5,
+    "ci95": [
+     -0.9,
+     3.9
+    ],
+    "p_boot_two_sided": 0.2566,
+    "mcnemar_p": 0.302,
+    "wins": 27,
+    "losses": 19,
+    "holm_p": 0.302
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.1,
+    "ci95": [
+     -1.3,
+     3.5
+    ],
+    "p_boot_two_sided": 0.4036,
+    "mcnemar_p": 0.46139,
+    "wins": 26,
+    "losses": 20,
+    "holm_p": 0.92278
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -0.4,
+    "ci95": [
+     -2.0,
+     1.3
+    ],
+    "p_boot_two_sided": 0.7542,
+    "mcnemar_p": 0.83181,
+    "wins": 10,
+    "losses": 12,
+    "holm_p": 0.83181
+   }
+  },
+  {
+   "lang": "zh",
+   "task": "culturalbench_zh",
+   "family": "culture",
+   "n": 787,
+   "acc": {
+    "Base": 37.6,
+    "Random-CPT": 38.6,
+    "Idiom-Text": 40.0,
+    "Idiom+Meaning": 39.0
+   },
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.4,
+    "ci95": [
+     0.0,
+     2.8
+    ],
+    "p_boot_two_sided": 0.0662,
+    "mcnemar_p": 0.08014,
+    "wins": 22,
+    "losses": 11,
+    "holm_p": 0.16028
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 0.4,
+    "ci95": [
+     -1.1,
+     1.9
+    ],
+    "p_boot_two_sided": 0.6674,
+    "mcnemar_p": 0.74283,
+    "wins": 20,
+    "losses": 17,
+    "holm_p": 0.92278
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -1.0,
+    "ci95": [
+     -2.2,
+     0.1
+    ],
+    "p_boot_two_sided": 0.09,
+    "mcnemar_p": 0.11532,
+    "wins": 6,
+    "losses": 14,
+    "holm_p": 0.23064
+   }
+  }
+ ],
+ "pooled_unseen": {
+  "Idiom-Text - Random-CPT | idiomatlas_mc_unseen_only": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "hi:idiomatlas_mc_hi_unseen",
+    "zh:idiomatlas_mc_zh_unseen"
+   ],
+   "n_items": 1278,
+   "item_weighted": {
+    "delta": 1.96,
+    "ci95": [
+     0.08,
+     3.83
+    ],
+    "p_one_sided_le0": 0.0192
+   },
+   "benchmark_weighted": {
+    "delta": 1.39,
+    "ci95": [
+     -1.06,
+     3.8
+    ],
+    "p_one_sided_le0": 0.1314
+   },
+   "n_positive": 2,
+   "n_benchmarks": 3
+  },
+  "Idiom-Text - Random-CPT | all_unseen_benchmarks": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "ar:midi_ar",
+    "hi:idiomatlas_mc_hi_unseen",
+    "hi:hindi_proverbs",
+    "zh:idiomatlas_mc_zh_unseen",
+    "zh:midi_zh",
+    "zh:xiehouyu_zh"
+   ],
+   "n_items": 6020,
+   "item_weighted": {
+    "delta": 5.7,
+    "ci95": [
+     4.85,
+     6.56
+    ],
+    "p_one_sided_le0": 0.0
+   },
+   "benchmark_weighted": {
+    "delta": 3.4,
+    "ci95": [
+     2.19,
+     4.62
+    ],
+    "p_one_sided_le0": 0.0
+   },
+   "n_positive": 5,
+   "n_benchmarks": 7
+  },
+  "Idiom+Meaning - Random-CPT | idiomatlas_mc_unseen_only": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "hi:idiomatlas_mc_hi_unseen",
+    "zh:idiomatlas_mc_zh_unseen"
+   ],
+   "n_items": 1278,
+   "item_weighted": {
+    "delta": -1.1,
+    "ci95": [
+     -3.52,
+     1.25
+    ],
+    "p_one_sided_le0": 0.8237
+   },
+   "benchmark_weighted": {
+    "delta": 0.34,
+    "ci95": [
+     -2.36,
+     2.97
+    ],
+    "p_one_sided_le0": 0.4046
+   },
+   "n_positive": 2,
+   "n_benchmarks": 3
+  },
+  "Idiom+Meaning - Random-CPT | all_unseen_benchmarks": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "ar:midi_ar",
+    "hi:idiomatlas_mc_hi_unseen",
+    "hi:hindi_proverbs",
+    "zh:idiomatlas_mc_zh_unseen",
+    "zh:midi_zh",
+    "zh:xiehouyu_zh"
+   ],
+   "n_items": 6020,
+   "item_weighted": {
+    "delta": 3.97,
+    "ci95": [
+     2.99,
+     4.95
+    ],
+    "p_one_sided_le0": 0.0
+   },
+   "benchmark_weighted": {
+    "delta": 2.5,
+    "ci95": [
+     1.07,
+     3.91
+    ],
+    "p_one_sided_le0": 0.0005
+   },
+   "n_positive": 5,
+   "n_benchmarks": 7
+  },
+  "Idiom+Meaning - Idiom-Text | idiomatlas_mc_unseen_only": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "hi:idiomatlas_mc_hi_unseen",
+    "zh:idiomatlas_mc_zh_unseen"
+   ],
+   "n_items": 1278,
+   "item_weighted": {
+    "delta": -3.05,
+    "ci95": [
+     -5.01,
+     -1.1
+    ],
+    "p_one_sided_le0": 0.9986
+   },
+   "benchmark_weighted": {
+    "delta": -1.05,
+    "ci95": [
+     -3.32,
+     1.32
+    ],
+    "p_one_sided_le0": 0.8136
+   },
+   "n_positive": 2,
+   "n_benchmarks": 3
+  },
+  "Idiom+Meaning - Idiom-Text | all_unseen_benchmarks": {
+   "benchmarks": [
+    "ar:idiomatlas_mc_ar_unseen",
+    "ar:midi_ar",
+    "hi:idiomatlas_mc_hi_unseen",
+    "hi:hindi_proverbs",
+    "zh:idiomatlas_mc_zh_unseen",
+    "zh:midi_zh",
+    "zh:xiehouyu_zh"
+   ],
+   "n_items": 6020,
+   "item_weighted": {
+    "delta": -1.73,
+    "ci95": [
+     -2.46,
+     -1.0
+    ],
+    "p_one_sided_le0": 1.0
+   },
+   "benchmark_weighted": {
+    "delta": -0.91,
+    "ci95": [
+     -2.09,
+     0.32
+    ],
+    "p_one_sided_le0": 0.9303
+   },
+   "n_positive": 3,
+   "n_benchmarks": 7
+  }
+ }
+}
