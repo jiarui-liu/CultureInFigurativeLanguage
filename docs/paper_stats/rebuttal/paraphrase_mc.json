@@ -1,0 +1,541 @@
+{
+ "ar_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 42.0,
+   "Random-CPT": 43.2,
+   "Idiom-Text": 46.7,
+   "Idiom+Meaning": 68.3
+  },
+  "acc_para": {
+   "Base": 34.0,
+   "Random-CPT": 36.7,
+   "Idiom-Text": 37.3,
+   "Idiom+Meaning": 37.8
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    25.2,
+    20.8,
+    29.5
+   ],
+   "para": [
+    1.2,
+    -1.5,
+    3.8
+   ],
+   "para_minus_orig": [
+    -24.0,
+    -28.8,
+    -19.3
+   ],
+   "retained_share": 0.046
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    21.7,
+    17.8,
+    25.5
+   ],
+   "para": [
+    0.5,
+    -1.5,
+    2.5
+   ],
+   "para_minus_orig": [
+    -21.2,
+    -25.3,
+    -17.0
+   ],
+   "retained_share": 0.023
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    3.5,
+    0.5,
+    6.5
+   ],
+   "para": [
+    0.7,
+    -1.8,
+    3.2
+   ],
+   "para_minus_orig": [
+    -2.8,
+    -6.7,
+    1.2
+   ],
+   "retained_share": 0.19
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    26.3,
+    21.8,
+    31.0
+   ],
+   "para": [
+    3.8,
+    0.7,
+    7.2
+   ],
+   "para_minus_orig": [
+    -22.5,
+    -27.8,
+    -17.2
+   ],
+   "retained_share": 0.146
+  }
+ },
+ "ar_unseen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 37.8,
+   "Random-CPT": 36.8,
+   "Idiom-Text": 40.0,
+   "Idiom+Meaning": 32.5
+  },
+  "acc_para": {
+   "Base": 35.8,
+   "Random-CPT": 32.8,
+   "Idiom-Text": 31.5,
+   "Idiom+Meaning": 30.5
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    -4.3,
+    -7.8,
+    -0.8
+   ],
+   "para": [
+    -2.3,
+    -4.7,
+    0.0
+   ],
+   "para_minus_orig": [
+    2.0,
+    -2.0,
+    6.2
+   ],
+   "retained_share": 0.538
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    -7.5,
+    -10.5,
+    -4.7
+   ],
+   "para": [
+    -1.0,
+    -2.5,
+    0.5
+   ],
+   "para_minus_orig": [
+    6.5,
+    3.3,
+    9.7
+   ],
+   "retained_share": 0.133
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    3.2,
+    0.3,
+    6.0
+   ],
+   "para": [
+    -1.3,
+    -3.5,
+    0.7
+   ],
+   "para_minus_orig": [
+    -4.5,
+    -7.8,
+    -1.0
+   ],
+   "retained_share": -0.421
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    -5.3,
+    -9.5,
+    -1.3
+   ],
+   "para": [
+    -5.3,
+    -8.7,
+    -2.0
+   ],
+   "para_minus_orig": [
+    0.0,
+    -5.0,
+    4.8
+   ],
+   "retained_share": 1.0
+  }
+ },
+ "hi_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 36.2,
+   "Random-CPT": 50.5,
+   "Idiom-Text": 56.7,
+   "Idiom+Meaning": 75.8
+  },
+  "acc_para": {
+   "Base": 36.7,
+   "Random-CPT": 45.2,
+   "Idiom-Text": 47.0,
+   "Idiom+Meaning": 53.3
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    25.3,
+    21.7,
+    29.0
+   ],
+   "para": [
+    8.2,
+    4.8,
+    11.3
+   ],
+   "para_minus_orig": [
+    -17.2,
+    -21.8,
+    -12.5
+   ],
+   "retained_share": 0.322
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    19.2,
+    15.8,
+    22.5
+   ],
+   "para": [
+    6.3,
+    3.7,
+    9.2
+   ],
+   "para_minus_orig": [
+    -12.8,
+    -16.8,
+    -8.8
+   ],
+   "retained_share": 0.33
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    6.2,
+    3.3,
+    9.0
+   ],
+   "para": [
+    1.8,
+    -1.0,
+    4.5
+   ],
+   "para_minus_orig": [
+    -4.3,
+    -8.0,
+    -0.7
+   ],
+   "retained_share": 0.297
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    39.7,
+    35.0,
+    44.3
+   ],
+   "para": [
+    16.7,
+    12.0,
+    21.3
+   ],
+   "para_minus_orig": [
+    -23.0,
+    -28.8,
+    -17.3
+   ],
+   "retained_share": 0.42
+  }
+ },
+ "hi_unseen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 38.8,
+   "Random-CPT": 52.3,
+   "Idiom-Text": 53.3,
+   "Idiom+Meaning": 53.8
+  },
+  "acc_para": {
+   "Base": 32.0,
+   "Random-CPT": 40.7,
+   "Idiom-Text": 40.0,
+   "Idiom+Meaning": 41.8
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    1.5,
+    -2.0,
+    5.0
+   ],
+   "para": [
+    1.2,
+    -1.7,
+    4.2
+   ],
+   "para_minus_orig": [
+    -0.3,
+    -4.7,
+    4.0
+   ],
+   "retained_share": 0.778
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    0.5,
+    -2.3,
+    3.3
+   ],
+   "para": [
+    1.8,
+    -0.3,
+    4.0
+   ],
+   "para_minus_orig": [
+    1.3,
+    -2.0,
+    4.8
+   ],
+   "retained_share": 3.667
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    1.0,
+    -1.5,
+    3.7
+   ],
+   "para": [
+    -0.7,
+    -3.3,
+    2.0
+   ],
+   "para_minus_orig": [
+    -1.7,
+    -5.5,
+    2.2
+   ],
+   "retained_share": -0.667
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    15.0,
+    10.2,
+    19.8
+   ],
+   "para": [
+    9.8,
+    5.3,
+    14.3
+   ],
+   "para_minus_orig": [
+    -5.2,
+    -11.2,
+    0.7
+   ],
+   "retained_share": 0.656
+  }
+ },
+ "zh_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 79.0,
+   "Random-CPT": 79.8,
+   "Idiom-Text": 79.2,
+   "Idiom+Meaning": 90.5
+  },
+  "acc_para": {
+   "Base": 59.2,
+   "Random-CPT": 62.7,
+   "Idiom-Text": 63.0,
+   "Idiom+Meaning": 62.0
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    10.7,
+    8.2,
+    13.3
+   ],
+   "para": [
+    -0.7,
+    -3.5,
+    2.2
+   ],
+   "para_minus_orig": [
+    -11.3,
+    -15.2,
+    -7.5
+   ],
+   "retained_share": -0.062
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    11.3,
+    8.7,
+    14.0
+   ],
+   "para": [
+    -1.0,
+    -3.5,
+    1.5
+   ],
+   "para_minus_orig": [
+    -12.3,
+    -15.8,
+    -8.8
+   ],
+   "retained_share": -0.088
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    -0.7,
+    -2.2,
+    0.8
+   ],
+   "para": [
+    0.3,
+    -1.7,
+    2.5
+   ],
+   "para_minus_orig": [
+    1.0,
+    -1.5,
+    3.5
+   ],
+   "retained_share": -0.5
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    11.5,
+    8.7,
+    14.3
+   ],
+   "para": [
+    2.8,
+    -0.2,
+    5.8
+   ],
+   "para_minus_orig": [
+    -8.7,
+    -12.7,
+    -4.5
+   ],
+   "retained_share": 0.246
+  }
+ },
+ "zh_unseen": {
+  "n": 78,
+  "acc_orig": {
+   "Base": 52.6,
+   "Random-CPT": 57.7,
+   "Idiom-Text": 57.7,
+   "Idiom+Meaning": 61.5
+  },
+  "acc_para": {
+   "Base": 44.9,
+   "Random-CPT": 48.7,
+   "Idiom-Text": 51.3,
+   "Idiom+Meaning": 42.3
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    3.8,
+    -2.6,
+    10.3
+   ],
+   "para": [
+    -6.4,
+    -14.1,
+    0.0
+   ],
+   "para_minus_orig": [
+    -10.3,
+    -20.5,
+    -1.3
+   ],
+   "retained_share": -1.667
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    3.8,
+    -1.3,
+    10.3
+   ],
+   "para": [
+    -9.0,
+    -15.4,
+    -3.8
+   ],
+   "para_minus_orig": [
+    -12.8,
+    -20.5,
+    -6.4
+   ],
+   "retained_share": -2.333
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    0.0,
+    -6.4,
+    6.4
+   ],
+   "para": [
+    2.6,
+    -2.6,
+    7.7
+   ],
+   "para_minus_orig": [
+    2.6,
+    -5.1,
+    10.3
+   ],
+   "retained_share": null
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    9.0,
+    1.3,
+    16.7
+   ],
+   "para": [
+    -2.6,
+    -10.3,
+    3.8
+   ],
+   "para_minus_orig": [
+    -11.5,
+    -21.8,
+    -1.3
+   ],
+   "retained_share": -0.286
+  }
+ },
+ "paraphrase_chrf": {
+  "ar": {
+   "n": 3645,
+   "median": 26.7,
+   "share_gt_45": 0.005
+  },
+  "hi": {
+   "n": 4058,
+   "median": 39.5,
+   "share_gt_45": 0.231
+  },
+  "zh": {
+   "n": 2517,
+   "median": 7.4,
+   "share_gt_45": 0.0
+  }
+ }
+}
