@@ -1,0 +1,5140 @@
+{
+ "categories": [
+  "animal",
+  "body_mind",
+  "nature_cosmos",
+  "food_drink",
+  "kinship_social",
+  "religion_supernatural",
+  "occupation_economy",
+  "artefact_household",
+  "time_change",
+  "speech_name",
+  "life_death_fate",
+  "morality_truth",
+  "action_conflict",
+  "quantity_space",
+  "residual_other"
+ ],
+ "kb_sizes": {
+  "en": 21278,
+  "zh": 27297,
+  "hi": 16617,
+  "ar": 10386
+ },
+ "entities": {
+  "language_V_uncorrected": 0.2152,
+  "language_V": 0.2149,
+  "category_shares": {
+   "en": {
+    "animal": 0.0718,
+    "body_mind": 0.1604,
+    "nature_cosmos": 0.1038,
+    "food_drink": 0.0411,
+    "kinship_social": 0.0646,
+    "religion_supernatural": 0.0232,
+    "occupation_economy": 0.0382,
+    "artefact_household": 0.1963,
+    "time_change": 0.0336,
+    "speech_name": 0.0352,
+    "life_death_fate": 0.0265,
+    "morality_truth": 0.0264,
+    "action_conflict": 0.0712,
+    "quantity_space": 0.0601,
+    "residual_other": 0.0477
+   },
+   "zh": {
+    "animal": 0.0852,
+    "body_mind": 0.1545,
+    "nature_cosmos": 0.1737,
+    "food_drink": 0.0232,
+    "kinship_social": 0.0833,
+    "religion_supernatural": 0.0159,
+    "occupation_economy": 0.017,
+    "artefact_household": 0.1213,
+    "time_change": 0.0251,
+    "speech_name": 0.0467,
+    "life_death_fate": 0.0263,
+    "morality_truth": 0.0651,
+    "action_conflict": 0.0567,
+    "quantity_space": 0.0573,
+    "residual_other": 0.0487
+   },
+   "hi": {
+    "animal": 0.0809,
+    "body_mind": 0.1036,
+    "nature_cosmos": 0.1395,
+    "food_drink": 0.082,
+    "kinship_social": 0.2293,
+    "religion_supernatural": 0.062,
+    "occupation_economy": 0.0653,
+    "artefact_household": 0.1182,
+    "time_change": 0.0089,
+    "speech_name": 0.0159,
+    "life_death_fate": 0.0248,
+    "morality_truth": 0.016,
+    "action_conflict": 0.0224,
+    "quantity_space": 0.0106,
+    "residual_other": 0.0204
+   },
+   "ar": {
+    "animal": 0.1205,
+    "body_mind": 0.1466,
+    "nature_cosmos": 0.1295,
+    "food_drink": 0.0716,
+    "kinship_social": 0.1863,
+    "religion_supernatural": 0.0265,
+    "occupation_economy": 0.0371,
+    "artefact_household": 0.1131,
+    "time_change": 0.0124,
+    "speech_name": 0.0193,
+    "life_death_fate": 0.0256,
+    "morality_truth": 0.0283,
+    "action_conflict": 0.0216,
+    "quantity_space": 0.0164,
+    "residual_other": 0.0452
+   }
+  },
+  "exclusive_source_sizes": {
+   "en": {
+    "en_dictionary": 11070,
+    "en_wiktionary": 6054,
+    "en_idiomkb": 1825
+   },
+   "zh": {
+    "zh_xinhua_only": 18659,
+    "zh_multi_source": 8499
+   },
+   "hi": {
+    "hi_brhat_lokokti_kosh": 16617
+   },
+   "ar": {
+    "ar_tahaalselwii_classical": 4520,
+    "ar_tahaalselwii_colloquial": 2996,
+    "ar_jawaher": 738,
+    "ar_kinayat": 310,
+    "ar_tunisian": 931,
+    "ar_absher": 498,
+    "ar_hassaniya": 319
+   }
+  },
+  "arabic_register_sizes": {
+   "ar_classical": 4530,
+   "ar_colloquial": 5755
+  },
+  "within_language_source_V": {
+   "en": {
+    "sources": [
+     "en_dictionary",
+     "en_idiomkb",
+     "en_wiktionary"
+    ],
+    "V": 0.0906,
+    "perm_null_mean": 0.0078,
+    "perm_p": 0.001996007984031936
+   },
+   "zh": {
+    "sources": [
+     "zh_multi_source",
+     "zh_xinhua_only"
+    ],
+    "V": 0.0953,
+    "perm_null_mean": 0.0084,
+    "perm_p": 0.001996007984031936
+   },
+   "ar": {
+    "sources": [
+     "ar_absher",
+     "ar_hassaniya",
+     "ar_jawaher",
+     "ar_kinayat",
+     "ar_tahaalselwii_classical",
+     "ar_tahaalselwii_colloquial",
+     "ar_tunisian"
+    ],
+    "V": 0.0946,
+    "perm_null_mean": 0.011,
+    "perm_p": 0.001996007984031936
+   },
+   "ar_register": {
+    "V": 0.1782,
+    "shares_classical": {
+     "animal": 0.166,
+     "body_mind": 0.14,
+     "nature_cosmos": 0.161,
+     "food_drink": 0.055,
+     "kinship_social": 0.188,
+     "religion_supernatural": 0.015,
+     "occupation_economy": 0.023,
+     "artefact_household": 0.091,
+     "time_change": 0.01,
+     "speech_name": 0.02,
+     "life_death_fate": 0.019,
+     "morality_truth": 0.032,
+     "action_conflict": 0.025,
+     "quantity_space": 0.01,
+     "residual_other": 0.044
+    },
+    "shares_colloquial": {
+     "animal": 0.091,
+     "body_mind": 0.151,
+     "nature_cosmos": 0.109,
+     "food_drink": 0.083,
+     "kinship_social": 0.186,
+     "religion_supernatural": 0.034,
+     "occupation_economy": 0.047,
+     "artefact_household": 0.128,
+     "time_change": 0.014,
+     "speech_name": 0.018,
+     "life_death_fate": 0.029,
+     "morality_truth": 0.025,
+     "action_conflict": 0.019,
+     "quantity_space": 0.02,
+     "residual_other": 0.046
+    },
+    "classical_over_represented": [
+     "animal",
+     "nature_cosmos",
+     "action_conflict",
+     "morality_truth"
+    ],
+    "colloquial_over_represented": [
+     "occupation_economy",
+     "religion_supernatural",
+     "artefact_household",
+     "food_drink"
+    ]
+   }
+  },
+  "pairwise_summary": {
+   "between_language (full KBs)": {
+    "n_pairs": 6,
+    "median_V": 0.2712,
+    "min_V": 0.154,
+    "max_V": 0.3754,
+    "pairs": {
+     "zh|hi": 0.3754,
+     "en|hi": 0.3399,
+     "en|ar": 0.2918,
+     "zh|ar": 0.2506,
+     "en|zh": 0.173,
+     "hi|ar": 0.154
+    }
+   },
+   "within_language (source or register pairs)": {
+    "n_pairs": 26,
+    "median_V": 0.1229,
+    "min_V": 0.041,
+    "max_V": 0.3426,
+    "pairs": {
+     "ar_kinayat|ar_hassaniya": 0.3426,
+     "ar_kinayat|ar_absher": 0.2603,
+     "ar_jawaher|ar_kinayat": 0.2556,
+     "ar_kinayat|ar_tunisian": 0.2374,
+     "ar_tahaalselwii_classical|ar_tunisian": 0.1949,
+     "ar_tahaalselwii_classical|ar_tahaalselwii_colloquial": 0.1887,
+     "ar_tahaalselwii_classical|ar_kinayat": 0.1853,
+     "ar_classical|ar_colloquial": 0.1782,
+     "ar_jawaher|ar_tunisian": 0.1695,
+     "ar_tahaalselwii_colloquial|ar_kinayat": 0.1688,
+     "ar_tunisian|ar_hassaniya": 0.1666,
+     "ar_tahaalselwii_classical|ar_jawaher": 0.1244,
+     "ar_absher|ar_hassaniya": 0.1244,
+     "en_dictionary|en_wiktionary": 0.1214,
+     "ar_jawaher|ar_hassaniya": 0.1167,
+     "ar_tunisian|ar_absher": 0.116,
+     "ar_tahaalselwii_colloquial|ar_tunisian": 0.1091,
+     "en_dictionary|en_idiomkb": 0.1089,
+     "ar_tahaalselwii_classical|ar_absher": 0.0992,
+     "zh_xinhua_only|zh_multi_source": 0.0953,
+     "ar_jawaher|ar_absher": 0.0854,
+     "ar_tahaalselwii_colloquial|ar_jawaher": 0.0846,
+     "ar_tahaalselwii_colloquial|ar_hassaniya": 0.0821,
+     "ar_tahaalselwii_colloquial|ar_absher": 0.0705,
+     "en_wiktionary|en_idiomkb": 0.0429,
+     "ar_tahaalselwii_classical|ar_hassaniya": 0.041
+    }
+   },
+   "between_language (single-source subsets)": {
+    "n_pairs": 65,
+    "median_V": 0.1803,
+    "min_V": 0.0453,
+    "max_V": 0.3656,
+    "pairs": {
+     "zh_xinhua_only|hi_brhat_lokokti_kosh": 0.3656,
+     "en_dictionary|ar_tahaalselwii_classical": 0.3601,
+     "en_dictionary|ar_classical": 0.3599,
+     "zh_multi_source|hi_brhat_lokokti_kosh": 0.3583,
+     "en_wiktionary|ar_tahaalselwii_classical": 0.3355,
+     "en_wiktionary|ar_classical": 0.3353,
+     "zh_multi_source|ar_colloquial": 0.3209,
+     "en_dictionary|hi_brhat_lokokti_kosh": 0.3134,
+     "zh_multi_source|ar_tahaalselwii_colloquial": 0.3067,
+     "en_dictionary|ar_colloquial": 0.3029,
+     "en_dictionary|ar_tahaalselwii_colloquial": 0.2988,
+     "zh_multi_source|ar_tahaalselwii_classical": 0.298,
+     "zh_multi_source|ar_classical": 0.2977,
+     "en_dictionary|ar_tunisian": 0.2951,
+     "en_idiomkb|ar_tunisian": 0.2898,
+     "en_wiktionary|ar_tunisian": 0.2844,
+     "zh_multi_source|ar_tunisian": 0.2649,
+     "en_wiktionary|ar_tahaalselwii_colloquial": 0.2606,
+     "zh_xinhua_only|ar_colloquial": 0.2588,
+     "en_idiomkb|ar_tahaalselwii_classical": 0.2569,
+     "en_wiktionary|ar_colloquial": 0.2566,
+     "en_idiomkb|ar_classical": 0.2566,
+     "en_wiktionary|zh_multi_source": 0.2483,
+     "en_wiktionary|hi_brhat_lokokti_kosh": 0.2419,
+     "zh_xinhua_only|ar_tahaalselwii_colloquial": 0.228,
+     "en_idiomkb|ar_hassaniya": 0.2117,
+     "zh_xinhua_only|ar_tahaalselwii_classical": 0.2086,
+     "zh_xinhua_only|ar_classical": 0.2085,
+     "en_idiomkb|ar_tahaalselwii_colloquial": 0.2029,
+     "en_dictionary|zh_multi_source": 0.1935,
+     "en_idiomkb|ar_kinayat": 0.1921,
+     "zh_xinhua_only|ar_tunisian": 0.1835,
+     "en_dictionary|ar_jawaher": 0.1803,
+     "en_idiomkb|zh_multi_source": 0.1799,
+     "en_idiomkb|ar_jawaher": 0.1777,
+     "en_idiomkb|ar_absher": 0.1749,
+     "en_idiomkb|ar_colloquial": 0.1749,
+     "en_wiktionary|ar_jawaher": 0.1706,
+     "zh_multi_source|ar_jawaher": 0.1664,
+     "en_wiktionary|ar_hassaniya": 0.1663,
+     "zh_multi_source|ar_kinayat": 0.165,
+     "hi_brhat_lokokti_kosh|ar_classical": 0.164,
+     "hi_brhat_lokokti_kosh|ar_tahaalselwii_classical": 0.1639,
+     "en_dictionary|ar_hassaniya": 0.163,
+     "en_wiktionary|zh_xinhua_only": 0.1549,
+     "en_wiktionary|ar_kinayat": 0.1501,
+     "en_dictionary|zh_xinhua_only": 0.1498,
+     "en_dictionary|ar_kinayat": 0.1497,
+     "en_dictionary|ar_absher": 0.1429,
+     "en_idiomkb|hi_brhat_lokokti_kosh": 0.1411,
+     "en_wiktionary|ar_absher": 0.1406,
+     "zh_multi_source|ar_absher": 0.1358,
+     "hi_brhat_lokokti_kosh|ar_colloquial": 0.123,
+     "zh_multi_source|ar_hassaniya": 0.1125,
+     "hi_brhat_lokokti_kosh|ar_tahaalselwii_colloquial": 0.098,
+     "zh_xinhua_only|ar_jawaher": 0.094,
+     "zh_xinhua_only|ar_kinayat": 0.0919,
+     "en_idiomkb|zh_xinhua_only": 0.0908,
+     "hi_brhat_lokokti_kosh|ar_jawaher": 0.0809,
+     "hi_brhat_lokokti_kosh|ar_kinayat": 0.0808,
+     "zh_xinhua_only|ar_absher": 0.077,
+     "zh_xinhua_only|ar_hassaniya": 0.0663,
+     "hi_brhat_lokokti_kosh|ar_tunisian": 0.0631,
+     "hi_brhat_lokokti_kosh|ar_hassaniya": 0.0513,
+     "hi_brhat_lokokti_kosh|ar_absher": 0.0453
+    }
+   },
+   "median_between_minus_median_within": {
+    "delta_V": 0.0574,
+    "ci95": [
+     0.0191,
+     0.0695
+    ]
+   }
+  },
+  "pairwise": {
+   "en|zh": {
+    "V": 0.173,
+    "V_ci95": [
+     0.1653,
+     0.1814
+    ],
+    "JSD_bits": 0.0272,
+    "n_idioms": [
+     21278,
+     27297
+    ],
+    "n_mentions": [
+     18771,
+     47722
+    ]
+   },
+   "en|hi": {
+    "V": 0.3399,
+    "V_ci95": [
+     0.332,
+     0.3484
+    ],
+    "JSD_bits": 0.0997,
+    "n_idioms": [
+     21278,
+     16617
+    ],
+    "n_mentions": [
+     18771,
+     42181
+    ]
+   },
+   "en|ar": {
+    "V": 0.2918,
+    "V_ci95": [
+     0.2826,
+     0.3017
+    ],
+    "JSD_bits": 0.0643,
+    "n_idioms": [
+     21278,
+     10386
+    ],
+    "n_mentions": [
+     18771,
+     17049
+    ]
+   },
+   "zh|hi": {
+    "V": 0.3754,
+    "V_ci95": [
+     0.3688,
+     0.382
+    ],
+    "JSD_bits": 0.1073,
+    "n_idioms": [
+     27297,
+     16617
+    ],
+    "n_mentions": [
+     47722,
+     42181
+    ]
+   },
+   "zh|ar": {
+    "V": 0.2506,
+    "V_ci95": [
+     0.2421,
+     0.2593
+    ],
+    "JSD_bits": 0.0582,
+    "n_idioms": [
+     27297,
+     10386
+    ],
+    "n_mentions": [
+     47722,
+     17049
+    ]
+   },
+   "hi|ar": {
+    "V": 0.154,
+    "V_ci95": [
+     0.1462,
+     0.164
+    ],
+    "JSD_bits": 0.0212,
+    "n_idioms": [
+     16617,
+     10386
+    ],
+    "n_mentions": [
+     42181,
+     17049
+    ]
+   },
+   "en_dictionary|en_wiktionary": {
+    "V": 0.1214,
+    "V_ci95": [
+     0.1082,
+     0.1423
+    ],
+    "JSD_bits": 0.0117,
+    "n_idioms": [
+     11070,
+     6054
+    ],
+    "n_mentions": [
+     8232,
+     6154
+    ]
+   },
+   "en_dictionary|en_idiomkb": {
+    "V": 0.1089,
+    "V_ci95": [
+     0.0931,
+     0.1354
+    ],
+    "JSD_bits": 0.015,
+    "n_idioms": [
+     11070,
+     1825
+    ],
+    "n_mentions": [
+     8232,
+     2145
+    ]
+   },
+   "en_dictionary|zh_xinhua_only": {
+    "V": 0.1498,
+    "V_ci95": [
+     0.1404,
+     0.1616
+    ],
+    "JSD_bits": 0.0267,
+    "n_idioms": [
+     11070,
+     18659
+    ],
+    "n_mentions": [
+     8232,
+     33682
+    ]
+   },
+   "en_dictionary|zh_multi_source": {
+    "V": 0.1935,
+    "V_ci95": [
+     0.1807,
+     0.2083
+    ],
+    "JSD_bits": 0.0299,
+    "n_idioms": [
+     11070,
+     8499
+    ],
+    "n_mentions": [
+     8232,
+     13806
+    ]
+   },
+   "en_dictionary|hi_brhat_lokokti_kosh": {
+    "V": 0.3134,
+    "V_ci95": [
+     0.3041,
+     0.3245
+    ],
+    "JSD_bits": 0.116,
+    "n_idioms": [
+     11070,
+     16617
+    ],
+    "n_mentions": [
+     8232,
+     42181
+    ]
+   },
+   "en_dictionary|ar_tahaalselwii_classical": {
+    "V": 0.3601,
+    "V_ci95": [
+     0.3451,
+     0.377
+    ],
+    "JSD_bits": 0.1002,
+    "n_idioms": [
+     11070,
+     4520
+    ],
+    "n_mentions": [
+     8232,
+     6702
+    ]
+   },
+   "en_dictionary|ar_tahaalselwii_colloquial": {
+    "V": 0.2988,
+    "V_ci95": [
+     0.2847,
+     0.317
+    ],
+    "JSD_bits": 0.0696,
+    "n_idioms": [
+     11070,
+     2996
+    ],
+    "n_mentions": [
+     8232,
+     5711
+    ]
+   },
+   "en_dictionary|ar_jawaher": {
+    "V": 0.1803,
+    "V_ci95": [
+     0.1623,
+     0.209
+    ],
+    "JSD_bits": 0.0518,
+    "n_idioms": [
+     11070,
+     738
+    ],
+    "n_mentions": [
+     8232,
+     1289
+    ]
+   },
+   "en_dictionary|ar_kinayat": {
+    "V": 0.1497,
+    "V_ci95": [
+     0.1274,
+     0.183
+    ],
+    "JSD_bits": 0.1128,
+    "n_idioms": [
+     11070,
+     310
+    ],
+    "n_mentions": [
+     8232,
+     380
+    ]
+   },
+   "en_dictionary|ar_tunisian": {
+    "V": 0.2951,
+    "V_ci95": [
+     0.2736,
+     0.3236
+    ],
+    "JSD_bits": 0.0985,
+    "n_idioms": [
+     11070,
+     931
+    ],
+    "n_mentions": [
+     8232,
+     1981
+    ]
+   },
+   "en_dictionary|ar_absher": {
+    "V": 0.1429,
+    "V_ci95": [
+     0.122,
+     0.1735
+    ],
+    "JSD_bits": 0.0883,
+    "n_idioms": [
+     11070,
+     498
+    ],
+    "n_mentions": [
+     8232,
+     426
+    ]
+   },
+   "en_dictionary|ar_hassaniya": {
+    "V": 0.163,
+    "V_ci95": [
+     0.1401,
+     0.1957
+    ],
+    "JSD_bits": 0.1074,
+    "n_idioms": [
+     11070,
+     319
+    ],
+    "n_mentions": [
+     8232,
+     431
+    ]
+   },
+   "en_dictionary|ar_classical": {
+    "V": 0.3599,
+    "V_ci95": [
+     0.345,
+     0.3766
+    ],
+    "JSD_bits": 0.1,
+    "n_idioms": [
+     11070,
+     4530
+    ],
+    "n_mentions": [
+     8232,
+     6718
+    ]
+   },
+   "en_dictionary|ar_colloquial": {
+    "V": 0.3029,
+    "V_ci95": [
+     0.2909,
+     0.3175
+    ],
+    "JSD_bits": 0.0702,
+    "n_idioms": [
+     11070,
+     5755
+    ],
+    "n_mentions": [
+     8232,
+     10163
+    ]
+   },
+   "en_wiktionary|en_idiomkb": {
+    "V": 0.0429,
+    "V_ci95": [
+     0.0315,
+     0.0807
+    ],
+    "JSD_bits": 0.0033,
+    "n_idioms": [
+     6054,
+     1825
+    ],
+    "n_mentions": [
+     6154,
+     2145
+    ]
+   },
+   "en_wiktionary|zh_xinhua_only": {
+    "V": 0.1549,
+    "V_ci95": [
+     0.1464,
+     0.1663
+    ],
+    "JSD_bits": 0.0335,
+    "n_idioms": [
+     6054,
+     18659
+    ],
+    "n_mentions": [
+     6154,
+     33682
+    ]
+   },
+   "en_wiktionary|zh_multi_source": {
+    "V": 0.2483,
+    "V_ci95": [
+     0.2352,
+     0.2649
+    ],
+    "JSD_bits": 0.052,
+    "n_idioms": [
+     6054,
+     8499
+    ],
+    "n_mentions": [
+     6154,
+     13806
+    ]
+   },
+   "en_wiktionary|hi_brhat_lokokti_kosh": {
+    "V": 0.2419,
+    "V_ci95": [
+     0.2322,
+     0.253
+    ],
+    "JSD_bits": 0.0879,
+    "n_idioms": [
+     6054,
+     16617
+    ],
+    "n_mentions": [
+     6154,
+     42181
+    ]
+   },
+   "en_wiktionary|ar_tahaalselwii_classical": {
+    "V": 0.3355,
+    "V_ci95": [
+     0.321,
+     0.3529
+    ],
+    "JSD_bits": 0.0851,
+    "n_idioms": [
+     6054,
+     4520
+    ],
+    "n_mentions": [
+     6154,
+     6702
+    ]
+   },
+   "en_wiktionary|ar_tahaalselwii_colloquial": {
+    "V": 0.2606,
+    "V_ci95": [
+     0.2461,
+     0.2802
+    ],
+    "JSD_bits": 0.0512,
+    "n_idioms": [
+     6054,
+     2996
+    ],
+    "n_mentions": [
+     6154,
+     5711
+    ]
+   },
+   "en_wiktionary|ar_jawaher": {
+    "V": 0.1706,
+    "V_ci95": [
+     0.1513,
+     0.2021
+    ],
+    "JSD_bits": 0.041,
+    "n_idioms": [
+     6054,
+     738
+    ],
+    "n_mentions": [
+     6154,
+     1289
+    ]
+   },
+   "en_wiktionary|ar_kinayat": {
+    "V": 0.1501,
+    "V_ci95": [
+     0.1267,
+     0.1853
+    ],
+    "JSD_bits": 0.0877,
+    "n_idioms": [
+     6054,
+     310
+    ],
+    "n_mentions": [
+     6154,
+     380
+    ]
+   },
+   "en_wiktionary|ar_tunisian": {
+    "V": 0.2844,
+    "V_ci95": [
+     0.2636,
+     0.3113
+    ],
+    "JSD_bits": 0.0808,
+    "n_idioms": [
+     6054,
+     931
+    ],
+    "n_mentions": [
+     6154,
+     1981
+    ]
+   },
+   "en_wiktionary|ar_absher": {
+    "V": 0.1406,
+    "V_ci95": [
+     0.1219,
+     0.1739
+    ],
+    "JSD_bits": 0.0708,
+    "n_idioms": [
+     6054,
+     498
+    ],
+    "n_mentions": [
+     6154,
+     426
+    ]
+   },
+   "en_wiktionary|ar_hassaniya": {
+    "V": 0.1663,
+    "V_ci95": [
+     0.1422,
+     0.2026
+    ],
+    "JSD_bits": 0.0879,
+    "n_idioms": [
+     6054,
+     319
+    ],
+    "n_mentions": [
+     6154,
+     431
+    ]
+   },
+   "en_wiktionary|ar_classical": {
+    "V": 0.3353,
+    "V_ci95": [
+     0.3197,
+     0.3542
+    ],
+    "JSD_bits": 0.085,
+    "n_idioms": [
+     6054,
+     4530
+    ],
+    "n_mentions": [
+     6154,
+     6718
+    ]
+   },
+   "en_wiktionary|ar_colloquial": {
+    "V": 0.2566,
+    "V_ci95": [
+     0.2442,
+     0.2737
+    ],
+    "JSD_bits": 0.0521,
+    "n_idioms": [
+     6054,
+     5755
+    ],
+    "n_mentions": [
+     6154,
+     10163
+    ]
+   },
+   "en_idiomkb|zh_xinhua_only": {
+    "V": 0.0908,
+    "V_ci95": [
+     0.0812,
+     0.105
+    ],
+    "JSD_bits": 0.0269,
+    "n_idioms": [
+     1825,
+     18659
+    ],
+    "n_mentions": [
+     2145,
+     33682
+    ]
+   },
+   "en_idiomkb|zh_multi_source": {
+    "V": 0.1799,
+    "V_ci95": [
+     0.1632,
+     0.2004
+    ],
+    "JSD_bits": 0.0464,
+    "n_idioms": [
+     1825,
+     8499
+    ],
+    "n_mentions": [
+     2145,
+     13806
+    ]
+   },
+   "en_idiomkb|hi_brhat_lokokti_kosh": {
+    "V": 0.1411,
+    "V_ci95": [
+     0.1309,
+     0.1534
+    ],
+    "JSD_bits": 0.0753,
+    "n_idioms": [
+     1825,
+     16617
+    ],
+    "n_mentions": [
+     2145,
+     42181
+    ]
+   },
+   "en_idiomkb|ar_tahaalselwii_classical": {
+    "V": 0.2569,
+    "V_ci95": [
+     0.2377,
+     0.2829
+    ],
+    "JSD_bits": 0.0639,
+    "n_idioms": [
+     1825,
+     4520
+    ],
+    "n_mentions": [
+     2145,
+     6702
+    ]
+   },
+   "en_idiomkb|ar_tahaalselwii_colloquial": {
+    "V": 0.2029,
+    "V_ci95": [
+     0.1861,
+     0.2291
+    ],
+    "JSD_bits": 0.0411,
+    "n_idioms": [
+     1825,
+     2996
+    ],
+    "n_mentions": [
+     2145,
+     5711
+    ]
+   },
+   "en_idiomkb|ar_jawaher": {
+    "V": 0.1777,
+    "V_ci95": [
+     0.154,
+     0.2236
+    ],
+    "JSD_bits": 0.0285,
+    "n_idioms": [
+     1825,
+     738
+    ],
+    "n_mentions": [
+     2145,
+     1289
+    ]
+   },
+   "en_idiomkb|ar_kinayat": {
+    "V": 0.1921,
+    "V_ci95": [
+     0.1604,
+     0.2422
+    ],
+    "JSD_bits": 0.0703,
+    "n_idioms": [
+     1825,
+     310
+    ],
+    "n_mentions": [
+     2145,
+     380
+    ]
+   },
+   "en_idiomkb|ar_tunisian": {
+    "V": 0.2898,
+    "V_ci95": [
+     0.2633,
+     0.3249
+    ],
+    "JSD_bits": 0.0652,
+    "n_idioms": [
+     1825,
+     931
+    ],
+    "n_mentions": [
+     2145,
+     1981
+    ]
+   },
+   "en_idiomkb|ar_absher": {
+    "V": 0.1749,
+    "V_ci95": [
+     0.1497,
+     0.2277
+    ],
+    "JSD_bits": 0.0516,
+    "n_idioms": [
+     1825,
+     498
+    ],
+    "n_mentions": [
+     2145,
+     426
+    ]
+   },
+   "en_idiomkb|ar_hassaniya": {
+    "V": 0.2117,
+    "V_ci95": [
+     0.1785,
+     0.2634
+    ],
+    "JSD_bits": 0.0677,
+    "n_idioms": [
+     1825,
+     319
+    ],
+    "n_mentions": [
+     2145,
+     431
+    ]
+   },
+   "en_idiomkb|ar_classical": {
+    "V": 0.2566,
+    "V_ci95": [
+     0.2376,
+     0.2822
+    ],
+    "JSD_bits": 0.0639,
+    "n_idioms": [
+     1825,
+     4530
+    ],
+    "n_mentions": [
+     2145,
+     6718
+    ]
+   },
+   "en_idiomkb|ar_colloquial": {
+    "V": 0.1749,
+    "V_ci95": [
+     0.1585,
+     0.1959
+    ],
+    "JSD_bits": 0.0394,
+    "n_idioms": [
+     1825,
+     5755
+    ],
+    "n_mentions": [
+     2145,
+     10163
+    ]
+   },
+   "zh_xinhua_only|zh_multi_source": {
+    "V": 0.0953,
+    "V_ci95": [
+     0.0866,
+     0.1081
+    ],
+    "JSD_bits": 0.0084,
+    "n_idioms": [
+     18659,
+     8499
+    ],
+    "n_mentions": [
+     33682,
+     13806
+    ]
+   },
+   "zh_xinhua_only|hi_brhat_lokokti_kosh": {
+    "V": 0.3656,
+    "V_ci95": [
+     0.3582,
+     0.3727
+    ],
+    "JSD_bits": 0.1038,
+    "n_idioms": [
+     18659,
+     16617
+    ],
+    "n_mentions": [
+     33682,
+     42181
+    ]
+   },
+   "zh_xinhua_only|ar_tahaalselwii_classical": {
+    "V": 0.2086,
+    "V_ci95": [
+     0.1982,
+     0.2209
+    ],
+    "JSD_bits": 0.0568,
+    "n_idioms": [
+     18659,
+     4520
+    ],
+    "n_mentions": [
+     33682,
+     6702
+    ]
+   },
+   "zh_xinhua_only|ar_tahaalselwii_colloquial": {
+    "V": 0.228,
+    "V_ci95": [
+     0.2166,
+     0.2418
+    ],
+    "JSD_bits": 0.0668,
+    "n_idioms": [
+     18659,
+     2996
+    ],
+    "n_mentions": [
+     33682,
+     5711
+    ]
+   },
+   "zh_xinhua_only|ar_jawaher": {
+    "V": 0.094,
+    "V_ci95": [
+     0.0821,
+     0.1128
+    ],
+    "JSD_bits": 0.039,
+    "n_idioms": [
+     18659,
+     738
+    ],
+    "n_mentions": [
+     33682,
+     1289
+    ]
+   },
+   "zh_xinhua_only|ar_kinayat": {
+    "V": 0.0919,
+    "V_ci95": [
+     0.0775,
+     0.112
+    ],
+    "JSD_bits": 0.1203,
+    "n_idioms": [
+     18659,
+     310
+    ],
+    "n_mentions": [
+     33682,
+     380
+    ]
+   },
+   "zh_xinhua_only|ar_tunisian": {
+    "V": 0.1835,
+    "V_ci95": [
+     0.1679,
+     0.2015
+    ],
+    "JSD_bits": 0.0898,
+    "n_idioms": [
+     18659,
+     931
+    ],
+    "n_mentions": [
+     33682,
+     1981
+    ]
+   },
+   "zh_xinhua_only|ar_absher": {
+    "V": 0.077,
+    "V_ci95": [
+     0.0652,
+     0.0955
+    ],
+    "JSD_bits": 0.081,
+    "n_idioms": [
+     18659,
+     498
+    ],
+    "n_mentions": [
+     33682,
+     426
+    ]
+   },
+   "zh_xinhua_only|ar_hassaniya": {
+    "V": 0.0663,
+    "V_ci95": [
+     0.0553,
+     0.0832
+    ],
+    "JSD_bits": 0.0708,
+    "n_idioms": [
+     18659,
+     319
+    ],
+    "n_mentions": [
+     33682,
+     431
+    ]
+   },
+   "zh_xinhua_only|ar_classical": {
+    "V": 0.2085,
+    "V_ci95": [
+     0.1985,
+     0.2203
+    ],
+    "JSD_bits": 0.0566,
+    "n_idioms": [
+     18659,
+     4530
+    ],
+    "n_mentions": [
+     33682,
+     6718
+    ]
+   },
+   "zh_xinhua_only|ar_colloquial": {
+    "V": 0.2588,
+    "V_ci95": [
+     0.2485,
+     0.2704
+    ],
+    "JSD_bits": 0.0643,
+    "n_idioms": [
+     18659,
+     5755
+    ],
+    "n_mentions": [
+     33682,
+     10163
+    ]
+   },
+   "zh_multi_source|hi_brhat_lokokti_kosh": {
+    "V": 0.3583,
+    "V_ci95": [
+     0.349,
+     0.3679
+    ],
+    "JSD_bits": 0.1213,
+    "n_idioms": [
+     8499,
+     16617
+    ],
+    "n_mentions": [
+     13806,
+     42181
+    ]
+   },
+   "zh_multi_source|ar_tahaalselwii_classical": {
+    "V": 0.298,
+    "V_ci95": [
+     0.2837,
+     0.3147
+    ],
+    "JSD_bits": 0.0757,
+    "n_idioms": [
+     8499,
+     4520
+    ],
+    "n_mentions": [
+     13806,
+     6702
+    ]
+   },
+   "zh_multi_source|ar_tahaalselwii_colloquial": {
+    "V": 0.3067,
+    "V_ci95": [
+     0.2924,
+     0.3238
+    ],
+    "JSD_bits": 0.0819,
+    "n_idioms": [
+     8499,
+     2996
+    ],
+    "n_mentions": [
+     13806,
+     5711
+    ]
+   },
+   "zh_multi_source|ar_jawaher": {
+    "V": 0.1664,
+    "V_ci95": [
+     0.1475,
+     0.1951
+    ],
+    "JSD_bits": 0.0552,
+    "n_idioms": [
+     8499,
+     738
+    ],
+    "n_mentions": [
+     13806,
+     1289
+    ]
+   },
+   "zh_multi_source|ar_kinayat": {
+    "V": 0.165,
+    "V_ci95": [
+     0.1396,
+     0.1994
+    ],
+    "JSD_bits": 0.1513,
+    "n_idioms": [
+     8499,
+     310
+    ],
+    "n_mentions": [
+     13806,
+     380
+    ]
+   },
+   "zh_multi_source|ar_tunisian": {
+    "V": 0.2649,
+    "V_ci95": [
+     0.2438,
+     0.2909
+    ],
+    "JSD_bits": 0.0983,
+    "n_idioms": [
+     8499,
+     931
+    ],
+    "n_mentions": [
+     13806,
+     1981
+    ]
+   },
+   "zh_multi_source|ar_absher": {
+    "V": 0.1358,
+    "V_ci95": [
+     0.1133,
+     0.1662
+    ],
+    "JSD_bits": 0.1,
+    "n_idioms": [
+     8499,
+     498
+    ],
+    "n_mentions": [
+     13806,
+     426
+    ]
+   },
+   "zh_multi_source|ar_hassaniya": {
+    "V": 0.1125,
+    "V_ci95": [
+     0.0965,
+     0.1375
+    ],
+    "JSD_bits": 0.091,
+    "n_idioms": [
+     8499,
+     319
+    ],
+    "n_mentions": [
+     13806,
+     431
+    ]
+   },
+   "zh_multi_source|ar_classical": {
+    "V": 0.2977,
+    "V_ci95": [
+     0.283,
+     0.313
+    ],
+    "JSD_bits": 0.0755,
+    "n_idioms": [
+     8499,
+     4530
+    ],
+    "n_mentions": [
+     13806,
+     6718
+    ]
+   },
+   "zh_multi_source|ar_colloquial": {
+    "V": 0.3209,
+    "V_ci95": [
+     0.3086,
+     0.3343
+    ],
+    "JSD_bits": 0.0796,
+    "n_idioms": [
+     8499,
+     5755
+    ],
+    "n_mentions": [
+     13806,
+     10163
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_tahaalselwii_classical": {
+    "V": 0.1639,
+    "V_ci95": [
+     0.1557,
+     0.1752
+    ],
+    "JSD_bits": 0.0427,
+    "n_idioms": [
+     16617,
+     4520
+    ],
+    "n_mentions": [
+     42181,
+     6702
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_tahaalselwii_colloquial": {
+    "V": 0.098,
+    "V_ci95": [
+     0.0882,
+     0.1117
+    ],
+    "JSD_bits": 0.0152,
+    "n_idioms": [
+     16617,
+     2996
+    ],
+    "n_mentions": [
+     42181,
+     5711
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_jawaher": {
+    "V": 0.0809,
+    "V_ci95": [
+     0.0707,
+     0.0971
+    ],
+    "JSD_bits": 0.0364,
+    "n_idioms": [
+     16617,
+     738
+    ],
+    "n_mentions": [
+     42181,
+     1289
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_kinayat": {
+    "V": 0.0808,
+    "V_ci95": [
+     0.0716,
+     0.0961
+    ],
+    "JSD_bits": 0.1348,
+    "n_idioms": [
+     16617,
+     310
+    ],
+    "n_mentions": [
+     42181,
+     380
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_tunisian": {
+    "V": 0.0631,
+    "V_ci95": [
+     0.0551,
+     0.0776
+    ],
+    "JSD_bits": 0.0168,
+    "n_idioms": [
+     16617,
+     931
+    ],
+    "n_mentions": [
+     42181,
+     1981
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_absher": {
+    "V": 0.0453,
+    "V_ci95": [
+     0.036,
+     0.0604
+    ],
+    "JSD_bits": 0.0368,
+    "n_idioms": [
+     16617,
+     498
+    ],
+    "n_mentions": [
+     42181,
+     426
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_hassaniya": {
+    "V": 0.0513,
+    "V_ci95": [
+     0.0439,
+     0.0659
+    ],
+    "JSD_bits": 0.053,
+    "n_idioms": [
+     16617,
+     319
+    ],
+    "n_mentions": [
+     42181,
+     431
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_classical": {
+    "V": 0.164,
+    "V_ci95": [
+     0.1546,
+     0.1753
+    ],
+    "JSD_bits": 0.0427,
+    "n_idioms": [
+     16617,
+     4530
+    ],
+    "n_mentions": [
+     42181,
+     6718
+    ]
+   },
+   "hi_brhat_lokokti_kosh|ar_colloquial": {
+    "V": 0.123,
+    "V_ci95": [
+     0.1145,
+     0.1348
+    ],
+    "JSD_bits": 0.0168,
+    "n_idioms": [
+     16617,
+     5755
+    ],
+    "n_mentions": [
+     42181,
+     10163
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_tahaalselwii_colloquial": {
+    "V": 0.1887,
+    "V_ci95": [
+     0.173,
+     0.2101
+    ],
+    "JSD_bits": 0.027,
+    "n_idioms": [
+     4520,
+     2996
+    ],
+    "n_mentions": [
+     6702,
+     5711
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_jawaher": {
+    "V": 0.1244,
+    "V_ci95": [
+     0.1054,
+     0.1637
+    ],
+    "JSD_bits": 0.0204,
+    "n_idioms": [
+     4520,
+     738
+    ],
+    "n_mentions": [
+     6702,
+     1289
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_kinayat": {
+    "V": 0.1853,
+    "V_ci95": [
+     0.1668,
+     0.2159
+    ],
+    "JSD_bits": 0.1297,
+    "n_idioms": [
+     4520,
+     310
+    ],
+    "n_mentions": [
+     6702,
+     380
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_tunisian": {
+    "V": 0.1949,
+    "V_ci95": [
+     0.176,
+     0.2222
+    ],
+    "JSD_bits": 0.043,
+    "n_idioms": [
+     4520,
+     931
+    ],
+    "n_mentions": [
+     6702,
+     1981
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_absher": {
+    "V": 0.0992,
+    "V_ci95": [
+     0.0783,
+     0.1394
+    ],
+    "JSD_bits": 0.033,
+    "n_idioms": [
+     4520,
+     498
+    ],
+    "n_mentions": [
+     6702,
+     426
+    ]
+   },
+   "ar_tahaalselwii_classical|ar_hassaniya": {
+    "V": 0.041,
+    "V_ci95": [
+     0.0304,
+     0.0887
+    ],
+    "JSD_bits": 0.0129,
+    "n_idioms": [
+     4520,
+     319
+    ],
+    "n_mentions": [
+     6702,
+     431
+    ]
+   },
+   "ar_tahaalselwii_colloquial|ar_jawaher": {
+    "V": 0.0846,
+    "V_ci95": [
+     0.0707,
+     0.1247
+    ],
+    "JSD_bits": 0.0111,
+    "n_idioms": [
+     2996,
+     738
+    ],
+    "n_mentions": [
+     5711,
+     1289
+    ]
+   },
+   "ar_tahaalselwii_colloquial|ar_kinayat": {
+    "V": 0.1688,
+    "V_ci95": [
+     0.1481,
+     0.2033
+    ],
+    "JSD_bits": 0.1033,
+    "n_idioms": [
+     2996,
+     310
+    ],
+    "n_mentions": [
+     5711,
+     380
+    ]
+   },
+   "ar_tahaalselwii_colloquial|ar_tunisian": {
+    "V": 0.1091,
+    "V_ci95": [
+     0.0925,
+     0.1434
+    ],
+    "JSD_bits": 0.0135,
+    "n_idioms": [
+     2996,
+     931
+    ],
+    "n_mentions": [
+     5711,
+     1981
+    ]
+   },
+   "ar_tahaalselwii_colloquial|ar_absher": {
+    "V": 0.0705,
+    "V_ci95": [
+     0.0519,
+     0.1103
+    ],
+    "JSD_bits": 0.0195,
+    "n_idioms": [
+     2996,
+     498
+    ],
+    "n_mentions": [
+     5711,
+     426
+    ]
+   },
+   "ar_tahaalselwii_colloquial|ar_hassaniya": {
+    "V": 0.0821,
+    "V_ci95": [
+     0.0688,
+     0.1205
+    ],
+    "JSD_bits": 0.0287,
+    "n_idioms": [
+     2996,
+     319
+    ],
+    "n_mentions": [
+     5711,
+     431
+    ]
+   },
+   "ar_jawaher|ar_kinayat": {
+    "V": 0.2556,
+    "V_ci95": [
+     0.2211,
+     0.3168
+    ],
+    "JSD_bits": 0.0837,
+    "n_idioms": [
+     738,
+     310
+    ],
+    "n_mentions": [
+     1289,
+     380
+    ]
+   },
+   "ar_jawaher|ar_tunisian": {
+    "V": 0.1695,
+    "V_ci95": [
+     0.1428,
+     0.2209
+    ],
+    "JSD_bits": 0.0244,
+    "n_idioms": [
+     738,
+     931
+    ],
+    "n_mentions": [
+     1289,
+     1981
+    ]
+   },
+   "ar_jawaher|ar_absher": {
+    "V": 0.0854,
+    "V_ci95": [
+     0.068,
+     0.1697
+    ],
+    "JSD_bits": 0.0168,
+    "n_idioms": [
+     738,
+     498
+    ],
+    "n_mentions": [
+     1289,
+     426
+    ]
+   },
+   "ar_jawaher|ar_hassaniya": {
+    "V": 0.1167,
+    "V_ci95": [
+     0.093,
+     0.1921
+    ],
+    "JSD_bits": 0.0234,
+    "n_idioms": [
+     738,
+     319
+    ],
+    "n_mentions": [
+     1289,
+     431
+    ]
+   },
+   "ar_kinayat|ar_tunisian": {
+    "V": 0.2374,
+    "V_ci95": [
+     0.2111,
+     0.2871
+    ],
+    "JSD_bits": 0.0976,
+    "n_idioms": [
+     310,
+     931
+    ],
+    "n_mentions": [
+     380,
+     1981
+    ]
+   },
+   "ar_kinayat|ar_absher": {
+    "V": 0.2603,
+    "V_ci95": [
+     0.2184,
+     0.3557
+    ],
+    "JSD_bits": 0.065,
+    "n_idioms": [
+     310,
+     498
+    ],
+    "n_mentions": [
+     380,
+     426
+    ]
+   },
+   "ar_kinayat|ar_hassaniya": {
+    "V": 0.3426,
+    "V_ci95": [
+     0.2984,
+     0.4316
+    ],
+    "JSD_bits": 0.1042,
+    "n_idioms": [
+     310,
+     319
+    ],
+    "n_mentions": [
+     380,
+     431
+    ]
+   },
+   "ar_tunisian|ar_absher": {
+    "V": 0.116,
+    "V_ci95": [
+     0.0863,
+     0.1853
+    ],
+    "JSD_bits": 0.0227,
+    "n_idioms": [
+     931,
+     498
+    ],
+    "n_mentions": [
+     1981,
+     426
+    ]
+   },
+   "ar_tunisian|ar_hassaniya": {
+    "V": 0.1666,
+    "V_ci95": [
+     0.1396,
+     0.2315
+    ],
+    "JSD_bits": 0.0413,
+    "n_idioms": [
+     931,
+     319
+    ],
+    "n_mentions": [
+     1981,
+     431
+    ]
+   },
+   "ar_absher|ar_hassaniya": {
+    "V": 0.1244,
+    "V_ci95": [
+     0.099,
+     0.2467
+    ],
+    "JSD_bits": 0.0233,
+    "n_idioms": [
+     498,
+     319
+    ],
+    "n_mentions": [
+     426,
+     431
+    ]
+   },
+   "ar_classical|ar_colloquial": {
+    "V": 0.1782,
+    "V_ci95": [
+     0.1639,
+     0.1961
+    ],
+    "JSD_bits": 0.0248,
+    "n_idioms": [
+     4530,
+     5755
+    ],
+    "n_mentions": [
+     6718,
+     10163
+    ]
+   }
+  },
+  "arabic_registers_vs_languages": {
+   "ar_classical": {
+    "en": {
+     "V": 0.3044,
+     "V_ci95": [
+      0.2916,
+      0.3187
+     ]
+    },
+    "zh": {
+     "V": 0.1916,
+     "V_ci95": [
+      0.1823,
+      0.2019
+     ]
+    },
+    "hi": {
+     "V": 0.164,
+     "V_ci95": [
+      0.1554,
+      0.1751
+     ]
+    }
+   },
+   "ar_colloquial": {
+    "en": {
+     "V": 0.2688,
+     "V_ci95": [
+      0.2582,
+      0.2808
+     ]
+    },
+    "zh": {
+     "V": 0.241,
+     "V_ci95": [
+      0.231,
+      0.2522
+     ]
+    },
+    "hi": {
+     "V": 0.123,
+     "V_ci95": [
+      0.1149,
+      0.1345
+     ]
+    }
+   },
+   "classical_vs_colloquial": {
+    "V": 0.1782,
+    "V_ci95": [
+     0.1639,
+     0.1961
+    ]
+   }
+  },
+  "mutual_information_bits": {
+   "I(C;L,S)": 0.1124,
+   "I(C;L)": 0.10207,
+   "I(C;S|L)": 0.01033,
+   "share_language": 0.908,
+   "share_language_ci95": [
+    0.892,
+    0.911
+   ],
+   "note": "exclusive-source entries only; Hindi has one source so contributes nothing to I(C;S|L)"
+  },
+  "single_source_restriction": {
+   "full_KB_V": 0.2149,
+   "n_combinations": 54,
+   "V_min": 0.1998,
+   "V_median": 0.2162,
+   "V_max": 0.2278,
+   "full_headline_residuals": {
+    "en": {
+     "body_mind": 10.0,
+     "artefact_household": 29.1
+    },
+    "zh": {
+     "nature_cosmos": 21.9
+    },
+    "hi": {
+     "kinship_social": 61.7,
+     "food_drink": 33.9,
+     "artefact_household": -9.1
+    },
+    "ar": {
+     "religion_supernatural": -5.7,
+     "kinship_social": 17.2,
+     "animal": 17.0
+    }
+   },
+   "headline_sign_flips": {
+    "hi:artefact_household (hi)": 11,
+    "ar:kinship_social (ar_absher)": 6,
+    "ar:kinship_social (ar_jawaher)": 6,
+    "ar:kinship_social (ar_kinayat)": 6,
+    "ar:animal (ar_kinayat)": 6,
+    "ar:animal (ar_tunisian)": 6,
+    "ar:religion_supernatural (ar_absher)": 4,
+    "ar:kinship_social (ar_classical)": 1,
+    "ar:kinship_social (ar_colloquial)": 1,
+    "ar:kinship_social (ar_tahaalselwii_classical)": 1
+   },
+   "combinations": [
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.2278,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.2,
+       "artefact_household": 14.8
+      },
+      "zh": {
+       "nature_cosmos": 9.8
+      },
+      "hi": {
+       "kinship_social": 42.0,
+       "food_drink": 28.0,
+       "artefact_household": 1.6
+      },
+      "ar": {
+       "religion_supernatural": -12.2,
+       "kinship_social": 2.0,
+       "animal": 25.7
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.2153,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 11.4,
+       "artefact_household": 13.4
+      },
+      "zh": {
+       "nature_cosmos": 12.2
+      },
+      "hi": {
+       "kinship_social": 40.6,
+       "food_drink": 21.9,
+       "artefact_household": -2.2
+      },
+      "ar": {
+       "religion_supernatural": -5.9,
+       "kinship_social": 1.8,
+       "animal": 5.6
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.2251,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.6,
+       "artefact_household": 14.0
+      },
+      "zh": {
+       "nature_cosmos": 10.8
+      },
+      "hi": {
+       "kinship_social": 46.5,
+       "food_drink": 28.8,
+       "artefact_household": -1.1
+      },
+      "ar": {
+       "religion_supernatural": -0.0,
+       "kinship_social": -1.6,
+       "animal": 2.9
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2253,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.6,
+       "artefact_household": 14.0
+      },
+      "zh": {
+       "nature_cosmos": 10.7
+      },
+      "hi": {
+       "kinship_social": 46.2,
+       "food_drink": 29.3,
+       "artefact_household": -1.1
+      },
+      "ar": {
+       "religion_supernatural": -2.8,
+       "kinship_social": 1.3,
+       "animal": 5.0
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.2239,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.5,
+       "artefact_household": 14.0
+      },
+      "zh": {
+       "nature_cosmos": 10.8
+      },
+      "hi": {
+       "kinship_social": 46.5,
+       "food_drink": 28.3,
+       "artefact_household": -1.0
+      },
+      "ar": {
+       "religion_supernatural": -3.1,
+       "kinship_social": -3.7,
+       "animal": 5.4
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2271,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.4,
+       "artefact_household": 13.8
+      },
+      "zh": {
+       "nature_cosmos": 10.9
+      },
+      "hi": {
+       "kinship_social": 47.1,
+       "food_drink": 28.6,
+       "artefact_household": -1.7
+      },
+      "ar": {
+       "religion_supernatural": -2.4,
+       "kinship_social": -6.7,
+       "animal": -0.7
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.2278,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.2,
+       "artefact_household": 14.8
+      },
+      "zh": {
+       "nature_cosmos": 9.8
+      },
+      "hi": {
+       "kinship_social": 42.0,
+       "food_drink": 28.0,
+       "artefact_household": 1.6
+      },
+      "ar": {
+       "religion_supernatural": -12.2,
+       "kinship_social": 2.0,
+       "animal": 25.8
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2189,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.6,
+       "artefact_household": 13.4
+      },
+      "zh": {
+       "nature_cosmos": 11.9
+      },
+      "hi": {
+       "kinship_social": 41.9,
+       "food_drink": 25.6,
+       "artefact_household": -2.6
+      },
+      "ar": {
+       "religion_supernatural": -4.1,
+       "kinship_social": 3.7,
+       "animal": 5.1
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2238,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 12.4,
+       "artefact_household": 14.1
+      },
+      "zh": {
+       "nature_cosmos": 10.9
+      },
+      "hi": {
+       "kinship_social": 44.4,
+       "food_drink": 26.5,
+       "artefact_household": -0.7
+      },
+      "ar": {
+       "religion_supernatural": -2.6,
+       "kinship_social": 3.6,
+       "animal": -3.5
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      8499,
+      16617,
+      931
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.222,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.5,
+       "artefact_household": 11.5
+      },
+      "zh": {
+       "nature_cosmos": 17.1
+      },
+      "hi": {
+       "kinship_social": 57.1,
+       "food_drink": 34.0,
+       "artefact_household": -6.4
+      },
+      "ar": {
+       "religion_supernatural": -10.2,
+       "kinship_social": 7.7,
+       "animal": 22.4
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.2142,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.0,
+       "artefact_household": 10.6
+      },
+      "zh": {
+       "nature_cosmos": 20.5
+      },
+      "hi": {
+       "kinship_social": 55.3,
+       "food_drink": 28.9,
+       "artefact_household": -8.5
+      },
+      "ar": {
+       "religion_supernatural": -2.8,
+       "kinship_social": 8.6,
+       "animal": 2.1
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.2209,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.6,
+       "artefact_household": 10.7
+      },
+      "zh": {
+       "nature_cosmos": 18.2
+      },
+      "hi": {
+       "kinship_social": 61.5,
+       "food_drink": 34.8,
+       "artefact_household": -8.8
+      },
+      "ar": {
+       "religion_supernatural": 0.7,
+       "kinship_social": -0.3,
+       "animal": 2.1
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2211,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.7,
+       "artefact_household": 10.7
+      },
+      "zh": {
+       "nature_cosmos": 18.1
+      },
+      "hi": {
+       "kinship_social": 61.3,
+       "food_drink": 35.2,
+       "artefact_household": -8.9
+      },
+      "ar": {
+       "religion_supernatural": -2.3,
+       "kinship_social": 2.8,
+       "animal": 4.0
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.2199,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.6,
+       "artefact_household": 10.7
+      },
+      "zh": {
+       "nature_cosmos": 18.3
+      },
+      "hi": {
+       "kinship_social": 61.4,
+       "food_drink": 34.4,
+       "artefact_household": -8.7
+      },
+      "ar": {
+       "religion_supernatural": -2.0,
+       "kinship_social": -1.4,
+       "animal": 3.9
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2225,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.5,
+       "artefact_household": 10.6
+      },
+      "zh": {
+       "nature_cosmos": 18.3
+      },
+      "hi": {
+       "kinship_social": 62.0,
+       "food_drink": 34.7,
+       "artefact_household": -9.2
+      },
+      "ar": {
+       "religion_supernatural": -1.9,
+       "kinship_social": -5.7,
+       "animal": -1.3
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.222,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.5,
+       "artefact_household": 11.5
+      },
+      "zh": {
+       "nature_cosmos": 17.1
+      },
+      "hi": {
+       "kinship_social": 57.1,
+       "food_drink": 34.0,
+       "artefact_household": -6.4
+      },
+      "ar": {
+       "religion_supernatural": -10.2,
+       "kinship_social": 7.7,
+       "animal": 22.5
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2169,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.8,
+       "artefact_household": 10.5
+      },
+      "zh": {
+       "nature_cosmos": 19.9
+      },
+      "hi": {
+       "kinship_social": 57.1,
+       "food_drink": 32.2,
+       "artefact_household": -9.2
+      },
+      "ar": {
+       "religion_supernatural": -1.7,
+       "kinship_social": 9.0,
+       "animal": 2.3
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_dictionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2206,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 10.6,
+       "artefact_household": 10.8
+      },
+      "zh": {
+       "nature_cosmos": 18.3
+      },
+      "hi": {
+       "kinship_social": 59.7,
+       "food_drink": 33.0,
+       "artefact_household": -8.4
+      },
+      "ar": {
+       "religion_supernatural": -1.1,
+       "kinship_social": 6.9,
+       "animal": -4.9
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      11070,
+      18659,
+      16617,
+      931
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.2131,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.5,
+       "artefact_household": 13.7
+      },
+      "zh": {
+       "nature_cosmos": 7.7
+      },
+      "hi": {
+       "kinship_social": 34.1,
+       "food_drink": 24.7,
+       "artefact_household": 5.4
+      },
+      "ar": {
+       "religion_supernatural": -12.8,
+       "kinship_social": -0.6,
+       "animal": 24.8
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.1998,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.0,
+       "artefact_household": 12.8
+      },
+      "zh": {
+       "nature_cosmos": 10.4
+      },
+      "hi": {
+       "kinship_social": 33.0,
+       "food_drink": 18.0,
+       "artefact_household": 0.5
+      },
+      "ar": {
+       "religion_supernatural": -6.8,
+       "kinship_social": -1.3,
+       "animal": 4.9
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.2099,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.7,
+       "artefact_household": 13.2
+      },
+      "zh": {
+       "nature_cosmos": 8.6
+      },
+      "hi": {
+       "kinship_social": 38.1,
+       "food_drink": 25.2,
+       "artefact_household": 2.9
+      },
+      "ar": {
+       "religion_supernatural": -0.3,
+       "kinship_social": -2.3,
+       "animal": 2.8
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2101,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.7,
+       "artefact_household": 13.2
+      },
+      "zh": {
+       "nature_cosmos": 8.5
+      },
+      "hi": {
+       "kinship_social": 37.7,
+       "food_drink": 25.8,
+       "artefact_household": 2.8
+      },
+      "ar": {
+       "religion_supernatural": -3.0,
+       "kinship_social": 0.6,
+       "animal": 4.8
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.2088,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.7,
+       "artefact_household": 13.2
+      },
+      "zh": {
+       "nature_cosmos": 8.6
+      },
+      "hi": {
+       "kinship_social": 38.3,
+       "food_drink": 24.6,
+       "artefact_household": 2.8
+      },
+      "ar": {
+       "religion_supernatural": -3.4,
+       "kinship_social": -4.7,
+       "animal": 5.2
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2124,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.6,
+       "artefact_household": 13.1
+      },
+      "zh": {
+       "nature_cosmos": 8.6
+      },
+      "hi": {
+       "kinship_social": 38.8,
+       "food_drink": 25.0,
+       "artefact_household": 2.1
+      },
+      "ar": {
+       "religion_supernatural": -2.6,
+       "kinship_social": -7.1,
+       "animal": -0.8
+      }
+     },
+     "headline_signs_kept": "6/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.2131,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.5,
+       "artefact_household": 13.7
+      },
+      "zh": {
+       "nature_cosmos": 7.7
+      },
+      "hi": {
+       "kinship_social": 34.1,
+       "food_drink": 24.7,
+       "artefact_household": 5.4
+      },
+      "ar": {
+       "religion_supernatural": -12.8,
+       "kinship_social": -0.6,
+       "animal": 24.9
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2035,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.7,
+       "artefact_household": 12.8
+      },
+      "zh": {
+       "nature_cosmos": 9.9
+      },
+      "hi": {
+       "kinship_social": 33.7,
+       "food_drink": 21.9,
+       "artefact_household": 0.4
+      },
+      "ar": {
+       "religion_supernatural": -4.8,
+       "kinship_social": 1.2,
+       "animal": 4.5
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_multi_source",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2084,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.6,
+       "artefact_household": 13.3
+      },
+      "zh": {
+       "nature_cosmos": 8.6
+      },
+      "hi": {
+       "kinship_social": 35.9,
+       "food_drink": 22.6,
+       "artefact_household": 3.2
+      },
+      "ar": {
+       "religion_supernatural": -3.0,
+       "kinship_social": 2.1,
+       "animal": -3.8
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      8499,
+      16617,
+      931
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.213,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.4,
+       "artefact_household": 11.6
+      },
+      "zh": {
+       "nature_cosmos": 14.0
+      },
+      "hi": {
+       "kinship_social": 52.3,
+       "food_drink": 31.8,
+       "artefact_household": -5.0
+      },
+      "ar": {
+       "religion_supernatural": -10.6,
+       "kinship_social": 5.9,
+       "animal": 21.6
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.2049,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.2,
+       "artefact_household": 11.1
+      },
+      "zh": {
+       "nature_cosmos": 17.8
+      },
+      "hi": {
+       "kinship_social": 50.7,
+       "food_drink": 26.6,
+       "artefact_household": -7.4
+      },
+      "ar": {
+       "religion_supernatural": -3.4,
+       "kinship_social": 6.5,
+       "animal": 1.4
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.212,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.5,
+       "artefact_household": 11.2
+      },
+      "zh": {
+       "nature_cosmos": 15.0
+      },
+      "hi": {
+       "kinship_social": 56.7,
+       "food_drink": 32.6,
+       "artefact_household": -7.6
+      },
+      "ar": {
+       "religion_supernatural": 0.6,
+       "kinship_social": -0.7,
+       "animal": 1.9
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2121,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.6,
+       "artefact_household": 11.1
+      },
+      "zh": {
+       "nature_cosmos": 14.8
+      },
+      "hi": {
+       "kinship_social": 56.4,
+       "food_drink": 33.0,
+       "artefact_household": -7.6
+      },
+      "ar": {
+       "religion_supernatural": -2.4,
+       "kinship_social": 2.3,
+       "animal": 3.9
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.211,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.5,
+       "artefact_household": 11.2
+      },
+      "zh": {
+       "nature_cosmos": 15.0
+      },
+      "hi": {
+       "kinship_social": 56.6,
+       "food_drink": 32.1,
+       "artefact_household": -7.5
+      },
+      "ar": {
+       "religion_supernatural": -2.2,
+       "kinship_social": -2.1,
+       "animal": 3.6
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2137,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.5,
+       "artefact_household": 11.1
+      },
+      "zh": {
+       "nature_cosmos": 15.0
+      },
+      "hi": {
+       "kinship_social": 57.2,
+       "food_drink": 32.4,
+       "artefact_household": -8.0
+      },
+      "ar": {
+       "religion_supernatural": -2.0,
+       "kinship_social": -6.0,
+       "animal": -1.4
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.2131,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.4,
+       "artefact_household": 11.6
+      },
+      "zh": {
+       "nature_cosmos": 14.0
+      },
+      "hi": {
+       "kinship_social": 52.3,
+       "food_drink": 31.8,
+       "artefact_household": -5.0
+      },
+      "ar": {
+       "religion_supernatural": -10.6,
+       "kinship_social": 5.9,
+       "animal": 21.6
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2077,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.6,
+       "artefact_household": 11.0
+      },
+      "zh": {
+       "nature_cosmos": 17.0
+      },
+      "hi": {
+       "kinship_social": 52.3,
+       "food_drink": 29.9,
+       "artefact_household": -8.1
+      },
+      "ar": {
+       "religion_supernatural": -2.1,
+       "kinship_social": 7.4,
+       "animal": 1.8
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_idiomkb",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2115,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.5,
+       "artefact_household": 11.2
+      },
+      "zh": {
+       "nature_cosmos": 15.2
+      },
+      "hi": {
+       "kinship_social": 54.9,
+       "food_drink": 30.7,
+       "artefact_household": -7.1
+      },
+      "ar": {
+       "religion_supernatural": -1.4,
+       "kinship_social": 5.9,
+       "animal": -5.1
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      1825,
+      18659,
+      16617,
+      931
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.2212,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.3,
+       "artefact_household": 27.3
+      },
+      "zh": {
+       "nature_cosmos": 8.5
+      },
+      "hi": {
+       "kinship_social": 39.0,
+       "food_drink": 25.3,
+       "artefact_household": -2.6
+      },
+      "ar": {
+       "religion_supernatural": -12.4,
+       "kinship_social": 1.0,
+       "animal": 25.3
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.208,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.6,
+       "artefact_household": 25.9
+      },
+      "zh": {
+       "nature_cosmos": 11.1
+      },
+      "hi": {
+       "kinship_social": 37.7,
+       "food_drink": 19.2,
+       "artefact_household": -6.1
+      },
+      "ar": {
+       "religion_supernatural": -6.3,
+       "kinship_social": 0.6,
+       "animal": 5.2
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.2183,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.6,
+       "artefact_household": 26.3
+      },
+      "zh": {
+       "nature_cosmos": 9.5
+      },
+      "hi": {
+       "kinship_social": 43.3,
+       "food_drink": 25.7,
+       "artefact_household": -6.2
+      },
+      "ar": {
+       "religion_supernatural": -0.1,
+       "kinship_social": -1.9,
+       "animal": 2.8
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2186,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.7,
+       "artefact_household": 26.3
+      },
+      "zh": {
+       "nature_cosmos": 9.4
+      },
+      "hi": {
+       "kinship_social": 42.9,
+       "food_drink": 26.3,
+       "artefact_household": -6.2
+      },
+      "ar": {
+       "religion_supernatural": -2.9,
+       "kinship_social": 1.0,
+       "animal": 4.9
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.2172,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.6,
+       "artefact_household": 26.3
+      },
+      "zh": {
+       "nature_cosmos": 9.5
+      },
+      "hi": {
+       "kinship_social": 43.3,
+       "food_drink": 25.2,
+       "artefact_household": -6.0
+      },
+      "ar": {
+       "religion_supernatural": -3.2,
+       "kinship_social": -4.1,
+       "animal": 5.3
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2205,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.5,
+       "artefact_household": 26.1
+      },
+      "zh": {
+       "nature_cosmos": 9.5
+      },
+      "hi": {
+       "kinship_social": 43.9,
+       "food_drink": 25.5,
+       "artefact_household": -6.8
+      },
+      "ar": {
+       "religion_supernatural": -2.5,
+       "kinship_social": -6.8,
+       "animal": -0.7
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.2212,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.3,
+       "artefact_household": 27.3
+      },
+      "zh": {
+       "nature_cosmos": 8.5
+      },
+      "hi": {
+       "kinship_social": 39.0,
+       "food_drink": 25.3,
+       "artefact_household": -2.6
+      },
+      "ar": {
+       "religion_supernatural": -12.4,
+       "kinship_social": 1.0,
+       "animal": 25.4
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2117,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.6,
+       "artefact_household": 25.8
+      },
+      "zh": {
+       "nature_cosmos": 10.7
+      },
+      "hi": {
+       "kinship_social": 38.7,
+       "food_drink": 22.8,
+       "artefact_household": -7.0
+      },
+      "ar": {
+       "religion_supernatural": -4.3,
+       "kinship_social": 2.8,
+       "animal": 4.8
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_multi_source",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2169,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 7.5,
+       "artefact_household": 26.5
+      },
+      "zh": {
+       "nature_cosmos": 9.5
+      },
+      "hi": {
+       "kinship_social": 41.1,
+       "food_drink": 23.4,
+       "artefact_household": -5.5
+      },
+      "ar": {
+       "religion_supernatural": -2.7,
+       "kinship_social": 3.0,
+       "animal": -3.6
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      6054,
+      8499,
+      16617,
+      931
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_classical"
+     ],
+     "V": 0.2173,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.7,
+       "artefact_household": 24.2
+      },
+      "zh": {
+       "nature_cosmos": 15.4
+      },
+      "hi": {
+       "kinship_social": 55.1,
+       "food_drink": 32.0,
+       "artefact_household": -9.2
+      },
+      "ar": {
+       "religion_supernatural": -10.4,
+       "kinship_social": 7.0,
+       "animal": 22.0
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      4530
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_colloquial"
+     ],
+     "V": 0.2092,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.3,
+       "artefact_household": 23.3
+      },
+      "zh": {
+       "nature_cosmos": 18.9
+      },
+      "hi": {
+       "kinship_social": 53.4,
+       "food_drink": 27.0,
+       "artefact_household": -11.2
+      },
+      "ar": {
+       "religion_supernatural": -3.1,
+       "kinship_social": 7.8,
+       "animal": 1.8
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      5755
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_absher"
+     ],
+     "V": 0.2162,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.9,
+       "artefact_household": 23.3
+      },
+      "zh": {
+       "nature_cosmos": 16.4
+      },
+      "hi": {
+       "kinship_social": 59.5,
+       "food_drink": 32.7,
+       "artefact_household": -12.1
+      },
+      "ar": {
+       "religion_supernatural": 0.7,
+       "kinship_social": -0.5,
+       "animal": 2.0
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      498
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_hassaniya"
+     ],
+     "V": 0.2163,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.9,
+       "artefact_household": 23.3
+      },
+      "zh": {
+       "nature_cosmos": 16.2
+      },
+      "hi": {
+       "kinship_social": 59.2,
+       "food_drink": 33.1,
+       "artefact_household": -12.1
+      },
+      "ar": {
+       "religion_supernatural": -2.3,
+       "kinship_social": 2.6,
+       "animal": 4.0
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      319
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_jawaher"
+     ],
+     "V": 0.2152,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.9,
+       "artefact_household": 23.3
+      },
+      "zh": {
+       "nature_cosmos": 16.4
+      },
+      "hi": {
+       "kinship_social": 59.4,
+       "food_drink": 32.3,
+       "artefact_household": -11.9
+      },
+      "ar": {
+       "religion_supernatural": -2.1,
+       "kinship_social": -1.7,
+       "animal": 3.8
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      738
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_kinayat"
+     ],
+     "V": 0.2178,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.8,
+       "artefact_household": 23.1
+      },
+      "zh": {
+       "nature_cosmos": 16.4
+      },
+      "hi": {
+       "kinship_social": 60.0,
+       "food_drink": 32.5,
+       "artefact_household": -12.5
+      },
+      "ar": {
+       "religion_supernatural": -1.9,
+       "kinship_social": -5.8,
+       "animal": -1.4
+      }
+     },
+     "headline_signs_kept": "7/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      310
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_classical"
+     ],
+     "V": 0.2173,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.7,
+       "artefact_household": 24.2
+      },
+      "zh": {
+       "nature_cosmos": 15.4
+      },
+      "hi": {
+       "kinship_social": 55.1,
+       "food_drink": 32.0,
+       "artefact_household": -9.3
+      },
+      "ar": {
+       "religion_supernatural": -10.4,
+       "kinship_social": 7.0,
+       "animal": 22.1
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      4520
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tahaalselwii_colloquial"
+     ],
+     "V": 0.2119,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 6.0,
+       "artefact_household": 23.1
+      },
+      "zh": {
+       "nature_cosmos": 18.2
+      },
+      "hi": {
+       "kinship_social": 55.1,
+       "food_drink": 30.2,
+       "artefact_household": -12.1
+      },
+      "ar": {
+       "religion_supernatural": -1.9,
+       "kinship_social": 8.4,
+       "animal": 2.1
+      }
+     },
+     "headline_signs_kept": "9/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      2996
+     ]
+    },
+    {
+     "groups": [
+      "en_wiktionary",
+      "zh_xinhua_only",
+      "hi",
+      "ar_tunisian"
+     ],
+     "V": 0.2158,
+     "headline_residuals": {
+      "en": {
+       "body_mind": 5.8,
+       "artefact_household": 23.4
+      },
+      "zh": {
+       "nature_cosmos": 16.5
+      },
+      "hi": {
+       "kinship_social": 57.7,
+       "food_drink": 31.0,
+       "artefact_household": -11.5
+      },
+      "ar": {
+       "religion_supernatural": -1.2,
+       "kinship_social": 6.5,
+       "animal": -5.0
+      }
+     },
+     "headline_signs_kept": "8/9",
+     "n_idioms": [
+      6054,
+      18659,
+      16617,
+      931
+     ]
+    }
+   ]
+  }
+ },
+ "imagery": {
+  "arabic_items_unmatched": 0,
+  "min_items_per_group": 10,
+  "anchors": {
+   "belly": {
+    "n": {
+     "en": 11,
+     "zh": 58,
+     "ar_classical": 17,
+     "ar_colloquial": 20
+    },
+    "mean_valence": {
+     "en": -0.909,
+     "zh": -0.052,
+     "ar_classical": -0.647,
+     "ar_colloquial": -0.45
+    },
+    "register_p": 0.699291847185003,
+    "register_abs_diff": 0.197,
+    "register_centroid_dist": 0.0586,
+    "ar_vs_lang_median_p": 0.46253901139988635,
+    "ar_vs_lang_median_abs_diff": 0.429,
+    "ar_vs_lang_median_centroid_dist": 0.142
+   },
+   "day": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 15,
+     "ar_colloquial": 44,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": 0.258,
+     "zh": 0.225,
+     "hi": -0.267,
+     "ar_classical": -0.667,
+     "ar_colloquial": -0.136,
+     "ar_other": -0.5
+    },
+    "register_p": 0.17010419092589046,
+    "register_abs_diff": 0.53,
+    "register_centroid_dist": 0.0695,
+    "ar_vs_lang_median_p": 0.12410708939246415,
+    "ar_vs_lang_median_abs_diff": 0.397,
+    "ar_vs_lang_median_centroid_dist": 0.0789
+   },
+   "dog": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 21,
+     "ar_colloquial": 38,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": -0.583,
+     "zh": -1.217,
+     "hi": -1.4,
+     "ar_classical": -1.048,
+     "ar_colloquial": -1.066,
+     "ar_other": -1.0
+    },
+    "register_p": 0.7665629736563034,
+    "register_abs_diff": 0.018,
+    "register_centroid_dist": 0.0565,
+    "ar_vs_lang_median_p": 0.33752805013086457,
+    "ar_vs_lang_median_abs_diff": 0.343,
+    "ar_vs_lang_median_centroid_dist": 0.0639
+   },
+   "earth": {
+    "n": {
+     "en": 26,
+     "hi": 22,
+     "ar_classical": 28,
+     "ar_colloquial": 21
+    },
+    "mean_valence": {
+     "en": 0.308,
+     "hi": -0.25,
+     "ar_classical": -0.179,
+     "ar_colloquial": -0.833
+    },
+    "register_p": 0.0955054738662694,
+    "register_abs_diff": 0.655,
+    "register_centroid_dist": 0.0671,
+    "ar_vs_lang_median_p": 0.3985523994090495,
+    "ar_vs_lang_median_abs_diff": 0.535,
+    "ar_vs_lang_median_centroid_dist": 0.102
+   },
+   "egg": {
+    "n": {
+     "en": 32,
+     "zh": 26,
+     "ar_classical": 15,
+     "ar_colloquial": 19
+    },
+    "mean_valence": {
+     "en": -0.516,
+     "zh": -1.365,
+     "ar_classical": -0.167,
+     "ar_colloquial": 0.026
+    },
+    "register_p": 0.9160269040430631,
+    "register_abs_diff": 0.193,
+    "register_centroid_dist": 0.1134,
+    "ar_vs_lang_median_p": 0.4337752603345674,
+    "ar_vs_lang_median_abs_diff": 0.87,
+    "ar_vs_lang_median_centroid_dist": 0.1142
+   },
+   "evil": {
+    "n": {
+     "en": 8,
+     "zh": 60,
+     "ar_classical": 24,
+     "ar_colloquial": 13
+    },
+    "mean_valence": {
+     "en": -1.375,
+     "zh": -1.625,
+     "ar_classical": -1.167,
+     "ar_colloquial": -1.5
+    },
+    "register_p": 0.7014427527172424,
+    "register_abs_diff": 0.333,
+    "register_centroid_dist": 0.0543,
+    "ar_vs_lang_median_p": 0.5088664171715946,
+    "ar_vs_lang_median_abs_diff": 0.292,
+    "ar_vs_lang_median_centroid_dist": 0.0956
+   },
+   "eye": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_colloquial": 43,
+     "ar_classical": 17
+    },
+    "mean_valence": {
+     "en": 0.133,
+     "zh": -0.233,
+     "hi": -0.975,
+     "ar_colloquial": -0.5,
+     "ar_classical": -0.176
+    },
+    "register_p": 0.3750507314733963,
+    "register_abs_diff": 0.324,
+    "register_centroid_dist": 0.0462,
+    "ar_vs_lang_median_p": 0.314286296305502,
+    "ar_vs_lang_median_abs_diff": 0.392,
+    "ar_vs_lang_median_centroid_dist": 0.077
+   },
+   "fire": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 13,
+     "ar_colloquial": 35,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": -0.342,
+     "zh": -0.317,
+     "hi": -1.2,
+     "ar_classical": -0.885,
+     "ar_colloquial": -0.771,
+     "ar_other": -2.0
+    },
+    "register_p": 0.8406903031311892,
+    "register_abs_diff": 0.113,
+    "register_centroid_dist": 0.0782,
+    "ar_vs_lang_median_p": 0.18958290512325215,
+    "ar_vs_lang_median_abs_diff": 0.442,
+    "ar_vs_lang_median_centroid_dist": 0.0888
+   },
+   "god": {
+    "n": {
+     "en": 50,
+     "zh": 60,
+     "hi": 60,
+     "ar_colloquial": 35,
+     "ar_classical": 24,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": 0.74,
+     "zh": 0.383,
+     "hi": 0.867,
+     "ar_colloquial": 0.657,
+     "ar_classical": -0.688,
+     "ar_other": 2.0
+    },
+    "register_p": 0.0035530819596104866,
+    "register_abs_diff": 1.345,
+    "register_centroid_dist": 0.0853,
+    "ar_vs_lang_median_p": 0.1740391417913878,
+    "ar_vs_lang_median_abs_diff": 0.672,
+    "ar_vs_lang_median_centroid_dist": 0.104
+   },
+   "good": {
+    "n": {
+     "en": 14,
+     "zh": 53,
+     "ar_classical": 18,
+     "ar_colloquial": 30
+    },
+    "mean_valence": {
+     "en": 0.5,
+     "zh": 1.811,
+     "ar_classical": 0.583,
+     "ar_colloquial": 0.933
+    },
+    "register_p": 0.20358703975451597,
+    "register_abs_diff": 0.35,
+    "register_centroid_dist": 0.0444,
+    "ar_vs_lang_median_p": 0.1860272984966616,
+    "ar_vs_lang_median_abs_diff": 0.656,
+    "ar_vs_lang_median_centroid_dist": 0.1031
+   },
+   "head": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_colloquial": 43,
+     "ar_classical": 17
+    },
+    "mean_valence": {
+     "en": -0.1,
+     "zh": -0.542,
+     "hi": -0.867,
+     "ar_colloquial": -0.744,
+     "ar_classical": -0.176
+    },
+    "register_p": 0.2018150658307586,
+    "register_abs_diff": 0.568,
+    "register_centroid_dist": 0.0509,
+    "ar_vs_lang_median_p": 0.31314295421205995,
+    "ar_vs_lang_median_abs_diff": 0.284,
+    "ar_vs_lang_median_centroid_dist": 0.0665
+   },
+   "horse": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 23,
+     "ar_colloquial": 11
+    },
+    "mean_valence": {
+     "en": -0.417,
+     "zh": 0.442,
+     "hi": -0.4,
+     "ar_classical": 0.37,
+     "ar_colloquial": 0.318
+    },
+    "register_p": 1.0,
+    "register_abs_diff": 0.051,
+    "register_centroid_dist": 0.119,
+    "ar_vs_lang_median_p": 0.6738042321154413,
+    "ar_vs_lang_median_abs_diff": 0.727,
+    "ar_vs_lang_median_centroid_dist": 0.0896
+   },
+   "man": {
+    "n": {
+     "en": 60,
+     "hi": 60,
+     "ar_classical": 23,
+     "ar_colloquial": 36,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": 0.275,
+     "hi": -0.042,
+     "ar_classical": 0.196,
+     "ar_colloquial": -0.097,
+     "ar_other": 0.0
+    },
+    "register_p": 0.46520243978875886,
+    "register_abs_diff": 0.293,
+    "register_centroid_dist": 0.081,
+    "ar_vs_lang_median_p": 0.8493133310750687,
+    "ar_vs_lang_median_abs_diff": 0.158,
+    "ar_vs_lang_median_centroid_dist": 0.0797
+   },
+   "mother": {
+    "n": {
+     "en": 19,
+     "hi": 60,
+     "ar_classical": 23,
+     "ar_colloquial": 37
+    },
+    "mean_valence": {
+     "en": 0.684,
+     "hi": -0.2,
+     "ar_classical": -0.478,
+     "ar_colloquial": 0.297
+    },
+    "register_p": 0.09028727762352849,
+    "register_abs_diff": 0.776,
+    "register_centroid_dist": 0.0517,
+    "ar_vs_lang_median_p": 0.34683435062889967,
+    "ar_vs_lang_median_abs_diff": 0.442,
+    "ar_vs_lang_median_centroid_dist": 0.0731
+   },
+   "night": {
+    "n": {
+     "en": 21,
+     "zh": 30,
+     "hi": 60,
+     "ar_colloquial": 31,
+     "ar_classical": 29
+    },
+    "mean_valence": {
+     "en": -0.381,
+     "zh": 0.4,
+     "hi": -0.558,
+     "ar_colloquial": -0.387,
+     "ar_classical": -0.69
+    },
+    "register_p": 0.5200170506671231,
+    "register_abs_diff": 0.303,
+    "register_centroid_dist": 0.0594,
+    "ar_vs_lang_median_p": 0.19797415659536272,
+    "ar_vs_lang_median_abs_diff": 0.24,
+    "ar_vs_lang_median_centroid_dist": 0.0874
+   },
+   "self": {
+    "n": {
+     "en": 14,
+     "zh": 51,
+     "ar_classical": 18,
+     "ar_colloquial": 17,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": 0.214,
+     "zh": 0.333,
+     "ar_classical": -0.194,
+     "ar_colloquial": 0.5,
+     "ar_other": 2.0
+    },
+    "register_p": 0.17661365912720872,
+    "register_abs_diff": 0.694,
+    "register_centroid_dist": 0.0864,
+    "ar_vs_lang_median_p": 0.20578581222052317,
+    "ar_vs_lang_median_abs_diff": 0.347,
+    "ar_vs_lang_median_centroid_dist": 0.1138
+   },
+   "son": {
+    "n": {
+     "en": 8,
+     "zh": 40,
+     "hi": 60,
+     "ar_classical": 19,
+     "ar_colloquial": 36
+    },
+    "mean_valence": {
+     "en": -0.5,
+     "zh": 0.487,
+     "hi": -0.583,
+     "ar_classical": -0.158,
+     "ar_colloquial": -0.444
+    },
+    "register_p": 0.6222184949846314,
+    "register_abs_diff": 0.287,
+    "register_centroid_dist": 0.071,
+    "ar_vs_lang_median_p": 0.39243107872352495,
+    "ar_vs_lang_median_abs_diff": 0.535,
+    "ar_vs_lang_median_centroid_dist": 0.0784
+   },
+   "soul": {
+    "n": {
+     "en": 20,
+     "zh": 60,
+     "ar_classical": 12,
+     "ar_colloquial": 14
+    },
+    "mean_valence": {
+     "en": 0.35,
+     "zh": -0.867,
+     "ar_classical": -0.333,
+     "ar_colloquial": -0.286
+    },
+    "register_p": 0.9377659339087346,
+    "register_abs_diff": 0.048,
+    "register_centroid_dist": 0.078,
+    "ar_vs_lang_median_p": 0.5825290134139174,
+    "ar_vs_lang_median_abs_diff": 0.608,
+    "ar_vs_lang_median_centroid_dist": 0.1908
+   },
+   "stick": {
+    "n": {
+     "en": 60,
+     "hi": 60,
+     "ar_classical": 35,
+     "ar_colloquial": 13,
+     "ar_other": 1
+    },
+    "mean_valence": {
+     "en": -0.358,
+     "hi": -0.575,
+     "ar_classical": -0.143,
+     "ar_colloquial": -0.462,
+     "ar_other": 1.0
+    },
+    "register_p": 0.48849738414820576,
+    "register_abs_diff": 0.319,
+    "register_centroid_dist": 0.0935,
+    "ar_vs_lang_median_p": 0.3884466290129346,
+    "ar_vs_lang_median_abs_diff": 0.164,
+    "ar_vs_lang_median_centroid_dist": 0.0917
+   },
+   "stone": {
+    "n": {
+     "en": 28,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 16,
+     "ar_colloquial": 32
+    },
+    "mean_valence": {
+     "en": -0.589,
+     "zh": 0.192,
+     "hi": -0.892,
+     "ar_classical": -0.219,
+     "ar_colloquial": -0.562
+    },
+    "register_p": 0.4116138063722329,
+    "register_abs_diff": 0.344,
+    "register_centroid_dist": 0.0685,
+    "ar_vs_lang_median_p": 0.4116054488840548,
+    "ar_vs_lang_median_abs_diff": 0.39,
+    "ar_vs_lang_median_centroid_dist": 0.0778
+   },
+   "time": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_classical": 20,
+     "ar_colloquial": 27
+    },
+    "mean_valence": {
+     "en": 0.025,
+     "zh": 0.375,
+     "hi": -0.492,
+     "ar_classical": -0.725,
+     "ar_colloquial": -0.963
+    },
+    "register_p": 0.5806191363902209,
+    "register_abs_diff": 0.238,
+    "register_centroid_dist": 0.0579,
+    "ar_vs_lang_median_p": 0.07710768529981045,
+    "ar_vs_lang_median_abs_diff": 0.869,
+    "ar_vs_lang_median_centroid_dist": 0.0854
+   },
+   "tongue": {
+    "n": {
+     "en": 41,
+     "zh": 60,
+     "hi": 58,
+     "ar_classical": 18,
+     "ar_colloquial": 21
+    },
+    "mean_valence": {
+     "en": -0.293,
+     "zh": -0.95,
+     "hi": -0.802,
+     "ar_classical": 0.083,
+     "ar_colloquial": -0.81
+    },
+    "register_p": 0.07525557919422599,
+    "register_abs_diff": 0.893,
+    "register_centroid_dist": 0.0912,
+    "ar_vs_lang_median_p": 0.1999990806652015,
+    "ar_vs_lang_median_abs_diff": 0.446,
+    "ar_vs_lang_median_centroid_dist": 0.0987
+   },
+   "water": {
+    "n": {
+     "en": 60,
+     "zh": 60,
+     "hi": 60,
+     "ar_colloquial": 42,
+     "ar_classical": 18
+    },
+    "mean_valence": {
+     "en": -0.258,
+     "zh": 0.367,
+     "hi": -0.558,
+     "ar_colloquial": -0.06,
+     "ar_classical": -0.028
+    },
+    "register_p": 0.9544801106422971,
+    "register_abs_diff": 0.032,
+    "register_centroid_dist": 0.0683,
+    "ar_vs_lang_median_p": 0.3981207232168092,
+    "ar_vs_lang_median_abs_diff": 0.41,
+    "ar_vs_lang_median_centroid_dist": 0.0732
+   }
+  },
+  "summary": {
+   "n_anchors": 23,
+   "valence_sig_q05_classical_vs_colloquial": 0,
+   "valence_sig_q05_arabic_register_vs_other_language_sizematched": "3/114",
+   "median_abs_valence_diff_register": 0.319,
+   "median_abs_valence_diff_ar_vs_language": 0.429,
+   "median_centroid_dist_register": 0.0685,
+   "median_centroid_dist_ar_vs_language": 0.0888,
+   "anchors_where_register_gap_smaller_than_language_gap_valence": 12,
+   "anchors_where_register_gap_smaller_than_language_gap_meaning": 20,
+   "kruskal_language_sig_q05_with_ar_classical_only": "52/96",
+   "kruskal_language_sig_q05_with_ar_colloquial_only": "50/96"
+  }
+ },
+ "model": {
+  "idiomatlas_mc_ar_seen": {
+   "unmatched": 0,
+   "register": {
+    "classical": {
+     "n": 352,
+     "acc": {
+      "Random-CPT": 38.4,
+      "Idiom-Text": 42.6,
+      "Idiom+Meaning": 68.5,
+      "Base": 36.9
+     },
+     "Idiom-Text - Random-CPT": [
+      4.3,
+      0.0,
+      8.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      30.1,
+      24.4,
+      36.1
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      25.9,
+      21.0,
+      31.0
+     ]
+    },
+    "colloquial": {
+     "n": 239,
+     "acc": {
+      "Random-CPT": 49.0,
+      "Idiom-Text": 51.0,
+      "Idiom+Meaning": 67.4,
+      "Base": 47.3
+     },
+     "Idiom-Text - Random-CPT": [
+      2.1,
+      -2.1,
+      6.3
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      18.4,
+      11.7,
+      24.7
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      16.3,
+      10.9,
+      22.2
+     ]
+    },
+    "msa": {
+     "n": 9,
+     "note": "too few items"
+    }
+   },
+   "source": {
+    "ar_tahaalselwii_classical": {
+     "n": 352,
+     "acc": {
+      "Random-CPT": 38.4,
+      "Idiom-Text": 42.6,
+      "Idiom+Meaning": 68.5,
+      "Base": 36.9
+     },
+     "Idiom-Text - Random-CPT": [
+      4.3,
+      0.0,
+      8.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      30.1,
+      24.1,
+      35.8
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      25.9,
+      20.7,
+      30.7
+     ]
+    },
+    "ar_tahaalselwii_colloquial": {
+     "n": 125,
+     "acc": {
+      "Random-CPT": 41.6,
+      "Idiom-Text": 48.8,
+      "Idiom+Meaning": 66.4,
+      "Base": 31.2
+     },
+     "Idiom-Text - Random-CPT": [
+      7.2,
+      0.8,
+      14.4
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      24.8,
+      15.2,
+      34.4
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      17.6,
+      9.6,
+      26.4
+     ]
+    },
+    "ar_jawaher": {
+     "n": 75,
+     "acc": {
+      "Random-CPT": 69.3,
+      "Idiom-Text": 66.7,
+      "Idiom+Meaning": 72.0,
+      "Base": 78.7
+     },
+     "Idiom-Text - Random-CPT": [
+      -2.7,
+      -9.3,
+      4.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      2.7,
+      -6.7,
+      12.0
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      5.3,
+      -1.3,
+      13.3
+     ]
+    },
+    "ar_tunisian": {
+     "n": 20,
+     "note": "too few items"
+    },
+    "ar_absher": {
+     "n": 14,
+     "note": "too few items"
+    },
+    "ar_kinayat": {
+     "n": 13,
+     "note": "too few items"
+    },
+    "ar_hassaniya": {
+     "n": 1,
+     "note": "too few items"
+    }
+   }
+  },
+  "idiomatlas_mc_ar_unseen": {
+   "unmatched": 0,
+   "register": {
+    "colloquial": {
+     "n": 450,
+     "acc": {
+      "Random-CPT": 37.6,
+      "Idiom-Text": 40.0,
+      "Idiom+Meaning": 34.9,
+      "Base": 39.3
+     },
+     "Idiom-Text - Random-CPT": [
+      2.4,
+      -0.9,
+      5.8
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -2.7,
+      -6.7,
+      1.3
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -5.1,
+      -8.4,
+      -1.8
+     ]
+    },
+    "classical": {
+     "n": 150,
+     "acc": {
+      "Random-CPT": 34.7,
+      "Idiom-Text": 40.0,
+      "Idiom+Meaning": 25.3,
+      "Base": 33.3
+     },
+     "Idiom-Text - Random-CPT": [
+      5.3,
+      -0.7,
+      11.3
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -9.3,
+      -16.7,
+      -2.0
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -14.7,
+      -20.7,
+      -8.7
+     ]
+    }
+   },
+   "source": {
+    "ar_tahaalselwii_colloquial": {
+     "n": 160,
+     "acc": {
+      "Random-CPT": 39.4,
+      "Idiom-Text": 51.2,
+      "Idiom+Meaning": 45.6,
+      "Base": 31.2
+     },
+     "Idiom-Text - Random-CPT": [
+      11.9,
+      6.2,
+      18.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      6.2,
+      -1.9,
+      13.8
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -5.6,
+      -12.5,
+      1.2
+     ]
+    },
+    "ar_tahaalselwii_classical": {
+     "n": 150,
+     "acc": {
+      "Random-CPT": 34.7,
+      "Idiom-Text": 40.0,
+      "Idiom+Meaning": 25.3,
+      "Base": 33.3
+     },
+     "Idiom-Text - Random-CPT": [
+      5.3,
+      -0.7,
+      11.3
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -9.3,
+      -16.7,
+      -2.0
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -14.7,
+      -21.3,
+      -8.7
+     ]
+    },
+    "ar_tunisian": {
+     "n": 126,
+     "acc": {
+      "Random-CPT": 36.5,
+      "Idiom-Text": 33.3,
+      "Idiom+Meaning": 32.5,
+      "Base": 45.2
+     },
+     "Idiom-Text - Random-CPT": [
+      -3.2,
+      -8.7,
+      1.6
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -4.0,
+      -11.1,
+      2.4
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -0.8,
+      -6.3,
+      4.8
+     ]
+    },
+    "ar_hassaniya": {
+     "n": 53,
+     "acc": {
+      "Random-CPT": 22.6,
+      "Idiom-Text": 22.6,
+      "Idiom+Meaning": 17.0,
+      "Base": 32.1
+     },
+     "Idiom-Text - Random-CPT": [
+      0.0,
+      -7.5,
+      7.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -5.7,
+      -15.1,
+      1.9
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -5.7,
+      -15.1,
+      1.9
+     ]
+    },
+    "ar_absher": {
+     "n": 52,
+     "acc": {
+      "Random-CPT": 23.1,
+      "Idiom-Text": 26.9,
+      "Idiom+Meaning": 19.2,
+      "Base": 26.9
+     },
+     "Idiom-Text - Random-CPT": [
+      3.8,
+      -5.8,
+      13.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -3.8,
+      -13.5,
+      5.8
+     ],
+     "Idiom+Meaning - Idiom-Text": [
+      -7.7,
+      -15.4,
+      -1.9
+     ]
+    },
+    "ar_jawaher": {
+     "n": 35,
+     "note": "too few items"
+    },
+    "ar_kinayat": {
+     "n": 24,
+     "note": "too few items"
+    }
+   }
+  },
+  "midi_ar_by_dialect": {
+   "midi_ar": {
+    "n": 399,
+    "acc": {
+     "Base": 35.3,
+     "Random-CPT": 39.8,
+     "Idiom-Text": 42.1,
+     "Idiom+Meaning": 44.6
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 2.3,
+     "ci95": [
+      -0.8,
+      5.3
+     ],
+     "p_boot_two_sided": 0.1696,
+     "mcnemar_p": 0.19959,
+     "wins": 24,
+     "losses": 15,
+     "holm_p": 0.19959
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 4.8,
+     "ci95": [
+      1.3,
+      8.3
+     ],
+     "p_boot_two_sided": 0.0116,
+     "mcnemar_p": 0.01445,
+     "wins": 37,
+     "losses": 18,
+     "holm_p": 0.0289
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 2.5,
+     "ci95": [
+      0.0,
+      5.0
+     ],
+     "p_boot_two_sided": 0.0606,
+     "mcnemar_p": 0.08716,
+     "wins": 19,
+     "losses": 9,
+     "holm_p": 0.08716
+    }
+   },
+   "midi_ar_Egypt": {
+    "n": 100,
+    "acc": {
+     "Base": 39.0,
+     "Random-CPT": 48.0,
+     "Idiom-Text": 54.0,
+     "Idiom+Meaning": 63.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 6.0,
+     "ci95": [
+      1.0,
+      12.0
+     ],
+     "p_boot_two_sided": 0.0342,
+     "mcnemar_p": 0.07031,
+     "wins": 7,
+     "losses": 1,
+     "holm_p": 0.28124
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 15.0,
+     "ci95": [
+      7.0,
+      23.0
+     ],
+     "p_boot_two_sided": 0.0,
+     "mcnemar_p": 0.00073,
+     "wins": 17,
+     "losses": 2,
+     "holm_p": 0.00292
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 9.0,
+     "ci95": [
+      2.0,
+      16.0
+     ],
+     "p_boot_two_sided": 0.0112,
+     "mcnemar_p": 0.02246,
+     "wins": 11,
+     "losses": 2,
+     "holm_p": 0.08984
+    }
+   },
+   "midi_ar_Syrian": {
+    "n": 100,
+    "acc": {
+     "Base": 31.0,
+     "Random-CPT": 29.0,
+     "Idiom-Text": 32.0,
+     "Idiom+Meaning": 34.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 3.0,
+     "ci95": [
+      -3.0,
+      9.0
+     ],
+     "p_boot_two_sided": 0.3962,
+     "mcnemar_p": 0.50781,
+     "wins": 6,
+     "losses": 3,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 5.0,
+     "ci95": [
+      -1.0,
+      11.0
+     ],
+     "p_boot_two_sided": 0.165,
+     "mcnemar_p": 0.22656,
+     "wins": 8,
+     "losses": 3,
+     "holm_p": 0.67968
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 2.0,
+     "ci95": [
+      -2.0,
+      6.0
+     ],
+     "p_boot_two_sided": 0.4606,
+     "mcnemar_p": 0.625,
+     "wins": 3,
+     "losses": 1,
+     "holm_p": 1.0
+    }
+   },
+   "midi_ar_UAE": {
+    "n": 100,
+    "acc": {
+     "Base": 31.0,
+     "Random-CPT": 39.0,
+     "Idiom-Text": 40.0,
+     "Idiom+Meaning": 38.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.0,
+     "ci95": [
+      -6.0,
+      7.0
+     ],
+     "p_boot_two_sided": 0.8634,
+     "mcnemar_p": 1.0,
+     "wins": 6,
+     "losses": 5,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -1.0,
+     "ci95": [
+      -9.0,
+      6.0
+     ],
+     "p_boot_two_sided": 0.9052,
+     "mcnemar_p": 1.0,
+     "wins": 7,
+     "losses": 8,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -2.0,
+     "ci95": [
+      -7.0,
+      3.0
+     ],
+     "p_boot_two_sided": 0.5424,
+     "mcnemar_p": 0.6875,
+     "wins": 2,
+     "losses": 4,
+     "holm_p": 1.0
+    }
+   },
+   "midi_ar_Morocco": {
+    "n": 99,
+    "acc": {
+     "Base": 40.4,
+     "Random-CPT": 43.4,
+     "Idiom-Text": 42.4,
+     "Idiom+Meaning": 43.4
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -1.0,
+     "ci95": [
+      -7.1,
+      5.1
+     ],
+     "p_boot_two_sided": 0.8902,
+     "mcnemar_p": 1.0,
+     "wins": 5,
+     "losses": 6,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 0.0,
+     "ci95": [
+      -6.1,
+      6.1
+     ],
+     "p_boot_two_sided": 1.0,
+     "mcnemar_p": 1.0,
+     "wins": 5,
+     "losses": 5,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.0,
+     "ci95": [
+      -3.0,
+      5.1
+     ],
+     "p_boot_two_sided": 0.8266,
+     "mcnemar_p": 1.0,
+     "wins": 3,
+     "losses": 2,
+     "holm_p": 1.0
+    }
+   }
+  },
+  "symbolism_probe_ar": {
+   "n_probe_items_matched": 98,
+   "evidence_idioms_shown": {
+    "colloquial": [
+     508,
+     0.571
+    ],
+    "classical": [
+     370,
+     0.416
+    ],
+    "msa": [
+     11,
+     0.012
+    ]
+   },
+   "gold_evidence_idioms": {
+    "unmatched": [
+     207,
+     0.721
+    ],
+    "colloquial": [
+     63,
+     0.22
+    ],
+    "classical": [
+     17,
+     0.059
+    ]
+   },
+   "items_by_majority_gold_evidence_register": {
+    "classical": 9,
+    "colloquial": 24,
+    "unmatched": 65
+   },
+   "probe_colloquial_majority": {
+    "n": 24,
+    "acc": {
+     "Random-CPT": 45.8,
+     "Idiom-Text": 45.8,
+     "Idiom+Meaning": 45.8
+    },
+    "lure_rate": {
+     "Random-CPT": 37.5,
+     "Idiom-Text": 37.5,
+     "Idiom+Meaning": 37.5
+    },
+    "Idiom+Meaning - Random-CPT (acc)": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Idiom+Meaning - Random-CPT (lure)": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "arabic_web_coverage": {
+   "register:colloquial": {
+    "idioms": 5755,
+    "share_found_on_web": 0.314,
+    "training_docs": 155072
+   },
+   "ar_tahaalselwii_classical": {
+    "idioms": 4530,
+    "share_found_on_web": 0.673,
+    "training_docs": 187748
+   },
+   "register:classical": {
+    "idioms": 4530,
+    "share_found_on_web": 0.673,
+    "training_docs": 187748
+   },
+   "ar_tahaalselwii_colloquial": {
+    "idioms": 3048,
+    "share_found_on_web": 0.339,
+    "training_docs": 36789
+   },
+   "ar_tunisian": {
+    "idioms": 931,
+    "share_found_on_web": 0.124,
+    "training_docs": 9266
+   },
+   "ar_jawaher": {
+    "idioms": 749,
+    "share_found_on_web": 0.622,
+    "training_docs": 185157
+   },
+   "ar_absher": {
+    "idioms": 498,
+    "share_found_on_web": 0.297,
+    "training_docs": 49232
+   },
+   "ar_hassaniya": {
+    "idioms": 319,
+    "share_found_on_web": 0.063,
+    "training_docs": 50
+   },
+   "ar_kinayat": {
+    "idioms": 311,
+    "share_found_on_web": 0.367,
+    "training_docs": 24364
+   },
+   "register:msa": {
+    "idioms": 101,
+    "share_found_on_web": 0.891,
+    "training_docs": 149786
+   }
+  }
+ },
+ "hindi_source": {
+  "raw_entries": 15200,
+  "headwords_with_parallels": 9698,
+  "parallels_total": 17683,
+  "parallels_by_variety": {
+   "Punjabi": 5218,
+   "Rajasthani": 1837,
+   "Avadhi": 1575,
+   "Braj": 1480,
+   "Bhojpuri": 1455,
+   "Marathi": 813,
+   "Garhwali": 804,
+   "Haryanvi": 693,
+   "Bhili": 477,
+   "Malvi": 379,
+   "Unknown": 370,
+   "Maithili": 267,
+   "Bundeli": 229,
+   "Chhattisgarhi": 228,
+   "Sanskrit": 224,
+   "Awadhi": 221,
+   "Kauravi": 221,
+   "Mewati": 191,
+   "Malayalam": 164,
+   "Magahi": 148,
+   "English": 81,
+   "Assamese": 78,
+   "Gujarati": 71,
+   "Telugu": 65,
+   "Kannauji": 62,
+   "Persian": 57,
+   "Bengali": 56,
+   "Bhil": 37,
+   "Mewari": 31,
+   "Nimadi": 21,
+   "Urdu": 18,
+   "Sindhi": 15,
+   "Kannada": 14,
+   "Hindi": 14,
+   "Bagheli": 12,
+   "Hadoti": 10,
+   "Kashmiri": 8,
+   "Marwari": 8,
+   "Arabic": 6,
+   "Uzbek": 5,
+   "Sinhala": 3,
+   "अवधी": 3,
+   "Tamil": 2,
+   "पंजाबी": 2,
+   "गढ़वाली": 2,
+   "हरियाणवी": 1,
+   "छत्तीसगढ़ी": 1,
+   "Kumaoni": 1,
+   "राजस्थानी": 1,
+   "Gujati": 1,
+   "ब्रज": 1,
+   "भोजपुरी": 1,
+   "Kannauj": 1
+  },
+  "note": "Headwords are (standard) Hindi proverbs; the dictionary lists 'tulaniya' (compare) parallels in regional varieties and other languages. IdiomAtlas keeps only the Hindi headword and its explanation; parallels are stored separately and not pooled into the Hindi inventory."
+ }
+}
