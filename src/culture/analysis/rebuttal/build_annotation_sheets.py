@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build native-speaker validation workbooks (one .xlsx per language: zh, hi, ar).
 
-Three tasks per workbook, sized for ~3 h for the primary annotator and ~1.5 h for the second:
+Three tasks per workbook, sized for ~3 h for one annotator:
   A_KB         100 IdiomAtlas entries, drawn from the 200-entry audit sample (so the earlier
                automatic audits can be scored against people). Meaning, figurativeness, entities,
                the annotator's own familiarity with the idiom, and (Arabic) regional spread.
@@ -9,8 +9,7 @@ Three tasks per workbook, sized for ~3 h for the primary annotator and ~1.5 h fo
                then marks every option that is an acceptable meaning.
   C_Symbolism  60 symbolism-probe items. The annotator answers blind, then marks every option
                that is a recognized association of the entity in their culture.
-Rows whose `overlap` column says "yes" are the shared subset the second annotator also does
-(first 50 of A, first 30 of B, first 30 of C); the second annotator can stop after those rows.
+One native speaker per language (no overlap subset).
 
 Answer keys and provenance (split, gold, lure, earlier audit ids) go to a separate key file that
 annotators never see.
@@ -45,10 +44,7 @@ Thank you for helping. Please work in this file and fill only the yellow columns
 drop-down list; free-text cells are optional unless stated. Please do not search the web or ask an AI
 system; we want your own judgment as a native speaker. "Don't know" / "unsure" is always a fine answer.
 
-If you are the SECOND annotator, only do the rows whose column "overlap" says "yes"
-(the first 50 rows of A_KB, the first 30 rows of B_MC and C_Symbolism).
-
-Estimated time: A_KB ~80 min, B_MC ~30 min, C_Symbolism ~60 min (second annotator about half).
+Estimated time: A_KB ~80 min, B_MC ~30 min, C_Symbolism ~60 min (about 3 hours in total).
 You can stop and continue later; save the file and send it back when done.
 
 ---------------------------------------------------------------------------------------------------
@@ -180,7 +176,7 @@ def build(lang, out_dir):
         rng.shuffle(pick)
     else:
         pick = rng.sample(sheet, N_KB)
-    head = ["row", "overlap", "idiom", "figurative_meaning"]
+    head = ["row", "idiom", "figurative_meaning"]
     if lang in ("ar", "zh"):
         head.append("literal_meaning_or_source")
     head += ["entities", "A1_meaning_correct", "A2_is_figurative", "A3_wrong_entities",
@@ -192,7 +188,7 @@ def build(lang, out_dir):
     head.append("notes")
     data = []
     for i, x in enumerate(pick, 1):
-        r = [i, "yes" if i <= N_KB_OVL else "", x["idiom"], x.get("figurative_meanings", "")]
+        r = [i, x["idiom"], x.get("figurative_meanings", "")]
         if lang in ("ar", "zh"):
             r.append(x.get("literal_meanings", ""))
         r.append(x.get("entities", ""))
@@ -210,7 +206,7 @@ def build(lang, out_dir):
     if lang == "ar":
         val["A7_region"] = ["pan_arab", "classical_literary", "regional", "dont_know"]
         val["A9_literal_ok"] = ["correct", "partly", "wrong"]
-    widths = [5, 8, 30, 50] + ([40] if lang in ("ar", "zh") else []) + [20] + [16] * (len(head) - (6 if lang in ("ar", "zh") else 5))
+    widths = [5, 30, 50] + ([40] if lang in ("ar", "zh") else []) + [20] + [16] * (len(head) - (5 if lang in ("ar", "zh") else 4))
     add_sheet(wb, "A_KB", head, data, fill, val, widths)
 
     # ---- B: IdiomAtlas-MC items, 30 seen + 30 unseen (zh unseen has 78 items)
@@ -224,29 +220,29 @@ def build(lang, out_dir):
     order = []
     for a, b in zip(seen_p, uns_p):
         order += [a, b] if rng.random() < 0.5 else [b, a]
-    head = ["row", "overlap", "idiom", "A", "B", "C", "D", "B1_best_option", "B2_acceptable_options",
+    head = ["row", "idiom", "A", "B", "C", "D", "B1_best_option", "B2_acceptable_options",
             "B3_confidence", "notes"]
     data = []
     for i, (split, x) in enumerate(order, 1):
         opts = [o.strip() for o in x["options"]]
-        data.append([i, "yes" if i <= N_MC_OVL else "", x["meta"]["idiom"], *opts, "", "", "", ""])
+        data.append([i, x["meta"]["idiom"], *opts, "", "", "", ""])
         key["B_MC"].append({"row": i, "qid": x["qid"], "split": split, "gold": LETTERS[x["gold"]],
                             "idiom": x["meta"]["idiom"]})
     add_sheet(wb, "B_MC", head, data, ["B1_best_option", "B2_acceptable_options", "B3_confidence", "notes"],
               {"B1_best_option": ["A", "B", "C", "D", "none"], "B3_confidence": ["1", "2", "3"]},
-              [5, 8, 28, 40, 40, 40, 40, 12, 16, 12, 30])
+              [5, 28, 40, 40, 40, 40, 12, 16, 12, 30])
 
     # ---- C: symbolism probe items
     blind = {x["qid"]: x for x in rows(MANUAL / f"probe_blind_{lang}.jsonl")}
     pkey = {x["qid"]: x for x in json.load(open(MANUAL / f"probe_key_{lang}.json"))}
     qids = sorted(blind, key=lambda q: int(q.split("/")[-1]))
     pick = rng.sample(qids, min(N_SYM, len(qids)))
-    head = ["row", "overlap", "entity", "english_gloss", "question", "A", "B", "C", "D", "C1_gloss_ok",
+    head = ["row", "entity", "english_gloss", "question", "A", "B", "C", "D", "C1_gloss_ok",
             "C2_best_option", "C3_recognized_options", "C4_confidence", "C5_notes"]
     data = []
     for i, q in enumerate(pick, 1):
         b = blind[q]
-        data.append([i, "yes" if i <= N_SYM_OVL else "", b["entity"], b["entity_en"], b["question"],
+        data.append([i, b["entity"], b["entity_en"], b["question"],
                      *[b["options"][L] for L in LETTERS], "", "", "", "", ""])
         key["C_Symbolism"].append({"row": i, "qid": q, "gold": pkey[q]["gold"], "english_lure": pkey[q]["english_lure"],
                                    "entity": b["entity"], "entity_en": b["entity_en"]})
@@ -254,7 +250,7 @@ def build(lang, out_dir):
                                               "C4_confidence", "C5_notes"],
               {"C1_gloss_ok": ["yes", "no"], "C2_best_option": ["A", "B", "C", "D", "none"],
                "C4_confidence": ["1", "2", "3"]},
-              [5, 8, 14, 14, 36, 34, 34, 34, 34, 10, 12, 16, 12, 30])
+              [5, 14, 14, 36, 34, 34, 34, 34, 10, 12, 16, 12, 30])
 
     out_dir.mkdir(parents=True, exist_ok=True)
     fn = out_dir / f"IdiomAtlas_validation_{lang}.xlsx"
