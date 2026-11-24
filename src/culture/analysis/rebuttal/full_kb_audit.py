@@ -129,6 +129,19 @@ def main():
     for s, rows in src.items():
         res["ar_by_source"][s] = {"n_entries": len(rows), **summarize(rows, J)}
 
+    # same judge, two servers (babel forward pass vs miyabi reverse pass): label reproducibility on shared entries
+    res["qwen_cross_server_agreement"] = {}
+    for L in LANGS:
+        a_, b_ = A / f"judge_qwen27b_{L}.jsonl", A / f"judge_qwen27b_{L}.miyabi.jsonl"
+        if a_.exists() and b_.exists():
+            x = {json.loads(l)["id"]: json.loads(l)["judgment"] for l in open(a_, encoding="utf-8")}
+            y = {json.loads(l)["id"]: json.loads(l)["judgment"] for l in open(b_, encoding="utf-8")}
+            ov = [i for i in x if i in y]
+            if ov:
+                res["qwen_cross_server_agreement"][L] = {
+                    "n": len(ov), "meaning_agree": round(sum(norm_meaning(x[i].get("meaning")) == norm_meaning(y[i].get("meaning")) for i in ov) / len(ov), 3),
+                    "figurative_agree": round(sum(norm_yes(x[i].get("is_figurative")) == norm_yes(y[i].get("is_figurative")) for i in ov) / len(ov), 3)}
+
     # quality flags
     flags = {}
     with open(A / "quality_flags.jsonl", "w", encoding="utf-8") as f:

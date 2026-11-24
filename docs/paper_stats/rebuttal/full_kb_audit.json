@@ -1,0 +1,1858 @@
+{
+ "coverage": {
+  "qwen27b": {
+   "en": 21278,
+   "zh": 27297,
+   "hi": 16617,
+   "ar": 10386
+  },
+  "gemma": {
+   "en": 21278,
+   "zh": 27297,
+   "hi": 16617,
+   "ar": 10386
+  }
+ },
+ "kb_size": {
+  "en": 21278,
+  "zh": 27297,
+  "hi": 16617,
+  "ar": 10386
+ },
+ "per_lang": {
+  "en": {
+   "qwen27b": {
+    "n": 21278,
+    "correct": [
+     64.7,
+     64.0,
+     65.3
+    ],
+    "correct_with_noise": [
+     11.5,
+     11.1,
+     12.0
+    ],
+    "partly_correct": [
+     16.9,
+     16.4,
+     17.4
+    ],
+    "wrong": [
+     6.9,
+     6.6,
+     7.3
+    ],
+    "acceptable(correct+noise)": [
+     76.2,
+     75.6,
+     76.8
+    ],
+    "is_figurative": [
+     75.1,
+     74.5,
+     75.7
+    ],
+    "entity_precision": [
+     88.2,
+     87.8,
+     88.6
+    ]
+   },
+   "gemma": {
+    "n": 21275,
+    "correct": [
+     82.0,
+     81.5,
+     82.5
+    ],
+    "correct_with_noise": [
+     2.2,
+     2.0,
+     2.4
+    ],
+    "partly_correct": [
+     7.7,
+     7.4,
+     8.1
+    ],
+    "wrong": [
+     8.1,
+     7.7,
+     8.5
+    ],
+    "acceptable(correct+noise)": [
+     84.2,
+     83.7,
+     84.7
+    ],
+    "is_figurative": [
+     86.2,
+     85.7,
+     86.7
+    ],
+    "entity_precision": [
+     94.4,
+     94.1,
+     94.7
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.377,
+    "agree": 0.721,
+    "n": 21275
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.371,
+    "agree": 0.726,
+    "n": 21275
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.549,
+    "agree": 0.857,
+    "n": 21271
+   },
+   "both_agree": {
+    "n": 15442,
+    "share_of_entries": [
+     72.6,
+     72.0,
+     73.2
+    ],
+    "clean": [
+     84.0,
+     83.5,
+     84.6
+    ],
+    "noisy": [
+     10.1,
+     9.6,
+     10.6
+    ],
+    "wrong": [
+     5.9,
+     5.5,
+     6.3
+    ]
+   }
+  },
+  "zh": {
+   "qwen27b": {
+    "n": 27297,
+    "correct": [
+     11.6,
+     11.2,
+     11.9
+    ],
+    "correct_with_noise": [
+     80.3,
+     79.9,
+     80.8
+    ],
+    "partly_correct": [
+     4.6,
+     4.4,
+     4.9
+    ],
+    "wrong": [
+     3.5,
+     3.3,
+     3.7
+    ],
+    "acceptable(correct+noise)": [
+     91.9,
+     91.6,
+     92.2
+    ],
+    "is_figurative": [
+     96.3,
+     96.0,
+     96.5
+    ],
+    "entity_precision": [
+     89.3,
+     89.0,
+     89.6
+    ]
+   },
+   "gemma": {
+    "n": 27292,
+    "correct": [
+     46.2,
+     45.6,
+     46.8
+    ],
+    "correct_with_noise": [
+     40.4,
+     39.8,
+     41.0
+    ],
+    "partly_correct": [
+     1.8,
+     1.7,
+     2.0
+    ],
+    "wrong": [
+     11.6,
+     11.2,
+     12.0
+    ],
+    "acceptable(correct+noise)": [
+     86.6,
+     86.2,
+     87.0
+    ],
+    "is_figurative": [
+     98.2,
+     98.0,
+     98.4
+    ],
+    "entity_precision": [
+     91.2,
+     90.9,
+     91.4
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.187,
+    "agree": 0.498,
+    "n": 27292
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.172,
+    "agree": 0.516,
+    "n": 27292
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.211,
+    "agree": 0.957,
+    "n": 27286
+   },
+   "both_agree": {
+    "n": 14095,
+    "share_of_entries": [
+     51.6,
+     51.1,
+     52.2
+    ],
+    "clean": [
+     16.5,
+     15.9,
+     17.1
+    ],
+    "noisy": [
+     78.4,
+     77.7,
+     79.1
+    ],
+    "wrong": [
+     5.1,
+     4.7,
+     5.5
+    ]
+   }
+  },
+  "hi": {
+   "qwen27b": {
+    "n": 16610,
+    "correct": [
+     50.0,
+     49.2,
+     50.7
+    ],
+    "correct_with_noise": [
+     17.1,
+     16.5,
+     17.7
+    ],
+    "partly_correct": [
+     10.7,
+     10.2,
+     11.2
+    ],
+    "wrong": [
+     22.2,
+     21.6,
+     22.9
+    ],
+    "acceptable(correct+noise)": [
+     67.1,
+     66.3,
+     67.8
+    ],
+    "is_figurative": [
+     98.1,
+     97.9,
+     98.3
+    ],
+    "entity_precision": [
+     75.2,
+     74.8,
+     75.7
+    ]
+   },
+   "gemma": {
+    "n": 16616,
+    "correct": [
+     62.4,
+     61.6,
+     63.1
+    ],
+    "correct_with_noise": [
+     7.1,
+     6.7,
+     7.5
+    ],
+    "partly_correct": [
+     3.1,
+     2.9,
+     3.4
+    ],
+    "wrong": [
+     27.4,
+     26.7,
+     28.1
+    ],
+    "acceptable(correct+noise)": [
+     69.5,
+     68.8,
+     70.2
+    ],
+    "is_figurative": [
+     98.4,
+     98.1,
+     98.5
+    ],
+    "entity_precision": [
+     79.5,
+     79.1,
+     79.8
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.318,
+    "agree": 0.583,
+    "n": 16609
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.318,
+    "agree": 0.592,
+    "n": 16609
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.251,
+    "agree": 0.974,
+    "n": 16607
+   },
+   "both_agree": {
+    "n": 9825,
+    "share_of_entries": [
+     59.2,
+     58.4,
+     59.9
+    ],
+    "clean": [
+     67.1,
+     66.1,
+     68.0
+    ],
+    "noisy": [
+     11.1,
+     10.5,
+     11.8
+    ],
+    "wrong": [
+     21.8,
+     21.0,
+     22.6
+    ]
+   }
+  },
+  "ar": {
+   "qwen27b": {
+    "n": 10385,
+    "correct": [
+     20.9,
+     20.2,
+     21.7
+    ],
+    "correct_with_noise": [
+     61.9,
+     60.9,
+     62.8
+    ],
+    "partly_correct": [
+     5.8,
+     5.4,
+     6.3
+    ],
+    "wrong": [
+     11.3,
+     10.7,
+     11.9
+    ],
+    "acceptable(correct+noise)": [
+     82.8,
+     82.1,
+     83.5
+    ],
+    "is_figurative": [
+     96.8,
+     96.4,
+     97.1
+    ],
+    "entity_precision": [
+     94.0,
+     93.6,
+     94.3
+    ]
+   },
+   "gemma": {
+    "n": 10385,
+    "correct": [
+     29.4,
+     28.5,
+     30.2
+    ],
+    "correct_with_noise": [
+     55.3,
+     54.3,
+     56.2
+    ],
+    "partly_correct": [
+     1.8,
+     1.6,
+     2.1
+    ],
+    "wrong": [
+     13.6,
+     12.9,
+     14.3
+    ],
+    "acceptable(correct+noise)": [
+     84.6,
+     83.9,
+     85.3
+    ],
+    "is_figurative": [
+     97.7,
+     97.4,
+     98.0
+    ],
+    "entity_precision": [
+     93.4,
+     93.0,
+     93.8
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.625,
+    "agree": 0.783,
+    "n": 10384
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.606,
+    "agree": 0.789,
+    "n": 10384
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.436,
+    "agree": 0.97,
+    "n": 10382
+   },
+   "both_agree": {
+    "n": 8189,
+    "share_of_entries": [
+     78.9,
+     78.1,
+     79.6
+    ],
+    "clean": [
+     22.0,
+     21.1,
+     22.9
+    ],
+    "noisy": [
+     68.6,
+     67.5,
+     69.6
+    ],
+    "wrong": [
+     9.5,
+     8.9,
+     10.1
+    ]
+   }
+  }
+ },
+ "ar_by_register": {
+  "classical": {
+   "n_entries": 4530,
+   "qwen27b": {
+    "n": 4529,
+    "correct": [
+     11.4,
+     10.5,
+     12.4
+    ],
+    "correct_with_noise": [
+     79.9,
+     78.7,
+     81.0
+    ],
+    "partly_correct": [
+     2.3,
+     1.9,
+     2.8
+    ],
+    "wrong": [
+     6.4,
+     5.7,
+     7.1
+    ],
+    "acceptable(correct+noise)": [
+     91.3,
+     90.4,
+     92.1
+    ],
+    "is_figurative": [
+     98.7,
+     98.3,
+     98.9
+    ],
+    "entity_precision": [
+     95.1,
+     94.6,
+     95.6
+    ]
+   },
+   "gemma": {
+    "n": 4529,
+    "correct": [
+     15.8,
+     14.8,
+     16.9
+    ],
+    "correct_with_noise": [
+     74.9,
+     73.6,
+     76.2
+    ],
+    "partly_correct": [
+     0.5,
+     0.3,
+     0.7
+    ],
+    "wrong": [
+     8.8,
+     8.0,
+     9.7
+    ],
+    "acceptable(correct+noise)": [
+     90.7,
+     89.8,
+     91.5
+    ],
+    "is_figurative": [
+     98.5,
+     98.1,
+     98.8
+    ],
+    "entity_precision": [
+     93.5,
+     92.9,
+     94.0
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.608,
+    "agree": 0.852,
+    "n": 4528
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.596,
+    "agree": 0.856,
+    "n": 4528
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.249,
+    "agree": 0.979,
+    "n": 4527
+   },
+   "both_agree": {
+    "n": 3876,
+    "share_of_entries": [
+     85.6,
+     84.5,
+     86.6
+    ],
+    "clean": [
+     10.7,
+     9.7,
+     11.7
+    ],
+    "noisy": [
+     85.2,
+     84.0,
+     86.3
+    ],
+    "wrong": [
+     4.2,
+     3.6,
+     4.8
+    ]
+   }
+  },
+  "colloquial": {
+   "n_entries": 5761,
+   "qwen27b": {
+    "n": 5761,
+    "correct": [
+     27.7,
+     26.5,
+     28.8
+    ],
+    "correct_with_noise": [
+     48.3,
+     47.0,
+     49.6
+    ],
+    "partly_correct": [
+     8.6,
+     7.9,
+     9.4
+    ],
+    "wrong": [
+     15.4,
+     14.5,
+     16.4
+    ],
+    "acceptable(correct+noise)": [
+     76.0,
+     74.9,
+     77.1
+    ],
+    "is_figurative": [
+     95.3,
+     94.7,
+     95.8
+    ],
+    "entity_precision": [
+     93.2,
+     92.7,
+     93.6
+    ]
+   },
+   "gemma": {
+    "n": 5761,
+    "correct": [
+     39.3,
+     38.1,
+     40.6
+    ],
+    "correct_with_noise": [
+     40.3,
+     39.1,
+     41.6
+    ],
+    "partly_correct": [
+     2.8,
+     2.4,
+     3.3
+    ],
+    "wrong": [
+     17.5,
+     16.6,
+     18.5
+    ],
+    "acceptable(correct+noise)": [
+     79.6,
+     78.6,
+     80.7
+    ],
+    "is_figurative": [
+     97.0,
+     96.6,
+     97.4
+    ],
+    "entity_precision": [
+     93.4,
+     92.9,
+     93.9
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.589,
+    "agree": 0.726,
+    "n": 5761
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.569,
+    "agree": 0.734,
+    "n": 5761
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.49,
+    "agree": 0.962,
+    "n": 5760
+   },
+   "both_agree": {
+    "n": 4226,
+    "share_of_entries": [
+     73.4,
+     72.2,
+     74.5
+    ],
+    "clean": [
+     31.3,
+     29.9,
+     32.7
+    ],
+    "noisy": [
+     54.2,
+     52.7,
+     55.7
+    ],
+    "wrong": [
+     14.6,
+     13.5,
+     15.6
+    ]
+   }
+  },
+  "msa": {
+   "n_entries": 95,
+   "qwen27b": {
+    "n": 95,
+    "correct": [
+     68.4,
+     58.5,
+     76.9
+    ],
+    "correct_with_noise": [
+     26.3,
+     18.5,
+     36.0
+    ],
+    "partly_correct": [
+     4.2,
+     1.6,
+     10.3
+    ],
+    "wrong": [
+     1.1,
+     0.2,
+     5.7
+    ],
+    "acceptable(correct+noise)": [
+     94.7,
+     88.3,
+     97.7
+    ],
+    "is_figurative": [
+     98.9,
+     94.3,
+     99.8
+    ],
+    "entity_precision": [
+     95.6,
+     91.1,
+     97.8
+    ]
+   },
+   "gemma": {
+    "n": 95,
+    "correct": [
+     72.6,
+     62.9,
+     80.6
+    ],
+    "correct_with_noise": [
+     24.2,
+     16.7,
+     33.7
+    ],
+    "partly_correct": [
+     1.1,
+     0.2,
+     5.7
+    ],
+    "wrong": [
+     2.1,
+     0.6,
+     7.4
+    ],
+    "acceptable(correct+noise)": [
+     96.8,
+     91.1,
+     98.9
+    ],
+    "is_figurative": [
+     100.0,
+     96.1,
+     100.0
+    ],
+    "entity_precision": [
+     89.2,
+     83.4,
+     93.2
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.784,
+    "agree": 0.905,
+    "n": 95
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.802,
+    "agree": 0.916,
+    "n": 95
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.0,
+    "agree": 0.989,
+    "n": 95
+   },
+   "both_agree": {
+    "n": 87,
+    "share_of_entries": [
+     91.6,
+     84.3,
+     95.7
+    ],
+    "clean": [
+     72.4,
+     62.2,
+     80.7
+    ],
+    "noisy": [
+     26.4,
+     18.3,
+     36.6
+    ],
+    "wrong": [
+     1.1,
+     0.2,
+     6.2
+    ]
+   }
+  }
+ },
+ "ar_by_source": {
+  "tahaalselwii_classical": {
+   "n_entries": 4530,
+   "qwen27b": {
+    "n": 4529,
+    "correct": [
+     11.4,
+     10.5,
+     12.4
+    ],
+    "correct_with_noise": [
+     79.9,
+     78.7,
+     81.0
+    ],
+    "partly_correct": [
+     2.3,
+     1.9,
+     2.8
+    ],
+    "wrong": [
+     6.4,
+     5.7,
+     7.1
+    ],
+    "acceptable(correct+noise)": [
+     91.3,
+     90.4,
+     92.1
+    ],
+    "is_figurative": [
+     98.7,
+     98.3,
+     98.9
+    ],
+    "entity_precision": [
+     95.1,
+     94.6,
+     95.6
+    ]
+   },
+   "gemma": {
+    "n": 4529,
+    "correct": [
+     15.8,
+     14.8,
+     16.9
+    ],
+    "correct_with_noise": [
+     74.9,
+     73.6,
+     76.2
+    ],
+    "partly_correct": [
+     0.5,
+     0.3,
+     0.7
+    ],
+    "wrong": [
+     8.8,
+     8.0,
+     9.7
+    ],
+    "acceptable(correct+noise)": [
+     90.7,
+     89.8,
+     91.5
+    ],
+    "is_figurative": [
+     98.5,
+     98.1,
+     98.8
+    ],
+    "entity_precision": [
+     93.5,
+     92.9,
+     94.0
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.608,
+    "agree": 0.852,
+    "n": 4528
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.596,
+    "agree": 0.856,
+    "n": 4528
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.249,
+    "agree": 0.979,
+    "n": 4527
+   },
+   "both_agree": {
+    "n": 3876,
+    "share_of_entries": [
+     85.6,
+     84.5,
+     86.6
+    ],
+    "clean": [
+     10.7,
+     9.7,
+     11.7
+    ],
+    "noisy": [
+     85.2,
+     84.0,
+     86.3
+    ],
+    "wrong": [
+     4.2,
+     3.6,
+     4.8
+    ]
+   }
+  },
+  "jawaher": {
+   "n_entries": 796,
+   "qwen27b": {
+    "n": 796,
+    "correct": [
+     56.0,
+     52.6,
+     59.4
+    ],
+    "correct_with_noise": [
+     28.5,
+     25.5,
+     31.8
+    ],
+    "partly_correct": [
+     5.7,
+     4.3,
+     7.5
+    ],
+    "wrong": [
+     9.8,
+     7.9,
+     12.1
+    ],
+    "acceptable(correct+noise)": [
+     84.5,
+     81.9,
+     86.9
+    ],
+    "is_figurative": [
+     98.7,
+     97.7,
+     99.3
+    ],
+    "entity_precision": [
+     91.2,
+     89.6,
+     92.6
+    ]
+   },
+   "gemma": {
+    "n": 796,
+    "correct": [
+     63.2,
+     59.8,
+     66.5
+    ],
+    "correct_with_noise": [
+     22.1,
+     19.4,
+     25.1
+    ],
+    "partly_correct": [
+     2.8,
+     1.8,
+     4.1
+    ],
+    "wrong": [
+     11.9,
+     9.9,
+     14.4
+    ],
+    "acceptable(correct+noise)": [
+     85.3,
+     82.7,
+     87.6
+    ],
+    "is_figurative": [
+     99.2,
+     98.4,
+     99.7
+    ],
+    "entity_precision": [
+     92.6,
+     91.1,
+     93.8
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.543,
+    "agree": 0.74,
+    "n": 796
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.547,
+    "agree": 0.751,
+    "n": 796
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.369,
+    "agree": 0.987,
+    "n": 796
+   },
+   "both_agree": {
+    "n": 598,
+    "share_of_entries": [
+     75.1,
+     72.0,
+     78.0
+    ],
+    "clean": [
+     65.4,
+     61.5,
+     69.1
+    ],
+    "noisy": [
+     27.8,
+     24.3,
+     31.5
+    ],
+    "wrong": [
+     6.9,
+     5.1,
+     9.2
+    ]
+   }
+  },
+  "tahaalselwii_colloquial": {
+   "n_entries": 3049,
+   "qwen27b": {
+    "n": 3049,
+    "correct": [
+     22.5,
+     21.1,
+     24.0
+    ],
+    "correct_with_noise": [
+     74.8,
+     73.2,
+     76.3
+    ],
+    "partly_correct": [
+     1.2,
+     0.9,
+     1.7
+    ],
+    "wrong": [
+     1.5,
+     1.1,
+     2.0
+    ],
+    "acceptable(correct+noise)": [
+     97.3,
+     96.7,
+     97.8
+    ],
+    "is_figurative": [
+     99.7,
+     99.5,
+     99.9
+    ],
+    "entity_precision": [
+     96.3,
+     95.8,
+     96.7
+    ]
+   },
+   "gemma": {
+    "n": 3049,
+    "correct": [
+     33.1,
+     31.4,
+     34.8
+    ],
+    "correct_with_noise": [
+     63.1,
+     61.4,
+     64.8
+    ],
+    "partly_correct": [
+     0.4,
+     0.2,
+     0.6
+    ],
+    "wrong": [
+     3.5,
+     2.9,
+     4.2
+    ],
+    "acceptable(correct+noise)": [
+     96.2,
+     95.4,
+     96.8
+    ],
+    "is_figurative": [
+     99.9,
+     99.8,
+     100.0
+    ],
+    "entity_precision": [
+     93.2,
+     92.6,
+     93.8
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.592,
+    "agree": 0.815,
+    "n": 3049
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.584,
+    "agree": 0.816,
+    "n": 3049
+   },
+   "judge_kappa_figurative": {
+    "kappa": -0.001,
+    "agree": 0.997,
+    "n": 3049
+   },
+   "both_agree": {
+    "n": 2488,
+    "share_of_entries": [
+     81.6,
+     80.2,
+     82.9
+    ],
+    "clean": [
+     24.1,
+     22.4,
+     25.8
+    ],
+    "noisy": [
+     75.2,
+     73.5,
+     76.9
+    ],
+    "wrong": [
+     0.7,
+     0.4,
+     1.1
+    ]
+   }
+  },
+  "tunisian": {
+   "n_entries": 952,
+   "qwen27b": {
+    "n": 952,
+    "correct": [
+     23.6,
+     21.0,
+     26.4
+    ],
+    "correct_with_noise": [
+     8.6,
+     7.0,
+     10.6
+    ],
+    "partly_correct": [
+     30.0,
+     27.2,
+     33.0
+    ],
+    "wrong": [
+     37.7,
+     34.7,
+     40.8
+    ],
+    "acceptable(correct+noise)": [
+     32.2,
+     29.4,
+     35.3
+    ],
+    "is_figurative": [
+     95.2,
+     93.6,
+     96.4
+    ],
+    "entity_precision": [
+     90.1,
+     88.7,
+     91.3
+    ]
+   },
+   "gemma": {
+    "n": 952,
+    "correct": [
+     37.1,
+     34.1,
+     40.2
+    ],
+    "correct_with_noise": [
+     9.2,
+     7.6,
+     11.3
+    ],
+    "partly_correct": [
+     9.6,
+     7.9,
+     11.6
+    ],
+    "wrong": [
+     44.1,
+     41.0,
+     47.3
+    ],
+    "acceptable(correct+noise)": [
+     46.3,
+     43.2,
+     49.5
+    ],
+    "is_figurative": [
+     97.2,
+     95.9,
+     98.0
+    ],
+    "entity_precision": [
+     93.5,
+     92.4,
+     94.5
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.421,
+    "agree": 0.589,
+    "n": 952
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.423,
+    "agree": 0.611,
+    "n": 952
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.304,
+    "agree": 0.948,
+    "n": 951
+   },
+   "both_agree": {
+    "n": 582,
+    "share_of_entries": [
+     61.1,
+     58.0,
+     64.2
+    ],
+    "clean": [
+     29.9,
+     26.3,
+     33.7
+    ],
+    "noisy": [
+     20.8,
+     17.7,
+     24.3
+    ],
+    "wrong": [
+     49.3,
+     45.3,
+     53.4
+    ]
+   }
+  },
+  "absher": {
+   "n_entries": 502,
+   "qwen27b": {
+    "n": 502,
+    "correct": [
+     28.5,
+     24.7,
+     32.6
+    ],
+    "correct_with_noise": [
+     28.7,
+     24.9,
+     32.8
+    ],
+    "partly_correct": [
+     12.7,
+     10.1,
+     16.0
+    ],
+    "wrong": [
+     30.1,
+     26.2,
+     34.2
+    ],
+    "acceptable(correct+noise)": [
+     57.2,
+     52.8,
+     61.4
+    ],
+    "is_figurative": [
+     67.1,
+     62.9,
+     71.1
+    ],
+    "entity_precision": [
+     92.1,
+     89.2,
+     94.3
+    ]
+   },
+   "gemma": {
+    "n": 502,
+    "correct": [
+     44.4,
+     40.1,
+     48.8
+    ],
+    "correct_with_noise": [
+     23.3,
+     19.8,
+     27.2
+    ],
+    "partly_correct": [
+     5.4,
+     3.7,
+     7.7
+    ],
+    "wrong": [
+     26.9,
+     23.2,
+     30.9
+    ],
+    "acceptable(correct+noise)": [
+     67.7,
+     63.5,
+     71.7
+    ],
+    "is_figurative": [
+     79.1,
+     75.3,
+     82.4
+    ],
+    "entity_precision": [
+     95.6,
+     93.2,
+     97.2
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.454,
+    "agree": 0.608,
+    "n": 502
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.441,
+    "agree": 0.624,
+    "n": 502
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.483,
+    "agree": 0.793,
+    "n": 502
+   },
+   "both_agree": {
+    "n": 313,
+    "share_of_entries": [
+     62.4,
+     58.0,
+     66.5
+    ],
+    "clean": [
+     34.8,
+     29.8,
+     40.3
+    ],
+    "noisy": [
+     38.0,
+     32.8,
+     43.5
+    ],
+    "wrong": [
+     27.2,
+     22.5,
+     32.3
+    ]
+   }
+  },
+  "kinayat": {
+   "n_entries": 314,
+   "qwen27b": {
+    "n": 314,
+    "correct": [
+     41.1,
+     35.8,
+     46.6
+    ],
+    "correct_with_noise": [
+     39.5,
+     34.2,
+     45.0
+    ],
+    "partly_correct": [
+     5.4,
+     3.4,
+     8.5
+    ],
+    "wrong": [
+     14.0,
+     10.6,
+     18.3
+    ],
+    "acceptable(correct+noise)": [
+     80.6,
+     75.8,
+     84.6
+    ],
+    "is_figurative": [
+     97.1,
+     94.6,
+     98.5
+    ],
+    "entity_precision": [
+     97.9,
+     96.0,
+     98.9
+    ]
+   },
+   "gemma": {
+    "n": 314,
+    "correct": [
+     52.2,
+     46.7,
+     57.7
+    ],
+    "correct_with_noise": [
+     27.4,
+     22.8,
+     32.6
+    ],
+    "partly_correct": [
+     2.2,
+     1.1,
+     4.5
+    ],
+    "wrong": [
+     18.2,
+     14.3,
+     22.8
+    ],
+    "acceptable(correct+noise)": [
+     79.6,
+     74.8,
+     83.7
+    ],
+    "is_figurative": [
+     97.5,
+     95.1,
+     98.7
+    ],
+    "entity_precision": [
+     96.6,
+     94.3,
+     98.0
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.408,
+    "agree": 0.615,
+    "n": 314
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.401,
+    "agree": 0.624,
+    "n": 314
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.093,
+    "agree": 0.952,
+    "n": 314
+   },
+   "both_agree": {
+    "n": 196,
+    "share_of_entries": [
+     62.4,
+     56.9,
+     67.6
+    ],
+    "clean": [
+     48.5,
+     41.6,
+     55.4
+    ],
+    "noisy": [
+     38.8,
+     32.2,
+     45.8
+    ],
+    "wrong": [
+     12.8,
+     8.8,
+     18.2
+    ]
+   }
+  },
+  "hassaniya": {
+   "n_entries": 319,
+   "qwen27b": {
+    "n": 319,
+    "correct": [
+     15.7,
+     12.1,
+     20.1
+    ],
+    "correct_with_noise": [
+     1.6,
+     0.7,
+     3.6
+    ],
+    "partly_correct": [
+     16.6,
+     12.9,
+     21.1
+    ],
+    "wrong": [
+     66.1,
+     60.8,
+     71.1
+    ],
+    "acceptable(correct+noise)": [
+     17.2,
+     13.5,
+     21.8
+    ],
+    "is_figurative": [
+     88.7,
+     84.8,
+     91.7
+    ],
+    "entity_precision": [
+     69.3,
+     64.8,
+     73.4
+    ]
+   },
+   "gemma": {
+    "n": 319,
+    "correct": [
+     33.2,
+     28.3,
+     38.6
+    ],
+    "correct_with_noise": [
+     1.9,
+     0.9,
+     4.0
+    ],
+    "partly_correct": [
+     2.5,
+     1.3,
+     4.9
+    ],
+    "wrong": [
+     62.4,
+     56.9,
+     67.5
+    ],
+    "acceptable(correct+noise)": [
+     35.1,
+     30.1,
+     40.5
+    ],
+    "is_figurative": [
+     92.8,
+     89.4,
+     95.1
+    ],
+    "entity_precision": [
+     91.7,
+     88.7,
+     93.9
+    ]
+   },
+   "judge_kappa_meaning4": {
+    "kappa": 0.303,
+    "agree": 0.63,
+    "n": 319
+   },
+   "judge_kappa_meaning3": {
+    "kappa": 0.304,
+    "agree": 0.633,
+    "n": 319
+   },
+   "judge_kappa_figurative": {
+    "kappa": 0.424,
+    "agree": 0.903,
+    "n": 319
+   },
+   "both_agree": {
+    "n": 202,
+    "share_of_entries": [
+     63.3,
+     57.9,
+     68.4
+    ],
+    "clean": [
+     16.8,
+     12.3,
+     22.6
+    ],
+    "noisy": [
+     3.5,
+     1.7,
+     7.0
+    ],
+    "wrong": [
+     79.7,
+     73.6,
+     84.7
+    ]
+   }
+  }
+ },
+ "qwen_cross_server_agreement": {
+  "en": {
+   "n": 10222,
+   "meaning_agree": 0.978,
+   "figurative_agree": 0.988
+  },
+  "zh": {
+   "n": 203,
+   "meaning_agree": 0.995,
+   "figurative_agree": 0.99
+  },
+  "hi": {
+   "n": 2383,
+   "meaning_agree": 0.724,
+   "figurative_agree": 0.985
+  }
+ },
+ "quality_flags": {
+  "en": {
+   "meaning_wrong": [
+    4.3,
+    4.0,
+    4.5
+   ],
+   "not_figurative": [
+    12.2,
+    11.7,
+    12.6
+   ]
+  },
+  "zh": {
+   "meaning_wrong": [
+    2.6,
+    2.4,
+    2.8
+   ],
+   "not_figurative": [
+    0.6,
+    0.5,
+    0.7
+   ]
+  },
+  "hi": {
+   "meaning_wrong": [
+    12.9,
+    12.4,
+    13.4
+   ],
+   "not_figurative": [
+    0.5,
+    0.4,
+    0.6
+   ]
+  },
+  "ar": {
+   "meaning_wrong": [
+    7.5,
+    7.0,
+    8.0
+   ],
+   "not_figurative": [
+    1.3,
+    1.1,
+    1.5
+   ]
+  }
+ },
+ "vs_claude_audit_200": {
+  "en": {
+   "qwen27b": {
+    "kappa": 0.178,
+    "agree": 0.67,
+    "n": 200
+   },
+   "qwen27b_figurative": {
+    "kappa": 0.356,
+    "agree": 0.64,
+    "n": 200
+   },
+   "gemma": {
+    "kappa": 0.12,
+    "agree": 0.785,
+    "n": 200
+   },
+   "gemma_figurative": {
+    "kappa": 0.295,
+    "agree": 0.65,
+    "n": 200
+   }
+  },
+  "zh": {
+   "qwen27b": {
+    "kappa": 0.154,
+    "agree": 0.54,
+    "n": 200
+   },
+   "qwen27b_figurative": {
+    "kappa": 0.03,
+    "agree": 0.52,
+    "n": 200
+   },
+   "gemma": {
+    "kappa": 0.455,
+    "agree": 0.693,
+    "n": 199
+   },
+   "gemma_figurative": {
+    "kappa": -0.008,
+    "agree": 0.508,
+    "n": 199
+   }
+  },
+  "hi": {
+   "qwen27b": {
+    "kappa": 0.195,
+    "agree": 0.515,
+    "n": 200
+   },
+   "qwen27b_figurative": {
+    "kappa": 0.042,
+    "agree": 0.76,
+    "n": 200
+   },
+   "gemma": {
+    "kappa": 0.137,
+    "agree": 0.505,
+    "n": 200
+   },
+   "gemma_figurative": {
+    "kappa": 0.008,
+    "agree": 0.755,
+    "n": 200
+   }
+  },
+  "ar": {
+   "qwen27b": {
+    "kappa": 0.105,
+    "agree": 0.37,
+    "n": 200
+   },
+   "qwen27b_figurative": {
+    "kappa": 0.098,
+    "agree": 0.845,
+    "n": 200
+   },
+   "gemma": {
+    "kappa": 0.114,
+    "agree": 0.38,
+    "n": 200
+   },
+   "gemma_figurative": {
+    "kappa": 0.04,
+    "agree": 0.835,
+    "n": 200
+   }
+  }
+ },
+ "entity_type_cramers_v": {
+  "all": {
+   "n_mentions": {
+    "en": 18771,
+    "zh": 47722,
+    "hi": 42181,
+    "ar": 17049
+   },
+   "p": 0.0,
+   "cramers_v": 0.2049,
+   "pairwise_cramers_v": {
+    "en-zh": 0.1518,
+    "en-hi": 0.3225,
+    "en-ar": 0.2677,
+    "zh-hi": 0.3662,
+    "zh-ar": 0.2406,
+    "hi-ar": 0.1435
+   }
+  },
+  "unflagged": {
+   "n_mentions": {
+    "en": 16957,
+    "zh": 46245,
+    "hi": 37027,
+    "ar": 15712
+   },
+   "p": 0.0,
+   "cramers_v": 0.2046,
+   "pairwise_cramers_v": {
+    "en-zh": 0.1523,
+    "en-hi": 0.3199,
+    "en-ar": 0.2632,
+    "zh-hi": 0.3657,
+    "zh-ar": 0.237,
+    "hi-ar": 0.1488
+   }
+  }
+ },
+ "human_calibration": "no returned workbooks yet"
+}
