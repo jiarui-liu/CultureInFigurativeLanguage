@@ -1,0 +1,1034 @@
+{
+ "corpora_scanned": {
+  "ar:idiom": {
+   "hf_dir": "data/train_ar_untagged",
+   "docs": 410669,
+   "chars": 3139027736,
+   "files": 21
+  },
+  "hi:random": {
+   "hf_dir": "data/train_hi_unfiltered",
+   "docs": 1097827,
+   "chars": 2158475914,
+   "files": 56
+  },
+  "hi:idiom": {
+   "hf_dir": "data/train_hi_untagged",
+   "docs": 338035,
+   "chars": 2235495702,
+   "files": 17
+  },
+  "ar:random": {
+   "hf_dir": "data/train_ar_unfiltered",
+   "docs": 1339246,
+   "chars": 3669249877,
+   "files": 67
+  },
+  "zh:idiom": {
+   "hf_dir": "data/train_zh_untagged",
+   "docs": 3744423,
+   "chars": 11945471952,
+   "files": 188
+  },
+  "zh:random": {
+   "hf_dir": "data/train_zh_unfiltered",
+   "docs": 5626010,
+   "chars": 15216431531,
+   "files": 284
+  }
+ },
+ "sets": {
+  "idiomatlas_mc_ar_unseen": {
+   "lang": "ar",
+   "kind": "idiom",
+   "n": 600,
+   "examples": [
+    {
+     "raw": "عافية ربي",
+     "idiom_exact_docs": 7,
+     "idiom_loose_docs": 7,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "زَفَّ رَأْلُهُ",
+     "idiom_exact_docs": 6,
+     "idiom_loose_docs": 6,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "حُمَارْ شُغْلْ",
+     "idiom_exact_docs": 38,
+     "idiom_loose_docs": 38,
+     "random_exact_docs": 24,
+     "random_loose_docs": 24
+    },
+    {
+     "raw": "غاب وجاب",
+     "idiom_exact_docs": 3,
+     "idiom_loose_docs": 3,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "جاب العيد",
+     "idiom_exact_docs": 18,
+     "idiom_loose_docs": 18,
+     "random_exact_docs": 4,
+     "random_loose_docs": 4
+    },
+    {
+     "raw": "حِجَّهْ وِحَاجَهْ",
+     "idiom_exact_docs": 2,
+     "idiom_loose_docs": 2,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "طَوِّلْ رُوحُهْ",
+     "idiom_exact_docs": 4,
+     "idiom_loose_docs": 4,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "صَهْ صَاقِعُ",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    }
+   ],
+   "idiom_exact_items": 45,
+   "idiom_loose_items": 70,
+   "random_exact_items": 33,
+   "random_loose_items": 41,
+   "any_exact_items": 47,
+   "any_loose_items": 73,
+   "idiom_exact_docs_median_among_hits": 6,
+   "idiom_exact_docs_total": 4669,
+   "random_exact_docs_median_among_hits": 5,
+   "random_exact_docs_total": 6563,
+   "items_with_>=2_words": 600,
+   "any_exact_items_with_>=2_words": 47,
+   "idiom_exact_share": 0.075,
+   "idiom_loose_share": 0.1167,
+   "random_exact_share": 0.055,
+   "random_loose_share": 0.0683,
+   "any_exact_share": 0.0783,
+   "any_loose_share": 0.1217
+  },
+  "idiomatlas_mc_hi_unseen": {
+   "lang": "hi",
+   "kind": "idiom",
+   "n": 600,
+   "examples": [
+    {
+     "raw": "बकरे की माँ कब तक खैर मनाएगी",
+     "idiom_exact_docs": 122,
+     "idiom_loose_docs": 148,
+     "random_exact_docs": 1,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "गोसाईं",
+     "idiom_exact_docs": 345,
+     "idiom_loose_docs": 345,
+     "random_exact_docs": 110,
+     "random_loose_docs": 110
+    }
+   ],
+   "idiom_exact_items": 2,
+   "idiom_loose_items": 41,
+   "random_exact_items": 2,
+   "random_loose_items": 24,
+   "any_exact_items": 2,
+   "any_loose_items": 44,
+   "idiom_exact_docs_median_among_hits": 233.5,
+   "idiom_exact_docs_total": 467,
+   "random_exact_docs_median_among_hits": 55.5,
+   "random_exact_docs_total": 111,
+   "items_with_>=2_words": 595,
+   "any_exact_items_with_>=2_words": 1,
+   "idiom_exact_share": 0.0033,
+   "idiom_loose_share": 0.0683,
+   "random_exact_share": 0.0033,
+   "random_loose_share": 0.04,
+   "any_exact_share": 0.0033,
+   "any_loose_share": 0.0733
+  },
+  "idiomatlas_mc_zh_unseen": {
+   "lang": "zh",
+   "kind": "idiom",
+   "n": 78,
+   "examples": [
+    {
+     "raw": "投卵击石",
+     "idiom_exact_docs": 0,
+     "idiom_loose_docs": 0,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "日月经天，江河行地",
+     "idiom_exact_docs": 157,
+     "idiom_loose_docs": 165,
+     "random_exact_docs": 127,
+     "random_loose_docs": 132
+    }
+   ],
+   "idiom_exact_items": 1,
+   "idiom_loose_items": 2,
+   "random_exact_items": 2,
+   "random_loose_items": 4,
+   "any_exact_items": 2,
+   "any_loose_items": 4,
+   "idiom_exact_docs_median_among_hits": 157,
+   "idiom_exact_docs_total": 157,
+   "random_exact_docs_median_among_hits": 64.5,
+   "random_exact_docs_total": 129,
+   "items_with_>=2_words": 0,
+   "any_exact_items_with_>=2_words": 0,
+   "idiom_exact_share": 0.0128,
+   "idiom_loose_share": 0.0256,
+   "random_exact_share": 0.0256,
+   "random_loose_share": 0.0513,
+   "any_exact_share": 0.0256,
+   "any_loose_share": 0.0513
+  },
+  "midi_ar": {
+   "lang": "ar",
+   "kind": "idiom",
+   "n": 399,
+   "examples": [
+    {
+     "raw": "أمه داعية عليه",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "إيد ورا وإيد قدام",
+     "idiom_exact_docs": 3,
+     "idiom_loose_docs": 5,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "إيده مفتوحة",
+     "idiom_exact_docs": 99,
+     "idiom_loose_docs": 99,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "إيده ناشفة",
+     "idiom_exact_docs": 2,
+     "idiom_loose_docs": 2,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "إيده ورجله",
+     "idiom_exact_docs": 25,
+     "idiom_loose_docs": 25,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "إيدي على كتفك",
+     "idiom_exact_docs": 20,
+     "idiom_loose_docs": 20,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "ابن أمه",
+     "idiom_exact_docs": 198,
+     "idiom_loose_docs": 198,
+     "random_exact_docs": 32,
+     "random_loose_docs": 32
+    },
+    {
+     "raw": "ابن ناس",
+     "idiom_exact_docs": 64,
+     "idiom_loose_docs": 64,
+     "random_exact_docs": 9,
+     "random_loose_docs": 9
+    }
+   ],
+   "idiom_exact_items": 208,
+   "idiom_loose_items": 222,
+   "random_exact_items": 169,
+   "random_loose_items": 183,
+   "any_exact_items": 222,
+   "any_loose_items": 236,
+   "idiom_exact_docs_median_among_hits": 20.0,
+   "idiom_exact_docs_total": 267823,
+   "random_exact_docs_median_among_hits": 7,
+   "random_exact_docs_total": 349417,
+   "items_with_>=2_words": 382,
+   "any_exact_items_with_>=2_words": 206,
+   "idiom_exact_share": 0.5213,
+   "idiom_loose_share": 0.5564,
+   "random_exact_share": 0.4236,
+   "random_loose_share": 0.4586,
+   "any_exact_share": 0.5564,
+   "any_loose_share": 0.5915
+  },
+  "midi_ar:sentence": {
+   "lang": "ar",
+   "kind": "text",
+   "n": 399,
+   "examples": [],
+   "idiom_exact_items": 0,
+   "idiom_loose_items": 0,
+   "random_exact_items": 0,
+   "random_loose_items": 0,
+   "any_exact_items": 0,
+   "any_loose_items": 0,
+   "idiom_exact_docs_median_among_hits": 0,
+   "idiom_exact_docs_total": 0,
+   "random_exact_docs_median_among_hits": 0,
+   "random_exact_docs_total": 0,
+   "idiom_exact_share": 0.0,
+   "idiom_loose_share": 0.0,
+   "random_exact_share": 0.0,
+   "random_loose_share": 0.0,
+   "any_exact_share": 0.0,
+   "any_loose_share": 0.0
+  },
+  "midi_zh": {
+   "lang": "zh",
+   "kind": "idiom",
+   "n": 300,
+   "examples": [
+    {
+     "raw": "一箭双雕",
+     "idiom_exact_docs": 2411,
+     "idiom_loose_docs": 2411,
+     "random_exact_docs": 1267,
+     "random_loose_docs": 1267
+    },
+    {
+     "raw": "一马当先",
+     "idiom_exact_docs": 2862,
+     "idiom_loose_docs": 2862,
+     "random_exact_docs": 1654,
+     "random_loose_docs": 1654
+    },
+    {
+     "raw": "不以为然",
+     "idiom_exact_docs": 8890,
+     "idiom_loose_docs": 8890,
+     "random_exact_docs": 4930,
+     "random_loose_docs": 4930
+    },
+    {
+     "raw": "不伦不类",
+     "idiom_exact_docs": 3154,
+     "idiom_loose_docs": 3154,
+     "random_exact_docs": 1723,
+     "random_loose_docs": 1723
+    },
+    {
+     "raw": "不劳而获",
+     "idiom_exact_docs": 6452,
+     "idiom_loose_docs": 6452,
+     "random_exact_docs": 3452,
+     "random_loose_docs": 3452
+    },
+    {
+     "raw": "不可救药",
+     "idiom_exact_docs": 1620,
+     "idiom_loose_docs": 1620,
+     "random_exact_docs": 945,
+     "random_loose_docs": 945
+    },
+    {
+     "raw": "不堪回首",
+     "idiom_exact_docs": 1297,
+     "idiom_loose_docs": 1297,
+     "random_exact_docs": 920,
+     "random_loose_docs": 920
+    },
+    {
+     "raw": "不寒而栗",
+     "idiom_exact_docs": 1587,
+     "idiom_loose_docs": 1587,
+     "random_exact_docs": 865,
+     "random_loose_docs": 865
+    }
+   ],
+   "idiom_exact_items": 300,
+   "idiom_loose_items": 300,
+   "random_exact_items": 299,
+   "random_loose_items": 299,
+   "any_exact_items": 300,
+   "any_loose_items": 300,
+   "idiom_exact_docs_median_among_hits": 1575.5,
+   "idiom_exact_docs_total": 1112832,
+   "random_exact_docs_median_among_hits": 947,
+   "random_exact_docs_total": 745221,
+   "items_with_>=2_words": 0,
+   "any_exact_items_with_>=2_words": 0,
+   "idiom_exact_share": 1.0,
+   "idiom_loose_share": 1.0,
+   "random_exact_share": 0.9967,
+   "random_loose_share": 0.9967,
+   "any_exact_share": 1.0,
+   "any_loose_share": 1.0
+  },
+  "midi_zh:sentence": {
+   "lang": "zh",
+   "kind": "text",
+   "n": 300,
+   "examples": [
+    {
+     "raw": "人工智能的研究方兴未艾",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 3,
+     "random_loose_docs": 3
+    }
+   ],
+   "idiom_exact_items": 1,
+   "idiom_loose_items": 1,
+   "random_exact_items": 1,
+   "random_loose_items": 1,
+   "any_exact_items": 1,
+   "any_loose_items": 1,
+   "idiom_exact_docs_median_among_hits": 1,
+   "idiom_exact_docs_total": 1,
+   "random_exact_docs_median_among_hits": 3,
+   "random_exact_docs_total": 3,
+   "idiom_exact_share": 0.0033,
+   "idiom_loose_share": 0.0033,
+   "random_exact_share": 0.0033,
+   "random_loose_share": 0.0033,
+   "any_exact_share": 0.0033,
+   "any_loose_share": 0.0033
+  },
+  "hindi_proverbs": {
+   "lang": "hi",
+   "kind": "idiom",
+   "n": 2043,
+   "examples": [
+    {
+     "raw": "पहाड़ टूट पड़ना",
+     "idiom_exact_docs": 5,
+     "idiom_loose_docs": 5,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "जाल में फँसना",
+     "idiom_exact_docs": 20,
+     "idiom_loose_docs": 20,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "आँख होना",
+     "idiom_exact_docs": 4,
+     "idiom_loose_docs": 4,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "गूलर का फूल होना",
+     "idiom_exact_docs": 15,
+     "idiom_loose_docs": 40,
+     "random_exact_docs": 1,
+     "random_loose_docs": 3
+    },
+    {
+     "raw": "फलना-फूलना",
+     "idiom_exact_docs": 56,
+     "idiom_loose_docs": 56,
+     "random_exact_docs": 26,
+     "random_loose_docs": 26
+    },
+    {
+     "raw": "उड़ती चिड़िया पहचानना",
+     "idiom_exact_docs": 26,
+     "idiom_loose_docs": 26,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "मन में बसना",
+     "idiom_exact_docs": 3,
+     "idiom_loose_docs": 3,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "कागजी घोड़े दौड़ाना",
+     "idiom_exact_docs": 7,
+     "idiom_loose_docs": 7,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    }
+   ],
+   "idiom_exact_items": 1514,
+   "idiom_loose_items": 1647,
+   "random_exact_items": 944,
+   "random_loose_items": 1190,
+   "any_exact_items": 1553,
+   "any_loose_items": 1683,
+   "idiom_exact_docs_median_among_hits": 6.0,
+   "idiom_exact_docs_total": 89951,
+   "random_exact_docs_median_among_hits": 2.0,
+   "random_exact_docs_total": 10941,
+   "items_with_>=2_words": 2043,
+   "any_exact_items_with_>=2_words": 1553,
+   "idiom_exact_share": 0.7411,
+   "idiom_loose_share": 0.8062,
+   "random_exact_share": 0.4621,
+   "random_loose_share": 0.5825,
+   "any_exact_share": 0.7602,
+   "any_loose_share": 0.8238
+  },
+  "xiehouyu_zh": {
+   "lang": "zh",
+   "kind": "idiom",
+   "n": 2000,
+   "examples": [
+    {
+     "raw": "刘备三顾茅庐",
+     "idiom_exact_docs": 368,
+     "idiom_loose_docs": 373,
+     "random_exact_docs": 261,
+     "random_loose_docs": 263
+    },
+    {
+     "raw": "浴室里的灯",
+     "idiom_exact_docs": 0,
+     "idiom_loose_docs": 0,
+     "random_exact_docs": 3,
+     "random_loose_docs": 3
+    },
+    {
+     "raw": "母鸡带小鸡",
+     "idiom_exact_docs": 37,
+     "idiom_loose_docs": 37,
+     "random_exact_docs": 23,
+     "random_loose_docs": 23
+    },
+    {
+     "raw": "糯米粑粑",
+     "idiom_exact_docs": 30,
+     "idiom_loose_docs": 30,
+     "random_exact_docs": 16,
+     "random_loose_docs": 16
+    },
+    {
+     "raw": "没娘的孩子",
+     "idiom_exact_docs": 24,
+     "idiom_loose_docs": 24,
+     "random_exact_docs": 19,
+     "random_loose_docs": 19
+    },
+    {
+     "raw": "胳膊肘子",
+     "idiom_exact_docs": 6,
+     "idiom_loose_docs": 6,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "大人不记小人过",
+     "idiom_exact_docs": 5,
+     "idiom_loose_docs": 5,
+     "random_exact_docs": 4,
+     "random_loose_docs": 4
+    },
+    {
+     "raw": "白骨精化美女",
+     "idiom_exact_docs": 0,
+     "idiom_loose_docs": 0,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    }
+   ],
+   "idiom_exact_items": 256,
+   "idiom_loose_items": 307,
+   "random_exact_items": 300,
+   "random_loose_items": 353,
+   "any_exact_items": 338,
+   "any_loose_items": 397,
+   "idiom_exact_docs_median_among_hits": 6.0,
+   "idiom_exact_docs_total": 30430,
+   "random_exact_docs_median_among_hits": 3.0,
+   "random_exact_docs_total": 21029,
+   "items_with_>=2_words": 0,
+   "any_exact_items_with_>=2_words": 0,
+   "idiom_exact_share": 0.128,
+   "idiom_loose_share": 0.1535,
+   "random_exact_share": 0.15,
+   "random_loose_share": 0.1765,
+   "any_exact_share": 0.169,
+   "any_loose_share": 0.1985
+  },
+  "mabl_hi": {
+   "lang": "hi",
+   "kind": "text",
+   "n": 1000,
+   "examples": [
+    {
+     "raw": "जीवन एक सत्य है।",
+     "idiom_exact_docs": 6,
+     "idiom_loose_docs": 6,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "जीवन एक सपना है।",
+     "idiom_exact_docs": 3,
+     "idiom_loose_docs": 3,
+     "random_exact_docs": 3,
+     "random_loose_docs": 3
+    },
+    {
+     "raw": "जीवन फूलों की सेज नहीं है।",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "यह एक खुली किताब है।",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    },
+    {
+     "raw": "मेरा जीवन नर्क के समान है।",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 0,
+     "random_loose_docs": 0
+    },
+    {
+     "raw": "डॉक्टर भगवान का रूप होता है। ",
+     "idiom_exact_docs": 1,
+     "idiom_loose_docs": 1,
+     "random_exact_docs": 2,
+     "random_loose_docs": 2
+    },
+    {
+     "raw": "दीवारों के भी कान होते हैं ।",
+     "idiom_exact_docs": 350,
+     "idiom_loose_docs": 350,
+     "random_exact_docs": 7,
+     "random_loose_docs": 7
+    },
+    {
+     "raw": "मई की धूप में चार कि मी की पैदल यात्रा करने के कारण मैं तो थककर चूर हो गया हूँ।",
+     "idiom_exact_docs": 0,
+     "idiom_loose_docs": 0,
+     "random_exact_docs": 1,
+     "random_loose_docs": 1
+    }
+   ],
+   "idiom_exact_items": 13,
+   "idiom_loose_items": 13,
+   "random_exact_items": 7,
+   "random_loose_items": 7,
+   "any_exact_items": 15,
+   "any_loose_items": 15,
+   "idiom_exact_docs_median_among_hits": 1,
+   "idiom_exact_docs_total": 375,
+   "random_exact_docs_median_among_hits": 1,
+   "random_exact_docs_total": 16,
+   "idiom_exact_share": 0.013,
+   "idiom_loose_share": 0.013,
+   "random_exact_share": 0.007,
+   "random_loose_share": 0.007,
+   "any_exact_share": 0.015,
+   "any_loose_share": 0.015
+  },
+  "ar_figurative": {
+   "lang": "ar",
+   "kind": "text",
+   "n": 314,
+   "examples": [],
+   "idiom_exact_items": 0,
+   "idiom_loose_items": 0,
+   "random_exact_items": 0,
+   "random_loose_items": 0,
+   "any_exact_items": 0,
+   "any_loose_items": 0,
+   "idiom_exact_docs_median_among_hits": 0,
+   "idiom_exact_docs_total": 0,
+   "random_exact_docs_median_among_hits": 0,
+   "random_exact_docs_total": 0,
+   "idiom_exact_share": 0.0,
+   "idiom_loose_share": 0.0,
+   "random_exact_share": 0.0,
+   "random_loose_share": 0.0,
+   "any_exact_share": 0.0,
+   "any_loose_share": 0.0
+  }
+ },
+ "contrasts_after_dropping": {
+  "idiomatlas_mc_ar_unseen | drop exact hits": {
+   "n_kept": 553,
+   "n_dropped": 47,
+   "Idiom-Text - Random-CPT": {
+    "delta": 2.9,
+    "ci95": [
+     -0.2,
+     6.0
+    ],
+    "mcnemar_p": 0.0846
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -4.0,
+    "ci95": [
+     -7.6,
+     -0.4
+    ],
+    "mcnemar_p": 0.0448
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -6.9,
+    "ci95": [
+     -9.9,
+     -4.0
+    ],
+    "mcnemar_p": 0.0
+   }
+  },
+  "idiomatlas_mc_ar_unseen | drop loose hits": {
+   "n_kept": 527,
+   "n_dropped": 73,
+   "Idiom-Text - Random-CPT": {
+    "delta": 2.7,
+    "ci95": [
+     -0.6,
+     5.9
+    ],
+    "mcnemar_p": 0.1249
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -4.0,
+    "ci95": [
+     -7.8,
+     -0.2
+    ],
+    "mcnemar_p": 0.0482
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -6.6,
+    "ci95": [
+     -9.7,
+     -3.6
+    ],
+    "mcnemar_p": 0.0
+   }
+  },
+  "idiomatlas_mc_hi_unseen | drop exact hits": {
+   "n_kept": 598,
+   "n_dropped": 2,
+   "Idiom-Text - Random-CPT": {
+    "delta": 0.8,
+    "ci95": [
+     -1.8,
+     3.5
+    ],
+    "mcnemar_p": 0.6201
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.5,
+    "ci95": [
+     -2.0,
+     4.8
+    ],
+    "mcnemar_p": 0.4437
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.7,
+    "ci95": [
+     -2.2,
+     3.5
+    ],
+    "mcnemar_p": 0.731
+   }
+  },
+  "idiomatlas_mc_hi_unseen | drop loose hits": {
+   "n_kept": 556,
+   "n_dropped": 44,
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.4,
+    "ci95": [
+     -1.3,
+     4.1
+    ],
+    "mcnemar_p": 0.3742
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 1.8,
+    "ci95": [
+     -1.8,
+     5.4
+    ],
+    "mcnemar_p": 0.3729
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 0.4,
+    "ci95": [
+     -2.5,
+     3.2
+    ],
+    "mcnemar_p": 0.9036
+   }
+  },
+  "idiomatlas_mc_zh_unseen | drop exact hits": {
+   "n_kept": 76,
+   "n_dropped": 2,
+   "Idiom-Text - Random-CPT": {
+    "delta": 0.0,
+    "ci95": [
+     -6.6,
+     6.6
+    ],
+    "mcnemar_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.9,
+    "ci95": [
+     -2.6,
+     10.5
+    ],
+    "mcnemar_p": 0.4531
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 3.9,
+    "ci95": [
+     -1.3,
+     10.5
+    ],
+    "mcnemar_p": 0.375
+   }
+  },
+  "idiomatlas_mc_zh_unseen | drop loose hits": {
+   "n_kept": 74,
+   "n_dropped": 4,
+   "Idiom-Text - Random-CPT": {
+    "delta": 0.0,
+    "ci95": [
+     -6.8,
+     6.8
+    ],
+    "mcnemar_p": 1.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 4.1,
+    "ci95": [
+     -2.7,
+     10.8
+    ],
+    "mcnemar_p": 0.4531
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 4.1,
+    "ci95": [
+     -1.4,
+     10.8
+    ],
+    "mcnemar_p": 0.375
+   }
+  },
+  "midi_ar | drop exact hits": {
+   "n_kept": 177,
+   "n_dropped": 222,
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.1,
+    "ci95": [
+     -3.4,
+     5.6
+    ],
+    "mcnemar_p": 0.8036
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.4,
+    "ci95": [
+     -1.7,
+     8.5
+    ],
+    "mcnemar_p": 0.2632
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 2.3,
+    "ci95": [
+     -1.1,
+     5.6
+    ],
+    "mcnemar_p": 0.3438
+   }
+  },
+  "midi_ar | drop loose hits": {
+   "n_kept": 163,
+   "n_dropped": 236,
+   "Idiom-Text - Random-CPT": {
+    "delta": 1.2,
+    "ci95": [
+     -3.1,
+     5.5
+    ],
+    "mcnemar_p": 0.7905
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 3.1,
+    "ci95": [
+     -1.8,
+     8.0
+    ],
+    "mcnemar_p": 0.3323
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": 1.8,
+    "ci95": [
+     -1.8,
+     5.5
+    ],
+    "mcnemar_p": 0.5078
+   }
+  },
+  "midi_zh | drop exact hits": {
+   "n_kept": 0,
+   "n_dropped": 300
+  },
+  "midi_zh | drop loose hits": {
+   "n_kept": 0,
+   "n_dropped": 300
+  },
+  "hindi_proverbs | drop exact hits": {
+   "n_kept": 490,
+   "n_dropped": 1553,
+   "Idiom-Text - Random-CPT": {
+    "delta": 9.0,
+    "ci95": [
+     5.3,
+     12.7
+    ],
+    "mcnemar_p": 0.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 6.1,
+    "ci95": [
+     2.4,
+     9.8
+    ],
+    "mcnemar_p": 0.0018
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -2.9,
+    "ci95": [
+     -5.3,
+     -0.4
+    ],
+    "mcnemar_p": 0.0288
+   }
+  },
+  "hindi_proverbs | drop loose hits": {
+   "n_kept": 360,
+   "n_dropped": 1683,
+   "Idiom-Text - Random-CPT": {
+    "delta": 8.6,
+    "ci95": [
+     4.2,
+     13.1
+    ],
+    "mcnemar_p": 0.0004
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": 6.1,
+    "ci95": [
+     1.7,
+     10.6
+    ],
+    "mcnemar_p": 0.0103
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -2.5,
+    "ci95": [
+     -5.6,
+     0.6
+    ],
+    "mcnemar_p": 0.1496
+   }
+  },
+  "xiehouyu_zh | drop exact hits": {
+   "n_kept": 1662,
+   "n_dropped": 338,
+   "Idiom-Text - Random-CPT": {
+    "delta": -0.4,
+    "ci95": [
+     -1.5,
+     0.8
+    ],
+    "mcnemar_p": 0.6101
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -2.2,
+    "ci95": [
+     -3.7,
+     -0.7
+    ],
+    "mcnemar_p": 0.0061
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -1.8,
+    "ci95": [
+     -3.1,
+     -0.5
+    ],
+    "mcnemar_p": 0.0113
+   }
+  },
+  "xiehouyu_zh | drop loose hits": {
+   "n_kept": 1603,
+   "n_dropped": 397,
+   "Idiom-Text - Random-CPT": {
+    "delta": -0.4,
+    "ci95": [
+     -1.5,
+     0.7
+    ],
+    "mcnemar_p": 0.5984
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "delta": -2.4,
+    "ci95": [
+     -3.9,
+     -0.9
+    ],
+    "mcnemar_p": 0.0031
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "delta": -2.0,
+    "ci95": [
+     -3.4,
+     -0.7
+    ],
+    "mcnemar_p": 0.0055
+   }
+  }
+ },
+ "notes": {
+  "idiomatlas_unseen_definition": "build_idiomatlas_mc.py: unseen = KB idiom absent from every scanned document; 'ever' = kept idiom-corpus counts plus (zh) mC4 counts and (ar) pool-scan counts; for hi, 'ever' is only the kept idiom corpus, so the Random-CPT documents were not part of the definition.",
+  "idiom_plus_meaning": "Idiom+Meaning trains on the Idiom-Text documents plus meaning blocks; blocks list only matched KB idioms, so an idiom absent from the Idiom-Text documents is also absent from its blocks.",
+  "not_scanned": "Culture-CPT corpora (not in the HF release).",
+  "zh_unseen_rare_char_share": {
+   "n": 78,
+   "with_non_gb2312_char": 62,
+   "comment": "most Chinese unseen items carry a rare or corrupted character (e.g. 金鴗擘海 for 金翅擘海, 银样閖枪头 for 银样镴枪头), i.e. they are unseen largely because the KB spelling is non-standard"
+  }
+ }
+}

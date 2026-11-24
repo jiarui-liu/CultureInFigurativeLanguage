@@ -1,0 +1,2702 @@
+{
+ "sets": {
+  "idiomatlas_mc_ar_seen": {
+   "lang": "ar",
+   "n": 600,
+   "idiom_has_block_share": 1.0,
+   "gold_containment": {
+    "n_with_block_text": 600,
+    "mean": 0.994,
+    "median": 1.0,
+    "share_ge_0.9": 0.992,
+    "share_lt_0.5": 0.007
+   },
+   "all": {
+    "n": 600,
+    "acc": {
+     "Base": 42.0,
+     "Random-CPT": 43.2,
+     "Idiom-Text": 46.7,
+     "Idiom+Meaning": 68.3
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     21.7,
+     18.0,
+     25.3
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.2,
+     20.8,
+     29.5
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.5,
+     0.5,
+     6.5
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      0.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 45.5,
+      "Random-CPT": 45.0,
+      "Idiom-Text": 49.0,
+      "Idiom+Meaning": 71.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      22.5,
+      16.5,
+      29.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      26.5,
+      19.0,
+      34.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      4.0,
+      -1.5,
+      9.5
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 40.0,
+      "Random-CPT": 41.0,
+      "Idiom-Text": 46.0,
+      "Idiom+Meaning": 69.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      23.5,
+      17.0,
+      30.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      28.5,
+      21.0,
+      36.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      5.0,
+      0.5,
+      9.5
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 40.5,
+      "Random-CPT": 43.5,
+      "Idiom-Text": 45.0,
+      "Idiom+Meaning": 64.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      19.0,
+      12.5,
+      25.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      20.5,
+      13.0,
+      28.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      1.5,
+      -4.0,
+      6.5
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 4
+   },
+   "containment_ge_0.9": {
+    "n": 595,
+    "acc": {
+     "Base": 42.2,
+     "Random-CPT": 43.4,
+     "Idiom-Text": 46.7,
+     "Idiom+Meaning": 68.4
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     21.7,
+     18.0,
+     25.4
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.0,
+     20.7,
+     29.2
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.4,
+     0.3,
+     6.2
+    ]
+   },
+   "idiom_without_block": {
+    "n": 0
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 4
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 595,
+    "acc": {
+     "Base": 42.2,
+     "Random-CPT": 43.4,
+     "Idiom-Text": 46.7,
+     "Idiom+Meaning": 68.4
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     21.7,
+     18.0,
+     25.4
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.0,
+     20.7,
+     29.4
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.4,
+     0.3,
+     6.4
+    ]
+   },
+   "option_only_all": {
+    "Idiom+Meaning - Random-CPT": {
+     "gain_full": 25.2,
+     "gain_option_only": [
+      4.7,
+      1.0,
+      8.3
+     ],
+     "gain_needing_idiom": [
+      20.5,
+      16.2,
+      25.0
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "gain_full": 21.7,
+     "gain_option_only": [
+      4.7,
+      1.5,
+      7.8
+     ],
+     "gain_needing_idiom": [
+      17.0,
+      12.8,
+      21.2
+     ]
+    }
+   },
+   "option_only_by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 25.6,
+      "gain_option_only": [
+       7.8,
+       0.0,
+       16.7
+      ],
+      "gain_needing_idiom": [
+       17.8,
+       6.7,
+       28.9
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 26.7,
+      "gain_option_only": [
+       3.3,
+       -4.4,
+       11.1
+      ],
+      "gain_needing_idiom": [
+       23.3,
+       12.2,
+       34.4
+      ]
+     }
+    },
+    ">=1_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 25.1,
+      "gain_option_only": [
+       4.1,
+       0.2,
+       8.0
+      ],
+      "gain_needing_idiom": [
+       21.0,
+       16.1,
+       25.9
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 20.8,
+      "gain_option_only": [
+       4.9,
+       1.4,
+       8.4
+      ],
+      "gain_needing_idiom": [
+       15.9,
+       11.4,
+       20.4
+      ]
+     }
+    }
+   },
+   "distractor_idioms_with_block": {
+    "mean_of_3": 1.44,
+    "share_items_all3": 0.098,
+    "share_items_none": 0.15,
+    "distractor_text_containment_mean": 0.997
+   },
+   "by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "n": 90,
+     "acc": {
+      "Base": 42.2,
+      "Random-CPT": 44.4,
+      "Idiom-Text": 43.3,
+      "Idiom+Meaning": 70.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      26.7,
+      16.7,
+      36.7
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      25.6,
+      15.5,
+      36.7
+     ],
+     "Idiom-Text - Random-CPT": [
+      -1.1,
+      -10.0,
+      6.7
+     ]
+    },
+    "1-2_of_3_glossed": {
+     "n": 451,
+     "acc": {
+      "Base": 42.6,
+      "Random-CPT": 44.1,
+      "Idiom-Text": 48.8,
+      "Idiom+Meaning": 70.1
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      21.3,
+      17.1,
+      25.7
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      25.9,
+      21.1,
+      31.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      4.7,
+      1.3,
+      8.2
+     ]
+    },
+    "3_of_3_glossed": {
+     "n": 59,
+     "acc": {
+      "Base": 37.3,
+      "Random-CPT": 33.9,
+      "Idiom-Text": 35.6,
+      "Idiom+Meaning": 52.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      16.9,
+      5.1,
+      28.8
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      18.6,
+      5.1,
+      32.2
+     ],
+     "Idiom-Text - Random-CPT": [
+      1.7,
+      -6.8,
+      10.2
+     ]
+    },
+    ">=2_of_3_glossed": {
+     "n": 295,
+     "acc": {
+      "Base": 40.7,
+      "Random-CPT": 41.7,
+      "Idiom-Text": 45.4,
+      "Idiom+Meaning": 64.1
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      18.6,
+      13.6,
+      24.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      22.4,
+      16.3,
+      28.8
+     ],
+     "Idiom-Text - Random-CPT": [
+      3.7,
+      -0.7,
+      8.1
+     ]
+    }
+   }
+  },
+  "idiomatlas_mc_hi_seen": {
+   "lang": "hi",
+   "n": 600,
+   "idiom_has_block_share": 0.998,
+   "gold_containment": {
+    "n_with_block_text": 600,
+    "mean": 0.993,
+    "median": 1.0,
+    "share_ge_0.9": 0.992,
+    "share_lt_0.5": 0.008
+   },
+   "all": {
+    "n": 600,
+    "acc": {
+     "Base": 36.2,
+     "Random-CPT": 50.5,
+     "Idiom-Text": 56.7,
+     "Idiom+Meaning": 75.8
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     19.2,
+     15.8,
+     22.5
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.3,
+     21.7,
+     29.0
+    ],
+    "Idiom-Text - Random-CPT": [
+     6.2,
+     3.3,
+     9.2
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      0.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 34.5,
+      "Random-CPT": 51.0,
+      "Idiom-Text": 59.0,
+      "Idiom+Meaning": 74.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      15.0,
+      10.0,
+      20.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      23.0,
+      16.5,
+      29.5
+     ],
+     "Idiom-Text - Random-CPT": [
+      8.0,
+      3.5,
+      13.0
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 34.5,
+      "Random-CPT": 50.0,
+      "Idiom-Text": 55.5,
+      "Idiom+Meaning": 75.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      20.0,
+      14.5,
+      25.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      25.5,
+      19.0,
+      32.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      5.5,
+      0.5,
+      10.5
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 39.5,
+      "Random-CPT": 50.5,
+      "Idiom-Text": 55.5,
+      "Idiom+Meaning": 78.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      22.5,
+      16.5,
+      29.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      27.5,
+      21.0,
+      34.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      5.0,
+      0.0,
+      10.0
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 5
+   },
+   "containment_ge_0.9": {
+    "n": 595,
+    "acc": {
+     "Base": 36.3,
+     "Random-CPT": 50.3,
+     "Idiom-Text": 56.6,
+     "Idiom+Meaning": 76.0
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     19.3,
+     16.0,
+     22.5
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.7,
+     22.0,
+     29.4
+    ],
+    "Idiom-Text - Random-CPT": [
+     6.4,
+     3.5,
+     9.2
+    ]
+   },
+   "idiom_without_block": {
+    "n": 1
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 4
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 595,
+    "acc": {
+     "Base": 36.3,
+     "Random-CPT": 50.3,
+     "Idiom-Text": 56.6,
+     "Idiom+Meaning": 76.0
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     19.3,
+     16.0,
+     22.7
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.7,
+     22.0,
+     29.4
+    ],
+    "Idiom-Text - Random-CPT": [
+     6.4,
+     3.5,
+     9.2
+    ]
+   },
+   "option_only_all": {
+    "Idiom+Meaning - Random-CPT": {
+     "gain_full": 25.3,
+     "gain_option_only": [
+      17.3,
+      13.5,
+      21.2
+     ],
+     "gain_needing_idiom": [
+      8.0,
+      3.5,
+      12.5
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "gain_full": 19.2,
+     "gain_option_only": [
+      17.3,
+      13.7,
+      21.0
+     ],
+     "gain_needing_idiom": [
+      1.8,
+      -2.5,
+      6.2
+     ]
+    }
+   },
+   "option_only_by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 24.7,
+      "gain_option_only": [
+       22.0,
+       17.1,
+       27.1
+      ],
+      "gain_needing_idiom": [
+       2.7,
+       -2.7,
+       8.1
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 18.2,
+      "gain_option_only": [
+       22.0,
+       17.1,
+       26.8
+      ],
+      "gain_needing_idiom": [
+       -3.8,
+       -9.2,
+       1.6
+      ]
+     }
+    },
+    ">=1_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 26.4,
+      "gain_option_only": [
+       10.0,
+       3.9,
+       15.6
+      ],
+      "gain_needing_idiom": [
+       16.5,
+       9.1,
+       23.8
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 20.8,
+      "gain_option_only": [
+       10.0,
+       4.8,
+       15.6
+      ],
+      "gain_needing_idiom": [
+       10.8,
+       3.9,
+       17.7
+      ]
+     }
+    }
+   },
+   "distractor_idioms_with_block": {
+    "mean_of_3": 0.46,
+    "share_items_all3": 0.002,
+    "share_items_none": 0.615,
+    "distractor_text_containment_mean": 0.996
+   },
+   "by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "n": 369,
+     "acc": {
+      "Base": 37.7,
+      "Random-CPT": 53.9,
+      "Idiom-Text": 60.4,
+      "Idiom+Meaning": 78.6
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      18.2,
+      14.1,
+      22.2
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      24.7,
+      20.1,
+      29.3
+     ],
+     "Idiom-Text - Random-CPT": [
+      6.5,
+      3.0,
+      10.0
+     ]
+    },
+    "1-2_of_3_glossed": {
+     "n": 230,
+     "acc": {
+      "Base": 33.9,
+      "Random-CPT": 44.8,
+      "Idiom-Text": 50.4,
+      "Idiom+Meaning": 71.3
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      20.9,
+      15.2,
+      26.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      26.5,
+      20.4,
+      32.6
+     ],
+     "Idiom-Text - Random-CPT": [
+      5.7,
+      0.9,
+      10.4
+     ]
+    },
+    "3_of_3_glossed": {
+     "n": 1
+    },
+    ">=2_of_3_glossed": {
+     "n": 42,
+     "acc": {
+      "Base": 31.0,
+      "Random-CPT": 50.0,
+      "Idiom-Text": 57.1,
+      "Idiom+Meaning": 71.4
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      14.3,
+      4.8,
+      26.2
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      21.4,
+      9.5,
+      35.7
+     ],
+     "Idiom-Text - Random-CPT": [
+      7.1,
+      -4.8,
+      19.0
+     ]
+    }
+   }
+  },
+  "idiomatlas_mc_zh_seen": {
+   "lang": "zh",
+   "n": 600,
+   "idiom_has_block_share": 1.0,
+   "gold_containment": {
+    "n_with_block_text": 436,
+    "mean": 0.987,
+    "median": 1.0,
+    "share_ge_0.9": 0.979,
+    "share_lt_0.5": 0.009
+   },
+   "all": {
+    "n": 600,
+    "acc": {
+     "Base": 79.0,
+     "Random-CPT": 79.8,
+     "Idiom-Text": 79.2,
+     "Idiom+Meaning": 90.5
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     11.3,
+     8.7,
+     14.2
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     10.7,
+     8.0,
+     13.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     -0.7,
+     -2.2,
+     0.8
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      -1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 72.0,
+      "Random-CPT": 74.0,
+      "Idiom-Text": 74.5,
+      "Idiom+Meaning": 84.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      9.5,
+      5.0,
+      14.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      10.0,
+      5.5,
+      15.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      0.5,
+      -2.5,
+      3.5
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 84.0,
+      "Random-CPT": 85.5,
+      "Idiom-Text": 83.0,
+      "Idiom+Meaning": 95.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      12.5,
+      8.0,
+      17.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      10.0,
+      6.0,
+      14.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      -2.5,
+      -5.0,
+      0.0
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 200,
+     "acc": {
+      "Base": 81.0,
+      "Random-CPT": 80.0,
+      "Idiom-Text": 80.0,
+      "Idiom+Meaning": 92.0
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      12.0,
+      7.5,
+      17.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      12.0,
+      7.5,
+      17.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      0.0,
+      -2.0,
+      2.0
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 168,
+    "acc": {
+     "Base": 68.5,
+     "Random-CPT": 70.2,
+     "Idiom-Text": 71.4,
+     "Idiom+Meaning": 82.1
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     10.7,
+     6.0,
+     16.1
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     11.9,
+     7.1,
+     17.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     1.2,
+     -2.4,
+     4.8
+    ]
+   },
+   "containment_ge_0.9": {
+    "n": 427,
+    "acc": {
+     "Base": 82.9,
+     "Random-CPT": 83.4,
+     "Idiom-Text": 82.0,
+     "Idiom+Meaning": 93.7
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     11.7,
+     8.7,
+     15.0
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     10.3,
+     7.3,
+     13.6
+    ],
+    "Idiom-Text - Random-CPT": [
+     -1.4,
+     -3.0,
+     0.2
+    ]
+   },
+   "idiom_without_block": {
+    "n": 0
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 4
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 427,
+    "acc": {
+     "Base": 82.9,
+     "Random-CPT": 83.4,
+     "Idiom-Text": 82.0,
+     "Idiom+Meaning": 93.7
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     11.7,
+     8.4,
+     15.0
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     10.3,
+     7.3,
+     13.6
+    ],
+    "Idiom-Text - Random-CPT": [
+     -1.4,
+     -3.0,
+     0.2
+    ]
+   },
+   "option_only_all": {
+    "Idiom+Meaning - Random-CPT": {
+     "gain_full": 10.7,
+     "gain_option_only": [
+      0.0,
+      -2.3,
+      2.3
+     ],
+     "gain_needing_idiom": [
+      10.7,
+      7.2,
+      14.2
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "gain_full": 11.3,
+     "gain_option_only": [
+      0.8,
+      -1.7,
+      3.3
+     ],
+     "gain_needing_idiom": [
+      10.5,
+      6.8,
+      14.2
+     ]
+    }
+   },
+   "option_only_by_distractor_exposure": {
+    "0_of_3_glossed": null,
+    ">=1_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 10.7,
+      "gain_option_only": [
+       0.0,
+       -2.3,
+       2.3
+      ],
+      "gain_needing_idiom": [
+       10.7,
+       7.2,
+       14.2
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 11.3,
+      "gain_option_only": [
+       0.8,
+       -1.7,
+       3.3
+      ],
+      "gain_needing_idiom": [
+       10.5,
+       6.8,
+       14.3
+      ]
+     }
+    }
+   },
+   "distractor_idioms_with_block": {
+    "mean_of_3": 2.96,
+    "share_items_all3": 0.96,
+    "share_items_none": 0.0,
+    "distractor_text_containment_mean": 0.996
+   },
+   "by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "n": 0
+    },
+    "1-2_of_3_glossed": {
+     "n": 24,
+     "acc": {
+      "Base": 75.0,
+      "Random-CPT": 79.2,
+      "Idiom-Text": 79.2,
+      "Idiom+Meaning": 91.7
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      12.5,
+      0.0,
+      25.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      12.5,
+      0.0,
+      25.0
+     ],
+     "Idiom-Text - Random-CPT": [
+      0.0,
+      -12.5,
+      12.5
+     ]
+    },
+    "3_of_3_glossed": {
+     "n": 576,
+     "acc": {
+      "Base": 79.2,
+      "Random-CPT": 79.9,
+      "Idiom-Text": 79.2,
+      "Idiom+Meaning": 90.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      11.3,
+      8.7,
+      14.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      10.6,
+      8.0,
+      13.4
+     ],
+     "Idiom-Text - Random-CPT": [
+      -0.7,
+      -2.3,
+      0.9
+     ]
+    },
+    ">=2_of_3_glossed": {
+     "n": 600,
+     "acc": {
+      "Base": 79.0,
+      "Random-CPT": 79.8,
+      "Idiom-Text": 79.2,
+      "Idiom+Meaning": 90.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      11.3,
+      8.7,
+      14.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      10.7,
+      8.0,
+      13.3
+     ],
+     "Idiom-Text - Random-CPT": [
+      -0.7,
+      -2.2,
+      0.8
+     ]
+    }
+   }
+  },
+  "jawaher_ar": {
+   "lang": "ar",
+   "n": 1005,
+   "idiom_has_block_share": 0.632,
+   "gold_containment": {
+    "n_with_block_text": 1005,
+    "mean": 0.589,
+    "median": 1.0,
+    "share_ge_0.9": 0.55,
+    "share_lt_0.5": 0.405
+   },
+   "all": {
+    "n": 1005,
+    "acc": {
+     "Base": 46.1,
+     "Random-CPT": 46.2,
+     "Idiom-Text": 49.4,
+     "Idiom+Meaning": 54.5
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     5.2,
+     2.3,
+     8.1
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     8.4,
+     5.3,
+     11.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.2,
+     1.0,
+     5.4
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      0.0,
+      0.0
+     ],
+     "n": 335,
+     "acc": {
+      "Base": 47.2,
+      "Random-CPT": 45.7,
+      "Idiom-Text": 46.9,
+      "Idiom+Meaning": 38.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -8.4,
+      -12.2,
+      -4.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -7.2,
+      -11.6,
+      -2.7
+     ],
+     "Idiom-Text - Random-CPT": [
+      1.2,
+      -2.4,
+      4.8
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      0.0,
+      1.0
+     ],
+     "n": 335,
+     "acc": {
+      "Base": 42.7,
+      "Random-CPT": 44.2,
+      "Idiom-Text": 49.3,
+      "Idiom+Meaning": 60.3
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      11.0,
+      5.7,
+      16.4
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      16.1,
+      10.4,
+      21.5
+     ],
+     "Idiom-Text - Random-CPT": [
+      5.1,
+      0.9,
+      9.3
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      1.0,
+      1.0
+     ],
+     "n": 335,
+     "acc": {
+      "Base": 48.4,
+      "Random-CPT": 48.7,
+      "Idiom-Text": 51.9,
+      "Idiom+Meaning": 64.8
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      12.8,
+      7.8,
+      18.2
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      16.1,
+      10.7,
+      21.5
+     ],
+     "Idiom-Text - Random-CPT": [
+      3.3,
+      0.0,
+      6.9
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 407,
+    "acc": {
+     "Base": 46.2,
+     "Random-CPT": 45.5,
+     "Idiom-Text": 46.9,
+     "Idiom+Meaning": 38.1
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -8.8,
+     -12.5,
+     -5.2
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     -7.4,
+     -11.5,
+     -3.2
+    ],
+    "Idiom-Text - Random-CPT": [
+     1.5,
+     -2.0,
+     4.9
+    ]
+   },
+   "containment_ge_0.9": {
+    "n": 553,
+    "acc": {
+     "Base": 47.0,
+     "Random-CPT": 48.1,
+     "Idiom-Text": 51.4,
+     "Idiom+Meaning": 67.1
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     15.7,
+     11.6,
+     19.9
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     19.0,
+     14.8,
+     23.1
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.3,
+     0.4,
+     6.1
+    ]
+   },
+   "idiom_without_block": {
+    "n": 370,
+    "acc": {
+     "Base": 47.0,
+     "Random-CPT": 46.8,
+     "Idiom-Text": 47.8,
+     "Idiom+Meaning": 38.1
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -9.7,
+     -13.8,
+     -5.9
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     -8.6,
+     -13.0,
+     -4.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     1.1,
+     -2.2,
+     4.6
+    ]
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 37,
+    "acc": {
+     "Base": 37.8,
+     "Random-CPT": 32.4,
+     "Idiom-Text": 37.8,
+     "Idiom+Meaning": 37.8
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     0.0,
+     -13.5,
+     13.5
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     5.4,
+     -8.1,
+     21.6
+    ],
+    "Idiom-Text - Random-CPT": [
+     5.4,
+     -10.8,
+     21.6
+    ]
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 553,
+    "acc": {
+     "Base": 47.0,
+     "Random-CPT": 48.1,
+     "Idiom-Text": 51.4,
+     "Idiom+Meaning": 67.1
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     15.7,
+     11.8,
+     19.9
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     19.0,
+     14.8,
+     23.1
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.3,
+     0.5,
+     6.1
+    ]
+   }
+  },
+  "absher_meaning": {
+   "lang": "ar",
+   "n": 531,
+   "idiom_has_block_share": 0.279,
+   "gold_containment": {
+    "n_with_block_text": 531,
+    "mean": 0.161,
+    "median": 0.0,
+    "share_ge_0.9": 0.081,
+    "share_lt_0.5": 0.846
+   },
+   "all": {
+    "n": 531,
+    "acc": {
+     "Base": 35.4,
+     "Random-CPT": 36.7,
+     "Idiom-Text": 41.6,
+     "Idiom+Meaning": 42.4
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     0.8,
+     -1.1,
+     2.6
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     5.6,
+     2.8,
+     8.5
+    ],
+    "Idiom-Text - Random-CPT": [
+     4.9,
+     2.4,
+     7.5
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      0.0,
+      0.0
+     ],
+     "n": 177,
+     "acc": {
+      "Base": 30.5,
+      "Random-CPT": 32.8,
+      "Idiom-Text": 37.3,
+      "Idiom+Meaning": 39.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      2.3,
+      0.0,
+      5.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      6.8,
+      2.8,
+      11.3
+     ],
+     "Idiom-Text - Random-CPT": [
+      4.5,
+      0.6,
+      8.5
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      0.0,
+      0.0
+     ],
+     "n": 177,
+     "acc": {
+      "Base": 31.1,
+      "Random-CPT": 32.2,
+      "Idiom-Text": 35.0,
+      "Idiom+Meaning": 33.3
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -1.7,
+      -4.5,
+      1.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      1.1,
+      -3.4,
+      5.6
+     ],
+     "Idiom-Text - Random-CPT": [
+      2.8,
+      -1.7,
+      7.3
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      0.0,
+      1.0
+     ],
+     "n": 177,
+     "acc": {
+      "Base": 44.6,
+      "Random-CPT": 45.2,
+      "Idiom-Text": 52.5,
+      "Idiom+Meaning": 54.2
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      1.7,
+      -1.7,
+      5.6
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      9.0,
+      3.4,
+      14.7
+     ],
+     "Idiom-Text - Random-CPT": [
+      7.3,
+      2.8,
+      11.9
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 449,
+    "acc": {
+     "Base": 35.0,
+     "Random-CPT": 37.0,
+     "Idiom-Text": 40.1,
+     "Idiom+Meaning": 39.9
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -0.2,
+     -2.2,
+     1.8
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     2.9,
+     0.0,
+     5.8
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.1,
+     0.4,
+     5.8
+    ]
+   },
+   "containment_ge_0.9": {
+    "n": 43,
+    "acc": {
+     "Base": 34.9,
+     "Random-CPT": 37.2,
+     "Idiom-Text": 53.5,
+     "Idiom+Meaning": 62.8
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     9.3,
+     2.3,
+     18.6
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.6,
+     14.0,
+     39.5
+    ],
+    "Idiom-Text - Random-CPT": [
+     16.3,
+     7.0,
+     27.9
+    ]
+   },
+   "idiom_without_block": {
+    "n": 383,
+    "acc": {
+     "Base": 32.4,
+     "Random-CPT": 34.7,
+     "Idiom-Text": 38.4,
+     "Idiom+Meaning": 38.9
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     0.5,
+     -1.6,
+     2.6
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     4.2,
+     1.0,
+     7.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.7,
+     0.8,
+     6.5
+    ]
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 66,
+    "acc": {
+     "Base": 50.0,
+     "Random-CPT": 50.0,
+     "Idiom-Text": 50.0,
+     "Idiom+Meaning": 45.5
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -4.5,
+     -10.6,
+     0.0
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     -4.5,
+     -12.1,
+     1.5
+    ],
+    "Idiom-Text - Random-CPT": [
+     0.0,
+     -6.1,
+     6.1
+    ]
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 43,
+    "acc": {
+     "Base": 34.9,
+     "Random-CPT": 37.2,
+     "Idiom-Text": 53.5,
+     "Idiom+Meaning": 62.8
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     9.3,
+     2.3,
+     18.6
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     25.6,
+     14.0,
+     39.5
+    ],
+    "Idiom-Text - Random-CPT": [
+     16.3,
+     7.0,
+     27.9
+    ]
+   }
+  },
+  "absher_cultural_interpretation": {
+   "lang": "ar",
+   "n": 537,
+   "idiom_has_block_share": 0.27,
+   "gold_containment": {
+    "n_with_block_text": 537,
+    "mean": 0.038,
+    "median": 0.0,
+    "share_ge_0.9": 0.0,
+    "share_lt_0.5": 0.987
+   },
+   "all": {
+    "n": 537,
+    "acc": {
+     "Base": 33.9,
+     "Random-CPT": 33.7,
+     "Idiom-Text": 38.5,
+     "Idiom+Meaning": 38.0
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -0.6,
+     -2.6,
+     1.5
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     4.3,
+     1.5,
+     7.3
+    ],
+    "Idiom-Text - Random-CPT": [
+     4.8,
+     2.0,
+     7.8
+    ]
+   },
+   "by_containment_tertile": {
+    "T1": {
+     "containment_range": [
+      0.0,
+      0.0
+     ],
+     "n": 179,
+     "acc": {
+      "Base": 23.5,
+      "Random-CPT": 25.7,
+      "Idiom-Text": 30.2,
+      "Idiom+Meaning": 30.7
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      0.6,
+      -2.8,
+      4.5
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      5.0,
+      0.0,
+      10.1
+     ],
+     "Idiom-Text - Random-CPT": [
+      4.5,
+      -1.1,
+      10.1
+     ]
+    },
+    "T2": {
+     "containment_range": [
+      0.0,
+      0.0
+     ],
+     "n": 179,
+     "acc": {
+      "Base": 37.4,
+      "Random-CPT": 35.8,
+      "Idiom-Text": 39.1,
+      "Idiom+Meaning": 36.9
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -2.2,
+      -5.6,
+      1.1
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      1.1,
+      -3.9,
+      6.1
+     ],
+     "Idiom-Text - Random-CPT": [
+      3.4,
+      -1.1,
+      7.8
+     ]
+    },
+    "T3": {
+     "containment_range": [
+      0.0,
+      0.65
+     ],
+     "n": 179,
+     "acc": {
+      "Base": 40.8,
+      "Random-CPT": 39.7,
+      "Idiom-Text": 46.4,
+      "Idiom+Meaning": 46.4
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      0.0,
+      -3.4,
+      3.4
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      6.7,
+      1.7,
+      11.7
+     ],
+     "Idiom-Text - Random-CPT": [
+      6.7,
+      2.8,
+      11.2
+     ]
+    }
+   },
+   "containment_lt_0.5": {
+    "n": 530,
+    "acc": {
+     "Base": 33.6,
+     "Random-CPT": 33.4,
+     "Idiom-Text": 38.3,
+     "Idiom+Meaning": 37.7
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -0.6,
+     -2.6,
+     1.5
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     4.3,
+     1.3,
+     7.4
+    ],
+    "Idiom-Text - Random-CPT": [
+     4.9,
+     2.1,
+     7.7
+    ]
+   },
+   "containment_ge_0.9": {
+    "n": 0
+   },
+   "idiom_without_block": {
+    "n": 392,
+    "acc": {
+     "Base": 32.1,
+     "Random-CPT": 33.2,
+     "Idiom-Text": 38.0,
+     "Idiom+Meaning": 36.5
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -1.5,
+     -4.1,
+     1.0
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     3.3,
+     -0.3,
+     6.9
+    ],
+    "Idiom-Text - Random-CPT": [
+     4.8,
+     1.5,
+     8.4
+    ]
+   },
+   "block_but_gold_not_verbatim(lt_0.5)": {
+    "n": 138,
+    "acc": {
+     "Base": 37.7,
+     "Random-CPT": 34.1,
+     "Idiom-Text": 39.1,
+     "Idiom+Meaning": 41.3
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     2.2,
+     -1.4,
+     5.8
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     7.2,
+     2.2,
+     13.0
+    ],
+    "Idiom-Text - Random-CPT": [
+     5.1,
+     0.0,
+     10.1
+    ]
+   },
+   "block_and_gold_verbatim(ge_0.9)": {
+    "n": 0
+   }
+  },
+  "idiomatlas_mc_ar_unseen": {
+   "lang": "ar",
+   "n": 600,
+   "idiom_has_block_share": 0.0,
+   "gold_containment": {
+    "n_with_block_text": 600,
+    "mean": 0.0,
+    "median": 0.0,
+    "share_ge_0.9": 0.0,
+    "share_lt_0.5": 1.0
+   },
+   "all": {
+    "n": 600,
+    "acc": {
+     "Base": 37.8,
+     "Random-CPT": 36.8,
+     "Idiom-Text": 40.0,
+     "Idiom+Meaning": 32.5
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     -7.5,
+     -10.5,
+     -4.7
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     -4.3,
+     -7.8,
+     -0.8
+    ],
+    "Idiom-Text - Random-CPT": [
+     3.2,
+     0.3,
+     6.0
+    ]
+   },
+   "option_only_all": {
+    "Idiom+Meaning - Random-CPT": {
+     "gain_full": -4.3,
+     "gain_option_only": [
+      -4.8,
+      -7.7,
+      -2.0
+     ],
+     "gain_needing_idiom": [
+      0.5,
+      -3.2,
+      4.2
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "gain_full": -7.5,
+     "gain_option_only": [
+      -5.2,
+      -7.7,
+      -2.7
+     ],
+     "gain_needing_idiom": [
+      -2.3,
+      -6.0,
+      1.2
+     ]
+    }
+   },
+   "option_only_by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 0.0,
+      "gain_option_only": [
+       1.5,
+       -3.7,
+       6.7
+      ],
+      "gain_needing_idiom": [
+       -1.5,
+       -8.1,
+       5.2
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 0.7,
+      "gain_option_only": [
+       3.7,
+       -0.7,
+       8.1
+      ],
+      "gain_needing_idiom": [
+       -3.0,
+       -8.9,
+       3.0
+      ]
+     }
+    },
+    ">=1_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": -5.6,
+      "gain_option_only": [
+       -6.7,
+       -9.9,
+       -3.4
+      ],
+      "gain_needing_idiom": [
+       1.1,
+       -3.2,
+       5.4
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": -9.9,
+      "gain_option_only": [
+       -7.7,
+       -10.8,
+       -4.7
+      ],
+      "gain_needing_idiom": [
+       -2.2,
+       -6.2,
+       1.9
+      ]
+     }
+    }
+   },
+   "distractor_idioms_with_block": {
+    "mean_of_3": 1.25,
+    "share_items_all3": 0.077,
+    "share_items_none": 0.225,
+    "distractor_text_containment_mean": 0.998
+   },
+   "by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "n": 135,
+     "acc": {
+      "Base": 35.6,
+      "Random-CPT": 34.1,
+      "Idiom-Text": 33.3,
+      "Idiom+Meaning": 34.1
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      0.7,
+      -4.4,
+      5.9
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      0.0,
+      -5.2,
+      5.2
+     ],
+     "Idiom-Text - Random-CPT": [
+      -0.7,
+      -5.2,
+      3.7
+     ]
+    },
+    "1-2_of_3_glossed": {
+     "n": 419,
+     "acc": {
+      "Base": 38.2,
+      "Random-CPT": 37.9,
+      "Idiom-Text": 41.8,
+      "Idiom+Meaning": 33.7
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -8.1,
+      -11.7,
+      -4.8
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -4.3,
+      -8.8,
+      0.2
+     ],
+     "Idiom-Text - Random-CPT": [
+      3.8,
+      0.0,
+      7.6
+     ]
+    },
+    "3_of_3_glossed": {
+     "n": 46,
+     "acc": {
+      "Base": 41.3,
+      "Random-CPT": 34.8,
+      "Idiom-Text": 43.5,
+      "Idiom+Meaning": 17.4
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -26.1,
+      -41.3,
+      -13.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -17.4,
+      -30.4,
+      -4.3
+     ],
+     "Idiom-Text - Random-CPT": [
+      8.7,
+      2.2,
+      17.4
+     ]
+    },
+    ">=2_of_3_glossed": {
+     "n": 236,
+     "acc": {
+      "Base": 38.6,
+      "Random-CPT": 38.6,
+      "Idiom-Text": 41.9,
+      "Idiom+Meaning": 30.1
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -11.9,
+      -16.9,
+      -6.8
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -8.5,
+      -14.4,
+      -2.5
+     ],
+     "Idiom-Text - Random-CPT": [
+      3.4,
+      -1.3,
+      8.1
+     ]
+    }
+   }
+  },
+  "idiomatlas_mc_hi_unseen": {
+   "lang": "hi",
+   "n": 600,
+   "idiom_has_block_share": 0.0,
+   "gold_containment": {
+    "n_with_block_text": 600,
+    "mean": 0.0,
+    "median": 0.0,
+    "share_ge_0.9": 0.0,
+    "share_lt_0.5": 1.0
+   },
+   "all": {
+    "n": 600,
+    "acc": {
+     "Base": 38.8,
+     "Random-CPT": 52.3,
+     "Idiom-Text": 53.3,
+     "Idiom+Meaning": 53.8
+    },
+    "Idiom+Meaning - Idiom-Text": [
+     0.5,
+     -2.3,
+     3.3
+    ],
+    "Idiom+Meaning - Random-CPT": [
+     1.5,
+     -1.8,
+     4.8
+    ],
+    "Idiom-Text - Random-CPT": [
+     1.0,
+     -1.7,
+     3.7
+    ]
+   },
+   "option_only_all": {
+    "Idiom+Meaning - Random-CPT": {
+     "gain_full": 1.5,
+     "gain_option_only": [
+      -3.5,
+      -7.3,
+      0.3
+     ],
+     "gain_needing_idiom": [
+      5.0,
+      0.5,
+      9.3
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "gain_full": 0.5,
+     "gain_option_only": [
+      -4.2,
+      -7.5,
+      -0.7
+     ],
+     "gain_needing_idiom": [
+      4.7,
+      1.0,
+      8.3
+     ]
+    }
+   },
+   "option_only_by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": 4.6,
+      "gain_option_only": [
+       -0.3,
+       -4.6,
+       4.4
+      ],
+      "gain_needing_idiom": [
+       4.9,
+       -0.3,
+       10.1
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": 2.8,
+      "gain_option_only": [
+       -0.8,
+       -4.6,
+       3.1
+      ],
+      "gain_needing_idiom": [
+       3.6,
+       -0.8,
+       8.0
+      ]
+     }
+    },
+    ">=1_of_3_glossed": {
+     "Idiom+Meaning - Random-CPT": {
+      "gain_full": -4.2,
+      "gain_option_only": [
+       -9.4,
+       -16.0,
+       -2.8
+      ],
+      "gain_needing_idiom": [
+       5.2,
+       -2.8,
+       12.7
+      ]
+     },
+     "Idiom+Meaning - Idiom-Text": {
+      "gain_full": -3.8,
+      "gain_option_only": [
+       -10.4,
+       -17.0,
+       -3.8
+      ],
+      "gain_needing_idiom": [
+       6.6,
+       -0.5,
+       13.7
+      ]
+     }
+    }
+   },
+   "distractor_idioms_with_block": {
+    "mean_of_3": 0.4,
+    "share_items_all3": 0.002,
+    "share_items_none": 0.647,
+    "distractor_text_containment_mean": 0.993
+   },
+   "by_distractor_exposure": {
+    "0_of_3_glossed": {
+     "n": 388,
+     "acc": {
+      "Base": 38.7,
+      "Random-CPT": 52.8,
+      "Idiom-Text": 54.6,
+      "Idiom+Meaning": 57.5
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      2.8,
+      -0.5,
+      6.4
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      4.6,
+      0.8,
+      8.8
+     ],
+     "Idiom-Text - Random-CPT": [
+      1.8,
+      -1.5,
+      5.2
+     ]
+    },
+    "1-2_of_3_glossed": {
+     "n": 211,
+     "acc": {
+      "Base": 38.9,
+      "Random-CPT": 51.2,
+      "Idiom-Text": 50.7,
+      "Idiom+Meaning": 46.9
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -3.8,
+      -8.5,
+      0.9
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -4.3,
+      -10.4,
+      1.9
+     ],
+     "Idiom-Text - Random-CPT": [
+      -0.5,
+      -4.7,
+      3.8
+     ]
+    },
+    "3_of_3_glossed": {
+     "n": 1
+    },
+    ">=2_of_3_glossed": {
+     "n": 29,
+     "acc": {
+      "Base": 48.3,
+      "Random-CPT": 51.7,
+      "Idiom-Text": 51.7,
+      "Idiom+Meaning": 41.4
+     },
+     "Idiom+Meaning - Idiom-Text": [
+      -10.3,
+      -24.1,
+      0.0
+     ],
+     "Idiom+Meaning - Random-CPT": [
+      -10.3,
+      -24.1,
+      3.4
+     ],
+     "Idiom-Text - Random-CPT": [
+      0.0,
+      -10.3,
+      10.3
+     ]
+    }
+   }
+  }
+ },
+ "option_only_control": {
+  "idiomatlas_mc_ar_seen | Idiom-Text": {
+   "gain_original": {
+    "delta": 3.5,
+    "ci95": [
+     0.5,
+     6.5
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.0,
+    "ci95": [
+     -2.8,
+     2.8
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 3.5,
+    "ci95": [
+     0.0,
+     6.8
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_ar_seen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 25.2,
+    "ci95": [
+     21.0,
+     29.5
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 4.7,
+    "ci95": [
+     1.0,
+     8.3
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 20.5,
+    "ci95": [
+     16.0,
+     25.2
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_ar_seen | Base": {
+   "gain_original": {
+    "delta": -1.2,
+    "ci95": [
+     -4.3,
+     2.2
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 1.0,
+    "ci95": [
+     -2.0,
+     4.0
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": -2.2,
+    "ci95": [
+     -5.7,
+     1.2
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_ar_unseen | Idiom-Text": {
+   "gain_original": {
+    "delta": 3.2,
+    "ci95": [
+     0.3,
+     6.2
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.3,
+    "ci95": [
+     -1.8,
+     2.5
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 2.8,
+    "ci95": [
+     -0.5,
+     6.2
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_ar_unseen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": -4.3,
+    "ci95": [
+     -7.8,
+     -1.0
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": -4.8,
+    "ci95": [
+     -7.7,
+     -2.2
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 0.5,
+    "ci95": [
+     -3.2,
+     4.3
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_ar_unseen | Base": {
+   "gain_original": {
+    "delta": 1.0,
+    "ci95": [
+     -2.5,
+     4.5
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.8,
+    "ci95": [
+     -2.0,
+     3.8
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 0.2,
+    "ci95": [
+     -3.3,
+     3.7
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_seen | Idiom-Text": {
+   "gain_original": {
+    "delta": 6.2,
+    "ci95": [
+     3.3,
+     9.0
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.0,
+    "ci95": [
+     -2.5,
+     2.3
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 6.2,
+    "ci95": [
+     2.7,
+     9.8
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_seen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 25.3,
+    "ci95": [
+     21.7,
+     29.2
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 17.3,
+    "ci95": [
+     13.5,
+     21.2
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 8.0,
+    "ci95": [
+     3.5,
+     12.3
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_seen | Base": {
+   "gain_original": {
+    "delta": -14.3,
+    "ci95": [
+     -18.8,
+     -9.7
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": -3.5,
+    "ci95": [
+     -7.7,
+     0.5
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": -10.8,
+    "ci95": [
+     -15.2,
+     -6.5
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_unseen | Idiom-Text": {
+   "gain_original": {
+    "delta": 1.0,
+    "ci95": [
+     -1.7,
+     3.7
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.7,
+    "ci95": [
+     -1.8,
+     3.2
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 0.3,
+    "ci95": [
+     -3.2,
+     3.7
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_unseen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 1.5,
+    "ci95": [
+     -2.0,
+     4.8
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": -3.5,
+    "ci95": [
+     -7.3,
+     0.3
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 5.0,
+    "ci95": [
+     0.5,
+     9.3
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_hi_unseen | Base": {
+   "gain_original": {
+    "delta": -13.5,
+    "ci95": [
+     -17.8,
+     -9.2
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": -4.5,
+    "ci95": [
+     -8.5,
+     -0.7
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": -9.0,
+    "ci95": [
+     -13.2,
+     -5.0
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_zh_seen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 10.7,
+    "ci95": [
+     8.0,
+     13.3
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 0.0,
+    "ci95": [
+     -2.3,
+     2.3
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": 10.7,
+    "ci95": [
+     7.2,
+     14.3
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_zh_seen | Base": {
+   "gain_original": {
+    "delta": -0.8,
+    "ci95": [
+     -3.2,
+     1.5
+    ],
+    "n": 600
+   },
+   "gain_optonly": {
+    "delta": 1.5,
+    "ci95": [
+     -0.7,
+     3.8
+    ],
+    "n": 600
+   },
+   "needs_expression": {
+    "delta": -2.3,
+    "ci95": [
+     -5.5,
+     0.8
+    ],
+    "n": 600
+   }
+  },
+  "idiomatlas_mc_zh_unseen | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 3.8,
+    "ci95": [
+     -2.6,
+     10.3
+    ],
+    "n": 78
+   },
+   "gain_optonly": {
+    "delta": -12.8,
+    "ci95": [
+     -20.5,
+     -6.4
+    ],
+    "n": 78
+   },
+   "needs_expression": {
+    "delta": 16.7,
+    "ci95": [
+     7.7,
+     25.6
+    ],
+    "n": 78
+   }
+  },
+  "idiomatlas_mc_zh_unseen | Base": {
+   "gain_original": {
+    "delta": -5.1,
+    "ci95": [
+     -10.3,
+     -1.3
+    ],
+    "n": 78
+   },
+   "gain_optonly": {
+    "delta": -1.3,
+    "ci95": [
+     -6.4,
+     2.6
+    ],
+    "n": 78
+   },
+   "needs_expression": {
+    "delta": -3.8,
+    "ci95": [
+     -10.3,
+     2.6
+    ],
+    "n": 78
+   }
+  },
+  "hindi_proverbs | Idiom-Text": {
+   "gain_original": {
+    "delta": 15.0,
+    "ci95": [
+     13.2,
+     17.0
+    ],
+    "n": 2043
+   },
+   "gain_optonly": {
+    "delta": -1.1,
+    "ci95": [
+     -2.3,
+     0.2
+    ],
+    "n": 2043
+   },
+   "needs_expression": {
+    "delta": 16.1,
+    "ci95": [
+     14.0,
+     18.3
+    ],
+    "n": 2043
+   }
+  },
+  "hindi_proverbs | Idiom+Meaning": {
+   "gain_original": {
+    "delta": 13.4,
+    "ci95": [
+     11.6,
+     15.3
+    ],
+    "n": 2043
+   },
+   "gain_optonly": {
+    "delta": -0.4,
+    "ci95": [
+     -1.8,
+     1.1
+    ],
+    "n": 2043
+   },
+   "needs_expression": {
+    "delta": 13.8,
+    "ci95": [
+     11.5,
+     16.0
+    ],
+    "n": 2043
+   }
+  },
+  "hindi_proverbs | culture": {
+   "gain_original": {
+    "delta": 4.7,
+    "ci95": [
+     3.3,
+     6.1
+    ],
+    "n": 2043
+   },
+   "gain_optonly": {
+    "delta": -0.4,
+    "ci95": [
+     -1.6,
+     0.8
+    ],
+    "n": 2043
+   },
+   "needs_expression": {
+    "delta": 5.1,
+    "ci95": [
+     3.4,
+     6.9
+    ],
+    "n": 2043
+   }
+  },
+  "hindi_proverbs | Base": {
+   "gain_original": {
+    "delta": -20.1,
+    "ci95": [
+     -23.0,
+     -17.3
+    ],
+    "n": 2043
+   },
+   "gain_optonly": {
+    "delta": -0.9,
+    "ci95": [
+     -3.4,
+     1.5
+    ],
+    "n": 2043
+   },
+   "needs_expression": {
+    "delta": -19.2,
+    "ci95": [
+     -21.8,
+     -16.7
+    ],
+    "n": 2043
+   }
+  }
+ },
+ "kinayat_meaning_answer_string_in_training_share": 1.0,
+ "option_only_control_source": "docs/paper_stats/v7/swap_stats.json (src/culture/analysis/v7/swap_stats.py); gains vs Random-CPT; optonly = idiom removed from the prompt"
+}
