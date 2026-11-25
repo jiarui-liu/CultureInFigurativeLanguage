@@ -15,7 +15,8 @@ source $REPO/src/culture/bidirectional/stage_env.sh
 export HF_HOME=/data/group_data/r3lit_culture_pretrain/.cache/huggingface PYTHONPATH=$REPO/src
 P=/data/group_data/r3lit_culture_pretrain/culture/bidir/eval_data/mc
 OUT=/data/group_data/r3lit_culture_pretrain/culture/bidir/eval9b_probectx/$LANG_/$RUN
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 LOCAL=$(python $REPO/src/culture/bidirectional/stage_hf.py "$MODEL" | tail -1)
-T=jsonl:symbolism_v2_${LANG_}_letter,jsonl:symbolism_ctxB_${LANG_}_letter,jsonl:symbolism_ctxC_${LANG_}_letter,jsonl:symbolism_ctxD_${LANG_}_letter
+T=${TASKS:-jsonl:symbolism_v2_${LANG_}_letter,jsonl:symbolism_ctxB_${LANG_}_letter,jsonl:symbolism_ctxC_${LANG_}_letter,jsonl:symbolism_ctxD_${LANG_}_letter}
 python -m culture.evaluation.run_eval --model_path "$LOCAL" --output_dir "$OUT" --tasks "$T" --run_name $RUN \
-  --batch_size 8 --seed 42 --mc_jsonl_dir $P --num_fewshot 0
+  --batch_size ${BS:-8} --seed 42 --mc_jsonl_dir $P --num_fewshot 0
