@@ -1,0 +1,1918 @@
+{
+ "judges": [
+  "gemma",
+  "qwen27b"
+ ],
+ "label_share": {
+  "gemma:ar": {
+   "same": 0.824,
+   "partly": 0.044,
+   "different": 0.133,
+   "null": 0.0
+  },
+  "gemma:hi": {
+   "same": 0.892,
+   "partly": 0.022,
+   "different": 0.086,
+   "null": 0.0
+  },
+  "gemma:zh": {
+   "same": 0.972,
+   "partly": 0.007,
+   "different": 0.021,
+   "null": 0.0
+  },
+  "qwen27b:ar": {
+   "same": 0.737,
+   "partly": 0.16,
+   "different": 0.103,
+   "null": 0.0
+  },
+  "qwen27b:hi": {
+   "same": 0.885,
+   "partly": 0.08,
+   "different": 0.034,
+   "null": 0.0
+  },
+  "qwen27b:zh": {
+   "same": 0.957,
+   "partly": 0.027,
+   "different": 0.015,
+   "null": 0.0
+  }
+ },
+ "results": {
+  "ar_seen|gemma|gold": {
+   "n_kept": 493,
+   "share_kept": 0.822,
+   "acc_para": {
+    "Base": 36.3,
+    "Random-CPT": 38.9,
+    "Idiom-Text": 40.4,
+    "Idiom+Meaning": 40.6
+   },
+   "acc_orig": {
+    "Base": 43.4,
+    "Random-CPT": 44.0,
+    "Idiom-Text": 47.5,
+    "Idiom+Meaning": 70.6
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     26.6,
+     21.9,
+     31.2
+    ],
+    "para": [
+     1.6,
+     -1.4,
+     4.7
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     23.1,
+     19.1,
+     27.2
+    ],
+    "para": [
+     0.2,
+     -2.2,
+     2.4
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     3.4,
+     0.2,
+     6.7
+    ],
+    "para": [
+     1.4,
+     -1.2,
+     4.3
+    ]
+   }
+  },
+  "ar_seen|gemma|all4": {
+   "n_kept": 279,
+   "share_kept": 0.465,
+   "acc_para": {
+    "Base": 32.3,
+    "Random-CPT": 38.7,
+    "Idiom-Text": 38.4,
+    "Idiom+Meaning": 38.4
+   },
+   "acc_orig": {
+    "Base": 39.8,
+    "Random-CPT": 43.0,
+    "Idiom-Text": 47.3,
+    "Idiom+Meaning": 72.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     29.0,
+     22.9,
+     35.1
+    ],
+    "para": [
+     -0.4,
+     -4.7,
+     3.9
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     24.7,
+     19.4,
+     30.1
+    ],
+    "para": [
+     0.0,
+     -3.2,
+     3.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     4.3,
+     0.0,
+     8.6
+    ],
+    "para": [
+     -0.4,
+     -4.3,
+     3.6
+    ]
+   }
+  },
+  "ar_seen|qwen27b|gold": {
+   "n_kept": 444,
+   "share_kept": 0.74,
+   "acc_para": {
+    "Base": 36.3,
+    "Random-CPT": 38.7,
+    "Idiom-Text": 40.3,
+    "Idiom+Meaning": 40.3
+   },
+   "acc_orig": {
+    "Base": 44.4,
+    "Random-CPT": 43.5,
+    "Idiom-Text": 47.1,
+    "Idiom+Meaning": 69.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.9,
+     21.2,
+     30.9
+    ],
+    "para": [
+     1.6,
+     -1.6,
+     4.7
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     22.3,
+     18.0,
+     26.6
+    ],
+    "para": [
+     0.0,
+     -2.5,
+     2.5
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     3.6,
+     0.2,
+     7.0
+    ],
+    "para": [
+     1.6,
+     -1.4,
+     4.7
+    ]
+   }
+  },
+  "ar_seen|qwen27b|all4": {
+   "n_kept": 168,
+   "share_kept": 0.28,
+   "acc_para": {
+    "Base": 36.9,
+    "Random-CPT": 43.5,
+    "Idiom-Text": 41.1,
+    "Idiom+Meaning": 40.5
+   },
+   "acc_orig": {
+    "Base": 41.1,
+    "Random-CPT": 41.1,
+    "Idiom-Text": 48.8,
+    "Idiom+Meaning": 71.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     30.4,
+     22.0,
+     38.1
+    ],
+    "para": [
+     -3.0,
+     -8.3,
+     2.4
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     22.6,
+     15.5,
+     29.8
+    ],
+    "para": [
+     -0.6,
+     -5.4,
+     4.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     7.7,
+     3.0,
+     13.1
+    ],
+    "para": [
+     -2.4,
+     -7.1,
+     2.4
+    ]
+   }
+  },
+  "ar_seen|both|gold": {
+   "n_kept": 418,
+   "share_kept": 0.697,
+   "acc_para": {
+    "Base": 37.3,
+    "Random-CPT": 40.0,
+    "Idiom-Text": 41.9,
+    "Idiom+Meaning": 41.9
+   },
+   "acc_orig": {
+    "Base": 45.2,
+    "Random-CPT": 44.5,
+    "Idiom-Text": 47.6,
+    "Idiom+Meaning": 70.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     26.3,
+     21.5,
+     31.3
+    ],
+    "para": [
+     1.9,
+     -1.4,
+     5.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     23.2,
+     18.9,
+     27.5
+    ],
+    "para": [
+     0.0,
+     -2.6,
+     2.6
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     3.1,
+     -0.5,
+     6.7
+    ],
+    "para": [
+     1.9,
+     -1.2,
+     5.0
+    ]
+   }
+  },
+  "ar_seen|both|all4": {
+   "n_kept": 133,
+   "share_kept": 0.222,
+   "acc_para": {
+    "Base": 35.3,
+    "Random-CPT": 42.1,
+    "Idiom-Text": 40.6,
+    "Idiom+Meaning": 38.3
+   },
+   "acc_orig": {
+    "Base": 40.6,
+    "Random-CPT": 41.4,
+    "Idiom-Text": 48.9,
+    "Idiom+Meaning": 71.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     30.1,
+     21.1,
+     39.1
+    ],
+    "para": [
+     -3.8,
+     -10.5,
+     2.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     22.6,
+     15.0,
+     30.8
+    ],
+    "para": [
+     -2.3,
+     -7.5,
+     3.0
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     7.5,
+     2.3,
+     13.5
+    ],
+    "para": [
+     -1.5,
+     -6.8,
+     3.8
+    ]
+   }
+  },
+  "ar_unseen|gemma|gold": {
+   "n_kept": 502,
+   "share_kept": 0.837,
+   "acc_para": {
+    "Base": 39.8,
+    "Random-CPT": 35.3,
+    "Idiom-Text": 34.5,
+    "Idiom+Meaning": 33.3
+   },
+   "acc_orig": {
+    "Base": 38.4,
+    "Random-CPT": 37.6,
+    "Idiom-Text": 40.2,
+    "Idiom+Meaning": 32.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -5.0,
+     -8.8,
+     -1.2
+    ],
+    "para": [
+     -2.0,
+     -4.6,
+     0.6
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -7.6,
+     -10.6,
+     -4.6
+    ],
+    "para": [
+     -1.2,
+     -2.8,
+     0.4
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.6,
+     -0.4,
+     5.6
+    ],
+    "para": [
+     -0.8,
+     -3.2,
+     1.4
+    ]
+   }
+  },
+  "ar_unseen|gemma|all4": {
+   "n_kept": 302,
+   "share_kept": 0.503,
+   "acc_para": {
+    "Base": 35.8,
+    "Random-CPT": 32.5,
+    "Idiom-Text": 31.5,
+    "Idiom+Meaning": 30.5
+   },
+   "acc_orig": {
+    "Base": 37.1,
+    "Random-CPT": 37.4,
+    "Idiom-Text": 39.4,
+    "Idiom+Meaning": 30.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -6.6,
+     -11.3,
+     -2.0
+    ],
+    "para": [
+     -2.0,
+     -5.3,
+     1.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -8.6,
+     -12.6,
+     -4.6
+    ],
+    "para": [
+     -1.0,
+     -3.0,
+     1.0
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.0,
+     -2.3,
+     6.3
+    ],
+    "para": [
+     -1.0,
+     -4.0,
+     2.0
+    ]
+   }
+  },
+  "ar_unseen|qwen27b|gold": {
+   "n_kept": 469,
+   "share_kept": 0.782,
+   "acc_para": {
+    "Base": 40.3,
+    "Random-CPT": 35.8,
+    "Idiom-Text": 35.0,
+    "Idiom+Meaning": 33.9
+   },
+   "acc_orig": {
+    "Base": 38.4,
+    "Random-CPT": 36.5,
+    "Idiom-Text": 38.8,
+    "Idiom+Meaning": 32.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -4.1,
+     -7.9,
+     -0.2
+    ],
+    "para": [
+     -1.9,
+     -4.7,
+     0.9
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -6.4,
+     -9.6,
+     -3.2
+    ],
+    "para": [
+     -1.1,
+     -3.0,
+     0.9
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.3,
+     -0.9,
+     5.5
+    ],
+    "para": [
+     -0.9,
+     -3.4,
+     1.7
+    ]
+   }
+  },
+  "ar_unseen|qwen27b|all4": {
+   "n_kept": 203,
+   "share_kept": 0.338,
+   "acc_para": {
+    "Base": 36.0,
+    "Random-CPT": 31.5,
+    "Idiom-Text": 30.5,
+    "Idiom+Meaning": 30.0
+   },
+   "acc_orig": {
+    "Base": 37.4,
+    "Random-CPT": 36.9,
+    "Idiom-Text": 39.4,
+    "Idiom+Meaning": 31.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -5.9,
+     -12.3,
+     0.0
+    ],
+    "para": [
+     -1.5,
+     -5.4,
+     2.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -8.4,
+     -13.3,
+     -3.9
+    ],
+    "para": [
+     -0.5,
+     -3.4,
+     2.5
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.5,
+     -3.0,
+     7.9
+    ],
+    "para": [
+     -1.0,
+     -4.4,
+     2.5
+    ]
+   }
+  },
+  "ar_unseen|both|gold": {
+   "n_kept": 444,
+   "share_kept": 0.74,
+   "acc_para": {
+    "Base": 41.4,
+    "Random-CPT": 36.7,
+    "Idiom-Text": 36.0,
+    "Idiom+Meaning": 34.7
+   },
+   "acc_orig": {
+    "Base": 39.0,
+    "Random-CPT": 37.6,
+    "Idiom-Text": 39.6,
+    "Idiom+Meaning": 32.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -5.0,
+     -9.0,
+     -0.9
+    ],
+    "para": [
+     -2.0,
+     -5.0,
+     0.7
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -7.0,
+     -10.1,
+     -3.8
+    ],
+    "para": [
+     -1.4,
+     -3.2,
+     0.5
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.0,
+     -1.1,
+     5.4
+    ],
+    "para": [
+     -0.7,
+     -3.4,
+     1.8
+    ]
+   }
+  },
+  "ar_unseen|both|all4": {
+   "n_kept": 169,
+   "share_kept": 0.282,
+   "acc_para": {
+    "Base": 36.7,
+    "Random-CPT": 33.7,
+    "Idiom-Text": 32.0,
+    "Idiom+Meaning": 32.0
+   },
+   "acc_orig": {
+    "Base": 35.5,
+    "Random-CPT": 38.5,
+    "Idiom-Text": 39.6,
+    "Idiom+Meaning": 31.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -7.1,
+     -13.6,
+     0.0
+    ],
+    "para": [
+     -1.8,
+     -5.9,
+     2.4
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -8.3,
+     -13.6,
+     -3.0
+    ],
+    "para": [
+     0.0,
+     -3.0,
+     3.0
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     1.2,
+     -5.3,
+     7.7
+    ],
+    "para": [
+     -1.8,
+     -5.9,
+     2.4
+    ]
+   }
+  },
+  "hi_seen|gemma|gold": {
+   "n_kept": 557,
+   "share_kept": 0.928,
+   "acc_para": {
+    "Base": 38.2,
+    "Random-CPT": 46.3,
+    "Idiom-Text": 48.5,
+    "Idiom+Meaning": 55.5
+   },
+   "acc_orig": {
+    "Base": 36.6,
+    "Random-CPT": 51.3,
+    "Idiom-Text": 56.7,
+    "Idiom+Meaning": 76.3
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.0,
+     21.2,
+     28.7
+    ],
+    "para": [
+     9.2,
+     5.7,
+     12.6
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.6,
+     16.2,
+     23.0
+    ],
+    "para": [
+     7.0,
+     4.1,
+     10.1
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     5.4,
+     2.5,
+     8.3
+    ],
+    "para": [
+     2.2,
+     -0.9,
+     5.2
+    ]
+   }
+  },
+  "hi_seen|gemma|all4": {
+   "n_kept": 391,
+   "share_kept": 0.652,
+   "acc_para": {
+    "Base": 38.4,
+    "Random-CPT": 46.8,
+    "Idiom-Text": 50.1,
+    "Idiom+Meaning": 57.8
+   },
+   "acc_orig": {
+    "Base": 35.8,
+    "Random-CPT": 50.4,
+    "Idiom-Text": 56.3,
+    "Idiom+Meaning": 75.4
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.1,
+     20.7,
+     29.7
+    ],
+    "para": [
+     11.0,
+     6.9,
+     14.8
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.2,
+     15.1,
+     23.3
+    ],
+    "para": [
+     7.7,
+     4.1,
+     11.3
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     5.9,
+     2.6,
+     9.5
+    ],
+    "para": [
+     3.3,
+     -0.3,
+     6.9
+    ]
+   }
+  },
+  "hi_seen|qwen27b|gold": {
+   "n_kept": 548,
+   "share_kept": 0.913,
+   "acc_para": {
+    "Base": 38.1,
+    "Random-CPT": 46.7,
+    "Idiom-Text": 48.9,
+    "Idiom+Meaning": 56.0
+   },
+   "acc_orig": {
+    "Base": 36.9,
+    "Random-CPT": 50.9,
+    "Idiom-Text": 57.5,
+    "Idiom+Meaning": 76.6
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.7,
+     21.9,
+     29.7
+    ],
+    "para": [
+     9.3,
+     5.8,
+     12.8
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.2,
+     15.7,
+     22.6
+    ],
+    "para": [
+     7.1,
+     4.2,
+     10.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     6.6,
+     3.6,
+     9.5
+    ],
+    "para": [
+     2.2,
+     -0.9,
+     5.1
+    ]
+   }
+  },
+  "hi_seen|qwen27b|all4": {
+   "n_kept": 388,
+   "share_kept": 0.647,
+   "acc_para": {
+    "Base": 39.4,
+    "Random-CPT": 46.9,
+    "Idiom-Text": 49.2,
+    "Idiom+Meaning": 57.0
+   },
+   "acc_orig": {
+    "Base": 36.9,
+    "Random-CPT": 49.5,
+    "Idiom-Text": 55.2,
+    "Idiom+Meaning": 74.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.3,
+     20.9,
+     29.9
+    ],
+    "para": [
+     10.1,
+     5.7,
+     14.4
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.6,
+     15.5,
+     24.0
+    ],
+    "para": [
+     7.7,
+     4.1,
+     11.6
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     5.7,
+     2.3,
+     9.0
+    ],
+    "para": [
+     2.3,
+     -1.3,
+     5.9
+    ]
+   }
+  },
+  "hi_seen|both|gold": {
+   "n_kept": 528,
+   "share_kept": 0.88,
+   "acc_para": {
+    "Base": 39.0,
+    "Random-CPT": 47.3,
+    "Idiom-Text": 49.8,
+    "Idiom+Meaning": 57.2
+   },
+   "acc_orig": {
+    "Base": 36.6,
+    "Random-CPT": 51.1,
+    "Idiom-Text": 57.4,
+    "Idiom+Meaning": 77.1
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.9,
+     22.0,
+     29.9
+    ],
+    "para": [
+     9.8,
+     6.2,
+     13.4
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.7,
+     16.3,
+     23.5
+    ],
+    "para": [
+     7.4,
+     4.4,
+     10.4
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     6.2,
+     3.2,
+     9.3
+    ],
+    "para": [
+     2.5,
+     -0.6,
+     5.5
+    ]
+   }
+  },
+  "hi_seen|both|all4": {
+   "n_kept": 325,
+   "share_kept": 0.542,
+   "acc_para": {
+    "Base": 39.1,
+    "Random-CPT": 47.4,
+    "Idiom-Text": 50.5,
+    "Idiom+Meaning": 59.1
+   },
+   "acc_orig": {
+    "Base": 36.3,
+    "Random-CPT": 49.5,
+    "Idiom-Text": 55.7,
+    "Idiom+Meaning": 74.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     25.2,
+     20.6,
+     30.2
+    ],
+    "para": [
+     11.7,
+     7.1,
+     16.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     19.1,
+     14.5,
+     23.7
+    ],
+    "para": [
+     8.6,
+     4.6,
+     12.9
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     6.2,
+     2.5,
+     9.8
+    ],
+    "para": [
+     3.1,
+     -0.9,
+     7.1
+    ]
+   }
+  },
+  "hi_unseen|gemma|gold": {
+   "n_kept": 536,
+   "share_kept": 0.893,
+   "acc_para": {
+    "Base": 32.6,
+    "Random-CPT": 42.2,
+    "Idiom-Text": 41.2,
+    "Idiom+Meaning": 43.3
+   },
+   "acc_orig": {
+    "Base": 39.0,
+    "Random-CPT": 52.1,
+    "Idiom-Text": 53.0,
+    "Idiom+Meaning": 53.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     1.7,
+     -2.1,
+     5.4
+    ],
+    "para": [
+     1.1,
+     -2.1,
+     4.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     0.7,
+     -2.4,
+     3.9
+    ],
+    "para": [
+     2.1,
+     -0.4,
+     4.5
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.9,
+     -2.1,
+     3.7
+    ],
+    "para": [
+     -0.9,
+     -3.9,
+     2.1
+    ]
+   }
+  },
+  "hi_unseen|gemma|all4": {
+   "n_kept": 363,
+   "share_kept": 0.605,
+   "acc_para": {
+    "Base": 32.2,
+    "Random-CPT": 40.5,
+    "Idiom-Text": 39.9,
+    "Idiom+Meaning": 42.7
+   },
+   "acc_orig": {
+    "Base": 36.4,
+    "Random-CPT": 50.7,
+    "Idiom-Text": 53.2,
+    "Idiom+Meaning": 51.2
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     0.6,
+     -3.6,
+     4.7
+    ],
+    "para": [
+     2.2,
+     -1.7,
+     6.1
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -1.9,
+     -5.5,
+     1.7
+    ],
+    "para": [
+     2.8,
+     -0.3,
+     5.8
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.5,
+     -0.6,
+     5.8
+    ],
+    "para": [
+     -0.6,
+     -3.9,
+     2.8
+    ]
+   }
+  },
+  "hi_unseen|qwen27b|gold": {
+   "n_kept": 531,
+   "share_kept": 0.885,
+   "acc_para": {
+    "Base": 32.8,
+    "Random-CPT": 42.9,
+    "Idiom-Text": 42.2,
+    "Idiom+Meaning": 43.9
+   },
+   "acc_orig": {
+    "Base": 38.8,
+    "Random-CPT": 51.8,
+    "Idiom-Text": 52.7,
+    "Idiom+Meaning": 53.3
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     1.5,
+     -2.3,
+     5.1
+    ],
+    "para": [
+     0.9,
+     -2.3,
+     4.1
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     0.6,
+     -2.4,
+     3.6
+    ],
+    "para": [
+     1.7,
+     -0.6,
+     4.0
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.9,
+     -2.1,
+     3.8
+    ],
+    "para": [
+     -0.8,
+     -3.6,
+     2.1
+    ]
+   }
+  },
+  "hi_unseen|qwen27b|all4": {
+   "n_kept": 350,
+   "share_kept": 0.583,
+   "acc_para": {
+    "Base": 31.7,
+    "Random-CPT": 41.1,
+    "Idiom-Text": 40.0,
+    "Idiom+Meaning": 41.7
+   },
+   "acc_orig": {
+    "Base": 35.7,
+    "Random-CPT": 50.3,
+    "Idiom-Text": 51.4,
+    "Idiom+Meaning": 50.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     -0.3,
+     -4.6,
+     4.0
+    ],
+    "para": [
+     0.6,
+     -2.9,
+     4.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -1.4,
+     -5.1,
+     2.0
+    ],
+    "para": [
+     1.7,
+     -1.1,
+     4.6
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     1.1,
+     -2.0,
+     4.3
+    ],
+    "para": [
+     -1.1,
+     -4.6,
+     2.3
+    ]
+   }
+  },
+  "hi_unseen|both|gold": {
+   "n_kept": 506,
+   "share_kept": 0.843,
+   "acc_para": {
+    "Base": 32.6,
+    "Random-CPT": 42.7,
+    "Idiom-Text": 41.9,
+    "Idiom+Meaning": 43.7
+   },
+   "acc_orig": {
+    "Base": 38.7,
+    "Random-CPT": 52.0,
+    "Idiom-Text": 52.8,
+    "Idiom+Meaning": 53.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     1.8,
+     -1.8,
+     5.5
+    ],
+    "para": [
+     1.0,
+     -2.4,
+     4.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     1.0,
+     -2.2,
+     4.2
+    ],
+    "para": [
+     1.8,
+     -0.6,
+     4.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.8,
+     -2.2,
+     3.8
+    ],
+    "para": [
+     -0.8,
+     -3.8,
+     2.2
+    ]
+   }
+  },
+  "hi_unseen|both|all4": {
+   "n_kept": 279,
+   "share_kept": 0.465,
+   "acc_para": {
+    "Base": 31.5,
+    "Random-CPT": 39.8,
+    "Idiom-Text": 39.1,
+    "Idiom+Meaning": 41.2
+   },
+   "acc_orig": {
+    "Base": 35.8,
+    "Random-CPT": 49.5,
+    "Idiom-Text": 52.0,
+    "Idiom+Meaning": 49.5
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -4.7,
+     4.7
+    ],
+    "para": [
+     1.4,
+     -2.5,
+     5.4
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     -2.5,
+     -6.5,
+     1.4
+    ],
+    "para": [
+     2.2,
+     -1.1,
+     5.4
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     2.5,
+     -1.1,
+     6.1
+    ],
+    "para": [
+     -0.7,
+     -4.7,
+     3.2
+    ]
+   }
+  },
+  "zh_seen|gemma|gold": {
+   "n_kept": 591,
+   "share_kept": 0.985,
+   "acc_para": {
+    "Base": 59.6,
+    "Random-CPT": 63.1,
+    "Idiom-Text": 63.6,
+    "Idiom+Meaning": 62.3
+   },
+   "acc_orig": {
+    "Base": 79.4,
+    "Random-CPT": 80.5,
+    "Idiom-Text": 79.7,
+    "Idiom+Meaning": 90.9
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     10.3,
+     7.8,
+     13.0
+    ],
+    "para": [
+     -0.8,
+     -3.7,
+     1.9
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     11.2,
+     8.5,
+     13.9
+    ],
+    "para": [
+     -1.4,
+     -3.9,
+     1.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -0.8,
+     -2.4,
+     0.7
+    ],
+    "para": [
+     0.5,
+     -1.5,
+     2.5
+    ]
+   }
+  },
+  "zh_seen|gemma|all4": {
+   "n_kept": 535,
+   "share_kept": 0.892,
+   "acc_para": {
+    "Base": 59.4,
+    "Random-CPT": 62.6,
+    "Idiom-Text": 63.0,
+    "Idiom+Meaning": 61.5
+   },
+   "acc_orig": {
+    "Base": 79.1,
+    "Random-CPT": 80.2,
+    "Idiom-Text": 79.8,
+    "Idiom+Meaning": 90.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     10.5,
+     7.7,
+     13.3
+    ],
+    "para": [
+     -1.1,
+     -4.1,
+     1.9
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     10.8,
+     8.0,
+     13.8
+    ],
+    "para": [
+     -1.5,
+     -4.1,
+     1.1
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -0.4,
+     -1.9,
+     1.1
+    ],
+    "para": [
+     0.4,
+     -1.9,
+     2.6
+    ]
+   }
+  },
+  "zh_seen|qwen27b|gold": {
+   "n_kept": 583,
+   "share_kept": 0.972,
+   "acc_para": {
+    "Base": 59.9,
+    "Random-CPT": 63.5,
+    "Idiom-Text": 63.8,
+    "Idiom+Meaning": 62.6
+   },
+   "acc_orig": {
+    "Base": 79.6,
+    "Random-CPT": 80.8,
+    "Idiom-Text": 79.8,
+    "Idiom+Meaning": 90.6
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     9.8,
+     7.2,
+     12.3
+    ],
+    "para": [
+     -0.9,
+     -3.8,
+     2.1
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     10.8,
+     8.2,
+     13.6
+    ],
+    "para": [
+     -1.2,
+     -3.8,
+     1.4
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -1.0,
+     -2.6,
+     0.5
+    ],
+    "para": [
+     0.3,
+     -1.7,
+     2.4
+    ]
+   }
+  },
+  "zh_seen|qwen27b|all4": {
+   "n_kept": 502,
+   "share_kept": 0.837,
+   "acc_para": {
+    "Base": 59.0,
+    "Random-CPT": 63.1,
+    "Idiom-Text": 63.5,
+    "Idiom+Meaning": 62.0
+   },
+   "acc_orig": {
+    "Base": 79.1,
+    "Random-CPT": 80.5,
+    "Idiom-Text": 79.1,
+    "Idiom+Meaning": 90.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     10.4,
+     7.6,
+     13.3
+    ],
+    "para": [
+     -1.2,
+     -4.4,
+     2.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     11.8,
+     8.8,
+     14.7
+    ],
+    "para": [
+     -1.6,
+     -4.4,
+     1.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -1.4,
+     -3.0,
+     0.2
+    ],
+    "para": [
+     0.4,
+     -1.8,
+     2.8
+    ]
+   }
+  },
+  "zh_seen|both|gold": {
+   "n_kept": 580,
+   "share_kept": 0.967,
+   "acc_para": {
+    "Base": 60.0,
+    "Random-CPT": 63.6,
+    "Idiom-Text": 64.0,
+    "Idiom+Meaning": 62.8
+   },
+   "acc_orig": {
+    "Base": 79.8,
+    "Random-CPT": 81.0,
+    "Idiom-Text": 80.0,
+    "Idiom+Meaning": 90.9
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     9.8,
+     7.4,
+     12.4
+    ],
+    "para": [
+     -0.9,
+     -3.8,
+     2.1
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     10.9,
+     8.3,
+     13.6
+    ],
+    "para": [
+     -1.2,
+     -3.8,
+     1.2
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -1.0,
+     -2.6,
+     0.5
+    ],
+    "para": [
+     0.3,
+     -1.7,
+     2.4
+    ]
+   }
+  },
+  "zh_seen|both|all4": {
+   "n_kept": 472,
+   "share_kept": 0.787,
+   "acc_para": {
+    "Base": 59.3,
+    "Random-CPT": 63.3,
+    "Idiom-Text": 63.6,
+    "Idiom+Meaning": 62.1
+   },
+   "acc_orig": {
+    "Base": 78.8,
+    "Random-CPT": 80.3,
+    "Idiom-Text": 79.4,
+    "Idiom+Meaning": 90.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     10.4,
+     7.4,
+     13.3
+    ],
+    "para": [
+     -1.3,
+     -4.4,
+     1.9
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     11.2,
+     8.3,
+     14.4
+    ],
+    "para": [
+     -1.5,
+     -4.4,
+     1.3
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     -0.8,
+     -2.3,
+     0.6
+    ],
+    "para": [
+     0.2,
+     -2.1,
+     2.5
+    ]
+   }
+  },
+  "zh_unseen|gemma|gold": {
+   "n_kept": 75,
+   "share_kept": 0.962,
+   "acc_para": {
+    "Base": 44.0,
+    "Random-CPT": 48.0,
+    "Idiom-Text": 50.7,
+    "Idiom+Meaning": 41.3
+   },
+   "acc_orig": {
+    "Base": 50.7,
+    "Random-CPT": 56.0,
+    "Idiom-Text": 56.0,
+    "Idiom+Meaning": 60.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     4.0,
+     -2.7,
+     10.7
+    ],
+    "para": [
+     -6.7,
+     -13.3,
+     0.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     4.0,
+     -1.3,
+     9.3
+    ],
+    "para": [
+     -9.3,
+     -16.0,
+     -4.0
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -6.7,
+     6.7
+    ],
+    "para": [
+     2.7,
+     -2.7,
+     8.0
+    ]
+   }
+  },
+  "zh_unseen|gemma|all4": {
+   "n_kept": 68,
+   "share_kept": 0.872,
+   "acc_para": {
+    "Base": 45.6,
+    "Random-CPT": 48.5,
+    "Idiom-Text": 51.5,
+    "Idiom+Meaning": 42.6
+   },
+   "acc_orig": {
+    "Base": 51.5,
+    "Random-CPT": 57.4,
+    "Idiom-Text": 57.4,
+    "Idiom+Meaning": 61.8
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     4.4,
+     -2.9,
+     11.8
+    ],
+    "para": [
+     -5.9,
+     -13.2,
+     1.5
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     4.4,
+     -1.5,
+     11.8
+    ],
+    "para": [
+     -8.8,
+     -16.2,
+     -2.9
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -7.4,
+     7.4
+    ],
+    "para": [
+     2.9,
+     -2.9,
+     8.8
+    ]
+   }
+  },
+  "zh_unseen|qwen27b|gold": {
+   "n_kept": 73,
+   "share_kept": 0.936,
+   "acc_para": {
+    "Base": 43.8,
+    "Random-CPT": 49.3,
+    "Idiom-Text": 50.7,
+    "Idiom+Meaning": 42.5
+   },
+   "acc_orig": {
+    "Base": 53.4,
+    "Random-CPT": 58.9,
+    "Idiom-Text": 58.9,
+    "Idiom+Meaning": 63.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     4.1,
+     -2.7,
+     11.0
+    ],
+    "para": [
+     -6.8,
+     -13.7,
+     0.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     4.1,
+     -1.4,
+     11.0
+    ],
+    "para": [
+     -8.2,
+     -15.1,
+     -2.7
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -6.8,
+     6.8
+    ],
+    "para": [
+     1.4,
+     -2.7,
+     6.8
+    ]
+   }
+  },
+  "zh_unseen|qwen27b|all4": {
+   "n_kept": 65,
+   "share_kept": 0.833,
+   "acc_para": {
+    "Base": 41.5,
+    "Random-CPT": 44.6,
+    "Idiom-Text": 47.7,
+    "Idiom+Meaning": 41.5
+   },
+   "acc_orig": {
+    "Base": 50.8,
+    "Random-CPT": 56.9,
+    "Idiom-Text": 56.9,
+    "Idiom+Meaning": 60.0
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     3.1,
+     -4.6,
+     10.8
+    ],
+    "para": [
+     -3.1,
+     -9.2,
+     3.1
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     3.1,
+     -3.1,
+     9.2
+    ],
+    "para": [
+     -6.2,
+     -12.3,
+     -1.5
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -7.7,
+     7.7
+    ],
+    "para": [
+     3.1,
+     0.0,
+     7.7
+    ]
+   }
+  },
+  "zh_unseen|both|gold": {
+   "n_kept": 72,
+   "share_kept": 0.923,
+   "acc_para": {
+    "Base": 43.1,
+    "Random-CPT": 48.6,
+    "Idiom-Text": 50.0,
+    "Idiom+Meaning": 41.7
+   },
+   "acc_orig": {
+    "Base": 52.8,
+    "Random-CPT": 58.3,
+    "Idiom-Text": 58.3,
+    "Idiom+Meaning": 62.5
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     4.2,
+     -2.8,
+     11.1
+    ],
+    "para": [
+     -6.9,
+     -13.9,
+     0.0
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     4.2,
+     -1.4,
+     11.1
+    ],
+    "para": [
+     -8.3,
+     -15.3,
+     -2.8
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -6.9,
+     6.9
+    ],
+    "para": [
+     1.4,
+     -2.8,
+     5.6
+    ]
+   }
+  },
+  "zh_unseen|both|all4": {
+   "n_kept": 61,
+   "share_kept": 0.782,
+   "acc_para": {
+    "Base": 42.6,
+    "Random-CPT": 45.9,
+    "Idiom-Text": 49.2,
+    "Idiom+Meaning": 42.6
+   },
+   "acc_orig": {
+    "Base": 50.8,
+    "Random-CPT": 57.4,
+    "Idiom-Text": 57.4,
+    "Idiom+Meaning": 60.7
+   },
+   "Idiom+Meaning - Random-CPT": {
+    "orig_same_items": [
+     3.3,
+     -4.9,
+     11.5
+    ],
+    "para": [
+     -3.3,
+     -9.8,
+     3.3
+    ]
+   },
+   "Idiom+Meaning - Idiom-Text": {
+    "orig_same_items": [
+     3.3,
+     -3.3,
+     9.8
+    ],
+    "para": [
+     -6.6,
+     -13.1,
+     -1.6
+    ]
+   },
+   "Idiom-Text - Random-CPT": {
+    "orig_same_items": [
+     0.0,
+     -8.2,
+     8.2
+    ],
+    "para": [
+     3.3,
+     0.0,
+     8.2
+    ]
+   }
+  }
+ }
+}

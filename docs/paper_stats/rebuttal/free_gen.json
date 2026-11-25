@@ -1,0 +1,2201 @@
+{
+ "n_items": 5121,
+ "judges": [
+  "gemma",
+  "qwen27b"
+ ],
+ "shots": {
+  "zh": [
+   [
+    "对牛弹琴",
+    "To speak to someone who cannot understand or appreciate what is said; to address the wrong audience."
+   ],
+   [
+    "井底之蛙",
+    "A person with a very narrow outlook who knows little of the wider world."
+   ],
+   [
+    "杯弓蛇影",
+    "To be frightened by imaginary dangers; needless suspicion and fear."
+   ]
+  ],
+  "hi": [
+   [
+    "नाच न जाने आँगन टेढ़ा",
+    "Blaming circumstances or tools for one's own lack of skill."
+   ],
+   [
+    "उल्टा चोर कोतवाल को डाँटे",
+    "The wrongdoer accusing the innocent person who caught him."
+   ],
+   [
+    "थोथा चना बाजे घना",
+    "Those with little substance or knowledge make the most noise."
+   ]
+  ],
+  "ar": [
+   [
+    "رجع بخفي حنين",
+    "He came back empty-handed, having failed to get what he went for."
+   ],
+   [
+    "يد واحدة لا تصفق",
+    "One person alone cannot achieve much; cooperation is needed."
+   ],
+   [
+    "الوقت كالسيف إن لم تقطعه قطعك",
+    "Time must be used well, or it will work against you."
+   ]
+  ]
+ },
+ "results": {
+  "gemma:correct": {
+   "zh:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 82.8,
+     "Random-CPT": 81.7,
+     "Idiom-Text": 80.8,
+     "Idiom+Meaning": 84.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.8,
+     "ci95": [
+      0.2,
+      5.5
+     ],
+     "mcnemar_p": 0.0464,
+     "holm_p": 0.0464
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 3.7,
+     "ci95": [
+      1.0,
+      6.3
+     ],
+     "mcnemar_p": 0.0115,
+     "holm_p": 0.0345
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -0.8,
+     "ci95": [
+      -3.3,
+      1.7
+     ],
+     "mcnemar_p": 0.6089,
+     "holm_p": 0.6089
+    },
+    "Idiom-Text - Base": {
+     "delta": -2.0,
+     "ci95": [
+      -4.5,
+      0.5
+     ],
+     "mcnemar_p": 0.148
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 1.7,
+     "ci95": [
+      -1.0,
+      4.3
+     ],
+     "mcnemar_p": 0.275
+    }
+   },
+   "zh:idiomatlas_unseen": {
+    "n": 78,
+    "acc": {
+     "Base": 44.9,
+     "Random-CPT": 42.3,
+     "Idiom-Text": 38.5,
+     "Idiom+Meaning": 43.6
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 1.3,
+     "ci95": [
+      -7.7,
+      10.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 5.1,
+     "ci95": [
+      -5.1,
+      15.4
+     ],
+     "mcnemar_p": 0.4545,
+     "holm_p": 0.909
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -3.8,
+     "ci95": [
+      -12.8,
+      3.8
+     ],
+     "mcnemar_p": 0.5488,
+     "holm_p": 0.8956
+    },
+    "Idiom-Text - Base": {
+     "delta": -6.4,
+     "ci95": [
+      -16.7,
+      3.8
+     ],
+     "mcnemar_p": 0.3593
+    },
+    "Idiom+Meaning - Base": {
+     "delta": -1.3,
+     "ci95": [
+      -11.5,
+      9.0
+     ],
+     "mcnemar_p": 1.0
+    }
+   },
+   "hi:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 36.5,
+     "Random-CPT": 47.2,
+     "Idiom-Text": 64.3,
+     "Idiom+Meaning": 65.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 18.2,
+     "ci95": [
+      14.3,
+      22.0
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.0,
+     "ci95": [
+      -2.2,
+      4.0
+     ],
+     "mcnemar_p": 0.5943,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 17.2,
+     "ci95": [
+      13.3,
+      21.0
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom-Text - Base": {
+     "delta": 27.8,
+     "ci95": [
+      23.3,
+      32.3
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 28.8,
+     "ci95": [
+      24.3,
+      33.3
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 21.5,
+     "Random-CPT": 33.7,
+     "Idiom-Text": 38.3,
+     "Idiom+Meaning": 37.8
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 4.2,
+     "ci95": [
+      0.3,
+      8.0
+     ],
+     "mcnemar_p": 0.0399,
+     "holm_p": 0.1197
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.5,
+     "ci95": [
+      -3.7,
+      2.5
+     ],
+     "mcnemar_p": 0.8341,
+     "holm_p": 0.909
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 4.7,
+     "ci95": [
+      1.0,
+      8.3
+     ],
+     "mcnemar_p": 0.0158,
+     "holm_p": 0.0474
+    },
+    "Idiom-Text - Base": {
+     "delta": 16.8,
+     "ci95": [
+      12.7,
+      20.8
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 16.3,
+     "ci95": [
+      12.2,
+      20.7
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs": {
+    "n": 2043,
+    "acc": {
+     "Base": 31.9,
+     "Random-CPT": 49.2,
+     "Idiom-Text": 67.4,
+     "Idiom+Meaning": 66.1
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 16.9,
+     "ci95": [
+      15.0,
+      19.0
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.3,
+     "ci95": [
+      -2.5,
+      0.0
+     ],
+     "mcnemar_p": 0.065
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 18.2,
+     "ci95": [
+      16.2,
+      20.3
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 35.5,
+     "ci95": [
+      33.2,
+      37.9
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 34.3,
+     "ci95": [
+      32.0,
+      36.6
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs_clean": {
+    "n": 490,
+    "acc": {
+     "Base": 29.0,
+     "Random-CPT": 40.0,
+     "Idiom-Text": 50.4,
+     "Idiom+Meaning": 49.8
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 9.8,
+     "ci95": [
+      5.9,
+      13.9
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.6,
+     "ci95": [
+      -3.5,
+      2.2
+     ],
+     "mcnemar_p": 0.7754
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 10.4,
+     "ci95": [
+      6.3,
+      14.5
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 21.4,
+     "ci95": [
+      16.7,
+      26.1
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 20.8,
+     "ci95": [
+      16.1,
+      25.3
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "ar:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 31.7,
+     "Random-CPT": 34.0,
+     "Idiom-Text": 38.7,
+     "Idiom+Meaning": 38.8
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 4.8,
+     "ci95": [
+      0.8,
+      8.7
+     ],
+     "mcnemar_p": 0.0181,
+     "holm_p": 0.0362
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.2,
+     "ci95": [
+      -3.0,
+      3.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 4.7,
+     "ci95": [
+      1.2,
+      8.2
+     ],
+     "mcnemar_p": 0.0126,
+     "holm_p": 0.0252
+    },
+    "Idiom-Text - Base": {
+     "delta": 7.0,
+     "ci95": [
+      3.3,
+      10.8
+     ],
+     "mcnemar_p": 0.0003
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 7.2,
+     "ci95": [
+      3.2,
+      11.2
+     ],
+     "mcnemar_p": 0.0006
+    }
+   },
+   "ar:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 23.7,
+     "Random-CPT": 25.2,
+     "Idiom-Text": 26.7,
+     "Idiom+Meaning": 24.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -0.8,
+     "ci95": [
+      -4.3,
+      2.7
+     ],
+     "mcnemar_p": 0.714,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -2.3,
+     "ci95": [
+      -5.3,
+      0.7
+     ],
+     "mcnemar_p": 0.1557,
+     "holm_p": 0.4671
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.5,
+     "ci95": [
+      -2.0,
+      5.0
+     ],
+     "mcnemar_p": 0.4478,
+     "holm_p": 0.8956
+    },
+    "Idiom-Text - Base": {
+     "delta": 3.0,
+     "ci95": [
+      -0.8,
+      6.8
+     ],
+     "mcnemar_p": 0.1387
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 0.7,
+     "ci95": [
+      -3.0,
+      4.3
+     ],
+     "mcnemar_p": 0.7877
+    }
+   },
+   "pooled_idiomatlas_unseen": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 0.8,
+     "ci95": [
+      -2.5,
+      4.0
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 1.5,
+     "ci95": [
+      -2.0,
+      5.0
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.8,
+     "ci95": [
+      -2.8,
+      4.5
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    }
+   },
+   "pooled_unseen_with_clean_hindi_proverbs": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 3.2,
+     "ci95": [
+      0.6,
+      5.8
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 3.6,
+     "ci95": [
+      0.9,
+      6.5
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.4,
+     "ci95": [
+      -2.3,
+      3.3
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    }
+   }
+  },
+  "gemma:correct_or_partial": {
+   "zh:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 85.3,
+     "Random-CPT": 84.8,
+     "Idiom-Text": 84.2,
+     "Idiom+Meaning": 86.7
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 1.8,
+     "ci95": [
+      -0.8,
+      4.3
+     ],
+     "mcnemar_p": 0.2074,
+     "holm_p": 0.2074
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 2.5,
+     "ci95": [
+      -0.2,
+      5.2
+     ],
+     "mcnemar_p": 0.0864,
+     "holm_p": 0.2592
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -0.7,
+     "ci95": [
+      -3.0,
+      1.7
+     ],
+     "mcnemar_p": 0.6718,
+     "holm_p": 0.6718
+    },
+    "Idiom-Text - Base": {
+     "delta": -1.2,
+     "ci95": [
+      -3.7,
+      1.3
+     ],
+     "mcnemar_p": 0.435
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 1.3,
+     "ci95": [
+      -1.3,
+      4.0
+     ],
+     "mcnemar_p": 0.3891
+    }
+   },
+   "zh:idiomatlas_unseen": {
+    "n": 78,
+    "acc": {
+     "Base": 50.0,
+     "Random-CPT": 47.4,
+     "Idiom-Text": 42.3,
+     "Idiom+Meaning": 50.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.6,
+     "ci95": [
+      -7.7,
+      12.8
+     ],
+     "mcnemar_p": 0.8145,
+     "holm_p": 0.9418
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 7.7,
+     "ci95": [
+      -3.8,
+      19.2
+     ],
+     "mcnemar_p": 0.2632,
+     "holm_p": 0.5264
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -5.1,
+     "ci95": [
+      -14.1,
+      3.8
+     ],
+     "mcnemar_p": 0.3877,
+     "holm_p": 0.4782
+    },
+    "Idiom-Text - Base": {
+     "delta": -7.7,
+     "ci95": [
+      -19.2,
+      3.8
+     ],
+     "mcnemar_p": 0.2632
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 0.0,
+     "ci95": [
+      -11.5,
+      11.5
+     ],
+     "mcnemar_p": 1.0
+    }
+   },
+   "hi:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 40.5,
+     "Random-CPT": 51.3,
+     "Idiom-Text": 69.3,
+     "Idiom+Meaning": 69.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 17.8,
+     "ci95": [
+      14.0,
+      21.8
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.2,
+     "ci95": [
+      -3.0,
+      2.7
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 18.0,
+     "ci95": [
+      14.0,
+      22.0
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom-Text - Base": {
+     "delta": 28.8,
+     "ci95": [
+      24.3,
+      33.3
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 28.7,
+     "ci95": [
+      24.3,
+      33.2
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 26.5,
+     "Random-CPT": 37.8,
+     "Idiom-Text": 43.2,
+     "Idiom+Meaning": 44.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 6.3,
+     "ci95": [
+      2.3,
+      10.3
+     ],
+     "mcnemar_p": 0.0024,
+     "holm_p": 0.0072
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.0,
+     "ci95": [
+      -2.3,
+      4.3
+     ],
+     "mcnemar_p": 0.6208,
+     "holm_p": 0.6208
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 5.3,
+     "ci95": [
+      1.5,
+      9.2
+     ],
+     "mcnemar_p": 0.0072,
+     "holm_p": 0.0216
+    },
+    "Idiom-Text - Base": {
+     "delta": 16.7,
+     "ci95": [
+      12.5,
+      21.0
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 17.7,
+     "ci95": [
+      13.3,
+      22.2
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs": {
+    "n": 2043,
+    "acc": {
+     "Base": 35.2,
+     "Random-CPT": 53.3,
+     "Idiom-Text": 70.4,
+     "Idiom+Meaning": 69.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 16.2,
+     "ci95": [
+      14.1,
+      18.2
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.0,
+     "ci95": [
+      -2.3,
+      0.3
+     ],
+     "mcnemar_p": 0.1519
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 17.1,
+     "ci95": [
+      15.1,
+      19.2
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 35.2,
+     "ci95": [
+      32.9,
+      37.6
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 34.3,
+     "ci95": [
+      31.9,
+      36.6
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs_clean": {
+    "n": 490,
+    "acc": {
+     "Base": 31.6,
+     "Random-CPT": 44.3,
+     "Idiom-Text": 54.3,
+     "Idiom+Meaning": 53.9
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 9.6,
+     "ci95": [
+      5.7,
+      13.7
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.4,
+     "ci95": [
+      -3.1,
+      2.2
+     ],
+     "mcnemar_p": 0.8804
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 10.0,
+     "ci95": [
+      5.9,
+      14.1
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 22.7,
+     "ci95": [
+      18.0,
+      27.6
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 22.2,
+     "ci95": [
+      17.6,
+      27.1
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "ar:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 35.3,
+     "Random-CPT": 36.8,
+     "Idiom-Text": 41.8,
+     "Idiom+Meaning": 41.8
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 5.0,
+     "ci95": [
+      1.0,
+      8.8
+     ],
+     "mcnemar_p": 0.0147,
+     "holm_p": 0.0294
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.0,
+     "ci95": [
+      -3.3,
+      3.2
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 5.0,
+     "ci95": [
+      1.3,
+      8.7
+     ],
+     "mcnemar_p": 0.0089,
+     "holm_p": 0.0178
+    },
+    "Idiom-Text - Base": {
+     "delta": 6.5,
+     "ci95": [
+      2.7,
+      10.2
+     ],
+     "mcnemar_p": 0.0008
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 6.5,
+     "ci95": [
+      2.7,
+      10.5
+     ],
+     "mcnemar_p": 0.0015
+    }
+   },
+   "ar:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 25.5,
+     "Random-CPT": 27.7,
+     "Idiom-Text": 30.0,
+     "Idiom+Meaning": 26.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -1.5,
+     "ci95": [
+      -5.2,
+      2.2
+     ],
+     "mcnemar_p": 0.4709,
+     "holm_p": 0.9418
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -3.8,
+     "ci95": [
+      -7.0,
+      -0.7
+     ],
+     "mcnemar_p": 0.025,
+     "holm_p": 0.075
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 2.3,
+     "ci95": [
+      -1.2,
+      6.0
+     ],
+     "mcnemar_p": 0.2391,
+     "holm_p": 0.4782
+    },
+    "Idiom-Text - Base": {
+     "delta": 4.5,
+     "ci95": [
+      0.7,
+      8.3
+     ],
+     "mcnemar_p": 0.0293
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 0.7,
+     "ci95": [
+      -3.2,
+      4.5
+     ],
+     "mcnemar_p": 0.7971
+    }
+   },
+   "pooled_idiomatlas_unseen": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 0.8,
+     "ci95": [
+      -2.6,
+      4.1
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.5,
+     "ci95": [
+      -1.6,
+      6.4
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.6,
+     "ci95": [
+      -2.4,
+      5.7
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    }
+   },
+   "pooled_unseen_with_clean_hindi_proverbs": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 3.1,
+     "ci95": [
+      0.4,
+      5.9
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 4.2,
+     "ci95": [
+      1.1,
+      7.4
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.1,
+     "ci95": [
+      -2.0,
+      4.2
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    }
+   }
+  },
+  "qwen27b:correct": {
+   "zh:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 80.0,
+     "Random-CPT": 78.8,
+     "Idiom-Text": 80.8,
+     "Idiom+Meaning": 82.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 3.5,
+     "ci95": [
+      0.7,
+      6.5
+     ],
+     "mcnemar_p": 0.0238,
+     "holm_p": 0.0476
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.5,
+     "ci95": [
+      -1.3,
+      4.3
+     ],
+     "mcnemar_p": 0.3492,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 2.0,
+     "ci95": [
+      -0.5,
+      4.7
+     ],
+     "mcnemar_p": 0.1619,
+     "holm_p": 0.3238
+    },
+    "Idiom-Text - Base": {
+     "delta": 0.8,
+     "ci95": [
+      -1.7,
+      3.5
+     ],
+     "mcnemar_p": 0.6147
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 2.3,
+     "ci95": [
+      -0.5,
+      5.2
+     ],
+     "mcnemar_p": 0.1405
+    }
+   },
+   "zh:idiomatlas_unseen": {
+    "n": 78,
+    "acc": {
+     "Base": 43.6,
+     "Random-CPT": 43.6,
+     "Idiom-Text": 41.0,
+     "Idiom+Meaning": 41.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -2.6,
+     "ci95": [
+      -12.8,
+      7.7
+     ],
+     "mcnemar_p": 0.8036,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.0,
+     "ci95": [
+      -10.3,
+      10.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -2.6,
+     "ci95": [
+      -10.3,
+      5.1
+     ],
+     "mcnemar_p": 0.7539,
+     "holm_p": 0.7539
+    },
+    "Idiom-Text - Base": {
+     "delta": -2.6,
+     "ci95": [
+      -11.5,
+      6.4
+     ],
+     "mcnemar_p": 0.7744
+    },
+    "Idiom+Meaning - Base": {
+     "delta": -2.6,
+     "ci95": [
+      -11.5,
+      6.4
+     ],
+     "mcnemar_p": 0.7905
+    }
+   },
+   "hi:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 33.8,
+     "Random-CPT": 46.0,
+     "Idiom-Text": 59.8,
+     "Idiom+Meaning": 61.0
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 15.0,
+     "ci95": [
+      11.3,
+      19.0
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.2,
+     "ci95": [
+      -1.8,
+      4.2
+     ],
+     "mcnemar_p": 0.5052,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 13.8,
+     "ci95": [
+      10.2,
+      17.5
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom-Text - Base": {
+     "delta": 26.0,
+     "ci95": [
+      21.7,
+      30.3
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 27.2,
+     "ci95": [
+      22.8,
+      31.7
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 20.2,
+     "Random-CPT": 29.0,
+     "Idiom-Text": 33.0,
+     "Idiom+Meaning": 31.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.2,
+     "ci95": [
+      -1.5,
+      5.8
+     ],
+     "mcnemar_p": 0.2792,
+     "holm_p": 0.8376
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.8,
+     "ci95": [
+      -4.8,
+      1.2
+     ],
+     "mcnemar_p": 0.2723,
+     "holm_p": 0.5835
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 4.0,
+     "ci95": [
+      0.7,
+      7.3
+     ],
+     "mcnemar_p": 0.0197,
+     "holm_p": 0.0591
+    },
+    "Idiom-Text - Base": {
+     "delta": 12.8,
+     "ci95": [
+      9.2,
+      16.7
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 11.0,
+     "ci95": [
+      7.2,
+      14.8
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs": {
+    "n": 2043,
+    "acc": {
+     "Base": 34.6,
+     "Random-CPT": 50.9,
+     "Idiom-Text": 67.0,
+     "Idiom+Meaning": 66.4
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 15.5,
+     "ci95": [
+      13.6,
+      17.4
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.6,
+     "ci95": [
+      -1.9,
+      0.7
+     ],
+     "mcnemar_p": 0.4175
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 16.1,
+     "ci95": [
+      14.1,
+      18.2
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 32.4,
+     "ci95": [
+      30.1,
+      34.8
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 31.8,
+     "ci95": [
+      29.4,
+      34.2
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs_clean": {
+    "n": 490,
+    "acc": {
+     "Base": 29.6,
+     "Random-CPT": 41.8,
+     "Idiom-Text": 53.3,
+     "Idiom+Meaning": 53.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 11.4,
+     "ci95": [
+      7.8,
+      15.1
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.0,
+     "ci95": [
+      -2.7,
+      2.4
+     ],
+     "mcnemar_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 11.4,
+     "ci95": [
+      7.6,
+      15.3
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 23.7,
+     "ci95": [
+      19.2,
+      28.4
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 23.7,
+     "ci95": [
+      19.2,
+      28.2
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "ar:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 28.3,
+     "Random-CPT": 31.2,
+     "Idiom-Text": 32.0,
+     "Idiom+Meaning": 33.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.3,
+     "ci95": [
+      -1.3,
+      6.0
+     ],
+     "mcnemar_p": 0.2467,
+     "holm_p": 0.2467
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.5,
+     "ci95": [
+      -1.7,
+      4.7
+     ],
+     "mcnemar_p": 0.4069,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 0.8,
+     "ci95": [
+      -2.5,
+      4.2
+     ],
+     "mcnemar_p": 0.6965,
+     "holm_p": 0.6965
+    },
+    "Idiom-Text - Base": {
+     "delta": 3.7,
+     "ci95": [
+      0.2,
+      7.2
+     ],
+     "mcnemar_p": 0.0487
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 5.2,
+     "ci95": [
+      1.7,
+      8.8
+     ],
+     "mcnemar_p": 0.007
+    }
+   },
+   "ar:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 17.2,
+     "Random-CPT": 18.7,
+     "Idiom-Text": 20.5,
+     "Idiom+Meaning": 18.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -0.2,
+     "ci95": [
+      -3.3,
+      3.0
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -2.0,
+     "ci95": [
+      -4.8,
+      0.8
+     ],
+     "mcnemar_p": 0.1945,
+     "holm_p": 0.5835
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.8,
+     "ci95": [
+      -1.2,
+      4.8
+     ],
+     "mcnemar_p": 0.2723,
+     "holm_p": 0.5446
+    },
+    "Idiom-Text - Base": {
+     "delta": 3.3,
+     "ci95": [
+      0.2,
+      6.5
+     ],
+     "mcnemar_p": 0.0569
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 1.3,
+     "ci95": [
+      -2.0,
+      4.7
+     ],
+     "mcnemar_p": 0.4884
+    }
+   },
+   "pooled_idiomatlas_unseen": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.1,
+     "ci95": [
+      -1.9,
+      4.1
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -0.2,
+     "ci95": [
+      -3.9,
+      3.5
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.3,
+     "ci95": [
+      -4.9,
+      2.4
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    }
+   },
+   "pooled_unseen_with_clean_hindi_proverbs": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 3.7,
+     "ci95": [
+      1.1,
+      6.2
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.7,
+     "ci95": [
+      -0.3,
+      5.6
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.0,
+     "ci95": [
+      -3.7,
+      1.8
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    }
+   }
+  },
+  "qwen27b:correct_or_partial": {
+   "zh:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 87.8,
+     "Random-CPT": 87.8,
+     "Idiom-Text": 88.7,
+     "Idiom+Meaning": 90.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 2.7,
+     "ci95": [
+      0.5,
+      5.0
+     ],
+     "mcnemar_p": 0.0293,
+     "holm_p": 0.0586
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.8,
+     "ci95": [
+      -0.2,
+      3.8
+     ],
+     "mcnemar_p": 0.1081,
+     "holm_p": 0.3243
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 0.8,
+     "ci95": [
+      -1.0,
+      2.7
+     ],
+     "mcnemar_p": 0.4731,
+     "holm_p": 0.9462
+    },
+    "Idiom-Text - Base": {
+     "delta": 0.8,
+     "ci95": [
+      -1.0,
+      2.7
+     ],
+     "mcnemar_p": 0.4731
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 2.7,
+     "ci95": [
+      0.5,
+      5.0
+     ],
+     "mcnemar_p": 0.0259
+    }
+   },
+   "zh:idiomatlas_unseen": {
+    "n": 78,
+    "acc": {
+     "Base": 55.1,
+     "Random-CPT": 60.3,
+     "Idiom-Text": 59.0,
+     "Idiom+Meaning": 60.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 0.0,
+     "ci95": [
+      -10.3,
+      10.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.3,
+     "ci95": [
+      -7.7,
+      10.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": -1.3,
+     "ci95": [
+      -10.3,
+      7.7
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 3.8,
+     "ci95": [
+      -6.4,
+      14.1
+     ],
+     "mcnemar_p": 0.6072
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 5.1,
+     "ci95": [
+      -5.1,
+      15.4
+     ],
+     "mcnemar_p": 0.4545
+    }
+   },
+   "hi:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 43.2,
+     "Random-CPT": 55.2,
+     "Idiom-Text": 69.7,
+     "Idiom+Meaning": 69.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 14.0,
+     "ci95": [
+      10.2,
+      17.7
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.5,
+     "ci95": [
+      -3.3,
+      2.3
+     ],
+     "mcnemar_p": 0.8199,
+     "holm_p": 0.9216
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 14.5,
+     "ci95": [
+      10.8,
+      18.3
+     ],
+     "mcnemar_p": 0.0,
+     "holm_p": 0
+    },
+    "Idiom-Text - Base": {
+     "delta": 26.5,
+     "ci95": [
+      22.3,
+      30.7
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 26.0,
+     "ci95": [
+      21.7,
+      30.3
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 29.0,
+     "Random-CPT": 38.5,
+     "Idiom-Text": 43.7,
+     "Idiom+Meaning": 44.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 5.8,
+     "ci95": [
+      2.0,
+      9.7
+     ],
+     "mcnemar_p": 0.0038,
+     "holm_p": 0.0114
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.7,
+     "ci95": [
+      -2.3,
+      3.5
+     ],
+     "mcnemar_p": 0.7407,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 5.2,
+     "ci95": [
+      1.5,
+      8.7
+     ],
+     "mcnemar_p": 0.0057,
+     "holm_p": 0.0171
+    },
+    "Idiom-Text - Base": {
+     "delta": 14.7,
+     "ci95": [
+      10.5,
+      18.8
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 15.3,
+     "ci95": [
+      11.2,
+      19.5
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs": {
+    "n": 2043,
+    "acc": {
+     "Base": 41.3,
+     "Random-CPT": 58.0,
+     "Idiom-Text": 72.9,
+     "Idiom+Meaning": 72.1
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 14.1,
+     "ci95": [
+      12.2,
+      16.1
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -0.8,
+     "ci95": [
+      -2.0,
+      0.3
+     ],
+     "mcnemar_p": 0.1898
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 15.0,
+     "ci95": [
+      13.0,
+      17.0
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 31.6,
+     "ci95": [
+      29.3,
+      33.9
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 30.8,
+     "ci95": [
+      28.4,
+      33.1
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "hi:hindi_proverbs_clean": {
+    "n": 490,
+    "acc": {
+     "Base": 35.1,
+     "Random-CPT": 47.8,
+     "Idiom-Text": 58.6,
+     "Idiom+Meaning": 59.2
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 11.4,
+     "ci95": [
+      7.6,
+      15.5
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.6,
+     "ci95": [
+      -1.8,
+      3.1
+     ],
+     "mcnemar_p": 0.7552
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 10.8,
+     "ci95": [
+      6.9,
+      14.9
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 23.5,
+     "ci95": [
+      18.8,
+      28.2
+     ],
+     "mcnemar_p": 0.0
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 24.1,
+     "ci95": [
+      19.4,
+      28.8
+     ],
+     "mcnemar_p": 0.0
+    }
+   },
+   "ar:idiomatlas_seen": {
+    "n": 600,
+    "acc": {
+     "Base": 36.5,
+     "Random-CPT": 38.8,
+     "Idiom-Text": 39.0,
+     "Idiom+Meaning": 40.3
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 1.5,
+     "ci95": [
+      -2.3,
+      5.3
+     ],
+     "mcnemar_p": 0.5006,
+     "holm_p": 0.5006
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 1.3,
+     "ci95": [
+      -1.7,
+      4.3
+     ],
+     "mcnemar_p": 0.4608,
+     "holm_p": 0.9216
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 0.2,
+     "ci95": [
+      -3.3,
+      3.7
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom-Text - Base": {
+     "delta": 2.5,
+     "ci95": [
+      -1.2,
+      6.2
+     ],
+     "mcnemar_p": 0.2103
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 3.8,
+     "ci95": [
+      0.0,
+      7.7
+     ],
+     "mcnemar_p": 0.0579
+    }
+   },
+   "ar:idiomatlas_unseen": {
+    "n": 600,
+    "acc": {
+     "Base": 23.7,
+     "Random-CPT": 25.7,
+     "Idiom-Text": 27.3,
+     "Idiom+Meaning": 25.5
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": -0.2,
+     "ci95": [
+      -3.7,
+      3.3
+     ],
+     "mcnemar_p": 1.0,
+     "holm_p": 1.0
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": -1.8,
+     "ci95": [
+      -4.8,
+      1.2
+     ],
+     "mcnemar_p": 0.2664,
+     "holm_p": 0.7992
+    },
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.7,
+     "ci95": [
+      -1.8,
+      4.8
+     ],
+     "mcnemar_p": 0.3729,
+     "holm_p": 0.7458
+    },
+    "Idiom-Text - Base": {
+     "delta": 3.7,
+     "ci95": [
+      0.2,
+      7.2
+     ],
+     "mcnemar_p": 0.0467
+    },
+    "Idiom+Meaning - Base": {
+     "delta": 1.8,
+     "ci95": [
+      -1.7,
+      5.5
+     ],
+     "mcnemar_p": 0.3673
+    }
+   },
+   "pooled_idiomatlas_unseen": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 1.9,
+     "ci95": [
+      -1.6,
+      5.2
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 1.9,
+     "ci95": [
+      -1.9,
+      5.7
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.0,
+     "ci95": [
+      -3.3,
+      3.3
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen"
+     ]
+    }
+   },
+   "pooled_unseen_with_clean_hindi_proverbs": {
+    "Idiom-Text - Random-CPT": {
+     "delta": 4.1,
+     "ci95": [
+      1.4,
+      6.8
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Random-CPT": {
+     "delta": 4.3,
+     "ci95": [
+      1.3,
+      7.3
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    },
+    "Idiom+Meaning - Idiom-Text": {
+     "delta": 0.2,
+     "ci95": [
+      -2.4,
+      2.8
+     ],
+     "tests": [
+      "zh:idiomatlas_unseen",
+      "hi:idiomatlas_unseen",
+      "ar:idiomatlas_unseen",
+      "hi:hindi_proverbs_clean"
+     ]
+    }
+   }
+  }
+ },
+ "judge_agreement": {
+  "n": 18415,
+  "raw": 0.856,
+  "kappa": 0.74,
+  "binary_correct_raw": 0.898
+ },
+ "examples": {
+  "Base": {
+   "zh": [
+    [
+     "口吐珠玑",
+     "To speak with great eloquence and wisdom; to say something very valuable."
+    ],
+    [
+     "裁云剪水",
+     "To describe something beautiful and delicate, like clouds and water."
+    ],
+    [
+     "曲不离口",
+     "Practice makes perfect; one must keep practicing to maintain skill."
+    ]
+   ],
+   "hi": [
+    [
+     "किसने अपनी माँ का दूध पीया है",
+     "A person who has been raised by their own mother."
+    ],
+    [
+     "न मुँह में दाँत न पेट में आँत",
+     "A person who is completely destitute and has nothing to eat or wear."
+    ],
+    [
+     "मौत सिर पर खेलती है",
+     "A situation is extremely dangerous or life-threatening."
+    ]
+   ],
+   "ar": [
+    [
+     "الغَمْجُ أَرْوَى والَّرشِيفُ أَشْرَبُ",
+     "The one who is cautious and slow to act is often the one who succeeds."
+    ],
+    [
+     "ضَرَُّه جَبَّارٍ رَعَاهَا المُنْصُلُ",
+     "A person who is strong and powerful will protect those who are weak."
+    ],
+    [
+     "ذَهَبُوا إِسْرَاءَ قُنْفُذٍ",
+     "They left in a hurry without thinking about the consequences."
+    ]
+   ]
+  },
+  "Random-CPT": {
+   "zh": [
+    [
+     "口吐珠玑",
+     "To speak eloquently and beautifully; to express oneself with great skill and grace."
+    ],
+    [
+     "裁云剪水",
+     "To create something beautiful and delicate, often used to describe skilled craftsmanship or artistic talent."
+    ],
+    [
+     "曲不离口",
+     "Practice makes perfect; constant practice is necessary to master a skill."
+    ]
+   ],
+   "hi": [
+    [
+     "किसने अपनी माँ का दूध पीया है",
+     "A rhetorical question used to express extreme anger or disbelief."
+    ],
+    [
+     "न मुँह में दाँत न पेट में आँत",
+     "A person who is completely useless and of no value."
+    ],
+    [
+     "मौत सिर पर खेलती है",
+     "One is in constant danger or facing imminent risk."
+    ]
+   ],
+   "ar": [
+    [
+     "الغَمْجُ أَرْوَى والَّرشِيفُ أَشْرَبُ",
+     "The person who is shy and quiet often gets the most benefit."
+    ],
+    [
+     "ضَرَُّه جَبَّارٍ رَعَاهَا المُنْصُلُ",
+     "He was a strong man, but he was taken care of by a weak person."
+    ],
+    [
+     "ذَهَبُوا إِسْرَاءَ قُنْفُذٍ",
+     "They left in a hurry, without saying goodbye."
+    ]
+   ]
+  },
+  "Idiom-Text": {
+   "zh": [
+    [
+     "口吐珠玑",
+     "To speak eloquently and beautifully, as if speaking pearls."
+    ],
+    [
+     "裁云剪水",
+     "To create something as beautiful as a piece of art; to describe something with great elegance."
+    ],
+    [
+     "曲不离口",
+     "Practice makes perfect; one must keep practicing to master a skill."
+    ]
+   ],
+   "hi": [
+    [
+     "किसने अपनी माँ का दूध पीया है",
+     "A challenge to prove one's capability or worth."
+    ],
+    [
+     "न मुँह में दाँत न पेट में आँत",
+     "A person who is completely useless and of no value."
+    ],
+    [
+     "मौत सिर पर खेलती है",
+     "Facing extreme danger or a life-threatening situation."
+    ]
+   ],
+   "ar": [
+    [
+     "الغَمْجُ أَرْوَى والَّرشِيفُ أَشْرَبُ",
+     "The person who speaks little is often the most eloquent."
+    ],
+    [
+     "ضَرَُّه جَبَّارٍ رَعَاهَا المُنْصُلُ",
+     "He was under the care of a tyrant, but he was protected by a kind person."
+    ],
+    [
+     "ذَهَبُوا إِسْرَاءَ قُنْفُذٍ",
+     "They left in a hurry and without looking back."
+    ]
+   ]
+  },
+  "Idiom+Meaning": {
+   "zh": [
+    [
+     "口吐珠玑",
+     "To speak eloquently and impressively; to use beautiful and meaningful words."
+    ],
+    [
+     "裁云剪水",
+     "To create something beautiful and delicate, often used to describe poetic or artistic skill."
+    ],
+    [
+     "曲不离口",
+     "Practice makes perfect; one must keep practicing to maintain proficiency."
+    ]
+   ],
+   "hi": [
+    [
+     "किसने अपनी माँ का दूध पीया है",
+     "A task that is impossible or beyond one's capability."
+    ],
+    [
+     "न मुँह में दाँत न पेट में आँत",
+     "Having no money or resources at all."
+    ],
+    [
+     "मौत सिर पर खेलती है",
+     "Facing a situation that is extremely dangerous or risky."
+    ]
+   ],
+   "ar": [
+    [
+     "الغَمْجُ أَرْوَى والَّرشِيفُ أَشْرَبُ",
+     "The person who is quiet and thoughtful is more likely to be wise than the one who is loud and talkative."
+    ],
+    [
+     "ضَرَُّه جَبَّارٍ رَعَاهَا المُنْصُلُ",
+     "He was under the care of a tyrant, but he was protected by a strong one."
+    ],
+    [
+     "ذَهَبُوا إِسْرَاءَ قُنْفُذٍ",
+     "They went away very quickly."
+    ]
+   ]
+  }
+ }
+}
