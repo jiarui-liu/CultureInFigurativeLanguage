@@ -1,0 +1,191 @@
+{
+ "ar_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 42.0,
+   "Random-CPT": 43.2,
+   "Idiom-Text": 46.7,
+   "Idiom+Meaning": 68.3
+  },
+  "acc_para2": {
+   "Base": 43.2,
+   "Random-CPT": 42.3,
+   "Idiom-Text": 49.2,
+   "Idiom+Meaning": 55.8
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    25.2,
+    20.8,
+    29.5
+   ],
+   "para2": [
+    13.5,
+    9.5,
+    17.5
+   ]
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    21.7,
+    18.0,
+    25.5
+   ],
+   "para2": [
+    6.7,
+    3.7,
+    9.7
+   ]
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    3.5,
+    0.5,
+    6.5
+   ],
+   "para2": [
+    6.8,
+    3.7,
+    10.0
+   ]
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    26.3,
+    22.0,
+    30.7
+   ],
+   "para2": [
+    12.7,
+    8.3,
+    17.0
+   ]
+  }
+ },
+ "hi_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 36.2,
+   "Random-CPT": 50.5,
+   "Idiom-Text": 56.7,
+   "Idiom+Meaning": 75.8
+  },
+  "acc_para2": {
+   "Base": 36.3,
+   "Random-CPT": 52.5,
+   "Idiom-Text": 55.5,
+   "Idiom+Meaning": 67.3
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    25.3,
+    21.7,
+    29.0
+   ],
+   "para2": [
+    14.8,
+    11.2,
+    18.5
+   ]
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    19.2,
+    15.8,
+    22.5
+   ],
+   "para2": [
+    11.8,
+    9.0,
+    14.8
+   ]
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    6.2,
+    3.3,
+    9.0
+   ],
+   "para2": [
+    3.0,
+    0.5,
+    5.5
+   ]
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    39.7,
+    35.0,
+    44.3
+   ],
+   "para2": [
+    31.0,
+    26.3,
+    35.7
+   ]
+  }
+ },
+ "zh_seen": {
+  "n": 600,
+  "acc_orig": {
+   "Base": 79.0,
+   "Random-CPT": 79.8,
+   "Idiom-Text": 79.2,
+   "Idiom+Meaning": 90.5
+  },
+  "acc_para2": {
+   "Base": 81.5,
+   "Random-CPT": 83.2,
+   "Idiom-Text": 82.7,
+   "Idiom+Meaning": 85.8
+  },
+  "Idiom+Meaning - Random-CPT": {
+   "orig": [
+    10.7,
+    8.2,
+    13.3
+   ],
+   "para2": [
+    2.7,
+    0.7,
+    4.8
+   ]
+  },
+  "Idiom+Meaning - Idiom-Text": {
+   "orig": [
+    11.3,
+    8.7,
+    14.2
+   ],
+   "para2": [
+    3.2,
+    1.3,
+    5.2
+   ]
+  },
+  "Idiom-Text - Random-CPT": {
+   "orig": [
+    -0.7,
+    -2.3,
+    0.8
+   ],
+   "para2": [
+    -0.5,
+    -2.0,
+    1.0
+   ]
+  },
+  "Idiom+Meaning - Base": {
+   "orig": [
+    11.5,
+    8.7,
+    14.5
+   ],
+   "para2": [
+    4.3,
+    2.0,
+    6.8
+   ]
+  }
+ }
+}
